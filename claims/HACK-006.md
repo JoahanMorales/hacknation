@@ -9,8 +9,8 @@ Priority: P0
 Paths: web/src/features/graph/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791070124
-Updated: 1791068324
+Lease-Until: 1791071552
+Updated: 1791069752
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
 Next: Cuando HACK-001 aplique alias gl-bench: rebase, build verde, smoke, /hack-ship
 PR: -
