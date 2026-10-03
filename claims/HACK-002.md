@@ -9,9 +9,9 @@ Priority: P0
 Paths: app/schemas/, app/fixtures/case/, app/fixtures/api/, app/tests/test_schemas.py
 Depends: Ninguna
 Verify: uv run pytest -q app/tests/test_schemas.py
-Lease-Until: 1791066254
-Updated: 1791064454
+Lease-Until: 1791066270
+Updated: 1791064470
 Task-Base: bb6deeaac77522ec64554b8e5c934715b935b784
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/3; ejecutar scripts/smoke
+Next: Revision humana PR3 SHA30c7f2f por contrato compartido; acordar namespaces con HACK003 antes de integrar
 PR: https://github.com/JoahanMorales/hacknation/pull/3
 Evidence: -

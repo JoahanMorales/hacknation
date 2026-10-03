@@ -7,3 +7,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791063782 | HACK-003 | IDs HPO como strings legibles (annotations 7.8 MB, 1.1 MB gz) | Por qué: evitar conversiones en HACK-007/012/002
 - 1791064281 | HACK-003 | overview usa nodes (contrato HACK-002) | Por qué: HACK-002 es dueño del contrato
 - 1791064294 | HACK-002 | IDs OMIM/ORPHA/MONDO; graph groups HPO y layout de HACK003 fijado por commit | Por qué: IDEA6 y compatibilidad con consumidor; sin forzar ranking demo
+- 1791064470 | HACK-002 | IDEA6 OMIM/ORPHA/MONDO; groups HPO; mocks etiquetados y hashes LF | Por qué: Fuente real calculada, compatibilidad y reproduccion Windows/Unix
