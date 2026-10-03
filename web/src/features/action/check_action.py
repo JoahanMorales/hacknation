@@ -22,6 +22,14 @@ with sync_playwright() as p:
     assert plan.get_by_text("Contacting a registry is not diagnosis or treatment.").is_visible()
     page.wait_for_timeout(1500)
     page.screenshot(path=f"{out}/action-supported.png")
+    for w, h in ((1280, 720), (1440, 900)):
+        page.set_viewport_size({"width": w, "height": h})
+        box = plan.bounding_box()
+        # Cabe junto a la constelación; el panel de diagnóstico (HACK-018) se oculta en step=action.
+        assert box["height"] <= h * 0.63, f"panel demasiado alto a {w}x{h}: {box}"
+        assert plan.get_by_label("This week").is_visible() and plan.get_by_text("4.7 years").is_visible()
+        page.screenshot(path=f"{out}/action-{w}.png")
+    page.set_viewport_size({"width": 1440, "height": 900})
     page.goto(f"{base}/?select=OMIM:621314&step=action")
     page.get_by_role("heading", name="No supported route yet").wait_for(timeout=10000)
     for text in ("What we searched", "Missing evidence", "This week"):

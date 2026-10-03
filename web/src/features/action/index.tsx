@@ -100,6 +100,7 @@ function ActionPanel({ diseaseId }: { diseaseId: string }) {
         setAttempt((n) => n + 1);
       }}
       aria-label="Action plan"
+      className="max-h-[62dvh] overflow-y-auto"
     >
       {plan && (plan.supported ? <Supported plan={plan} /> : <Unsupported plan={plan} />)}
     </Panel>
@@ -164,9 +165,11 @@ function Supported({ plan }: { plan: ActionPlan }) {
           ))}
         </section>
 
-        <ThisWeek plan={plan} />
+        <div className="flex flex-col gap-4">
+          <ThisWeek plan={plan} />
+          {plan.timeline && <TimelineView timeline={plan.timeline} />}
+        </div>
       </div>
-      {plan.timeline && <TimelineView timeline={plan.timeline} />}
       <Notes plan={plan} />
     </div>
   );
@@ -208,7 +211,7 @@ function TimelineView({ timeline }: { timeline: NonNullable<ActionPlan["timeline
     <section aria-label="Timeline" className="flex flex-col gap-3">
       <h3 className="text-sm font-medium">Timeline</h3>
       {lanes.map(({ key, prefix, lane, width, tone }, i) => (
-        <div key={key} className="grid grid-cols-[minmax(0,15rem)_1fr] items-center gap-4">
+        <div key={key} className="flex flex-col gap-1.5">
           <p className="text-sm">
             <span className="text-muted">{prefix}: </span>
             {lane.label}{" "}
@@ -245,7 +248,9 @@ function TimelineView({ timeline }: { timeline: NonNullable<ActionPlan["timeline
 function Notes({ plan }: { plan: ActionPlan }) {
   if (plan.differences.length === 0 && plan.needs_expert.length === 0) return null;
   return (
-    <section aria-label="Limits" className="grid grid-cols-2 gap-5 border-t border-line/40 pt-3 text-xs text-muted">
+    <details aria-label="Limits" className="border-t border-line/40 pt-3 text-xs text-muted">
+      <summary className="cursor-pointer">Limits of this plan</summary>
+      <div className="mt-2 grid grid-cols-2 gap-5">
       {plan.differences.length > 0 && (
         <ul className="flex flex-col gap-1">
           {plan.differences.map((d) => (
@@ -262,7 +267,8 @@ function Notes({ plan }: { plan: ActionPlan }) {
           ))}
         </ul>
       )}
-    </section>
+      </div>
+    </details>
   );
 }
 
