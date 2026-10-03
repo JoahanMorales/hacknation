@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/graph/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791068482
-Updated: 1791066682
+Lease-Until: 1791069393
+Updated: 1791067593
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Renderizar graph_overview con cosmos.gl (posiciones fijas) y luego la ola de poda leyendo ranking
+Next: Al llegar @cosmograph/cosmos: cosmosRenderer.ts con la misma interfaz y elegirlo por defecto; afinar paleta con DESIGN.md (HACK-005)
 PR: -
 Evidence: -
