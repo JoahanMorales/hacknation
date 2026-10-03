@@ -1,6 +1,6 @@
 # HACK-011
 ID: HACK-011
-State: REVIEW
+State: INTEGRATED
 Owner: cris-1
 Branch: feat/hack-011
 Worktree: /c/Users/crist/Documents/HackNation/hacknation-wt/hack-011
@@ -9,14 +9,17 @@ Priority: P0
 Paths: app/routers/action.py, app/services/action.py, app/tests/test_action.py
 Depends: HACK-001
 Verify: uv run pytest -q app/tests/test_action.py
-Lease-Until: 1791072166
-Updated: 1791070366
+Lease-Until: 0
+Updated: 1791071141
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Esperar review de SHA 685bea8; luego hack merge HACK-011
+Next: Integrada en main: 5c42dbad86f14fce808a95e6d4db7d42a3964842; reclamar siguiente P0
 PR: https://github.com/JoahanMorales/hacknation/pull/18
-Evidence: uv run pytest -q app/tests/test_action.py exit 0 (11 passed); bash scripts/smoke PRODUCT_PASS exit 0; forma action_plan.json, timeline EURORDIS 4.7 + supuestos, sin tratamientos
-Events: 6
+Evidence: merge humano
+Events: 7
 Checkpoints: 2
 Sessions: 2
 Last-Checkpoint: 1791070366
 Task-Tip: 685bea86faa298df3f039ea2fdfc85c227df0a0e
+Integration-Proof: ancestry
+Merge-Commit: 5c42dbad86f14fce808a95e6d4db7d42a3964842
+Reviewer: joahan-1
