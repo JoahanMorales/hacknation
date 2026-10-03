@@ -245,11 +245,13 @@ def build(raw: Path = RAW) -> tuple:
             "diseases": "disease_id -> {hpo_id: freq}; freq en [0,1] o null = frecuencia desconocida (no es ausencia)",
             "ancestors": "hpo_id -> ancestros propios bajo HP:0000118; un término observado coincide con "
                          "anotaciones de sus ancestros y descendientes",
+            "labels": "hpo_id -> etiqueta HPO en inglés",
             "background": "hpo_id -> fracción de enfermedades anotadas con el término o un descendiente; "
                           "si falta, usar 1/diseases",
         },
         "diseases": annotations,
         "ancestors": {t: sorted(ancestors_under(t, parents, PHENOTYPIC_ABNORMALITY, cache)) for t in sorted(phenotypes)},
+        "labels": {t: labels[t] for t in sorted(phenotypes)},
         "background": {t: round(prevalence[t] / total, 6) for t in sorted(prevalence)},
     }
     return overview, annotations_doc
