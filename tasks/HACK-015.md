@@ -9,13 +9,13 @@ Priority: P0
 Paths: README.md, docs/ARCHITECTURE.md, docs/AGENT-TOOLKIT.md
 Depends: HACK-001
 Verify: grep -q "data/build.py" README.md && test -s docs/ARCHITECTURE.md
-Lease-Until: 1791070091
-Updated: 1791068291
+Lease-Until: 1791070242
+Updated: 1791068442
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Mover README a docs/AGENT-TOOLKIT.md y escribir el del producto
+Next: Humano abre PR de feat/hack-015; luego hack done HACK-015 --pr URL
 PR: -
 Evidence: -
-Events: 1
-Checkpoints: 0
+Events: 2
+Checkpoints: 1
 Sessions: 1
-Last-Checkpoint: 0
+Last-Checkpoint: 1791068442
