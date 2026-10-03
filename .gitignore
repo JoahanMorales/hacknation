@@ -46,3 +46,6 @@ CLAUDE.local.md
 htmlcov/
 *.egg-info/
 .python-version.local
+
+# Por qué: datos crudos descargados por data/fetch.sh; se regeneran.
+data/raw/

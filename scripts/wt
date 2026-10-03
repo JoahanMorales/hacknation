@@ -72,10 +72,23 @@ path=$(wt_path "$root" "$id")
 [ ! -e "$path" ] || die "Ya existe $path. Si es tuyo: cd \"$path\". Si es ajeno: no lo toques."
 git -C "$root" show-ref --verify --quiet "refs/heads/$branch" && die "La rama $branch ya existe localmente; revisa hack status --task $id --summary."
 
-git -C "$root" config core.hooksPath .githooks
+# Sólo escribe .git/config si hace falta: varios agentes de la misma máquina arrancan a la vez.
+[ "$(git -C "$root" config --get core.hooksPath)" = .githooks ] || git -C "$root" config core.hooksPath .githooks
 git -C "$root" fetch -q "$REMOTE" "$BASE" || die "No se pudo hacer fetch de $REMOTE/$BASE."
 mkdir -p "$(dirname "$path")"
-git -C "$root" worktree add -q -b "$branch" "$path" "$REMOTE/$BASE" || die "No se pudo crear el worktree."
+# --no-track: sin upstream no se escribe .git/config (evita el lock entre arranques simultáneos).
+added=no
+for attempt in 1 2 3 4 5; do
+  if git -C "$root" worktree add -q --no-track -b "$branch" "$path" "$REMOTE/$BASE" 2> "${TMPDIR:-/tmp}/wt-add.$$"; then added=yes; break; fi
+  # Un intento fallido puede dejar la rama creada sin worktree: se reutiliza sólo si sigue en la base.
+  if [ ! -e "$path" ] && git -C "$root" show-ref --verify --quiet "refs/heads/$branch" &&
+     [ -z "$(git -C "$root" rev-list "$REMOTE/$BASE..$branch" 2>/dev/null)" ]; then
+    git -C "$root" worktree add -q "$path" "$branch" 2>> "${TMPDIR:-/tmp}/wt-add.$$" && { added=yes; break; }
+  fi
+  sleep "$attempt"
+done
+[ "$added" = yes ] || { cat "${TMPDIR:-/tmp}/wt-add.$$" >&2; rm -f "${TMPDIR:-/tmp}/wt-add.$$"; die "No se pudo crear el worktree."; }
+rm -f "${TMPDIR:-/tmp}/wt-add.$$"
 write_env "$path" "$agent" "$human" "$id"
 
 set -- claim "$id" --branch "$branch" --worktree "$path"

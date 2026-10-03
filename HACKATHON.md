@@ -136,7 +136,7 @@ Por qué: la prosa y las horas relativas no son permisos ni relojes ejecutables.
 
 ```text
 Backlog-Proposed-Epoch: 0
-Backlog-Approved: no
+Backlog-Approved: yes
 Autonomy: yes
 Auto-Merge: yes
 Freeze-Epoch: 0
