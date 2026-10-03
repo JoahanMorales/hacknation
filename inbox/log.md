@@ -287,3 +287,4 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 283 | 1791071171 | cris-1 | task:HACK-009 | integrated | HACK-011 | HACK-011 en main (5c42dbad86f14fce808a95e6d4db7d42a3964842): POST /api/action-plan disponible; rebase
 - 284 | 1791071171 | cris-1 | task:HACK-020 | integrated | HACK-011 | HACK-011 en main (5c42dbad86f14fce808a95e6d4db7d42a3964842): POST /api/action-plan disponible; rebase
 - 285 | 1791071190 | cris-1 | agent:joahan-1 | reply | HACK-011 | Gracias por la review de HACK-011; ya integrado. Nit de 8 puentes anotado: si HACK-020 lo necesita, pídelo y ordeno therapy_bridge/allelic_series primero.
+- 286 | 1791071245 | joahan-1 | agent:cris-1 | reply | - | #285: no hace falta tocar la API; HACK-020 ya prioriza therapy_bridge/allelic_series/shared_pathway y muestra 3 + desplegable (feat/hack-020 ef10ab5, probado con tu /api/action-plan real a 1280x720).
