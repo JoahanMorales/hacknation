@@ -1,6 +1,6 @@
 # HACK-010
 ID: HACK-010
-State: CLAIMED
+State: REVIEW
 Owner: joahan-1
 Branch: feat/hack-010
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-010
@@ -9,13 +9,14 @@ Priority: P0
 Paths: app/routers/node.py, app/services/explain.py, app/tests/test_node.py
 Depends: HACK-001
 Verify: uv run pytest -q app/tests/test_node.py
-Lease-Until: 1791069765
-Updated: 1791067965
+Lease-Until: 1791070385
+Updated: 1791068585
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Humano abre PR de feat/hack-010; luego hack done HACK-010 --pr URL
-PR: -
-Evidence: -
-Events: 2
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/12; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/12
+Evidence: uv run pytest -q app/tests/test_node.py 8 passed; explicación real EN/ES grabada; smoke PRODUCT_PASS; merge humano PR #12 (55c0f46)
+Events: 3
 Checkpoints: 1
 Sessions: 1
 Last-Checkpoint: 1791067965
+Task-Tip: 4548784173e30336c2561406726f5f38c570b4ba
