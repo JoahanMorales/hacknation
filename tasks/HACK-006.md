@@ -15,7 +15,7 @@ Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
 Next: Renderizar graph_overview con cosmos.gl (posiciones fijas) y luego la ola de poda leyendo ranking
 PR: -
 Evidence: -
-Events: 1
+Events: 2
 Checkpoints: 0
 Sessions: 1
 Last-Checkpoint: 0
