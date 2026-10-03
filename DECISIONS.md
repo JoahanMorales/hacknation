@@ -36,3 +36,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791069691 | HACK-018 | Top2 visibles y top10 a ranking compartido; API sin fixture fallback, cancelacion y timeout 10s. | Por qué: Cambiar hallazgos debe recalcular y el grafo consumir ranking real; evitar resultados obsoletos.
 - 1791069808 | HACK-018 | Merge main preserva historia; diff solo feature diagnosis; probar clic inspector contra servidor reiniciado con endpoints actuales. | Por qué: La base avanzo durante smoke; comprobar compatibilidad antes del PR.
 - 1791069872 | HACK-020 | inspector se oculta en step=action; slots con min-h-0 | Por qué: brief: columna derecha inspector/acción; evitar superposición
+- 1791070029 | HACK-018 | Sin fallback fijo; top10 store y top2 panel; API recalcula Yes/No; cancelacion snapshot y timeout10s; base eb2e491. | Por qué: Contratos reales conservan ranking y evitan mostrar resultados viejos; fuente aislada permite integrar sin pisar otras features.

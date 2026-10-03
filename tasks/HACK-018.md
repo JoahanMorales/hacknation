@@ -9,14 +9,14 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791071796
-Updated: 1791069996
+Lease-Until: 1791071829
+Updated: 1791070029
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/16; ejecutar scripts/smoke
+Next: Revision independiente del SHA d1149497ff0d171fc8896c7803014564a2dd2e1d; luego hack merge HACK-018. Si merge humano, verificar commit real y done --integrated.
 PR: https://github.com/JoahanMorales/hacknation/pull/16
 Evidence: main eb2e491; SHA d1149497ff0d171fc8896c7803014564a2dd2e1d; q bash scripts/smoke PRODUCT_PASS exit0 (54 tests,Ruff,lint,build); q python check_ui.py DIAGNOSIS_PASS exit0 API real Yes/No, rangos, drivers, recovery, stale, unsupported, teclado, reduced motion, screenshots1280/1440; INSPECTOR_BRIDGE_PASS API disease correcto console0; diff solo diagnosis.
-Events: 6
-Checkpoints: 4
+Events: 7
+Checkpoints: 5
 Sessions: 1
-Last-Checkpoint: 1791069808
+Last-Checkpoint: 1791070029
 Task-Tip: d1149497ff0d171fc8896c7803014564a2dd2e1d
