@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+# Evaluador portable de gates. No ejecuta merges ni concede autorización.
+set -eu
+fail() { printf '%s\n' "$*" >&2; exit 2; }
+defer() { printf '%s\n' "$*"; exit 3; }
+yesno() { case "$1" in yes|no) ;; *) fail 'Usa yes o no para flags.';; esac; }
+seconds() { case "$1" in ''|*[!0-9]*) fail 'Tiempo debe ser segundos enteros >= 0.';; esac; }
+command=${1:-help}; [ "$#" -eq 0 ] || shift
+case "$command" in
+  backlog)
+    [ "$#" -eq 4 ] || fail 'backlog SECONDS APPROVED PRIORITY AUTONOMY'
+    seconds "$1"; yesno "$2"; yesno "$4"
+    case "$3" in P0|P1|P2) ;; *) fail 'Prioridad inválida.';; esac
+    [ "$4" = yes ] || defer 'HUMAN_QUEUE_CONTINUE: falta autonomía aplicable'
+    [ "$2" = no ] || { printf '%s\n' 'ALLOW: backlog aprobado'; exit 0; }
+    if [ "$1" -ge 600 ] && [ "$3" = P0 ]; then
+      printf '%s\n' 'ALLOW_P0: timebox cumplido; registra comienzo'
+    else
+      defer 'WAIT_OTHER_TASK: sólo P0 después de 600 s sin respuesta'
+    fi
+    ;;
+  decision)
+    [ "$#" -eq 4 ] || fail 'decision SECONDS ANSWERED REVERSIBLE AUTHORIZED'
+    seconds "$1"; yesno "$2"; yesno "$3"; yesno "$4"
+    [ "$4" = yes ] || defer 'BLOCKED_OTHER_TASK: timeout no autoriza'
+    [ "$2" = no ] || { printf '%s\n' 'USE_RECORDED_DECISION: verifica respuesta y registra porqué'; exit 0; }
+    if [ "$1" -ge 900 ] && [ "$3" = yes ]; then
+      printf '%s\n' 'REVERSIBLE_AND_LOG: registra opción y Por qué en DECISIONS'
+    else
+      defer 'BLOCKED_OTHER_TASK: sigue trabajo independiente'
+    fi
+    ;;
+  merge)
+    [ "$#" -eq 9 ] || fail 'merge AUTHORIZED SMOKE CRITERIA AUTHOR REVIEWER IN_SCOPE PROTECTED FRESH EXCLUSIVE_QUEUE'
+    yesno "$1"; yesno "$2"; yesno "$3"; yesno "$6"; yesno "$7"; yesno "$8"; yesno "$9"
+    [ -n "$4" ] && [ -n "$5" ] || fail 'Autor y revisor deben tener identidad.'
+    if [ "$1" = yes ] && [ "$2" = yes ] && [ "$3" = yes ] &&
+       [ "$4" != "$5" ] && [ "$6" = yes ] && [ "$7" = no ] &&
+       [ "$8" = yes ] && [ "$9" = yes ]; then
+      printf '%s\n' 'AUTO_MERGE_ELIGIBLE: sólo para evidencia del mismo SHA y base vigente'
+    else
+      defer 'HUMAN_QUEUE_CONTINUE: gate pendiente; toma otra tarea'
+    fi
+    ;;
+  idle)
+    [ "$#" -eq 3 ] || fail 'idle REVIEWS_PENDING TESTS_PENDING DEMO_POLISH_PENDING'
+    yesno "$1"; yesno "$2"; yesno "$3"
+    if [ "$1" = yes ]; then printf '%s\n' 'REVIEW_PR'
+    elif [ "$2" = yes ]; then printf '%s\n' 'IMPROVE_TESTS'
+    elif [ "$3" = yes ]; then printf '%s\n' 'POLISH_DEMO'
+    else printf '%s\n' 'REHEARSE'; fi
+    ;;
+  freeze)
+    [ "$#" -eq 2 ] || fail 'freeze NOW_EPOCH FREEZE_EPOCH'
+    seconds "$1"; seconds "$2"
+    if [ "$1" -ge "$2" ]; then defer 'DEMO_FIXES_ONLY: evita features; prepara entrega'
+    else printf '%s\n' 'FEATURES_ALLOWED: respeta prioridad y línea de corte'; fi
+    ;;
+  help)
+    printf '%s\n' 'policy backlog|decision|merge|idle|freeze (ver docs/ANTI-BOTTLENECKS.md)'
+    ;;
+  *) fail 'Comando policy desconocido.';;
+esac

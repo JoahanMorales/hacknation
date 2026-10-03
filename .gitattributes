@@ -1,0 +1,20 @@
+# Por qué: LF hace que Bash y diffs funcionen igual entre Windows y Unix.
+* text=auto eol=lf
+*.sh text eol=lf
+scripts/hack text eol=lf
+scripts/smoke text eol=lf
+*.md text eol=lf
+
+# Por qué: los binarios no deben recibir conversión de saltos de línea.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+*.mp4 binary
+*.zip binary
+scripts/wt text eol=lf
+scripts/agent-hook text eol=lf
+scripts/secret-scan text eol=lf
+.githooks/* text eol=lf

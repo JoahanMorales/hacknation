@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# HACK_SMOKE_SCOPE: sintaxis + secretos + producto (scripts/smoke-project); --package-only/--full añaden la suite del paquete.
+# Por qué: hack merge ejecuta este smoke en cada integración; la suite del paquete tarda minutos y no prueba el producto.
+set -eu
+root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+cd "$root"
+mode=product
+case "${1:-}" in
+  "") ;;
+  --package-only) mode=package; shift ;;
+  --full) mode=full; shift ;;
+  *) printf '%s\n' 'Uso: scripts/smoke [--package-only|--full]' >&2; exit 2 ;;
+esac
+[ "$#" -eq 0 ] || { printf '%s\n' 'Argumentos adicionales no admitidos.' >&2; exit 2; }
+for script in scripts/hack scripts/hack-coordination scripts/policy scripts/secret-scan scripts/wt scripts/agent-hook scripts/lib/*.sh .githooks/pre-commit; do
+  [ ! -f "$script" ] || bash -n "$script"
+done
+if git rev-parse --show-toplevel >/dev/null 2>&1; then
+  bash scripts/secret-scan --tracked
+else
+  bash scripts/secret-scan --directory "$root"
+fi
+if [ "$mode" != product ]; then
+  python_runtime=''
+  for candidate in python3 python; do
+    if command -v "$candidate" >/dev/null 2>&1 && "$candidate" -c 'import sys; assert sys.version_info >= (3, 8)' >/dev/null 2>&1; then
+      python_runtime=$candidate
+      break
+    fi
+  done
+  [ -n "$python_runtime" ] || { printf '%s\n' 'PACKAGE_UNVERIFIED: pruebas requieren Python 3.8+ (biblioteca estándar).' >&2; exit 2; }
+  "$python_runtime" tests/test_hack.py --package "$root"
+  if [ -f tests/test_policy.py ]; then "$python_runtime" tests/test_policy.py --package "$root"; fi
+  "$python_runtime" tests/test_coordination.py --package "$root"
+  "$python_runtime" tests/test_review_merge.py --package "$root"
+  "$python_runtime" tests/test_v21_security.py --package "$root"
+  printf '%s\n' 'PACKAGE_PASS: coordinación verificada con procesos Git y remoto bare local.'
+fi
+if [ "$mode" = package ]; then
+  printf '%s\n' 'PRODUCT_UNVERIFIED: --package-only no ejecuta la aplicación ni habilita autofusión de producto.'
+  exit 0
+fi
+bash scripts/lib/smoke-init.sh gate

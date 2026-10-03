@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Hooks de Claude Code (.claude/settings.json). Nunca bloquean: siempre salen 0.
+# session-start: inyecta identidad + `hack next` como contexto inicial.
+# heartbeat: renueva el lease en segundo plano como máximo cada 8 min.
+# Por qué: los agentes olvidan el heartbeat de R20 y el lease de 30 min vence con trabajo vivo.
+set -u
+[ -t 0 ] || cat > /dev/null 2>&1 || true   # descarta el JSON del hook en stdin
+top=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+cd "$top" || exit 0
+env_value() { [ -f .hack-env ] && sed -n "s/^$1=//p" .hack-env | head -n 1; }
+task=$(env_value HACK_TASK); agent=${HACK_AGENT:-$(env_value HACK_AGENT)}
+case "${1:-}" in
+  session-start)
+    if [ -z "$agent" ]; then
+      printf '%s\n' "HACK: checkout sin .hack-env (planificación/humano). Para implementar: bash scripts/hack next y luego bash scripts/wt new HACK-NNN --agent NOMBRE."
+      exit 0
+    fi
+    printf 'HACK: agente=%s tarea=%s worktree=%s\n' "$agent" "${task:--}" "$top"
+    if git config --get "remote.${HACK_REMOTE:-origin}.url" >/dev/null 2>&1; then
+      bash scripts/hack next 2>&1 | head -n 20
+    fi
+    ;;
+  heartbeat)
+    [ -n "$task" ] && [ -n "$agent" ] || exit 0
+    stamp="$(git rev-parse --git-dir)/hack-heartbeat"
+    if [ -f "$stamp" ] && [ -n "$(find "$stamp" -mmin -8 2>/dev/null)" ]; then exit 0; fi
+    touch "$stamp" 2>/dev/null || exit 0
+    nohup bash scripts/hack heartbeat "$task" > "$(git rev-parse --git-dir)/hack-heartbeat.log" 2>&1 &
+    ;;
+esac
+exit 0

@@ -1,0 +1,48 @@
+# Por qué: las credenciales locales no deben entrar en Git.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets/
+
+# Por qué: dependencias, caches y builds se recrean con comandos documentados.
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+coverage/
+dist/
+build/
+*.log
+
+# Por qué: archivos de editor y SO no forman parte del producto.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Por qué: estos directorios locales no son la rama compartida claims.
+.hack-tmp/
+worktrees/
+
+# Por qué: identidad y ajustes locales por worktree/agente (creados por scripts/wt).
+.hack-env
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Por qué: caches de Python/FastAPI se regeneran.
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.python-version.local

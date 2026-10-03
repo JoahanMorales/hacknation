@@ -1,0 +1,33 @@
+# Opcional: copie a .github/workflows/hack-tick.yml para activarlo.
+# Por qué: GitHub Actions puede disparar plazos sin un agente conversando.
+name: Hack tick opcional
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: hack-tick
+  cancel-in-progress: false
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Evaluar plazos
+        env:
+          HACK_AGENT: scheduler
+          HACK_BASE: main
+          HACK_REMOTE: origin
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'Hack scheduler'
+          git config user.email 'hack-scheduler@users.noreply.github.com'
+          # Las transacciones temporales necesitan el mismo helper de credenciales.
+          git config --global credential.helper '!f() { printf "%s\n" "username=x-access-token" "password=$GH_TOKEN"; }; f'
+          bash scripts/hack tick
