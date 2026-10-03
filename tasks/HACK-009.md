@@ -9,13 +9,13 @@ Priority: P0
 Paths: app/fixtures/deep/, data/curate/
 Depends: Ninguna
 Verify: python3 data/curate/check.py
-Lease-Until: 1791071389
-Updated: 1791069589
+Lease-Until: 1791073489
+Updated: 1791071689
 Task-Base: e5a1e906fc8dbf7227756dc7159763e10c48c6ef
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/4; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/4
 Evidence: python3 data/curate/check.py DEEP_CHECK_PASS; esquemas OK; smoke PRODUCT_PASS; merge humano PR #4 (684b501)
-Events: 6
+Events: 7
 Checkpoints: 1
 Sessions: 3
 Last-Checkpoint: 1791065574
