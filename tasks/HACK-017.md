@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/dictation/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791070430
-Updated: 1791068630
+Lease-Until: 1791070912
+Updated: 1791069112
 Task-Base: 3716a312a1175a66b0d562eee39ef5d8333c12e5
-Next: Play sample case con app/fixtures/case/pompe_case.json y chips; luego microfono real con /api/transcribe/session
+Next: Probar mic con API key; migrar a Panel/Chip/Button de web/src/ui; smoke y /hack-ship
 PR: -
 Evidence: -
-Events: 1
-Checkpoints: 0
+Events: 2
+Checkpoints: 1
 Sessions: 1
-Last-Checkpoint: 0
+Last-Checkpoint: 1791069112
