@@ -1,7 +1,7 @@
 # STATE
 
 Fase: ejecución
-Actualizado: 1791071710
+Actualizado: 1791071717
 AVAILABLE: HACK-012 HACK-013 HACK-014 
 CLAIMED: HACK-006 HACK-017 
 BLOCKED: -
@@ -10,7 +10,7 @@ INTEGRATED: HACK-001 HACK-002 HACK-005 HACK-008 HACK-010 HACK-011
 CANCELLED: -
 
 Reservas (primeras 24; status --task ID muestra detalle):
-HACK-003 | REVIEW | joahan-2 | hasta 1791071403
+HACK-003 | REVIEW | joahan-2 | hasta 1791073517
 HACK-004 | REVIEW | joahan-2 | hasta 1791071410
 HACK-006 | CLAIMED | saus-1 | hasta 1791071552
 HACK-007 | REVIEW | joahan-1 | hasta 1791073483
