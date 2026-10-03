@@ -14,3 +14,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791066325 | HACK-004 | gpt-6-luna + gpt-live-transcribe confirmados | Por qué: probados con la cuenta del equipo
 - 1791066699 | HACK-007 | semántica de generate.py de HACK-002; labels añadidos a annotations.json | Por qué: API real y ejemplos de la UI dan los mismos números
 - 1791066841 | HACK-005 | Paleta oscura y acento calido; montaje kit solicitado a HACK-001 | Por qué: Scope mantiene un escritor por App.tsx
+- 1791067165 | HACK-005 | Compactar alturas bajo760 para kit1280x720 | Por qué: Primera captura1280 requerio scroll vertical; mantener lectura de una vista

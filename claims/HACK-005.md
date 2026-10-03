@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/DESIGN.md, web/src/theme.css, web/src/ui/
 Depends: Ninguna
 Verify: test -s web/DESIGN.md && npm --prefix web run build
-Lease-Until: 1791068801
-Updated: 1791067001
+Lease-Until: 1791068965
+Updated: 1791067165
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Instalar dependencias validar build y kit en navegador
+Next: Revalidar ajuste compacto Lighthouse smoke y publicar PR
 PR: -
 Evidence: -
