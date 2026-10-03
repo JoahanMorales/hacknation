@@ -47,11 +47,14 @@ function Finding({ driver }: { driver: Driver }) {
 }
 
 export default function Diagnosis() {
+  const step = useStore((state) => state.step);
   const terms = useStore((state) => state.terms);
   const selectedId = useStore((state) => state.selectedId);
   const { result, status, question, questionStatus, retry } =
     useDiagnosis(terms);
   const reduced = useReducedMotion();
+  // Action owns the bottom slot in scene 5. Keep scoring mounted across scenes.
+  if (step === "action") return null;
   const state =
     !terms.length || (status === "ready" && !result?.ranking.length)
       ? "empty"
