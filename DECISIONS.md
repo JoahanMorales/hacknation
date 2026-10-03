@@ -42,3 +42,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791070383 | HACK-018 | Hook siempre montado, solo render null en action; regression de integracion en check_ui.py. | Por qué: Evita ocupar footer de la escena5 y conserva scoring para volver; no toca action/App/store.
 - 1791070366 | HACK-011 | merge de main en vez de rebase tras push | Por qué: R08 prohíbe force-push
 - 1791070528 | HACK-020 | timeline junto a This week; límites en details | Por qué: hallazgo de zoe-1: se salía a 1280x720
+- 1791070699 | HACK-018 | Merge API011 y validar plan real antes de volver a REVIEW; nueva SHA incluye base vigente sin cambiar featureajena. | Por qué: Prueba anterior action usaba fixture etiquetado por API ausente; verificar integracion real necesaria.

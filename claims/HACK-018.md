@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791072183
-Updated: 1791070383
+Lease-Until: 1791072499
+Updated: 1791070699
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Stage, smoke, commit/push y PR followup HACK-018; revision independiente nuevo SHA.
+Next: Merge main, restart own server, smoke ycheck_ui real; publicarSHAfinal y done REVIEW para joahan1.
 PR: -
 Evidence: -
