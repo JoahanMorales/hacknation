@@ -12,6 +12,6 @@ Verify: test -s web/DESIGN.md && npm --prefix web run build
 Lease-Until: 1791070351
 Updated: 1791068551
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Review SHA3a5a1a146e3beaab4a3c309fcf8a24cbff667130; gates contrato y revisionvisual antes de merge; cerrar INTEGRATED al recibir merge
+Next: Humano: Diff fuera de Archivos: app/fixtures/graph/annotations.json
 PR: https://github.com/JoahanMorales/hacknation/pull/11
 Evidence: -

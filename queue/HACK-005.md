@@ -1,5 +1,5 @@
 ID: HACK-005
-State: MERGING
+State: HUMAN
 Owner: zoe-1
-Queued: 1791068637
-Reason: Esperando cola
+Updated: 1791068648
+Reason: Diff fuera de Archivos: app/fixtures/graph/annotations.json
