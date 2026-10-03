@@ -28,3 +28,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791068442 | HACK-015 | README en inglés | Por qué: jurado global; UI en inglés (IDEA §10)
 - 1791069062 | HACK-019 | ?select=ID para demo; resumen sin repetir gen/mecanismo | Por qué: aún no hay clic en estrella (HACK-006)
 - 1791069112 | HACK-017 | Estilos con tokens de DESIGN.md; cambiar a web/src/ui al integrarse HACK-005 | Por qué: PR11 aun no esta en main
+- 1791069119 | HACK-018 | API real sin fallback estatico; snapshot y AbortController; timeout10s; dos candidatos y top10 al grafo | Por qué: Evitar diagnosticos viejos y mantener una sola fuente numerica validada por backend

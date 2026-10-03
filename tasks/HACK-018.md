@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791069996
-Updated: 1791068196
+Lease-Until: 1791070919
+Updated: 1791069119
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Implementar panel bottom, estado API, Yes/No y prueba browser real
+Next: Resolver check_ui.py; screenshots1440/1280; smoke y PR de feature/diagnosis
 PR: -
 Evidence: -
-Events: 2
-Checkpoints: 1
+Events: 3
+Checkpoints: 2
 Sessions: 1
-Last-Checkpoint: 1791068196
+Last-Checkpoint: 1791069119
