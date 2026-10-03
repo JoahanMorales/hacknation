@@ -88,6 +88,8 @@ Requisitos: Git, Bash, Python 3.8+ (sólo para las pruebas del paquete), [uv](ht
 ## Límites conocidos
 
 - `hack merge` hace `git push --atomic` directo a `main`. Si activas protección de rama que exige PR o CI en GitHub, esos merges caen a la cola humana.
+- **Cola humana:** los cambios a lockfiles, `scripts/`, CI o contratos (por ejemplo HACK-001 setup) los fusiona un humano en GitHub. Después el dueño los cierra con `hack done ID --pr URL --evidence ... --integrated <commit>` (paso 9 de `/hack-ship`); si no, sus dependientes siguen bloqueados.
+- **Pruebas:** las del producto van en `app/tests/`; `tests/` en la raíz son las del paquete de coordinación.
 - Cursor y Codex no tienen hook de heartbeat: el agente debe correr `bash scripts/hack heartbeat ID` cada ~10 min.
 - Los plazos (backlog a 10 min, decisiones a 15 min, freeze) se evalúan en cada `status`/`next`/`heartbeat`. Para un tick periódico sin agentes, consulta `docs/SCHEDULING.md`.
 

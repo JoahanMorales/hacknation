@@ -9,7 +9,7 @@ Revisas una tarea ajena; tu contexto es descartable, así que puedes leer el dif
 
 1. `bash scripts/hack status --task ID --summary` → rama, PR, Task-Tip (SHA).
 2. `git fetch -q origin <rama>`; `git diff --stat origin/main...origin/<rama>` y luego el diff por archivo.
-3. Lee los criterios con `rg -n -A25 '^## ID' TASKS.md`. Comprueba: cada criterio cumplido, diff dentro de Archivos probables, sin secretos/contratos/CI/lockfiles, mocks etiquetados (`demo_data`), tests del camino feliz y un error.
+3. Lee los criterios con `grep -n -A25 '^## ID' TASKS.md`. Comprueba: cada criterio cumplido, diff dentro de Archivos probables, sin secretos/contratos/CI/lockfiles, mocks etiquetados (`demo_data`), tests del camino feliz y un error.
 4. Verifica en un worktree temporal: `git worktree add -q ../review-ID origin/<rama>`, ejecuta `bash scripts/q <Cómo verificar>` dentro, y quítalo con `git worktree remove ../review-ID`.
 5. Veredicto:
    - OK → `bash scripts/hack review ID --sha SHA --verdict approve`.

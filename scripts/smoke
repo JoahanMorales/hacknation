@@ -12,7 +12,7 @@ case "${1:-}" in
   *) printf '%s\n' 'Uso: scripts/smoke [--package-only|--full]' >&2; exit 2 ;;
 esac
 [ "$#" -eq 0 ] || { printf '%s\n' 'Argumentos adicionales no admitidos.' >&2; exit 2; }
-for script in scripts/hack scripts/hack-coordination scripts/policy scripts/secret-scan scripts/wt scripts/agent-hook scripts/lib/*.sh .githooks/pre-commit; do
+for script in scripts/hack scripts/hack-coordination scripts/policy scripts/secret-scan scripts/wt scripts/q scripts/agent-hook scripts/lib/*.sh .githooks/pre-commit; do
   [ ! -f "$script" ] || bash -n "$script"
 done
 if git rev-parse --show-toplevel >/dev/null 2>&1; then

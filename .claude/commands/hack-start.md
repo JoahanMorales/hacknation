@@ -6,7 +6,7 @@ argument-hint: "[HACK-NNN] [nombre-agente]"
 Objetivo: pasar de cero a editando código en < 2 min. Argumentos: $ARGUMENTS
 
 1. Si ya estás en un worktree con `.hack-env` y su tarea sigue CLAIMED, NO reclames otra: sigue el "Siguiente" del resumen (`bash scripts/hack status --task $HACK_TASK --summary`).
-2. Si no: `bash scripts/hack next` y elige la candidata que devuelve (o la del argumento). Lee sólo la sección `## HACK-NNN` de TASKS.md (usa `rg -n -A25 '^## HACK-NNN' TASKS.md`).
+2. Si no: `bash scripts/hack next` y elige la candidata que devuelve (o la del argumento). Lee sólo la sección `## HACK-NNN` de TASKS.md (usa `grep -n -A25 '^## HACK-NNN' TASKS.md`).
 3. Identidad: usa el nombre del argumento o `HACK_AGENT`; si no hay, pídeselo al humano UNA vez (formato `persona-N`, p. ej. `ana-1`).
 4. `bash scripts/wt new HACK-NNN --agent NOMBRE --next "<primer paso exacto>"`.
    - CONFLICT (código 3): otra reserva ganó o traslapa archivos → vuelve a `next` y toma otra. No insistas.

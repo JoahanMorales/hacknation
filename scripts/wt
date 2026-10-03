@@ -61,7 +61,7 @@ while [ "$#" -gt 0 ]; do
   esac
 done
 [ -n "$agent" ] || die "Define --agent NOMBRE o HACK_AGENT (único y estable por agente, p. ej. ana-1)."
-[ -n "$human" ] || human=$(git config user.name 2>/dev/null | tr -c 'A-Za-z0-9_.-\n' '-' | tr -d '\n')
+[ -n "$human" ] || human=$(git config user.name 2>/dev/null | tr -c 'A-Za-z0-9_.-\n' '-' | tr -s '-' | tr -d '\n')
 clean_id "$agent" || die "--agent: sólo letras, números, punto, guion o guion bajo."
 clean_id "$human" || die "--human: sólo letras, números, punto, guion o guion bajo."
 

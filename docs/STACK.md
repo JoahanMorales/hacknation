@@ -12,12 +12,12 @@ app/
   routers/<feature>.py   # un archivo por feature/tarea; expone `router = APIRouter()`
   services/<feature>.py  # lógica de la feature; mocks etiquetados con DEMO_MODE
   fixtures/          # datos de demo etiquetados (json)
-tests/
-  test_<feature>.py  # un archivo por feature
+  tests/test_<feature>.py  # tests del producto, un archivo por feature
 pyproject.toml / uv.lock   # dueño único (dependencias)
+tests/               # pruebas del PAQUETE de coordinación; no pongas tests del producto aquí
 ```
 
-Reservar por tarea `app/routers/<feature>.py, app/services/<feature>.py, tests/test_<feature>.py`. Por qué: Archivos probables disjuntos permiten claims simultáneos sin traslape.
+Reservar por tarea `app/routers/<feature>.py, app/services/<feature>.py, app/tests/test_<feature>.py`; `tests/` en la raíz es del paquete de coordinación. Por qué: Archivos probables disjuntos permiten claims simultáneos sin traslape.
 
 ## main.py con autodescubrimiento
 
@@ -51,9 +51,26 @@ Por qué: añadir una feature es crear un archivo; `main.py` no se vuelve un pun
 uv init --app --no-readme --python 3.12 . && rm -f main.py hello.py   # quita el ejemplo de uv
 uv add fastapi "uvicorn[standard]" pydantic-settings httpx
 uv add --dev pytest ruff
-mkdir -p app/routers app/services app/schemas app/fixtures tests
+mkdir -p app/routers app/services app/schemas app/fixtures app/tests
 touch app/__init__.py app/routers/__init__.py app/services/__init__.py app/schemas/__init__.py
-bash scripts/hack init-smoke --command "uv run ruff check . && uv run pytest -q"
+cat >> pyproject.toml <<'TOML'
+
+[tool.pytest.ini_options]
+testpaths = ["app/tests"]
+pythonpath = ["."]
+addopts = "-q --tb=short"
+TOML
+cat > app/tests/test_health.py <<'PY'
+from fastapi.testclient import TestClient
+
+from app.main import app
+
+
+def test_health() -> None:
+    assert TestClient(app).get("/health").json() == {"status": "ok"}
+PY
+# + app/main.py de la sección anterior
+bash scripts/hack init-smoke --command "uv run ruff check app && uv run pytest"
 ```
 
 Verificar antes que las reglas del evento permitan boilerplate previo; si no, ejecutar estos pasos tras el inicio oficial. Por qué: el código previo puede estar restringido (HACKATHON.md).
@@ -62,7 +79,7 @@ Verificar antes que las reglas del evento permitan boilerplate previo; si no, ej
 
 | Regla | Por qué |
 |---|---|
-| Tests con `fastapi.testclient.TestClient`; cada tarea añade al menos el camino feliz y un error. | `Cómo verificar` = `uv run pytest -q tests/test_<feature>.py`. |
+| Tests con `fastapi.testclient.TestClient`; cada tarea añade al menos el camino feliz y un error. | `Cómo verificar` = `uv run pytest -q app/tests/test_<feature>.py`. |
 | Llamadas externas sólo en `services/`, con timeout y fallback mock si `DEMO_MODE=true`. | La demo sobrevive a una API caída. |
 | Respuestas mock incluyen `"demo_data": true`. | R05: los mocks se etiquetan. |
 | Nuevas dependencias: pídelas a la tarea dueña de `pyproject.toml`/`uv.lock` o márcalas en el PR para humano. | El merge automático rechaza lockfiles (R32). |

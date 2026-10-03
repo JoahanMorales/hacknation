@@ -15,4 +15,7 @@ Tarea: ${ARGUMENTS:-$HACK_TASK}. Ejecuta en orden y para en el primer rojo (arr�
    Si cambiaste algo que consumen otras tareas: `bash scripts/hack msg related:ID --kind contract "<qué cambió y qué deben ajustar>"`.
 6. `bash scripts/hack checkpoint ID --done ... --decision ... --why ... --fails ... --commands ... --next "Esperar review de SHA <sha>; luego hack merge ID"`.
 7. No esperes al humano: el aviso automático pide revisor a los demás agentes. Mientras tanto toma otra tarea con `/hack-start` desde el checkout principal o haz trabajo ocioso (R35).
-8. Al recibir `approve` en tu inbox: `bash scripts/hack merge ID` (si recibes `reject`, corrige y repite desde 0). Si cae a cola humana (código 3), deja el motivo de una línea y sigue con otra cosa; el humano lo ve en `hack digest`.
+8. Al recibir `approve` en tu inbox: `bash scripts/hack heartbeat ID && bash scripts/hack merge ID` (si recibes `reject`, corrige y repite desde 0). Si cae a cola humana (código 3: lockfile, scripts, CI, contrato o protección de rama), el humano ya recibió el aviso en `hack digest`; sigue con otra cosa.
+9. Cola humana → cuando el humano haga merge del PR en GitHub, cierra la tarea (si no, sus dependientes quedan bloqueados):
+   `bash scripts/hack done ID --pr URL --evidence "merge humano" --integrated "$(gh pr view URL --json mergeCommit -q .mergeCommit.oid)"`
+   Requiere la aprobación vigente del SHA (paso 8). Luego avisa: `bash scripts/hack msg related:ID --kind integrated "ID en main; rebase"`.

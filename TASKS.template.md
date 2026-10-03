@@ -33,13 +33,13 @@ No introducir una dependencia serial universal de `HACK-001`; usar contratos ya 
 - **Rubric:** C1, C3
 - **Depende de:** Ninguna
 - **Relacionadas:** HACK-002
-- **Archivos probables:** app/routers/example.py, app/services/example.py, tests/test_example.py
+- **Archivos probables:** app/routers/example.py, app/services/example.py, app/tests/test_example.py
 - **Contratos consumidos:** `<ruta y versión publicados>`.
 - **Criterios de aceptación:**
   - `<dada una entrada, se observa un resultado exacto>`.
   - `<caso de fallo o límite verificable>`.
   - `bash scripts/smoke` termina con código 0.
-- **Cómo verificar:** `uv run pytest -q tests/test_example.py`
+- **Cómo verificar:** `uv run pytest -q app/tests/test_example.py`
 - **Siguiente paso:** `<acción exacta al arrancar, con ruta o comando>`.
 - **Riesgos o decisiones pendientes:** Ninguno
 

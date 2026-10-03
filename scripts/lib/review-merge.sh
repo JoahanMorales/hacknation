@@ -78,7 +78,7 @@ review_mutate() {
   WL=$(field "$RECORD" Worklog); STATE=$(field "$RECORD" State)
   event "review; $REVIEW_VERDICT; SHA $RM_TIP; revisor $AGENT"
   if [ "$REVIEW_VERDICT" = approve ]; then
-    msg_append "task:$ID" approve "$ID" "Aprobado SHA $RM_TIP por $AGENT. Siguiente: bash scripts/hack merge $ID"
+    msg_append "task:$ID" approve "$ID" "Aprobado SHA $RM_TIP por $AGENT. Siguiente: bash scripts/hack heartbeat $ID && bash scripts/hack merge $ID"
   else
     msg_append "task:$ID" reject "$ID" "Rechazado SHA $RM_TIP por $AGENT. Lee hack inbox --task $ID y los comentarios del PR; corrige y repite /hack-ship"
   fi

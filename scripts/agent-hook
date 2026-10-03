@@ -20,6 +20,8 @@ case "${1:-}" in
   session-start)
     if [ -z "$agent" ]; then
       printf '%s\n' "HACK: checkout sin .hack-env (planificación/humano). Para implementar: bash scripts/hack next y luego bash scripts/wt new HACK-NNN --agent NOMBRE."
+      # El humano ve su cola (merges, decisiones, mensajes) sin pedirla.
+      git config --get "remote.${HACK_REMOTE:-origin}.url" >/dev/null 2>&1 && bash scripts/hack digest 2>/dev/null | head -n 25
       exit 0
     fi
     printf 'HACK: agente=%s tarea=%s worktree=%s\n' "$agent" "${task:--}" "$top"
@@ -35,7 +37,10 @@ case "${1:-}" in
     [ -n "$agent" ] || exit 0
     if [ -n "$task" ] && ! fresh "$gd/hack-heartbeat" 8; then
       touch "$gd/hack-heartbeat" 2>/dev/null
-      nohup bash scripts/hack heartbeat "$task" > "$gd/hack-heartbeat.log" 2>&1 &
+      # También renueva tus tareas en REVIEW de otros worktrees: hack merge exige lease vigente.
+      nohup bash -c 'bash scripts/hack heartbeat "$1"
+        bash scripts/hack status 2>/dev/null | awk -F" [|] " -v a="$2" -v t="$1" "\$2==\"REVIEW\" && \$3==a && \$1!=t {print \$1}" |
+          while read -r id; do bash scripts/hack heartbeat "$id"; done' _ "$task" "$agent" > "$gd/hack-heartbeat.log" 2>&1 &
     fi
     # Sondeo: cada ~2 min se refresca la caché en segundo plano; nunca bloquea al agente.
     if ! fresh "$gd/hack-inbox.poll" 2; then
