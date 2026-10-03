@@ -15,8 +15,8 @@ Task-Base: b126d5d7c83b26350a5d1e4b3de50131f6fda732
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/15; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/15
 Evidence: npm build+lint OK; INSPECTOR_PASS (Chromium, DEMO_MODE); smoke PRODUCT_PASS; merge humano PR #15 (eb2e491)
-Events: 3
+Events: 4
 Checkpoints: 1
-Sessions: 1
+Sessions: 2
 Last-Checkpoint: 1791069062
 Task-Tip: 20bb4aa254fc455c80c4902c7205b26ac765fe7c
