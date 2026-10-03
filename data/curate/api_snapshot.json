@@ -1,0 +1,93 @@
+{
+ "retrieved_at": "2026-10-03T22:11:55Z",
+ "clinicaltrials": {
+  "NCT04001595": {
+   "title": "Global FKRP Registry",
+   "status": "UNKNOWN",
+   "study_type": "OBSERVATIONAL",
+   "last_update": "2024-01-30"
+  },
+  "NCT00231400": {
+   "title": "Pompe Disease Registry Protocol",
+   "status": "RECRUITING",
+   "study_type": "OBSERVATIONAL",
+   "last_update": "2026-06-23"
+  },
+  "NCT04202627": {
+   "title": "Biomarker Development in LGMD2i",
+   "status": "COMPLETED",
+   "study_type": "OBSERVATIONAL",
+   "last_update": "2023-03-29"
+  },
+  "NCT05989620": {
+   "title": "Long-Term Development of Muscular Dystrophy Outcome Assessments",
+   "status": "RECRUITING",
+   "study_type": "OBSERVATIONAL",
+   "last_update": "2025-11-18"
+  },
+  "NCT04800874": {
+   "title": "Study of BBP-418 in Patients With LGMD2I",
+   "status": "ACTIVE_NOT_RECRUITING",
+   "study_type": "INTERVENTIONAL",
+   "last_update": "2026-07-21"
+  },
+  "NCT05775848": {
+   "title": "Study to Evaluate the Efficacy and Safety of BBP-418 (Ribitol) in Patients With Limb Girdle Muscular Dystrophy 2I (LGMD2I)",
+   "status": "ACTIVE_NOT_RECRUITING",
+   "study_type": "INTERVENTIONAL",
+   "last_update": "2026-09-09"
+  },
+  "NCT07678775": {
+   "title": "Open-Label Extension Study of BBP-418 (Ribitol) for LGMD2I/R9",
+   "status": "ACTIVE_NOT_RECRUITING",
+   "study_type": "INTERVENTIONAL",
+   "last_update": "2026-07-02"
+  }
+ },
+ "reporter": [
+  {
+   "appl_id": 9810301,
+   "project_num": "1R61NS112545-01",
+   "title": "Preclinic dose and delivery regime optimization  and long-term efficacy evaluation of ribitol treatment for FKRP related dystroglycanopathy",
+   "fiscal_year": 2019,
+   "organization": "CAROLINAS MEDICAL CENTER",
+   "url": "https://reporter.nih.gov/project-details/9810301",
+   "diseases": [
+    "ORPHA:34515"
+   ]
+  },
+  {
+   "appl_id": 11263644,
+   "project_num": "5R00HL161420-05",
+   "title": "Novel Adjunctive Therapies for Pompe Disease",
+   "fiscal_year": 2026,
+   "organization": "DUKE UNIVERSITY",
+   "url": "https://reporter.nih.gov/project-details/11263644",
+   "diseases": [
+    "OMIM:621314"
+   ]
+  },
+  {
+   "appl_id": 11357315,
+   "project_num": "1R21HD122115-01",
+   "title": "GYS1 Oligonucleotide Treatment as a Substrate Inhibitor for Pompe disease",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF CALIFORNIA-IRVINE",
+   "url": "https://reporter.nih.gov/project-details/11357315",
+   "diseases": [
+    "OMIM:621314"
+   ]
+  },
+  {
+   "appl_id": 11387708,
+   "project_num": "5R01HD104814-05",
+   "title": "Enhancement of Newborn Screening Diagnostic Paradigms to Improve the Efficacy of Treatment for Krabbe Disease, Pompe Disease, and Mucopolysaccharidosis Type 1",
+   "fiscal_year": 2026,
+   "organization": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+   "url": "https://reporter.nih.gov/project-details/11387708",
+   "diseases": [
+    "OMIM:621314"
+   ]
+  }
+ ]
+}

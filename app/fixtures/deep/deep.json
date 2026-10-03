@@ -1,0 +1,648 @@
+{
+ "schema_version": "1.0",
+ "demo_data": false,
+ "verified_at": "2026-10-03T00:00:00Z",
+ "api_retrieved_at": "2026-10-03T22:11:55Z",
+ "diseases": [
+  {
+   "id": "OMIM:621314",
+   "name": "Pompe disease, late-onset",
+   "synonyms": [
+    "LOPD"
+   ],
+   "group": "HP:0033127",
+   "mechanism_ids": [
+    "lysosomal.glycogen"
+   ],
+   "x": -380.3,
+   "y": 199.9
+  },
+  {
+   "id": "ORPHA:34515",
+   "name": "FKRP-related limb-girdle muscular dystrophy R9",
+   "synonyms": [
+    "LGMD2I",
+    "LGMDR9",
+    "OMIM:607155"
+   ],
+   "group": "HP:0033127",
+   "mechanism_ids": [
+    "glycosylation.ribitol"
+   ],
+   "x": -355.9,
+   "y": 171.7
+  },
+  {
+   "id": "OMIM:613153",
+   "name": "Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 5",
+   "synonyms": [
+    "MDDGA5"
+   ],
+   "group": "HP:0000707",
+   "mechanism_ids": [
+    "glycosylation.ribitol"
+   ],
+   "x": 14.9,
+   "y": 37.8
+  },
+  {
+   "id": "OMIM:611588",
+   "name": "Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 4",
+   "synonyms": [
+    "MDDGC4"
+   ],
+   "group": "HP:0033127",
+   "mechanism_ids": [
+    "glycosylation.ribitol"
+   ],
+   "x": -497.2,
+   "y": 438.6
+  },
+  {
+   "id": "OMIM:616052",
+   "name": "Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 7",
+   "synonyms": [
+    "MDDGC7",
+    "ISPD"
+   ],
+   "group": "HP:0033127",
+   "mechanism_ids": [
+    "glycosylation.ribitol"
+   ],
+   "x": -439.8,
+   "y": 446.6
+  },
+  {
+   "id": "OMIM:609308",
+   "name": "Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 1",
+   "synonyms": [
+    "MDDGC1"
+   ],
+   "group": "HP:0033127",
+   "mechanism_ids": [
+    "glycosylation.o_mannose"
+   ],
+   "x": -492.2,
+   "y": 416.4
+  },
+  {
+   "id": "OMIM:613157",
+   "name": "Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 3",
+   "synonyms": [
+    "MDDGC3"
+   ],
+   "group": "HP:0033127",
+   "mechanism_ids": [
+    "glycosylation.o_mannose"
+   ],
+   "x": -463.5,
+   "y": 401.8
+  },
+  {
+   "id": "OMIM:613154",
+   "name": "Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 6",
+   "synonyms": [
+    "MDDGA6"
+   ],
+   "group": "HP:0000707",
+   "mechanism_ids": [
+    "glycosylation.o_mannose"
+   ],
+   "x": -0.2,
+   "y": -47.8
+  },
+  {
+   "id": "OMIM:253600",
+   "name": "Muscular dystrophy, limb-girdle, type 2A",
+   "synonyms": [
+    "LGMD2A"
+   ],
+   "group": "HP:0033127",
+   "mechanism_ids": [
+    "structural.calpain"
+   ],
+   "x": -438.9,
+   "y": 430.1
+  },
+  {
+   "id": "OMIM:253601",
+   "name": "Muscular dystrophy, limb-girdle, type 2B",
+   "synonyms": [
+    "LGMD2B"
+   ],
+   "group": "HP:0033127",
+   "mechanism_ids": [
+    "membrane.dysferlin"
+   ],
+   "x": -472.5,
+   "y": 462.7
+  },
+  {
+   "id": "OMIM:611307",
+   "name": "Muscular dystrophy, limb-girdle, type 2L",
+   "synonyms": [
+    "LGMD2L"
+   ],
+   "group": "HP:0033127",
+   "mechanism_ids": [
+    "membrane.anoctamin"
+   ],
+   "x": -443.7,
+   "y": 452.0
+  }
+ ],
+ "genes": [
+  {
+   "symbol": "GAA",
+   "disease_ids": [
+    "OMIM:621314"
+   ],
+   "pathway": "lysosomal.glycogen"
+  },
+  {
+   "symbol": "FKRP",
+   "disease_ids": [
+    "ORPHA:34515",
+    "OMIM:613153"
+   ],
+   "pathway": "glycosylation.ribitol"
+  },
+  {
+   "symbol": "FKTN",
+   "disease_ids": [
+    "OMIM:611588"
+   ],
+   "pathway": "glycosylation.ribitol"
+  },
+  {
+   "symbol": "CRPPA",
+   "disease_ids": [
+    "OMIM:616052"
+   ],
+   "pathway": "glycosylation.ribitol"
+  },
+  {
+   "symbol": "POMT1",
+   "disease_ids": [
+    "OMIM:609308"
+   ],
+   "pathway": "glycosylation.o_mannose"
+  },
+  {
+   "symbol": "POMGNT1",
+   "disease_ids": [
+    "OMIM:613157"
+   ],
+   "pathway": "glycosylation.o_mannose"
+  },
+  {
+   "symbol": "LARGE1",
+   "disease_ids": [
+    "OMIM:613154"
+   ],
+   "pathway": "glycosylation.o_mannose"
+  },
+  {
+   "symbol": "CAPN3",
+   "disease_ids": [
+    "OMIM:253600"
+   ],
+   "pathway": "structural.calpain"
+  },
+  {
+   "symbol": "DYSF",
+   "disease_ids": [
+    "OMIM:253601"
+   ],
+   "pathway": "membrane.dysferlin"
+  },
+  {
+   "symbol": "ANO5",
+   "disease_ids": [
+    "OMIM:611307"
+   ],
+   "pathway": "membrane.anoctamin"
+  }
+ ],
+ "mechanisms": [
+  {
+   "id": "glycosylation.ribitol",
+   "name": "Ribitol-phosphate transfer onto alpha-dystroglycan (CRPPA makes CDP-ribitol; FKTN and FKRP use it)",
+   "gene_symbols": [
+    "CRPPA",
+    "FKTN",
+    "FKRP"
+   ],
+   "source_url": "https://www.nature.com/articles/ncomms11534"
+  },
+  {
+   "id": "glycosylation.o_mannose",
+   "name": "O-mannosyl glycosylation of alpha-dystroglycan",
+   "gene_symbols": [
+    "POMT1",
+    "POMGNT1",
+    "LARGE1"
+   ],
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2860379/"
+  },
+  {
+   "id": "lysosomal.glycogen",
+   "name": "Lysosomal alpha-glucosidase: glycogen degradation in lysosomes",
+   "gene_symbols": [
+    "GAA"
+   ],
+   "source_url": "https://www.ncbi.nlm.nih.gov/gene/2548"
+  },
+  {
+   "id": "structural.calpain",
+   "name": "Muscle-specific calpain protease",
+   "gene_symbols": [
+    "CAPN3"
+   ],
+   "source_url": "https://www.ncbi.nlm.nih.gov/gene/825"
+  },
+  {
+   "id": "membrane.dysferlin",
+   "name": "Sarcolemmal dysferlin: calcium-mediated membrane fusion",
+   "gene_symbols": [
+    "DYSF"
+   ],
+   "source_url": "https://www.ncbi.nlm.nih.gov/gene/8291"
+  },
+  {
+   "id": "membrane.anoctamin",
+   "name": "Anoctamin 5: likely calcium-activated chloride channel",
+   "gene_symbols": [
+    "ANO5"
+   ],
+   "source_url": "https://www.ncbi.nlm.nih.gov/gene/203859"
+  }
+ ],
+ "edges": [
+  {
+   "id": "E01",
+   "src": "ORPHA:34515",
+   "dst": "OMIM:611588",
+   "type": "shared_pathway",
+   "source_url": "https://www.nature.com/articles/ncomms11534",
+   "record_id": "doi:10.1038/ncomms11534",
+   "confidence": 0.9,
+   "evidence_level": "observado",
+   "summary": "FKRP and FKTN transfer ribitol phosphate onto alpha-dystroglycan using the same CDP-ribitol.",
+   "confidence_note": "Biochemical evidence (Gerin et al., Nat Commun 2016).",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E02",
+   "src": "ORPHA:34515",
+   "dst": "OMIM:616052",
+   "type": "shared_pathway",
+   "source_url": "https://www.nature.com/articles/ncomms11534",
+   "record_id": "doi:10.1038/ncomms11534",
+   "confidence": 0.9,
+   "evidence_level": "observado",
+   "summary": "CRPPA (ISPD) makes the CDP-ribitol that FKRP needs.",
+   "confidence_note": "Biochemical evidence (Gerin et al., Nat Commun 2016).",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E03",
+   "src": "OMIM:611588",
+   "dst": "OMIM:616052",
+   "type": "shared_pathway",
+   "source_url": "https://www.nature.com/articles/ncomms11534",
+   "record_id": "doi:10.1038/ncomms11534",
+   "confidence": 0.9,
+   "evidence_level": "observado",
+   "summary": "CRPPA (ISPD) makes the CDP-ribitol that FKTN needs.",
+   "confidence_note": "Biochemical evidence (Gerin et al., Nat Commun 2016).",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E04",
+   "src": "ORPHA:34515",
+   "dst": "OMIM:616052",
+   "type": "therapy_bridge",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9010444/",
+   "record_id": "PMID:35422047",
+   "confidence": 0.6,
+   "evidence_level": "inferido",
+   "summary": "Ribitol is in clinical development for FKRP; a CDP-ribitol prodrug rescued an ISPD (CRPPA) deficient mouse.",
+   "confidence_note": "Preclinical only for CRPPA (Tokuoka et al., Nat Commun 2022); clinical evidence exists only for FKRP.",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E05",
+   "src": "ORPHA:34515",
+   "dst": "OMIM:611588",
+   "type": "therapy_bridge",
+   "source_url": "https://www.nature.com/articles/ncomms11534",
+   "record_id": "doi:10.1038/ncomms11534",
+   "confidence": 0.35,
+   "evidence_level": "hipotesis",
+   "summary": "FKTN uses the same CDP-ribitol, so ribitol supplementation could matter, but it is untested.",
+   "confidence_note": "No preclinical ribitol study in FKTN models was found (searched 2026-10-03); hypothesis from the shared pathway.",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E06",
+   "src": "ORPHA:34515",
+   "dst": "OMIM:613153",
+   "type": "allelic_series",
+   "source_url": "https://omim.org/entry/606596",
+   "record_id": "OMIM:606596",
+   "confidence": 0.95,
+   "evidence_level": "observado",
+   "summary": "Same gene, different picture: FKRP causes mild LGMD R9 and severe congenital muscular dystrophy.",
+   "confidence_note": "Counterexample: do not merge nodes that share a gene (Brockington et al., Hum Mol Genet 2001).",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E07",
+   "src": "OMIM:621314",
+   "dst": "ORPHA:34515",
+   "type": "differential_diagnosis",
+   "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S1096719213002734",
+   "record_id": "pii:S1096719213002734",
+   "confidence": 0.8,
+   "evidence_level": "observado",
+   "summary": "Late-onset Pompe is found among patients labelled with unclassified limb-girdle muscular dystrophy.",
+   "confidence_note": "Cohort screening; DBS for GAA is recommended in unclassified LGMD or hyperCKemia.",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E08",
+   "src": "OMIM:621314",
+   "dst": "OMIM:253600",
+   "type": "differential_diagnosis",
+   "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S0960896615001339",
+   "record_id": "pii:S0960896615001339",
+   "confidence": 0.5,
+   "evidence_level": "inferido",
+   "summary": "Pompe screening is advised in unclassified limb-girdle weakness, the same picture as LGMD R1.",
+   "confidence_note": "Source covers unclassified LGMD in general, not CAPN3 specifically.",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E09",
+   "src": "OMIM:621314",
+   "dst": "OMIM:253601",
+   "type": "differential_diagnosis",
+   "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S0960896615001339",
+   "record_id": "pii:S0960896615001339",
+   "confidence": 0.5,
+   "evidence_level": "inferido",
+   "summary": "Pompe screening is advised in unclassified limb-girdle weakness, the same picture as LGMD R2.",
+   "confidence_note": "Source covers unclassified LGMD in general, not DYSF specifically.",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E10",
+   "src": "OMIM:621314",
+   "dst": "OMIM:611307",
+   "type": "differential_diagnosis",
+   "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S0960896615001339",
+   "record_id": "pii:S0960896615001339",
+   "confidence": 0.5,
+   "evidence_level": "inferido",
+   "summary": "Pompe screening is advised in unclassified limb-girdle weakness, the same picture as LGMD R12.",
+   "confidence_note": "Source covers unclassified LGMD in general, not ANO5 specifically.",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E11",
+   "src": "ORPHA:34515",
+   "dst": "OMIM:609308",
+   "type": "same_mechanism_family",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2860379/",
+   "record_id": "PMC2860379",
+   "confidence": 0.85,
+   "evidence_level": "observado",
+   "summary": "Both are dystroglycanopathies: alpha-dystroglycan is underglycosylated.",
+   "confidence_note": "Review (Martin, Semin Pediatr Neurol 2005).",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E12",
+   "src": "ORPHA:34515",
+   "dst": "OMIM:613157",
+   "type": "same_mechanism_family",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2860379/",
+   "record_id": "PMC2860379",
+   "confidence": 0.85,
+   "evidence_level": "observado",
+   "summary": "Both are dystroglycanopathies: alpha-dystroglycan is underglycosylated.",
+   "confidence_note": "Review (Martin, Semin Pediatr Neurol 2005).",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  },
+  {
+   "id": "E13",
+   "src": "ORPHA:34515",
+   "dst": "OMIM:613154",
+   "type": "same_mechanism_family",
+   "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2860379/",
+   "record_id": "PMC2860379",
+   "confidence": 0.85,
+   "evidence_level": "observado",
+   "summary": "Both are dystroglycanopathies: alpha-dystroglycan is underglycosylated.",
+   "confidence_note": "Review (Martin, Semin Pediatr Neurol 2005).",
+   "retrieved_at": "2026-10-03T00:00:00Z"
+  }
+ ],
+ "patient_groups": [
+  {
+   "name": "International Pompe Association",
+   "diseases": [
+    "OMIM:621314"
+   ],
+   "url": "https://worldpompe.org/",
+   "registry": null
+  },
+  {
+   "name": "CureLGMD2i",
+   "diseases": [
+    "ORPHA:34515"
+   ],
+   "url": "https://curelgmd2i.com/",
+   "registry": null
+  },
+  {
+   "name": "LGMD Awareness Foundation",
+   "diseases": [
+    "ORPHA:34515",
+    "OMIM:611588",
+    "OMIM:616052",
+    "OMIM:609308",
+    "OMIM:613157",
+    "OMIM:253600",
+    "OMIM:253601",
+    "OMIM:611307"
+   ],
+   "url": "https://www.lgmd-info.org/",
+   "registry": null
+  }
+ ],
+ "assets": [
+  {
+   "kind": "registro",
+   "id": "NCT04001595",
+   "name": "Global FKRP Registry",
+   "url": "https://clinicaltrials.gov/study/NCT04001595",
+   "evidence_level": "observado"
+  },
+  {
+   "kind": "registro",
+   "id": "NCT00231400",
+   "name": "Pompe Disease Registry Protocol",
+   "url": "https://clinicaltrials.gov/study/NCT00231400",
+   "evidence_level": "observado"
+  },
+  {
+   "kind": "historia_natural",
+   "id": "NCT04202627",
+   "name": "Biomarker Development in LGMD2i",
+   "url": "https://clinicaltrials.gov/study/NCT04202627",
+   "evidence_level": "observado"
+  },
+  {
+   "kind": "historia_natural",
+   "id": "NCT05989620",
+   "name": "Long-Term Development of Muscular Dystrophy Outcome Assessments",
+   "url": "https://clinicaltrials.gov/study/NCT05989620",
+   "evidence_level": "observado"
+  },
+  {
+   "kind": "ensayo",
+   "id": "NCT04800874",
+   "name": "Study of BBP-418 in Patients With LGMD2I",
+   "url": "https://clinicaltrials.gov/study/NCT04800874",
+   "evidence_level": "observado"
+  },
+  {
+   "kind": "ensayo",
+   "id": "NCT05775848",
+   "name": "Study to Evaluate the Efficacy and Safety of BBP-418 (Ribitol) in Patients With Limb Girdle Muscular Dystrophy 2I (LGMD2I)",
+   "url": "https://clinicaltrials.gov/study/NCT05775848",
+   "evidence_level": "observado"
+  },
+  {
+   "kind": "ensayo",
+   "id": "NCT07678775",
+   "name": "Open-Label Extension Study of BBP-418 (Ribitol) for LGMD2I/R9",
+   "url": "https://clinicaltrials.gov/study/NCT07678775",
+   "evidence_level": "observado"
+  },
+  {
+   "kind": "ensayo",
+   "id": "BBP-418-NDA",
+   "name": "BBP-418 (ribitol) NDA: FDA priority review, PDUFA target date 2026-11-27",
+   "url": "https://investor.bridgebio.com/news/news-details/2026/BridgeBio-Announces-FDA-Acceptance-and-Priority-Review-of-NDA-for-BBP-418-for-LGMD2IR9/default.aspx",
+   "evidence_level": "observado"
+  }
+ ],
+ "asset_diseases": {
+  "NCT04001595": [
+   "ORPHA:34515"
+  ],
+  "NCT00231400": [
+   "OMIM:621314"
+  ],
+  "NCT04202627": [
+   "ORPHA:34515"
+  ],
+  "NCT05989620": [
+   "ORPHA:34515"
+  ],
+  "NCT04800874": [
+   "ORPHA:34515"
+  ],
+  "NCT05775848": [
+   "ORPHA:34515"
+  ],
+  "NCT07678775": [
+   "ORPHA:34515"
+  ],
+  "BBP-418-NDA": [
+   "ORPHA:34515"
+  ]
+ },
+ "asset_status": {
+  "NCT04001595": {
+   "status": "UNKNOWN",
+   "last_update": "2024-01-30"
+  },
+  "NCT00231400": {
+   "status": "RECRUITING",
+   "last_update": "2026-06-23"
+  },
+  "NCT04202627": {
+   "status": "COMPLETED",
+   "last_update": "2023-03-29"
+  },
+  "NCT05989620": {
+   "status": "RECRUITING",
+   "last_update": "2025-11-18"
+  },
+  "NCT04800874": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "last_update": "2026-07-21"
+  },
+  "NCT05775848": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "last_update": "2026-09-09"
+  },
+  "NCT07678775": {
+   "status": "ACTIVE_NOT_RECRUITING",
+   "last_update": "2026-07-02"
+  }
+ },
+ "asset_notes": {
+  "NCT04202627": "GRASP LGMD R9 natural history (101 patients): https://pmc.ncbi.nlm.nih.gov/articles/PMC11822816/"
+ },
+ "research": [
+  {
+   "appl_id": 9810301,
+   "project_num": "1R61NS112545-01",
+   "title": "Preclinic dose and delivery regime optimization  and long-term efficacy evaluation of ribitol treatment for FKRP related dystroglycanopathy",
+   "fiscal_year": 2019,
+   "organization": "CAROLINAS MEDICAL CENTER",
+   "url": "https://reporter.nih.gov/project-details/9810301",
+   "diseases": [
+    "ORPHA:34515"
+   ]
+  },
+  {
+   "appl_id": 11263644,
+   "project_num": "5R00HL161420-05",
+   "title": "Novel Adjunctive Therapies for Pompe Disease",
+   "fiscal_year": 2026,
+   "organization": "DUKE UNIVERSITY",
+   "url": "https://reporter.nih.gov/project-details/11263644",
+   "diseases": [
+    "OMIM:621314"
+   ]
+  },
+  {
+   "appl_id": 11357315,
+   "project_num": "1R21HD122115-01",
+   "title": "GYS1 Oligonucleotide Treatment as a Substrate Inhibitor for Pompe disease",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF CALIFORNIA-IRVINE",
+   "url": "https://reporter.nih.gov/project-details/11357315",
+   "diseases": [
+    "OMIM:621314"
+   ]
+  },
+  {
+   "appl_id": 11387708,
+   "project_num": "5R01HD104814-05",
+   "title": "Enhancement of Newborn Screening Diagnostic Paradigms to Improve the Efficacy of Treatment for Krabbe Disease, Pompe Disease, and Mucopolysaccharidosis Type 1",
+   "fiscal_year": 2026,
+   "organization": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+   "url": "https://reporter.nih.gov/project-details/11387708",
+   "diseases": [
+    "OMIM:621314"
+   ]
+  }
+ ]
+}
