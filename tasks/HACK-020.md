@@ -9,14 +9,14 @@ Priority: P0
 Paths: web/src/features/action/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791072050
-Updated: 1791070250
+Lease-Until: 1791072328
+Updated: 1791070528
 Task-Base: eb2e491b76e640a9040df7a4a7fafa716e1ee831
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/17; ejecutar scripts/smoke
+Next: Humano abre PR de feat/hack-020 (follow-up) y de feat/deps-cosmos-mit (alias gl-bench)
 PR: https://github.com/JoahanMorales/hacknation/pull/17
 Evidence: npm build+lint OK; ACTION_PASS e INSPECTOR_PASS (Chromium); smoke PRODUCT_PASS; merge humano PR #17
-Events: 3
-Checkpoints: 1
+Events: 4
+Checkpoints: 2
 Sessions: 1
-Last-Checkpoint: 1791069872
+Last-Checkpoint: 1791070528
 Task-Tip: 33fbe94b1a0e75a4d021bf6d5a4b6b6d71551d46

@@ -1,7 +1,7 @@
 # STATE
 
 Fase: ejecución
-Actualizado: 1791070522
+Actualizado: 1791070528
 AVAILABLE: HACK-012 HACK-013 HACK-014 HACK-016 
 CLAIMED: HACK-006 HACK-017 HACK-018 
 BLOCKED: -
@@ -21,15 +21,15 @@ HACK-015 | REVIEW | joahan-2 | hasta 1791071417
 HACK-017 | CLAIMED | saus-1 | hasta 1791071591
 HACK-018 | CLAIMED | zoe-1 | hasta 1791072183
 HACK-019 | REVIEW | joahan-1 | hasta 1791071375
-HACK-020 | REVIEW | joahan-2 | hasta 1791072050
+HACK-020 | REVIEW | joahan-2 | hasta 1791072328
 
 Bloqueos: tareas BLOCKED; use status --task ID --summary.
 Decisiones vigentes (últimas 5):
-- 1791070029 | HACK-018 | Sin fallback fijo; top10 store y top2 panel; API recalcula Yes/No; cancelacion snapshot y timeout10s; base eb2e491. | Por qué: Contratos reales conservan
 - 1791070174 | HACK-018 | Solicitar review018 a joahan-1 antes de cierre; ensayar base actual mientras reviewer019 verifica otro PR. | Por qué: Merge humano no reemplaza registro 
 - 1791070320 | HACK-018 | Ocultar render diagnosis solo en step action manteniendo hook de scoring montado; sin editar action/App/store. | Por qué: Evitar doble panel inferior sin
 - 1791070383 | HACK-018 | Hook siempre montado, solo render null en action; regression de integracion en check_ui.py. | Por qué: Evita ocupar footer de la escena5 y conserva scori
 - 1791070366 | HACK-011 | merge de main en vez de rebase tras push | Por qué: R08 prohíbe force-push
+- 1791070528 | HACK-020 | timeline junto a This week; límites en details | Por qué: hallazgo de zoe-1: se salía a 1280x720
 
 Siguiente paso global: P0 disponible; si no, revisar PR, tests, demo y ensayo.
 Por qué: snapshot acotado para retomar sin releer el historial.
