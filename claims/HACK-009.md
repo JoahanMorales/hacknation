@@ -9,9 +9,9 @@ Priority: P0
 Paths: app/fixtures/deep/, data/curate/
 Depends: Ninguna
 Verify: python3 data/curate/check.py
-Lease-Until: 1791067296
-Updated: 1791065496
+Lease-Until: 1791067374
+Updated: 1791065574
 Task-Base: e5a1e906fc8dbf7227756dc7159763e10c48c6ef
-Next: Escribir las 10 aristas del puente ribitol y el contraejemplo con URLs de IDEA §11
+Next: Humano abre PR de feat/hack-009; luego hack done HACK-009 --pr URL
 PR: -
 Evidence: -
