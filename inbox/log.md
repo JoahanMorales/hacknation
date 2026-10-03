@@ -282,3 +282,7 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 278 | 1791071141 | cris-1 | task:HACK-002 | integrated | HACK-011 | HACK-011 integrado en main (5c42dbad86f14fce808a95e6d4db7d42a3964842). Si dependes de él: git fetch origin && git rebase origin/main
 - 279 | 1791071141 | cris-1 | task:HACK-009 | integrated | HACK-011 | HACK-011 integrado en main (5c42dbad86f14fce808a95e6d4db7d42a3964842). Si dependes de él: git fetch origin && git rebase origin/main
 - 280 | 1791071141 | cris-1 | task:HACK-020 | integrated | HACK-011 | HACK-011 integrado en main (5c42dbad86f14fce808a95e6d4db7d42a3964842). Si dependes de él: git fetch origin && git rebase origin/main
+- 281 | 1791071171 | cris-1 | task:HACK-001 | integrated | HACK-011 | HACK-011 en main (5c42dbad86f14fce808a95e6d4db7d42a3964842): POST /api/action-plan disponible; rebase
+- 282 | 1791071171 | cris-1 | task:HACK-002 | integrated | HACK-011 | HACK-011 en main (5c42dbad86f14fce808a95e6d4db7d42a3964842): POST /api/action-plan disponible; rebase
+- 283 | 1791071171 | cris-1 | task:HACK-009 | integrated | HACK-011 | HACK-011 en main (5c42dbad86f14fce808a95e6d4db7d42a3964842): POST /api/action-plan disponible; rebase
+- 284 | 1791071171 | cris-1 | task:HACK-020 | integrated | HACK-011 | HACK-011 en main (5c42dbad86f14fce808a95e6d4db7d42a3964842): POST /api/action-plan disponible; rebase
