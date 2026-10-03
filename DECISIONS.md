@@ -17,3 +17,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791067165 | HACK-005 | Compactar alturas bajo760 para kit1280x720 | Por qué: Primera captura1280 requerio scroll vertical; mantener lectura de una vista
 - 1791067279 | HACK-005 | Compacto bajo760 con captura completa1280x720 | Por qué: Aceptar brief proyector y recuperar todos los estados sin cambios de diagnostico
 - 1791067343 | HACK-008 | ES: traducción previa sólo para buscar candidatos; sinónimos HPO en annotations.json | Por qué: HPO sólo trae sinónimos en inglés
+- 1791067474 | HACK-005 | Nombre accesible de chips contiene texto visible para reconocimiento por voz | Por qué: Corregir label-content-name-mismatch de Lighthouse; mantener UI negacion visible
