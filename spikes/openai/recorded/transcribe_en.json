@@ -1,0 +1,24 @@
+{
+ "demo_data": true,
+ "model": "gpt-live-transcribe",
+ "language": "en",
+ "keywords": [
+  "creatine kinase",
+  "CK",
+  "maximal inspiratory pressure",
+  "maximal expiratory pressure",
+  "Pompe",
+  "GAA",
+  "FKRP",
+  "limb-girdle",
+  "cardiomyopathy",
+  "cardiomegaly",
+  "hyperCKemia"
+ ],
+ "audio": "gpt-4o-mini-tts (alloy, PCM16 24 kHz, 14.2 s)",
+ "reference": "This published adult case has elevated creatine kinase, reduced maximal inspiratory pressure and reduced maximal expiratory pressure. There is no cardiomyopathy and no cardiomegaly. Which disease patterns match these findings?",
+ "transcript": "This published adult case has elevated creatine kinase, reduced maximal inspiratory pressure, and reduced maximal expiratory pressure. There is no cardiomyopathy and no cardiomegaly. Which disease patterns match these findings?",
+ "deltas": 43,
+ "first_delta_s": 1.84,
+ "after_commit_s": 4.18
+}

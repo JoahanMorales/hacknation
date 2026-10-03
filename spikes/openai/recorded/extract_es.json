@@ -1,0 +1,84 @@
+{
+ "demo_data": true,
+ "model": "gpt-6-luna",
+ "latency_s": 3.14,
+ "usage": {
+  "input_tokens": 447,
+  "input_tokens_details": {
+   "cache_write_tokens": 0,
+   "cached_tokens": 0
+  },
+  "output_tokens": 185,
+  "output_tokens_details": {
+   "reasoning_tokens": 53
+  },
+  "total_tokens": 632
+ },
+ "language": "es",
+ "transcript": "Este caso adulto publicado tiene creatina quinasa elevada, presión inspiratoria máxima reducida y presión espiratoria máxima reducida. No hay cardiomiopatía ni cardiomegalia. ¿Qué patrones de enfermedad coinciden con estos hallazgos?",
+ "candidates": [
+  {
+   "hpo_id": "HP:0012496",
+   "label": "Reduced maximal inspiratory pressure"
+  },
+  {
+   "hpo_id": "HP:0012497",
+   "label": "Reduced maximal expiratory pressure"
+  },
+  {
+   "hpo_id": "HP:0003236",
+   "label": "Elevated circulating creatine kinase activity"
+  },
+  {
+   "hpo_id": "HP:0001638",
+   "label": "Cardiomyopathy"
+  },
+  {
+   "hpo_id": "HP:0001640",
+   "label": "Cardiomegaly"
+  },
+  {
+   "hpo_id": "HP:0008180",
+   "label": "Mildly elevated creatine kinase"
+  },
+  {
+   "hpo_id": "HP:0025659",
+   "label": "Decreased circulating creatine kinase activity"
+  },
+  {
+   "hpo_id": "HP:0030234",
+   "label": "Highly elevated creatine kinase"
+  },
+  {
+   "hpo_id": "HP:0030235",
+   "label": "Extremely elevated creatine kinase"
+  }
+ ],
+ "terms": [
+  {
+   "hpo_id": "HP:0012496",
+   "present": true,
+   "quote": "presión inspiratoria máxima reducida"
+  },
+  {
+   "hpo_id": "HP:0012497",
+   "present": true,
+   "quote": "presión espiratoria máxima reducida"
+  },
+  {
+   "hpo_id": "HP:0003236",
+   "present": true,
+   "quote": "creatina quinasa elevada"
+  },
+  {
+   "hpo_id": "HP:0001638",
+   "present": false,
+   "quote": "No hay cardiomiopatía"
+  },
+  {
+   "hpo_id": "HP:0001640",
+   "present": false,
+   "quote": "ni cardiomegalia"
+  }
+ ]
+}
