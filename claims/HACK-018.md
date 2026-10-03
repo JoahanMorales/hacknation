@@ -15,7 +15,3 @@ Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
 Next: Fix integracion: ocultar diagnosis en step action sin desmontar scoring; verificar plan cabe1280/1440; PR followup scope diagnosis.
 PR: -
 Evidence: -
-Events: 12
-Checkpoints: 6
-Sessions: 1
-Last-Checkpoint: 1791070174
