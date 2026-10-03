@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/DESIGN.md, web/src/theme.css, web/src/ui/
 Depends: Ninguna
 Verify: test -s web/DESIGN.md && npm --prefix web run build
-Lease-Until: 1791068965
-Updated: 1791067165
+Lease-Until: 1791069079
+Updated: 1791067279
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Revalidar ajuste compacto Lighthouse smoke y publicar PR
+Next: Smoke final contra main; prueba kit compacto; commit push PR contrato
 PR: -
 Evidence: -
-Events: 4
-Checkpoints: 2
+Events: 5
+Checkpoints: 3
 Sessions: 1
-Last-Checkpoint: 1791067165
+Last-Checkpoint: 1791067279
