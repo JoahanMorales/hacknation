@@ -9,3 +9,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791064294 | HACK-002 | IDs OMIM/ORPHA/MONDO; graph groups HPO y layout de HACK003 fijado por commit | Por qué: IDEA6 y compatibilidad con consumidor; sin forzar ranking demo
 - 1791064470 | HACK-002 | IDEA6 OMIM/ORPHA/MONDO; groups HPO; mocks etiquetados y hashes LF | Por qué: Fuente real calculada, compatibilidad y reproduccion Windows/Unix
 - 1791064887 | HACK-002 | Admitir DECIPHER y conservar 12867 enfermedades como endpoint real | Por qué: Compatibilidad con datos publicados y solicitud del responsable via joahan-2
+- 1791065063 | deadline lease/HACK-001/1791065035 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
