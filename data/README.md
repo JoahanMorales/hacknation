@@ -17,18 +17,21 @@ Sólo biblioteca estándar de Python 3.8+; la salida es determinista (mismos cru
 
 Filtro: `aspect = P` (fenotipo), `qualifier ≠ NOT` y términos bajo *Phenotypic abnormality* (`HP:0000118`). Resultado: 12,867 enfermedades.
 
-## `overview.json` (lo sirve `GET /api/graph/overview`, ~1.5 MB)
+## `overview.json` (lo sirve `GET /api/graph/overview`, ~1.4 MB)
+
+Valida contra `GraphOverview` de `app/schemas/` (HACK-002; `app/tests/test_graph.py` lo comprueba).
 
 ```json
-{"source": {"hpo": "v2026-09-01", "diseases": 12867},
- "groups": [{"id": "HP:0000707", "label": "Nervous system", "count": 3633, "x": 0.0, "y": 0.0, "r": 281.1}],
+{"schema_version": "1.0", "demo_data": false,
+ "sources": [{"name": "hp.json", "url": "https://github.com/.../v2026-09-01/hp.json", "version": "v2026-09-01", "sha256": "..."}],
  "nodes": [{"id": "ORPHA:34515", "name": "FKRP-related limb-girdle muscular dystrophy R9",
-               "group": "HP:0033127", "x": -355.9, "y": 171.7, "n": 17}]}
+            "group": "HP:0033127", "x": -355.9, "y": 171.7}],
+ "groups": [{"id": "HP:0000707", "label": "Nervous system", "count": 3633, "x": 0.0, "y": 0.0, "r": 281.1}],
+ "total_diseases": 12867, "displayed_diseases": 12867, "layout_kind": "HPO system galaxies ..."}
 ```
 
 - `group`: sistema HPO raíz (hijo de `HP:0000118`) con más anotaciones de la enfermedad. Cada grupo es una galaxia: centro `x, y` y radio `r` para su etiqueta.
 - Dentro de cada galaxia, cúmulos por el subsistema dominante (nieto del sistema); en cada cúmulo, espiral de girasol con las enfermedades de más fenotipos al centro.
-- `n`: número de fenotipos anotados (sirve para el tamaño de la estrella).
 - Coordenadas en unidades abstractas (~1,500 de ancho); sigma las escala.
 
 ## `annotations.json` (sólo backend, ~7.8 MB)
