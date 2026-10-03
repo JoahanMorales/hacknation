@@ -1,6 +1,6 @@
 # HACK-003
 ID: HACK-003
-State: CLAIMED
+State: REVIEW
 Owner: joahan-2
 Branch: feat/hack-003
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-003
@@ -9,9 +9,9 @@ Priority: P0
 Paths: data/fetch.sh, data/build.py, data/README.md, app/fixtures/graph/, app/routers/graph.py, app/tests/test_graph.py
 Depends: Ninguna
 Verify: python3 data/build.py --check
-Lease-Until: 1791065582
-Updated: 1791063782
+Lease-Until: 1791066075
+Updated: 1791064275
 Task-Base: 90948c27490aa7afc955e352849c20e0228c3482
-Next: Abrir PR (gh sin auth) y hack done HACK-003
-PR: -
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/2; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/2
 Evidence: -
