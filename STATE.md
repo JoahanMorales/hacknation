@@ -1,7 +1,7 @@
 # STATE
 
 Fase: ejecución
-Actualizado: 1791062631
+Actualizado: 1791062709
 AVAILABLE: HACK-002 HACK-003 HACK-004 HACK-005 HACK-006 HACK-007 HACK-008 HACK-009 HACK-010 HACK-011 HACK-012 HACK-013 HACK-014 HAC
 CLAIMED: HACK-001 
 BLOCKED: -
@@ -10,10 +10,11 @@ INTEGRATED: -
 CANCELLED: -
 
 Reservas (primeras 24; status --task ID muestra detalle):
-HACK-001 | CLAIMED | joahan-1 | hasta 1791064431
+HACK-001 | CLAIMED | joahan-1 | hasta 1791064509
 
 Bloqueos: tareas BLOCKED; use status --task ID --summary.
 Decisiones vigentes (últimas 5):
+- 1791062709 | HACK-001 | store.step = escenas del brief; API_PORT configurable en proxy de Vite | Por qué: Puerto 8000 ocupado en la Jetson por otro proyecto
 
 Siguiente paso global: P0 disponible; si no, revisar PR, tests, demo y ensayo.
 Por qué: snapshot acotado para retomar sin releer el historial.
