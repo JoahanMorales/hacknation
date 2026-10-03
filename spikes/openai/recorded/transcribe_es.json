@@ -1,0 +1,24 @@
+{
+ "demo_data": true,
+ "model": "gpt-live-transcribe",
+ "language": "es",
+ "keywords": [
+  "creatine kinase",
+  "CK",
+  "maximal inspiratory pressure",
+  "maximal expiratory pressure",
+  "Pompe",
+  "GAA",
+  "FKRP",
+  "limb-girdle",
+  "cardiomyopathy",
+  "cardiomegaly",
+  "hyperCKemia"
+ ],
+ "audio": "gpt-4o-mini-tts (alloy, PCM16 24 kHz, 19.2 s)",
+ "reference": "Este caso adulto publicado tiene creatina quinasa elevada, presión inspiratoria máxima reducida y presión espiratoria máxima reducida. No hay cardiomiopatía ni cardiomegalia. ¿Qué patrones de enfermedad coinciden con estos hallazgos?",
+ "transcript": "Este caso adulto publicado tiene creatina kinase elevada, presión inspiratoria máxima reducida y presión espiratoria máxima reducida. No hay cardiomiopatía ni cardiomegalia. ¿Qué patrones de enfermedad coinciden con estos hallazgos?",
+ "deltas": 50,
+ "first_delta_s": 1.67,
+ "after_commit_s": 5.01
+}
