@@ -9,8 +9,8 @@ Priority: P0
 Paths: web/src/features/inspector/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791071375
-Updated: 1791069575
+Lease-Until: 1791073496
+Updated: 1791071696
 Task-Base: b126d5d7c83b26350a5d1e4b3de50131f6fda732
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/15; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/15
