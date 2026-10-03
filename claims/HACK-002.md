@@ -12,6 +12,6 @@ Verify: uv run pytest -q app/tests/test_schemas.py
 Lease-Until: 1791067252
 Updated: 1791065452
 Task-Base: bb6deeaac77522ec64554b8e5c934715b935b784
-Next: Revision humana PR3 SHAe93a601; diferencia DECIPHER resuelta, mensajes leidos y respondidos
+Next: Humano: Diff fuera de Archivos: .python-version
 PR: https://github.com/JoahanMorales/hacknation/pull/3
 Evidence: -
