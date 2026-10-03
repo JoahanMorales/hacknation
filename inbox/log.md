@@ -131,3 +131,15 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 127 | 1791066361 | joahan-1 | task:HACK-018 | integrated | HACK-001 | HACK-001 integrado en main (90948c27490aa7afc955e352849c20e0228c3482). Si dependes de él: git fetch origin && git rebase origin/main
 - 128 | 1791066361 | joahan-1 | task:HACK-019 | integrated | HACK-001 | HACK-001 integrado en main (90948c27490aa7afc955e352849c20e0228c3482). Si dependes de él: git fetch origin && git rebase origin/main
 - 129 | 1791066361 | joahan-1 | task:HACK-020 | integrated | HACK-001 | HACK-001 integrado en main (90948c27490aa7afc955e352849c20e0228c3482). Si dependes de él: git fetch origin && git rebase origin/main
+- 130 | 1791066371 | joahan-1 | task:HACK-002 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 131 | 1791066371 | joahan-1 | task:HACK-005 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 132 | 1791066371 | joahan-1 | task:HACK-006 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 133 | 1791066371 | joahan-1 | task:HACK-007 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 134 | 1791066371 | joahan-1 | task:HACK-008 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 135 | 1791066371 | joahan-1 | task:HACK-010 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 136 | 1791066371 | joahan-1 | task:HACK-011 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 137 | 1791066371 | joahan-1 | task:HACK-015 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 138 | 1791066371 | joahan-1 | task:HACK-017 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 139 | 1791066371 | joahan-1 | task:HACK-018 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 140 | 1791066371 | joahan-1 | task:HACK-019 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
+- 141 | 1791066371 | joahan-1 | task:HACK-020 | integrated | HACK-001 | HACK-001 INTEGRATED (main 90948c2): segunda ola desbloqueada; rebase/merge sobre main.
