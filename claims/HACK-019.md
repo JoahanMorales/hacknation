@@ -1,6 +1,6 @@
 # HACK-019
 ID: HACK-019
-State: CLAIMED
+State: REVIEW
 Owner: joahan-1
 Branch: feat/hack-019
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-019
@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/inspector/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791070862
-Updated: 1791069062
+Lease-Until: 1791071375
+Updated: 1791069575
 Task-Base: b126d5d7c83b26350a5d1e4b3de50131f6fda732
-Next: Humano abre PR de feat/hack-019; luego hack done HACK-019 --pr URL
-PR: -
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/15; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/15
 Evidence: -
