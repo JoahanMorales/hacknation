@@ -1,6 +1,6 @@
 # HACK-004
 ID: HACK-004
-State: CLAIMED
+State: REVIEW
 Owner: joahan-2
 Branch: feat/hack-004
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-004
@@ -9,13 +9,14 @@ Priority: P0
 Paths: spikes/openai/
 Depends: Ninguna
 Verify: python3 spikes/openai/spike.py --check
-Lease-Until: 1791068125
-Updated: 1791066325
+Lease-Until: 1791068850
+Updated: 1791067050
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Humano abre PR de feat/hack-004; luego hack done HACK-004 --pr URL
-PR: -
-Evidence: -
-Events: 3
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/7; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/7
+Evidence: python3 spikes/openai/spike.py --check SPIKE_CHECK_PASS; smoke PRODUCT_PASS; merge humano PR #7 (70e72e5)
+Events: 4
 Checkpoints: 1
 Sessions: 1
 Last-Checkpoint: 1791066325
+Task-Tip: 5b91caa1c3064202b1b81d5961fbb15a243aa1cc
