@@ -1,0 +1,59 @@
+{
+  "seed": 7668832,
+  "sources": [
+    {
+      "name": "hp.json",
+      "url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/hp.json",
+      "version": "v2026-09-01",
+      "sha256": "a7b3a012e7b4007a35a7cf8da35f2373b54cc16907f80d13d62470d31f833501"
+    },
+    {
+      "name": "phenotype.hpoa",
+      "url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/phenotype.hpoa",
+      "version": "v2026-09-01",
+      "sha256": "e89aa39c8f97bf5a52c5d160f9250a603681d630ade8ec2679d84ac5aece1f72"
+    },
+    {
+      "name": "phenopacket.json",
+      "url": "https://raw.githubusercontent.com/monarch-initiative/phenopacket-store/0.1.27/notebooks/GAA/phenopackets/PMID_7668832_Father.json",
+      "version": "0.1.27",
+      "sha256": "7da518380f65f5d6a4e7b9c6b741a9120be9852e0563c0b6b8d329f0edfc87c3"
+    }
+  ],
+  "hpoa_header": [
+    "#description: \"HPO annotations for rare diseases [8478: OMIM; 47: DECIPHER; 4357 ORPHANET]\"",
+    "#version: 2026-09-02",
+    "#tracker: https://github.com/obophenotype/human-phenotype-ontology/issues",
+    "#hpo-version: http://purl.obolibrary.org/obo/hp/releases/2026-09-01/hp.json"
+  ],
+  "disease_count": 12820,
+  "case_id": "pompe_published_case",
+  "case_diagnosis_reused_in_hpoa": true,
+  "limitations": [
+    "The published demo case is also used by HPO annotations: demonstration, not independent validation.",
+    "Correlated phenotypes are multiplied under a naive-independence assumption.",
+    "Missing annotations use background frequency (LR 1); unknown frequency is not treated as absence.",
+    "Disease IDs can represent overlapping diagnoses; OMIM and ORPHA records are not deduplicated.",
+    "Compatible ancestor/descendant annotations use maximum frequency; no common-ancestor sibling match.",
+    "Top ten normalize across all in-scope diseases; remaining mass is other_pct.",
+    "Ranges are seeded frequency-sensitivity envelopes, not clinical confidence intervals."
+  ],
+  "files": {
+    "app/fixtures/api/action_plan.json": "d9e503722e1931c186b43d9d9f22d7f68658ef355fc05f8304d9d767d14e1afc",
+    "app/fixtures/api/action_plan_unsupported.json": "28bef58744800040da1d424065f71e373a70e0c685f8d5a4eb80ba26606e1532",
+    "app/fixtures/api/diagnose.json": "726129ffb301b83428482109957799c240d3b637d7bd4e8da3584261c72f8846",
+    "app/fixtures/api/diagnose_step_01.json": "4c80e379a0a37b7f98a28e2a994253a8343014fa56396e8bd26ee9785cfd1a02",
+    "app/fixtures/api/diagnose_step_02.json": "cc9d6820a917790e790b5bfc4952ab8dcccb247402f50f4d717d4026bf6c6975",
+    "app/fixtures/api/diagnose_step_03.json": "aa8aa83191cacf2fe9cc0523d258ec7e648821795cf3211c846c2b0915c2cdc4",
+    "app/fixtures/api/diagnose_step_04.json": "6fd32c4c8fc5d19ec4b9be09f93d033cb9ad26d28b9fdbe94e573841fa5576ba",
+    "app/fixtures/api/diagnose_step_05.json": "726129ffb301b83428482109957799c240d3b637d7bd4e8da3584261c72f8846",
+    "app/fixtures/api/edge.json": "dc753afcf6942a6ff6290f5295f2cfe94719e2c7c2900be169108b35b4f656ff",
+    "app/fixtures/api/explain.json": "11e6b357da3b29d46ecfdf5338d426ccdc32a7a4705c8b16219c493441c944e4",
+    "app/fixtures/api/graph_overview.json": "527225f1a8c2be25963eaf41fd403b62899d9f92d782cfee0bf4c46e35377468",
+    "app/fixtures/api/next_question.json": "490bbef8fb12215113db81831d1d78c13b518f842dabe61e5d27bed103dc83cc",
+    "app/fixtures/api/node.json": "ce46fa8f6edd59eb34220738c790fecae8f05a3944a291475ac4fbacebed03fa",
+    "app/fixtures/api/symptoms_extract.json": "9f74c01c3341ee2b2af6192b1f0a7aeee5cf65a3aa1e979374ee062200827f5e",
+    "app/fixtures/api/transcribe_session.json": "7687223c17b4d9fa6ebbb1fcfed591586c427b9673a5750a60b310afdc768a46",
+    "app/fixtures/case/pompe_case.json": "b035bcb0f8accf97be3bf35c04a039d73e94286b3db8b3e67609579a5d6683f4"
+  }
+}

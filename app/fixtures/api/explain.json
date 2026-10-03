@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "demo_data": true,
+  "sources": [
+    {
+      "name": "hp.json",
+      "url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/hp.json",
+      "version": "v2026-09-01",
+      "sha256": "a7b3a012e7b4007a35a7cf8da35f2373b54cc16907f80d13d62470d31f833501"
+    },
+    {
+      "name": "phenotype.hpoa",
+      "url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/phenotype.hpoa",
+      "version": "v2026-09-01",
+      "sha256": "e89aa39c8f97bf5a52c5d160f9250a603681d630ade8ec2679d84ac5aece1f72"
+    },
+    {
+      "name": "phenopacket.json",
+      "url": "https://raw.githubusercontent.com/monarch-initiative/phenopacket-store/0.1.27/notebooks/GAA/phenopackets/PMID_7668832_Father.json",
+      "version": "0.1.27",
+      "sha256": "7da518380f65f5d6a4e7b9c6b741a9120be9852e0563c0b6b8d329f0edfc87c3"
+    }
+  ],
+  "disease_id": "ORPHA:34515",
+  "text": "These disease groups share part of a pathway that modifies a muscle-associated protein [ribitol_fkrp_fktn]. This connection is a research clue, not evidence that a treatment will work in both groups.",
+  "citations": [
+    {
+      "edge_id": "ribitol_fkrp_fktn",
+      "source_url": "https://www.nature.com/articles/ncomms11534"
+    }
+  ],
+  "generation_method": "Authored illustrative text; not an OpenAI response"
+}
