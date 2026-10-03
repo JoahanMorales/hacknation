@@ -217,7 +217,7 @@ def build(raw: Path = RAW) -> tuple:
              "count": len(groups[s]), "x": x, "y": y, "r": r}
             for s, x, y, r in group_meta
         ],
-        "diseases": [
+        "nodes": [
             {"id": d, "name": names[d], "group": group_of[d], "x": positions[d][0], "y": positions[d][1],
              "n": counts[d]}
             for d in sorted(annotations)
@@ -255,14 +255,14 @@ def check() -> list:
         return [f"faltan fixtures en {OUT.relative_to(ROOT)}: ejecute bash data/fetch.sh && python3 data/build.py"]
     overview_bytes, annotations_bytes = OVERVIEW.read_bytes(), ANNOTATIONS.read_bytes()
     overview, annotations = json.loads(overview_bytes), json.loads(annotations_bytes)
-    ids = {d["id"] for d in overview["diseases"]}
+    ids = {d["id"] for d in overview["nodes"]}
     groups = {g["id"] for g in overview["groups"]}
     if len(ids) < MIN_DISEASES:
         errors.append(f"sólo {len(ids)} enfermedades (< {MIN_DISEASES})")
     errors += [f"falta {i}" for i in REQUIRED_IDS if i not in ids]
     if len(overview_bytes) >= MAX_OVERVIEW_BYTES:
         errors.append(f"overview.json pesa {len(overview_bytes)} bytes (>= 3 MB)")
-    if any(not (math.isfinite(d["x"]) and math.isfinite(d["y"])) or d["group"] not in groups for d in overview["diseases"]):
+    if any(not (math.isfinite(d["x"]) and math.isfinite(d["y"])) or d["group"] not in groups for d in overview["nodes"]):
         errors.append("hay enfermedades sin posición finita o con grupo desconocido")
     if set(annotations["diseases"]) != ids:
         errors.append("annotations.json y overview.json no cubren las mismas enfermedades")
@@ -283,7 +283,7 @@ def main() -> int:
             print("GRAPH_CHECK_FAIL: " + "; ".join(errors))
             return 1
         overview = json.loads(OVERVIEW.read_text(encoding="utf-8"))
-        print(f"GRAPH_CHECK_PASS: {len(overview['diseases'])} enfermedades, {len(overview['groups'])} galaxias")
+        print(f"GRAPH_CHECK_PASS: {len(overview['nodes'])} enfermedades, {len(overview['groups'])} galaxias")
         return 0
     if not (RAW / "hp.json").exists():
         print("Faltan crudos: ejecute bash data/fetch.sh", file=sys.stderr)

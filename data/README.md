@@ -22,7 +22,7 @@ Filtro: `aspect = P` (fenotipo), `qualifier ≠ NOT` y términos bajo *Phenotypi
 ```json
 {"source": {"hpo": "v2026-09-01", "diseases": 12867},
  "groups": [{"id": "HP:0000707", "label": "Nervous system", "count": 3633, "x": 0.0, "y": 0.0, "r": 281.1}],
- "diseases": [{"id": "ORPHA:34515", "name": "FKRP-related limb-girdle muscular dystrophy R9",
+ "nodes": [{"id": "ORPHA:34515", "name": "FKRP-related limb-girdle muscular dystrophy R9",
                "group": "HP:0033127", "x": -355.9, "y": 171.7, "n": 17}]}
 ```
 
