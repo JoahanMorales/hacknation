@@ -1,0 +1,66 @@
+[
+ {
+  "disease_id": "ORPHA:34515",
+  "edge_ids": [
+   "E04",
+   "E05",
+   "E06"
+  ],
+  "language": "en",
+  "latency_s": 11.65,
+  "response": {
+   "schema_version": "1.0",
+   "demo_data": false,
+   "sources": [],
+   "disease_id": "ORPHA:34515",
+   "text": "FKRP-related R9 and congenital muscular dystrophy type A5 involve the same gene, but R9 can be mild while the congenital disease is severe [E06]. \nRibitol is being developed as a treatment for FKRP-related R9 [E04]. \nA possible treatment link to limb-girdle type C7 is inferred only from a related compound helping a CRPPA-deficient mouse; clinical evidence exists only for FKRP [E04]. \nA treatment link to limb-girdle type C4 is an untested hypothesis, based on FKTN using the same molecule, CDP-ribitol [E05].",
+   "citations": [
+    {
+     "edge_id": "E06",
+     "source_url": "https://omim.org/entry/606596"
+    },
+    {
+     "edge_id": "E04",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9010444/"
+    },
+    {
+     "edge_id": "E05",
+     "source_url": "https://www.nature.com/articles/ncomms11534"
+    }
+   ],
+   "generation_method": "gpt-6.1-sol; citations restricted to supplied edges, unknown IDs removed"
+  }
+ },
+ {
+  "disease_id": "ORPHA:34515",
+  "edge_ids": [
+   "E04",
+   "E05",
+   "E06"
+  ],
+  "language": "es",
+  "latency_s": 6.85,
+  "response": {
+   "schema_version": "1.0",
+   "demo_data": false,
+   "sources": [],
+   "disease_id": "ORPHA:34515",
+   "text": "La conexión con la distrofia tipo C7 (CRPPA) por posibles tratamientos es inferida: solo hay resultados en ratones para CRPPA [E04].\nLa conexión con la distrofia tipo C4 (FKTN) es una hipótesis: comparten una vía, pero el ribitol no se ha probado en FKTN [E05].\nEstá observado que el mismo gen, FKRP, puede causar tanto la R9 como una distrofia congénita grave tipo A5, pero son enfermedades distintas [E06].",
+   "citations": [
+    {
+     "edge_id": "E04",
+     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9010444/"
+    },
+    {
+     "edge_id": "E05",
+     "source_url": "https://www.nature.com/articles/ncomms11534"
+    },
+    {
+     "edge_id": "E06",
+     "source_url": "https://omim.org/entry/606596"
+    }
+   ],
+   "generation_method": "gpt-6.1-sol; citations restricted to supplied edges, unknown IDs removed"
+  }
+ }
+]

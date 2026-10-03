@@ -14,6 +14,8 @@ type State = {
   ranking: Candidate[];
   nextQuestion: string | null;
   selectedId: string | null;
+  // Arista resaltada en la constelación (citas del inspector, HACK-019).
+  highlightedEdgeId: string | null;
   sampleMode: boolean;
   setStep: (step: Step) => void;
   setTranscript: (transcript: string) => void;
@@ -21,6 +23,7 @@ type State = {
   setRanking: (ranking: Candidate[]) => void;
   setNextQuestion: (nextQuestion: string | null) => void;
   setSelectedId: (selectedId: string | null) => void;
+  setHighlightedEdgeId: (highlightedEdgeId: string | null) => void;
   setSampleMode: (sampleMode: boolean) => void;
 };
 
@@ -31,6 +34,7 @@ export const useStore = create<State>()((set) => ({
   ranking: [],
   nextQuestion: null,
   selectedId: null,
+  highlightedEdgeId: null,
   sampleMode: false,
   setStep: (step) => set({ step }),
   setTranscript: (transcript) => set({ transcript }),
@@ -38,5 +42,6 @@ export const useStore = create<State>()((set) => ({
   setRanking: (ranking) => set({ ranking }),
   setNextQuestion: (nextQuestion) => set({ nextQuestion }),
   setSelectedId: (selectedId) => set({ selectedId }),
+  setHighlightedEdgeId: (highlightedEdgeId) => set({ highlightedEdgeId }),
   setSampleMode: (sampleMode) => set({ sampleMode }),
 }));
