@@ -196,9 +196,29 @@ with sync_playwright() as p:
         expect(page.get_by_role("button", name="Load published sample")).to_be_visible()
         expect(page.get_by_role("meter")).to_have_count(0)
         page.close()
+
+        # The action scene owns the footer: diagnosis must not push it off screen.
+        for width, height in [(1280, 720), (1440, 900)]:
+            page = browser.new_page(viewport={"width": width, "height": height})
+            page.on("pageerror", lambda error: runtime_errors.append(str(error)))
+            page.goto(args.url + "/?select=ORPHA:34515&step=action")
+            page.wait_for_load_state("networkidle")
+            plan = page.get_by_label("Action plan")
+            expect(
+                plan.get_by_role("heading", name="Who is already working on this")
+            ).to_be_visible()
+            expect(page.get_by_test_id("diagnosis")).to_have_count(0)
+            expect(plan).to_be_in_viewport(ratio=1)
+            expect(
+                plan.get_by_label("This week").get_by_role("link", name="Open")
+            ).to_be_in_viewport()
+            page.screenshot(
+                path=str(args.output / f"action-{width}.png"), full_page=True
+            )
+            page.close()
         assert runtime_errors == [], runtime_errors
         print(
-            f"DIAGNOSIS_PASS: real API values, Yes/No findings, selection, ranges, 1440/1280 screenshots, keyboard, reduced motion, recovery, unsupported question, stale response; screenshots={args.output}"
+            f"DIAGNOSIS_PASS: real API values, Yes/No findings, selection, ranges, 1440/1280 screenshots, keyboard, reduced motion, recovery, unsupported question, stale response, action footer fits; screenshots={args.output}"
         )
     finally:
         browser.close()
