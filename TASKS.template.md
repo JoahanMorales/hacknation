@@ -8,7 +8,7 @@ Mantener IDs únicos `HACK-NNN`, prioridades `P0/P1/P2` y tipos `setup/feature/b
 
 Usar `Área` con uno o más valores y `Archivos probables` como rutas relativas separadas por comas, incluyendo directorios con `/` final o globs cuando haga falta. Por qué: un incremento puede cruzar áreas y la reserva debe cubrir todos sus archivos reales.
 
-Indicar dependencias con IDs explícitos o `Ninguna`, una estimación y un comando exacto en `Cómo verificar`. Por qué: un agente debe poder decidir si puede empezar y cómo demostrar que terminó.
+Indicar dependencias con IDs explícitos o `Ninguna`; en `Relacionadas` listar tareas que comparten contrato, endpoint o datos sin bloquearse (alimenta `hack msg related:ID` y los avisos automáticos de integración), una estimación y un comando exacto en `Cómo verificar`. Por qué: un agente debe poder decidir si puede empezar y cómo demostrar que terminó.
 
 Mapear cada P0 a IDs del rubric; registrar dueños compartidos en `OWNERS.md`. Por qué: las tareas críticas deben aportar puntos y evitar conflictos en contratos, lockfiles, migraciones y tipos.
 
@@ -32,6 +32,7 @@ No introducir una dependencia serial universal de `HACK-001`; usar contratos ya 
 - **Objetivo:** `<acción del usuario y resultado observable>`.
 - **Rubric:** C1, C3
 - **Depende de:** Ninguna
+- **Relacionadas:** HACK-002
 - **Archivos probables:** app/routers/example.py, app/services/example.py, tests/test_example.py
 - **Contratos consumidos:** `<ruta y versión publicados>`.
 - **Criterios de aceptación:**

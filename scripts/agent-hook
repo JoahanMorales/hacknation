@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
-# Hooks de Claude Code (.claude/settings.json). Nunca bloquean: siempre salen 0.
-# session-start: inyecta identidad + `hack next` como contexto inicial.
-# heartbeat: renueva el lease en segundo plano como máximo cada 8 min.
-# Por qué: los agentes olvidan el heartbeat de R20 y el lease de 30 min vence con trabajo vivo.
+# Hooks de Claude Code (.claude/settings.json). Nunca rompen la sesión: ante error salen 0 sin salida.
+# session-start: inyecta identidad + `hack next` + inbox como contexto inicial.
+# tick (PostToolUse): heartbeat cada 8 min y sondeo del inbox cada 90 s, ambos en segundo plano;
+#   si hay mensajes nuevos los inyecta como contexto adicional en la siguiente herramienta.
+# stop (Stop): si hay mensajes sin atender, impide terminar el turno una vez por lote de mensajes.
+# Por qué: los agentes olvidan el heartbeat (R20) y no ven a mitad de sesión lo que otra tarea les pide.
 set -u
-[ -t 0 ] || cat > /dev/null 2>&1 || true   # descarta el JSON del hook en stdin
+input=''
+[ -t 0 ] || input=$(cat 2>/dev/null || true)
 top=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
 cd "$top" || exit 0
+gd=$(git rev-parse --git-dir 2>/dev/null) || exit 0
 env_value() { [ -f .hack-env ] && sed -n "s/^$1=//p" .hack-env | head -n 1; }
 task=$(env_value HACK_TASK); agent=${HACK_AGENT:-$(env_value HACK_AGENT)}
+fresh() { [ -f "$1" ] && [ -n "$(find "$1" -mmin "-$2" 2>/dev/null)" ]; }
+json_text() { awk 'BEGIN {ORS=""} {gsub(/\\/, "\\\\"); gsub(/"/, "\\\""); gsub(/\t/, " "); gsub(/\r/, ""); if (NR > 1) print "\\n"; print}'; }
+sum() { cksum < "$1" 2>/dev/null | awk '{print $1}'; }
 case "${1:-}" in
   session-start)
     if [ -z "$agent" ]; then
@@ -16,16 +23,42 @@ case "${1:-}" in
       exit 0
     fi
     printf 'HACK: agente=%s tarea=%s worktree=%s\n' "$agent" "${task:--}" "$top"
-    if git config --get "remote.${HACK_REMOTE:-origin}.url" >/dev/null 2>&1; then
-      bash scripts/hack next 2>&1 | head -n 20
+    git config --get "remote.${HACK_REMOTE:-origin}.url" >/dev/null 2>&1 || exit 0
+    bash scripts/hack next 2>&1 | head -n 20
+    bash scripts/hack inbox 2>&1 | head -n 40
+    [ -z "$task" ] || bash scripts/hack inbox --task "$task" 2>&1 | tail -n 12
+    ;;
+  tick)
+    [ -n "$agent" ] || exit 0
+    if [ -n "$task" ] && ! fresh "$gd/hack-heartbeat" 8; then
+      touch "$gd/hack-heartbeat" 2>/dev/null
+      nohup bash scripts/hack heartbeat "$task" > "$gd/hack-heartbeat.log" 2>&1 &
+    fi
+    # Sondeo: cada ~2 min se refresca la caché en segundo plano; nunca bloquea al agente.
+    if ! fresh "$gd/hack-inbox.poll" 2; then
+      touch "$gd/hack-inbox.poll" 2>/dev/null
+      ( bash scripts/hack inbox --peek > "$gd/hack-inbox.tmp" 2>/dev/null && mv "$gd/hack-inbox.tmp" "$gd/hack-inbox.txt" ) > /dev/null 2>&1 &
+    fi
+    if [ -s "$gd/hack-inbox.txt" ]; then
+      now_sum=$(sum "$gd/hack-inbox.txt")
+      [ "$now_sum" != "$(cat "$gd/hack-inbox.shown" 2>/dev/null)" ] || exit 0
+      printf '%s' "$now_sum" > "$gd/hack-inbox.shown"
+      printf '{"hookSpecificOutput":{"hookEventName":"PostToolUse","additionalContext":"%s"}}\n' \
+        "$(json_text < "$gd/hack-inbox.txt")"
     fi
     ;;
-  heartbeat)
-    [ -n "$task" ] && [ -n "$agent" ] || exit 0
-    stamp="$(git rev-parse --git-dir)/hack-heartbeat"
-    if [ -f "$stamp" ] && [ -n "$(find "$stamp" -mmin -8 2>/dev/null)" ]; then exit 0; fi
-    touch "$stamp" 2>/dev/null || exit 0
-    nohup bash scripts/hack heartbeat "$task" > "$(git rev-parse --git-dir)/hack-heartbeat.log" 2>&1 &
+  stop)
+    [ -n "$agent" ] || exit 0
+    case "$input" in *'"stop_hook_active":true'*|*'"stop_hook_active": true'*) exit 0;; esac
+    bash scripts/hack inbox --peek > "$gd/hack-inbox.tmp" 2>/dev/null && mv "$gd/hack-inbox.tmp" "$gd/hack-inbox.txt"
+    [ -s "$gd/hack-inbox.txt" ] || exit 0
+    now_sum=$(sum "$gd/hack-inbox.txt")
+    [ "$now_sum" != "$(cat "$gd/hack-inbox.stopped" 2>/dev/null)" ] || exit 0
+    printf '%s' "$now_sum" > "$gd/hack-inbox.stopped"
+    printf '%s' "$now_sum" > "$gd/hack-inbox.shown"
+    printf '{"decision":"block","reason":"%s"}\n' \
+      "$(printf 'Tienes mensajes de otros agentes sin atender. Atiéndelos dentro de tu alcance (R54-R59), responde con hack msg y ejecuta bash scripts/hack inbox --ack antes de terminar.\n%s' "$(cat "$gd/hack-inbox.txt")" | json_text)"
     ;;
+  heartbeat) exec bash "$0" tick;;
 esac
 exit 0

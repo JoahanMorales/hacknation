@@ -91,5 +91,6 @@ if [ "$code" -ne 0 ]; then
   say "WT_CLAIM_FAILED ($code): elige otra tarea con bash scripts/hack next." >&2
   exit "$code"
 fi
+(cd "$path" && bash scripts/hack inbox --task "$id" 2>/dev/null | tail -n 20)
 say "WT_READY: $id · rama $branch · worktree $path"
 say "Siguiente: cd \"$path\" y abre ahí tu agente (claude / cursor / codex)."

@@ -13,7 +13,7 @@ Produce, en el checkout principal (`main`), en UNA tanda:
    - Spikes P0 de 30 min para cada riesgo externo (API, modelo, datos).
    - Features verticales P0 → P1 → P2, cada una ≤ 60 min, con Archivos probables DISJUNTOS (`app/routers/<f>.py, app/services/<f>.py, tests/test_<f>.py`).
    - Demo P0: ensayo + video plan B (Freeze-Allowed: yes). Docs/README P0 (Freeze-Allowed: yes).
-   - Cada tarea: Rubric, Depende de (sólo dependencias reales; consumidores usan contratos/mocks, no esperan a HACK-001 salvo para correr la app), Cómo verificar exacto (`uv run pytest -q tests/test_<f>.py`).
+   - Cada tarea: Rubric, Relacionadas (tareas que comparten contrato/endpoint/datos: productor ↔ consumidor, API ↔ UI; así los avisos llegan solos), Depende de (sólo dependencias reales; consumidores usan contratos/mocks, no esperan a HACK-001 salvo para correr la app), Cómo verificar exacto (`uv run pytest -q tests/test_<f>.py`).
    - Objetivo: ≥ 4 tareas sin dependencias en la primera ola, una por humano/agente.
 2. **OWNERS.md**: filas `| patrón | HACK-NNN |` para pyproject.toml, uv.lock, app/main.py, app/config.py, app/schemas/, .github/workflows/ (sólo IDs que existan en TASKS).
 3. `bash scripts/hack lint` → LINT_OK.

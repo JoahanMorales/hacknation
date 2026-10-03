@@ -307,6 +307,7 @@ coord_decision_mutate() {
     "Option: $(one_line "$DECISION_OPTION")" "Why: $(one_line "$WHY_TEXT")" > "$coord_df"
   WL=$(coord_read "$RECORD" Worklog); STATE=$(coord_read "$RECORD" State)
   event "decision pendiente $ID-$NOW; opción: $DECISION_OPTION; Por qué: $WHY_TEXT"
+  msg_append human human "$ID" "Decisión pendiente ($DECISION_CLASS): $DECISION_OPTION. Por qué: $WHY_TEXT. Sin respuesta en 15 min se aplica si es rutinaria y autorizada"
 }
 coord_clock() {
   CLOCK_NOTE=

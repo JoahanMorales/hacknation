@@ -65,6 +65,8 @@ Todos se invocan con `bash scripts/hack`.
 | init-smoke --command COMANDO | Genera adaptador desde comando literal, lo ejecuta y guarda fingerprint; el gate reejecuta. Falla conserva PRODUCT_UNVERIFIED. |
 | secret-exception ID --path RUTA --rule REGLA --reason TEXTO | Revisor elegible ajeno aprueba blob actual del índice dentro de la tarea; DECISIONS registra regla/ruta/hash, cambio invalida excepción. |
 | digest | Agrupa revisión, bloqueos y decisiones para el humano. |
+| msg DESTINO TEXTO [--kind TIPO] [--task ID] | Mensaje append-only en claims `inbox/log.md`. DESTINO: NOMBRE, HACK-NNN (llega a quien la reserve, ahora o después), related:HACK-NNN (Depende de / Relacionadas / Contratos consumidos, en ambos sentidos), all o human. TIPO: info, request, contract, blocker, reply. |
+| inbox [--ack] [--all] [--peek] [--task ID] [--human] | Sin leer para tu identidad, tus tareas reservadas y all; --ack marca leído hasta el último mostrado; --task muestra el hilo completo de una tarea; --human, lo que verán los humanos en digest. |
 | lint [--secrets] | Presupuestos, PR de 5 líneas, estados/reservas e historial; --secrets ejecuta scanner propio y externos disponibles. |
 
 ## Revisión y merge

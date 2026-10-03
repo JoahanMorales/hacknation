@@ -12,4 +12,5 @@ Objetivo: pasar de cero a editando código en < 2 min. Argumentos: $ARGUMENTS
    - CONFLICT (código 3): otra reserva ganó o traslapa archivos → vuelve a `next` y toma otra. No insistas.
    - Gate de autonomía/backlog: díselo al humano en una línea y toma trabajo ocioso (R35).
 5. Indica al humano: `cd <worktree>` y abrir el agente ahí. Si TÚ ya puedes operar en ese directorio, continúa implementando desde allí.
-6. Implementa el incremento vertical mínimo que cumpla el primer criterio; commit + push de la rama (`git push -u origin feat/hack-nnn`) al ponerse verde.
+6. Lee el hilo de tu tarea (`bash scripts/hack inbox --task HACK-NNN`, `wt` ya lo imprime) y tu inbox: pueden traer contratos o peticiones de tareas relacionadas.
+7. Implementa el incremento vertical mínimo que cumpla el primer criterio; commit + push de la rama (`git push -u origin feat/hack-nnn`) al ponerse verde.

@@ -77,12 +77,14 @@ decision ID --option TEXTO --why TEXTO --reversible yes|no --authorized yes|no -
 secret-exception ID --path RUTA --rule REGLA --reason TEXTO
 init-smoke --command COMANDO
 lint [--secrets]
+msg DESTINO TEXTO [--kind TIPO] [--task HACK-NNN]   DESTINO: NOMBRE|HACK-NNN|related:HACK-NNN|all|human
+inbox [--ack] [--all] [--peek] [--task HACK-NNN] [--human]
 HACK_AGENT / HACK_HUMAN · HACK_REMOTE=origin · HACK_BASE=main · lease=1800s
 Por qué: el remoto serializa reservas; cada sesión conserva un siguiente paso.
 USAGE
 }
 case "$CMD" in help|-h|--help) usage; exit 0;; esac
-case "$CMD" in status|claim|heartbeat|release|log|checkpoint|handoff|done|digest|lint|tick|next|review|register-reviewer|merge|decision|secret-exception|init-smoke) ;; *) die "Comando desconocido: $CMD";; esac
+case "$CMD" in status|claim|heartbeat|release|log|checkpoint|handoff|done|digest|lint|tick|next|review|register-reviewer|merge|decision|secret-exception|init-smoke|msg|inbox) ;; *) die "Comando desconocido: $CMD";; esac
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || {
   case "$CMD" in lint|init-smoke) ;; *) gitfail "Ejecute desde un repositorio Git con remoto.";; esac
   ROOT=$(pwd -P)
@@ -94,6 +96,7 @@ source "$ROOT/scripts/hack-coordination"
 source "$ROOT/scripts/lib/review-merge.sh"
 source "$ROOT/scripts/lib/security.sh"
 source "$ROOT/scripts/lib/smoke-init.sh"
+source "$ROOT/scripts/lib/messages.sh"
 # Lee solo una sección; acepta - **Campo:** valor, **Campo**: valor y Campo: valor.
 task_field() {
   awk -v id="$ID" -v key="$1" '
@@ -428,6 +431,8 @@ mutate() {
       STATE=$(field "$RECORD" State); event "handoff; siguiente: $(field "$RECORD" Next)"
       ;;
     tick) coord_tick_mutate;;
+    msg) msg_mutate;;
+    inbox) msg_ack_mutate;;
     review) review_mutate;;
     register-reviewer) register_reviewer_mutate;;
     decision) coord_decision_mutate;;
@@ -473,6 +478,11 @@ mutate() {
         rm "$CLAIM"
       else refresh_lease; fi
       event "done; PR $PR_URL; evidencia: $EVIDENCE; reviewer: ${REVIEWER:--}"
+      if [ "$STATE" = INTEGRATED ]; then
+        msg_notify_related "$ID" integrated "$ID integrado en $BASE ($merged). Si dependes de él: git fetch origin && git rebase origin/$BASE"
+      else
+        msg_append all review "$ID" "$ID listo para review: $PR_URL (SHA $tip). Primer agente libre: /hack-review $ID"
+      fi
       ;;
   esac
   # Una lectura idempotente no cambia STATE ni genera un commit vacío.
@@ -572,6 +582,8 @@ print_digest() {
   done
   [ "$found" = yes ] || say "Sin revisión ni bloqueos pendientes."
   [ ! -f "$TX/DECISIONS.md" ] || grep '^-' "$TX/DECISIONS.md" | tail -n 5
+  human_msgs=$(msg_select human | tail -n 10)
+  [ -z "$human_msgs" ] || { say "Mensajes de agentes para humanos (últimos 5):"; say "$human_msgs"; }
   say "Regla: sin respuesta 15 min, decisión reversible registrada y otra tarea."
 }
 budget() {
@@ -664,6 +676,10 @@ case "$CMD" in
     identity;;
   register-reviewer)
     [ "$#" -gt 0 ] || die "Falta NAME."; REGISTER_REVIEWER=$1; ID=$1; shift; identity;;
+  msg)
+    [ "$#" -gt 1 ] || die "Uso: msg DESTINO TEXTO [--kind TIPO] [--task HACK-NNN]."
+    MSG_TO=$1; shift; MSG_TASK=${HACK_TASK:-}; identity;;
+  inbox) identity;;
   *) [ "$#" -gt 0 ] || die "Falta ID."
      ID=$1; shift; valid_id "$ID" || die "ID inválido."; identity;;
 esac
@@ -673,11 +689,19 @@ while [ "$#" -gt 0 ]; do
     --secrets) [ "$CMD" = lint ] || die "Opción inválida: $opt"; LINT_SECRETS=yes;;
     --expired) [ "$CMD" = release ] || die "Opción inválida: $opt"; EXPIRED=yes;;
     --summary) [ "$CMD" = status ] || die "Opción inválida: $opt"; SHOW_SUMMARY=yes;;
+    --ack|--all|--peek|--human)
+      [ "$CMD" = inbox ] || die "Opción inválida: $opt"
+      case "$opt" in --ack) MSG_ACK=yes;; --all) MSG_MODE=all;; --peek) MSG_MODE=peek;; --human) MSG_MODE=human;; esac;;
+    --kind)
+      [ "$CMD" = msg ] && [ "$#" -gt 0 ] || die "Opción inválida: $opt"
+      MSG_KIND=$1; shift; msg_valid_kind "$MSG_KIND" || die "--kind: info|request|contract|blocker|reply|review|approve|reject|integrated|human";;
     --task|--branch|--worktree|--next|--read-summary|--state|--done|--decision|--why|--fails|--commands|--pr|--evidence|--integrated|--reviewer|--cancel|--sha|--verdict|--command|--option|--reversible|--authorized|--class|--path|--rule|--reason)
       [ "$#" -gt 0 ] || die "Falta valor para $opt."
       value=$1; shift
       case "$opt" in
-        --task) [ "$CMD" = status ] || die "Opción inválida."; ID=$value; valid_id "$ID" || die "ID inválido.";;
+        --task)
+          valid_id "$value" || die "ID inválido."
+          case "$CMD" in status) ID=$value;; msg) MSG_TASK=$value;; inbox) MSG_MODE="task:$value";; *) die "Opción inválida.";; esac;;
         --branch) [ "$CMD" = claim ] || die "Opción inválida."; BRANCH=$value;;
         --worktree) [ "$CMD" = claim ] || die "Opción inválida."; WORKTREE=$value;;
         --next) case "$CMD" in claim|checkpoint) NEXT_TEXT=$value;; *) die "Opción inválida.";; esac;;
@@ -705,8 +729,11 @@ while [ "$#" -gt 0 ]; do
         --cancel) [ "$CMD" = release ] || die "Opción inválida."; CANCEL_REASON=$value;;
       esac
       ;;
-    *) [ "$CMD" = log ] || die "Argumento inesperado: $opt"
-       LOG_TEXT="$LOG_TEXT${LOG_TEXT:+ }$opt";;
+    *) case "$CMD" in
+         log) LOG_TEXT="$LOG_TEXT${LOG_TEXT:+ }$opt";;
+         msg) MSG_TEXT="$MSG_TEXT${MSG_TEXT:+ }$opt";;
+         *) die "Argumento inesperado: $opt";;
+       esac;;
   esac
 done
 [ "$SHOW_SUMMARY" = no ] || [ -n "$ID" ] || die "--summary requiere --task ID."
@@ -746,6 +773,8 @@ if [ "$CMD" = done ]; then
   fi
 fi
 [ "$CMD" != log ] || [ -n "$LOG_TEXT" ] || die "log necesita una entrada."
+[ "$CMD" != msg ] || [ -n "$MSG_TEXT" ] || die "msg necesita un texto."
+[ "$CMD" != msg ] || [ -z "$MSG_TASK" ] || valid_id "$MSG_TASK" || MSG_TASK=
 if [ "$CMD" = lint ] && ! git -C "$ROOT" config --get "remote.$REMOTE.url" >/dev/null 2>&1; then
   TX="$TXROOT/local"; mkdir -p "$TX/worklog" "$TX/tasks" "$TX/claims"; lint_all; exit "$?"
 fi
@@ -765,5 +794,7 @@ case "$CMD" in
     ATTEMPT=1; fresh_state
     case "$CMD" in digest) print_digest;; lint) lint_all; exit "$?";; esac;;
   merge) merge_run; exit "$?";;
+  inbox) msg_inbox_run; exit "$?";;
+  msg) QUIET=yes; transaction; say "OK msg $MSG_SENT";;
   *) [ "$CMD" != tick ] || AGENT=${AGENT:-scheduler}; transaction;;
 esac

@@ -77,6 +77,11 @@ review_mutate() {
   put "$RECORD" Task-Tip "$RM_TIP"
   WL=$(field "$RECORD" Worklog); STATE=$(field "$RECORD" State)
   event "review; $REVIEW_VERDICT; SHA $RM_TIP; revisor $AGENT"
+  if [ "$REVIEW_VERDICT" = approve ]; then
+    msg_append "task:$ID" approve "$ID" "Aprobado SHA $RM_TIP por $AGENT. Siguiente: bash scripts/hack merge $ID"
+  else
+    msg_append "task:$ID" reject "$ID" "Rechazado SHA $RM_TIP por $AGENT. Lee hack inbox --task $ID y los comentarios del PR; corrige y repite /hack-ship"
+  fi
 }
 approval_check() {
   local tip=$1 pr=${2:-} mode review who author meta gh_tip gh_author gh_base gh_branch gh_repo gh_state gh_merged gh_merge remote_repo
@@ -232,6 +237,7 @@ rm_coord_mutate() {
         WL=$(field "$RECORD" Worklog); STATE=$(field "$RECORD" State)
         [ ! -f "$TX/$WL" ] || { update_summary_field Siguiente "Humano: $RM_QUEUE_REASON"; event "merge rechazado; $RM_QUEUE_REASON"; }
       fi
+      msg_append human human "$ID" "Merge de $ID en cola humana: $RM_QUEUE_REASON"
       rm_lock_owned && rm -f "$lock";;
     unlock)
       if rm_lock_owned; then rm -f "$lock"; else return 6; fi;;
@@ -252,7 +258,8 @@ rm_coord_mutate() {
       put "$RECORD" Task-Tip "$RM_REVIEWED_TIP"; put "$RECORD" Integration-Proof ancestry
       put "$RECORD" Lease-Until 0; put "$RECORD" Updated "$NOW"; put "$RECORD" Next "Integrada en $BASE: $RM_CANDIDATE"
       update_summary_field Siguiente "Integrada en $BASE: $RM_CANDIDATE"; event "merge; smoke y Verify PASS; commit $RM_CANDIDATE; revisor $APPROVED_BY"
-      rm -f "$CLAIM" "$lock"; put "$TX/queue/$ID.md" State INTEGRATED; put "$TX/queue/$ID.md" Commit "$RM_CANDIDATE";;
+      rm -f "$CLAIM" "$lock"; put "$TX/queue/$ID.md" State INTEGRATED; put "$TX/queue/$ID.md" Commit "$RM_CANDIDATE"
+      msg_notify_related "$ID" integrated "$ID integrado en $BASE ($RM_CANDIDATE). Si dependes de él: git fetch origin && git rebase origin/$BASE";;
   esac
   return 0
 }

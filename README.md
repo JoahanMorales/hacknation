@@ -9,6 +9,23 @@ Repositorio del equipo para el hackatón: 3–4 personas, cada una con 1–2 age
 - Cada tarea tiene su rama y su worktree. `bash scripts/wt new HACK-NNN --agent ana-1` crea ambos, escribe la identidad y hace el claim en un solo paso.
 - El merge es automático cuando se cumplen todas las condiciones (`hack merge`): revisión de otro agente sobre el SHA, smoke del producto, el comando de "Cómo verificar" y un diff dentro de su alcance. Lo que no pasa va a la cola humana (`hack digest`).
 
+## Comunicación entre agentes
+
+Los agentes se mandan mensajes por la rama `claims`, con el mismo push atómico que usa el resto del CLI. Así funciona entre máquinas y entre Claude Code, Cursor y Codex.
+
+```text
+hack msg related:HACK-002 --kind contract "Item tiene price obligatorio; ajusta tu router"
+hack msg HACK-007 --kind request "Necesito GET /items?limit=; criterio: test_items_limit"
+hack msg ana-1 --kind reply "Hecho en a1b2c3"      hack msg human --kind blocker "Falta API key"
+hack inbox            hack inbox --ack            hack inbox --task HACK-002
+```
+
+- **A quién llegan:** a una tarea (`HACK-NNN`) le llegan a quien la tenga reservada, ahora o cuando alguien la reclame; `wt new` le muestra el hilo. `related:ID` usa `Depende de`, `Relacionadas` y `Contratos consumidos` de TASKS.md.
+- **Avisos automáticos:** `done` pide revisor a todos, `review` avisa al dueño si fue approve (→ `merge`) o reject, el merge avisa `integrated` a las tareas relacionadas (→ rebase), y las decisiones y la cola humana llegan a `hack digest`.
+- **Claude Code:** el inbox se revisa cada ~2 min y los mensajes nuevos entran solos al contexto del agente. El hook `Stop` no lo deja terminar con mensajes sin atender.
+- **Cursor y Codex:** el agente corre `hack inbox` en cada heartbeat y tras cada criterio (regla en `.cursor/rules/`).
+- **Límites:** reglas R54–R59 de AGENTS.md. Se pide en vez de editar archivos ajenos, siempre se responde, y un mensaje no concede permisos.
+
 ## El día del evento
 
 | Minuto | Quién | Qué |
@@ -50,6 +67,7 @@ Requisitos: Git, Bash, Python 3.8+ (sólo para las pruebas del paquete), [uv](ht
 | Regla para Cursor y CLAUDE.md con `@AGENTS.md` | Las tres herramientas usan el mismo núcleo |
 | `docs/STACK.md`: FastAPI con routers autodescubiertos | Cuatro agentes no editan el mismo `main.py` |
 | HACKATHON.md preconfigurado: `Autonomy: yes`, `Auto-Merge: yes`, `Review-Mode: claims` | Con `gh`, los agentes de una misma persona no pueden aprobarse (comparten cuenta) |
+| Mensajería entre agentes (`hack msg`/`hack inbox`) con avisos automáticos y reglas R54–R59 | Tareas relacionadas se coordinan sin humano de intermediario |
 | Reglas R49–R53 de velocidad en AGENTS.md | Mock primero, PR temprano, sin preguntas evitables y máximo 20 min atascado |
 | Se quitaron `evidence/`, `MANIFEST.sha256`, `VERIFICATION.md` y `HACKATHON-AGENTS.md` | Eran reportes de la verificación original y un shim de v1; el CLI no los usa |
 
