@@ -9,8 +9,8 @@ Priority: P0
 Paths: app/schemas/, app/fixtures/case/, app/fixtures/api/, app/tests/test_schemas.py
 Depends: Ninguna
 Verify: uv run pytest -q app/tests/test_schemas.py
-Lease-Until: 1791065277
-Updated: 1791063477
+Lease-Until: 1791065679
+Updated: 1791063879
 Task-Base: bb6deeaac77522ec64554b8e5c934715b935b784
 Next: Comprobar regeneracion determinista; publicar rama y revisar smoke
 PR: -
