@@ -12,3 +12,4 @@
 - 1791068291 | CLAIMED | joahan-2 | claim; siguiente: Mover README a docs/AGENT-TOOLKIT.md y escribir el del producto
 - 1791068442 | CLAIMED | joahan-2 | checkpoint; siguiente: Humano abre PR de feat/hack-015; luego hack done HACK-015 --pr URL
 - 1791068599 | REVIEW | joahan-2 | done; PR https://github.com/JoahanMorales/hacknation/pull/14; evidencia: grep -q data/build.py README.md && test -s docs/ARCHITECTURE.md OK; smoke PRODUCT_PASS; merge humano PR #14 (3716a31); reviewer: -
+- 1791069617 | REVIEW | joahan-2 | heartbeat; lease hasta 1791071417
