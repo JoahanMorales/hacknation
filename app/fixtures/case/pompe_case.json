@@ -1,0 +1,51 @@
+{
+  "id": "pompe_published_case",
+  "disease_id": "OMIM:621314",
+  "pmid": "PMID:7668832",
+  "source_url": "https://raw.githubusercontent.com/monarch-initiative/phenopacket-store/0.1.27/notebooks/GAA/phenopackets/PMID_7668832_Father.json",
+  "source_version": "0.1.27",
+  "source_sha256": "7da518380f65f5d6a4e7b9c6b741a9120be9852e0563c0b6b8d329f0edfc87c3",
+  "transcript_es": "Este caso adulto publicado tiene creatina quinasa elevada, presión inspiratoria máxima reducida y presión espiratoria máxima reducida. No hay cardiomiopatía ni cardiomegalia. ¿Qué patrones de enfermedad coinciden con estos hallazgos?",
+  "transcript_en": "This published adult case has elevated creatine kinase, reduced maximal inspiratory pressure and reduced maximal expiratory pressure. There is no cardiomyopathy and no cardiomegaly. Which disease patterns match these findings?",
+  "terms": [
+    {
+      "hpo_id": "HP:0003236",
+      "label": "Elevated circulating creatine kinase concentration",
+      "present": true,
+      "quote": "elevated creatine kinase"
+    },
+    {
+      "hpo_id": "HP:0012496",
+      "label": "Reduced maximal inspiratory pressure",
+      "present": true,
+      "quote": "reduced maximal inspiratory pressure"
+    },
+    {
+      "hpo_id": "HP:0012497",
+      "label": "Reduced maximal expiratory pressure",
+      "present": true,
+      "quote": "reduced maximal expiratory pressure"
+    },
+    {
+      "hpo_id": "HP:0001638",
+      "label": "Cardiomyopathy",
+      "present": false,
+      "quote": "no cardiomyopathy"
+    },
+    {
+      "hpo_id": "HP:0001640",
+      "label": "Cardiomegaly",
+      "present": false,
+      "quote": "no cardiomegaly"
+    }
+  ],
+  "term_sequence": [
+    "HP:0003236",
+    "HP:0012496",
+    "HP:0012497",
+    "HP:0001638",
+    "HP:0001640"
+  ],
+  "demo_data": true,
+  "adaptation_note": "Authored ES/EN narration of five published phenopacket findings, not a recording or quotation. No names, variants, family relationships or new clinical findings included. The known diagnosis is hidden from the narration."
+}

@@ -1,0 +1,2898 @@
+{
+  "schema_version": "1.0",
+  "demo_data": true,
+  "sources": [
+    {
+      "name": "hp.json",
+      "url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/hp.json",
+      "version": "v2026-09-01",
+      "sha256": "a7b3a012e7b4007a35a7cf8da35f2373b54cc16907f80d13d62470d31f833501"
+    },
+    {
+      "name": "phenotype.hpoa",
+      "url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/phenotype.hpoa",
+      "version": "v2026-09-01",
+      "sha256": "e89aa39c8f97bf5a52c5d160f9250a603681d630ade8ec2679d84ac5aece1f72"
+    },
+    {
+      "name": "phenopacket.json",
+      "url": "https://raw.githubusercontent.com/monarch-initiative/phenopacket-store/0.1.27/notebooks/GAA/phenopackets/PMID_7668832_Father.json",
+      "version": "0.1.27",
+      "sha256": "7da518380f65f5d6a4e7b9c6b741a9120be9852e0563c0b6b8d329f0edfc87c3"
+    },
+    {
+      "name": "overview.json",
+      "url": "https://raw.githubusercontent.com/JoahanMorales/hacknation/4fded4157b2742811294f9df1e93314fd578a455/app/fixtures/graph/overview.json",
+      "version": "4fded4157b2742811294f9df1e93314fd578a455",
+      "sha256": "425d931236cb33d67066e06af3714ac940c2914fcda0130f149ca3750bb87fda"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "DECIPHER:1",
+      "name": "Wolf-Hirschhorn syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -121.1,
+      "y": 13.5
+    },
+    {
+      "id": "DECIPHER:14",
+      "name": "Prader-Willi syndrome (Type 1)",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 288.9,
+      "y": -149.5
+    },
+    {
+      "id": "DECIPHER:15",
+      "name": "Nf1-Microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -32.6,
+      "y": 179.1
+    },
+    {
+      "id": "DECIPHER:16",
+      "name": "22q11 deletion syndrome (Velocardiofacial / DiGeorge syndrome)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -127.9,
+      "y": 39.4
+    },
+    {
+      "id": "DECIPHER:17",
+      "name": "Sotos syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -347.0,
+      "y": 425.9
+    },
+    {
+      "id": "DECIPHER:18",
+      "name": "1p36 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 126.5,
+      "y": -425.9
+    },
+    {
+      "id": "DECIPHER:19",
+      "name": "Potocki-Lupski syndrome (17p11.2 duplication syndrome)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -100.2,
+      "y": 173.2
+    },
+    {
+      "id": "DECIPHER:2",
+      "name": "Cri du Chat Syndrome (5p deletion)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -85.1,
+      "y": 169.0
+    },
+    {
+      "id": "DECIPHER:20",
+      "name": "22q13 deletion syndrome (Phelan-Mcdermid syndrome)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -60.5,
+      "y": 146.9
+    },
+    {
+      "id": "DECIPHER:21",
+      "name": "Miller-Dieker syndrome (MDS)",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 71.7,
+      "y": -355.1
+    },
+    {
+      "id": "DECIPHER:29",
+      "name": "Charcot-Marie-Tooth syndrome type 1A (CMT1A)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -73.5,
+      "y": -122.0
+    },
+    {
+      "id": "DECIPHER:3",
+      "name": "Williams-Beuren Syndrome (WBS)",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -43.5,
+      "y": -472.2
+    },
+    {
+      "id": "DECIPHER:31",
+      "name": "Hereditary Liability to Pressure Palsies (HNPP)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -197.3,
+      "y": 82.9
+    },
+    {
+      "id": "DECIPHER:32",
+      "name": "22q11 duplication syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -35.9,
+      "y": -383.0
+    },
+    {
+      "id": "DECIPHER:34",
+      "name": "Potocki-Shaffer syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -439.8,
+      "y": 279.9
+    },
+    {
+      "id": "DECIPHER:35",
+      "name": "WAGR 11p13 deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 394.6,
+      "y": -250.0
+    },
+    {
+      "id": "DECIPHER:37",
+      "name": "3q29 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 28.2,
+      "y": -348.1
+    },
+    {
+      "id": "DECIPHER:38",
+      "name": "Pelizaeus-Merzbacher disease",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -24.4,
+      "y": 70.2
+    },
+    {
+      "id": "DECIPHER:39",
+      "name": "8p23.1 deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -152.2,
+      "y": 608.1
+    },
+    {
+      "id": "DECIPHER:4",
+      "name": "Angelman syndrome (Type 1)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -151.3,
+      "y": -47.3
+    },
+    {
+      "id": "DECIPHER:42",
+      "name": "Cat-Eye Syndrome (Type I)",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -13.3,
+      "y": -507.2
+    },
+    {
+      "id": "DECIPHER:43",
+      "name": "7q11.23 duplication syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -179.8,
+      "y": 80.1
+    },
+    {
+      "id": "DECIPHER:44",
+      "name": "2q37 monosomy",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -41.6,
+      "y": -478.4
+    },
+    {
+      "id": "DECIPHER:45",
+      "name": "Xq28 (MECP2) duplication",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -155.0,
+      "y": 84.6
+    },
+    {
+      "id": "DECIPHER:46",
+      "name": "Split hand/foot malformation 1 (SHFM1)",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -450.0,
+      "y": 315.4
+    },
+    {
+      "id": "DECIPHER:47",
+      "name": "RCAD (renal cysts and diabetes)",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 384.0,
+      "y": -227.0
+    },
+    {
+      "id": "DECIPHER:48",
+      "name": "Early-onset Alzheimer disease with cerebral amyloid angiopathy",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 22.1,
+      "y": -71.7
+    },
+    {
+      "id": "DECIPHER:51",
+      "name": "2q33.1 deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -164.7,
+      "y": 149.2
+    },
+    {
+      "id": "DECIPHER:52",
+      "name": "9q subtelomeric deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 122.9,
+      "y": -423.6
+    },
+    {
+      "id": "DECIPHER:53",
+      "name": "Prader-Willi Syndrome (Type 2)",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 278.4,
+      "y": -186.2
+    },
+    {
+      "id": "DECIPHER:54",
+      "name": "Angelman syndrome (Type 2)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -87.6,
+      "y": -22.2
+    },
+    {
+      "id": "DECIPHER:57",
+      "name": "17q21.31 recurrent microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 125.4,
+      "y": -463.5
+    },
+    {
+      "id": "DECIPHER:58",
+      "name": "Leri-Weill dyschondrostosis (LWD) - SHOX deletion",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -421.6,
+      "y": 410.3
+    },
+    {
+      "id": "DECIPHER:59",
+      "name": "Adult-onset autosomal dominant leukodystrophy (ADLD)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -139.1,
+      "y": 191.8
+    },
+    {
+      "id": "DECIPHER:62",
+      "name": "1q21.1 recurrent microdeletion (susceptibility locus for neurodevelopmental disorders)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 63.5,
+      "y": -40.7
+    },
+    {
+      "id": "DECIPHER:65",
+      "name": "Atr-16 syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -49.7,
+      "y": 128.5
+    },
+    {
+      "id": "DECIPHER:66",
+      "name": "15q24 recurrent microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 122.8,
+      "y": -467.2
+    },
+    {
+      "id": "DECIPHER:67",
+      "name": "1q21.1 recurrent microduplication (possible susceptibility locus for neurodevelopmental disorders)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -180.3,
+      "y": 134.0
+    },
+    {
+      "id": "DECIPHER:68",
+      "name": "16p11.2-p12.2 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -14.9,
+      "y": -511.0
+    },
+    {
+      "id": "DECIPHER:70",
+      "name": "2p15-16.1 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -23.2,
+      "y": -498.9
+    },
+    {
+      "id": "DECIPHER:72",
+      "name": "22q11.2 distal deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0001507",
+      "mechanism_ids": [],
+      "x": -81.9,
+      "y": -611.5
+    },
+    {
+      "id": "DECIPHER:74",
+      "name": "15q13.3 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -124.6,
+      "y": -61.9
+    },
+    {
+      "id": "DECIPHER:76",
+      "name": "12q14 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -50.4,
+      "y": 81.1
+    },
+    {
+      "id": "DECIPHER:8",
+      "name": "Smith-Magenis syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -70.8,
+      "y": 152.9
+    },
+    {
+      "id": "DECIPHER:81",
+      "name": "15q26 overgrowth syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -9.1,
+      "y": -425.5
+    },
+    {
+      "id": "DECIPHER:85",
+      "name": "8p23.1 duplication syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -86.6,
+      "y": 41.4
+    },
+    {
+      "id": "DECIPHER:92",
+      "name": "Recurrent 16p12.1 microdeletion (neurodevelopmental susceptibility locus)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -146.8,
+      "y": 167.0
+    },
+    {
+      "id": "OMIM:100070",
+      "name": "Aortic aneurysm, abdominal",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -175.9,
+      "y": 580.2
+    },
+    {
+      "id": "OMIM:100100",
+      "name": "Prune belly syndrome",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 328.9,
+      "y": -223.2
+    },
+    {
+      "id": "OMIM:100200",
+      "name": "Abducens palsy",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 324.5,
+      "y": 405.2
+    },
+    {
+      "id": "OMIM:100300",
+      "name": "Adams-Oliver syndrome 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -7.1,
+      "y": -31.9
+    },
+    {
+      "id": "OMIM:100600",
+      "name": "Acanthosis nigricans",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -455.6,
+      "y": -37.9
+    },
+    {
+      "id": "OMIM:100650",
+      "name": "Alcohol sensitivity, acute",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -368.5,
+      "y": -71.1
+    },
+    {
+      "id": "OMIM:100700",
+      "name": "Achard syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -274.1,
+      "y": 324.4
+    },
+    {
+      "id": "OMIM:100800",
+      "name": "Achondroplasia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -340.7,
+      "y": 371.4
+    },
+    {
+      "id": "OMIM:100820",
+      "name": "Achoo syndrome",
+      "synonyms": [],
+      "group": "HP:0025142",
+      "mechanism_ids": [],
+      "x": 386.5,
+      "y": -420.1
+    },
+    {
+      "id": "OMIM:101000",
+      "name": "Neurofibromatosis, type II",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 136.5,
+      "y": -31.4
+    },
+    {
+      "id": "OMIM:101200",
+      "name": "Apert syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -349.7,
+      "y": 329.3
+    },
+    {
+      "id": "OMIM:101400",
+      "name": "Saethre-Chotzen syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 81.1,
+      "y": -440.3
+    },
+    {
+      "id": "OMIM:101600",
+      "name": "Pfeiffer syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -334.2,
+      "y": 387.2
+    },
+    {
+      "id": "OMIM:101800",
+      "name": "Acrodysostosis 1, with or without hormone resistance",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -330.6,
+      "y": 321.8
+    },
+    {
+      "id": "OMIM:101805",
+      "name": "Acrofacial dysostosis, Catania type",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 110.4,
+      "y": -434.9
+    },
+    {
+      "id": "OMIM:101840",
+      "name": "Acrokeratoderma, hereditary papulotranslucent",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -414.2,
+      "y": -28.0
+    },
+    {
+      "id": "OMIM:101850",
+      "name": "Keratoderma, palmoplantar, punctate type 3",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -457.0,
+      "y": -43.0
+    },
+    {
+      "id": "OMIM:101900",
+      "name": "Acrokeratosis verruciformis",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -383.0,
+      "y": -95.5
+    },
+    {
+      "id": "OMIM:102100",
+      "name": "Acromegaloid changes, cutis verticis gyrata, and corneal leukoma",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 121.9,
+      "y": -459.9
+    },
+    {
+      "id": "OMIM:102150",
+      "name": "Acromegaloid facial appearance syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 41.4,
+      "y": -360.5
+    },
+    {
+      "id": "OMIM:102200",
+      "name": "Pituitary adenoma, growth hormone-secreting, 1",
+      "synonyms": [],
+      "group": "HP:0000818",
+      "mechanism_ids": [],
+      "x": -526.8,
+      "y": -318.2
+    },
+    {
+      "id": "OMIM:102300",
+      "name": "Restless legs syndrome, susceptibility to, 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -161.6,
+      "y": 155.3
+    },
+    {
+      "id": "OMIM:102350",
+      "name": "Acromial dimples",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -361.5,
+      "y": -117.5
+    },
+    {
+      "id": "OMIM:102370",
+      "name": "Acromicric dysplasia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -415.1,
+      "y": 279.3
+    },
+    {
+      "id": "OMIM:102500",
+      "name": "Hajdu-Cheney syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -383.8,
+      "y": 310.0
+    },
+    {
+      "id": "OMIM:102510",
+      "name": "Acropectorovertebral dysplasia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -305.2,
+      "y": 392.5
+    },
+    {
+      "id": "OMIM:102520",
+      "name": "Acrorenal syndrome",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 316.6,
+      "y": -236.3
+    },
+    {
+      "id": "OMIM:102530",
+      "name": "Spermatogenic failure 6",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 382.8,
+      "y": -306.0
+    },
+    {
+      "id": "OMIM:102650",
+      "name": "Adactylia, unilateral",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -289.4,
+      "y": 391.9
+    },
+    {
+      "id": "OMIM:102660",
+      "name": "Adamantinoma of long bones",
+      "synonyms": [],
+      "group": "HP:0002664",
+      "mechanism_ids": [],
+      "x": -407.7,
+      "y": 635.1
+    },
+    {
+      "id": "OMIM:102700",
+      "name": "Severe combined immunodeficiency, autosomal recessive, T cell-negative, B cell-negative, NK cell-negative, due to adenosine deaminase deficiency",
+      "synonyms": [],
+      "group": "HP:0002715",
+      "mechanism_ids": [],
+      "x": -233.1,
+      "y": -471.0
+    },
+    {
+      "id": "OMIM:102900",
+      "name": "Adenosine triphosphate, elevated, of erythrocytes",
+      "synonyms": [],
+      "group": "HP:0001871",
+      "mechanism_ids": [],
+      "x": -663.0,
+      "y": 352.8
+    },
+    {
+      "id": "OMIM:103050",
+      "name": "Adenylosuccinase deficiency",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -82.0,
+      "y": 109.1
+    },
+    {
+      "id": "OMIM:103100",
+      "name": "Adie pupil",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 349.1,
+      "y": 358.9
+    },
+    {
+      "id": "OMIM:103200",
+      "name": "Adiposis dolorosa",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -126.8,
+      "y": 42.4
+    },
+    {
+      "id": "OMIM:103285",
+      "name": "Adult syndrome",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -403.2,
+      "y": -82.4
+    },
+    {
+      "id": "OMIM:103300",
+      "name": "Hypoglossia-hypodactyly syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -9.7,
+      "y": -363.8
+    },
+    {
+      "id": "OMIM:103420",
+      "name": "Alacrima, congenital",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 222.0,
+      "y": 336.8
+    },
+    {
+      "id": "OMIM:103500",
+      "name": "Tietz albinism-deafness syndrome",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 327.2,
+      "y": 342.0
+    },
+    {
+      "id": "OMIM:103580",
+      "name": "Pseudohypoparathyroidism, type IA",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -360.4,
+      "y": 276.3
+    },
+    {
+      "id": "OMIM:103780",
+      "name": "Alcohol dependence",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -52.6,
+      "y": 138.7
+    },
+    {
+      "id": "OMIM:103900",
+      "name": "Aldosteronism, glucocorticoid-remediable",
+      "synonyms": [],
+      "group": "HP:0000818",
+      "mechanism_ids": [],
+      "x": -515.0,
+      "y": -371.2
+    },
+    {
+      "id": "OMIM:103920",
+      "name": "Allergic bronchopulmonary aspergillosis",
+      "synonyms": [],
+      "group": "HP:0002715",
+      "mechanism_ids": [],
+      "x": -200.4,
+      "y": -448.6
+    },
+    {
+      "id": "OMIM:104000",
+      "name": "Alopecia areata 1",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -466.4,
+      "y": -26.3
+    },
+    {
+      "id": "OMIM:104100",
+      "name": "Palmoplantar keratoderma with congenital alopecia",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -432.6,
+      "y": -105.5
+    },
+    {
+      "id": "OMIM:104110",
+      "name": "Alopecia, familial focal",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -507.3,
+      "y": -31.0
+    },
+    {
+      "id": "OMIM:104200",
+      "name": "Alport syndrome 3, autosomal dominant",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 351.3,
+      "y": -205.4
+    },
+    {
+      "id": "OMIM:104290",
+      "name": "Alternating hemiplegia of childhood 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -23.3,
+      "y": -103.9
+    },
+    {
+      "id": "OMIM:104300",
+      "name": "Alzheimer disease",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 18.4,
+      "y": -69.8
+    },
+    {
+      "id": "OMIM:104310",
+      "name": "Alzheimer disease 2",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 60.8,
+      "y": -41.5
+    },
+    {
+      "id": "OMIM:104350",
+      "name": "Amastia, bilateral, with ureteral triplication and dysmorphism",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -372.3,
+      "y": 262.7
+    },
+    {
+      "id": "OMIM:104400",
+      "name": "Amelia and terminal transverse hemimelia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -457.2,
+      "y": 305.1
+    },
+    {
+      "id": "OMIM:104500",
+      "name": "Amelogenesis imperfecta, type IB",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -55.5,
+      "y": -450.3
+    },
+    {
+      "id": "OMIM:104510",
+      "name": "Amelogenesis imperfecta, type IV",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 128.2,
+      "y": -421.2
+    },
+    {
+      "id": "OMIM:104530",
+      "name": "Amelogenesis imperfecta, type IA",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -36.3,
+      "y": -387.9
+    },
+    {
+      "id": "OMIM:105120",
+      "name": "Amyloidosis, Finnish type",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 355.0,
+      "y": -203.4
+    },
+    {
+      "id": "OMIM:105150",
+      "name": "Cerebral amyloid angiopathy",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 33.2,
+      "y": 64.2
+    },
+    {
+      "id": "OMIM:105200",
+      "name": "Amyloidosis, familial visceral",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 351.6,
+      "y": -244.5
+    },
+    {
+      "id": "OMIM:105210",
+      "name": "Amyloidosis, hereditary, transthyretin-related",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 12.6,
+      "y": -134.0
+    },
+    {
+      "id": "OMIM:105250",
+      "name": "Amyloidosis, primary localized cutaneous, 1",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -394.9,
+      "y": -37.3
+    },
+    {
+      "id": "OMIM:105300",
+      "name": "Amyotrophic dystonic paraplegia",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -33.5,
+      "y": -112.8
+    },
+    {
+      "id": "OMIM:105400",
+      "name": "Amyotrophic lateral sclerosis 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -12.4,
+      "y": 66.8
+    },
+    {
+      "id": "OMIM:105500",
+      "name": "Amyotrophic lateral sclerosis-parkinsonism/dementia complex 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 64.0,
+      "y": -31.2
+    },
+    {
+      "id": "OMIM:105550",
+      "name": "Amyotrophic lateral sclerosis and/or frontotemporal dementia 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -168.2,
+      "y": 108.6
+    },
+    {
+      "id": "OMIM:105580",
+      "name": "Anal canal carcinomacloacogenic carcinoma, included",
+      "synonyms": [],
+      "group": "HP:0002664",
+      "mechanism_ids": [],
+      "x": -445.1,
+      "y": 616.0
+    },
+    {
+      "id": "OMIM:105600",
+      "name": "Anemia, dyserythropoietic congenital, type III",
+      "synonyms": [],
+      "group": "HP:0001871",
+      "mechanism_ids": [],
+      "x": -701.9,
+      "y": 272.1
+    },
+    {
+      "id": "OMIM:105650",
+      "name": "Diamond-Blackfan anemia 1",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -352.5,
+      "y": 365.4
+    },
+    {
+      "id": "OMIM:105800",
+      "name": "Aneurysm, intracranial berry, 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -19.2,
+      "y": 72.1
+    },
+    {
+      "id": "OMIM:105805",
+      "name": "Aneurysm of interventricular septum",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -204.0,
+      "y": 629.0
+    },
+    {
+      "id": "OMIM:105830",
+      "name": "Angelman syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -122.3,
+      "y": 137.4
+    },
+    {
+      "id": "OMIM:105835",
+      "name": "Angel-Shaped phalangoepiphyseal dysplasia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -296.4,
+      "y": 275.5
+    },
+    {
+      "id": "OMIM:106050",
+      "name": "Angioma serpiginosum, autosomal dominant",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -414.8,
+      "y": -125.4
+    },
+    {
+      "id": "OMIM:106070",
+      "name": "Angioma, hereditary neurocutaneousspinal arterial venous malformations with cutaneous hemangiomas, included",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 81.6,
+      "y": -184.7
+    },
+    {
+      "id": "OMIM:106100",
+      "name": "Angioedema, hereditary, 1",
+      "synonyms": [],
+      "group": "HP:0001939",
+      "mechanism_ids": [],
+      "x": 442.5,
+      "y": 239.6
+    },
+    {
+      "id": "OMIM:106190",
+      "name": "Anhidrosis, isolated, with normal sweat glands",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -494.8,
+      "y": -36.6
+    },
+    {
+      "id": "OMIM:106210",
+      "name": "Aniridia",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 281.3,
+      "y": 291.7
+    },
+    {
+      "id": "OMIM:106220",
+      "name": "Aniridia and absent patella",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 291.9,
+      "y": 263.7
+    },
+    {
+      "id": "OMIM:106230",
+      "name": "Aniridia, microcornea, and spontaneously reabsorbed cataract",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 320.1,
+      "y": 291.7
+    },
+    {
+      "id": "OMIM:106250",
+      "name": "Ankyloblepharon filiforme adnatum and cleft palate",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 56.8,
+      "y": -527.9
+    },
+    {
+      "id": "OMIM:106260",
+      "name": "Hay-Wells syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 76.0,
+      "y": -472.0
+    },
+    {
+      "id": "OMIM:106280",
+      "name": "Ankyloglossia with or without tooth anomalies",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -32.7,
+      "y": -377.4
+    },
+    {
+      "id": "OMIM:106300",
+      "name": "Spondyloarthropathy, susceptibility to, 1",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -434.7,
+      "y": 384.2
+    },
+    {
+      "id": "OMIM:106400",
+      "name": "Ankylosing vertebral hyperostosis with tylosisdiffuse idiopathic skeletal hyperostosis, included",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -411.5,
+      "y": -123.3
+    },
+    {
+      "id": "OMIM:106600",
+      "name": "Tooth agenesis, selective, 1",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 49.1,
+      "y": -530.4
+    },
+    {
+      "id": "OMIM:106700",
+      "name": "Total anomalous pulmonary venous return 1",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -191.1,
+      "y": 652.7
+    },
+    {
+      "id": "OMIM:106995",
+      "name": "Anonychia-Onychodystrophy with hypoplasia or absence of distal phalanges",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -41.0,
+      "y": -459.0
+    },
+    {
+      "id": "OMIM:107000",
+      "name": "Nail disorder, nonsyndromic congenital, 6",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -404.5,
+      "y": -157.5
+    },
+    {
+      "id": "OMIM:107100",
+      "name": "Anorectal anomalies",
+      "synonyms": [],
+      "group": "HP:0025031",
+      "mechanism_ids": [],
+      "x": 272.2,
+      "y": -652.4
+    },
+    {
+      "id": "OMIM:107200",
+      "name": "Anosmia, congenital",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 115.4,
+      "y": -492.9
+    },
+    {
+      "id": "OMIM:107250",
+      "name": "Anterior segment dysgenesis 1",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 278.4,
+      "y": 310.5
+    },
+    {
+      "id": "OMIM:107320",
+      "name": "Antiphospholipid syndrome, familial",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 263.6,
+      "y": 371.6
+    },
+    {
+      "id": "OMIM:107480",
+      "name": "Townes-Brocks syndrome 1",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -343.2,
+      "y": 358.9
+    },
+    {
+      "id": "OMIM:107550",
+      "name": "Aortic arch interruption, facial palsy, and retinal coloboma",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 317.2,
+      "y": 369.0
+    },
+    {
+      "id": "OMIM:107600",
+      "name": "Aplasia cutis congenita, nonsyndromic",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -386.8,
+      "y": -33.7
+    },
+    {
+      "id": "OMIM:107640",
+      "name": "Apnea, central sleep",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -94.0,
+      "y": 172.8
+    },
+    {
+      "id": "OMIM:107650",
+      "name": "Apnea, obstructive sleep",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -182.8,
+      "y": 113.1
+    },
+    {
+      "id": "OMIM:107700",
+      "name": "Appendicitis, proneness to",
+      "synonyms": [],
+      "group": "HP:0025031",
+      "mechanism_ids": [],
+      "x": 285.3,
+      "y": -624.3
+    },
+    {
+      "id": "OMIM:107900",
+      "name": "Arms, malformation of",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -460.3,
+      "y": 343.2
+    },
+    {
+      "id": "OMIM:107970",
+      "name": "Arrhythmogenic right ventricular dysplasia 1",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -150.2,
+      "y": 648.6
+    },
+    {
+      "id": "OMIM:108000",
+      "name": "Arteries, anomalies of",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -223.4,
+      "y": 600.5
+    },
+    {
+      "id": "OMIM:108010",
+      "name": "Arteriovenous malformation of the brain, somatic",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 75.2,
+      "y": 9.6
+    },
+    {
+      "id": "OMIM:108120",
+      "name": "Arthrogryposis, distal, type 1A",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -326.5,
+      "y": 291.1
+    },
+    {
+      "id": "OMIM:108145",
+      "name": "Arthrogryposis, distal, type 5",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -398.0,
+      "y": 369.2
+    },
+    {
+      "id": "OMIM:108200",
+      "name": "Arthrogryposis-Like hand anomaly and sensorineural deafness",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -505.8,
+      "y": 447.3
+    },
+    {
+      "id": "OMIM:108300",
+      "name": "Stickler syndrome, type I",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -369.4,
+      "y": 283.4
+    },
+    {
+      "id": "OMIM:108420",
+      "name": "Spermatogenic failure 2",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 277.8,
+      "y": -161.6
+    },
+    {
+      "id": "OMIM:108500",
+      "name": "Episodic ataxia, type 2",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 11.6,
+      "y": -188.8
+    },
+    {
+      "id": "OMIM:108600",
+      "name": "Spastic ataxia 1, autosomal dominant",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 58.5,
+      "y": 135.6
+    },
+    {
+      "id": "OMIM:108650",
+      "name": "Spastic ataxia 7, autosomal dominant",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 12.5,
+      "y": -196.9
+    },
+    {
+      "id": "OMIM:108700",
+      "name": "Ataxia with fasciculations",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -30.4,
+      "y": -183.1
+    },
+    {
+      "id": "OMIM:108720",
+      "name": "Atelosteogenesis, type I",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -377.9,
+      "y": 298.4
+    },
+    {
+      "id": "OMIM:108721",
+      "name": "Atelosteogenesis, type III",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -309.5,
+      "y": 375.8
+    },
+    {
+      "id": "OMIM:108725",
+      "name": "Atherosclerosis susceptibility",
+      "synonyms": [],
+      "group": "HP:0001939",
+      "mechanism_ids": [],
+      "x": 430.8,
+      "y": 174.4
+    },
+    {
+      "id": "OMIM:108760",
+      "name": "Atresia of external auditory canal and conduction deafness",
+      "synonyms": [],
+      "group": "HP:0000598",
+      "mechanism_ids": [],
+      "x": 187.3,
+      "y": 557.6
+    },
+    {
+      "id": "OMIM:108770",
+      "name": "Atrial standstill 1",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -201.9,
+      "y": 682.3
+    },
+    {
+      "id": "OMIM:108800",
+      "name": "Atrial septal defect 1",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -164.3,
+      "y": 654.9
+    },
+    {
+      "id": "OMIM:108900",
+      "name": "Atrial septal defect 7, with or without AV conduction defects",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -183.5,
+      "y": 650.4
+    },
+    {
+      "id": "OMIM:108950",
+      "name": "Atrial tachyarrhythmia with short pr interval",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -247.7,
+      "y": 671.8
+    },
+    {
+      "id": "OMIM:108985",
+      "name": "Sveinsson chorioretinal atrophy",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 221.5,
+      "y": 360.6
+    },
+    {
+      "id": "OMIM:109050",
+      "name": "Auralcephalosyndactyly",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 58.4,
+      "y": -526.0
+    },
+    {
+      "id": "OMIM:109100",
+      "name": "Autoimmune disease",
+      "synonyms": [],
+      "group": "HP:0002715",
+      "mechanism_ids": [],
+      "x": -207.6,
+      "y": -432.4
+    },
+    {
+      "id": "OMIM:109120",
+      "name": "Axenfeld-Rieger anomaly with partially absent eye muscles, distinctive face, hydrocephaly, and skeletal abnormalities",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -407.5,
+      "y": 282.3
+    },
+    {
+      "id": "OMIM:109130",
+      "name": "Axial osteomalacia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -305.7,
+      "y": 402.3
+    },
+    {
+      "id": "OMIM:109150",
+      "name": "Machado-Joseph disease",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 32.0,
+      "y": -147.9
+    },
+    {
+      "id": "OMIM:109200",
+      "name": "Alopecia, androgenetic, 1",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -457.1,
+      "y": -11.6
+    },
+    {
+      "id": "OMIM:109350",
+      "name": "Gastroesophageal reflux",
+      "synonyms": [],
+      "group": "HP:0025031",
+      "mechanism_ids": [],
+      "x": 271.0,
+      "y": -627.4
+    },
+    {
+      "id": "OMIM:109400",
+      "name": "Basal cell nevus syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -330.7,
+      "y": 347.0
+    },
+    {
+      "id": "OMIM:109500",
+      "name": "Basilar impression, primary",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -286.4,
+      "y": 372.2
+    },
+    {
+      "id": "OMIM:109543",
+      "name": "Leukemia, chronic lymphocytic, susceptibility to, 2",
+      "synonyms": [],
+      "group": "HP:0001871",
+      "mechanism_ids": [],
+      "x": -653.2,
+      "y": 317.3
+    },
+    {
+      "id": "OMIM:109650",
+      "name": "Behcet syndrome",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 338.6,
+      "y": 337.8
+    },
+    {
+      "id": "OMIM:109720",
+      "name": "Biliary cirrhosis, primary",
+      "synonyms": [],
+      "group": "HP:0025031",
+      "mechanism_ids": [],
+      "x": 289.6,
+      "y": -567.1
+    },
+    {
+      "id": "OMIM:109730",
+      "name": "Aortic valve disease 1",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -143.2,
+      "y": 635.9
+    },
+    {
+      "id": "OMIM:109800",
+      "name": "Bladder cancer",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 396.2,
+      "y": -254.4
+    },
+    {
+      "id": "OMIM:109900",
+      "name": "Blepharochalasis and double lip",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 85.4,
+      "y": -358.4
+    },
+    {
+      "id": "OMIM:110000",
+      "name": "Blepharochalasis, superior",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 19.4,
+      "y": -345.0
+    },
+    {
+      "id": "OMIM:110050",
+      "name": "Blepharonasofacial malformation syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -8.5,
+      "y": -361.4
+    },
+    {
+      "id": "OMIM:110100",
+      "name": "Blepharophimosis, epicanthus inversus, and ptosis",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -18.0,
+      "y": -397.6
+    },
+    {
+      "id": "OMIM:110150",
+      "name": "Blepharoptosis, myopia, and ectopia lentis",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 246.6,
+      "y": 284.9
+    },
+    {
+      "id": "OMIM:111400",
+      "name": "#111400 BLOOD GROUP, P1PK SYSTEMP(1) PHENOTYPE, INCLUDED;;P(2) PHENOTYPE, INCLUDED;;P1(k) PHENOTYPE, INCLUDED;;P2(k) PHENOTYPE, INCLUDED;;p PHENOTYPE, INCLUDED;;NOR POLYAGGLUTINATION SYNDROME, INCLUDED",
+      "synonyms": [],
+      "group": "HP:0001871",
+      "mechanism_ids": [],
+      "x": -768.9,
+      "y": 260.0
+    },
+    {
+      "id": "OMIM:111700",
+      "name": "RHESUS BLOOD GROUP, CcEe ANTIGENS; RHCE",
+      "synonyms": [],
+      "group": "HP:0001871",
+      "mechanism_ids": [],
+      "x": -682.4,
+      "y": 308.1
+    },
+    {
+      "id": "OMIM:112200",
+      "name": "Blue rubber bleb nevus",
+      "synonyms": [],
+      "group": "HP:0025031",
+      "mechanism_ids": [],
+      "x": 273.6,
+      "y": -630.7
+    },
+    {
+      "id": "OMIM:112240",
+      "name": "Cole-Carpenter syndrome 1",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -310.6,
+      "y": 382.3
+    },
+    {
+      "id": "OMIM:112250",
+      "name": "Diaphyseal medullary stenosis with malignant fibrous histiocytoma",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -294.7,
+      "y": 326.8
+    },
+    {
+      "id": "OMIM:112270",
+      "name": "Bone pain, periodic",
+      "synonyms": [],
+      "group": "HP:0025142",
+      "mechanism_ids": [],
+      "x": 380.8,
+      "y": -400.0
+    },
+    {
+      "id": "OMIM:112310",
+      "name": "Boomerang dysplasia",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -3.9,
+      "y": -359.4
+    },
+    {
+      "id": "OMIM:112350",
+      "name": "Weismann-Netter syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -346.6,
+      "y": 252.1
+    },
+    {
+      "id": "OMIM:112370",
+      "name": "Brachmann-De lange-like facial changes with microcephaly, metatarsusadductus, and developmental delay",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 82.3,
+      "y": -359.3
+    },
+    {
+      "id": "OMIM:112410",
+      "name": "Hypertension and brachydactyly syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -376.0,
+      "y": 424.7
+    },
+    {
+      "id": "OMIM:112450",
+      "name": "Brachydactyly, preaxial, with hallux varus and thumb abduction",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -453.7,
+      "y": 325.1
+    },
+    {
+      "id": "OMIM:112500",
+      "name": "Brachydactyly, type A1",
+      "synonyms": [],
+      "group": "HP:0040064",
+      "mechanism_ids": [],
+      "x": 488.4,
+      "y": 413.0
+    },
+    {
+      "id": "OMIM:112600",
+      "name": "Brachydactyly, type A2",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -288.6,
+      "y": 308.2
+    },
+    {
+      "id": "OMIM:112700",
+      "name": "Brachydactyly, type A3",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -425.8,
+      "y": 403.9
+    },
+    {
+      "id": "OMIM:112800",
+      "name": "Brachydactyly, type A4",
+      "synonyms": [],
+      "group": "HP:0040064",
+      "mechanism_ids": [],
+      "x": 480.3,
+      "y": 420.4
+    },
+    {
+      "id": "OMIM:113000",
+      "name": "Brachydactyly, type B1",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -437.8,
+      "y": 335.7
+    },
+    {
+      "id": "OMIM:113100",
+      "name": "Brachydactyly, type C",
+      "synonyms": [],
+      "group": "HP:0040064",
+      "mechanism_ids": [],
+      "x": 486.4,
+      "y": 409.3
+    },
+    {
+      "id": "OMIM:113200",
+      "name": "Brachydactyly, type D",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -302.2,
+      "y": 264.9
+    },
+    {
+      "id": "OMIM:113300",
+      "name": "Brachydactyly, type E",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -449.1,
+      "y": 360.2
+    },
+    {
+      "id": "OMIM:113301",
+      "name": "Brachydactyly, type e, with atrial septal defect, type II",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -418.4,
+      "y": 261.6
+    },
+    {
+      "id": "OMIM:113310",
+      "name": "Brachydactyly-Ectrodactyly with fibular aplasia or hypoplasia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -366.5,
+      "y": 241.4
+    },
+    {
+      "id": "OMIM:113400",
+      "name": "Brachydactyly-Nystagmus-Cerebellar ataxia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -293.1,
+      "y": 281.4
+    },
+    {
+      "id": "OMIM:113477",
+      "name": "Brachymorphism-Onychodysplasia-Dysphalangism syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -43.0,
+      "y": -416.5
+    },
+    {
+      "id": "OMIM:113500",
+      "name": "Brachyolmia type 3",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -448.7,
+      "y": 332.3
+    },
+    {
+      "id": "OMIM:113600",
+      "name": "Branchial cleft anomaliesbranchial cysts, included",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 102.0,
+      "y": -351.2
+    },
+    {
+      "id": "OMIM:113620",
+      "name": "Branchiooculofacial syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 27.0,
+      "y": -458.7
+    },
+    {
+      "id": "OMIM:113650",
+      "name": "Branchiootorenal syndrome 1",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 3.9,
+      "y": -477.6
+    },
+    {
+      "id": "OMIM:113670",
+      "name": "Breast, unilateral giant",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -277.0,
+      "y": 294.8
+    },
+    {
+      "id": "OMIM:113700",
+      "name": "Breasts and/or nipples, aplasia or hypoplasia of, 1",
+      "synonyms": [],
+      "group": "HP:0000769",
+      "mechanism_ids": [],
+      "x": -26.1,
+      "y": 317.3
+    },
+    {
+      "id": "OMIM:113750",
+      "name": "Albinism, oculocutaneous, type VI",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 203.4,
+      "y": 415.9
+    },
+    {
+      "id": "OMIM:113800",
+      "name": "Epidermolytic hyperkeratosis",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -375.9,
+      "y": -76.4
+    },
+    {
+      "id": "OMIM:113900",
+      "name": "Progressive familial heart block, type IA",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -206.5,
+      "y": 669.3
+    },
+    {
+      "id": "OMIM:113950",
+      "name": "Bundle branch block, familial isolated complete right",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -248.6,
+      "y": 693.7
+    },
+    {
+      "id": "OMIM:113970",
+      "name": "Burkitt lymphoma",
+      "synonyms": [],
+      "group": "HP:0001871",
+      "mechanism_ids": [],
+      "x": -632.3,
+      "y": 329.9
+    },
+    {
+      "id": "OMIM:114000",
+      "name": "Caffey disease",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -302.8,
+      "y": 280.6
+    },
+    {
+      "id": "OMIM:114065",
+      "name": "Calcific aortic disease with immunologic abnormalities, familial",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -184.3,
+      "y": 714.0
+    },
+    {
+      "id": "OMIM:114140",
+      "name": "Callosities, hereditary painful",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -351.3,
+      "y": -110.2
+    },
+    {
+      "id": "OMIM:114200",
+      "name": "Camptodactyly 1",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -375.0,
+      "y": 241.7
+    },
+    {
+      "id": "OMIM:114290",
+      "name": "Campomelic dysplasia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -380.9,
+      "y": 334.2
+    },
+    {
+      "id": "OMIM:114300",
+      "name": "Arthrogryposis, distal, type 3",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -323.6,
+      "y": 300.0
+    },
+    {
+      "id": "OMIM:114450",
+      "name": "Cancer, familial, with in vitro radioresistance",
+      "synonyms": [],
+      "group": "HP:0002664",
+      "mechanism_ids": [],
+      "x": -409.3,
+      "y": 637.4
+    },
+    {
+      "id": "OMIM:114480",
+      "name": "Breast cancer",
+      "synonyms": [],
+      "group": "HP:0000769",
+      "mechanism_ids": [],
+      "x": -14.1,
+      "y": 307.6
+    },
+    {
+      "id": "OMIM:114500",
+      "name": "Colorectal cancer",
+      "synonyms": [],
+      "group": "HP:0002664",
+      "mechanism_ids": [],
+      "x": -461.4,
+      "y": 655.0
+    },
+    {
+      "id": "OMIM:114550",
+      "name": "Hepatocellular carcinoma",
+      "synonyms": [],
+      "group": "HP:0025031",
+      "mechanism_ids": [],
+      "x": 275.4,
+      "y": -563.8
+    },
+    {
+      "id": "OMIM:114580",
+      "name": "Candidiasis, familial chronic mucocutaneous, autosomal dominant",
+      "synonyms": [],
+      "group": "HP:0002715",
+      "mechanism_ids": [],
+      "x": -226.3,
+      "y": -440.7
+    },
+    {
+      "id": "OMIM:114600",
+      "name": "Canine teeth, absence of upper permanent",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -9.9,
+      "y": -519.3
+    },
+    {
+      "id": "OMIM:114650",
+      "name": "Car factor deficiency",
+      "synonyms": [],
+      "group": "HP:0001871",
+      "mechanism_ids": [],
+      "x": -649.8,
+      "y": 355.0
+    },
+    {
+      "id": "OMIM:114700",
+      "name": "Carabelli anomaly of maxillary molar teeth",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 93.8,
+      "y": -362.7
+    },
+    {
+      "id": "OMIM:114900",
+      "name": "Carcinoid tumors, intestinal",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -50.2,
+      "y": 158.5
+    },
+    {
+      "id": "OMIM:115000",
+      "name": "Ventricular arrhythmias due to cardiac ryanodine receptor calcium release deficiency syndrome",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -201.7,
+      "y": 678.8
+    },
+    {
+      "id": "OMIM:115080",
+      "name": "Cardiac conduction defectsudden cardiac death, included",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -263.0,
+      "y": 665.7
+    },
+    {
+      "id": "OMIM:115150",
+      "name": "Cardiofaciocutaneous syndrome 1",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 29.0,
+      "y": -437.5
+    },
+    {
+      "id": "OMIM:115195",
+      "name": "Cardiomyopathy, familial hypertrophic, 2",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -167.7,
+      "y": 658.6
+    },
+    {
+      "id": "OMIM:115196",
+      "name": "Cardiomyopathy, familial hypertrophic, 3",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -142.8,
+      "y": 607.1
+    },
+    {
+      "id": "OMIM:115197",
+      "name": "Cardiomyopathy, familial hypertrophic, 4",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -184.5,
+      "y": 628.9
+    },
+    {
+      "id": "OMIM:115200",
+      "name": "Cardiomyopathy, dilated, 1A",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -210.2,
+      "y": 689.1
+    },
+    {
+      "id": "OMIM:115210",
+      "name": "Cardiomyopathy, familial restrictive, 1",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -189.0,
+      "y": 604.9
+    },
+    {
+      "id": "OMIM:115250",
+      "name": "Collagenoma, familial cutaneous",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -190.2,
+      "y": 645.0
+    },
+    {
+      "id": "OMIM:115300",
+      "name": "Carotenemia, familial",
+      "synonyms": [],
+      "group": "HP:0001939",
+      "mechanism_ids": [],
+      "x": 390.9,
+      "y": 129.5
+    },
+    {
+      "id": "OMIM:115310",
+      "name": "Paragangliomas 4",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 139.3,
+      "y": -26.4
+    },
+    {
+      "id": "OMIM:115430",
+      "name": "Carpal tunnel syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 103.9,
+      "y": 40.6
+    },
+    {
+      "id": "OMIM:115470",
+      "name": "Cat eye syndrome",
+      "synonyms": [],
+      "group": "HP:0025031",
+      "mechanism_ids": [],
+      "x": 284.9,
+      "y": -641.9
+    },
+    {
+      "id": "OMIM:115650",
+      "name": "Cataract, anterior polar, 1",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 309.0,
+      "y": 264.5
+    },
+    {
+      "id": "OMIM:115660",
+      "name": "Cataract 7",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 241.9,
+      "y": 400.9
+    },
+    {
+      "id": "OMIM:115665",
+      "name": "Cataract, congenital, Volkmann type",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 269.8,
+      "y": 310.7
+    },
+    {
+      "id": "OMIM:115700",
+      "name": "Cataract, crystalline aculeiform",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 296.7,
+      "y": 322.4
+    },
+    {
+      "id": "OMIM:115800",
+      "name": "Cataract, crystalline coralliform",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 267.1,
+      "y": 270.8
+    },
+    {
+      "id": "OMIM:115900",
+      "name": "Cataract 42",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 309.7,
+      "y": 311.0
+    },
+    {
+      "id": "OMIM:116100",
+      "name": "Cataract 20, multiple types",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 264.0,
+      "y": 288.9
+    },
+    {
+      "id": "OMIM:116200",
+      "name": "Cataract 1, multiple types",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 313.8,
+      "y": 273.6
+    },
+    {
+      "id": "OMIM:116300",
+      "name": "Cataract 30, multiple types",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 295.9,
+      "y": 260.9
+    },
+    {
+      "id": "OMIM:116400",
+      "name": "Cataract, nuclear total",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 323.8,
+      "y": 289.4
+    },
+    {
+      "id": "OMIM:116600",
+      "name": "Cataract, posterior polar, 1 ctpa cataract, congenital total, included",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 287.8,
+      "y": 318.6
+    },
+    {
+      "id": "OMIM:116700",
+      "name": "Cataract 13 with adult i phenotype",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 269.4,
+      "y": 313.6
+    },
+    {
+      "id": "OMIM:116800",
+      "name": "Cataract, lamellar",
+      "synonyms": [],
+      "group": "HP:0000478",
+      "mechanism_ids": [],
+      "x": 317.5,
+      "y": 293.5
+    },
+    {
+      "id": "OMIM:116860",
+      "name": "Cerebral cavernous malformations 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -26.5,
+      "y": 66.2
+    },
+    {
+      "id": "OMIM:116870",
+      "name": "Celiac artery stenosis from compression by median arcuate ligamentof diaphragm",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -183.9,
+      "y": 570.4
+    },
+    {
+      "id": "OMIM:116920",
+      "name": "Leukocyte adhesion deficiency, type I",
+      "synonyms": [],
+      "group": "HP:0002715",
+      "mechanism_ids": [],
+      "x": -243.3,
+      "y": -442.0
+    },
+    {
+      "id": "OMIM:117000",
+      "name": "Central core disease",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -456.2,
+      "y": 448.7
+    },
+    {
+      "id": "OMIM:117100",
+      "name": "Centralopathic epilepsy",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -98.0,
+      "y": -49.9
+    },
+    {
+      "id": "OMIM:117210",
+      "name": "Spinocerebellar ataxia 31",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -2.2,
+      "y": -91.7
+    },
+    {
+      "id": "OMIM:117300",
+      "name": "Dementia, familial danish",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 50.1,
+      "y": -104.5
+    },
+    {
+      "id": "OMIM:117360",
+      "name": "Spinocerebellar ataxia 29, congenital nonprogressive",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 12.8,
+      "y": -143.8
+    },
+    {
+      "id": "OMIM:117550",
+      "name": "Sotos syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 30.9,
+      "y": -441.9
+    },
+    {
+      "id": "OMIM:117650",
+      "name": "Cerebrocostomandibular syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -340.6,
+      "y": 368.4
+    },
+    {
+      "id": "OMIM:117850",
+      "name": "Cervical hypertrichosis with underlying kyphoscoliosis",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -510.8,
+      "y": -9.6
+    },
+    {
+      "id": "OMIM:117900",
+      "name": "Cervical rib",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 48.7,
+      "y": 163.8
+    },
+    {
+      "id": "OMIM:118000",
+      "name": "Cervical vertebral bridge",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -402.7,
+      "y": 423.1
+    },
+    {
+      "id": "OMIM:118005",
+      "name": "Cervical vertebral dysplasia",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -363.8,
+      "y": 429.7
+    },
+    {
+      "id": "OMIM:118100",
+      "name": "Klippel-Feil syndrome 1, autosomal dominant",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -433.8,
+      "y": 341.5
+    },
+    {
+      "id": "OMIM:160500",
+      "name": "Myopathy, distal, 1",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -479.7,
+      "y": 415.3
+    },
+    {
+      "id": "OMIM:160565",
+      "name": "Myopathy, tubular aggregate, 1",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -451.8,
+      "y": 422.8
+    },
+    {
+      "id": "OMIM:181350",
+      "name": "Emery-Dreifuss muscular dystrophy 2, autosomal dominant",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -473.1,
+      "y": 434.0
+    },
+    {
+      "id": "OMIM:185070",
+      "name": "Stormorken syndrome",
+      "synonyms": [],
+      "group": "HP:0001871",
+      "mechanism_ids": [],
+      "x": -760.3,
+      "y": 287.8
+    },
+    {
+      "id": "OMIM:222748",
+      "name": "Dihydropyrimidinuria",
+      "synonyms": [],
+      "group": "HP:0001939",
+      "mechanism_ids": [],
+      "x": 406.0,
+      "y": 153.5
+    },
+    {
+      "id": "OMIM:232800",
+      "name": "Glycogen storage disease VII",
+      "synonyms": [],
+      "group": "HP:0001939",
+      "mechanism_ids": [],
+      "x": 471.4,
+      "y": 171.5
+    },
+    {
+      "id": "OMIM:234200",
+      "name": "Neurodegeneration with brain iron accumulation 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 6.6,
+      "y": -151.8
+    },
+    {
+      "id": "OMIM:236670",
+      "name": "Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 1",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 8.8,
+      "y": -17.9
+    },
+    {
+      "id": "OMIM:242840",
+      "name": "Vici syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 65.4,
+      "y": -430.9
+    },
+    {
+      "id": "OMIM:245340",
+      "name": "Erythrocyte lactate transporter defect",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -383.4,
+      "y": 209.6
+    },
+    {
+      "id": "OMIM:253800",
+      "name": "Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 4",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 28.9,
+      "y": -6.1
+    },
+    {
+      "id": "OMIM:268200",
+      "name": "Myoglobinuria, acute recurrent, autosomal recessive",
+      "synonyms": [],
+      "group": "HP:0001939",
+      "mechanism_ids": [],
+      "x": 382.5,
+      "y": 195.7
+    },
+    {
+      "id": "OMIM:300257",
+      "name": "Danon disease",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -216.6,
+      "y": 685.9
+    },
+    {
+      "id": "OMIM:310200",
+      "name": "Duchenne muscular dystrophy",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -484.9,
+      "y": 439.0
+    },
+    {
+      "id": "OMIM:602541",
+      "name": "Muscular dystrophy, congenital, megaconial type",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -133.3,
+      "y": 52.1
+    },
+    {
+      "id": "OMIM:607855",
+      "name": "Muscular dystrophy, congenital, merosin deficient or partially deficient",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -378.2,
+      "y": 196.3
+    },
+    {
+      "id": "OMIM:611881",
+      "name": "Glycogen storage disease XII",
+      "synonyms": [],
+      "group": "HP:0001939",
+      "mechanism_ids": [],
+      "x": 445.7,
+      "y": 157.9
+    },
+    {
+      "id": "OMIM:612937",
+      "name": "Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 15",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -497.6,
+      "y": 448.9
+    },
+    {
+      "id": "OMIM:615350",
+      "name": "Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 14",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 27.1,
+      "y": 50.2
+    },
+    {
+      "id": "OMIM:615351",
+      "name": "Muscular dystrophy-dystroglycanopathy (congenital with impaired intellectual development), type B, 14",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -337.2,
+      "y": 187.1
+    },
+    {
+      "id": "OMIM:615704",
+      "name": "Poikiloderma, hereditary fibrosing, with tendon contractures, myopathy, and pulmonary fibrosis",
+      "synonyms": [],
+      "group": "HP:0001574",
+      "mechanism_ids": [],
+      "x": -495.6,
+      "y": -5.6
+    },
+    {
+      "id": "OMIM:615883",
+      "name": "Myopathy, tubular aggregate, 2",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -359.5,
+      "y": 168.2
+    },
+    {
+      "id": "OMIM:617114",
+      "name": "Myopathy, myofibrillar, 7",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -476.5,
+      "y": 443.6
+    },
+    {
+      "id": "OMIM:621314",
+      "name": "Pompe disease, late-onset",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -380.3,
+      "y": 199.9
+    },
+    {
+      "id": "ORPHA:34515",
+      "name": "FKRP-related limb-girdle muscular dystrophy R9",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -355.9,
+      "y": 171.7
+    }
+  ],
+  "groups": [
+    {
+      "id": "HP:0000707",
+      "label": "Nervous system",
+      "count": 3633,
+      "x": 0.0,
+      "y": 0.0,
+      "r": 281.1
+    },
+    {
+      "id": "HP:0033127",
+      "label": "Musculoskeletal system",
+      "count": 2141,
+      "x": -365.2,
+      "y": 334.6,
+      "r": 214.2
+    },
+    {
+      "id": "HP:0000152",
+      "label": "Head or neck",
+      "count": 1641,
+      "x": 38.5,
+      "y": -438.2,
+      "r": 158.7
+    },
+    {
+      "id": "HP:0000478",
+      "label": "Eye",
+      "count": 860,
+      "x": 284.8,
+      "y": 371.5,
+      "r": 149.6
+    },
+    {
+      "id": "HP:0001574",
+      "label": "Integument",
+      "count": 772,
+      "x": -418.6,
+      "y": -74.0,
+      "r": 143.9
+    },
+    {
+      "id": "HP:0000119",
+      "label": "Genitourinary system",
+      "count": 710,
+      "x": 349.9,
+      "y": -222.6,
+      "r": 133.6
+    },
+    {
+      "id": "HP:0001626",
+      "label": "Cardiovascular system",
+      "count": 571,
+      "x": -169.3,
+      "y": 629.8,
+      "r": 134.9
+    },
+    {
+      "id": "HP:0002715",
+      "label": "Immune system",
+      "count": 484,
+      "x": -240.5,
+      "y": -463.1,
+      "r": 120.4
+    },
+    {
+      "id": "HP:0001939",
+      "label": "Metabolism/homeostasis",
+      "count": 478,
+      "x": 455.7,
+      "y": 166.4,
+      "r": 116.6
+    },
+    {
+      "id": "HP:0001871",
+      "label": "Blood and blood-forming tissues",
+      "count": 398,
+      "x": -690.0,
+      "y": 284.8,
+      "r": 109.5
+    },
+    {
+      "id": "HP:0025031",
+      "label": "Digestive system",
+      "count": 308,
+      "x": 275.2,
+      "y": -588.2,
+      "r": 113.3
+    },
+    {
+      "id": "HP:0000598",
+      "label": "Ear",
+      "count": 253,
+      "x": 188.2,
+      "y": 600.2,
+      "r": 87.0
+    },
+    {
+      "id": "HP:0000818",
+      "label": "Endocrine system",
+      "count": 187,
+      "x": -528.9,
+      "y": -306.5,
+      "r": 101.6
+    },
+    {
+      "id": "HP:0002086",
+      "label": "Respiratory system",
+      "count": 183,
+      "x": 532.9,
+      "y": -117.2,
+      "r": 75.6
+    },
+    {
+      "id": "HP:0002664",
+      "label": "Neoplasm",
+      "count": 113,
+      "x": -439.2,
+      "y": 624.7,
+      "r": 71.5
+    },
+    {
+      "id": "HP:0001507",
+      "label": "Growth abnormality",
+      "count": 51,
+      "x": -79.5,
+      "y": -613.2,
+      "r": 51.9
+    },
+    {
+      "id": "HP:0040064",
+      "label": "Limbs",
+      "count": 47,
+      "x": 485.8,
+      "y": 409.4,
+      "r": 47.2
+    },
+    {
+      "id": "HP:0001197",
+      "label": "Prenatal development or birth",
+      "count": 17,
+      "x": -567.5,
+      "y": 23.5,
+      "r": 31.0
+    },
+    {
+      "id": "HP:0025142",
+      "label": "Constitutional symptom",
+      "count": 14,
+      "x": 398.4,
+      "y": -396.5,
+      "r": 41.6
+    },
+    {
+      "id": "HP:0000769",
+      "label": "Breast",
+      "count": 6,
+      "x": -14.2,
+      "y": 307.2,
+      "r": 26.4
+    }
+  ],
+  "edges": [],
+  "total_diseases": 12867,
+  "displayed_diseases": 300,
+  "layout_kind": "300 real disease positions sampled from HACK-003 HPO system galaxies"
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "demo_data": true,
+  "sources": [],
+  "client_secret": "SAMPLE_NOT_A_TOKEN",
+  "expires_at": 0,
+  "model": "sample-only",
+  "usable": false
+}

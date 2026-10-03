@@ -1,0 +1,65 @@
+{
+  "seed": 7668832,
+  "sources": [
+    {
+      "name": "hp.json",
+      "url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/hp.json",
+      "version": "v2026-09-01",
+      "sha256": "a7b3a012e7b4007a35a7cf8da35f2373b54cc16907f80d13d62470d31f833501"
+    },
+    {
+      "name": "phenotype.hpoa",
+      "url": "https://github.com/obophenotype/human-phenotype-ontology/releases/download/v2026-09-01/phenotype.hpoa",
+      "version": "v2026-09-01",
+      "sha256": "e89aa39c8f97bf5a52c5d160f9250a603681d630ade8ec2679d84ac5aece1f72"
+    },
+    {
+      "name": "phenopacket.json",
+      "url": "https://raw.githubusercontent.com/monarch-initiative/phenopacket-store/0.1.27/notebooks/GAA/phenopackets/PMID_7668832_Father.json",
+      "version": "0.1.27",
+      "sha256": "7da518380f65f5d6a4e7b9c6b741a9120be9852e0563c0b6b8d329f0edfc87c3"
+    },
+    {
+      "name": "overview.json",
+      "url": "https://raw.githubusercontent.com/JoahanMorales/hacknation/4fded4157b2742811294f9df1e93314fd578a455/app/fixtures/graph/overview.json",
+      "version": "4fded4157b2742811294f9df1e93314fd578a455",
+      "sha256": "425d931236cb33d67066e06af3714ac940c2914fcda0130f149ca3750bb87fda"
+    }
+  ],
+  "hpoa_header": [
+    "#description: \"HPO annotations for rare diseases [8478: OMIM; 47: DECIPHER; 4357 ORPHANET]\"",
+    "#version: 2026-09-02",
+    "#tracker: https://github.com/obophenotype/human-phenotype-ontology/issues",
+    "#hpo-version: http://purl.obolibrary.org/obo/hp/releases/2026-09-01/hp.json"
+  ],
+  "disease_count": 12867,
+  "case_id": "pompe_published_case",
+  "case_diagnosis_reused_in_hpoa": true,
+  "limitations": [
+    "The published demo case is also used by HPO annotations: demonstration, not independent validation.",
+    "Correlated phenotypes are multiplied under a naive-independence assumption.",
+    "Missing annotations use background frequency (LR 1); unknown frequency is not treated as absence.",
+    "Disease IDs can represent overlapping diagnoses; OMIM and ORPHA records are not deduplicated.",
+    "Compatible ancestor/descendant annotations use maximum frequency; no common-ancestor sibling match.",
+    "Top ten normalize across all in-scope diseases; remaining mass is other_pct.",
+    "Ranges are seeded frequency-sensitivity envelopes, not clinical confidence intervals."
+  ],
+  "files": {
+    "app/fixtures/api/action_plan.json": "cac1f89f7924f61006464c26b2a6ee974640646fd79ad7c0e4c4626888b876cf",
+    "app/fixtures/api/action_plan_unsupported.json": "56dfbccd7565c437b116bd890a500ea777e54ba9d76ec582309b6ce3d54c11a4",
+    "app/fixtures/api/diagnose.json": "ea8d0e63fb0ac194212f74ad195c91211df27d7d62910f095673616084804e8b",
+    "app/fixtures/api/diagnose_step_01.json": "7ebaa88334741859b34d80b0c39f761b71a9832fb159ed60b02909e7928a8399",
+    "app/fixtures/api/diagnose_step_02.json": "6e35429d575e2b46fc01c598808d650ee2db7349772f8fb236f4b033f9ff6e65",
+    "app/fixtures/api/diagnose_step_03.json": "9eef93699591708700f882d93942351a87ae86cf68a86262e2706688bf8a9aa3",
+    "app/fixtures/api/diagnose_step_04.json": "d718dd9978523acdb85f088d7a50ec884c2e93de6af1459fcc1d1bc2d4c68fbb",
+    "app/fixtures/api/diagnose_step_05.json": "ea8d0e63fb0ac194212f74ad195c91211df27d7d62910f095673616084804e8b",
+    "app/fixtures/api/edge.json": "8c47f357f6e1f4b72cef8bf34693e975cc8c626877ba050f77e046ca2250ee12",
+    "app/fixtures/api/explain.json": "797d3527fb39e92757cf81761373078deec8e9763443a83afcab5ee71cb6d41b",
+    "app/fixtures/api/graph_overview.json": "620d43aad3ecdcd3fadbaa753e7008ecbf853600b7b7ca4e34da5924e54d91de",
+    "app/fixtures/api/next_question.json": "b53647bb7e6b504b6460d07071e936a71d895db64b5e0fb32708b5b8c1849662",
+    "app/fixtures/api/node.json": "60779e1897dbd2efbff483393d8f1107da198adaaee277286273925d62e7873f",
+    "app/fixtures/api/symptoms_extract.json": "41aa277bad7ba196074b8cc1ba1812df7773db5ff0ddbe4b0367a6826fc602f1",
+    "app/fixtures/api/transcribe_session.json": "7687223c17b4d9fa6ebbb1fcfed591586c427b9673a5750a60b310afdc768a46",
+    "app/fixtures/case/pompe_case.json": "b035bcb0f8accf97be3bf35c04a039d73e94286b3db8b3e67609579a5d6683f4"
+  }
+}
