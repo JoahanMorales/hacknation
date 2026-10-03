@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791072120
-Updated: 1791070320
+Lease-Until: 1791072183
+Updated: 1791070383
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Patch diagnosis; regression navegador escena action y return; lint/build, smoke, PR followup independiente.
+Next: Stage, smoke, commit/push y PR followup HACK-018; revision independiente nuevo SHA.
 PR: -
 Evidence: -
-Events: 13
-Checkpoints: 7
+Events: 14
+Checkpoints: 8
 Sessions: 1
-Last-Checkpoint: 1791070320
+Last-Checkpoint: 1791070383
