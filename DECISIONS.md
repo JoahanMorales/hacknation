@@ -53,3 +53,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791071464 | deadline lease/HACK-015/1791071417 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791071464 | deadline lease/HACK-019/1791071375 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791071526 | HACK-018 | Mantener evidencia de viewport020 real roja; no declarar demo completa. Pedir review018SHA y mergefix020owner. | Por qué: Source de018 ya integrado; revision formal habilita cierre, mientras otro componente requiere scroll con7activos reales.
+- 1791071568 | deadline lease/HACK-006/1791071552 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
