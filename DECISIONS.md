@@ -55,3 +55,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791071526 | HACK-018 | Mantener evidencia de viewport020 real roja; no declarar demo completa. Pedir review018SHA y mergefix020owner. | Por qué: Source de018 ya integrado; revision formal habilita cierre, mientras otro componente requiere scroll con7activos reales.
 - 1791071568 | deadline lease/HACK-006/1791071552 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791071638 | deadline lease/HACK-017/1791071591 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791071649 | HACK-018 | Source diagnosis no aparece en action y hook sigue montado. No declarar demo completa hasta integrar scroll020 y guard de citas019. | Por qué: API real2groups7assets descubre overflow externo; REVIEW018 permite verificar scope mientras owners integran sus fixes.
