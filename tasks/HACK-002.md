@@ -9,13 +9,13 @@ Priority: P0
 Paths: app/schemas/, app/fixtures/case/, app/fixtures/api/, app/tests/test_schemas.py
 Depends: Ninguna
 Verify: uv run pytest -q app/tests/test_schemas.py
-Lease-Until: 1791065679
-Updated: 1791063879
+Lease-Until: 1791066094
+Updated: 1791064294
 Task-Base: bb6deeaac77522ec64554b8e5c934715b935b784
-Next: Comprobar regeneracion determinista; publicar rama y revisar smoke
+Next: Finalizar smoke sobre main 8606ac7 y pasar PR3 SHA30c7f2f a revision humana
 PR: -
 Evidence: -
-Events: 5
-Checkpoints: 1
+Events: 6
+Checkpoints: 2
 Sessions: 1
-Last-Checkpoint: 1791063477
+Last-Checkpoint: 1791064294
