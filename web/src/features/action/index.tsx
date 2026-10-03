@@ -24,7 +24,7 @@ type ActionPlan = {
   supported: boolean;
   groups: { name: string; diseases: string[]; url: string; registry: string | null }[];
   assets: { kind: string; id: string; name: string; url: string; evidence_level: ApiEvidence }[];
-  bridges: { id: string; src: string; dst: string; summary: string; evidence_level: ApiEvidence }[];
+  bridges: { id: string; src: string; dst: string; type: string; summary: string; evidence_level: ApiEvidence }[];
   differences: string[];
   needs_expert: string[];
   this_week: { action: string; url: string | null };
@@ -49,6 +49,27 @@ const KIND: Record<string, string> = {
 };
 
 // "International Pompe Association" → "IP"; "CureLGMD2i" → "CL".
+// Primero lo que más le importa a Maria: puente terapéutico, mismo gen y ruta compartida.
+const BRIDGE_LIMIT = 3;
+const BRIDGE_PRIORITY = ["therapy_bridge", "allelic_series", "shared_pathway", "same_mechanism_family"];
+const topBridges = (bridges: ActionPlan["bridges"], limit = BRIDGE_LIMIT) =>
+  [...bridges]
+    .sort(
+      (a, b) =>
+        (BRIDGE_PRIORITY.indexOf(a.type) + 1 || 99) - (BRIDGE_PRIORITY.indexOf(b.type) + 1 || 99) ||
+        a.id.localeCompare(b.id),
+    )
+    .slice(0, limit);
+
+function Bridge({ bridge }: { bridge: ActionPlan["bridges"][number] }) {
+  return (
+    <p className="flex flex-col gap-1 text-xs">
+      <span>{bridge.summary}</span>
+      <EvidenceBadge level={BADGE[bridge.evidence_level]} className="self-start" />
+    </p>
+  );
+}
+
 const monogram = (name: string) => {
   const words = name.split(/\s+/).filter((w) => /^[A-Z0-9]/.test(w));
   const letters = words.length > 1 ? words.map((w) => w[0]) : (words[0] ?? name).match(/[A-Z0-9]/g) ?? [];
@@ -139,12 +160,23 @@ function Supported({ plan }: { plan: ActionPlan }) {
           {plan.bridges.length > 0 && (
             <div className="flex flex-col gap-2 border-t border-line/40 pt-3">
               <h4 className="text-xs text-muted">Connected through the same mechanism</h4>
-              {plan.bridges.map((b) => (
-                <p key={b.id} className="flex flex-col gap-1 text-xs">
-                  <span>{b.summary}</span>
-                  <EvidenceBadge level={BADGE[b.evidence_level]} className="self-start" />
-                </p>
+              {topBridges(plan.bridges).map((b) => (
+                <Bridge key={b.id} bridge={b} />
               ))}
+              {plan.bridges.length > BRIDGE_LIMIT && (
+                <details className="text-xs">
+                  <summary className="cursor-pointer text-muted">
+                    {plan.bridges.length - BRIDGE_LIMIT} more connections
+                  </summary>
+                  <div className="mt-2 flex flex-col gap-2">
+                    {topBridges(plan.bridges, Infinity)
+                      .slice(BRIDGE_LIMIT)
+                      .map((b) => (
+                        <Bridge key={b.id} bridge={b} />
+                      ))}
+                  </div>
+                </details>
+              )}
             </div>
           )}
         </section>
