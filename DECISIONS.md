@@ -19,3 +19,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791067343 | HACK-008 | ES: traducción previa sólo para buscar candidatos; sinónimos HPO en annotations.json | Por qué: HPO sólo trae sinónimos en inglés
 - 1791067474 | HACK-005 | Nombre accesible de chips contiene texto visible para reconocimiento por voz | Por qué: Corregir label-content-name-mismatch de Lighthouse; mantener UI negacion visible
 - 1791067593 | HACK-006 | cosmos.gl aprobado; Canvas queda como plan B | Por qué: Avanzar sin esperar el paquete de HACK-001
+- 1791067693 | deadline decision/HACK-006-1791066766/1791067666 | REVERSIBLE_AND_LOG | Opción: Constelacion con cosmos.gl (@cosmograph/cosmos) en lugar de sigma.js; sigma queda como respaldo; Por qué: Humano (Saus) lo aprobo: GPU para 12,867 puntos y ola de poda fluida, la demo es el momento estrella; sin ampliar dinero, cuentas, publicación ni alcance.

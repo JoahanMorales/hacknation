@@ -12,6 +12,6 @@ Verify: npm --prefix web run build
 Lease-Until: 1791069393
 Updated: 1791067593
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Al llegar @cosmograph/cosmos: cosmosRenderer.ts con la misma interfaz y elegirlo por defecto; afinar paleta con DESIGN.md (HACK-005)
+Next: Aplicar opción: Constelacion con cosmos.gl (@cosmograph/cosmos) en lugar de sigma.js; sigma queda como respaldo
 PR: -
 Evidence: -
