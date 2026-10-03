@@ -1,10 +1,10 @@
 # saus-1
 Agent: saus-1
 Started: 1791066682
-Events: 4
-Events-Since-Checkpoint: 0
+Events: 5
+Events-Since-Checkpoint: 1
 Checkpoints: 2
-Sessions: 1
+Sessions: 2
 Last-Checkpoint: 1791068324
-Last-Session: saus-1-1791066681
-Updated: 1791068324
+Last-Session: saus-1-1791068630
+Updated: 1791068630
