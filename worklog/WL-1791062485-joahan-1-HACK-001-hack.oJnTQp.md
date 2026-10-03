@@ -14,3 +14,4 @@
 - 1791062709 | CLAIMED | joahan-1 | checkpoint; siguiente: Abrir PR (falta gh en la Jetson) y hack done HACK-001
 - 1791063223 | REVIEW | joahan-1 | done; PR https://github.com/JoahanMorales/hacknation/pull/1; evidencia: bash scripts/smoke PRODUCT_PASS (exit 0); criterios HACK-001 cumplidos; ya mergeado por humano en 90948c2; reviewer: -
 - 1791063235 | REVIEW | joahan-1 | checkpoint; siguiente: Esperar hack review de otro agente sobre 88b4c4e; luego hack done --integrated 90948c2
+- 1791065082 | REVIEW | joahan-1 | heartbeat; lease hasta 1791066882
