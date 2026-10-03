@@ -8,12 +8,12 @@ from collections import defaultdict
 from pathlib import Path
 
 import pytest
-from pydantic import ValidationError
+from pydantic import TypeAdapter, ValidationError
 
 # HACK-002 can run before HACK-001 supplies pytest's pythonpath configuration.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from app.fixtures.api.generate import Dataset, check, dump, frequency, model_for, score
-from app.schemas import Case, DiagnosisRequest, DiagnosisResult, Edge
+from app.schemas import Case, DiagnosisRequest, DiagnosisResult, DiseaseId, Edge
 
 FIXTURES = Path(__file__).resolve().parents[1] / "fixtures"
 API = FIXTURES / "api"
@@ -83,6 +83,25 @@ def test_sample_graph_contains_all_ranked_and_demo_diseases():
     for path in API.glob("diagnose*.json"):
         result = json.loads(path.read_text(encoding="utf-8"))
         assert {row["disease_id"] for row in result["ranking"]} <= ids
+
+
+def test_real_overview_ids_and_totals_match_the_shared_contract():
+    if not (FIXTURES / "graph/overview.json").exists():
+        pytest.skip("HACK-003 has not supplied the real graph yet")
+    client_module = pytest.importorskip("fastapi.testclient")
+    from app.main import app
+
+    response = client_module.TestClient(app).get("/api/graph/overview")
+    assert response.status_code == 200
+    graph = response.json()
+    nodes = graph.get("nodes", graph.get("diseases"))
+    ids = TypeAdapter(list[DiseaseId]).validate_python([node["id"] for node in nodes])
+    assert len(ids) == 12867
+    assert sum(identifier.startswith("DECIPHER:") for identifier in ids) == 47
+    sample = load("graph_overview.json")
+    assert sample["total_diseases"] == len(ids)
+    assert sum(group["count"] for group in sample["groups"]) == len(ids)
+    assert any(node["id"].startswith("DECIPHER:") for node in sample["nodes"])
 
 
 def test_citations_refer_to_inspectable_edges():

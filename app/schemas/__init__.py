@@ -10,7 +10,7 @@ from typing import Annotated, Literal
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, model_validator
 
 HpoId = Annotated[str, Field(pattern=r"^HP:\d{7}$")]
-DiseaseId = Annotated[str, Field(pattern=r"^(OMIM|ORPHA|MONDO):\d+$")]
+DiseaseId = Annotated[str, Field(pattern=r"^(OMIM|ORPHA|MONDO|DECIPHER):\d+$")]
 Percent = Annotated[float, Field(ge=0, le=100, allow_inf_nan=False)]
 EvidenceLevel = Literal["observado", "inferido", "hipotesis", "contradictorio"]
 

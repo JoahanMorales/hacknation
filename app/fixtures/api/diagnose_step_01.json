@@ -31,16 +31,16 @@
     {
       "disease_id": "OMIM:160500",
       "name": "Myopathy, distal, 1",
-      "pct": 0.165869,
-      "low": 0.047082,
-      "high": 0.165869,
+      "pct": 0.165857,
+      "low": 0.047079,
+      "high": 0.165857,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:17548557"
@@ -50,16 +50,16 @@
     {
       "disease_id": "OMIM:160565",
       "name": "Myopathy, tubular aggregate, 1",
-      "pct": 0.165869,
-      "low": 0.139049,
-      "high": 0.170965,
+      "pct": 0.165857,
+      "low": 0.139039,
+      "high": 0.170952,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:23332920"
@@ -69,16 +69,16 @@
     {
       "disease_id": "OMIM:181350",
       "name": "Emery-Dreifuss muscular dystrophy 2, autosomal dominant",
-      "pct": 0.165869,
-      "low": 0.13818,
-      "high": 0.170102,
+      "pct": 0.165857,
+      "low": 0.138169,
+      "high": 0.170089,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:10939567"
@@ -88,16 +88,16 @@
     {
       "disease_id": "OMIM:185070",
       "name": "Stormorken syndrome",
-      "pct": 0.165869,
-      "low": 0.106694,
-      "high": 0.169364,
+      "pct": 0.165857,
+      "low": 0.106686,
+      "high": 0.169352,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:24619930"
@@ -107,16 +107,16 @@
     {
       "disease_id": "OMIM:222748",
       "name": "Dihydropyrimidinuria",
-      "pct": 0.165869,
-      "low": 0.025955,
-      "high": 0.165869,
+      "pct": 0.165857,
+      "low": 0.025953,
+      "high": 0.165857,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:30384990"
@@ -126,16 +126,16 @@
     {
       "disease_id": "OMIM:232800",
       "name": "Glycogen storage disease VII",
-      "pct": 0.165869,
-      "low": 0.095829,
-      "high": 0.167784,
+      "pct": 0.165857,
+      "low": 0.095822,
+      "high": 0.167772,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:7513946"
@@ -145,16 +145,16 @@
     {
       "disease_id": "OMIM:234200",
       "name": "Neurodegeneration with brain iron accumulation 1",
-      "pct": 0.165869,
-      "low": 0.016398,
-      "high": 0.165869,
+      "pct": 0.165857,
+      "low": 0.016397,
+      "high": 0.165857,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:28821231"
@@ -164,16 +164,16 @@
     {
       "disease_id": "OMIM:236670",
       "name": "Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 1",
-      "pct": 0.165869,
-      "low": 0.055887,
-      "high": 0.166741,
+      "pct": 0.165857,
+      "low": 0.055883,
+      "high": 0.166729,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:15037715;PMID:15637732"
@@ -183,16 +183,16 @@
     {
       "disease_id": "OMIM:242840",
       "name": "Vici syndrome",
-      "pct": 0.165869,
-      "low": 0.125966,
-      "high": 0.168695,
+      "pct": 0.165857,
+      "low": 0.125956,
+      "high": 0.168682,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:25331754"
@@ -202,16 +202,16 @@
     {
       "disease_id": "OMIM:245340",
       "name": "Erythrocyte lactate transporter defect",
-      "pct": 0.165869,
-      "low": 0.099123,
-      "high": 0.16886,
+      "pct": 0.165857,
+      "low": 0.099116,
+      "high": 0.168848,
       "drivers": [
         {
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:10590411"
@@ -255,13 +255,13 @@
       "OMIM:160500",
       "OMIM:160565"
     ],
-    "information_gain_bits": 0.972096,
+    "information_gain_bits": 0.972181,
     "if_yes": "OMIM:160500",
     "if_no": "OMIM:160565",
     "rationale": "Maximum binary information gain with equal weights for the two candidates; missing is neutral."
   },
-  "total_diseases": 12820,
-  "other_pct": 98.34131,
+  "total_diseases": 12867,
+  "other_pct": 98.34143,
   "terms_used": 1,
   "method": "HPO phenotype likelihood ratios; uniform disease prior; hierarchy-aware",
   "range_kind": "90% frequency-sensitivity envelope, 64 seeded draws; not a calibrated confidence interval",

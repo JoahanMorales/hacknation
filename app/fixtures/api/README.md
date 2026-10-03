@@ -1,7 +1,7 @@
 # Contratos y ejemplos de API v1
 
 Fuente de verdad: `app/schemas/__init__.py` (Pydantic v2). JSON usa snake_case,
-IDs OMIM/ORPHA/MONDO y niveles de evidencia en español. UI traduce los niveles
+IDs OMIM/ORPHA/MONDO/DECIPHER y niveles de evidencia en español. UI traduce los niveles
 a observed / inferred / hypothesis / contradicted. Todos estos ejemplos son
 `demo_data: true`; se usan como fallback etiquetado, no como respuestas reales.
 
@@ -23,7 +23,7 @@ contradictorios. `ranking` incluye `disease_id,name,pct,low,high,drivers`.
 if_yes,if_no,rationale`; un `hpo_id: null` indica evidencia insuficiente.
 `GraphOverview.nodes` lleva `{id,name,group,x,y,synonyms,mechanism_ids}`.
 `group` es el ID HPO del sistema; `groups` lleva `{id,label,count,x,y,r}`.
-Los conteos por grupo cubren las 12820 enfermedades, no sólo los 300 nodos visibles.
+Los conteos por grupo cubren las 12867 enfermedades, no sólo los 300 nodos visibles.
 `total_diseases` indica la capa completa; `displayed_diseases` indica los 300
 nodos del ejemplo. No mostrar 300 como si fueran todas las enfermedades.
 
@@ -55,8 +55,9 @@ Los JSON se escriben y versionan con LF para conservar los hashes en Windows y U
 Los ejemplos de diagnóstico se calculan, no se escriben a mano: frecuencias
 de `phenotype.hpoa` de la release HPO `v2026-09-01` (su encabezado indica
 anotaciones `2026-09-02`), LR por término, propagación por ancestros/descendientes,
-prior uniforme y normalización sobre todos los IDs OMIM/ORPHA/MONDO con fenotipos.
-No se fusionan registros de distintas bases ni se incluyen IDs DECIPHER.
+prior uniforme y normalización sobre todos los IDs OMIM/ORPHA/MONDO/DECIPHER con fenotipos.
+Se conservan los 47 registros DECIPHER del endpoint real; no se fusionan registros
+de distintas bases.
 Frecuencia desconocida o término no anotado → fondo, LR=1. NOT y 0/n sí
 representan ausencia. Se prefieren anotaciones exactas; entre compatibles se
 usa la mayor frecuencia. Nunca se compara por un ancestro común de dos hermanos.

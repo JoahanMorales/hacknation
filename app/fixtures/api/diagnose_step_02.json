@@ -31,16 +31,16 @@
     {
       "disease_id": "OMIM:268200",
       "name": "Myoglobinuria, acute recurrent, autosomal recessive",
-      "pct": 1.692597,
-      "low": 1.250563,
-      "high": 1.765759,
+      "pct": 1.694452,
+      "low": 1.252031,
+      "high": 1.76784,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:18817903"
@@ -49,8 +49,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:18817903"
@@ -60,16 +60,16 @@
     {
       "disease_id": "OMIM:300257",
       "name": "Danon disease",
-      "pct": 1.692597,
-      "low": 0.613933,
-      "high": 1.692597,
+      "pct": 1.694452,
+      "low": 0.614629,
+      "high": 1.694452,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:10972294"
@@ -78,8 +78,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:15253947"
@@ -89,16 +89,16 @@
     {
       "disease_id": "OMIM:310200",
       "name": "Duchenne muscular dystrophy",
-      "pct": 1.692597,
-      "low": 0.17985,
-      "high": 1.692597,
+      "pct": 1.694452,
+      "low": 0.180065,
+      "high": 1.694452,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:29067653"
@@ -107,8 +107,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:29067653"
@@ -118,16 +118,16 @@
     {
       "disease_id": "OMIM:602541",
       "name": "Muscular dystrophy, congenital, megaconial type",
-      "pct": 1.692597,
-      "low": 1.399979,
-      "high": 1.813476,
+      "pct": 1.694452,
+      "low": 1.401627,
+      "high": 1.81566,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:21665002"
@@ -136,8 +136,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:21665002"
@@ -147,16 +147,16 @@
     {
       "disease_id": "OMIM:607855",
       "name": "Muscular dystrophy, congenital, merosin deficient or partially deficient",
-      "pct": 1.692597,
-      "low": 1.063715,
-      "high": 1.763674,
+      "pct": 1.694452,
+      "low": 1.064888,
+      "high": 1.765687,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:12552556"
@@ -165,8 +165,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:12552556"
@@ -176,16 +176,16 @@
     {
       "disease_id": "OMIM:611881",
       "name": "Glycogen storage disease XII",
-      "pct": 1.692597,
-      "low": 0.150555,
-      "high": 1.692597,
+      "pct": 1.694452,
+      "low": 0.150729,
+      "high": 1.694452,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:8598869"
@@ -194,8 +194,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:8598869"
@@ -205,16 +205,16 @@
     {
       "disease_id": "OMIM:612937",
       "name": "Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 15",
-      "pct": 1.692597,
-      "low": 0.285507,
-      "high": 1.692597,
+      "pct": 1.694452,
+      "low": 0.285844,
+      "high": 1.694452,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:19576565"
@@ -223,8 +223,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:19576565;PMID:28803818"
@@ -234,16 +234,16 @@
     {
       "disease_id": "OMIM:615350",
       "name": "Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 14",
-      "pct": 1.692597,
-      "low": 1.153532,
-      "high": 1.74981,
+      "pct": 1.694452,
+      "low": 1.154826,
+      "high": 1.751803,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:23768512"
@@ -252,8 +252,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:23768512"
@@ -263,16 +263,16 @@
     {
       "disease_id": "OMIM:615351",
       "name": "Muscular dystrophy-dystroglycanopathy (congenital with impaired intellectual development), type B, 14",
-      "pct": 1.692597,
-      "low": 0.835829,
-      "high": 1.711673,
+      "pct": 1.694452,
+      "low": 0.836822,
+      "high": 1.713614,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:23768512"
@@ -281,8 +281,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:23768512"
@@ -292,16 +292,16 @@
     {
       "disease_id": "OMIM:615704",
       "name": "Poikiloderma, hereditary fibrosing, with tendon contractures, myopathy, and pulmonary fibrosis",
-      "pct": 1.692597,
-      "low": 0.800579,
-      "high": 1.695734,
+      "pct": 1.694452,
+      "low": 0.801508,
+      "high": 1.697653,
       "drivers": [
         {
           "hpo_id": "HP:0012496",
           "label": "Reduced maximal inspiratory pressure",
           "present": true,
-          "likelihood_ratio": 42.26392492,
-          "log_lr": 3.74393388,
+          "likelihood_ratio": 42.41887067,
+          "log_lr": 3.74759333,
           "direction": "supports",
           "annotation_hpo_id": "HP:0001324",
           "source": "PMID:24268661"
@@ -310,8 +310,8 @@
           "hpo_id": "HP:0003236",
           "label": "Elevated circulating creatine kinase concentration",
           "present": true,
-          "likelihood_ratio": 41.71770377,
-          "log_lr": 3.73092559,
+          "likelihood_ratio": 41.87064699,
+          "log_lr": 3.73458503,
           "direction": "supports",
           "annotation_hpo_id": "HP:0003236",
           "source": "PMID:24268661"
@@ -355,13 +355,13 @@
       "OMIM:268200",
       "OMIM:300257"
     ],
-    "information_gain_bits": 0.986208,
+    "information_gain_bits": 0.986251,
     "if_yes": "OMIM:300257",
     "if_no": "OMIM:268200",
     "rationale": "Maximum binary information gain with equal weights for the two candidates; missing is neutral."
   },
-  "total_diseases": 12820,
-  "other_pct": 83.07403,
+  "total_diseases": 12867,
+  "other_pct": 83.05548,
   "terms_used": 2,
   "method": "HPO phenotype likelihood ratios; uniform disease prior; hierarchy-aware",
   "range_kind": "90% frequency-sensitivity envelope, 64 seeded draws; not a calibrated confidence interval",

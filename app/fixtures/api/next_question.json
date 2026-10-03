@@ -34,7 +34,7 @@
     "OMIM:621314",
     "ORPHA:34515"
   ],
-  "information_gain_bits": 0.930842,
+  "information_gain_bits": 0.931044,
   "if_yes": "OMIM:621314",
   "if_no": "ORPHA:34515",
   "rationale": "Maximum binary information gain with equal weights for the two candidates; missing is neutral."

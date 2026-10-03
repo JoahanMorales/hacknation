@@ -145,10 +145,9 @@ class Dataset:
             io.StringIO("\n".join(line for line in lines if not line.startswith("#"))),
             delimiter="\t",
         ):
-            # Contracts support the requested OMIM/ORPHA/MONDO IDs. DECIPHER
-            # records are out of this broad graph's declared identifier scope.
+            # Preserve all disease namespaces emitted by the real HPO graph.
             if row["aspect"] != "P" or not row["database_id"].startswith(
-                ("OMIM:", "ORPHA:", "MONDO:")
+                ("OMIM:", "ORPHA:", "MONDO:", "DECIPHER:")
             ):
                 continue
             disease = row["database_id"]

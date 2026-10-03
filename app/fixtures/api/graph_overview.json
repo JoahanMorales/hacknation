@@ -29,6 +29,429 @@
   ],
   "nodes": [
     {
+      "id": "DECIPHER:1",
+      "name": "Wolf-Hirschhorn syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -121.1,
+      "y": 13.5
+    },
+    {
+      "id": "DECIPHER:14",
+      "name": "Prader-Willi syndrome (Type 1)",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 288.9,
+      "y": -149.5
+    },
+    {
+      "id": "DECIPHER:15",
+      "name": "Nf1-Microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -32.6,
+      "y": 179.1
+    },
+    {
+      "id": "DECIPHER:16",
+      "name": "22q11 deletion syndrome (Velocardiofacial / DiGeorge syndrome)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -127.9,
+      "y": 39.4
+    },
+    {
+      "id": "DECIPHER:17",
+      "name": "Sotos syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -347.0,
+      "y": 425.9
+    },
+    {
+      "id": "DECIPHER:18",
+      "name": "1p36 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 126.5,
+      "y": -425.9
+    },
+    {
+      "id": "DECIPHER:19",
+      "name": "Potocki-Lupski syndrome (17p11.2 duplication syndrome)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -100.2,
+      "y": 173.2
+    },
+    {
+      "id": "DECIPHER:2",
+      "name": "Cri du Chat Syndrome (5p deletion)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -85.1,
+      "y": 169.0
+    },
+    {
+      "id": "DECIPHER:20",
+      "name": "22q13 deletion syndrome (Phelan-Mcdermid syndrome)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -60.5,
+      "y": 146.9
+    },
+    {
+      "id": "DECIPHER:21",
+      "name": "Miller-Dieker syndrome (MDS)",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 71.7,
+      "y": -355.1
+    },
+    {
+      "id": "DECIPHER:29",
+      "name": "Charcot-Marie-Tooth syndrome type 1A (CMT1A)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -73.5,
+      "y": -122.0
+    },
+    {
+      "id": "DECIPHER:3",
+      "name": "Williams-Beuren Syndrome (WBS)",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -43.5,
+      "y": -472.2
+    },
+    {
+      "id": "DECIPHER:31",
+      "name": "Hereditary Liability to Pressure Palsies (HNPP)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -197.3,
+      "y": 82.9
+    },
+    {
+      "id": "DECIPHER:32",
+      "name": "22q11 duplication syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -35.9,
+      "y": -383.0
+    },
+    {
+      "id": "DECIPHER:34",
+      "name": "Potocki-Shaffer syndrome",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -439.8,
+      "y": 279.9
+    },
+    {
+      "id": "DECIPHER:35",
+      "name": "WAGR 11p13 deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 394.6,
+      "y": -250.0
+    },
+    {
+      "id": "DECIPHER:37",
+      "name": "3q29 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 28.2,
+      "y": -348.1
+    },
+    {
+      "id": "DECIPHER:38",
+      "name": "Pelizaeus-Merzbacher disease",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -24.4,
+      "y": 70.2
+    },
+    {
+      "id": "DECIPHER:39",
+      "name": "8p23.1 deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0001626",
+      "mechanism_ids": [],
+      "x": -152.2,
+      "y": 608.1
+    },
+    {
+      "id": "DECIPHER:4",
+      "name": "Angelman syndrome (Type 1)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -151.3,
+      "y": -47.3
+    },
+    {
+      "id": "DECIPHER:42",
+      "name": "Cat-Eye Syndrome (Type I)",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -13.3,
+      "y": -507.2
+    },
+    {
+      "id": "DECIPHER:43",
+      "name": "7q11.23 duplication syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -179.8,
+      "y": 80.1
+    },
+    {
+      "id": "DECIPHER:44",
+      "name": "2q37 monosomy",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -41.6,
+      "y": -478.4
+    },
+    {
+      "id": "DECIPHER:45",
+      "name": "Xq28 (MECP2) duplication",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -155.0,
+      "y": 84.6
+    },
+    {
+      "id": "DECIPHER:46",
+      "name": "Split hand/foot malformation 1 (SHFM1)",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -450.0,
+      "y": 315.4
+    },
+    {
+      "id": "DECIPHER:47",
+      "name": "RCAD (renal cysts and diabetes)",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 384.0,
+      "y": -227.0
+    },
+    {
+      "id": "DECIPHER:48",
+      "name": "Early-onset Alzheimer disease with cerebral amyloid angiopathy",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 22.1,
+      "y": -71.7
+    },
+    {
+      "id": "DECIPHER:51",
+      "name": "2q33.1 deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -164.7,
+      "y": 149.2
+    },
+    {
+      "id": "DECIPHER:52",
+      "name": "9q subtelomeric deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 122.9,
+      "y": -423.6
+    },
+    {
+      "id": "DECIPHER:53",
+      "name": "Prader-Willi Syndrome (Type 2)",
+      "synonyms": [],
+      "group": "HP:0000119",
+      "mechanism_ids": [],
+      "x": 278.4,
+      "y": -186.2
+    },
+    {
+      "id": "DECIPHER:54",
+      "name": "Angelman syndrome (Type 2)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -87.6,
+      "y": -22.2
+    },
+    {
+      "id": "DECIPHER:57",
+      "name": "17q21.31 recurrent microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 125.4,
+      "y": -463.5
+    },
+    {
+      "id": "DECIPHER:58",
+      "name": "Leri-Weill dyschondrostosis (LWD) - SHOX deletion",
+      "synonyms": [],
+      "group": "HP:0033127",
+      "mechanism_ids": [],
+      "x": -421.6,
+      "y": 410.3
+    },
+    {
+      "id": "DECIPHER:59",
+      "name": "Adult-onset autosomal dominant leukodystrophy (ADLD)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -139.1,
+      "y": 191.8
+    },
+    {
+      "id": "DECIPHER:62",
+      "name": "1q21.1 recurrent microdeletion (susceptibility locus for neurodevelopmental disorders)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": 63.5,
+      "y": -40.7
+    },
+    {
+      "id": "DECIPHER:65",
+      "name": "Atr-16 syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -49.7,
+      "y": 128.5
+    },
+    {
+      "id": "DECIPHER:66",
+      "name": "15q24 recurrent microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": 122.8,
+      "y": -467.2
+    },
+    {
+      "id": "DECIPHER:67",
+      "name": "1q21.1 recurrent microduplication (possible susceptibility locus for neurodevelopmental disorders)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -180.3,
+      "y": 134.0
+    },
+    {
+      "id": "DECIPHER:68",
+      "name": "16p11.2-p12.2 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -14.9,
+      "y": -511.0
+    },
+    {
+      "id": "DECIPHER:70",
+      "name": "2p15-16.1 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -23.2,
+      "y": -498.9
+    },
+    {
+      "id": "DECIPHER:72",
+      "name": "22q11.2 distal deletion syndrome",
+      "synonyms": [],
+      "group": "HP:0001507",
+      "mechanism_ids": [],
+      "x": -81.9,
+      "y": -611.5
+    },
+    {
+      "id": "DECIPHER:74",
+      "name": "15q13.3 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -124.6,
+      "y": -61.9
+    },
+    {
+      "id": "DECIPHER:76",
+      "name": "12q14 microdeletion syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -50.4,
+      "y": 81.1
+    },
+    {
+      "id": "DECIPHER:8",
+      "name": "Smith-Magenis syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -70.8,
+      "y": 152.9
+    },
+    {
+      "id": "DECIPHER:81",
+      "name": "15q26 overgrowth syndrome",
+      "synonyms": [],
+      "group": "HP:0000152",
+      "mechanism_ids": [],
+      "x": -9.1,
+      "y": -425.5
+    },
+    {
+      "id": "DECIPHER:85",
+      "name": "8p23.1 duplication syndrome",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -86.6,
+      "y": 41.4
+    },
+    {
+      "id": "DECIPHER:92",
+      "name": "Recurrent 16p12.1 microdeletion (neurodevelopmental susceptibility locus)",
+      "synonyms": [],
+      "group": "HP:0000707",
+      "mechanism_ids": [],
+      "x": -146.8,
+      "y": 167.0
+    },
+    {
       "id": "OMIM:100070",
       "name": "Aortic aneurysm, abdominal",
       "synonyms": [],
@@ -2081,429 +2504,6 @@
       "y": 341.5
     },
     {
-      "id": "OMIM:118200",
-      "name": "Charcot-Marie-Tooth disease, type 1B",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": -43.2,
-      "y": 167.8
-    },
-    {
-      "id": "OMIM:118210",
-      "name": "Charcot-Marie-Tooth disease, axonal, type 2A1",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": -39.1,
-      "y": 168.0
-    },
-    {
-      "id": "OMIM:118220",
-      "name": "Charcot-Marie-Tooth disease, demyelinating, type 1A",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": -45.0,
-      "y": 183.7
-    },
-    {
-      "id": "OMIM:118300",
-      "name": "Charcot-Marie-Tooth disease and deafness",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -493.4,
-      "y": 429.4
-    },
-    {
-      "id": "OMIM:118400",
-      "name": "Cherubism",
-      "synonyms": [],
-      "group": "HP:0000152",
-      "mechanism_ids": [],
-      "x": 58.8,
-      "y": -513.7
-    },
-    {
-      "id": "OMIM:118420",
-      "name": "Chiari malformation type I",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": 102.4,
-      "y": 114.9
-    },
-    {
-      "id": "OMIM:118450",
-      "name": "Alagille syndrome 1",
-      "synonyms": [],
-      "group": "HP:0000478",
-      "mechanism_ids": [],
-      "x": 291.0,
-      "y": 292.0
-    },
-    {
-      "id": "OMIM:118600",
-      "name": "Chondrocalcinosis 2",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -429.2,
-      "y": 264.4
-    },
-    {
-      "id": "OMIM:118650",
-      "name": "Chondrodysplasia punctata, autosomal dominantchondrodysplasia punctata due to vitamin K deficiency, included",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -374.5,
-      "y": 418.3
-    },
-    {
-      "id": "OMIM:118651",
-      "name": "Chondrodysplasia punctata, Tibia-Metacarpal type",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -413.8,
-      "y": 266.5
-    },
-    {
-      "id": "OMIM:118700",
-      "name": "Chorea, benign hereditary",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": -119.4,
-      "y": 171.5
-    },
-    {
-      "id": "OMIM:118750",
-      "name": "Choreoathetosis, familial inverted",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": 33.6,
-      "y": -197.5
-    },
-    {
-      "id": "OMIM:118800",
-      "name": "Paroxysmal nonkinesigenic dyskinesia 1",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": 103.7,
-      "y": 69.3
-    },
-    {
-      "id": "OMIM:118830",
-      "name": "Chylomicronemia, familial, due to circulating inhibitor of lipoproteinlipase",
-      "synonyms": [],
-      "group": "HP:0025031",
-      "mechanism_ids": [],
-      "x": 308.0,
-      "y": -604.1
-    },
-    {
-      "id": "OMIM:119100",
-      "name": "Split-Hand/foot malformation with long bone deficiency 1",
-      "synonyms": [],
-      "group": "HP:0040064",
-      "mechanism_ids": [],
-      "x": 484.8,
-      "y": 420.2
-    },
-    {
-      "id": "OMIM:119300",
-      "name": "van der Woude syndrome 1",
-      "synonyms": [],
-      "group": "HP:0000152",
-      "mechanism_ids": [],
-      "x": 20.4,
-      "y": -527.4
-    },
-    {
-      "id": "OMIM:119500",
-      "name": "Popliteal pterygium syndrome",
-      "synonyms": [],
-      "group": "HP:0000119",
-      "mechanism_ids": [],
-      "x": 371.1,
-      "y": -298.5
-    },
-    {
-      "id": "OMIM:119530",
-      "name": "Orofacial cleft 1",
-      "synonyms": [],
-      "group": "HP:0000152",
-      "mechanism_ids": [],
-      "x": -52.8,
-      "y": -456.7
-    },
-    {
-      "id": "OMIM:119540",
-      "name": "Cleft palate, isolated",
-      "synonyms": [],
-      "group": "HP:0000152",
-      "mechanism_ids": [],
-      "x": 15.8,
-      "y": -523.0
-    },
-    {
-      "id": "OMIM:119550",
-      "name": "Cleft palate-lateral synechia syndrome",
-      "synonyms": [],
-      "group": "HP:0000152",
-      "mechanism_ids": [],
-      "x": 128.9,
-      "y": -409.9
-    },
-    {
-      "id": "OMIM:119570",
-      "name": "Cleft soft palate",
-      "synonyms": [],
-      "group": "HP:0000152",
-      "mechanism_ids": [],
-      "x": -47.9,
-      "y": -397.4
-    },
-    {
-      "id": "OMIM:119580",
-      "name": "Blepharocheilodontic syndrome 1",
-      "synonyms": [],
-      "group": "HP:0000152",
-      "mechanism_ids": [],
-      "x": -8.9,
-      "y": -381.1
-    },
-    {
-      "id": "OMIM:119600",
-      "name": "Cleidocranial dysplasia",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -398.0,
-      "y": 330.7
-    },
-    {
-      "id": "OMIM:119650",
-      "name": "Cleidorhizomelic syndrome",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -295.5,
-      "y": 397.0
-    },
-    {
-      "id": "OMIM:119800",
-      "name": "Clubfoot, congenital, with or without deficiency of long bones and/or mirror-image polydactyly",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -404.6,
-      "y": 404.4
-    },
-    {
-      "id": "OMIM:119900",
-      "name": "Digital clubbing, isolated congenital",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -397.4,
-      "y": 244.0
-    },
-    {
-      "id": "OMIM:119915",
-      "name": "Cluster headache, familial",
-      "synonyms": [],
-      "group": "HP:0000478",
-      "mechanism_ids": [],
-      "x": 241.4,
-      "y": 284.1
-    },
-    {
-      "id": "OMIM:120000",
-      "name": "Coarctation of aorta",
-      "synonyms": [],
-      "group": "HP:0001626",
-      "mechanism_ids": [],
-      "x": -173.0,
-      "y": 665.8
-    },
-    {
-      "id": "OMIM:120050",
-      "name": "Coxsackievirus B3 susceptibility",
-      "synonyms": [],
-      "group": "HP:0002715",
-      "mechanism_ids": [],
-      "x": -217.9,
-      "y": -447.7
-    },
-    {
-      "id": "OMIM:120100",
-      "name": "Familial cold inflammatory syndrome 1",
-      "synonyms": [],
-      "group": "HP:0001939",
-      "mechanism_ids": [],
-      "x": 376.0,
-      "y": 200.0
-    },
-    {
-      "id": "OMIM:120200",
-      "name": "Coloboma, ocular",
-      "synonyms": [],
-      "group": "HP:0000478",
-      "mechanism_ids": [],
-      "x": 300.9,
-      "y": 357.1
-    },
-    {
-      "id": "OMIM:120300",
-      "name": "Coloboma of macula",
-      "synonyms": [],
-      "group": "HP:0000478",
-      "mechanism_ids": [],
-      "x": 254.4,
-      "y": 393.6
-    },
-    {
-      "id": "OMIM:120330",
-      "name": "Papillorenal syndrome",
-      "synonyms": [],
-      "group": "HP:0000478",
-      "mechanism_ids": [],
-      "x": 281.4,
-      "y": 366.6
-    },
-    {
-      "id": "OMIM:120400",
-      "name": "Coloboma of macula with type B brachydactyly",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -276.7,
-      "y": 352.4
-    },
-    {
-      "id": "OMIM:120430",
-      "name": "Coloboma of optic nerveoptic nerve head pits, bilateral congenital, included",
-      "synonyms": [],
-      "group": "HP:0000478",
-      "mechanism_ids": [],
-      "x": 300.2,
-      "y": 336.4
-    },
-    {
-      "id": "OMIM:120433",
-      "name": "Coloboma, ocular, with or without hearing impairment, cleft lip/palate, and/or impaired intellectual development",
-      "synonyms": [],
-      "group": "HP:0000478",
-      "mechanism_ids": [],
-      "x": 331.1,
-      "y": 334.5
-    },
-    {
-      "id": "OMIM:120435",
-      "name": "Lynch syndrome I",
-      "synonyms": [],
-      "group": "HP:0002664",
-      "mechanism_ids": [],
-      "x": -428.1,
-      "y": 626.4
-    },
-    {
-      "id": "OMIM:120450",
-      "name": "Comedones, familial dyskeratotic",
-      "synonyms": [],
-      "group": "HP:0001574",
-      "mechanism_ids": [],
-      "x": -364.3,
-      "y": -110.2
-    },
-    {
-      "id": "OMIM:120500",
-      "name": "Commissural lip pits",
-      "synonyms": [],
-      "group": "HP:0000152",
-      "mechanism_ids": [],
-      "x": 119.2,
-      "y": -485.5
-    },
-    {
-      "id": "OMIM:120502",
-      "name": "Branchiootic syndrome 2",
-      "synonyms": [],
-      "group": "HP:0000152",
-      "mechanism_ids": [],
-      "x": -39.6,
-      "y": -390.9
-    },
-    {
-      "id": "OMIM:120790",
-      "name": "Complement component 4, partial deficiency of",
-      "synonyms": [],
-      "group": "HP:0002715",
-      "mechanism_ids": [],
-      "x": -220.2,
-      "y": -413.0
-    },
-    {
-      "id": "OMIM:120970",
-      "name": "Cone-Rod dystrophy 2",
-      "synonyms": [],
-      "group": "HP:0000478",
-      "mechanism_ids": [],
-      "x": 213.5,
-      "y": 418.7
-    },
-    {
-      "id": "OMIM:121050",
-      "name": "Contractural arachnodactyly, congenital",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -329.8,
-      "y": 351.7
-    },
-    {
-      "id": "OMIM:121070",
-      "name": "Arthrogryposis, distal, type 2E",
-      "synonyms": [],
-      "group": "HP:0033127",
-      "mechanism_ids": [],
-      "x": -315.2,
-      "y": 263.9
-    },
-    {
-      "id": "OMIM:121200",
-      "name": "Seizures, benign familial neonatal, 1",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": -128.2,
-      "y": 13.7
-    },
-    {
-      "id": "OMIM:121201",
-      "name": "Epilepsy, benign neonatal, 2",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": -125.5,
-      "y": 16.3
-    },
-    {
-      "id": "OMIM:121210",
-      "name": "Febrile seizures, familial, 1",
-      "synonyms": [],
-      "group": "HP:0000707",
-      "mechanism_ids": [],
-      "x": -149.3,
-      "y": -50.9
-    },
-    {
       "id": "OMIM:160500",
       "name": "Myopathy, distal, 1",
       "synonyms": [],
@@ -2733,7 +2733,7 @@
     {
       "id": "HP:0000707",
       "label": "Nervous system",
-      "count": 3609,
+      "count": 3633,
       "x": 0.0,
       "y": 0.0,
       "r": 281.1
@@ -2741,7 +2741,7 @@
     {
       "id": "HP:0033127",
       "label": "Musculoskeletal system",
-      "count": 2137,
+      "count": 2141,
       "x": -365.2,
       "y": 334.6,
       "r": 214.2
@@ -2749,7 +2749,7 @@
     {
       "id": "HP:0000152",
       "label": "Head or neck",
-      "count": 1628,
+      "count": 1641,
       "x": 38.5,
       "y": -438.2,
       "r": 158.7
@@ -2773,7 +2773,7 @@
     {
       "id": "HP:0000119",
       "label": "Genitourinary system",
-      "count": 706,
+      "count": 710,
       "x": 349.9,
       "y": -222.6,
       "r": 133.6
@@ -2781,7 +2781,7 @@
     {
       "id": "HP:0001626",
       "label": "Cardiovascular system",
-      "count": 570,
+      "count": 571,
       "x": -169.3,
       "y": 629.8,
       "r": 134.9
@@ -2853,7 +2853,7 @@
     {
       "id": "HP:0001507",
       "label": "Growth abnormality",
-      "count": 50,
+      "count": 51,
       "x": -79.5,
       "y": -613.2,
       "r": 51.9
@@ -2892,7 +2892,7 @@
     }
   ],
   "edges": [],
-  "total_diseases": 12820,
+  "total_diseases": 12867,
   "displayed_diseases": 300,
   "layout_kind": "300 real disease positions sampled from HACK-003 HPO system galaxies"
 }
