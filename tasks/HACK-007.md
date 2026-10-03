@@ -1,6 +1,6 @@
 # HACK-007
 ID: HACK-007
-State: CLAIMED
+State: REVIEW
 Owner: joahan-1
 Branch: feat/hack-007
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-007
@@ -9,13 +9,14 @@ Priority: P0
 Paths: app/services/scoring.py, app/routers/diagnose.py, app/tests/test_scoring.py
 Depends: HACK-001
 Verify: uv run pytest -q app/tests/test_scoring.py
-Lease-Until: 1791068499
-Updated: 1791066699
+Lease-Until: 1791068857
+Updated: 1791067057
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Humano abre PR de feat/hack-007; luego hack done HACK-007 --pr URL
-PR: -
-Evidence: -
-Events: 2
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/8; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/8
+Evidence: uv run pytest -q app/tests/test_scoring.py 5 passed; smoke PRODUCT_PASS; merge humano PR #8 (37c62b6)
+Events: 3
 Checkpoints: 1
 Sessions: 1
 Last-Checkpoint: 1791066699
+Task-Tip: 05da61d105694cb40d3b22bfa4ff745dfd2405cf
