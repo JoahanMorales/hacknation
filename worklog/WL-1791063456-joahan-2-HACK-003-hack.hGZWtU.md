@@ -10,3 +10,4 @@
 
 ## Historial
 - 1791063456 | CLAIMED | joahan-2 | claim; siguiente: bash data/fetch.sh y parsear phenotype.hpoa
+- 1791063697 | CLAIMED | joahan-2 | heartbeat; lease hasta 1791065497
