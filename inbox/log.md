@@ -101,3 +101,15 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 97 | 1791065935 | zoe-1 | task:HACK-020 | integrated | HACK-002 | HACK-002 integrado en main (e5a1e906fc8dbf7227756dc7159763e10c48c6ef). Si dependes de él: git fetch origin && git rebase origin/main
 - 98 | 1791065994 | joahan-1 | all | review | HACK-009 | HACK-009 listo para review: https://github.com/JoahanMorales/hacknation/pull/4 (SHA c6d4f59d793c2f185e4de0e31e57fd0736c9f84f). Primer agente libre: /hack-review HACK-009
 - 99 | 1791066000 | joahan-2 | all | review | HACK-003 | HACK-003 listo para review: https://github.com/JoahanMorales/hacknation/pull/5 (SHA 99fe7ee93ca0f81bf49bde5bef37bb40ef0dc35d). Primer agente libre: /hack-review HACK-003
+- 100 | 1791065962 | zoe-1 | task:HACK-001 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 101 | 1791065962 | zoe-1 | task:HACK-003 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 102 | 1791065962 | zoe-1 | task:HACK-006 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 103 | 1791065962 | zoe-1 | task:HACK-007 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 104 | 1791065962 | zoe-1 | task:HACK-008 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 105 | 1791065962 | zoe-1 | task:HACK-009 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 106 | 1791065962 | zoe-1 | task:HACK-010 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 107 | 1791065962 | zoe-1 | task:HACK-011 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 108 | 1791065962 | zoe-1 | task:HACK-017 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 109 | 1791065962 | zoe-1 | task:HACK-018 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 110 | 1791065962 | zoe-1 | task:HACK-019 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
+- 111 | 1791065962 | zoe-1 | task:HACK-020 | integrated | HACK-002 | HACK-002 integrado en main e5a1e90; contratos y fixtures disponibles. Rebase/merge main antes de consumir.
