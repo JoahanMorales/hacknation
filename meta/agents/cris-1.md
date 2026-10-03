@@ -1,10 +1,10 @@
 # cris-1
 Agent: cris-1
 Started: 1791067932
-Events: 4
-Events-Since-Checkpoint: 2
-Checkpoints: 1
+Events: 5
+Events-Since-Checkpoint: 0
+Checkpoints: 2
 Sessions: 1
-Last-Checkpoint: 1791068408
+Last-Checkpoint: 1791070366
 Last-Session: cris-1-1791067931
-Updated: 1791070320
+Updated: 1791070366

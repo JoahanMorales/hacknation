@@ -9,9 +9,9 @@ Priority: P0
 Paths: app/routers/action.py, app/services/action.py, app/tests/test_action.py
 Depends: HACK-001
 Verify: uv run pytest -q app/tests/test_action.py
-Lease-Until: 1791072120
-Updated: 1791070320
+Lease-Until: 1791072166
+Updated: 1791070366
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/18; ejecutar scripts/smoke
+Next: Esperar review de SHA 685bea8; luego hack merge HACK-011
 PR: https://github.com/JoahanMorales/hacknation/pull/18
 Evidence: -

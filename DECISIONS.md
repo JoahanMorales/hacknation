@@ -40,3 +40,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791070174 | HACK-018 | Solicitar review018 a joahan-1 antes de cierre; ensayar base actual mientras reviewer019 verifica otro PR. | Por qué: Merge humano no reemplaza registro SHA requerido para done --integrated; continuar trabajo independiente.
 - 1791070320 | HACK-018 | Ocultar render diagnosis solo en step action manteniendo hook de scoring montado; sin editar action/App/store. | Por qué: Evitar doble panel inferior sin perder terms/ranking al volver; alcance propio.
 - 1791070383 | HACK-018 | Hook siempre montado, solo render null en action; regression de integracion en check_ui.py. | Por qué: Evita ocupar footer de la escena5 y conserva scoring para volver; no toca action/App/store.
+- 1791070366 | HACK-011 | merge de main en vez de rebase tras push | Por qué: R08 prohíbe force-push
