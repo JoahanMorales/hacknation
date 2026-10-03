@@ -1,0 +1,113 @@
+# hacknation
+
+Repositorio del equipo para el hackatón: 3–4 personas, cada una con 1–2 agentes (Claude Code, Cursor o Codex) trabajando en paralelo sobre **FastAPI + React (Vite, Tailwind v4, Motion)**. Incluye el protocolo de coordinación *Hackathon Agent Config v2.1*, revisado y adaptado para ir rápido.
+
+## Cómo funciona en 30 segundos
+
+- **AGENTS.md** es el núcleo que leen todas las herramientas: `CLAUDE.md` lo importa y `.cursor/rules/` lo aplica siempre.
+- **TASKS.md** es el backlog estático. El estado vive en la rama remota `claims` y se maneja sólo con `bash scripts/hack`.
+- Cada tarea tiene su rama y su worktree. `bash scripts/wt new HACK-NNN --agent ana-1` crea ambos, escribe la identidad y hace el claim en un solo paso.
+- El merge es automático cuando se cumplen todas las condiciones (`hack merge`): revisión de otro agente sobre el SHA, smoke del producto, el comando de "Cómo verificar" y un diff dentro de su alcance. Lo que no pasa va a la cola humana (`hack digest`).
+
+## Comunicación entre agentes
+
+Los agentes se mandan mensajes por la rama `claims`, con el mismo push atómico que usa el resto del CLI. Así funciona entre máquinas y entre Claude Code, Cursor y Codex.
+
+```text
+hack msg related:HACK-002 --kind contract "Item tiene price obligatorio; ajusta tu router"
+hack msg HACK-007 --kind request "Necesito GET /items?limit=; criterio: test_items_limit"
+hack msg ana-1 --kind reply "Hecho en a1b2c3"      hack msg human --kind blocker "Falta API key"
+hack inbox            hack inbox --ack            hack inbox --task HACK-002
+```
+
+- **A quién llegan:** a una tarea (`HACK-NNN`) le llegan a quien la tenga reservada, ahora o cuando alguien la reclame; `wt new` le muestra el hilo. `related:ID` usa `Depende de`, `Relacionadas` y `Contratos consumidos` de TASKS.md.
+- **Avisos automáticos:** `done` pide revisor a todos, `review` avisa al dueño si fue approve (→ `merge`) o reject, el merge avisa `integrated` a las tareas relacionadas (→ rebase), y las decisiones y la cola humana llegan a `hack digest`.
+- **Claude Code:** el inbox se revisa cada ~2 min y los mensajes nuevos entran solos al contexto del agente. El hook `Stop` no lo deja terminar con mensajes sin atender.
+- **Cursor y Codex:** el agente corre `hack inbox` en cada heartbeat y tras cada criterio (regla en `.cursor/rules/`).
+- **Límites:** reglas R54–R59 de AGENTS.md. Se pide en vez de editar archivos ajenos, siempre se responde, y un mensaje no concede permisos.
+
+## Skills
+
+En `.claude/skills/` (también enlazadas en `.cursor/skills/` y `.agents/skills/`). Origen, licencia y commit revisado de cada una en [SOURCES.md](../.claude/skills/SOURCES.md).
+
+| Skill | Para qué |
+|---|---|
+| `hack-backend` / `hack-frontend` | Convenciones del stack; `hack-frontend` decide cuándo cargar las demás |
+| `design-taste-frontend` (taste-skill) | Dirección visual anti "IA genérica"; se usa una vez para fijar `web/DESIGN.md` y en pantallas de impacto |
+| `redesign-existing-projects` | Pulido visual durante el freeze |
+| `vercel-react-best-practices` | 70 reglas de rendimiento React, leídas una a una |
+| `webapp-testing` | Probar la UI en Chromium headless con el servidor levantado |
+
+`web/DESIGN.md` es el contrato visual: una sola dirección (acento, tema, fuente, radios, iconos) que todos los agentes siguen, para que cuatro agentes no produzcan cuatro estilos distintos.
+
+## Ahorro de tokens
+
+| Mecanismo | Efecto |
+|---|---|
+| `bash scripts/q CMD` | Una línea si el comando pasa, las últimas 40 si falla; el log completo queda en `.git/hack-q.log` |
+| Subagente `hack-runner` (Haiku) | Tests, smoke y pruebas de la app en contexto aislado; vuelve un veredicto de ≤ 12 líneas |
+| Subagente `hack-reviewer` (Sonnet) | La revisión lee el diff completo en su propio contexto; vuelven ≤ 5 líneas |
+| Modelo por comando | `/hack-plan` en Opus; ship, review, handoff, setup y demo en Sonnet; implementar con el modelo que elijas |
+| Inbox por diferencia | El hook inyecta sólo los mensajes nuevos, compactos; nunca repite lo ya visto |
+| `BASH_MAX_OUTPUT_LENGTH=12000` | Recorta cualquier salida de Bash desbocada |
+| Una tarea por sesión + `/clear` | El contexto no arrastra tareas viejas; el handoff guarda lo necesario en `claims` |
+| Núcleo estable | No editar AGENTS.md ni CLAUDE.md durante el evento, para no invalidar la caché de prompt de todos los agentes |
+
+## El día del evento
+
+| Minuto | Quién | Qué |
+|---|---|---|
+| 0 | Humano responsable + Claude | `/hack-setup`: horas, rubric, reglas y freeze en HACKATHON.md, más hook de secretos |
+| 5 | Planificador | Llenar IDEA.md, luego `/hack-plan`: TASKS.md + OWNERS.md, aprobación y push a main |
+| 15 | Todos | `/hack-start` en el checkout principal; cada quien abre su agente en el worktree que imprime |
+| … | Ejecutores | Ciclo `/hack-start` → implementar → `/hack-ship` → `/hack-review` de otro → `/hack-handoff` |
+| freeze | Rol demo | `/hack-demo`: ensayo limpio, video plan B, checklist y submission |
+
+En Cursor o Codex, estos guiones se leen en `.claude/commands/hack-*.md`.
+
+## Setup por máquina (una vez, antes del evento)
+
+```bash
+git clone git@github.com:JoahanMorales/hacknation.git && cd hacknation
+```
+
+```bash
+git config core.hooksPath .githooks
+```
+
+```bash
+bash scripts/smoke --package-only
+```
+
+Requisitos: Git, Bash, Python 3.8+ (pruebas del paquete), [uv](https://docs.astral.sh/uv/) (`curl -LsSf https://astral.sh/uv/install.sh | sh`), Node 22+ y [`gh`](https://cli.github.com/) autenticado (`gh auth login`), que `/hack-ship` usa para abrir PRs. En Mac Intel, Homebrew compila desde fuente: usa los instaladores oficiales. El último comando tarda unos minutos y debe terminar en `PACKAGE_PASS`.
+
+## Qué cambió respecto al zip v2.1
+
+| Cambio | Por qué |
+|---|---|
+| `scripts/smoke` ya no corre la suite del paquete por defecto (usa `--package-only` o `--full`) | `hack merge` ejecuta el smoke en cada integración y la suite tarda minutos sin probar el producto |
+| Nuevo `scripts/wt`: rama + worktree + `.hack-env` + claim en un comando | El ritual manual de 4 comandos con flags era el error más común |
+| `scripts/hack` carga la identidad desde `.hack-env` del worktree | Ya no hay que exportar variables en cada terminal |
+| Hooks de Claude Code: `hack next` al iniciar sesión y heartbeat automático cada 8 min | Un agente que olvida el heartbeat pierde el lease de 30 min con trabajo vivo |
+| `.claude/settings.json` con permisos permitidos y denegados | Menos prompts, y force-push, `reset --hard` y `clean -fdx` bloqueados de verdad |
+| Comandos `/hack-setup`, `/hack-plan`, `/hack-start`, `/hack-ship`, `/hack-review`, `/hack-handoff`, `/hack-demo` | Cada fase tiene un guion fijo |
+| Regla para Cursor y CLAUDE.md con `@AGENTS.md` | Las tres herramientas usan el mismo núcleo |
+| `STACK.md`: FastAPI + React con routers y features autodescubiertos, setup probado de punta a punta | Cuatro agentes no editan el mismo `main.py` ni `App.tsx` |
+| Skills de frontend, testing y React revisadas e integradas (`.claude/skills/`) | Calidad visual y verificación de UI sin depender de un humano |
+| HACKATHON.md preconfigurado: `Autonomy: yes`, `Auto-Merge: yes`, `Review-Mode: claims` | Con `gh`, los agentes de una misma persona no pueden aprobarse (comparten cuenta) |
+| Ahorro de tokens: `scripts/q`, subagentes con modelos más baratos, modelo por comando, inbox por diferencia | La salida de comandos y Opus para todo eran los mayores gastos |
+| Mensajería entre agentes (`hack msg`/`hack inbox`) con avisos automáticos y reglas R54–R59 | Tareas relacionadas se coordinan sin humano de intermediario |
+| Reglas R49–R53 de velocidad en AGENTS.md | Mock primero, PR temprano, sin preguntas evitables y máximo 20 min atascado |
+| Se quitaron `evidence/`, `MANIFEST.sha256`, `VERIFICATION.md` y `HACKATHON-AGENTS.md` | Eran reportes de la verificación original y un shim de v1; el CLI no los usa |
+
+## Límites conocidos
+
+- `hack merge` hace `git push --atomic` directo a `main`. Si activas protección de rama que exige PR o CI en GitHub, esos merges caen a la cola humana.
+- **Cola humana:** los cambios a lockfiles, `scripts/`, CI o contratos (por ejemplo HACK-001 setup) los fusiona un humano en GitHub. Después el dueño los cierra con `hack done ID --pr URL --evidence ... --integrated <commit>` (paso 9 de `/hack-ship`); si no, sus dependientes siguen bloqueados.
+- **Pruebas:** las del producto van en `app/tests/`; `tests/` en la raíz son las del paquete de coordinación.
+- Cursor y Codex no tienen hook de heartbeat: el agente debe correr `bash scripts/hack heartbeat ID` cada ~10 min.
+- Los plazos (backlog a 10 min, decisiones a 15 min, freeze) se evalúan en cada `status`/`next`/`heartbeat`. Para un tick periódico sin agentes, consulta `SCHEDULING.md`.
+
+## Mapa de documentos
+
+`AGENTS.md` (núcleo) · `HACKATHON.md` (evento) · `IDEA.template.md` · `TASKS.template.md` · `OWNERS.md` · `PLAYBOOK.md` (planificar, integrar y cerrar) · `CLI.md` (flags) · `CONTINUITY.md` (retomar) · `SECURITY.md` · `MERGES.md` · `SCHEDULING.md` · `STACK.md` · `WHY.md` (razón de cada regla) · `examples/` (backlog de ejemplo y `dry_run.py`).
