@@ -1,6 +1,6 @@
 # HACK-020
 ID: HACK-020
-State: CLAIMED
+State: REVIEW
 Owner: joahan-2
 Branch: feat/hack-020
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-020
@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/action/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791071672
-Updated: 1791069872
+Lease-Until: 1791072050
+Updated: 1791070250
 Task-Base: eb2e491b76e640a9040df7a4a7fafa716e1ee831
-Next: Humano abre PR de feat/hack-020; luego hack done HACK-020 --pr URL
-PR: -
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/17; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/17
 Evidence: -
