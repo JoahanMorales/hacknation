@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791069898
-Updated: 1791068098
+Lease-Until: 1791069996
+Updated: 1791068196
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Conectar panel de candidatas y siguiente pregunta al scoring real; consumir contrato visual HACK-005
+Next: Implementar panel bottom, estado API, Yes/No y prueba browser real
 PR: -
 Evidence: -
-Events: 1
-Checkpoints: 0
+Events: 2
+Checkpoints: 1
 Sessions: 1
-Last-Checkpoint: 0
+Last-Checkpoint: 1791068196
