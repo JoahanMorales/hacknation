@@ -10,3 +10,4 @@
 
 ## Historial
 - 1791066026 | CLAIMED | joahan-2 | claim; siguiente: Probar extracción estructurada con la API
+- 1791066152 | CLAIMED | joahan-2 | heartbeat; lease hasta 1791067952

@@ -9,13 +9,13 @@ Priority: P0
 Paths: spikes/openai/
 Depends: Ninguna
 Verify: python3 spikes/openai/spike.py --check
-Lease-Until: 1791067826
-Updated: 1791066026
+Lease-Until: 1791067952
+Updated: 1791066152
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
 Next: Probar extracción estructurada con la API
 PR: -
 Evidence: -
-Events: 1
+Events: 2
 Checkpoints: 0
 Sessions: 1
 Last-Checkpoint: 0
