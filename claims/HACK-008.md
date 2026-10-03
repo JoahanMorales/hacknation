@@ -9,9 +9,9 @@ Priority: P0
 Paths: app/routers/symptoms.py, app/services/symptoms.py, app/tests/test_symptoms.py
 Depends: HACK-001
 Verify: uv run pytest -q app/tests/test_symptoms.py
-Lease-Until: 1791068887
-Updated: 1791067087
+Lease-Until: 1791069143
+Updated: 1791067343
 Task-Base: 37c62b6d79b9ae4087ae7e94d4ff849042476a43
-Next: Buscador de candidatos HPO + extracción gpt-6-luna
+Next: Humano abre PR de feat/hack-008; luego hack done HACK-008 --pr URL
 PR: -
 Evidence: -
