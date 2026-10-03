@@ -1,70 +1,85 @@
-# IDEA · `<nombre del producto>`
+# IDEA · <nombre del producto>
 
-Completar esta ficha antes de planificar; conservarla como descripción del producto. Por qué: el planificador necesita un objetivo y evidencia observable, no una lista de tecnologías.
+> Reto: <nombre y número> · Evento: <nombre, fechas>.
+> Marcas: **[Decidido]** · **[Recomendación]** · **[Por validar]** (probar o citar antes del pitch). Toda cifra del pitch sale de §11 con fuente.
+> Cada sección alimenta una pieza del backlog: §4 → tareas verticales · §6 → contrato · §7/§9 → spikes · §8 → criterios de aceptación · §12 → olas de `/hack-plan`.
 
-## Problema y usuario
+## 1. Una línea
+Para **<usuario>**, que **<dolor con cifra>**, **<producto>** permite **<resultado observable>**, a diferencia de **<alternativa actual>**.
 
-- Usuario principal: `<quién>`.
-- Problema: `<situación, coste y frecuencia>`.
-- Resultado útil: `<qué cambia para ese usuario>`.
-- Flujo de demo: `<entrada → procesamiento → resultado → siguiente acción>`.
-- Alcance mínimo: `<un recorrido que cabe en 24 h>`.
-- Fuera de alcance: `<funcionalidades excluidas>`.
+**Diferencial frente a otros equipos del reto:** <qué hacen los repos/demos públicos y en qué nos separamos; buscarlos antes de decidir>.
 
-Dividir el alcance en incrementos verticales y demostrables. Por qué: cada tarea debe producir algo que pueda comprobarse sin esperar todo el sistema.
+## 2. Problema y usuarios
+| Persona (nombre + rol) | Momento | Qué necesita | Paso del flujo |
+|---|---|---|---|
+| <usuario de entrada> | <situación concreta> | <necesidad> | <#> |
+| <usuario central del brief> | <...> | <...> | <#> |
 
-## Jurado y momento wow
+- Dolor con fuente: <cifra> (§11).
+- Resultado que cambia: <de X a Y, concreto y medible>.
 
-| Criterio ID de HACKATHON.md | Peso oficial | Evidencia concreta | Incremento propuesto |
-|---|---:|---|---|
-| `<C1>` | `<%>` | `<acción y resultado visible>` | `<tarea P0>` |
-| `<C2>` | `<%>` | `<validación reproducible>` | `<tarea P0>` |
+## 3. Caso de demo
+<Un caso real, publicado y con resultado conocido, que recorra todo el flujo. Por qué este caso: diferencial real, datos que lo separan, final bueno para el jurado, contraejemplo.>
 
-- Momento wow: `<la acción exacta que sorprenderá y el resultado que verá el jurado>`.
-- Tiempo hasta el wow: `<segundos desde el inicio de la demo>`.
-- Éxito mínimo verificable: `<comportamiento y comando reproducible>`.
-- Ruta crítica de demo: `<orden de capacidades que deben funcionar>`.
-- Corte propuesto: P0 `<lista>`; P1 `<lista>`; P2 `<lista>`.
-
-Mapear cada P0 a un criterio del rubric y proteger el recorrido hasta el wow. Por qué: el backlog debe concentrar el tiempo disponible en evidencias evaluables.
-
-## Riesgos técnicos y spikes
-
-| Riesgo | Spike y límite de tiempo | Cómo verificar, comando exacto | Resultado mínimo | Fallback reversible |
+## 4. Flujo de demo (≤ 6 pasos, ≤ 3 min; cada paso = 1 tarea vertical)
+| # | Usuario hace | Ve en pantalla (concreto) | API | Prio |
 |---|---|---|---|---|
-| `<API o capacidad no comprobada>` | `<HACK-NNN, 30 min>` | `<comando real>` | `<evidencia esperada>` | `<mock/datos locales>` |
-| `<rendimiento o formato incierto>` | `<HACK-NNN, 30 min>` | `<comando real>` | `<umbral>` | `<ruta más simple>` |
+| 1 | <acción> | <qué aparece exactamente> | `GET /api/<x>` | P0 |
+| 3 | <acción> | **Wow:** <efecto visible> | `POST /api/<z>` | P0 |
 
-Ejecutar spikes de alto riesgo antes de integrar capacidades reales y limitar su duración. Por qué: una incertidumbre que falla al final puede invalidar el recorrido completo.
+- Momento wow en una frase: <...> · segundos hasta el wow: <≤ 45>.
+- Plan B de cada paso que dependa de red, micrófono o cámara: <precargado / ratón / grabado>.
 
-Permitir que el walking skeleton y los consumidores de contratos avancen con mocks mientras corren los spikes. Por qué: validar un riesgo no debe detener el trabajo independiente.
+## 5. Núcleo técnico (el número o resultado que el jurado verá)
+- Método: <algoritmo explicable y su referencia>.
+- El LLM **no** produce el número: <qué hace el LLM y qué hace el cálculo>.
+- Trampas comprobadas con datos reales: <lo que salió mal al probar con los datos>.
+- Validación honesta: <dataset público, métrica (top-k), cómo se reporta>.
 
-## Contratos para la primera ola
+## 6. Datos (contrato `app/schemas/`)
+| Entidad | Campos clave (nombre: tipo) | Fuente (licencia) |
+|---|---|---|
+| <Entidad> | <campo: tipo, ...> | <dataset/API (licencia)> |
 
-| Interfaz / esquema | Ruta y versión inicial | Dueño, tarea ID | Mock publicado | Consumidores |
-|---|---|---|---|---|
-| `<request/response>` | `<contracts/...>` | `<HACK-NNN>` | `<fixtures/...>` | `<IDs>` |
-| `<tipo compartido>` | `<src/shared/...>` | `<HACK-NNN>` | `<fixtures/...>` | `<IDs>` |
+- Capa ancha (volumen, efecto visual) frente a capa profunda (curada a mano, con URL): <qué entra en cada una>.
+- Snapshot procesado en el repo (< 5 MB); crudos con `data/fetch.sh`.
 
-Publicar y revisar interfaces, esquemas y mocks mínimos antes de la primera ola de implementación. Por qué: cuatro tareas pueden usar una forma estable sin depender de una única tarea inicial.
+## 7. IA y APIs externas (cada una = spike ≤ 30 min + fallback)
+| Uso | Modelo/API [Por validar] | ¿Clave? quién la tiene | Fallback |
+|---|---|---|---|
+| <...> | <...> | <...> | <respuesta grabada `demo_data`> |
 
-Crear un walking skeleton P0 con datos falsos en la primera ola, separando su ruta de las validaciones externas. Por qué: un recorrido temprano ofrece una demo recuperable aunque falle una dependencia.
+- Regla anti-alucinación: <el LLM elige entre opciones dadas y cita IDs existentes>.
 
-## Activos existentes
+## 8. Rubric → evidencia
+| Criterio oficial | Peso | Qué paso/artefacto lo demuestra |
+|---|---|---|
+| <criterio> | <% o "sin peso"> | <paso # o archivo> |
 
-| Activo | Ruta / fuente | Licencia / permiso | Disponible y probado | Uso en la demo |
-|---|---|---|---|---|
-| `<código previo>` | `<ruta/URL>` | `<licencia>` | `<comando y resultado>` | `<uso>` |
-| `<datos/imagen/modelo>` | `<ruta/URL>` | `<licencia>` | `<prueba>` | `<uso>` |
-| `<API/servicio>` | `<documentación oficial>` | `<condición>` | `<prueba sin secretos>` | `<uso/fallback>` |
+Entregables oficiales: <prototipo, repo + README, video, deck, formulario>.
 
-Verificar disponibilidad, licencia y reglas de código previo antes de asignar un activo como dependencia. Por qué: una promesa de disponibilidad no sustituye una prueba ni una autorización.
+## 9. Tecnología y cortes
+| Pieza | Decisión | Por qué / qué se corta si falla |
+|---|---|---|
+| <...> | P0 / P1 / P2 | <...> |
 
-## Decisiones y límites
+## 10. Alcance
+- Fuera: <...> · Simulado con `demo_data`: <...> · Idioma de la UI: <...> · Ética/datos: <...>
 
-- Restricciones: `<tiempo, coste, datos, plataforma, idioma>`.
-- Datos de demo: `<fuente, etiquetas y anonimización>`.
-- Decisiones pendientes: `<preguntas concretas y alternativa reversible>`.
-- Plan B: `<video y fallback descritos en HACKATHON.md>`.
+## 11. Hechos citables (verificados el <fecha>)
+| Hecho | Fuente (URL) |
+|---|---|
+| <cifra o afirmación> | <URL> |
 
-Registrar las decisiones operativas en `DECISIONS.md` de la rama `claims`, referenciando esta idea cuando aplique. Por qué: el contenido de producto no debe convertirse en una segunda fuente de estado compartido.
+## 12. Backlog propuesto (olas paralelas)
+| Ola | ID | Tarea | Tipo | Prio | Depende | Archivos |
+|---|---|---|---|---|---|---|
+| 0 | HACK-001 | Setup (docs/STACK.md) | setup | P0 | — | lockfiles, main, App |
+| 1 | HACK-002 | Contrato + fixtures + web/DESIGN.md | contract | P0 | — | app/schemas/, web/DESIGN.md |
+| 1 | HACK-003 | Spike de mayor riesgo | spike | P0 | — | spikes/<x>/ |
+| 1 | HACK-004 | Walking skeleton del flujo con mocks | feature | P0 | — | web/src/features/<f>/, app/routers/<f>.py |
+
+Relacionadas (para avisos automáticos): <ID↔ID>.
+
+## 13. Decisiones abiertas
+- [ ] <decisión> · responsable · hora límite
