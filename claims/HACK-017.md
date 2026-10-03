@@ -9,8 +9,8 @@ Priority: P0
 Paths: web/src/features/dictation/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791070912
-Updated: 1791069112
+Lease-Until: 1791071591
+Updated: 1791069791
 Task-Base: 3716a312a1175a66b0d562eee39ef5d8333c12e5
 Next: Probar mic con API key; migrar a Panel/Chip/Button de web/src/ui; smoke y /hack-ship
 PR: -
