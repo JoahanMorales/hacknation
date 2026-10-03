@@ -1,6 +1,6 @@
 # HACK-011
 ID: HACK-011
-State: CLAIMED
+State: REVIEW
 Owner: cris-1
 Branch: feat/hack-011
 Worktree: /c/Users/crist/Documents/HackNation/hacknation-wt/hack-011
@@ -9,9 +9,9 @@ Priority: P0
 Paths: app/routers/action.py, app/services/action.py, app/tests/test_action.py
 Depends: HACK-001
 Verify: uv run pytest -q app/tests/test_action.py
-Lease-Until: 1791071848
-Updated: 1791070048
+Lease-Until: 1791072120
+Updated: 1791070320
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Abrir PR de feat/hack-011 (SHA 8b3f8ec) y hack done
-PR: -
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/18; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/18
 Evidence: -
