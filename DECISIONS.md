@@ -45,3 +45,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791070699 | HACK-018 | Merge API011 y validar plan real antes de volver a REVIEW; nueva SHA incluye base vigente sin cambiar featureajena. | Por qué: Prueba anterior action usaba fixture etiquetado por API ausente; verificar integracion real necesaria.
 - 1791070765 | HACK-018 | Mantener regression real roja hasta integrar fix0204751407; probar no equivalente fixture. | Por qué: API011 real contiene2groups/7assets y hace evidente falta maxheight action; source propietario ya corrigio en rama.
 - 1791071209 | HACK-016 | medición sin red con DEMO_MODE y sin clave | Por qué: demostrar qué corre en la Jetson
+- 1791071416 | HACK-011 | merge de main en vez de rebase tras push | Por qué: R08 prohíbe force-push
