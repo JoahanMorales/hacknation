@@ -8,7 +8,7 @@ Completar con `/hack-setup` los campos entre `<...>` al inicio del evento; stack
 |---|---|
 | Duración | 24 h |
 | Agentes en paralelo | 4–8 (1–2 por persona) |
-| Stack | Python 3.12 + FastAPI + uv + pytest (docs/STACK.md) |
+| Stack | FastAPI + uv + pytest · React + Vite + TS + Tailwind v4 + Motion (docs/STACK.md) |
 | Herramientas | Claude Code, Cursor, Codex (núcleo común: AGENTS.md) |
 | Máquinas | Una por persona; un worktree por tarea (`scripts/wt`) |
 | Remoto | GitHub `JoahanMorales/hacknation`, `origin` |

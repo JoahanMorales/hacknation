@@ -33,7 +33,7 @@ No introducir una dependencia serial universal de `HACK-001`; usar contratos ya 
 - **Rubric:** C1, C3
 - **Depende de:** Ninguna
 - **Relacionadas:** HACK-002
-- **Archivos probables:** app/routers/example.py, app/services/example.py, app/tests/test_example.py
+- **Archivos probables:** app/routers/example.py, app/services/example.py, app/tests/test_example.py, web/src/features/example/
 - **Contratos consumidos:** `<ruta y versión publicados>`.
 - **Criterios de aceptación:**
   - `<dada una entrada, se observa un resultado exacto>`.

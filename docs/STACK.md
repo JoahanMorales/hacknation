@@ -1,57 +1,29 @@
-# Stack · Python + FastAPI
+# Stack · FastAPI + React
 
-Cargar al crear el esqueleto (tarea de setup), al añadir un endpoint o al tocar dependencias. Por qué: la estructura evita que cuatro agentes editen los mismos archivos.
+Setup de la primera tarea (HACK-001) y referencia de estructura. Las convenciones del día a día están en las skills `hack-backend` y `hack-frontend`. Por qué: el setup se lee una vez; las convenciones, en cada tarea.
 
-## Estructura que permite paralelizar
+Verificar antes que las reglas del evento permitan boilerplate previo; si no, ejecutar estos pasos tras el inicio oficial. Por qué: el código previo puede estar restringido (HACKATHON.md).
+
+## Estructura
 
 ```text
-app/
-  main.py            # crea la app y AUTODESCUBRE routers; nadie lo edita tras el setup
-  config.py          # settings desde env (pydantic-settings); dueño: tarea de setup
-  schemas/           # contratos Pydantic compartidos; dueño único en OWNERS.md
-  routers/<feature>.py   # un archivo por feature/tarea; expone `router = APIRouter()`
-  services/<feature>.py  # lógica de la feature; mocks etiquetados con DEMO_MODE
-  fixtures/          # datos de demo etiquetados (json)
-  tests/test_<feature>.py  # tests del producto, un archivo por feature
-pyproject.toml / uv.lock   # dueño único (dependencias)
-tests/               # pruebas del PAQUETE de coordinación; no pongas tests del producto aquí
+app/                       # backend FastAPI (skill hack-backend)
+  main.py                  # autodescubre routers y sirve web/dist; nadie lo edita tras el setup
+  config.py · schemas/ · fixtures/ · routers/<f>.py · services/<f>.py · tests/test_<f>.py
+web/                       # frontend Vite + React + TS + Tailwind v4 + Motion (skill hack-frontend)
+  DESIGN.md · src/App.tsx · src/index.css · src/lib/api.ts · src/features/<f>/index.tsx
+tests/                     # pruebas del PAQUETE de coordinación; no pongas tests del producto aquí
+pyproject.toml / uv.lock · web/package.json / web/package-lock.json   # dueño único (setup)
 ```
 
-Reservar por tarea `app/routers/<feature>.py, app/services/<feature>.py, app/tests/test_<feature>.py`; `tests/` en la raíz es del paquete de coordinación. Por qué: Archivos probables disjuntos permiten claims simultáneos sin traslape.
+Una tarea vertical reserva `app/routers/<f>.py, app/services/<f>.py, app/tests/test_<f>.py, web/src/features/<f>/`. Por qué: Archivos probables disjuntos permiten claims simultáneos sin traslape.
 
-## main.py con autodescubrimiento
-
-```python
-import importlib
-import pkgutil
-
-from fastapi import FastAPI
-
-from app import routers
-
-app = FastAPI(title="Hack")
-
-
-@app.get("/health")
-def health() -> dict[str, str]:
-    return {"status": "ok"}
-
-
-# `routers` (no `app.routers`): la variable `app` tapa al paquete del mismo nombre.
-for module in pkgutil.iter_modules(routers.__path__):
-    router = getattr(importlib.import_module(f"{routers.__name__}.{module.name}"), "router", None)
-    if router is not None:
-        app.include_router(router)
-```
-
-Por qué: añadir una feature es crear un archivo; `main.py` no se vuelve un punto de conflicto.
-
-## Setup (primera tarea, ~10 min)
+## Setup backend (~5 min)
 
 ```bash
 uv init --bare --name hacknation --python 3.12 --pin-python .   # sólo pyproject.toml; --app en uv 0.12 crea src/ y build
 uv add fastapi "uvicorn[standard]" pydantic-settings httpx
-uv add --dev pytest ruff httpx2   # httpx2 evita el aviso de deprecación de TestClient
+uv add --dev pytest ruff httpx2 playwright   # httpx2 evita el aviso de TestClient; playwright para webapp-testing
 mkdir -p app/routers app/services app/schemas app/fixtures app/tests
 touch app/__init__.py app/routers/__init__.py app/services/__init__.py app/schemas/__init__.py
 cat >> pyproject.toml <<'TOML'
@@ -68,21 +40,150 @@ from app.main import app
 
 
 def test_health() -> None:
-    assert TestClient(app).get("/health").json() == {"status": "ok"}
+    assert TestClient(app).get("/api/health").json() == {"status": "ok"}
 PY
-# + app/main.py de la sección anterior
-bash scripts/hack init-smoke --command "uv run ruff check app && uv run pytest"
+# + app/main.py (abajo)
 ```
 
-Verificar antes que las reglas del evento permitan boilerplate previo; si no, ejecutar estos pasos tras el inicio oficial. Por qué: el código previo puede estar restringido (HACKATHON.md).
+### app/main.py
 
-## Convenciones
+```python
+import importlib
+import pkgutil
+from pathlib import Path
 
-| Regla | Por qué |
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+
+from app import routers
+
+app = FastAPI(title="Hack")
+
+
+@app.get("/api/health")
+def health() -> dict[str, str]:
+    return {"status": "ok"}
+
+
+# `routers` (no `app.routers`): la variable `app` tapa al paquete del mismo nombre.
+for module in pkgutil.iter_modules(routers.__path__):
+    router = getattr(importlib.import_module(f"{routers.__name__}.{module.name}"), "router", None)
+    if router is not None:
+        app.include_router(router)
+
+# El build del frontend se monta al final: /api/* siempre gana sobre los estáticos.
+WEB_DIST = Path(__file__).resolve().parent.parent / "web" / "dist"
+if WEB_DIST.is_dir():
+    app.mount("/", StaticFiles(directory=WEB_DIST, html=True), name="web")
+```
+
+Por qué: añadir un endpoint es crear `app/routers/<f>.py`; `main.py` no se vuelve punto de conflicto.
+
+## Setup frontend (~5 min)
+
+```bash
+CI=1 npm create vite@latest web -- --template react-ts --no-interactive
+npm --prefix web install --no-audit --no-fund --loglevel=error
+npm --prefix web install --no-audit --no-fund --loglevel=error tailwindcss @tailwindcss/vite motion @phosphor-icons/react @fontsource-variable/geist
+rm -rf web/src/App.css web/src/assets web/public/vite.svg
+mkdir -p web/src/features web/src/lib
+sed -i.bak 's#<title>.*</title>#<title>hacknation</title>#; /vite.svg/d' web/index.html && rm web/index.html.bak
+# + los cinco archivos de abajo; luego web/DESIGN.md con la skill design-taste-frontend
+```
+
+### web/vite.config.ts
+
+```ts
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+
+// /api va a FastAPI en dev; en la demo FastAPI sirve web/dist (un solo proceso).
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  server: { proxy: { "/api": "http://127.0.0.1:8000" } },
+});
+```
+
+### web/src/index.css
+
+```css
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+
+@theme {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+}
+```
+
+### web/src/lib/api.ts
+
+```ts
+// Única puerta al backend: todas las rutas viven bajo /api.
+export async function api<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await fetch(`/api${path}`, {
+    headers: { "Content-Type": "application/json" },
+    ...init,
+  });
+  if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+  return (await response.json()) as T;
+}
+```
+
+### web/src/App.tsx
+
+```tsx
+import type { ComponentType } from "react";
+
+// Cada feature es web/src/features/<nombre>/index.tsx con `export default` y `order`.
+// Añadir una feature = crear su carpeta; App.tsx no se vuelve punto de conflicto.
+type FeatureModule = { default: ComponentType; order?: number };
+
+const features = Object.entries(
+  import.meta.glob<FeatureModule>("./features/*/index.tsx", { eager: true }),
+)
+  .map(([path, module]) => ({ path, ...module }))
+  .sort((a, b) => (a.order ?? 100) - (b.order ?? 100));
+
+export default function App() {
+  return (
+    <main className="mx-auto min-h-[100dvh] max-w-7xl px-4 py-12 font-sans text-zinc-900 dark:text-zinc-100">
+      {features.map(({ path, default: Feature }) => (
+        <Feature key={path} />
+      ))}
+    </main>
+  );
+}
+```
+
+### web/src/main.tsx
+
+```tsx
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import App from "./App";
+import "./index.css";
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
+```
+
+## Smoke del producto
+
+```bash
+uv run playwright install chromium   # una vez por máquina (~100 MB), para webapp-testing
+bash scripts/hack init-smoke --command "uv run ruff check app && uv run pytest && npm --prefix web ci --prefer-offline --no-audit --no-fund --loglevel=error && npm --prefix web run lint && npm --prefix web run build"
+```
+
+`hack merge` repite este smoke en un clon limpio: por eso incluye `npm ci`. Por qué: el merge debe probar el producto completo, no sólo Python.
+
+## Ejecutar
+
+| Modo | Comando |
 |---|---|
-| Tests con `fastapi.testclient.TestClient`; cada tarea añade al menos el camino feliz y un error. | `Cómo verificar` = `uv run pytest -q app/tests/test_<feature>.py`. |
-| Llamadas externas sólo en `services/`, con timeout y fallback mock si `DEMO_MODE=true`. | La demo sobrevive a una API caída. |
-| Respuestas mock incluyen `"demo_data": true`. | R05: los mocks se etiquetan. |
-| Nuevas dependencias: pídelas a la tarea dueña de `pyproject.toml`/`uv.lock` o márcalas en el PR para humano. | El merge automático rechaza lockfiles (R32). |
-| Ejecutar local: `uv run uvicorn app.main:app --reload --port 8000`. | Un comando conocido por todos. |
-| Frontend de demo: si hace falta, HTML/JS estático en `app/static/` servido por FastAPI. | Un solo proceso que arrancar en la demo. |
+| Desarrollo | `uv run uvicorn app.main:app --reload --port 8000` + `npm --prefix web run dev` (abre :5173) |
+| Demo (un proceso) | `npm --prefix web run build && uv run uvicorn app.main:app --port 8000` (abre :8000) |

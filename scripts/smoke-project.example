@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -eu
 # No copies este archivo: genera el adaptador con
-#   bash scripts/hack init-smoke --command "uv run ruff check . && uv run pytest -q"
+#   bash scripts/hack init-smoke --command "<comando de docs/STACK.md, sección Smoke del producto>"
 # Por qué: el gate sólo acepta un adaptador con procedencia de init-smoke.
 printf '%s\n' 'PRODUCT_UNVERIFIED: ejecuta hack init-smoke con la validación real del producto.' >&2
 exit 2

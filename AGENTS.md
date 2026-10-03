@@ -74,7 +74,7 @@ Lee este núcleo una vez por sesión; carga el resto sólo ante el disparador in
 
 | ID | Regla imperativa | Por qué: |
 |---|---|---|
-| R49 | Stack: Python 3.12 + FastAPI + uv + pytest; sigue docs/STACK.md (routers autodescubiertos, un archivo por feature). | Cuatro agentes no editan el mismo `main.py`. |
+| R49 | Stack: FastAPI (skill `hack-backend`) + React/Vite/Tailwind (skill `hack-frontend`, diseño único en `web/DESIGN.md`); setup en docs/STACK.md. | Sin archivos compartidos por feature. |
 | R50 | Entrega primero el camino feliz con mock etiquetado; reemplaza por real sólo tras su spike. | La demo existe desde la primera hora. |
 | R51 | Commit y push de la rama cada criterio verde; PR en cuanto el smoke pase. | Integrar temprano reduce conflictos. |
 | R52 | No preguntes lo que `next`, TASKS o el código responden; pregunta sólo lo que exige autorización. | Cada pregunta detiene a dos. |

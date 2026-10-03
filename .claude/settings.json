@@ -42,7 +42,12 @@
       "Bash(curl -s http://localhost:*)",
       "Bash(curl -s http://127.0.0.1:*)",
       "Bash(rg:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm --prefix web run:*)",
+      "Bash(npm --prefix web ci:*)",
+      "Bash(npm --prefix web install:*)",
+      "Bash(npm run:*)",
+      "Bash(uv run python .claude/skills/webapp-testing/scripts/with_server.py:*)"
     ],
     "deny": [
       "Bash(git push --force:*)",

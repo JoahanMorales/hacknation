@@ -8,4 +8,4 @@ Lee y aplica `AGENTS.md` una vez al iniciar la sesión; es el núcleo común de 
 - Al empezar: `bash scripts/hack next`. Para tomar tarea: `bash scripts/wt new HACK-NNN --agent NOMBRE` y trabaja SOLO dentro de ese worktree.
 - Cursor no tiene hooks: cada ~10 min y tras cada criterio ejecuta `bash scripts/hack heartbeat HACK-NNN` y `bash scripts/hack inbox`; atiende los mensajes (R54–R59) y responde con `bash scripts/hack msg`.
 - Los guiones por fase están en `.claude/commands/hack-*.md` (start, ship, review, handoff, demo); léelos cuando llegues a esa fase.
-- Stack: `docs/STACK.md`.
+- Stack: `docs/STACK.md`. Skills (léelas cuando apliquen): `.claude/skills/hack-backend`, `hack-frontend` (incluye cuándo usar `design-taste-frontend`, `vercel-react-best-practices`, `webapp-testing` y `redesign-existing-projects`).

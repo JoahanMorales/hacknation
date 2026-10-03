@@ -1,6 +1,6 @@
 # hacknation
 
-Repositorio del equipo para el hackatón: 3–4 personas, cada una con 1–2 agentes (Claude Code, Cursor o Codex) trabajando en paralelo sobre **Python + FastAPI**. Incluye el protocolo de coordinación *Hackathon Agent Config v2.1*, revisado y adaptado para ir rápido.
+Repositorio del equipo para el hackatón: 3–4 personas, cada una con 1–2 agentes (Claude Code, Cursor o Codex) trabajando en paralelo sobre **FastAPI + React (Vite, Tailwind v4, Motion)**. Incluye el protocolo de coordinación *Hackathon Agent Config v2.1*, revisado y adaptado para ir rápido.
 
 ## Cómo funciona en 30 segundos
 
@@ -25,6 +25,20 @@ hack inbox            hack inbox --ack            hack inbox --task HACK-002
 - **Claude Code:** el inbox se revisa cada ~2 min y los mensajes nuevos entran solos al contexto del agente. El hook `Stop` no lo deja terminar con mensajes sin atender.
 - **Cursor y Codex:** el agente corre `hack inbox` en cada heartbeat y tras cada criterio (regla en `.cursor/rules/`).
 - **Límites:** reglas R54–R59 de AGENTS.md. Se pide en vez de editar archivos ajenos, siempre se responde, y un mensaje no concede permisos.
+
+## Skills
+
+En `.claude/skills/` (también enlazadas en `.cursor/skills/` y `.agents/skills/`). Origen, licencia y commit revisado de cada una en [SOURCES.md](.claude/skills/SOURCES.md).
+
+| Skill | Para qué |
+|---|---|
+| `hack-backend` / `hack-frontend` | Convenciones del stack; `hack-frontend` decide cuándo cargar las demás |
+| `design-taste-frontend` (taste-skill) | Dirección visual anti "IA genérica"; se usa una vez para fijar `web/DESIGN.md` y en pantallas de impacto |
+| `redesign-existing-projects` | Pulido visual durante el freeze |
+| `vercel-react-best-practices` | 70 reglas de rendimiento React, leídas una a una |
+| `webapp-testing` | Probar la UI en Chromium headless con el servidor levantado |
+
+`web/DESIGN.md` es el contrato visual: una sola dirección (acento, tema, fuente, radios, iconos) que todos los agentes siguen, para que cuatro agentes no produzcan cuatro estilos distintos.
 
 ## Ahorro de tokens
 
@@ -65,7 +79,7 @@ git config core.hooksPath .githooks
 bash scripts/smoke --package-only
 ```
 
-Requisitos: Git, Bash, Python 3.8+ (sólo para las pruebas del paquete), [uv](https://docs.astral.sh/uv/) y `gh` autenticado. El último comando tarda unos minutos y debe terminar en `PACKAGE_PASS`.
+Requisitos: Git, Bash, Python 3.8+ (pruebas del paquete), [uv](https://docs.astral.sh/uv/) (`curl -LsSf https://astral.sh/uv/install.sh | sh`), Node 22+ y [`gh`](https://cli.github.com/) autenticado (`gh auth login`), que `/hack-ship` usa para abrir PRs. En Mac Intel, Homebrew compila desde fuente: usa los instaladores oficiales. El último comando tarda unos minutos y debe terminar en `PACKAGE_PASS`.
 
 ## Qué cambió respecto al zip v2.1
 
@@ -78,7 +92,8 @@ Requisitos: Git, Bash, Python 3.8+ (sólo para las pruebas del paquete), [uv](ht
 | `.claude/settings.json` con permisos permitidos y denegados | Menos prompts, y force-push, `reset --hard` y `clean -fdx` bloqueados de verdad |
 | Comandos `/hack-setup`, `/hack-plan`, `/hack-start`, `/hack-ship`, `/hack-review`, `/hack-handoff`, `/hack-demo` | Cada fase tiene un guion fijo |
 | Regla para Cursor y CLAUDE.md con `@AGENTS.md` | Las tres herramientas usan el mismo núcleo |
-| `docs/STACK.md`: FastAPI con routers autodescubiertos | Cuatro agentes no editan el mismo `main.py` |
+| `docs/STACK.md`: FastAPI + React con routers y features autodescubiertos, setup probado de punta a punta | Cuatro agentes no editan el mismo `main.py` ni `App.tsx` |
+| Skills de frontend, testing y React revisadas e integradas (`.claude/skills/`) | Calidad visual y verificación de UI sin depender de un humano |
 | HACKATHON.md preconfigurado: `Autonomy: yes`, `Auto-Merge: yes`, `Review-Mode: claims` | Con `gh`, los agentes de una misma persona no pueden aprobarse (comparten cuenta) |
 | Ahorro de tokens: `scripts/q`, subagentes con modelos más baratos, modelo por comando, inbox por diferencia | La salida de comandos y Opus para todo eran los mayores gastos |
 | Mensajería entre agentes (`hack msg`/`hack inbox`) con avisos automáticos y reglas R54–R59 | Tareas relacionadas se coordinan sin humano de intermediario |

@@ -11,6 +11,13 @@ Una tarea dueña no es prerequisito de todos: consumidores usan contratos y mock
 | app/main.py | HACK-001 |
 | app/config.py | HACK-001 |
 | app/schemas/ | HACK-002 |
+| web/package.json | HACK-001 |
+| web/package-lock.json | HACK-001 |
+| web/vite.config.ts | HACK-001 |
+| web/src/App.tsx | HACK-001 |
+| web/src/lib/ | HACK-001 |
+| web/src/index.css | HACK-002 |
+| web/DESIGN.md | HACK-002 |
 | .github/workflows/ | HACK-001 |
 
 Completa o elimina patrones de tecnologías inexistentes y HACK-001 (setup) y HACK-002 (contract) los crea /hack-plan. Por qué: los IDs de ejemplo no constituyen trabajo autorizado.
