@@ -1,6 +1,6 @@
 # HACK-015
 ID: HACK-015
-State: CLAIMED
+State: REVIEW
 Owner: joahan-2
 Branch: feat/hack-015
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-015
@@ -9,9 +9,9 @@ Priority: P0
 Paths: README.md, docs/ARCHITECTURE.md, docs/AGENT-TOOLKIT.md
 Depends: HACK-001
 Verify: grep -q "data/build.py" README.md && test -s docs/ARCHITECTURE.md
-Lease-Until: 1791070242
-Updated: 1791068442
+Lease-Until: 1791070399
+Updated: 1791068599
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Humano abre PR de feat/hack-015; luego hack done HACK-015 --pr URL
-PR: -
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/14; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/14
 Evidence: -
