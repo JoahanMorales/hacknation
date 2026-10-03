@@ -10,3 +10,4 @@
 
 ## Historial
 - 1791062485 | CLAIMED | joahan-1 | claim; siguiente: ejecutar el Setup backend de docs/STACK.md en este worktree.
+- 1791062631 | CLAIMED | joahan-1 | heartbeat; lease hasta 1791064431
