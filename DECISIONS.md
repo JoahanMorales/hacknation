@@ -12,3 +12,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791065063 | deadline lease/HACK-001/1791065035 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791065574 | HACK-009 | FKTN puente ribitol = hipotesis | Por qué: no hay estudio preclínico de ribitol en FKTN
 - 1791066325 | HACK-004 | gpt-6-luna + gpt-live-transcribe confirmados | Por qué: probados con la cuenta del equipo
+- 1791066699 | HACK-007 | semántica de generate.py de HACK-002; labels añadidos a annotations.json | Por qué: API real y ejemplos de la UI dan los mismos números

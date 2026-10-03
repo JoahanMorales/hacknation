@@ -9,9 +9,9 @@ Priority: P0
 Paths: app/services/scoring.py, app/routers/diagnose.py, app/tests/test_scoring.py
 Depends: HACK-001
 Verify: uv run pytest -q app/tests/test_scoring.py
-Lease-Until: 1791068292
-Updated: 1791066492
+Lease-Until: 1791068499
+Updated: 1791066699
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: LR sobre annotations.json y POST /api/diagnose
+Next: Humano abre PR de feat/hack-007; luego hack done HACK-007 --pr URL
 PR: -
 Evidence: -
