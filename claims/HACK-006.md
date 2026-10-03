@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/graph/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791069393
-Updated: 1791067593
+Lease-Until: 1791070124
+Updated: 1791068324
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Aplicar opción: Constelacion con cosmos.gl (@cosmograph/cosmos) en lugar de sigma.js; sigma queda como respaldo
+Next: Cuando HACK-001 aplique alias gl-bench: rebase, build verde, smoke, /hack-ship
 PR: -
 Evidence: -

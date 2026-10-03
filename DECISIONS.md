@@ -23,3 +23,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791067854 | HACK-005 | Contrato visual CSS nativo oscuro, seis mecanismos semanticos y acento calido; fuente de fixtures explicita | Por qué: Cumplir brief y permitir consumidores paralelos sin tocar App ni dependencias
 - 1791067965 | HACK-010 | fallback: grabada o resúmenes curados con citas | Por qué: nada sin fuente
 - 1791068196 | HACK-018 | Consumir componentes de PR11 sin duplicarlos; el PR18 se publicara con diff propio tras integrar el contrato visual | Por qué: Un sistema compartido y cambios limitados a features/diagnosis; snapshot evita respuestas obsoletas
+- 1791068324 | HACK-006 | @cosmograph/cosmos CC-BY-NC aceptado por Saus (no comercial) | Por qué: Demo es el momento estrella
