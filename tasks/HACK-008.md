@@ -1,6 +1,6 @@
 # HACK-008
 ID: HACK-008
-State: REVIEW
+State: INTEGRATED
 Owner: joahan-2
 Branch: feat/hack-008
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-008
@@ -9,14 +9,17 @@ Priority: P0
 Paths: app/routers/symptoms.py, app/services/symptoms.py, app/tests/test_symptoms.py
 Depends: HACK-001
 Verify: uv run pytest -q app/tests/test_symptoms.py
-Lease-Until: 1791069515
-Updated: 1791067715
+Lease-Until: 0
+Updated: 1791068494
 Task-Base: 37c62b6d79b9ae4087ae7e94d4ff849042476a43
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/9; ejecutar scripts/smoke
+Next: Integrada en main: c0c8e79de706c70921f45104779772d71e2dd4e2; reclamar siguiente P0
 PR: https://github.com/JoahanMorales/hacknation/pull/9
-Evidence: uv run pytest -q app/tests/test_symptoms.py 7 passed; EN/ES real 5/5; smoke PRODUCT_PASS; merge humano PR #9 (c0c8e79)
-Events: 4
+Evidence: merge humano PR #9 y approve zoe-1 sobre 5f2112a
+Events: 5
 Checkpoints: 1
 Sessions: 2
 Last-Checkpoint: 1791067343
 Task-Tip: 5f2112a58ea04c4cb92a2b359dce9ecc41432272
+Integration-Proof: ancestry
+Merge-Commit: c0c8e79de706c70921f45104779772d71e2dd4e2
+Reviewer: zoe-1
