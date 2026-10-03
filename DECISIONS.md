@@ -11,3 +11,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791064887 | HACK-002 | Admitir DECIPHER y conservar 12867 enfermedades como endpoint real | Por qué: Compatibilidad con datos publicados y solicitud del responsable via joahan-2
 - 1791065063 | deadline lease/HACK-001/1791065035 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791065574 | HACK-009 | FKTN puente ribitol = hipotesis | Por qué: no hay estudio preclínico de ribitol en FKTN
+- 1791066325 | HACK-004 | gpt-6-luna + gpt-live-transcribe confirmados | Por qué: probados con la cuenta del equipo
