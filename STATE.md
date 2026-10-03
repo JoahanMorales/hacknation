@@ -1,7 +1,7 @@
 # STATE
 
 Fase: ejecución
-Actualizado: 1791071723
+Actualizado: 1791071730
 AVAILABLE: HACK-012 HACK-013 HACK-014 
 CLAIMED: HACK-006 HACK-017 
 BLOCKED: -
@@ -15,7 +15,7 @@ HACK-004 | REVIEW | joahan-2 | hasta 1791073523
 HACK-006 | CLAIMED | saus-1 | hasta 1791071552
 HACK-007 | REVIEW | joahan-1 | hasta 1791073483
 HACK-009 | REVIEW | joahan-1 | hasta 1791073489
-HACK-015 | REVIEW | joahan-2 | hasta 1791071417
+HACK-015 | REVIEW | joahan-2 | hasta 1791073530
 HACK-016 | REVIEW | joahan-1 | hasta 1791073510
 HACK-017 | CLAIMED | saus-1 | hasta 1791071591
 HACK-018 | REVIEW | zoe-1 | hasta 1791073391
