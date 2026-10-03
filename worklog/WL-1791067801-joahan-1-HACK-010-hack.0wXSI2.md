@@ -13,3 +13,4 @@
 - 1791067965 | CLAIMED | joahan-1 | checkpoint; siguiente: Humano abre PR de feat/hack-010; luego hack done HACK-010 --pr URL
 - 1791068585 | REVIEW | joahan-1 | done; PR https://github.com/JoahanMorales/hacknation/pull/12; evidencia: uv run pytest -q app/tests/test_node.py 8 passed; explicación real EN/ES grabada; smoke PRODUCT_PASS; merge humano PR #12 (55c0f46); reviewer: -
 - 1791069596 | REVIEW | joahan-1 | heartbeat; lease hasta 1791071396
+- 1791070565 | REVIEW | cris-1 | review; approve; SHA 4548784173e30336c2561406726f5f38c570b4ba; revisor cris-1
