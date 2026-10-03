@@ -1,6 +1,6 @@
 # HACK-018
 ID: HACK-018
-State: CLAIMED
+State: REVIEW
 Owner: zoe-1
 Branch: feat/hack-018
 Worktree: /c/Users/zm180/OneDrive/Desktop/hacknation-wt/hack-018
@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791071608
-Updated: 1791069808
+Lease-Until: 1791071796
+Updated: 1791069996
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Smoke y check_ui contra nueva base, push PR, done REVIEW y handoff.
-PR: -
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/16; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/16
 Evidence: -
