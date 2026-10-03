@@ -46,3 +46,9 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791070765 | HACK-018 | Mantener regression real roja hasta integrar fix0204751407; probar no equivalente fixture. | Por qué: API011 real contiene2groups/7assets y hace evidente falta maxheight action; source propietario ya corrigio en rama.
 - 1791071209 | HACK-016 | medición sin red con DEMO_MODE y sin clave | Por qué: demostrar qué corre en la Jetson
 - 1791071416 | HACK-011 | merge de main en vez de rebase tras push | Por qué: R08 prohíbe force-push
+- 1791071464 | deadline lease/HACK-003/1791071403 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791071464 | deadline lease/HACK-004/1791071410 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791071464 | deadline lease/HACK-007/1791071382 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791071464 | deadline lease/HACK-009/1791071389 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791071464 | deadline lease/HACK-015/1791071417 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791071464 | deadline lease/HACK-019/1791071375 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
