@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/action/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791072328
-Updated: 1791070528
+Lease-Until: 1791073538
+Updated: 1791071738
 Task-Base: eb2e491b76e640a9040df7a4a7fafa716e1ee831
-Next: Humano abre PR de feat/hack-020 (follow-up) y de feat/deps-cosmos-mit (alias gl-bench)
-PR: https://github.com/JoahanMorales/hacknation/pull/17
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/21; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/21
 Evidence: -
