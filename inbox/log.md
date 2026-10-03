@@ -269,3 +269,8 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 265 | 1791070798 | joahan-1 | task:HACK-004 | integrated | HACK-010 | HACK-010 integrado en main (55c0f46d278912f227ea01ae1f5a64d27a7f9ed2). Si dependes de él: git fetch origin && git rebase origin/main
 - 266 | 1791070798 | joahan-1 | task:HACK-009 | integrated | HACK-010 | HACK-010 integrado en main (55c0f46d278912f227ea01ae1f5a64d27a7f9ed2). Si dependes de él: git fetch origin && git rebase origin/main
 - 267 | 1791070798 | joahan-1 | task:HACK-019 | integrated | HACK-010 | HACK-010 integrado en main (55c0f46d278912f227ea01ae1f5a64d27a7f9ed2). Si dependes de él: git fetch origin && git rebase origin/main
+- 268 | 1791070809 | joahan-1 | task:HACK-001 | integrated | HACK-010 | HACK-010 INTEGRATED (main 55c0f46): /api/node, /api/edge, /api/explain.
+- 269 | 1791070809 | joahan-1 | task:HACK-002 | integrated | HACK-010 | HACK-010 INTEGRATED (main 55c0f46): /api/node, /api/edge, /api/explain.
+- 270 | 1791070809 | joahan-1 | task:HACK-004 | integrated | HACK-010 | HACK-010 INTEGRATED (main 55c0f46): /api/node, /api/edge, /api/explain.
+- 271 | 1791070809 | joahan-1 | task:HACK-009 | integrated | HACK-010 | HACK-010 INTEGRATED (main 55c0f46): /api/node, /api/edge, /api/explain.
+- 272 | 1791070809 | joahan-1 | task:HACK-019 | integrated | HACK-010 | HACK-010 INTEGRATED (main 55c0f46): /api/node, /api/edge, /api/explain.
