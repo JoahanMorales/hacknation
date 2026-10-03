@@ -9,13 +9,13 @@ Priority: P0
 Paths: app/schemas/, app/fixtures/case/, app/fixtures/api/, app/tests/test_schemas.py
 Depends: Ninguna
 Verify: uv run pytest -q app/tests/test_schemas.py
-Lease-Until: 1791066703
-Updated: 1791064903
+Lease-Until: 1791067252
+Updated: 1791065452
 Task-Base: bb6deeaac77522ec64554b8e5c934715b935b784
 Next: Revision humana PR3 SHAe93a601; diferencia DECIPHER resuelta, mensajes leidos y respondidos
 PR: https://github.com/JoahanMorales/hacknation/pull/3
 Evidence: SHAe93a601: request59 resuelto; DECIPHER admitido; 12867 enfermedades, 47 DECIPHER; 30 tests contratos y 34 backend; Ruff, hashes y smoke PRODUCT_PASS.
-Events: 13
+Events: 14
 Checkpoints: 4
 Sessions: 2
 Last-Checkpoint: 1791064887
