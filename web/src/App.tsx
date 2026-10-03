@@ -13,6 +13,14 @@ const features = Object.entries(
   .map(([path, module]) => ({ path, ...module }))
   .sort((a, b) => (a.order ?? 100) - (b.order ?? 100));
 
+// ?ui=kit muestra el kit de componentes base (web/src/ui/Kit.tsx, HACK-005) en lugar del shell.
+// El glob es opcional: compila aunque Kit.tsx aún no exista.
+const kitModule = Object.values(
+  import.meta.glob<{ default: ComponentType }>("./ui/Kit.tsx", { eager: true }),
+)[0];
+const KitPage =
+  new URLSearchParams(window.location.search).get("ui") === "kit" ? kitModule?.default : undefined;
+
 // Las capas no capturan eventos (el grafo sigue interactivo detrás); sólo cada feature los recibe.
 function SlotContent({ slot }: { slot: Slot }) {
   return features
@@ -30,6 +38,8 @@ function SlotContent({ slot }: { slot: Slot }) {
 
 export default function App() {
   const sampleMode = useStore((state) => state.sampleMode);
+
+  if (KitPage) return <KitPage />;
 
   return (
     <main className="relative h-[100dvh] w-full overflow-hidden font-sans">
