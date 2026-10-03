@@ -27,7 +27,7 @@ import pkgutil
 
 from fastapi import FastAPI
 
-import app.routers
+from app import routers
 
 app = FastAPI(title="Hack")
 
@@ -37,8 +37,9 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
-for module in pkgutil.iter_modules(app.routers.__path__):
-    router = getattr(importlib.import_module(f"app.routers.{module.name}"), "router", None)
+# `routers` (no `app.routers`): la variable `app` tapa al paquete del mismo nombre.
+for module in pkgutil.iter_modules(routers.__path__):
+    router = getattr(importlib.import_module(f"{routers.__name__}.{module.name}"), "router", None)
     if router is not None:
         app.include_router(router)
 ```
@@ -48,9 +49,9 @@ Por qué: añadir una feature es crear un archivo; `main.py` no se vuelve un pun
 ## Setup (primera tarea, ~10 min)
 
 ```bash
-uv init --app --no-readme --python 3.12 . && rm -f main.py hello.py   # quita el ejemplo de uv
+uv init --bare --name hacknation --python 3.12 --pin-python .   # sólo pyproject.toml; --app en uv 0.12 crea src/ y build
 uv add fastapi "uvicorn[standard]" pydantic-settings httpx
-uv add --dev pytest ruff
+uv add --dev pytest ruff httpx2   # httpx2 evita el aviso de deprecación de TestClient
 mkdir -p app/routers app/services app/schemas app/fixtures app/tests
 touch app/__init__.py app/routers/__init__.py app/services/__init__.py app/schemas/__init__.py
 cat >> pyproject.toml <<'TOML'
