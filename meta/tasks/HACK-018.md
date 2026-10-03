@@ -1,5 +1,5 @@
 Task: HACK-018
-Events: 9
-Checkpoints: 5
+Events: 10
+Checkpoints: 6
 Sessions: 1
-Last-Checkpoint: 1791070029
+Last-Checkpoint: 1791070174

@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791071957
-Updated: 1791070157
+Lease-Until: 1791071974
+Updated: 1791070174
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Revision independiente del SHA d1149497ff0d171fc8896c7803014564a2dd2e1d; luego hack merge HACK-018. Si merge humano, verificar commit real y done --integrated.
+Next: Merge latestmain local; build y ensayo de diagnosis+inspector+action. Procesar inbox, cerrar018 cuando llegue aprobacion.
 PR: https://github.com/JoahanMorales/hacknation/pull/16
 Evidence: -
