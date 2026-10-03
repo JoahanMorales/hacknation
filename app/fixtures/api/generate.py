@@ -25,6 +25,7 @@ OUT = Path(__file__).parent
 CASE_DIR = OUT.parent / "case"
 HPO_RELEASE = "v2026-09-01"
 PACKET_RELEASE = "0.1.27"
+LAYOUT_COMMIT = "4fded4157b2742811294f9df1e93314fd578a455"
 PACKET_FILE = "PMID_7668832_Father.json"
 HPO_BASE = (
     "https://github.com/obophenotype/human-phenotype-ontology/releases/download/"
@@ -41,11 +42,17 @@ INPUT_URLS = {
     "hp.json": HPO_BASE + "hp.json",
     "phenotype.hpoa": HPO_BASE + "phenotype.hpoa",
     "phenopacket.json": PACKET_URL,
+    "overview.json": (
+        "https://raw.githubusercontent.com/JoahanMorales/hacknation/"
+        + LAYOUT_COMMIT
+        + "/app/fixtures/graph/overview.json"
+    ),
 }
 INPUT_HASHES = {
     "hp.json": "a7b3a012e7b4007a35a7cf8da35f2373b54cc16907f80d13d62470d31f833501",
     "phenotype.hpoa": "e89aa39c8f97bf5a52c5d160f9250a603681d630ade8ec2679d84ac5aece1f72",
     "phenopacket.json": "7da518380f65f5d6a4e7b9c6b741a9120be9852e0563c0b6b8d329f0edfc87c3",
+    "overview.json": "425d931236cb33d67066e06af3714ac940c2914fcda0130f149ca3750bb87fda",
 }
 POMPE = "OMIM:621314"
 FKRP = "ORPHA:34515"
@@ -401,7 +408,7 @@ def build_case(cache):
     }
 
 
-def graph_sample(dataset, results, sources):
+def graph_sample(dataset, results, sources, cache):
     chosen = {POMPE, FKRP, "OMIM:253800"}
     for result in results:
         chosen.update(row["disease_id"] for row in result["ranking"])
@@ -409,46 +416,25 @@ def graph_sample(dataset, results, sources):
         if len(chosen) >= 300:
             break
         chosen.add(disease)
-    roots = [
-        "HP:0000119",
-        "HP:0000707",
-        "HP:0001626",
-        "HP:0002086",
-        "HP:0003011",
-        "HP:0001871",
-    ]
-    names = [
-        "genitourinary",
-        "nervous",
-        "cardiovascular",
-        "respiratory",
-        "musculoskeletal",
-        "blood",
-    ]
+    layout = json.loads((cache / "overview.json").read_bytes())
+    positions = {node["id"]: node for node in layout["diseases"]}
+    missing = set(dataset.ids) - positions.keys()
+    if missing:
+        raise ValueError("Layout snapshot does not cover the HPO dataset")
     counts = defaultdict(int)
+    for disease in dataset.ids:
+        counts[positions[disease]["group"]] += 1
+    groups = [{**group, "count": counts[group["id"]]} for group in layout["groups"]]
     nodes = []
     for disease in sorted(chosen):
-        all_ancestors = set()
-        for row in dataset.annotations[disease]:
-            if row["frequency"]["mean"] != 0:
-                all_ancestors.update(dataset.ancestors(row["hpo_id"]))
-                all_ancestors.add(row["hpo_id"])
-        group_index = next(
-            (i for i, term in enumerate(roots) if term in all_ancestors), 6
-        )
-        group = names[group_index] if group_index < 6 else "other"
-        index = counts[group]
-        counts[group] += 1
-        angle = index * math.pi * (3 - math.sqrt(5))
-        radius = 0.06 * math.sqrt(index)
-        center = group_index * 2 * math.pi / 7
+        position = positions[disease]
         nodes.append(
             {
                 "id": disease,
                 "name": dataset.names[disease],
-                "group": group,
-                "x": round(3 * math.cos(center) + radius * math.cos(angle), 6),
-                "y": round(3 * math.sin(center) + radius * math.sin(angle), 6),
+                "group": position["group"],
+                "x": position["x"],
+                "y": position["y"],
                 "synonyms": [],
                 "mechanism_ids": [],
             }
@@ -457,10 +443,11 @@ def graph_sample(dataset, results, sources):
         "demo_data": True,
         "sources": sources,
         "nodes": nodes,
+        "groups": groups,
         "edges": [],
         "total_diseases": len(dataset.ids),
         "displayed_diseases": len(nodes),
-        "layout_kind": "Illustrative deterministic HPO system galaxies; 300 real IDs, not the production layout",
+        "layout_kind": "300 real disease positions sampled from HACK-003 HPO system galaxies",
     }
 
 
@@ -628,9 +615,13 @@ def generate(cache):
         {
             "name": filename,
             "url": url,
-            "version": PACKET_RELEASE
-            if filename == "phenopacket.json"
-            else HPO_RELEASE,
+            "version": (
+                PACKET_RELEASE
+                if filename == "phenopacket.json"
+                else LAYOUT_COMMIT
+                if filename == "overview.json"
+                else HPO_RELEASE
+            ),
             "sha256": digest(cache / filename),
         }
         for filename, url in INPUT_URLS.items()
@@ -645,7 +636,7 @@ def generate(cache):
         result["next_question"] = next_question(
             dataset, case["terms"][:step], candidates, sources
         )
-    graph = graph_sample(dataset, results, sources)
+    graph = graph_sample(dataset, results, sources, cache)
     responses = {
         "graph_overview.json": graph,
         "diagnose.json": results[-1],

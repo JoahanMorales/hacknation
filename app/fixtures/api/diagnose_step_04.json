@@ -19,6 +19,12 @@
       "url": "https://raw.githubusercontent.com/monarch-initiative/phenopacket-store/0.1.27/notebooks/GAA/phenopackets/PMID_7668832_Father.json",
       "version": "0.1.27",
       "sha256": "7da518380f65f5d6a4e7b9c6b741a9120be9852e0563c0b6b8d329f0edfc87c3"
+    },
+    {
+      "name": "overview.json",
+      "url": "https://raw.githubusercontent.com/JoahanMorales/hacknation/4fded4157b2742811294f9df1e93314fd578a455/app/fixtures/graph/overview.json",
+      "version": "4fded4157b2742811294f9df1e93314fd578a455",
+      "sha256": "425d931236cb33d67066e06af3714ac940c2914fcda0130f149ca3750bb87fda"
     }
   ],
   "ranking": [
@@ -434,6 +440,12 @@
         "url": "https://raw.githubusercontent.com/monarch-initiative/phenopacket-store/0.1.27/notebooks/GAA/phenopackets/PMID_7668832_Father.json",
         "version": "0.1.27",
         "sha256": "7da518380f65f5d6a4e7b9c6b741a9120be9852e0563c0b6b8d329f0edfc87c3"
+      },
+      {
+        "name": "overview.json",
+        "url": "https://raw.githubusercontent.com/JoahanMorales/hacknation/4fded4157b2742811294f9df1e93314fd578a455/app/fixtures/graph/overview.json",
+        "version": "4fded4157b2742811294f9df1e93314fd578a455",
+        "sha256": "425d931236cb33d67066e06af3714ac940c2914fcda0130f149ca3750bb87fda"
       }
     ],
     "hpo_id": "HP:0002913",

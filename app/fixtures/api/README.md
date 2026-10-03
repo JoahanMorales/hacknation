@@ -22,6 +22,8 @@ contradictorios. `ranking` incluye `disease_id,name,pct,low,high,drivers`.
 `next_question` contiene `hpo_id,label,question,candidates,information_gain_bits,
 if_yes,if_no,rationale`; un `hpo_id: null` indica evidencia insuficiente.
 `GraphOverview.nodes` lleva `{id,name,group,x,y,synonyms,mechanism_ids}`.
+`group` es el ID HPO del sistema; `groups` lleva `{id,label,count,x,y,r}`.
+Los conteos por grupo cubren las 12820 enfermedades, no sólo los 300 nodos visibles.
 `total_diseases` indica la capa completa; `displayed_diseases` indica los 300
 nodos del ejemplo. No mostrar 300 como si fueran todas las enfermedades.
 
@@ -29,6 +31,8 @@ El caso publicado en `../case/pompe_case.json` tiene cinco términos en orden
 de dictado. Los dos síntomas cardiacos están explícitamente negados. Las
 narraciones ES/EN son adaptaciones redactadas, no grabaciones ni citas del artículo.
 El generador conserva IDs reales para todas las estrellas y todo el top-10.
+Las posiciones y galaxias se muestrean del layout HACK-003 publicado en el commit
+`4fded4157b2742811294f9df1e93314fd578a455`; URL y hash fijados en procedencia.
 
 ## Reproducir
 

@@ -211,8 +211,18 @@ class DiagnosisResult(SampleResponse):
         return self
 
 
+class GraphGroup(Contract):
+    id: HpoId
+    label: str
+    count: int = Field(ge=0)
+    x: float
+    y: float
+    r: float = Field(gt=0)
+
+
 class GraphOverview(SampleResponse):
     nodes: list[Disease]
+    groups: list[GraphGroup] = Field(default_factory=list)
     edges: list[Edge] = Field(default_factory=list)
     total_diseases: int = Field(ge=1)
     displayed_diseases: int = Field(ge=1)
@@ -227,6 +237,14 @@ class GraphOverview(SampleResponse):
             raise ValueError("Displayed count exceeds the dataset")
         if any(edge.src not in ids or edge.dst not in ids for edge in self.edges):
             raise ValueError("Graph edge endpoints must exist")
+        if self.groups:
+            group_ids = {group.id for group in self.groups}
+            if len(group_ids) != len(self.groups):
+                raise ValueError("Graph groups must have unique IDs")
+            if any(node.group not in group_ids for node in self.nodes):
+                raise ValueError("Every node must refer to a declared group")
+            if sum(group.count for group in self.groups) != self.total_diseases:
+                raise ValueError("Group counts must cover the full dataset")
         return self
 
 
