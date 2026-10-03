@@ -9,13 +9,13 @@ Priority: P0
 Paths: app/schemas/, app/fixtures/case/, app/fixtures/api/, app/tests/test_schemas.py
 Depends: Ninguna
 Verify: uv run pytest -q app/tests/test_schemas.py
-Lease-Until: 1791065247
-Updated: 1791063447
+Lease-Until: 1791065277
+Updated: 1791063477
 Task-Base: bb6deeaac77522ec64554b8e5c934715b935b784
-Next: publicar primero los esquemas y ejemplos de graph_overview y diagnose (los que Saus necesita antes), luego el resto.
+Next: Comprobar regeneracion determinista; publicar rama y revisar smoke
 PR: -
 Evidence: -
-Events: 3
-Checkpoints: 0
+Events: 4
+Checkpoints: 1
 Sessions: 1
-Last-Checkpoint: 0
+Last-Checkpoint: 1791063477
