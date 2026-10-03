@@ -1,113 +1,110 @@
-# hacknation
+# Constellation
 
-Repositorio del equipo para el hackatón: 3–4 personas, cada una con 1–2 agentes (Claude Code, Cursor o Codex) trabajando en paralelo sobre **FastAPI + React (Vite, Tailwind v4, Motion)**. Incluye el protocolo de coordinación *Hackathon Agent Config v2.1*, revisado y adaptado para ir rápido.
+**From scattered symptoms to the community already working on them.**
 
-## Cómo funciona en 30 segundos
+A clinician dictates a case. Constellation maps the words to HPO phenotypes, scores all 12,867 rare diseases with explainable likelihood ratios, and dims a map of the rare-disease universe until a few candidates remain. It then shows how those diseases connect, with a source and an honest evidence level for every link, and ends with a concrete next step for this week: a test to ask for, a registry to join, an organisation to contact.
 
-- **AGENTS.md** es el núcleo que leen todas las herramientas: `CLAUDE.md` lo importa y `.cursor/rules/` lo aplica siempre.
-- **TASKS.md** es el backlog estático. El estado vive en la rama remota `claims` y se maneja sólo con `bash scripts/hack`.
-- Cada tarea tiene su rama y su worktree. `bash scripts/wt new HACK-NNN --agent ana-1` crea ambos, escribe la identidad y hace el claim en un solo paso.
-- El merge es automático cuando se cumplen todas las condiciones (`hack merge`): revisión de otro agente sobre el SHA, smoke del producto, el comando de "Cómo verificar" y un diff dentro de su alcance. Lo que no pasa va a la cola humana (`hack digest`).
+Built for Challenge 05 of the 7th Global AI Hackathon (Hack-Nation × OpenAI).
 
-## Comunicación entre agentes
+> Phenotype match, not a diagnosis or a clinical probability. Built only on published cases and public data.
 
-Los agentes se mandan mensajes por la rama `claims`, con el mismo push atómico que usa el resto del CLI. Así funciona entre máquinas y entre Claude Code, Cursor y Codex.
+![The constellation: 12,867 diseases laid out as galaxies by HPO organ system](docs/img/constellation-layout.png)
 
-```text
-hack msg related:HACK-002 --kind contract "Item tiene price obligatorio; ajusta tu router"
-hack msg HACK-007 --kind request "Necesito GET /items?limit=; criterio: test_items_limit"
-hack msg ana-1 --kind reply "Hecho en a1b2c3"      hack msg human --kind blocker "Falta API key"
-hack inbox            hack inbox --ack            hack inbox --task HACK-002
+*Real layout from `data/build.py`: one galaxy per HPO organ system, clusters by subsystem. Amber rings: late-onset Pompe disease (OMIM:621314) and FKRP-related LGMD R9 (ORPHA:34515), the demo case.*
+
+![Interface kit](docs/img/ui-kit.png)
+
+## Why
+
+- Rare-disease diagnosis takes **4.7 years on average**; 56% of people wait more than 6 months from the first consultation (EURORDIS Rare Barometer, 6,507 respondents, 41 countries, [Eur J Hum Genet 2024](https://www.nature.com/articles/s41431-024-01604-z)).
+- Late-onset Pompe disease is found among patients labelled with unclassified limb-girdle muscular dystrophy, and a dried-blood-spot test is recommended in that situation ([Mol Genet Metab](https://www.sciencedirect.com/science/article/abs/pii/S1096719213002734), [Neuromuscul Disord](https://www.sciencedirect.com/science/article/abs/pii/S0960896615001339)).
+- For FKRP-related LGMD R9 there is no approved therapy today; ribitol (BBP-418) has an NDA under priority review with a PDUFA date of 27 Nov 2026 ([BridgeBio](https://investor.bridgebio.com/news/news-details/2026/BridgeBio-Announces-FDA-Acceptance-and-Priority-Review-of-NDA-for-BBP-418-for-LGMD2IR9/default.aspx)).
+
+## The flow
+
+1. **Dictate** (EN or ES). `gpt-live-transcribe` streams the transcript to the browser.
+2. **Extract.** A local HPO synonym search proposes candidate terms; `gpt-6-luna` picks among them with structured output, including negations ("no cardiomyopathy").
+3. **Score.** Phenotype likelihood ratios over HPO v2026-09-01, aware of the HPO hierarchy. Every disease is scored, with a sensitivity range and the top drivers.
+4. **Ask.** The next best question is the unasked phenotype with the most information gain between the top candidates.
+5. **Inspect.** Every edge in the curated deep layer carries a source URL, a record ID, a retrieval date and an evidence level: observed, inferred, hypothesis or contradictory.
+6. **Act.** Patient groups, registries, natural-history studies and trials (ClinicalTrials.gov API v2, NIH RePORTER), and a step for this week.
+
+Architecture and data flow: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+## Run it
+
+Requirements: Python 3.12 with [uv](https://docs.astral.sh/uv/), Node 20.19+ and Git.
+
+```bash
+uv sync
+npm --prefix web ci
+npm --prefix web run build
+uv run uvicorn app.main:app --port 8000    # open http://127.0.0.1:8000
 ```
 
-- **A quién llegan:** a una tarea (`HACK-NNN`) le llegan a quien la tenga reservada, ahora o cuando alguien la reclame; `wt new` le muestra el hilo. `related:ID` usa `Depende de`, `Relacionadas` y `Contratos consumidos` de TASKS.md.
-- **Avisos automáticos:** `done` pide revisor a todos, `review` avisa al dueño si fue approve (→ `merge`) o reject, el merge avisa `integrated` a las tareas relacionadas (→ rebase), y las decisiones y la cola humana llegan a `hack digest`.
-- **Claude Code:** el inbox se revisa cada ~2 min y los mensajes nuevos entran solos al contexto del agente. El hook `Stop` no lo deja terminar con mensajes sin atender.
-- **Cursor y Codex:** el agente corre `hack inbox` en cada heartbeat y tras cada criterio (regla en `.cursor/rules/`).
-- **Límites:** reglas R54–R59 de AGENTS.md. Se pide en vez de editar archivos ajenos, siempre se responde, y un mensaje no concede permisos.
+For development, run `uv run uvicorn app.main:app --reload --port 8000` and `npm --prefix web run dev` (port 5173, proxies `/api`; set `API_PORT` if 8000 is taken).
 
-## Skills
+Optional `.env` (never committed):
 
-En `.claude/skills/` (también enlazadas en `.cursor/skills/` y `.agents/skills/`). Origen, licencia y commit revisado de cada una en [SOURCES.md](.claude/skills/SOURCES.md).
+```bash
+OPENAI_API_KEY=sk-...   # live dictation, extraction and explanations
+DEMO_MODE=true          # use recorded real responses instead of calling OpenAI
+```
 
-| Skill | Para qué |
-|---|---|
-| `hack-backend` / `hack-frontend` | Convenciones del stack; `hack-frontend` decide cuándo cargar las demás |
-| `design-taste-frontend` (taste-skill) | Dirección visual anti "IA genérica"; se usa una vez para fijar `web/DESIGN.md` y en pantallas de impacto |
-| `redesign-existing-projects` | Pulido visual durante el freeze |
-| `vercel-react-best-practices` | 70 reglas de rendimiento React, leídas una a una |
-| `webapp-testing` | Probar la UI en Chromium headless con el servidor levantado |
+Without a key, or with `DEMO_MODE=true`, every AI step falls back to recorded real responses for the demo case, labelled `demo_data: true`. Scoring is always local.
 
-`web/DESIGN.md` es el contrato visual: una sola dirección (acento, tema, fuente, radios, iconos) que todos los agentes siguen, para que cuatro agentes no produzcan cuatro estilos distintos.
+Tests: `uv run pytest` and `bash scripts/smoke` (lint, tests and web build; it must print `PRODUCT_PASS`).
 
-## Ahorro de tokens
+## Reproduce the data
 
-| Mecanismo | Efecto |
-|---|---|
-| `bash scripts/q CMD` | Una línea si el comando pasa, las últimas 40 si falla; el log completo queda en `.git/hack-q.log` |
-| Subagente `hack-runner` (Haiku) | Tests, smoke y pruebas de la app en contexto aislado; vuelve un veredicto de ≤ 12 líneas |
-| Subagente `hack-reviewer` (Sonnet) | La revisión lee el diff completo en su propio contexto; vuelven ≤ 5 líneas |
-| Modelo por comando | `/hack-plan` en Opus; ship, review, handoff, setup y demo en Sonnet; implementar con el modelo que elijas |
-| Inbox por diferencia | El hook inyecta sólo los mensajes nuevos, compactos; nunca repite lo ya visto |
-| `BASH_MAX_OUTPUT_LENGTH=12000` | Recorta cualquier salida de Bash desbocada |
-| Una tarea por sesión + `/clear` | El contexto no arrastra tareas viejas; el handoff guarda lo necesario en `claims` |
-| Núcleo estable | No editar AGENTS.md ni CLAUDE.md durante el evento, para no invalidar la caché de prompt de todos los agentes |
+Nothing in `app/fixtures/` is hand-edited except the curated deep layer, and every curated edge cites its source.
 
-## El día del evento
+```bash
+bash data/fetch.sh                  # HPO v2026-09-01: hp.json + phenotype.hpoa → data/raw/ (not committed)
+python3 data/build.py               # → app/fixtures/graph/overview.json (layout) + annotations.json (frequencies, ancestors, background, labels, synonyms)
+python3 data/build.py --check       # validates, and checks the build is byte-for-byte reproducible
 
-| Minuto | Quién | Qué |
+python3 data/curate/build.py --refresh   # deep layer: curated.json + ClinicalTrials.gov API v2 + NIH RePORTER → app/fixtures/deep/deep.json
+uv run python data/curate/check.py      # no edge without source_url and evidence_level; validates against app/schemas
+
+uv run python app/fixtures/api/generate.py --download   # sample API responses, recomputed from the pinned inputs
+```
+
+Details: [data/README.md](data/README.md) and [data/curate/README.md](data/curate/README.md).
+
+## How OpenAI is used
+
+| Step | Model | Guardrail |
 |---|---|---|
-| 0 | Humano responsable + Claude | `/hack-setup`: horas, rubric, reglas y freeze en HACKATHON.md, más hook de secretos |
-| 5 | Planificador | Llenar IDEA.md, luego `/hack-plan`: TASKS.md + OWNERS.md, aprobación y push a main |
-| 15 | Todos | `/hack-start` en el checkout principal; cada quien abre su agente en el worktree que imprime |
-| … | Ejecutores | Ciclo `/hack-start` → implementar → `/hack-ship` → `/hack-review` de otro → `/hack-handoff` |
-| freeze | Rol demo | `/hack-demo`: ensayo limpio, video plan B, checklist y submission |
+| Live dictation | `gpt-live-transcribe` (Realtime) with medical `keywords` | The browser gets a 10-minute ephemeral token from `POST /api/transcribe/session`; the API key never leaves the server |
+| Symptoms → HPO | `gpt-6-luna`, JSON Schema `strict` | `hpo_id` is an `enum` of candidates from the local search; unknown or repeated IDs are dropped |
+| Explanation for families | `gpt-6.1-sol` | May cite only the edges it receives as `[edge_id]`; the backend removes any other citation |
 
-En Cursor o Codex, estos guiones se leen en `.claude/commands/hack-*.md`.
+**The model never produces a number.** Percentages, ranges and the next question come from the likelihood-ratio computation and are reproducible. Spike results (models, latencies, failures): [spikes/openai/RESULT.md](spikes/openai/RESULT.md).
 
-## Setup por máquina (una vez, antes del evento)
+## Ethics and limits
 
-```bash
-git clone git@github.com:JoahanMorales/hacknation.git && cd hacknation
-```
+- Only published cases (phenopacket-store) and public data; no patient data.
+- A permanent notice that this is a phenotype match, not a diagnosis.
+- Preclinical evidence is never presented as clinical. Ribitol has clinical evidence only for FKRP; the CRPPA link is inferred from a mouse study, and the FKTN link is an untested hypothesis.
+- No treatment recommendations: the step is always to ask, test or contact.
+- Same gene, different picture: FKRP causes both mild LGMD R9 and severe congenital muscular dystrophy, so nodes are never merged just because they share a gene.
+- Percentages are relative matches among 12,867 diseases under a uniform prior; the range is a frequency-sensitivity envelope, not a calibrated confidence interval.
 
-```bash
-git config core.hooksPath .githooks
-```
+## Sources and licences
 
-```bash
-bash scripts/smoke --package-only
-```
+| Source | Use | Licence or terms |
+|---|---|---|
+| [Human Phenotype Ontology](http://obofoundry.org/ontology/hp.html) v2026-09-01 (`hp.json`, `phenotype.hpoa`, `genes_to_disease.txt`) | Phenotypes, annotations, genes | Free to use; the HPO Consortium must be acknowledged and cited |
+| Orphanet annotations within HPO | Disease phenotypes | [Orphadata](https://www.orphadata.com/legal-notice/), CC BY 4.0 |
+| [phenopacket-store](https://github.com/monarch-initiative/phenopacket-store) 0.1.27 | Demo case (GAA cohort, PMID:7668832) | BSD-3-Clause |
+| [ClinicalTrials.gov API v2](https://clinicaltrials.gov/data-api/api) | Registries, studies, trials | Public U.S. government data |
+| [NIH RePORTER API](https://api.reporter.nih.gov/) | Funded research | Public U.S. government data |
+| Curated literature (Nat Commun, PMC, OMIM, ScienceDirect abstracts) | Deep-layer edges | Cited per edge in `app/fixtures/deep/deep.json` |
+| [cosmos.gl](https://github.com/cosmosgl/graph), sigma.js, graphology | Graph rendering | MIT (`@cosmograph/cosmos` is CC BY-NC 4.0, used non-commercially) |
 
-Requisitos: Git, Bash, Python 3.8+ (pruebas del paquete), [uv](https://docs.astral.sh/uv/) (`curl -LsSf https://astral.sh/uv/install.sh | sh`), Node 22+ y [`gh`](https://cli.github.com/) autenticado (`gh auth login`), que `/hack-ship` usa para abrir PRs. En Mac Intel, Homebrew compila desde fuente: usa los instaladores oficiales. El último comando tarda unos minutos y debe terminar en `PACKAGE_PASS`.
+We acknowledge the Human Phenotype Ontology Consortium: Köhler S. et al., *The Human Phenotype Ontology in 2021*, [Nucleic Acids Research 49(D1):D1207](https://academic.oup.com/nar/article/49/D1/D1207/6017351).
 
-## Qué cambió respecto al zip v2.1
+## Team workflow
 
-| Cambio | Por qué |
-|---|---|
-| `scripts/smoke` ya no corre la suite del paquete por defecto (usa `--package-only` o `--full`) | `hack merge` ejecuta el smoke en cada integración y la suite tarda minutos sin probar el producto |
-| Nuevo `scripts/wt`: rama + worktree + `.hack-env` + claim en un comando | El ritual manual de 4 comandos con flags era el error más común |
-| `scripts/hack` carga la identidad desde `.hack-env` del worktree | Ya no hay que exportar variables en cada terminal |
-| Hooks de Claude Code: `hack next` al iniciar sesión y heartbeat automático cada 8 min | Un agente que olvida el heartbeat pierde el lease de 30 min con trabajo vivo |
-| `.claude/settings.json` con permisos permitidos y denegados | Menos prompts, y force-push, `reset --hard` y `clean -fdx` bloqueados de verdad |
-| Comandos `/hack-setup`, `/hack-plan`, `/hack-start`, `/hack-ship`, `/hack-review`, `/hack-handoff`, `/hack-demo` | Cada fase tiene un guion fijo |
-| Regla para Cursor y CLAUDE.md con `@AGENTS.md` | Las tres herramientas usan el mismo núcleo |
-| `docs/STACK.md`: FastAPI + React con routers y features autodescubiertos, setup probado de punta a punta | Cuatro agentes no editan el mismo `main.py` ni `App.tsx` |
-| Skills de frontend, testing y React revisadas e integradas (`.claude/skills/`) | Calidad visual y verificación de UI sin depender de un humano |
-| HACKATHON.md preconfigurado: `Autonomy: yes`, `Auto-Merge: yes`, `Review-Mode: claims` | Con `gh`, los agentes de una misma persona no pueden aprobarse (comparten cuenta) |
-| Ahorro de tokens: `scripts/q`, subagentes con modelos más baratos, modelo por comando, inbox por diferencia | La salida de comandos y Opus para todo eran los mayores gastos |
-| Mensajería entre agentes (`hack msg`/`hack inbox`) con avisos automáticos y reglas R54–R59 | Tareas relacionadas se coordinan sin humano de intermediario |
-| Reglas R49–R53 de velocidad en AGENTS.md | Mock primero, PR temprano, sin preguntas evitables y máximo 20 min atascado |
-| Se quitaron `evidence/`, `MANIFEST.sha256`, `VERIFICATION.md` y `HACKATHON-AGENTS.md` | Eran reportes de la verificación original y un shim de v1; el CLI no los usa |
-
-## Límites conocidos
-
-- `hack merge` hace `git push --atomic` directo a `main`. Si activas protección de rama que exige PR o CI en GitHub, esos merges caen a la cola humana.
-- **Cola humana:** los cambios a lockfiles, `scripts/`, CI o contratos (por ejemplo HACK-001 setup) los fusiona un humano en GitHub. Después el dueño los cierra con `hack done ID --pr URL --evidence ... --integrated <commit>` (paso 9 de `/hack-ship`); si no, sus dependientes siguen bloqueados.
-- **Pruebas:** las del producto van en `app/tests/`; `tests/` en la raíz son las del paquete de coordinación.
-- Cursor y Codex no tienen hook de heartbeat: el agente debe correr `bash scripts/hack heartbeat ID` cada ~10 min.
-- Los plazos (backlog a 10 min, decisiones a 15 min, freeze) se evalúan en cada `status`/`next`/`heartbeat`. Para un tick periódico sin agentes, consulta `docs/SCHEDULING.md`.
-
-## Mapa de documentos
-
-`AGENTS.md` (núcleo) · `HACKATHON.md` (evento) · `IDEA.template.md` · `TASKS.template.md` · `OWNERS.md` · `docs/PLAYBOOK.md` (planificar, integrar y cerrar) · `docs/CLI.md` (flags) · `docs/CONTINUITY.md` (retomar) · `docs/SECURITY.md` · `docs/MERGES.md` · `docs/SCHEDULING.md` · `docs/STACK.md` · `WHY.md` (razón de cada regla) · `examples/` (backlog de ejemplo y `dry_run.py`).
+Four people with one or two AI agents each worked in parallel through a shared coordination protocol (claims, reviews, messages between agents). See [docs/AGENT-TOOLKIT.md](docs/AGENT-TOOLKIT.md).
