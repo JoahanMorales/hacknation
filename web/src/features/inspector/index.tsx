@@ -61,6 +61,9 @@ function focusEdge(edgeId: string) {
 
 export default function Inspector() {
   const selectedId = useStore((s) => s.selectedId);
+  // En la escena de acción la columna derecha es de la acción (brief: "inspector / acción").
+  const step = useStore((s) => s.step);
+  if (step === "action") return null;
   // key: cada estrella monta un panel nuevo, así el estado local se reinicia sin efectos.
   return selectedId ? <InspectorPanel key={selectedId} selectedId={selectedId} /> : null;
 }
@@ -150,7 +153,7 @@ function InspectorPanel({ selectedId }: { selectedId: string }) {
         setState("loading");
         setAttempt((n) => n + 1);
       }}
-      className="max-h-[calc(100dvh-9rem)] overflow-y-auto"
+      className="min-h-0 overflow-y-auto"
       aria-label="Disease inspector"
     >
       {node && (
