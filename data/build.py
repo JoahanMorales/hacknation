@@ -47,17 +47,20 @@ def hpo_id(iri: str) -> str:
 
 def load_ontology(path: Path):
     graph = json.loads(path.read_text(encoding="utf-8"))["graphs"][0]
-    labels = {}
+    labels, synonyms = {}, {}
     for node in graph["nodes"]:
         if node.get("type") == "CLASS" and "HP_" in node["id"] and not node.get("meta", {}).get("deprecated"):
             labels[hpo_id(node["id"])] = node.get("lbl", "")
+            exact = sorted({s["val"] for s in node.get("meta", {}).get("synonyms", []) if s["pred"] == "hasExactSynonym"})
+            if exact:
+                synonyms[hpo_id(node["id"])] = exact
     parents = defaultdict(set)
     for edge in graph["edges"]:
         if edge["pred"] == "is_a":
             child, parent = hpo_id(edge["sub"]), hpo_id(edge["obj"])
             if child in labels and parent in labels:
                 parents[child].add(parent)
-    return labels, parents
+    return labels, parents, synonyms
 
 
 def ancestors_under(term: str, parents, top: str, cache: dict) -> frozenset:
@@ -184,7 +187,7 @@ def layout(groups: dict, subgroups: dict, annotation_counts: dict):
 
 
 def build(raw: Path = RAW) -> tuple:
-    labels, parents = load_ontology(raw / "hp.json")
+    labels, parents, synonyms = load_ontology(raw / "hp.json")
     cache, root_cache = {}, {}
     phenotypes = {t for t in labels if PHENOTYPIC_ABNORMALITY in ancestors_under(t, parents, "HP:0000001", root_cache)}
     names, annotations = load_annotations(raw / "phenotype.hpoa", phenotypes)
@@ -246,12 +249,14 @@ def build(raw: Path = RAW) -> tuple:
             "ancestors": "hpo_id -> ancestros propios bajo HP:0000118; un término observado coincide con "
                          "anotaciones de sus ancestros y descendientes",
             "labels": "hpo_id -> etiqueta HPO en inglés",
+            "synonyms": "hpo_id -> sinónimos exactos de HPO (inglés), para el buscador de candidatos",
             "background": "hpo_id -> fracción de enfermedades anotadas con el término o un descendiente; "
                           "si falta, usar 1/diseases",
         },
         "diseases": annotations,
         "ancestors": {t: sorted(ancestors_under(t, parents, PHENOTYPIC_ABNORMALITY, cache)) for t in sorted(phenotypes)},
         "labels": {t: labels[t] for t in sorted(phenotypes)},
+        "synonyms": {t: synonyms[t] for t in sorted(phenotypes) if t in synonyms},
         "background": {t: round(prevalence[t] / total, 6) for t in sorted(prevalence)},
     }
     return overview, annotations_doc
