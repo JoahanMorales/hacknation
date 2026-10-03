@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Ejecutor silencioso: bash scripts/q COMANDO...  → éxito = 1 línea; fallo = últimas Q_LINES líneas (40).
+# El log completo queda en .git/hack-q.log por si hace falta un rango concreto (rg/sed -n, nunca cat).
+# Por qué: la salida de tests/builds es el mayor gasto de tokens y se reenvía en cada turno siguiente.
+set -u
+[ "$#" -gt 0 ] || { printf '%s\n' 'Uso: bash scripts/q COMANDO [ARGS...]' >&2; exit 2; }
+gd=$(git rev-parse --git-dir 2>/dev/null || printf '%s' "${TMPDIR:-/tmp}")
+log="$gd/hack-q.log"
+start=$(date +%s)
+"$@" > "$log" 2>&1
+code=$?
+secs=$(( $(date +%s) - start ))
+if [ "$code" -eq 0 ]; then
+  last=$(grep -v '^[[:space:]]*$' "$log" | tail -n 1 | cut -c 1-160)
+  printf 'OK exit=0 %ss · %s\n' "$secs" "${last:--}"
+else
+  printf 'FAIL exit=%s %ss · %s líneas · log %s\n' "$code" "$secs" "$(awk 'END {print NR+0}' "$log")" "$log"
+  tail -n "${Q_LINES:-40}" "$log" | cut -c 1-300
+fi
+exit "$code"

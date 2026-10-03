@@ -1,4 +1,5 @@
 ---
+model: sonnet
 description: Configuración del evento (humano + agente, minuto 0)
 ---
 

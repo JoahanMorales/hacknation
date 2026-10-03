@@ -1,4 +1,5 @@
 ---
+model: sonnet
 description: Checkpoint + handoff antes de cerrar o compactar la sesión
 argument-hint: "[HACK-NNN]"
 ---

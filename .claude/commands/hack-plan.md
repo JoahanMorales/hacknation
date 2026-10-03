@@ -1,4 +1,5 @@
 ---
+model: opus
 description: Rol planificador — IDEA + rubric → TASKS.md, OWNERS.md y contratos para la primera ola
 ---
 

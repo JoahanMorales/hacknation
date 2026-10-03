@@ -26,6 +26,19 @@ hack inbox            hack inbox --ack            hack inbox --task HACK-002
 - **Cursor y Codex:** el agente corre `hack inbox` en cada heartbeat y tras cada criterio (regla en `.cursor/rules/`).
 - **Límites:** reglas R54–R59 de AGENTS.md. Se pide en vez de editar archivos ajenos, siempre se responde, y un mensaje no concede permisos.
 
+## Ahorro de tokens
+
+| Mecanismo | Efecto |
+|---|---|
+| `bash scripts/q CMD` | Una línea si el comando pasa, las últimas 40 si falla; el log completo queda en `.git/hack-q.log` |
+| Subagente `hack-runner` (Haiku) | Tests, smoke y pruebas de la app en contexto aislado; vuelve un veredicto de ≤ 12 líneas |
+| Subagente `hack-reviewer` (Sonnet) | La revisión lee el diff completo en su propio contexto; vuelven ≤ 5 líneas |
+| Modelo por comando | `/hack-plan` en Opus; ship, review, handoff, setup y demo en Sonnet; implementar con el modelo que elijas |
+| Inbox por diferencia | El hook inyecta sólo los mensajes nuevos, compactos; nunca repite lo ya visto |
+| `BASH_MAX_OUTPUT_LENGTH=12000` | Recorta cualquier salida de Bash desbocada |
+| Una tarea por sesión + `/clear` | El contexto no arrastra tareas viejas; el handoff guarda lo necesario en `claims` |
+| Núcleo estable | No editar AGENTS.md ni CLAUDE.md durante el evento, para no invalidar la caché de prompt de todos los agentes |
+
 ## El día del evento
 
 | Minuto | Quién | Qué |
@@ -67,6 +80,7 @@ Requisitos: Git, Bash, Python 3.8+ (sólo para las pruebas del paquete), [uv](ht
 | Regla para Cursor y CLAUDE.md con `@AGENTS.md` | Las tres herramientas usan el mismo núcleo |
 | `docs/STACK.md`: FastAPI con routers autodescubiertos | Cuatro agentes no editan el mismo `main.py` |
 | HACKATHON.md preconfigurado: `Autonomy: yes`, `Auto-Merge: yes`, `Review-Mode: claims` | Con `gh`, los agentes de una misma persona no pueden aprobarse (comparten cuenta) |
+| Ahorro de tokens: `scripts/q`, subagentes con modelos más baratos, modelo por comando, inbox por diferencia | La salida de comandos y Opus para todo eran los mayores gastos |
 | Mensajería entre agentes (`hack msg`/`hack inbox`) con avisos automáticos y reglas R54–R59 | Tareas relacionadas se coordinan sin humano de intermediario |
 | Reglas R49–R53 de velocidad en AGENTS.md | Mock primero, PR temprano, sin preguntas evitables y máximo 20 min atascado |
 | Se quitaron `evidence/`, `MANIFEST.sha256`, `VERIFICATION.md` y `HACKATHON-AGENTS.md` | Eran reportes de la verificación original y un shim de v1; el CLI no los usa |

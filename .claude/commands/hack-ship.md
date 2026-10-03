@@ -1,4 +1,5 @@
 ---
+model: sonnet
 description: Verifica, abre PR y pasa la tarea a REVIEW (luego merge si hay aprobación)
 argument-hint: "[HACK-NNN]"
 ---
@@ -8,7 +9,7 @@ Tarea: ${ARGUMENTS:-$HACK_TASK}. Ejecuta en orden y para en el primer rojo (arr�
 0. `bash scripts/hack inbox`: atiende reject/request/contract pendientes antes de publicar (R55).
 1. `git fetch origin main && git rebase origin/main` (sin force; si hay conflicto resuélvelo preservando ambos trabajos).
 2. `git diff --stat origin/main...HEAD`: todo dentro de "Archivos probables" de la tarea. Si tocaste algo fuera (lockfile, schemas compartidos, CI), sácalo o anótalo para revisión humana.
-3. El comando exacto de "Cómo verificar" de TASKS.md y `bash scripts/smoke` → ambos en 0. Copia el resultado real; no lo resumas como "pasa" sin ejecutarlo.
+3. `bash scripts/q <Cómo verificar>` y `bash scripts/q bash scripts/smoke` → ambos `OK exit=0` (si la salida puede ser larga o hay que arrancar la app, delega en el subagente `hack-runner`). Usa el resultado real como evidencia; nunca "pasa" sin ejecutarlo.
 4. `git push -u origin HEAD` y `gh pr create --title "HACK-NNN · <resultado visible>" --body "<las 5 líneas de .github/pull_request_template.md completadas>"`.
 5. `bash scripts/hack done ID --pr URL --evidence "<comando> exit 0; <criterios cumplidos>"` (avisa solo a `all` que hay review pendiente).
    Si cambiaste algo que consumen otras tareas: `bash scripts/hack msg related:ID --kind contract "<qué cambió y qué deben ajustar>"`.

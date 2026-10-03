@@ -24,9 +24,12 @@ case "${1:-}" in
     fi
     printf 'HACK: agente=%s tarea=%s worktree=%s\n' "$agent" "${task:--}" "$top"
     git config --get "remote.${HACK_REMOTE:-origin}.url" >/dev/null 2>&1 || exit 0
-    bash scripts/hack next 2>&1 | head -n 20
-    bash scripts/hack inbox 2>&1 | head -n 40
-    [ -z "$task" ] || bash scripts/hack inbox --task "$task" 2>&1 | tail -n 12
+    bash scripts/hack next 2>&1 | head -n 15
+    bash scripts/hack inbox --peek > "$gd/hack-inbox.txt" 2>/dev/null
+    if [ -s "$gd/hack-inbox.txt" ]; then
+      head -n 21 "$gd/hack-inbox.txt"
+      sed -n 's/^#\([0-9][0-9]*\) .*/\1/p' "$gd/hack-inbox.txt" | sort -n | tail -n 1 > "$gd/hack-inbox.shown-n"
+    fi
     ;;
   tick)
     [ -n "$agent" ] || exit 0
@@ -40,11 +43,13 @@ case "${1:-}" in
       ( bash scripts/hack inbox --peek > "$gd/hack-inbox.tmp" 2>/dev/null && mv "$gd/hack-inbox.tmp" "$gd/hack-inbox.txt" ) > /dev/null 2>&1 &
     fi
     if [ -s "$gd/hack-inbox.txt" ]; then
-      now_sum=$(sum "$gd/hack-inbox.txt")
-      [ "$now_sum" != "$(cat "$gd/hack-inbox.shown" 2>/dev/null)" ] || exit 0
-      printf '%s' "$now_sum" > "$gd/hack-inbox.shown"
+      # Sólo mensajes con número mayor al último inyectado: nunca se reenvía lo ya visto.
+      last=$(cat "$gd/hack-inbox.shown-n" 2>/dev/null); case "$last" in ''|*[!0-9]*) last=0;; esac
+      delta=$(awk -v last="$last" '/^#[0-9]/ {n=substr($1, 2) + 0; keep=(n > last)} /^#[0-9]/ || /^  / {if (keep) print}' "$gd/hack-inbox.txt")
+      [ -n "$delta" ] || exit 0
+      printf '%s' "$delta" | sed -n 's/^#\([0-9][0-9]*\) .*/\1/p' | sort -n | tail -n 1 > "$gd/hack-inbox.shown-n"
       printf '{"hookSpecificOutput":{"hookEventName":"PostToolUse","additionalContext":"%s"}}\n' \
-        "$(json_text < "$gd/hack-inbox.txt")"
+        "$(printf 'HACK inbox nuevo (atiende según R54-R59; luego hack inbox --ack):\n%s' "$delta" | json_text)"
     fi
     ;;
   stop)
@@ -55,9 +60,9 @@ case "${1:-}" in
     now_sum=$(sum "$gd/hack-inbox.txt")
     [ "$now_sum" != "$(cat "$gd/hack-inbox.stopped" 2>/dev/null)" ] || exit 0
     printf '%s' "$now_sum" > "$gd/hack-inbox.stopped"
-    printf '%s' "$now_sum" > "$gd/hack-inbox.shown"
+    sed -n 's/^#\([0-9][0-9]*\) .*/\1/p' "$gd/hack-inbox.txt" | sort -n | tail -n 1 > "$gd/hack-inbox.shown-n"
     printf '{"decision":"block","reason":"%s"}\n' \
-      "$(printf 'Tienes mensajes de otros agentes sin atender. Atiéndelos dentro de tu alcance (R54-R59), responde con hack msg y ejecuta bash scripts/hack inbox --ack antes de terminar.\n%s' "$(cat "$gd/hack-inbox.txt")" | json_text)"
+      "$(printf 'Mensajes sin atender: atiéndelos (R54-R59), responde con hack msg y ejecuta hack inbox --ack antes de terminar.\n%s' "$(grep -E '^#[0-9]|^  ' "$gd/hack-inbox.txt" | head -n 20)" | json_text)"
     ;;
   heartbeat) exec bash "$0" tick;;
 esac

@@ -1,4 +1,5 @@
 ---
+model: sonnet
 description: Cierre — freeze, ensayo limpio, plan B y checklist de submission
 ---
 
