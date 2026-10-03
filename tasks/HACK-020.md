@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/action/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791071432
-Updated: 1791069632
+Lease-Until: 1791071672
+Updated: 1791069872
 Task-Base: eb2e491b76e640a9040df7a4a7fafa716e1ee831
-Next: Pantalla de acción con action_plan.json
+Next: Humano abre PR de feat/hack-020; luego hack done HACK-020 --pr URL
 PR: -
 Evidence: -
-Events: 1
-Checkpoints: 0
+Events: 2
+Checkpoints: 1
 Sessions: 1
-Last-Checkpoint: 0
+Last-Checkpoint: 1791069872
