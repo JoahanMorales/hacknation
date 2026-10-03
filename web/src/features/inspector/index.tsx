@@ -104,13 +104,19 @@ function InspectorPanel({ selectedId }: { selectedId: string }) {
     if (!node) return;
     setExplaining(true);
     setExplainError(false);
-    const example = node.disease.id === explainExample.disease_id ? explainExample : undefined;
+    const edgeIds = explainEdges(node.edges);
+    // El ejemplo sólo vale si cada cita suya es una arista pedida de este nodo; si no, se muestra el error.
+    const example =
+      node.disease.id === explainExample.disease_id &&
+      explainExample.citations.every((c) => edgeIds.includes(c.edge_id))
+        ? explainExample
+        : undefined;
     try {
       const result = await api<ExplainResult>(
         "/explain",
         {
           method: "POST",
-          body: JSON.stringify({ disease_id: node.disease.id, edge_ids: explainEdges(node.edges), language: "en" }),
+          body: JSON.stringify({ disease_id: node.disease.id, edge_ids: edgeIds, language: "en" }),
         },
         example,
       );
