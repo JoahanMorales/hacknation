@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { useStore } from "../../lib/store";
-import { createCanvasRenderer } from "./canvasRenderer";
+import { createRenderer } from "./cosmosRenderer";
 import { Choreography } from "./choreography";
 import { loadOverview } from "./data";
 import { startDemoSteps } from "./demoSteps";
@@ -87,7 +87,7 @@ export default function Constellation() {
     const fallback = colors.get(groupsBySize[0]) ?? [0.7, 0.75, 0.85];
     const base = overview.nodes.map((node) => colors.get(node.group) ?? fallback);
 
-    const renderer = createCanvasRenderer(container, {
+    const renderer = createRenderer(container, {
       onHover: (index) => {
         const point = index === null ? null : renderer.toScreen(index);
         setHover(index === null || !point ? null : { index, x: point[0], y: point[1] });
