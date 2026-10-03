@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791070919
-Updated: 1791069119
+Lease-Until: 1791071491
+Updated: 1791069691
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Resolver check_ui.py; screenshots1440/1280; smoke y PR de feature/diagnosis
+Next: Stage fuente, smoke de producto, commit/push y PR HACK-018 para revision independiente.
 PR: -
 Evidence: -
