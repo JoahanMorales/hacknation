@@ -210,18 +210,28 @@ def build(raw: Path = RAW) -> tuple:
     group_of = {d: s for s, members in groups.items() for d in members}
 
     version = (raw / "VERSION").read_text().strip() if (raw / "VERSION").exists() else "unknown"
+    release = f"https://github.com/obophenotype/human-phenotype-ontology/releases/download/{version}"
+    # Envelope del contrato GraphOverview de app/schemas/ (HACK-002): extra="forbid".
     overview = {
-        "source": {"hpo": version, "diseases": len(annotations)},
+        "schema_version": "1.0",
+        "demo_data": False,
+        "sources": [
+            {"name": name, "url": f"{release}/{name}", "version": version,
+             "sha256": hashlib.sha256((raw / name).read_bytes()).hexdigest()}
+            for name in ("hp.json", "phenotype.hpoa")
+        ],
+        "nodes": [
+            {"id": d, "name": names[d], "group": group_of[d], "x": positions[d][0], "y": positions[d][1]}
+            for d in sorted(annotations)
+        ],
         "groups": [
             {"id": s, "label": system_label(labels[s]),
              "count": len(groups[s]), "x": x, "y": y, "r": r}
             for s, x, y, r in group_meta
         ],
-        "nodes": [
-            {"id": d, "name": names[d], "group": group_of[d], "x": positions[d][0], "y": positions[d][1],
-             "n": counts[d]}
-            for d in sorted(annotations)
-        ],
+        "total_diseases": len(annotations),
+        "displayed_diseases": len(annotations),
+        "layout_kind": "HPO system galaxies with subsystem clusters (precomputed by data/build.py)",
     }
 
     # Prevalencia propagada: fracción de enfermedades anotadas con t o con un descendiente de t.
