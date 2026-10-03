@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791072939
-Updated: 1791071139
+Lease-Until: 1791073326
+Updated: 1791071526
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/19; ejecutar scripts/smoke
+Next: Leer inbox; al entrar4751407 a main, build/restart y check_ui real. Aprobacion018 -> verificar cierreintegrated commit c5f95a0 por treeproof. Review011 en agente.
 PR: https://github.com/JoahanMorales/hacknation/pull/19
 Evidence: -
