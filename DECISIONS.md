@@ -38,3 +38,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791069872 | HACK-020 | inspector se oculta en step=action; slots con min-h-0 | Por qué: brief: columna derecha inspector/acción; evitar superposición
 - 1791070029 | HACK-018 | Sin fallback fijo; top10 store y top2 panel; API recalcula Yes/No; cancelacion snapshot y timeout10s; base eb2e491. | Por qué: Contratos reales conservan ranking y evitan mostrar resultados viejos; fuente aislada permite integrar sin pisar otras features.
 - 1791070174 | HACK-018 | Solicitar review018 a joahan-1 antes de cierre; ensayar base actual mientras reviewer019 verifica otro PR. | Por qué: Merge humano no reemplaza registro SHA requerido para done --integrated; continuar trabajo independiente.
+- 1791070320 | HACK-018 | Ocultar render diagnosis solo en step action manteniendo hook de scoring montado; sin editar action/App/store. | Por qué: Evitar doble panel inferior sin perder terms/ranking al volver; alcance propio.

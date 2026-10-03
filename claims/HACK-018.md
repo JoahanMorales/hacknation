@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791072080
-Updated: 1791070280
+Lease-Until: 1791072120
+Updated: 1791070320
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Fix integracion: ocultar diagnosis en step action sin desmontar scoring; verificar plan cabe1280/1440; PR followup scope diagnosis.
+Next: Patch diagnosis; regression navegador escena action y return; lint/build, smoke, PR followup independiente.
 PR: -
 Evidence: -
