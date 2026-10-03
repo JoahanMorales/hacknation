@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/DESIGN.md, web/src/theme.css, web/src/ui/
 Depends: Ninguna
 Verify: test -s web/DESIGN.md && npm --prefix web run build
-Lease-Until: 1791067913
-Updated: 1791066113
+Lease-Until: 1791068641
+Updated: 1791066841
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: escribir DESIGN.md con la skill design-taste-frontend; tocar theme.css y web/src/ui/ sólo después de rebasear sobre main con HACK-001 integrada.
+Next: Instalar dependencias validar build y kit en navegador
 PR: -
 Evidence: -
