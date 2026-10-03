@@ -34,3 +34,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791069539 | deadline lease/HACK-007/1791069534 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791069582 | deadline lease/HACK-009/1791069540 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791069691 | HACK-018 | Top2 visibles y top10 a ranking compartido; API sin fixture fallback, cancelacion y timeout 10s. | Por qué: Cambiar hallazgos debe recalcular y el grafo consumir ranking real; evitar resultados obsoletos.
+- 1791069808 | HACK-018 | Merge main preserva historia; diff solo feature diagnosis; probar clic inspector contra servidor reiniciado con endpoints actuales. | Por qué: La base avanzo durante smoke; comprobar compatibilidad antes del PR.
