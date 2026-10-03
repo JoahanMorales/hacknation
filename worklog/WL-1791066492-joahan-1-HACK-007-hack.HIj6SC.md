@@ -12,3 +12,4 @@
 - 1791066492 | CLAIMED | joahan-1 | claim; siguiente: LR sobre annotations.json y POST /api/diagnose
 - 1791066699 | CLAIMED | joahan-1 | checkpoint; siguiente: Humano abre PR de feat/hack-007; luego hack done HACK-007 --pr URL
 - 1791067057 | REVIEW | joahan-1 | done; PR https://github.com/JoahanMorales/hacknation/pull/8; evidencia: uv run pytest -q app/tests/test_scoring.py 5 passed; smoke PRODUCT_PASS; merge humano PR #8 (37c62b6); reviewer: -
+- 1791067734 | REVIEW | joahan-1 | heartbeat; lease hasta 1791069534
