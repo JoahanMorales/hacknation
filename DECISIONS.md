@@ -113,3 +113,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791095835 | deadline lease/HACK-033/1791095173 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791114745 | deadline lease/HACK-028/1791098892 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791114745 | deadline lease/HACK-029/1791098909 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791115931 | HACK-014 | Ruta Maria: LGMD2I/FKRP, evidencia, Pathway, recurso existente y propuesta con fuentes; objetivo 55s. | Por qué: Pedido humano: archivo Markdown para que otro agente escriba el guion de grabacion.

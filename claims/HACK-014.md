@@ -9,9 +9,9 @@ Priority: P0
 Paths: docs/demo/
 Depends: HACK-006, HACK-017, HACK-018, HACK-020
 Verify: test -s docs/demo/script.md
-Lease-Until: 1791117632
-Updated: 1791115832
+Lease-Until: 1791117731
+Updated: 1791115931
 Task-Base: ee957e9a0846a5d6de9f0efd0660e66f21e213b7
-Next: Al corte00MX integrar candidatoaprobado, cleanclone ytour; actualizararchivo porSHA yentregar checklist aloperador.
+Next: Entregar Product_Demo_Brief.md al humano; ensayar version final y crear los tres clips separados.
 PR: -
 Evidence: -
