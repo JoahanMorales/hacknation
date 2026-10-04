@@ -35,7 +35,7 @@ const FULL_MS = 3200;
 const PRUNE_MS = 900;
 const HOLD_MS = 5200;
 const CYCLE_MS = FULL_MS + PRUNE_MS + HOLD_MS + PRUNE_MS;
-const TWINKLERS = 320;
+const TWINKLERS = 220;
 const SPARKLES = 12;
 
 const ease = (t: number) => 1 - Math.pow(1 - Math.min(1, Math.max(0, t)), 3);
@@ -222,9 +222,16 @@ export function Sky({ onReady }: { onReady?: (info: { total: number; demo: boole
       });
     };
 
+    // 60 cuadros/s sólo durante la poda; el titileo, que es lento, va a ~30 y ahorra la mitad.
+    let lastDraw = 0;
     const loop = (time: number) => {
-      if (visible) draw(time);
       frame = requestAnimationFrame(loop);
+      if (!visible) return;
+      const p = pruneAt(time);
+      const steady = p === 0 || p === 1;
+      if (steady && time - lastDraw < 33) return;
+      lastDraw = time;
+      draw(time);
     };
 
     layout();
