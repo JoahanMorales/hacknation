@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { ArrowSquareOut, CalendarCheck, MagnifyingGlass, Question, UsersThree } from "@phosphor-icons/react";
+import { ArrowLeft, ArrowSquareOut, CalendarCheck, MagnifyingGlass, Question, UsersThree } from "@phosphor-icons/react";
 
 import planRaw from "../../../../app/fixtures/api/action_plan.json?raw";
 import unsupportedRaw from "../../../../app/fixtures/api/action_plan_unsupported.json?raw";
 import { api } from "../../lib/api";
 import { useStore } from "../../lib/store";
-import { EvidenceBadge, Panel, SampleBadge } from "../../ui";
+import { Button, EvidenceBadge, Panel, SampleBadge } from "../../ui";
 import type { EvidenceLevel, PanelState } from "../../ui";
 
 // Escena 5 del brief (HACK-020): comunidad, activos reutilizables, la acción de esta semana y la línea de tiempo.
@@ -82,7 +82,12 @@ export default function ActionScene() {
   if (step !== "action") return null;
   if (!selectedId) {
     return (
-      <Panel title="Next steps" state="empty" emptyMessage="Select a disease in the constellation to see who already works on it." />
+      <Panel
+        title="Next steps"
+        trailing={<BackToEvidence />}
+        state="empty"
+        emptyMessage="Select a disease in the constellation to see who already works on it."
+      />
     );
   }
   // key: cada enfermedad monta su propio plan, así el estado local se reinicia sin efectos.
@@ -113,7 +118,12 @@ function ActionPanel({ diseaseId }: { diseaseId: string }) {
   return (
     <Panel
       title={plan?.supported === false ? "No supported route yet" : "Who is already working on this"}
-      trailing={plan?.demo_data ? <SampleBadge /> : undefined}
+      trailing={
+        <div className="flex items-center gap-2">
+          {plan?.demo_data && <SampleBadge />}
+          <BackToEvidence />
+        </div>
+      }
       state={state}
       errorMessage="The action plan could not be loaded."
       onRetry={() => {
@@ -125,6 +135,16 @@ function ActionPanel({ diseaseId }: { diseaseId: string }) {
     >
       {plan && (plan.supported ? <Supported plan={plan} /> : <Unsupported plan={plan} />)}
     </Panel>
+  );
+}
+
+// Vuelve a la evidencia sin perder enfermedad, hallazgos ni ranking (sólo cambia store.step).
+function BackToEvidence() {
+  const setStep = useStore((s) => s.setStep);
+  return (
+    <Button variant="ghost" onClick={() => setStep("inspector")}>
+      <ArrowLeft size={18} aria-hidden="true" /> Back to evidence
+    </Button>
   );
 }
 
