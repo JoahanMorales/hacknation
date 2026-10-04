@@ -15,7 +15,3 @@ Task-Base: 3716a312a1175a66b0d562eee39ef5d8333c12e5
 Next: Probar mic con API key; migrar a Panel/Chip/Button de web/src/ui; smoke y /hack-ship
 PR: -
 Evidence: -
-Events: 5
-Checkpoints: 1
-Sessions: 3
-Last-Checkpoint: 1791069112
