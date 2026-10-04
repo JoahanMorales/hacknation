@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { ArrowSquareOut, CaretDown, X } from "@phosphor-icons/react";
+import { ArrowRight, ArrowSquareOut, CaretDown, X } from "@phosphor-icons/react";
 
 import explainRaw from "../../../../app/fixtures/api/explain.json?raw";
 import nodeRaw from "../../../../app/fixtures/api/node.json?raw";
@@ -72,6 +72,7 @@ function InspectorPanel({ selectedId }: { selectedId: string }) {
   const setSelectedId = useStore((s) => s.setSelectedId);
   const highlighted = useStore((s) => s.highlightedEdgeId);
   const setHighlighted = useStore((s) => s.setHighlightedEdgeId);
+  const setStep = useStore((s) => s.setStep);
   const reduced = useReducedMotion();
 
   const [node, setNode] = useState<NodeResult | null>(null);
@@ -154,6 +155,7 @@ function InspectorPanel({ selectedId }: { selectedId: string }) {
       trailing={close}
       state={state}
       emptyMessage="Outside the curated deep layer. This star has a phenotype match only, no cited connections yet."
+      emptyAction={<NextSteps onClick={() => setStep("action")} />}
       errorMessage="The disease details could not be loaded."
       onRetry={() => {
         setState("loading");
@@ -187,6 +189,9 @@ function InspectorPanel({ selectedId }: { selectedId: string }) {
               {node.edges.length} cited connections{node.demo_data ? " (sample case)" : ""}.
             </p>
           </section>
+
+          {/* Del "porqué" al "qué hacer": abre la escena de acción para esta misma enfermedad. */}
+          <NextSteps onClick={() => setStep("action")} />
 
           <section aria-label="Explanation for the family" className="flex flex-col gap-2">
             {!explanation && (
@@ -248,6 +253,14 @@ function InspectorPanel({ selectedId }: { selectedId: string }) {
         </div>
       )}
     </Panel>
+  );
+}
+
+function NextSteps({ onClick }: { onClick: () => void }) {
+  return (
+    <Button variant="secondary" onClick={onClick}>
+      Next steps: who is working on this <ArrowRight size={18} aria-hidden="true" />
+    </Button>
   );
 }
 
