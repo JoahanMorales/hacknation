@@ -9,9 +9,9 @@ Priority: P1
 Paths: web/src/features/gestures/
 Depends: HACK-006
 Verify: npm --prefix web run build
-Lease-Until: 1791081124
-Updated: 1791079324
+Lease-Until: 1791085695
+Updated: 1791083895
 Task-Base: 03b9bf0dc537bf4f042e170ce1c8ee6b42148555
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/34; ejecutar scripts/smoke
-PR: https://github.com/JoahanMorales/hacknation/pull/34
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/46; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/46
 Evidence: -
