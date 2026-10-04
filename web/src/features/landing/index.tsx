@@ -109,9 +109,9 @@ export default function Landing() {
       <main>
         {/* Hero: texto a la izquierda, el producto real a la derecha (el match del caso publicado). */}
         <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-10 lg:grid-cols-12 lg:px-10 lg:pt-16">
-          <div className="flex flex-col gap-7 lg:col-span-5">
-            <motion.h1 {...enter(0)} className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.4rem]">
-              From scattered symptoms to the people already working on it.
+          <div className="flex flex-col gap-7 lg:col-span-6">
+            <motion.h1 {...enter(0)} className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.25rem]">
+              From scattered symptoms to the people who can help.
             </motion.h1>
             <motion.p {...enter(0.08)} className="max-w-[46ch] text-lg leading-relaxed text-muted">
               Dictate a case. Watch 12,867 rare diseases narrow to two matches, every link cited, and one step for this week.
@@ -124,12 +124,12 @@ export default function Landing() {
             initial={reduced ? false : { opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: reduced ? 0 : 0.2, ease: EASE }}
-            className="lg:col-span-7 lg:-mr-10"
+            className="lg:col-span-6 lg:-mr-10"
           >
             <img
               src={atlasMatch}
-              width={1080}
-              height={720}
+              width={920}
+              height={460}
               alt="The atlas after the published Pompe case: two matching diseases stay lit, labelled Top match and Second match with their phenotype match percentage."
               className="w-full rounded-[16px] border border-line bg-surface shadow-[0_24px_60px_rgb(16_48_42/12%)]"
             />
@@ -141,18 +141,21 @@ export default function Landing() {
           <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-12 lg:px-10 lg:py-24">
             <Reveal className="flex flex-col gap-5 lg:col-span-6">
               <h2 className="max-w-[18ch] text-3xl font-semibold leading-tight tracking-tight md:text-4xl">Diagnosis takes years. The evidence is already out there.</h2>
-              <p className="font-mono text-7xl font-medium tabular-nums tracking-tight text-accent md:text-8xl">4.7 years</p>
+              <p className="flex items-baseline gap-3 text-accent">
+                <span className="text-8xl font-semibold tabular-nums tracking-tighter md:text-9xl">4.7</span>
+                <span className="text-3xl font-medium">years</span>
+              </p>
               <p className="max-w-[40ch] text-base text-ink">average time to a rare disease diagnosis.</p>
               <Source href={EURORDIS}>EURORDIS Rare Barometer, Eur J Hum Genet 2024</Source>
             </Reveal>
             <div className="flex flex-col justify-end gap-10 lg:col-span-5 lg:col-start-8">
               <Reveal delay={0.08} className="flex flex-col gap-2 border-t border-line pt-6">
-                <span className="font-mono text-4xl font-medium tabular-nums">56%</span>
+                <span className="text-5xl font-semibold tabular-nums tracking-tight">56%</span>
                 <span className="text-base text-ink">wait more than 6 months from the first consultation.</span>
                 <Source href={EURORDIS}>6,507 people in 41 countries, same study</Source>
               </Reveal>
               <Reveal delay={0.16} className="flex flex-col gap-2 border-t border-line pt-6">
-                <span className="font-mono text-4xl font-medium tabular-nums">12,867</span>
+                <span className="text-5xl font-semibold tabular-nums tracking-tight">12,867</span>
                 <span className="text-base text-ink">rare diseases with phenotypes, all in one map.</span>
                 <Source href={HPO}>Human Phenotype Ontology, release v2026-09-01</Source>
               </Reveal>
