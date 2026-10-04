@@ -589,3 +589,5 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 585 | 1791084723 | saus-1 | task:HACK-005 | integrated | HACK-013 | HACK-013 integrado en main (300e8f270131bd815b72d2522fbf43aed2537746). Si dependes de él: git fetch origin && git rebase origin/main
 - 586 | 1791084723 | saus-1 | task:HACK-006 | integrated | HACK-013 | HACK-013 integrado en main (300e8f270131bd815b72d2522fbf43aed2537746). Si dependes de él: git fetch origin && git rebase origin/main
 - 587 | 1791084723 | saus-1 | task:HACK-018 | integrated | HACK-013 | HACK-013 integrado en main (300e8f270131bd815b72d2522fbf43aed2537746). Si dependes de él: git fetch origin && git rebase origin/main
+- 588 | 1791084739 | cris-1 | task:HACK-012 | integrated | HACK-025 | HACK-025 integrado en main (b98fc390505566d12dd05d9b17affa00cc33b9b5). Si dependes de él: git fetch origin && git rebase origin/main
+- 589 | 1791084739 | cris-1 | task:HACK-023 | integrated | HACK-025 | HACK-025 integrado en main (b98fc390505566d12dd05d9b17affa00cc33b9b5). Si dependes de él: git fetch origin && git rebase origin/main
