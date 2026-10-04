@@ -26,10 +26,25 @@ def test_pompe_pathway_reaches_its_community_and_registry() -> None:
 
 def test_outside_cluster_is_an_honest_gap_not_a_404() -> None:
     body = client.get("/api/pathway/OMIM:310200").json()
-    assert [n["id"] for n in body["nodes"]] == ["OMIM:310200"] and body["edges"] == []
+    assert body["nodes"][0]["id"] == "OMIM:310200"
+    # HACK-030: ya no queda sólo el centro; sus vecinos fenotípicos aparecen como similitud inferida.
+    assert body["edges"] and {e["type"] for e in body["edges"]} == {"phenotype_similarity"}
+    assert all(e["evidence_level"] == "inferido" for e in body["edges"])
     assert any("does not mean none exists" in m for m in body["coverage"]["missing"])
     assert body["coverage"]["searched"]
 
 
 def test_unknown_disease_is_404() -> None:
     assert client.get("/api/pathway/OMIM:1").status_code == 404
+
+
+def test_phenotype_neighbors_join_the_pathway() -> None:
+    body = client.get("/api/pathway/ORPHA:34515").json()
+    similarity = [e for e in body["edges"] if e["type"] == "phenotype_similarity"]
+    assert 1 <= len(similarity) <= 6
+    assert all(e["evidence_level"] == "inferido" and e["source_url"] for e in similarity)
+    assert all("do not prove a shared cause" in e["summary"] for e in similarity)
+    nodes = {n["id"]: n for n in body["nodes"]}
+    assert all(nodes[e["dst"]]["meta"]["similarity"] > 0 for e in similarity)
+    # El top-1 fenotípico de LGMD R9 es una distroglicanopatía curada que además comparte mecanismo.
+    assert any(nodes[e["dst"]]["meta"]["curated"] for e in similarity)
