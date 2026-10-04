@@ -17,6 +17,7 @@ const headings: Record<ResultType, string> = {
 };
 
 export default function Search() {
+  const pathway = useStore((store) => store.step === "pathway");
   const [query, setQuery] = useState("");
   const [response, setResponse] = useState<SearchResponse | null>(null);
   const [state, setState] = useState<"empty" | "loading" | "ready" | "error">("empty");
@@ -42,6 +43,10 @@ export default function Search() {
       if (event.key !== "/" || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey ||
           document.querySelector('[role="dialog"][aria-modal="true"]:not([hidden]), dialog[open]') ||
           (target instanceof HTMLElement && (target.isContentEditable || target.closest("input, textarea, select")))) return;
+      const field = input.current;
+      if (!field) return;
+      const bounds = field.getBoundingClientRect();
+      if (!container.current?.contains(document.elementFromPoint(bounds.x + bounds.width / 2, bounds.y + bounds.height / 2))) return;
       event.preventDefault();
       input.current?.focus();
       input.current?.select();
@@ -93,20 +98,34 @@ export default function Search() {
 
   useEffect(() => {
     const footer = document.querySelector("main footer");
+    const header = document.querySelector("main > div > header");
     const field = container.current?.querySelector(".atlas-search-input");
     const measure = () => {
       if (!field || !container.current) return;
+      if (window.innerWidth > 1000) {
+        const rem = Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const width = Math.min(32 * rem, window.innerWidth - 52 * rem);
+        const center = window.innerWidth / 2 - rem;
+        const right = center + width / 2;
+        const left = Math.max(center - width / 2, pathway ? 0 : (header?.getBoundingClientRect().right ?? 0) + 16);
+        container.current.style.setProperty("--atlas-search-header-left", `${(left + right) / 2}px`);
+        container.current.style.setProperty("--atlas-search-header-width", `${Math.max(0, right - left)}px`);
+      } else {
+        container.current.style.removeProperty("--atlas-search-header-left");
+        container.current.style.removeProperty("--atlas-search-header-width");
+      }
       const start = field.getBoundingClientRect().bottom + 10;
-      const end = Math.min(window.innerHeight - 16, footer?.getBoundingClientRect().top ?? window.innerHeight);
+      const end = Math.min(window.innerHeight - 16, pathway ? window.innerHeight : footer?.getBoundingClientRect().top ?? window.innerHeight);
       container.current.style.setProperty("--atlas-search-max-height", `${Math.max(0, end - start - 16)}px`);
     };
     measure();
     const observer = new ResizeObserver(measure);
     if (footer) observer.observe(footer);
+    if (header) observer.observe(header);
     if (field) observer.observe(field);
     window.addEventListener("resize", measure);
     return () => { observer.disconnect(); window.removeEventListener("resize", measure); };
-  }, [open]);
+  }, [open, pathway]);
 
   function change(value: string) {
     currentQuery.current = value;
@@ -151,7 +170,7 @@ export default function Search() {
   }
 
   return (
-    <div ref={container} className="atlas-search" onBlur={(event) => {
+    <div ref={container} className={`atlas-search${pathway ? " atlas-search-pathway" : ""}`} onBlur={(event) => {
       if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
     }}>
       <div className="atlas-search-input">

@@ -52,10 +52,11 @@ async def main():
             await box.focus()
             await page.evaluate("""async () => {
               const {useStore} = await import('/src/lib/store.ts');
+              window.__acceptanceStore = useStore;
               useStore.setState({transcript:'Case preserved', terms:[{hpo_id:'HP:0003236',label:'Elevated CK',present:false}],
                 ranking:[{disease_id:'ORPHA:34515',name:'FKRP',pct:42,low:35,high:49}]});
             }""")
-            await page.wait_for_timeout(700)  # Allow the existing diagnosis debounce to settle before comparing state.
+            await page.wait_for_function("()=>{const r=window.__acceptanceStore.getState().ranking;return r.length > 0 && r[0].pct !== 42}")
             await page.wait_for_load_state('networkidle')
             original = await page.evaluate(STORE)
 
@@ -67,9 +68,9 @@ async def main():
             await expect(page.get_by_role('option').first).to_contain_text('Matched: LGMD2I')
             await box.press('Enter')
             snapshot = await page.evaluate(STORE)
-            assert snapshot['step'] == 'inspector' and snapshot['selectedId'] == 'ORPHA:34515'
+            assert snapshot['step'] == 'inspector' and snapshot['selectedId'] == 'ORPHA:34515', snapshot
             for field in ('terms', 'transcript', 'ranking'):
-                assert snapshot[field] == original[field], field
+                assert snapshot[field] == original[field], {"field":field,"before":original[field],"after":snapshot[field]}
             assert await box.get_attribute('aria-expanded') == 'false'
 
             checks = [('FKRP', 'Genes', 'pathway'), ('ribitol', 'Mechanisms', 'pathway'),
@@ -181,15 +182,26 @@ async def main():
             panels = [await panel.bounding_box() for panel in await page.locator('.cn-panel').all()]
             panel_overlap = any(overlaps(popup, panel) for panel in panels)
             gesture_overlap = overlaps(search_box, gestures)
+            header_overlap = overlaps(search_box, await page.locator('main > div > header').bounding_box())
+            await page.get_by_role('button', name='Gesture guide', exact=True).click()
+            await expect(page.locator('[aria-label="How to use gestures"]')).to_be_visible()
+            await box.focus()
+            await expect(page.get_by_role('listbox')).to_be_visible()
+            await page.screenshot(path=str(output / 'search-guide-1280.png'))
+            guide_overlap = overlaps(await page.locator('.atlas-search-popup').bounding_box(),
+                                     await page.locator('[aria-label="How to use gestures"]').bounding_box())
             assert popup and popup['x'] >= 0 and popup['x']+popup['width'] <= 1280 and popup['y']+popup['height'] <= 720
             assert not errors, errors
             report = {'six_type_routes': True, 'preserves_case_and_negation': True, 'keyboard': True,
                       'empty_error_retry_sample': True, 'stale_and_clear': True, 'modal_focus_preserved': True, 'runtime_errors': errors,
                       'cancelled_response_count': len(cancelled_responses),
-                      'panel_overlap': panel_overlap, 'gesture_overlap': gesture_overlap, 'viewport': [1280, 720]}
+                      'panel_overlap': panel_overlap, 'gesture_overlap': gesture_overlap, 'header_overlap': header_overlap,
+                      'guide_overlap': guide_overlap, 'viewport': [1280, 720]}
             (output / 'report.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
             assert not panel_overlap, 'Search results overlap a clinical panel'
             assert not gesture_overlap, 'Existing gestures toggle overlaps search; coordinate with its owner'
+            assert not header_overlap, 'Search must leave the journey and sample badge visible'
+            assert not guide_overlap, 'Gesture guide overlaps search results; coordinate with its owner'
             print('SEARCH_UI_PASS six routes, keyboard, negation, empty/error/retry/sample, stale/clear, bounds1280')
         finally:
             await browser.close()

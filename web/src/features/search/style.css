@@ -1,13 +1,14 @@
 .atlas-search {
   position: absolute;
-  z-index: 30;
+  z-index: 40;
   top: var(--atlas-search-top, 16px);
-  left: var(--atlas-search-left, calc(50% - 1rem));
-  width: var(--atlas-search-width, min(32rem, calc(100vw - 52rem)));
+  left: var(--atlas-search-left, var(--atlas-search-header-left, calc(50% - 1rem)));
+  width: var(--atlas-search-width, var(--atlas-search-header-width, min(32rem, calc(100vw - 52rem))));
   transform: translateX(-50%);
   color: var(--color-ink);
   pointer-events: auto;
 }
+.atlas-search-pathway { top: var(--atlas-search-pathway-top, 96px); }
 .atlas-search-input {
   display: flex;
   align-items: center;
