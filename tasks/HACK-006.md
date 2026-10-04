@@ -15,8 +15,8 @@ Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/28; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/28
 Evidence: bash scripts/smoke PRODUCT_PASS en 87ddf0b; intro 1.2s visible (medida canvas), reduced motion duracion 0
-Events: 12
+Events: 13
 Checkpoints: 4
-Sessions: 2
+Sessions: 3
 Last-Checkpoint: 1791075191
 Task-Tip: 87ddf0b6b88af4464a0089856f7e5d1f4da56279
