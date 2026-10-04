@@ -24,6 +24,7 @@ export function createCanvasRenderer(container: HTMLElement, events: RendererEve
   let fitted = false;
   let scheduled = 0;
   let hovered: number | null = null;
+  let link: [number, number] | null = null;
 
   const toScreenRaw = (x: number, y: number): [number, number] => [
     (x - view.cx) * view.scale + width / 2,
@@ -73,7 +74,22 @@ export function createCanvasRenderer(container: HTMLElement, events: RendererEve
       }
       if (sizes[i] > 3.5 || i === hovered) halos.push(i);
     }
-    // Brillo aditivo sólo para candidatas y la estrella bajo el cursor.
+    // Arista resaltada desde el inspector: curva fina en el acento.
+    if (link) {
+      const [ax, ay] = toScreenRaw(positions[link[0] * 2], positions[link[0] * 2 + 1]);
+      const [bx, by] = toScreenRaw(positions[link[1] * 2], positions[link[1] * 2 + 1]);
+      const mx = (ax + bx) / 2 - (by - ay) * 0.15;
+      const my = (ay + by) / 2 + (bx - ax) * 0.15;
+      ctx.globalAlpha = 0.9;
+      ctx.strokeStyle = "rgb(237 201 148)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(ax, ay);
+      ctx.quadraticCurveTo(mx, my, bx, by);
+      ctx.stroke();
+      halos.push(link[0], link[1]);
+    }
+    // Brillo aditivo sólo para candidatas, la arista resaltada y la estrella bajo el cursor.
     ctx.globalCompositeOperation = "lighter";
     for (const i of halos) {
       const [sx, sy] = toScreenRaw(positions[i * 2], positions[i * 2 + 1]);
@@ -237,6 +253,10 @@ export function createCanvasRenderer(container: HTMLElement, events: RendererEve
       } else {
         viewAnim = { from: { ...view }, to, start: performance.now(), ms: durationMs };
       }
+      schedule();
+    },
+    setLink(pair) {
+      link = pair;
       schedule();
     },
     toScreen(index) {

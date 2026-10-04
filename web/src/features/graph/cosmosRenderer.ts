@@ -1,11 +1,11 @@
-import { Graph } from "@cosmograph/cosmos";
+import { Graph } from "@cosmos.gl/graph";
 
 import { createCanvasRenderer } from "./canvasRenderer";
 import type { Frame, GraphRenderer, RendererEvents } from "./types";
 
 // Renderer principal: cosmos.gl dibuja y anima en la GPU (12,867 puntos sin esfuerzo).
 // La simulación está apagada: las posiciones vienen fijas del layout de HACK-003.
-// Licencia de @cosmograph/cosmos: CC-BY-NC-4.0, aceptada por el equipo (proyecto no comercial).
+// @cosmos.gl/graph es MIT (proyecto cosmos.gl de la OpenJS Foundation).
 
 const SIZE_SCALE = 1.0; // los tamaños de la coreografía están pensados en px del renderer Canvas
 
@@ -20,7 +20,11 @@ export function createCosmosRenderer(container: HTMLElement, events: RendererEve
     pixelRatio: Math.min(2, window.devicePixelRatio || 1),
     transitionDuration: 0, // la coreografía anima cuadro a cuadro; cosmos sólo dibuja
     scalePointsOnZoom: true,
-    renderLinks: false,
+    renderLinks: true,
+    linkDefaultWidth: 2,
+    curvedLinks: true,
+    // Sólo hay una arista a la vez (la citada): que no se desvanezca por larga.
+    linkVisibilityDistanceRange: [1e6, 2e6],
     renderHoveredPointRing: true,
     hoveredPointRingColor: [0.95, 0.96, 1, 0.9],
     hoveredPointCursor: "pointer",
@@ -49,6 +53,11 @@ export function createCosmosRenderer(container: HTMLElement, events: RendererEve
       for (let i = 0; i < sizes.length; i++) sizes[i] = frame.sizes[i] * SIZE_SCALE;
       graph.setPointColors(frame.colors);
       graph.setPointSizes(sizes);
+      graph.render(undefined, 0);
+    },
+    setLink(pair) {
+      graph.setLinks(new Float32Array(pair ?? []));
+      if (pair) graph.setLinkColors(new Float32Array([0.93, 0.79, 0.58, 0.9]));
       graph.render(undefined, 0);
     },
     fitTo(indices, durationMs) {

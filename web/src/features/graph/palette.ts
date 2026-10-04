@@ -1,12 +1,10 @@
-// Paleta PROVISIONAL de la constelación hasta que HACK-005 publique web/DESIGN.md; entonces se
-// sustituye por sus tokens. Por qué: la pantalla tiene que verse bien ya, sin esperar al diseño.
-// Regla del brief: color = significado. Cada galaxia (sistema del cuerpo) tiene un tono frío y
-// desaturado; el ÚNICO acento cálido queda reservado para las candidatas.
+// Paleta de la constelación. Regla del brief y de web/DESIGN.md: color = significado.
+// Cada galaxia (sistema del cuerpo) tiene un tono frío y desaturado; los seis colores semánticos de
+// DESIGN.md son de mecanismo y no se usan aquí. El ÚNICO acento cálido es para las candidatas.
 
 export type Rgb = [number, number, number];
 
-export const ACCENT: Rgb = hexToRgb("#f4b860");
-export const BRIDGE: Rgb = hexToRgb("#e7ecf5");
+export const ACCENT: Rgb = hexToRgb("#edc994"); // accent de web/DESIGN.md
 
 function hexToRgb(hex: string): Rgb {
   const value = Number.parseInt(hex.slice(1), 16);

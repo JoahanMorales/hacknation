@@ -25,6 +25,8 @@ export interface GraphRenderer {
   draw(frame: Frame): void;
   /** Encuadra los puntos indicados (o todos con null) en `durationMs`. */
   fitTo(indices: number[] | null, durationMs: number): void;
+  /** Dibuja una arista resaltada entre dos puntos (cita del inspector), o ninguna con null. */
+  setLink(pair: [number, number] | null): void;
   /** Coordenadas de pantalla de un punto, para etiquetas HTML. */
   toScreen(index: number): [number, number] | null;
   destroy(): void;

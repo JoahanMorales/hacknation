@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { api } from "../../lib/api";
 import { useStore } from "../../lib/store";
 import { createRenderer } from "./cosmosRenderer";
 import { Choreography } from "./choreography";
@@ -8,6 +9,8 @@ import { startDemoSteps } from "./demoSteps";
 import { galaxyColors } from "./palette";
 import type { GraphOverview, GraphRenderer } from "./types";
 
+type EdgeResult = { edge: { src: string; dst: string } };
+
 // HACK-006 · Constelación: escena 1 y coreografía del wow de docs/FRONTEND-BRIEF.md.
 // Lee `ranking` del store (HACK-018 lo escribe) y escribe `selectedId` al hacer clic (HACK-019 lo lee).
 export const slot = "stage";
@@ -15,7 +18,6 @@ export const order = 0;
 
 const FIT_DELAY_MS = 600;
 const FIT_MS = 700;
-const PARALLAX_PX = 6;
 
 type Loaded = {
   overview: GraphOverview;
@@ -46,11 +48,11 @@ export default function Constellation() {
   const [attempt, setAttempt] = useState(0);
   const [hover, setHover] = useState<{ index: number; x: number; y: number } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const parallaxRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<GraphRenderer | null>(null);
   const choreoRef = useRef<Choreography | null>(null);
   const loopRef = useRef(0);
   const ranking = useStore((state) => state.ranking);
+  const highlightedEdgeId = useStore((state) => state.highlightedEdgeId);
   const setSelectedId = useStore((state) => state.setSelectedId);
 
   useEffect(() => {
@@ -133,17 +135,28 @@ export default function Constellation() {
     return startDemoSteps();
   }, [data]);
 
-  // Parallax mínimo con el cursor (≤ 6 px); sin él con prefers-reduced-motion.
+  // Cita del inspector (HACK-019): resalta la arista src → dst de GET /api/edge/{id} y la encuadra.
   useEffect(() => {
-    if (prefersReducedMotion()) return;
-    const onMove = (e: PointerEvent) => {
-      const dx = (e.clientX / window.innerWidth - 0.5) * 2 * PARALLAX_PX;
-      const dy = (e.clientY / window.innerHeight - 0.5) * 2 * PARALLAX_PX;
-      if (parallaxRef.current) parallaxRef.current.style.transform = `translate3d(${-dx}px, ${-dy}px, 0)`;
+    const renderer = rendererRef.current;
+    if (!data || !renderer) return;
+    if (!highlightedEdgeId) {
+      renderer.setLink(null);
+      return;
+    }
+    let cancelled = false;
+    api<EdgeResult>(`/edge/${encodeURIComponent(highlightedEdgeId)}`)
+      .then(({ edge }) => {
+        const src = data.indexById.get(edge.src);
+        const dst = data.indexById.get(edge.dst);
+        if (cancelled || src === undefined || dst === undefined) return;
+        renderer.setLink([src, dst]);
+        renderer.fitTo([src, dst], prefersReducedMotion() ? 0 : FIT_MS);
+      })
+      .catch(() => !cancelled && renderer.setLink(null));
+    return () => {
+      cancelled = true;
     };
-    window.addEventListener("pointermove", onMove);
-    return () => window.removeEventListener("pointermove", onMove);
-  }, []);
+  }, [highlightedEdgeId, data]);
 
   const counter = useMemo(() => {
     if (!data) return null;
@@ -168,28 +181,26 @@ export default function Constellation() {
           backgroundSize: "100% 100%, 230px 230px, 310px 310px, 270px 270px",
         }}
       />
-      <div ref={parallaxRef} className="absolute -inset-2 transition-transform duration-300 ease-out">
-        <div ref={containerRef} className="absolute inset-0" aria-label="Rare disease constellation" role="img" />
-      </div>
+      <div ref={containerRef} className="absolute inset-0" aria-label="Rare disease constellation" role="img" />
 
       {!data && !error && (
-        <p className="absolute inset-0 grid place-items-center font-mono text-xs tracking-wide text-zinc-500">
-          <span className="animate-pulse">Loading constellation</span>
+        <p role="status" className="absolute inset-0 grid place-items-center font-mono text-xs tracking-wide text-muted">
+          <span>Loading constellation</span>
         </p>
       )}
 
       {error && (
         <div className="absolute inset-0 grid place-items-center">
           <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-5 text-center backdrop-blur-md">
-            <p className="text-sm text-zinc-200">The constellation could not load.</p>
-            <p className="mt-1 font-mono text-xs text-zinc-500">{error}</p>
+            <p className="text-sm text-ink">The constellation could not load.</p>
+            <p className="mt-1 font-mono text-xs text-muted">{error}</p>
             <button
               type="button"
               onClick={() => {
                 setError(null);
                 setAttempt((n) => n + 1);
               }}
-              className="mt-4 rounded-full border border-white/15 px-4 py-1.5 text-xs text-zinc-200 hover:bg-white/10"
+              className="mt-4 rounded-full border border-line px-4 py-1.5 text-xs text-ink hover:bg-white/10"
             >
               Try again
             </button>
@@ -198,18 +209,18 @@ export default function Constellation() {
       )}
 
       {counter && (
-        <p className="pointer-events-none absolute right-6 top-6 font-mono text-xs tabular-nums text-zinc-500">
+        <p className="pointer-events-none absolute right-6 top-6 font-mono text-xs tabular-nums text-muted">
           {counter}
         </p>
       )}
 
       {hovered && hover && (
         <div
-          className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-white/10 bg-[#0c1220]/85 px-2.5 py-1.5 backdrop-blur-md"
-          style={{ left: hover.x - 8, top: hover.y - 20 }}
+          className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-white/10 bg-surface/95 px-2.5 py-1.5 backdrop-blur-md"
+          style={{ left: hover.x, top: hover.y - 12 }}
         >
-          <p className="max-w-64 truncate text-xs text-zinc-100">{hovered.name}</p>
-          <p className="font-mono text-[10px] text-zinc-500">
+          <p className="max-w-64 truncate text-xs text-ink">{hovered.name}</p>
+          <p className="font-mono text-[10px] text-muted">
             {hovered.id} · {data?.groupLabel.get(hovered.group) ?? hovered.group}
           </p>
         </div>
