@@ -444,8 +444,8 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Dueño sugerido:** zoe-1
 - **Objetivo:** caja de búsqueda arriba al centro (atajo `/`), resultados agrupados por tipo con el sinónimo que coincidió; cada tipo abre el lugar correcto del grafo.
 - **Rubric:** CRAFT, PP, GQ
-- **Depende de:** HACK-021 (mientras tanto, mock etiquetado con la forma del contrato)
-- **Relacionadas:** HACK-024, HACK-028
+- **Depende de:** Ninguna (usa el contrato de HACK-021; mock etiquetado mientras no esté integrada)
+- **Relacionadas:** HACK-021, HACK-023, HACK-024, HACK-028
 - **Archivos probables:** web/src/features/search/
 - **Contratos consumidos:** `GET /api/search` (HACK-021), web/src/lib/store.ts
 - **Criterios de aceptación:**
@@ -484,8 +484,8 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Dueño sugerido:** saus-1
 - **Objetivo:** la vista estrella para Maria: el subgrafo tipado alrededor de su enfermedad, con forma o icono por tipo de nodo y la arista codificada por nivel de evidencia (observado sólido, inferido discontinuo, hipótesis punteado, contradictorio en el color de alerta), con leyenda.
 - **Rubric:** GQ, EI, CRAFT
-- **Depende de:** HACK-023 (mientras tanto, mock con la forma del contrato)
-- **Relacionadas:** HACK-006, HACK-019, HACK-022
+- **Depende de:** Ninguna (usa el contrato de HACK-023; mock etiquetado mientras no esté integrada)
+- **Relacionadas:** HACK-006, HACK-019, HACK-022, HACK-023
 - **Archivos probables:** web/src/features/pathway/
 - **Contratos consumidos:** `GET /api/pathway/{id}` (HACK-023), store (`step = "pathway"`, `selectedId`, `highlightedEdgeId`)
 - **Criterios de aceptación:**
@@ -526,7 +526,7 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Rubric:** PP, EI, X10
 - **Depende de:** Ninguna
 - **Relacionadas:** HACK-020, HACK-011
-- **Archivos probables:** app/routers/proposal.py, app/services/proposal.py, app/tests/test_proposal.py, app/fixtures/deep/proposal_recorded.json, web/src/features/proposal/, web/src/features/action/ (botón)
+- **Archivos probables:** app/routers/proposal.py, app/services/proposal.py, app/tests/test_proposal.py, app/fixtures/proposal/proposal_recorded.json, web/src/features/proposal/, web/src/features/action/ (botón)
 - **Contratos consumidos:** app/fixtures/deep/deep.json, `POST /api/action-plan`
 - **Criterios de aceptación:**
   - `POST /api/proposal {disease_id, partner_disease_id?}` → texto con `[id]` válidos, lista de citas y "Questions for expert review"; el backend borra citas inexistentes; DEMO_MODE devuelve la grabación real.
