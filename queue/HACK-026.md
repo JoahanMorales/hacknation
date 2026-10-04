@@ -1,5 +1,5 @@
 ID: HACK-026
-State: WAITING
+State: MERGING
 Owner: joahan-2
 Queued: 1791089193
 Reason: Esperando cola
