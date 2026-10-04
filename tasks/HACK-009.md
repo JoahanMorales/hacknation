@@ -1,6 +1,6 @@
 # HACK-009
 ID: HACK-009
-State: REVIEW
+State: INTEGRATED
 Owner: joahan-1
 Branch: feat/hack-009
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-009
@@ -9,14 +9,17 @@ Priority: P0
 Paths: app/fixtures/deep/, data/curate/
 Depends: Ninguna
 Verify: python3 data/curate/check.py
-Lease-Until: 1791073489
-Updated: 1791071689
+Lease-Until: 0
+Updated: 1791073081
 Task-Base: e5a1e906fc8dbf7227756dc7159763e10c48c6ef
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/4; ejecutar scripts/smoke
+Next: Integrada en main: 684b5019434f43dec285f03e5f0625c45efbe2b9; reclamar siguiente P0
 PR: https://github.com/JoahanMorales/hacknation/pull/4
-Evidence: python3 data/curate/check.py DEEP_CHECK_PASS; esquemas OK; smoke PRODUCT_PASS; merge humano PR #4 (684b501)
-Events: 8
+Evidence: approve cris-1; merge humano PR #4
+Events: 9
 Checkpoints: 1
 Sessions: 4
 Last-Checkpoint: 1791065574
 Task-Tip: c6d4f59d793c2f185e4de0e31e57fd0736c9f84f
+Integration-Proof: ancestry
+Merge-Commit: 684b5019434f43dec285f03e5f0625c45efbe2b9
+Reviewer: cris-1
