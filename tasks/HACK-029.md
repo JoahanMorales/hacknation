@@ -9,14 +9,14 @@ Priority: P0
 Paths: web/src/features/landing/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791095344
-Updated: 1791093544
+Lease-Until: 1791098909
+Updated: 1791097109
 Task-Base: b98fc390505566d12dd05d9b17affa00cc33b9b5
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/64; ejecutar scripts/smoke
-PR: https://github.com/JoahanMorales/hacknation/pull/64
-Evidence: smoke PRODUCT_PASS; Chromium 1440 y 390 sin errores; cielo real con dos coincidencias
-Events: 8
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/69; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/69
+Evidence: smoke PRODUCT_PASS; capturas del atlas oscuro
+Events: 9
 Checkpoints: 0
 Sessions: 3
 Last-Checkpoint: 0
-Task-Tip: 01ee7081f1f568f987cc45876a8dcc8edf108731
+Task-Tip: 9e3a9ceea68a6853edc3aa736c0177262c177464
