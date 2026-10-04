@@ -1,7 +1,7 @@
 # STATE
 
 Fase: ejecución
-Actualizado: 1791102503
+Actualizado: 1791114745
 AVAILABLE: HACK-034 
 CLAIMED: -
 BLOCKED: HACK-014 
@@ -17,11 +17,11 @@ HACK-033 | REVIEW | joahan-1 | hasta 1791095173
 
 Bloqueos: tareas BLOCKED; use status --task ID --summary.
 Decisiones vigentes (últimas 5):
-- 1791093036 | HACK-032 | no parchear el check a ciegas | Por qué: el fallo restante es layout del shell (HACK-028)
-- 1791094223 | deadline lease/HACK-031/1791093761 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791095835 | deadline lease/HACK-028/1791095305 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791095835 | deadline lease/HACK-029/1791095344 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791095835 | deadline lease/HACK-033/1791095173 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791114745 | deadline lease/HACK-028/1791098892 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791114745 | deadline lease/HACK-029/1791098909 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 
 Siguiente paso global: P0 disponible; si no, revisar PR, tests, demo y ensayo.
 Por qué: snapshot acotado para retomar sin releer el historial.
