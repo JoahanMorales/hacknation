@@ -138,7 +138,7 @@ export default function App() {
           {focus ? "Show panels" : "Focus atlas"}
         </Button>
         {/* El dictado usa toda la altura izquierda; las coincidencias se colocan a su derecha. */}
-        <aside className={`row-span-2 flex min-h-0 flex-col gap-4 ${panels}`} aria-hidden={focus || undefined}>
+        <aside className={`${step === "action" ? "" : "row-span-2"} flex min-h-0 flex-col gap-4 ${panels}`} aria-hidden={focus || undefined}>
           <SlotContent slot="left" />
         </aside>
         <div />
@@ -146,7 +146,8 @@ export default function App() {
           <SlotContent slot="right" />
         </aside>
         <footer
-          className={`col-span-2 col-start-2 max-h-[46vh] min-h-0 overflow-y-auto ${panels} ${showBottom ? "" : "hidden"}`}
+          // En la acción el dictado se oculta: el panel usa todo el ancho y su altura natural.
+          className={`min-h-0 ${step === "action" ? "col-span-3 col-start-1" : "col-span-2 col-start-2 max-h-[46vh] overflow-y-auto"} ${panels} ${showBottom ? "" : "hidden"}`}
           aria-hidden={focus || undefined}
         >
           <SlotContent slot="bottom" />
