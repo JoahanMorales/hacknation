@@ -15,8 +15,8 @@ Task-Base: 84e81ae353f5007c09be257ec32c5f7c3e50cff7
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/38; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/38
 Evidence: uv run pytest -q app/tests/test_search.py 13 passed; smoke PRODUCT_PASS; revisión HTTP independiente zoe-1
-Events: 3
+Events: 4
 Checkpoints: 1
-Sessions: 1
+Sessions: 2
 Last-Checkpoint: 1791080447
 Task-Tip: 6ef3adc999456ea6b7203b2026996a2a8c56a93b
