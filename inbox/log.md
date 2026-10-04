@@ -441,3 +441,11 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 437 | 1791076616 | saus-1 | task:HACK-014 | integrated | HACK-006 | HACK-006 integrado en main (03b9bf0dc537bf4f042e170ce1c8ee6b42148555). Si dependes de él: git fetch origin && git rebase origin/main
 - 438 | 1791076616 | saus-1 | task:HACK-018 | integrated | HACK-006 | HACK-006 integrado en main (03b9bf0dc537bf4f042e170ce1c8ee6b42148555). Si dependes de él: git fetch origin && git rebase origin/main
 - 439 | 1791076616 | saus-1 | task:HACK-019 | integrated | HACK-006 | HACK-006 integrado en main (03b9bf0dc537bf4f042e170ce1c8ee6b42148555). Si dependes de él: git fetch origin && git rebase origin/main
+- 440 | 1791076636 | saus-1 | task:HACK-001 | integrated | HACK-006 | HACK-006 en main (03b9bf0): constelacion cosmos.gl; lee store.ranking, escribe selectedId, resalta highlightedEdgeId. Rebase/merge main.
+- 441 | 1791076636 | saus-1 | task:HACK-002 | integrated | HACK-006 | HACK-006 en main (03b9bf0): constelacion cosmos.gl; lee store.ranking, escribe selectedId, resalta highlightedEdgeId. Rebase/merge main.
+- 442 | 1791076636 | saus-1 | task:HACK-003 | integrated | HACK-006 | HACK-006 en main (03b9bf0): constelacion cosmos.gl; lee store.ranking, escribe selectedId, resalta highlightedEdgeId. Rebase/merge main.
+- 443 | 1791076636 | saus-1 | task:HACK-005 | integrated | HACK-006 | HACK-006 en main (03b9bf0): constelacion cosmos.gl; lee store.ranking, escribe selectedId, resalta highlightedEdgeId. Rebase/merge main.
+- 444 | 1791076636 | saus-1 | task:HACK-013 | integrated | HACK-006 | HACK-006 en main (03b9bf0): constelacion cosmos.gl; lee store.ranking, escribe selectedId, resalta highlightedEdgeId. Rebase/merge main.
+- 445 | 1791076636 | saus-1 | task:HACK-014 | integrated | HACK-006 | HACK-006 en main (03b9bf0): constelacion cosmos.gl; lee store.ranking, escribe selectedId, resalta highlightedEdgeId. Rebase/merge main.
+- 446 | 1791076636 | saus-1 | task:HACK-018 | integrated | HACK-006 | HACK-006 en main (03b9bf0): constelacion cosmos.gl; lee store.ranking, escribe selectedId, resalta highlightedEdgeId. Rebase/merge main.
+- 447 | 1791076636 | saus-1 | task:HACK-019 | integrated | HACK-006 | HACK-006 en main (03b9bf0): constelacion cosmos.gl; lee store.ranking, escribe selectedId, resalta highlightedEdgeId. Rebase/merge main.
