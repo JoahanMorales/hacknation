@@ -329,3 +329,4 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 325 | 1791073081 | joahan-1 | task:HACK-011 | integrated | HACK-009 | HACK-009 integrado en main (684b5019434f43dec285f03e5f0625c45efbe2b9). Si dependes de él: git fetch origin && git rebase origin/main
 - 326 | 1791073081 | joahan-1 | task:HACK-019 | integrated | HACK-009 | HACK-009 integrado en main (684b5019434f43dec285f03e5f0625c45efbe2b9). Si dependes de él: git fetch origin && git rebase origin/main
 - 327 | 1791073081 | joahan-1 | task:HACK-020 | integrated | HACK-009 | HACK-009 integrado en main (684b5019434f43dec285f03e5f0625c45efbe2b9). Si dependes de él: git fetch origin && git rebase origin/main
+- 328 | 1791073092 | joahan-1 | task:HACK-004 | integrated | HACK-016 | HACK-016 integrado en main (428de1001d31241ed50966bbe257e9fb55ba7866). Si dependes de él: git fetch origin && git rebase origin/main
