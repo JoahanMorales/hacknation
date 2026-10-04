@@ -76,3 +76,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791080571 | HACK-023 | aristas estructurales con fuente curada | Por qué: nada sin fuente
 - 1791081274 | deadline lease/HACK-013/1791081124 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791081551 | HACK-022 | Implementar solo features/search con api<T>, mock etiquetado y navegacion accesible. | Por qué: 022 autorizado por ola3; planner corrigio dependencias y no hay traslape de archivos.
+- 1791081642 | HACK-026 | preguntas al experto deterministas | Por qué: no depender del modelo para lo crítico
