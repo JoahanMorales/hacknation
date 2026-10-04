@@ -1,8 +1,8 @@
 ID: HACK-013
-SHA: 7c950e294576dc83706c1755c165336da02244da
-Reviewer: zoe-1
+SHA: 068364d638567101f7fc3a5dfb9917fabc4ed736
+Reviewer: joahan-1
 Owner: saus-1
-Verdict: reject
-Reviewed: 1791080183
-Eligible-Via: claim:HACK-014:1791081449
+Verdict: approve
+Reviewed: 1791084557
+Eligible-Via: role:joahan-1
 Command: hack review
