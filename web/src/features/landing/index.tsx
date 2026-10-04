@@ -123,9 +123,9 @@ export default function Landing() {
 
       <header className="fixed inset-x-0 top-0 z-30">
         <motion.div aria-hidden className="lp-header-bg" style={{ opacity: headerOpacity }} />
-        <nav className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Constellation">
+        <nav className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="OlivIA">
           <span className="flex items-center gap-2 text-base font-semibold tracking-tight">
-            <StarFour size={20} weight="fill" className="text-[#8EC5FC]" aria-hidden /> Constellation
+            <StarFour size={20} weight="fill" className="text-[#8EC5FC]" aria-hidden /> OlivIA
           </span>
           <div className="hidden items-center gap-8 text-sm md:flex">
             <button type="button" className="cursor-pointer hover:text-[#8EC5FC]" onClick={() => scrollToId("how", reduced)}>How it works</button>
@@ -171,7 +171,7 @@ export default function Landing() {
             className="lp-navy overflow-hidden rounded-[32px]!"
           >
             <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.14em] text-[#8EC5FC] sm:px-6">
-              <span>Constellation · one star per disease</span>
+              <span>The atlas · one star per disease</span>
               <span className="hidden sm:inline">Published case · PMID 7668832</span>
             </div>
             <div className="h-[340px] sm:h-[460px] lg:h-[540px]">
