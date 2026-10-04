@@ -2,10 +2,14 @@
 
 import argparse
 import json
+import re
 import tempfile
 from pathlib import Path
 
 from playwright.sync_api import expect, sync_playwright
+
+# HACK-032: el shell de HACK-028 ya no tiene "Load published sample"; la muestra entra por el dictado.
+SAMPLE = re.compile(r"(Play|Restart) sample case")
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--url", default="http://127.0.0.1:8770")
@@ -39,7 +43,7 @@ with sync_playwright() as p:
         for width, height in [(1280, 720), (1440, 900)]:
             page = visit(width, height)
             console = []
-            page.on("console", lambda message: console.append(message.text) if message.type == "error" else None)
+            page.on("console", lambda message, console=console: console.append(message.text) if message.type == "error" else None)
             sample(page)
             expect(panel(page)).to_be_in_viewport(ratio=1)
             # Every chip must be reachable above the diagnosis footer after internal scrolling.
@@ -69,7 +73,7 @@ with sync_playwright() as p:
             expect(page.get_by_role("button", name="Yes", exact=True)).to_be_enabled(timeout=20000)
             page.get_by_role("button", name="Clear findings", exact=True).click()
             expect(chips(page)).to_have_count(0)
-            page.get_by_role("button", name="Load published sample").click()
+            page.get_by_role("button", name=SAMPLE).click()
             expect(chips(page)).to_have_count(5)
             expect(panel(page)).to_contain_text("published adult case")
             panel(page).get_by_role("button", name="Clear", exact=True).click()

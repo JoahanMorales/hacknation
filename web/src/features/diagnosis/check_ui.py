@@ -1,11 +1,15 @@
 """Exercise diagnosis UI against a running built app, including controlled failures."""
 
 import argparse
+import re
 import tempfile
 from copy import deepcopy
 from pathlib import Path
 
 from playwright.sync_api import expect, sync_playwright
+
+# HACK-032: el shell de HACK-028 ya no tiene "Load published sample"; la muestra entra por el dictado.
+SAMPLE = re.compile(r"(Play|Restart) sample case")
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--url", default="http://127.0.0.1:8768")
@@ -25,28 +29,39 @@ with sync_playwright() as p:
     runtime_errors = []
     try:
 
+        def complete(name):
+            def match(response):
+                if not endpoint(name)(response):
+                    return False
+                body = response.request.post_data_json or {}
+                return len(body.get("terms", [])) == 5
+
+            return match
+
         def visit():
             page = browser.new_page(viewport={"width": 1440, "height": 900})
             page.on("pageerror", lambda error: runtime_errors.append(str(error)))
             page.goto(args.url)
             page.wait_for_load_state("networkidle")
             expect(
-                page.get_by_role("button", name="Load published sample")
+                page.get_by_role("button", name=SAMPLE)
             ).to_be_visible()
-            expect(
-                page.get_by_text("Phenotype match · not a diagnosis", exact=True)
-            ).to_be_visible()
+            # HACK-032: en el shell nuevo el aviso aparece junto con los resultados (se comprueba en load).
             return page
 
         def load(page):
+            # El dictado de la muestra extrae por tramos: se espera la respuesta con los 5 términos completos.
             with (
-                page.expect_response(endpoint("diagnose")) as diagnosis,
-                page.expect_response(endpoint("next-question")) as question,
+                page.expect_response(complete("diagnose"), timeout=60000) as diagnosis,
+                page.expect_response(complete("next-question"), timeout=60000) as question,
             ):
-                page.get_by_role("button", name="Load published sample").click()
+                page.get_by_role("button", name=SAMPLE).click()
             assert diagnosis.value.status == question.value.status == 200
             result, asked = diagnosis.value.json(), question.value.json()
             expect(page.get_by_role("button", name="Yes", exact=True)).to_be_enabled()
+            expect(
+                page.get_by_text("Phenotype match · not a diagnosis", exact=True)
+            ).to_be_visible()
             return result, asked
 
         def check_meters(page, result):
@@ -136,7 +151,7 @@ with sync_playwright() as p:
                 status=503, json={"detail": "controlled failure"}
             ),
         )
-        page.get_by_role("button", name="Load published sample").click()
+        page.get_by_role("button", name=SAMPLE).click()
         expect(page.get_by_role("alert")).to_contain_text("Your findings are kept")
         expect(page.get_by_role("meter")).to_have_count(0)
         page.unroute("**/api/diagnose")
@@ -156,7 +171,7 @@ with sync_playwright() as p:
                 status=503, json={"detail": "controlled failure"}
             ),
         )
-        page.get_by_role("button", name="Load published sample").click()
+        page.get_by_role("button", name=SAMPLE).click()
         expect(page.get_by_role("alert")).to_contain_text("The matches are available")
         expect(page.get_by_role("meter")).to_have_count(2)
         page.unroute("**/api/next-question")
@@ -174,7 +189,7 @@ with sync_playwright() as p:
         page.route(
             "**/api/next-question", lambda route: route.fulfill(json=unsupported)
         )
-        page.get_by_role("button", name="Load published sample").click()
+        page.get_by_role("button", name=SAMPLE).click()
         expect(page.get_by_text(unsupported["question"], exact=True)).to_be_visible()
         expect(page.get_by_role("button", name="Yes", exact=True)).to_have_count(0)
         expect(page.get_by_role("meter")).to_have_count(2)
@@ -184,7 +199,7 @@ with sync_playwright() as p:
         page = visit()
         held = []
         page.route("**/api/diagnose", lambda route: held.append(route))
-        page.get_by_role("button", name="Load published sample").click()
+        page.get_by_role("button", name=SAMPLE).click()
         page.wait_for_timeout(300)
         assert len(held) == 1
         expect(
@@ -193,7 +208,7 @@ with sync_playwright() as p:
         page.get_by_role("button", name="Clear findings").click()
         held[0].fulfill(json=result)
         page.wait_for_load_state("networkidle")
-        expect(page.get_by_role("button", name="Load published sample")).to_be_visible()
+        expect(page.get_by_role("button", name=SAMPLE)).to_be_visible()
         expect(page.get_by_role("meter")).to_have_count(0)
         page.close()
 
