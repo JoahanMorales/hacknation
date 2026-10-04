@@ -4,6 +4,7 @@ Uso, con la web compilada y FastAPI arriba:
   uv run python web/src/features/action/check_nav.py http://127.0.0.1:8000
 """
 
+import re
 import sys
 
 from playwright.sync_api import sync_playwright
@@ -14,9 +15,10 @@ with sync_playwright() as p:
     posts = []
     page.on("request", lambda r: r.method == "POST" and r.url.endswith("/api/action-plan") and posts.append(r.url))
     page.goto(base)
-    page.get_by_role("button", name="Load published sample").click()
+    # HACK-033: el shell de HACK-028 carga la muestra desde el dictado.
+    page.get_by_role("button", name=re.compile(r"(Play|Restart) sample case")).click()
     for disease, curated in (("Pompe disease, late-onset", True), ("Myoglobinuria, acute recurrent, autosomal recessive", False)):
-        page.get_by_role("button", name=f"Inspect {disease}").click(timeout=30000)
+        page.get_by_role("button", name=f"Inspect {disease}").click(timeout=60000)
         page.get_by_role("button", name="Next steps", exact=False).click(timeout=10000)
         heading = "Who is already working on this" if curated else "No supported route yet"
         page.get_by_label("Action plan").get_by_role("heading", name=heading).wait_for(timeout=10000)
