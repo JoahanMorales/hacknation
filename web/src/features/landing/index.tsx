@@ -295,7 +295,7 @@ export default function Landing() {
                   width={780}
                   height={780}
                   loading="lazy"
-                  alt="The full atlas: 12,867 rare diseases grouped into body systems, each a cluster of small dots."
+                  alt="The full atlas on a night sky: 12,867 rare diseases grouped into body systems, each a cluster of small stars, some twinkling."
                   className="w-full rounded-[20px]"
                 />
               </Reveal>
