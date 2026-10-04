@@ -31,6 +31,11 @@ export function Waveform({ stream, active }: { stream: MediaStream | null; activ
     }
 
     let frame = 0;
+    // Colores del tema (HACK-028/032): el canvas no lee variables CSS, se resuelven una vez al montar.
+    const css = getComputedStyle(document.documentElement);
+    const token = (name: string, fallback: string) => css.getPropertyValue(name).trim() || fallback;
+    const activeColor = token("--color-accent", "#0d7a54");
+    const idleColor = token("--color-line", "#b9cec6");
     const draw = (now: number) => {
       ctx.clearRect(0, 0, width, height);
       if (analyser && samples) analyser.getByteFrequencyData(samples);
@@ -42,7 +47,8 @@ export function Waveform({ stream, active }: { stream: MediaStream | null; activ
         else if (active && !reduced) level = 0.18 + 0.32 * Math.abs(Math.sin(now / 260 + i * 0.55) * Math.sin(now / 610 + i * 0.21));
         else if (active) level = 0.3;
         const barHeight = Math.max(2, level * height);
-        ctx.fillStyle = active ? "rgb(237 201 148 / 0.85)" : "rgb(165 179 199 / 0.35)";
+        ctx.globalAlpha = active ? 0.85 : 0.6;
+        ctx.fillStyle = active ? activeColor : idleColor;
         ctx.beginPath();
         ctx.roundRect(i * (barWidth + gap), (height - barHeight) / 2, barWidth, barHeight, 1.5);
         ctx.fill();

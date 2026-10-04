@@ -98,7 +98,7 @@
 .cn-diagnosis-question {
   min-width: 0;
   padding-left: 24px;
-  border-left: 1px solid rgb(165 179 199 / 22%);
+  border-left: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
 }
 .cn-diagnosis-question h3 {
   margin: 0 0 12px;
@@ -148,7 +148,7 @@
   display: block;
   height: 16px;
   border-radius: 3px;
-  background: #344357;
+  background: var(--color-surface-raised);
 }
 .cn-diagnosis-question-loading > span:last-child {
   width: 70%;
@@ -213,7 +213,7 @@
   .cn-diagnosis-question {
     grid-column: 1 / -1;
     border-left: 0;
-    border-top: 1px solid rgb(165 179 199 / 22%);
+    border-top: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
     padding: 16px 0 0;
   }
 }
