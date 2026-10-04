@@ -145,7 +145,7 @@ export default function Landing() {
           </motion.div>
           <motion.h1
             {...enter(1)}
-            className="max-w-[17ch] text-[2.75rem] font-semibold leading-[1.04] tracking-[-0.035em] sm:text-[3.5rem] lg:text-[4.75rem]"
+            className="max-w-[24ch] text-balance text-[2.75rem] font-semibold leading-[1.04] tracking-[-0.035em] sm:text-[3.5rem] lg:text-[4.75rem]"
           >
             From scattered symptoms to the people who can help.
           </motion.h1>

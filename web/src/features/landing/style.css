@@ -1,8 +1,9 @@
+/* Sin @layer: así gana a preflight sin depender del orden del bundle; las clases no fijan position
+   para que las utilidades (md:absolute) sigan mandando. */
 /* HACK-029 · Landing: vidrio estilo Apple (aproximación web con backdrop-filter; Apple no publica
    un CSS oficial de Liquid Glass). Paleta cerrada del humano: #EEF4F9→#DCE9F3, #1E6FD9, #0B2A4A,
    #8EC5FC, #5ED3D0, #5B7189. Una sola curva y sólo transform/opacity animados. */
 
-@layer components {
 .lp {
   --lp-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --lp-blue: #1e6fd9;
@@ -27,7 +28,6 @@
 }
 
 .lp-glass {
-  position: relative;
   border: 1px solid rgb(255 255 255 / 70%);
   border-radius: 28px;
   background: rgb(255 255 255 / 55%);
@@ -37,7 +37,6 @@
 }
 
 .lp-navy {
-  position: relative;
   border-radius: 28px;
   background: var(--lp-navy);
   color: #fff;
@@ -47,6 +46,7 @@
 /* Hover de tarjeta: sube 5 px; la sombra más profunda y el brillo extra son capas que sólo cambian
    de opacidad (sin animar box-shadow ni filter). */
 .lp-card {
+  position: relative;
   isolation: isolate;
   transition: transform 500ms var(--lp-ease);
 }
@@ -177,5 +177,4 @@
     background: var(--lp-navy);
     backdrop-filter: none;
   }
-}
 }
