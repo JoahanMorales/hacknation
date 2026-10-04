@@ -4,27 +4,27 @@
 @theme static {
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
-  --color-night: #eef4f9;
-  --color-surface: #ffffff;
-  --color-surface-raised: #f4f8fc;
-  --color-ink: #0b2a4a;
-  --color-muted: #5b7189;
-  --color-line: #c3d4e4;
-  --color-accent: #1e6fd9;
-  --color-accent-ink: #ffffff;
-  --color-glycosylation: #1a7770;
-  --color-lysosomal: #5a4fa3;
-  --color-structural: #ab4871;
-  --color-membrane: #427730;
-  --color-signaling: #955e19;
-  --color-other: #5a6b7a;
+  --color-night: #071d35;
+  --color-surface: #0b2a4a;
+  --color-surface-raised: #12365c;
+  --color-ink: #eef4f9;
+  --color-muted: #9fb4c9;
+  --color-line: #2a4d73;
+  --color-accent: #8ec5fc;
+  --color-accent-ink: #0b2a4a;
+  --color-glycosylation: #5ed3d0;
+  --color-lysosomal: #b3a6f2;
+  --color-structural: #ee9cbf;
+  --color-membrane: #a6d18c;
+  --color-signaling: #e8b46c;
+  --color-other: #a9b8c7;
   --radius-panel: 16px;
   --radius-control: 10px;
   --radius-chip: 999px;
   --shadow-panel:
-    0 10px 30px rgb(11 42 74 / 10%), 0 1px 2px rgb(11 42 74 / 6%);
+    0 12px 40px rgb(3 14 28 / 45%), 0 1px 2px rgb(3 14 28 / 30%);
   --ease-feedback: cubic-bezier(0.16, 1, 0.3, 1);
-  --color-alert: #c2410c;
+  --color-alert: #f5a07a;
   /* Letra base más grande (petición del humano de Saus): sólo los tamaños pequeños crecen. */
   --text-xs: 0.8125rem;
   --text-xs--line-height: 1.25rem;
@@ -35,6 +35,9 @@ html,
 body,
 #root {
   height: 100%;
+}
+html {
+  color-scheme: dark;
 }
 body {
   margin: 0;
@@ -70,9 +73,9 @@ body {
 }
 .cn-panel {
   min-width: 0;
-  border: 1px solid rgb(11 42 74 / 22%);
+  border: 1px solid rgb(142 197 252 / 16%);
   border-radius: var(--radius-panel);
-  background: rgb(255 255 255 / 96%);
+  background: rgb(11 42 74 / 62%);
   backdrop-filter: blur(24px) saturate(180%);
   box-shadow: var(--shadow-panel);
 }
@@ -124,7 +127,7 @@ body {
 }
 .cn-skeleton span {
   height: 16px;
-  background: #dce9f3;
+  background: #1a3f66;
   border-radius: 3px;
 }
 .cn-skeleton span:nth-child(2) {
@@ -158,15 +161,15 @@ body {
   color: var(--color-accent-ink);
 }
 .cn-button--primary:hover:not(:disabled) {
-  background: #1a62c2;
+  background: #a9d3fd;
 }
 .cn-button--secondary {
-  border-color: #74899f;
+  border-color: #5f7c9a;
   background: var(--color-surface-raised);
   color: var(--color-ink);
 }
 .cn-button--secondary:hover:not(:disabled) {
-  background: #e6eff8;
+  background: #1a3f66;
 }
 .cn-button--ghost {
   background: transparent;
@@ -178,9 +181,9 @@ body {
 }
 .cn-button:disabled {
   cursor: default;
-  background: #eef4f9;
-  color: #5b7189;
-  border-color: #c3d4e4;
+  background: #0e2f52;
+  color: #9fb4c9;
+  border-color: #2a4d73;
 }
 .cn-loading-mark {
   width: 12px;
@@ -189,25 +192,29 @@ body {
   border-radius: 3px;
   opacity: 0.45;
 }
+/* Chips minimalistas (Ola 3): vidrio celeste tenue, esquinas de 12 px para que dos líneas no se vean
+   como una píldora deformada. */
 .cn-chip {
   display: inline-flex;
   max-width: 100%;
   align-items: center;
-  border: 1px solid #74899f;
-  border-radius: var(--radius-chip);
-  background: #eef4f9;
-  font-size: 14px;
+  border: 1px solid rgb(142 197 252 / 24%);
+  border-radius: 12px;
+  background: rgb(142 197 252 / 8%);
+  font-size: 13.5px;
+  line-height: 1.35;
 }
 .cn-chip-main {
   display: inline-flex;
   min-width: 0;
   min-height: 36px;
   align-items: center;
-  gap: 6px;
-  padding: 6px 11px;
+  gap: 8px;
+  padding: 6px 10px;
   background: none;
   border: 0;
-  border-radius: var(--radius-chip);
+  border-radius: 12px;
+  text-align: left;
   color: inherit;
   font: inherit;
   text-align: left;
@@ -235,14 +242,12 @@ button.cn-chip-main {
   color: var(--color-ink);
   background: var(--color-surface-raised);
 }
+/* Negado: borde punteado y "no" delante; sin tachar (tachado + "no" se leía como doble negación). */
 .cn-chip--negated {
   background: transparent;
-  border-color: #74899f;
+  border-style: dashed;
+  border-color: rgb(159 180 201 / 45%);
   color: var(--color-muted);
-}
-.cn-chip--negated .cn-chip-term {
-  text-decoration: line-through;
-  text-decoration-thickness: 1px;
 }
 .cn-chip--negated svg {
   color: var(--color-muted);
@@ -272,7 +277,7 @@ button.cn-chip-main {
 }
 .cn-sample {
   color: var(--color-accent);
-  background: rgb(30 111 217 / 5%);
+  background: rgb(142 197 252 / 5%);
 }
 .cn-kbd {
   display: inline-grid;
@@ -280,7 +285,7 @@ button.cn-chip-main {
   min-width: 24px;
   height: 23px;
   padding: 0 5px;
-  border: 1px solid #74899f;
+  border: 1px solid #5f7c9a;
   border-bottom-width: 2px;
   border-radius: 5px;
   font: 10px var(--font-mono);
@@ -288,7 +293,7 @@ button.cn-chip-main {
   background: var(--color-surface-raised);
 }
 .cn-meter {
-  margin: 24px 0 16px;
+  margin: 16px 0 12px;
   font-variant-numeric: tabular-nums;
 }
 .cn-meter-heading {
@@ -296,38 +301,42 @@ button.cn-chip-main {
   justify-content: space-between;
   align-items: baseline;
   gap: 12px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-muted);
 }
 .cn-meter-heading strong {
   color: var(--color-accent);
-  font: 30px var(--font-mono);
+  font: 600 30px/1 var(--font-sans);
+  letter-spacing: -0.02em;
 }
 .cn-meter-track {
   position: relative;
-  height: 12px;
+  height: 6px;
   margin: 12px 0 8px;
-  background: linear-gradient(var(--color-line), var(--color-line)) center /
-    100% 1px no-repeat;
+  border-radius: var(--radius-chip);
+  background: rgb(142 197 252 / 14%);
 }
 .cn-meter-fill {
   position: absolute;
-  inset: 5px 0;
+  inset: 0;
   transform-origin: left;
+  border-radius: var(--radius-chip);
   background: var(--color-accent);
 }
 .cn-meter-range {
   position: absolute;
-  top: 1px;
-  height: 10px;
-  background: rgb(30 111 217 / 25%);
+  top: -3px;
+  height: 12px;
+  border-radius: 3px;
+  background: rgb(142 197 252 / 22%);
   border-inline: 1px solid var(--color-accent);
 }
 .cn-meter-point {
   position: absolute;
-  top: 3px;
-  width: 6px;
-  height: 6px;
+  top: -2px;
+  width: 10px;
+  height: 10px;
+  box-shadow: 0 0 0 2px var(--color-surface);
   transform: translateX(-50%);
   border-radius: var(--radius-chip);
   background: var(--color-accent);
@@ -336,13 +345,13 @@ button.cn-chip-main {
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  font: 10px var(--font-mono);
+  font: 11px var(--font-mono);
   color: var(--color-muted);
 }
 .cn-kit {
   min-height: 100dvh;
   background:
-    radial-gradient(circle, rgb(11 42 74 / 5%) 0.7px, transparent 1px) 0 0 /
+    radial-gradient(circle, rgb(142 197 252 / 6%) 0.7px, transparent 1px) 0 0 /
       43px 43px,
     var(--color-night);
 }
@@ -356,7 +365,7 @@ button.cn-chip-main {
   display: flex;
   align-items: center;
   gap: 20px;
-  border-bottom: 1px solid rgb(11 42 74 / 18%);
+  border-bottom: 1px solid rgb(142 197 252 / 14%);
 }
 .cn-kit-brand {
   display: inline-flex;
@@ -441,8 +450,8 @@ button.cn-chip-main {
 }
 .cn-kit-states button[aria-pressed="true"] {
   color: var(--color-accent);
-  background: rgb(30 111 217 / 7%);
-  border-color: rgb(30 111 217 / 40%);
+  background: rgb(142 197 252 / 7%);
+  border-color: rgb(142 197 252 / 40%);
 }
 .cn-kit-notice {
   font-size: 13px;
@@ -472,7 +481,7 @@ button.cn-chip-main {
   fill: var(--color-accent);
 }
 .cn-kit-match {
-  border-color: rgb(30 111 217 / 42%);
+  border-color: rgb(142 197 252 / 42%);
 }
 .cn-kit-match h3 {
   margin: 0 0 8px;
@@ -519,7 +528,7 @@ button.cn-chip-main {
   gap: 8px;
   padding-top: 18px;
   margin-top: 20px;
-  border-top: 1px solid rgb(11 42 74 / 18%);
+  border-top: 1px solid rgb(142 197 252 / 14%);
 }
 .cn-kit-caption {
   font-size: 13px;
@@ -550,7 +559,7 @@ button.cn-chip-main {
   gap: 24px;
   margin-top: 28px;
   padding-top: 18px;
-  border-top: 1px solid rgb(11 42 74 / 18%);
+  border-top: 1px solid rgb(142 197 252 / 14%);
   color: var(--color-muted);
   font-size: 13px;
 }

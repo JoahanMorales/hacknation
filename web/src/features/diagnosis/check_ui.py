@@ -145,14 +145,21 @@ with sync_playwright() as p:
 
         # Expected HTTP failures must keep the findings and offer recovery.
         page = visit()
-        page.route(
-            "**/api/diagnose",
-            lambda route: route.fulfill(
-                status=503, json={"detail": "controlled failure"}
-            ),
-        )
+        failed = []
+
+        def fail(route):
+            failed.append(len(route.request.post_data_json["terms"]))
+            route.fulfill(status=503, json={"detail": "controlled failure"})
+
+        page.route("**/api/diagnose", fail)
         page.get_by_role("button", name=SAMPLE).click()
-        expect(page.get_by_role("alert")).to_contain_text("Your findings are kept")
+        # El caso de ejemplo se teclea y extrae por tramos: el primer diagnose (503) tarda más de 5 s,
+        # y se reintenta cuando el dictado ya entregó los 5 términos.
+        expect(page.get_by_role("alert")).to_contain_text("Your findings are kept", timeout=60000)
+        for _ in range(120):
+            if failed and failed[-1] == 5:
+                break
+            page.wait_for_timeout(500)
         expect(page.get_by_role("meter")).to_have_count(0)
         page.unroute("**/api/diagnose")
         with (
@@ -172,7 +179,7 @@ with sync_playwright() as p:
             ),
         )
         page.get_by_role("button", name=SAMPLE).click()
-        expect(page.get_by_role("alert")).to_contain_text("The matches are available")
+        expect(page.get_by_role("alert")).to_contain_text("The matches are available", timeout=60000)
         expect(page.get_by_role("meter")).to_have_count(2)
         page.unroute("**/api/next-question")
         page.get_by_role("button", name="Retry question").click()
@@ -190,7 +197,7 @@ with sync_playwright() as p:
             "**/api/next-question", lambda route: route.fulfill(json=unsupported)
         )
         page.get_by_role("button", name=SAMPLE).click()
-        expect(page.get_by_text(unsupported["question"], exact=True)).to_be_visible()
+        expect(page.get_by_text(unsupported["question"], exact=True)).to_be_visible(timeout=60000)
         expect(page.get_by_role("button", name="Yes", exact=True)).to_have_count(0)
         expect(page.get_by_role("meter")).to_have_count(2)
         page.close()
@@ -200,13 +207,20 @@ with sync_playwright() as p:
         held = []
         page.route("**/api/diagnose", lambda route: held.append(route))
         page.get_by_role("button", name=SAMPLE).click()
-        page.wait_for_timeout(300)
-        assert len(held) == 1
+        # El ejemplo se teclea: se espera a que termine y a que no lleguen más términos.
+        expect(page.get_by_text("Playing sample case")).to_be_visible(timeout=10000)
+        expect(page.get_by_text("Playing sample case")).to_have_count(0, timeout=90000)
+        count = -1
+        while count != len(held):
+            count = len(held)
+            page.wait_for_timeout(1500)
+        assert len(held) >= 1
         expect(
             page.get_by_role("status").filter(has_text="Loading evidence")
         ).to_be_attached()
         page.get_by_role("button", name="Clear findings").click()
-        held[0].fulfill(json=result)
+        for route in held:
+            route.fulfill(json=result)
         page.wait_for_load_state("networkidle")
         expect(page.get_by_role("button", name=SAMPLE)).to_be_visible()
         expect(page.get_by_role("meter")).to_have_count(0)

@@ -2,26 +2,26 @@
 
 Design Read: una mesa clínica de exploración, con constelación nocturna, datos precisos y un acento cálido que guía la acción.
 
-VARIANCE 4 / MOTION 4 / DENSITY 5. Producto de una vista para escritorio 1440×900 y 1280×720. Tema claro clínico azul desde la Ola 3 (antes blanco con verde), por decisión del humano de Saus; ver sección "Ola 3". CSS nativo para componentes y tokens Tailwind v4; no simular otra biblioteca de diseño.
+VARIANCE 4 / MOTION 4 / DENSITY 5. Producto de una vista para escritorio 1440×900 y 1280×720. Tema oscuro (cielo azul marino) desde la Ola 3 (antes blanco con verde y luego claro azul), por decisión del humano de Saus; ver sección "Ola 3". CSS nativo para componentes y tokens Tailwind v4; no simular otra biblioteca de diseño.
 
 ## Paleta y contraste
 
 | Token          | Hex     | Uso                                |
 | -------------- | ------- | ---------------------------------- |
-| night          | #eef4f9 | Fondo (blanco azulado)             |
-| surface        | #ffffff | Panel blanco al 96%, blur 24px     |
-| surface-raised | #f4f8fc | Controles                          |
-| ink            | #0b2a4a | Texto principal (azul marino)      |
-| muted          | #5b7189 | Texto secundario                   |
-| line           | #c3d4e4 | Líneas no esenciales               |
-| accent         | #1e6fd9 | Único acento de selección y acción |
-| accent-ink     | #ffffff | Texto sobre acento                 |
-| glycosylation  | #1a7770 | Glicosilación                      |
-| lysosomal      | #5a4fa3 | Lisosomal (índigo apagado)         |
-| structural     | #ab4871 | Estructura muscular                |
-| membrane       | #427730 | Membrana                           |
-| signaling      | #955e19 | Señalización                       |
-| other          | #5a6b7a | Otros mecanismos                   |
+| night          | #071d35 | Fondo (cielo azul marino profundo) |
+| surface        | #0b2a4a | Vidrio marino al 62%, blur 24px    |
+| surface-raised | #12365c | Controles                          |
+| ink            | #eef4f9 | Texto principal                    |
+| muted          | #9fb4c9 | Texto secundario                   |
+| line           | #2a4d73 | Líneas no esenciales               |
+| accent         | #8ec5fc | Único acento (celeste) de selección y acción |
+| accent-ink     | #0b2a4a | Texto sobre acento                 |
+| glycosylation  | #5ed3d0 | Glicosilación                      |
+| lysosomal      | #b3a6f2 | Lisosomal (lavanda apagado)        |
+| structural     | #ee9cbf | Estructura muscular                |
+| membrane       | #a6d18c | Membrana                           |
+| signaling      | #e8b46c | Señalización                       |
+| other          | #a9b8c7 | Otros mecanismos                   |
 
 Los seis colores semánticos no son acentos de acción. Siempre llevan nombre. Texto normal debe superar 4.5:1, foco y límites esenciales 3:1. El kit verifica los colores de texto contra surface-raised y el panel compuesto sobre blanco (caso extremo del vidrio). No usar line para texto. Evidencia reutiliza colores semánticos: Observed/glycosylation, Inferred/lysosomal, Hypothesis/signaling, Contradicted/structural; además lleva icono y etiqueta.
 
@@ -82,5 +82,7 @@ Preguntas hechas por Saus a su humano el 3 oct; respuestas resumidas y qué se h
 | 8 | Más wow visual en el atlas y pantallas menos cargadas | Parcial: Focus atlas, estrellas finas, candidatas más grandes en azul; el resto de paneles es de sus tareas |
 | 9 | Pathway como protagonista, modo presentación, transiciones, tipografía | Hecho: Pathway a pantalla completa (HACK-024), Focus atlas, entrada de paneles con fundido de 240 ms (sin animación con reduced motion), escala tipográfica mayor |
 
-Reglas nuevas: usar siempre tokens (bg-surface, text-ink, text-muted, border-line, bg-accent, fill-*/stroke-*), nunca hex fijos; el azul #1e6fd9 es sólo para acción, selección y candidatas (celeste #8EC5FC y turquesa #5ED3D0 sólo decorativos, nunca texto sobre claro); --color-alert (#c2410c) para "contradicted".
+| 10 | Atlas oscuro, constelaciones con personalidad, vidrio transparente, menos cansado de ver | Hecho: tokens oscuros (AA ≥5.6), paneles de vidrio marino al 62% con blur 24px, galaxias en tonos claros, estrellas reales que titilan con destellos (capa Twinkle), halo turquesa en las candidatas. Rediseño minimalista de dictado/diagnóstico pedido al planificador |
+
+Reglas nuevas: usar siempre tokens (bg-surface, text-ink, text-muted, border-line, bg-accent, fill-*/stroke-*), nunca hex fijos; el celeste #8ec5fc (accent) es sólo para acción, selección y candidatas; texto sobre acento en azul marino; la landing conserva el tema claro con su cielo marino; --color-alert (#c2410c) para "contradicted".
 Pendiente fuera de este alcance (pedido a sus dueños): colores fijos en diagnosis/style.css y en la onda del dictado; nombres cortos de enfermedades y foco por teclado en el Pathway (notas de joahan-1).
