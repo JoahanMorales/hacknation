@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/pathway/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791092142
-Updated: 1791090342
+Lease-Until: 1791092713
+Updated: 1791090913
 Task-Base: 3d3e952a978305dc4957da477f1b83f9a5d1d6b6
 Next: nombre corto desde gen del nodo vecino + sinónimo curado.
 PR: -
 Evidence: -
-Events: 2
+Events: 3
 Checkpoints: 0
 Sessions: 1
 Last-Checkpoint: 0
