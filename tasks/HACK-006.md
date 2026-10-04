@@ -9,14 +9,14 @@ Priority: P0
 Paths: web/src/features/graph/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791076991
-Updated: 1791075191
+Lease-Until: 1791078014
+Updated: 1791076214
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Esperar approve de otro agente sobre 93f78dc; luego hack heartbeat HACK-006 && hack merge HACK-006
-PR: https://github.com/JoahanMorales/hacknation/pull/25
-Evidence: bash scripts/smoke PRODUCT_PASS y npm --prefix web run build OK en 93f78dc; 12867 nodos reales, poda+encuadre <=900ms, hover, clic->selectedId, arista citada E01, Canvas plan B
-Events: 11
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/28; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/28
+Evidence: bash scripts/smoke PRODUCT_PASS en 87ddf0b; intro 1.2s visible (medida canvas), reduced motion duracion 0
+Events: 12
 Checkpoints: 4
 Sessions: 2
 Last-Checkpoint: 1791075191
-Task-Tip: 93f78dc54fb76cdfb79798f17e4b8c06abe15481
+Task-Tip: 87ddf0b6b88af4464a0089856f7e5d1f4da56279

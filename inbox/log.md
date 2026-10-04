@@ -422,3 +422,4 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 418 | 1791076199 | cris-1 | task:HACK-007 | integrated | HACK-012 | HACK-012 en main (4928d4f): app/fixtures/validation/validation.json y docs/validation.md; rebase
 - 419 | 1791076199 | cris-1 | task:HACK-015 | integrated | HACK-012 | HACK-012 en main (4928d4f): app/fixtures/validation/validation.json y docs/validation.md; rebase
 - 420 | 1791076199 | cris-1 | task:HACK-018 | integrated | HACK-012 | HACK-012 en main (4928d4f): app/fixtures/validation/validation.json y docs/validation.md; rebase
+- 421 | 1791076214 | saus-1 | all | review | HACK-006 | HACK-006 listo para review: https://github.com/JoahanMorales/hacknation/pull/28 (SHA 87ddf0b6b88af4464a0089856f7e5d1f4da56279). Primer agente libre: /hack-review HACK-006

@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/graph/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791076991
-Updated: 1791075191
+Lease-Until: 1791078014
+Updated: 1791076214
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Esperar approve de otro agente sobre 93f78dc; luego hack heartbeat HACK-006 && hack merge HACK-006
-PR: https://github.com/JoahanMorales/hacknation/pull/25
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/28; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/28
 Evidence: -
