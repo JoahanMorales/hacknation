@@ -4,14 +4,14 @@
 @theme static {
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
-  --color-night: #071d35;
-  --color-surface: #0b2a4a;
-  --color-surface-raised: #12365c;
-  --color-ink: #eef4f9;
-  --color-muted: #9fb4c9;
-  --color-line: #2a4d73;
+  --color-night: #0d1520;
+  --color-surface: #151f2b;
+  --color-surface-raised: #1c2835;
+  --color-ink: #edf1f5;
+  --color-muted: #9aa7b5;
+  --color-line: #2a3644;
   --color-accent: #8ec5fc;
-  --color-accent-ink: #0b2a4a;
+  --color-accent-ink: #0d1520;
   --color-glycosylation: #5ed3d0;
   --color-lysosomal: #b3a6f2;
   --color-structural: #ee9cbf;
@@ -22,7 +22,7 @@
   --radius-control: 10px;
   --radius-chip: 999px;
   --shadow-panel:
-    0 12px 40px rgb(3 14 28 / 45%), 0 1px 2px rgb(3 14 28 / 30%);
+    0 12px 36px rgb(2 6 15 / 28%), inset 0 1px 0 rgb(237 241 245 / 4%);
   --ease-feedback: cubic-bezier(0.16, 1, 0.3, 1);
   --color-alert: #f5a07a;
   /* Letra base más grande (petición del humano de Saus): sólo los tamaños pequeños crecen. */
@@ -73,11 +73,11 @@ body {
 }
 .cn-panel {
   min-width: 0;
-  border: 1px solid rgb(142 197 252 / 16%);
+  border: 1px solid rgb(237 241 245 / 9%);
   border-radius: var(--radius-panel);
   /* Vidrio barato: blur de 12 px sin saturate. Con estrellas animadas detrás el navegador recalcula
      el desenfoque en cada cuadro, y su costo crece con el radio. */
-  background: rgb(11 42 74 / 74%);
+  background: rgb(21 31 43 / 72%);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow-panel);
 }
@@ -129,7 +129,7 @@ body {
 }
 .cn-skeleton span {
   height: 16px;
-  background: #1a3f66;
+  background: #243241;
   border-radius: 3px;
 }
 .cn-skeleton span:nth-child(2) {
@@ -165,15 +165,15 @@ body {
   color: var(--color-surface);
 }
 .cn-button--primary:hover:not(:disabled) {
-  background: #dce9f3;
+  background: #dfe5eb;
 }
 .cn-button--secondary {
-  border-color: #5f7c9a;
+  border-color: #6e7e8f;
   background: var(--color-surface-raised);
   color: var(--color-ink);
 }
 .cn-button--secondary:hover:not(:disabled) {
-  background: #1a3f66;
+  background: #243241;
 }
 .cn-button--ghost {
   background: transparent;
@@ -185,9 +185,9 @@ body {
 }
 .cn-button:disabled {
   cursor: default;
-  background: #0e2f52;
-  color: #9fb4c9;
-  border-color: #2a4d73;
+  background: #18222e;
+  color: #9aa7b5;
+  border-color: #2a3644;
 }
 .cn-loading-mark {
   width: 12px;
@@ -202,9 +202,9 @@ body {
   display: inline-flex;
   max-width: 100%;
   align-items: center;
-  border: 1px solid rgb(142 197 252 / 24%);
+  border: 1px solid rgb(237 241 245 / 14%);
   border-radius: 12px;
-  background: rgb(142 197 252 / 8%);
+  background: rgb(237 241 245 / 5%);
   font-size: 13.5px;
   line-height: 1.35;
 }
@@ -250,7 +250,7 @@ button.cn-chip-main {
 .cn-chip--negated {
   background: transparent;
   border-style: dashed;
-  border-color: rgb(159 180 201 / 45%);
+  border-color: rgb(154 167 181 / 45%);
   color: var(--color-muted);
 }
 .cn-chip--negated svg {
@@ -289,7 +289,7 @@ button.cn-chip-main {
   min-width: 24px;
   height: 23px;
   padding: 0 5px;
-  border: 1px solid #5f7c9a;
+  border: 1px solid #6e7e8f;
   border-bottom-width: 2px;
   border-radius: 5px;
   font: 10px var(--font-mono);
@@ -355,7 +355,7 @@ button.cn-chip-main {
 .cn-kit {
   min-height: 100dvh;
   background:
-    radial-gradient(circle, rgb(142 197 252 / 6%) 0.7px, transparent 1px) 0 0 /
+    radial-gradient(circle, rgb(237 241 245 / 5%) 0.7px, transparent 1px) 0 0 /
       43px 43px,
     var(--color-night);
 }
@@ -369,7 +369,7 @@ button.cn-chip-main {
   display: flex;
   align-items: center;
   gap: 20px;
-  border-bottom: 1px solid rgb(142 197 252 / 14%);
+  border-bottom: 1px solid rgb(237 241 245 / 9%);
 }
 .cn-kit-brand {
   display: inline-flex;
@@ -532,7 +532,7 @@ button.cn-chip-main {
   gap: 8px;
   padding-top: 18px;
   margin-top: 20px;
-  border-top: 1px solid rgb(142 197 252 / 14%);
+  border-top: 1px solid rgb(237 241 245 / 9%);
 }
 .cn-kit-caption {
   font-size: 13px;
@@ -563,7 +563,7 @@ button.cn-chip-main {
   gap: 24px;
   margin-top: 28px;
   padding-top: 18px;
-  border-top: 1px solid rgb(142 197 252 / 14%);
+  border-top: 1px solid rgb(237 241 245 / 9%);
   color: var(--color-muted);
   font-size: 13px;
 }

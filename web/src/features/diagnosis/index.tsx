@@ -98,7 +98,7 @@ export default function Diagnosis() {
       aria-label="Phenotype matching"
     >
       <Panel
-        title="Phenotype matches"
+        title="Matches your symptoms"
         state={state}
         trailing={
           <div className="cn-diagnosis-tools">

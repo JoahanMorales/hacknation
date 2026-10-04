@@ -228,7 +228,7 @@ export default function Dictation() {
 
   return (
     <Panel
-      title="Dictation"
+      title="Your symptoms"
       trailing={(transcript || terms.length > 0) ? <Button variant="ghost" onClick={reset}>Clear</Button> : undefined}
       aria-label="Dictation"
       className="cn-dictation"
@@ -312,7 +312,7 @@ export default function Dictation() {
       </div>
 
       <p className="-mb-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-        Findings{terms.length > 0 && ` · ${terms.length}`}
+        Symptoms found{terms.length > 0 && ` · ${terms.length}`}
       </p>
       <ul ref={chipsRef} aria-label="Symptoms" className="flex shrink-0 flex-wrap gap-2">
         <AnimatePresence initial={false}>

@@ -6,8 +6,7 @@ import { createRenderer } from "./cosmosRenderer";
 import { Choreography } from "./choreography";
 import { loadOverview } from "./data";
 import { startDemoSteps } from "./demoSteps";
-import { galaxyColors, type Rgb } from "./palette";
-import { Twinkle } from "./Twinkle";
+import { galaxyColors } from "./palette";
 import type { GraphOverview, GraphRenderer } from "./types";
 
 type EdgeResult = { edge: { src: string; dst: string } };
@@ -50,7 +49,6 @@ export default function Constellation() {
   const [attempt, setAttempt] = useState(0);
   const [hover, setHover] = useState<{ index: number; x: number; y: number } | null>(null);
   const [marks, setMarks] = useState<{ id: string; name: string; pct: number; x: number; y: number }[]>([]);
-  const [sky, setSky] = useState<{ renderer: GraphRenderer; colors: Rgb[] } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<GraphRenderer | null>(null);
   const choreoRef = useRef<Choreography | null>(null);
@@ -108,9 +106,7 @@ export default function Constellation() {
     prunedRef.current = false;
     choreo.intro(performance.now(), prefersReducedMotion());
     animate();
-    setSky({ renderer, colors: base });
     return () => {
-      setSky(null);
       cancelAnimationFrame(loopRef.current);
       renderer.destroy();
       rendererRef.current = null;
@@ -213,19 +209,18 @@ export default function Constellation() {
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {/* Cielo profundo: azul marino con nebulosas celeste y turquesa muy tenues y polvo estelar fijo
-          (decorativo, 1 px y casi transparente: no se confunde con una enfermedad). */}
+      {/* Fondo neutro: un leve aclarado central y polvo estelar fijo (1 px, casi transparente: no se
+          confunde con una enfermedad). Sin nebulosas de color ni brillos persistentes (DESIGN.md). */}
       <div
         aria-hidden
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse 60% 50% at 50% 48%, rgb(18 54 92 / 0.9), transparent 70%), radial-gradient(ellipse 35% 30% at 22% 30%, rgb(142 197 252 / 0.10), transparent 70%), radial-gradient(ellipse 30% 28% at 78% 70%, rgb(94 211 208 / 0.08), transparent 70%), radial-gradient(1px 1px at 20% 30%, rgb(238 244 249 / 0.35), transparent), radial-gradient(1px 1px at 70% 80%, rgb(238 244 249 / 0.25), transparent), radial-gradient(1px 1px at 85% 15%, rgb(238 244 249 / 0.3), transparent)",
-          backgroundSize: "100% 100%, 100% 100%, 100% 100%, 230px 230px, 310px 310px, 270px 270px",
+            "radial-gradient(ellipse 60% 50% at 50% 48%, rgb(28 40 53 / 0.85), transparent 70%), radial-gradient(1px 1px at 20% 30%, rgb(237 241 245 / 0.22), transparent), radial-gradient(1px 1px at 70% 80%, rgb(237 241 245 / 0.16), transparent), radial-gradient(1px 1px at 85% 15%, rgb(237 241 245 / 0.2), transparent)",
+          backgroundSize: "100% 100%, 230px 230px, 310px 310px, 270px 270px",
         }}
       />
       <div ref={containerRef} className="absolute inset-0" aria-label="Rare disease constellation" role="img" />
-      <Twinkle renderer={sky?.renderer ?? null} count={sky?.colors.length ?? 0} colors={sky?.colors ?? []} quiet={ranking.length > 0} />
 
       {!data && !error && (
         <p role="status" className="absolute inset-0 grid place-items-center font-mono text-xs tracking-wide text-muted">
@@ -277,7 +272,7 @@ export default function Constellation() {
   );
 }
 
-// Halo turquesa y anillo celeste sobre cada candidata y una etiqueta legible al lado; si hay dos, una línea tenue las une.
+// Anillo fino del acento sobre cada candidata (se distinguen por tamaño y anillo, no por brillo) y una etiqueta legible al lado; si hay dos, una línea tenue las une.
 function CandidateMarks({ marks }: { marks: { id: string; name: string; pct: number; x: number; y: number }[] }) {
   const [a, b] = marks;
   return (
@@ -293,16 +288,15 @@ function CandidateMarks({ marks }: { marks: { id: string; name: string; pct: num
         const below = rank === 1 && b !== undefined && Math.abs(a.x - b.x) < 300;
         return (
           <div key={mark.id} className="absolute" style={{ left: mark.x, top: mark.y }}>
-            <span className="absolute -left-10 -top-10 size-20 rounded-full bg-[radial-gradient(circle,rgb(94_211_208/0.2),transparent_65%)]" />
-            <span className="absolute -left-4 -top-4 size-8 rounded-full border-2 border-accent bg-accent/10" />
+            <span className="absolute -left-3.5 -top-3.5 size-7 rounded-full border-[1.5px] border-accent" />
             <div
               className={`absolute left-0 flex -translate-x-1/2 flex-col items-center rounded-[14px] border border-accent/25 bg-surface/90 px-3.5 py-2.5 text-center shadow-panel ${
                 below ? "top-8" : "bottom-8"
               }`}
             >
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">{rank === 0 ? "Top match" : "Second match"}</span>
+              <span className="text-xs text-muted">{rank === 0 ? "Top match" : "Second match"}</span>
               <span className="max-w-[15rem] truncate text-sm font-medium text-ink">{mark.name}</span>
-              <span className="font-mono text-xs tabular-nums text-glycosylation">{mark.pct.toFixed(1)}% phenotype match</span>
+              <span className="text-xs tabular-nums text-ink">{mark.pct.toFixed(1)}% phenotype match</span>
             </div>
           </div>
         );

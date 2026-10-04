@@ -1,5 +1,5 @@
 // Paleta de la constelación. Regla del brief y de web/DESIGN.md: color = significado.
-// Cielo oscuro (Ola 3): cada galaxia (sistema del cuerpo) tiene un tono claro que brilla sobre azul marino; los
+// Ola 3 (menos color): las galaxias van en una familia tonal casi monocroma sobre el fondo oscuro; los
 // seis colores semánticos de DESIGN.md son de mecanismo y no se usan aquí. El ÚNICO acento azul es
 // para las candidatas, así que las galaxias evitan la franja azul.
 
@@ -20,19 +20,15 @@ function hslToRgb(h: number, s: number, l: number): Rgb {
 }
 
 /**
- * Un color por galaxia, repartido en la rueda saltándose la franja azul del acento (190°-240°).
- * Las galaxias grandes reciben los tonos más separados entre sí.
+ * Un color por galaxia en una familia tonal casi monocroma (Ola 3, menos color): el mismo gris
+ * azulado y sólo la luminosidad separa galaxias vecinas (orden "golden"). El sistema del cuerpo se
+ * lee por nombre al pasar el ratón; el color queda para el acento de las candidatas.
  */
 export function galaxyColors(groupIds: string[]): Map<string, Rgb> {
-  const start = 240;
-  const span = 360 - 50; // 240° → 550° (= 190°), sin pasar por el acento
   const colors = new Map<string, Rgb>();
   groupIds.forEach((id, i) => {
-    // Orden "golden" para que vecinos en la lista no tengan tonos parecidos.
     const t = (i * 0.618034) % 1;
-    const hue = (start + t * span) % 360;
-    const lightness = i % 2 === 0 ? 0.72 : 0.62; // tonos claros: brillan sobre el cielo marino
-    colors.set(id, hslToRgb(hue, 0.42, lightness)); // saturación baja: sin neones
+    colors.set(id, hslToRgb(212, 0.16, 0.6 + t * 0.2));
   });
   return colors;
 }

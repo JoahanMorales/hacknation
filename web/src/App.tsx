@@ -137,8 +137,10 @@ export default function App() {
           {focus ? <SidebarSimple size={18} aria-hidden /> : <ArrowsOut size={18} aria-hidden />}
           {focus ? "Show panels" : "Focus atlas"}
         </Button>
-        {/* El dictado usa toda la altura izquierda; las coincidencias se colocan a su derecha. */}
-        <aside className={`${step === "action" ? "" : "row-span-2"} flex min-h-0 flex-col gap-4 ${panels}`} aria-hidden={focus || undefined}>
+        {/* El dictado usa toda la altura izquierda; las coincidencias se colocan a su derecha. Revelado
+            progresivo (Ola 3): con una enfermedad abierta el inspector es el panel principal y el dictado
+            se oculta (sigue montado; vuelve al cerrar el inspector). */}
+        <aside className={`${step === "action" ? "" : "row-span-2"} flex min-h-0 flex-col gap-4 ${panels} ${selected ? "hidden" : ""}`} aria-hidden={focus || undefined}>
           <SlotContent slot="left" />
         </aside>
         <div />
