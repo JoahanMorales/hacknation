@@ -52,6 +52,7 @@ export default function Constellation() {
   const rendererRef = useRef<GraphRenderer | null>(null);
   const choreoRef = useRef<Choreography | null>(null);
   const loopRef = useRef(0);
+  const prunedRef = useRef(false); // ¿la constelación muestra una poda que haya que deshacer?
   const ranking = useStore((state) => state.ranking);
   const highlightedEdgeId = useStore((state) => state.highlightedEdgeId);
   const setSelectedId = useStore((state) => state.setSelectedId);
@@ -101,6 +102,7 @@ export default function Constellation() {
     const choreo = new Choreography(positions, base);
     rendererRef.current = renderer;
     choreoRef.current = choreo;
+    prunedRef.current = false;
     choreo.intro(performance.now(), prefersReducedMotion());
     animate();
     return () => {
@@ -119,6 +121,9 @@ export default function Constellation() {
     const indices = ranking
       .map((candidate) => data.indexById.get(candidate.disease_id))
       .filter((index): index is number => index !== undefined);
+    // Un ranking vacío sin poda previa no tiene nada que deshacer: no pisar la intro de 1.2 s.
+    if (indices.length === 0 && !prunedRef.current) return;
+    prunedRef.current = indices.length > 0;
     const candidates = indices.slice(0, 2);
     const reduced = prefersReducedMotion();
     choreo.prune(performance.now(), candidates, indices.slice(2), candidates[0] ?? null, reduced);
