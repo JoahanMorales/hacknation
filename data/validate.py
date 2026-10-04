@@ -26,6 +26,7 @@ DOC = ROOT / "docs" / "validation.md"
 RELEASE = "0.1.27"
 ZIP_URL = f"https://github.com/monarch-initiative/phenopacket-store/releases/download/{RELEASE}/all_phenopackets.zip"
 COHORT = "GAA"
+DEMO_CASE = "PMID_7668832_Father"  # caso guiado de la demo (app/fixtures/case/pompe_case.json)
 SAMPLE = 200
 SEED = 7668832
 MIN_TERMS = 3
@@ -60,13 +61,16 @@ def load_cases() -> tuple[list, list, dict]:
 
 def rank(scorer, case: dict) -> dict:
     """Posición del diagnóstico publicado en el ranking puntual del scorer (sin las 64 tiradas de rango)."""
+    # El mismo recorte que /api/diagnose: mismos pct que la API.
+    from app.services.scoring import clip
+
     terms = [t for t in case["terms"] if t["hpo_id"] in scorer.ancestors]
     logs = defaultdict(float)
     for term in terms:
         column = scorer.column(term["hpo_id"])
         background = scorer.background(column)
         for disease, (freq, _) in column.items():
-            logs[disease] += math.log(scorer.ratio(min(max(freq, 0.01), 0.99), background, term["present"]))
+            logs[disease] += math.log(scorer.ratio(clip(freq), background, term["present"]))
     pct = scorer._normalized(logs)
     rest = pct.pop("_rest")
     order = sorted(scorer.ids, key=lambda d: (-pct.get(d, rest), d))
@@ -184,6 +188,9 @@ def write_doc(result: dict) -> None:
         "alimentarlas; el resultado es optimista frente a pacientes nuevos."),
         "- Los casos publicados suelen ser más completos que una primera consulta; no mide el caso dictado.",
         "- El porcentaje es coincidencia fenotípica normalizada, no probabilidad clínica.",
+        *(f"- El corte de pct no basta solo: el caso de demo {r['id']} es top-1 correcto con {r['top1_pct']:.1f}%; "
+          "combínalo con el número de términos o el margen sobre el 2.º antes de mostrar \"sin ruta\"."
+          for r in result["gaa_cases"] if r["id"] == DEMO_CASE),
         "",
     ]
     DOC.write_text("\n".join(lines), encoding="utf-8", newline="\n")

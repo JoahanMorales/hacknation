@@ -7,8 +7,8 @@
 | Cohorte | n | top-1 | top-3 | top-10 |
 |---|---|---|---|---|
 | GAA (Pompe, todos) | 10 | 60% | 60% | 60% |
-| Muestra aleatoria (semilla 7668832) | 200 | 44% | 48% | 53% |
-| Total | 210 | 44% | 49% | 53% |
+| Muestra aleatoria (semilla 7668832) | 200 | 42% | 46% | 51% |
+| Total | 210 | 42% | 47% | 51% |
 
 ## Método
 
@@ -24,15 +24,16 @@ Regla: unsupported if fewer than 3 known terms or top-1 pct below the recommende
 
 | top-1 pct < | n debajo | top-3 debajo | n encima | top-3 encima |
 |---|---|---|---|---|
-| 1% | 15 | 13% | 195 | 51% |
-| 5% | 31 | 10% | 179 | 55% |
-| 10% | 45 | 16% | 165 | 58% |
-| 20% | 65 | 17% | 145 | 63% |
-| 30% | 82 | 18% | 128 | 68% |
-| 50% | 117 | 26% | 93 | 76% |
+| 1% | 13 | 0% | 197 | 50% |
+| 5% | 31 | 10% | 179 | 54% |
+| 10% | 45 | 16% | 165 | 56% |
+| 20% | 65 | 17% | 145 | 61% |
+| 30% | 82 | 18% | 128 | 66% |
+| 50% | 119 | 26% | 91 | 75% |
 
 ## Límites
 
 - Circularidad: `phenotype.hpoa` incorpora anotaciones de publicaciones, y parte de estos casos pudo alimentarlas; el resultado es optimista frente a pacientes nuevos.
 - Los casos publicados suelen ser más completos que una primera consulta; no mide el caso dictado.
 - El porcentaje es coincidencia fenotípica normalizada, no probabilidad clínica.
+- El corte de pct no basta solo: el caso de demo PMID_7668832_Father es top-1 correcto con 3.8%; combínalo con el número de términos o el margen sobre el 2.º antes de mostrar "sin ruta".

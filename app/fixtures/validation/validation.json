@@ -23,15 +23,15 @@
   },
   "sample": {
    "n": 200,
-   "top1": 0.435,
-   "top3": 0.48,
-   "top10": 0.53
+   "top1": 0.415,
+   "top3": 0.465,
+   "top10": 0.51
   },
   "all": {
    "n": 210,
-   "top1": 0.4429,
-   "top3": 0.4857,
-   "top10": 0.5333
+   "top1": 0.4238,
+   "top3": 0.4714,
+   "top10": 0.5143
   }
  },
  "unsupported_threshold": {
@@ -48,16 +48,16 @@
    {
     "top1_pct_below": 1,
     "below": {
-     "n": 15,
-     "top1": 0.1333,
-     "top3": 0.1333,
-     "top10": 0.1333
+     "n": 13,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top10": 0.0
     },
     "above": {
-     "n": 195,
-     "top1": 0.4667,
-     "top3": 0.5128,
-     "top10": 0.5641
+     "n": 197,
+     "top1": 0.4518,
+     "top3": 0.5025,
+     "top10": 0.5482
     }
    },
    {
@@ -70,9 +70,9 @@
     },
     "above": {
      "n": 179,
-     "top1": 0.5028,
-     "top3": 0.5531,
-     "top10": 0.6089
+     "top1": 0.4804,
+     "top3": 0.5363,
+     "top10": 0.5866
     }
    },
    {
@@ -85,9 +85,9 @@
     },
     "above": {
      "n": 165,
-     "top1": 0.5273,
-     "top3": 0.5758,
-     "top10": 0.6364
+     "top1": 0.503,
+     "top3": 0.5576,
+     "top10": 0.6121
     }
    },
    {
@@ -100,9 +100,9 @@
     },
     "above": {
      "n": 145,
-     "top1": 0.5862,
-     "top3": 0.6276,
-     "top10": 0.6897
+     "top1": 0.5586,
+     "top3": 0.6069,
+     "top10": 0.6621
     }
    },
    {
@@ -111,28 +111,28 @@
      "n": 82,
      "top1": 0.1463,
      "top3": 0.1829,
-     "top10": 0.2317
+     "top10": 0.2195
     },
     "above": {
      "n": 128,
-     "top1": 0.6328,
-     "top3": 0.6797,
-     "top10": 0.7266
+     "top1": 0.6016,
+     "top3": 0.6562,
+     "top10": 0.7031
     }
    },
    {
     "top1_pct_below": 50,
     "below": {
-     "n": 117,
-     "top1": 0.2308,
-     "top3": 0.265,
-     "top10": 0.3077
+     "n": 119,
+     "top1": 0.2269,
+     "top3": 0.2605,
+     "top10": 0.3025
     },
     "above": {
-     "n": 93,
-     "top1": 0.7097,
-     "top3": 0.7634,
-     "top10": 0.8172
+     "n": 91,
+     "top1": 0.6813,
+     "top3": 0.7473,
+     "top10": 0.7912
     }
    }
   ]
@@ -146,7 +146,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621314",
-   "top1_pct": 65.9408
+   "top1_pct": 66.7627
   },
   {
    "id": "PMID_16917947_13",
@@ -156,7 +156,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621314",
-   "top1_pct": 48.5333
+   "top1_pct": 48.9779
   },
   {
    "id": "PMID_16917947_18",
@@ -166,7 +166,7 @@
    "terms_unknown": 0,
    "rank": 110,
    "top1_id": "OMIM:106100",
-   "top1_pct": 0.1614
+   "top1_pct": 0.1628
   },
   {
    "id": "PMID_16917947_19",
@@ -176,7 +176,7 @@
    "terms_unknown": 0,
    "rank": 18,
    "top1_id": "OMIM:268200",
-   "top1_pct": 1.6295
+   "top1_pct": 1.6528
   },
   {
    "id": "PMID_16917947_2",
@@ -186,7 +186,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621314",
-   "top1_pct": 53.8269
+   "top1_pct": 54.4884
   },
   {
    "id": "PMID_16917947_29",
@@ -196,7 +196,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621314",
-   "top1_pct": 25.8632
+   "top1_pct": 26.3778
   },
   {
    "id": "PMID_16917947_3",
@@ -206,7 +206,7 @@
    "terms_unknown": 0,
    "rank": 13,
    "top1_id": "OMIM:222748",
-   "top1_pct": 2.066
+   "top1_pct": 2.1055
   },
   {
    "id": "PMID_16917947_35",
@@ -214,9 +214,9 @@
    "disease_id": "OMIM:621314",
    "terms_used": 4,
    "terms_unknown": 0,
-   "rank": 58,
+   "rank": 57,
    "top1_id": "OMIM:222748",
-   "top1_pct": 2.1668
+   "top1_pct": 2.2082
   },
   {
    "id": "PMID_16917947_8",
@@ -226,7 +226,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621314",
-   "top1_pct": 61.67
+   "top1_pct": 62.1936
   },
   {
    "id": "PMID_7668832_Father",
@@ -236,7 +236,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621314",
-   "top1_pct": 3.6238
+   "top1_pct": 3.7627
   }
  ],
  "sample_cases": [
@@ -248,7 +248,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621185",
-   "top1_pct": 53.4351
+   "top1_pct": 53.9865
   },
   {
    "id": "PMID_37943620_patient_595",
@@ -258,7 +258,7 @@
    "terms_unknown": 0,
    "rank": 265,
    "top1_id": "OMIM:103500",
-   "top1_pct": 0.0661
+   "top1_pct": 0.0667
   },
   {
    "id": "PMID_24443441_P_5",
@@ -276,9 +276,9 @@
    "disease_id": "OMIM:615471",
    "terms_used": 43,
    "terms_unknown": 0,
-   "rank": 368,
+   "rank": 357,
    "top1_id": "OMIM:616878",
-   "top1_pct": 35.225
+   "top1_pct": 35.6472
   },
   {
    "id": "PMID_12750403_66_year_old_woman",
@@ -288,7 +288,7 @@
    "terms_unknown": 0,
    "rank": 3,
    "top1_id": "OMIM:181350",
-   "top1_pct": 8.8307
+   "top1_pct": 9.0375
   },
   {
    "id": "PMID_37342957_Patient_3",
@@ -298,7 +298,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:301109",
-   "top1_pct": 99.9235
+   "top1_pct": 99.9243
   },
   {
    "id": "PMID_25477417_F9_1",
@@ -308,7 +308,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:248250",
-   "top1_pct": 45.2262
+   "top1_pct": 45.974
   },
   {
    "id": "PMID_24769157_II_2",
@@ -318,7 +318,7 @@
    "terms_unknown": 0,
    "rank": 73,
    "top1_id": "OMIM:301044",
-   "top1_pct": 0.6068
+   "top1_pct": 0.6126
   },
   {
    "id": "PMID_36446582_Parenti2021_P16",
@@ -326,9 +326,9 @@
    "disease_id": "OMIM:148050",
    "terms_used": 22,
    "terms_unknown": 0,
-   "rank": 1668,
+   "rank": 12586,
    "top1_id": "ORPHA:251014",
-   "top1_pct": 39.0869
+   "top1_pct": 39.9837
   },
   {
    "id": "PMID_31337854_Patient_31",
@@ -338,7 +338,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:122470",
-   "top1_pct": 99.9746
+   "top1_pct": 99.9996
   },
   {
    "id": "PMID_30859559_Patient_O1409410",
@@ -346,9 +346,9 @@
    "disease_id": "OMIM:605275",
    "terms_used": 67,
    "terms_unknown": 0,
-   "rank": 10,
+   "rank": 643,
    "top1_id": "ORPHA:3243",
-   "top1_pct": 22.7119
+   "top1_pct": 24.7798
   },
   {
    "id": "PMID_36195757_Proband_4",
@@ -368,7 +368,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621424",
-   "top1_pct": 23.3371
+   "top1_pct": 24.2451
   },
   {
    "id": "PMID_36074901_Patient_17",
@@ -376,9 +376,9 @@
    "disease_id": "OMIM:620465",
    "terms_used": 33,
    "terms_unknown": 0,
-   "rank": 12699,
+   "rank": 12705,
    "top1_id": "OMIM:619091",
-   "top1_pct": 2.3226
+   "top1_pct": 2.4158
   },
   {
    "id": "PMID_41014130_proband",
@@ -398,7 +398,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621248",
-   "top1_pct": 85.0885
+   "top1_pct": 85.4677
   },
   {
    "id": "PMID_18412284_Patient_II_6",
@@ -406,9 +406,9 @@
    "disease_id": "OMIM:601414",
    "terms_used": 6,
    "terms_unknown": 0,
-   "rank": 4385,
+   "rank": 4375,
    "top1_id": "OMIM:613731",
-   "top1_pct": 7.1675
+   "top1_pct": 7.5612
   },
   {
    "id": "PMID_39315527_Family_13_Sheffer_et_al_V_4",
@@ -428,7 +428,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:151660",
-   "top1_pct": 99.9823
+   "top1_pct": 99.9826
   },
   {
    "id": "PMID_33708862_Family_1_IV_2",
@@ -438,7 +438,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:615277",
-   "top1_pct": 6.2736
+   "top1_pct": 6.4
   },
   {
    "id": "PMID_31782611_PT14",
@@ -448,7 +448,7 @@
    "terms_unknown": 0,
    "rank": 4,
    "top1_id": "ORPHA:79325",
-   "top1_pct": 38.9399
+   "top1_pct": 38.9045
   },
   {
    "id": "PMID_37075751_Individual_7",
@@ -458,7 +458,7 @@
    "terms_unknown": 0,
    "rank": 12867,
    "top1_id": "ORPHA:1662",
-   "top1_pct": 16.1857
+   "top1_pct": 16.4616
   },
   {
    "id": "PMID_36595822_Case_presentation",
@@ -478,7 +478,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:615471",
-   "top1_pct": 98.5467
+   "top1_pct": 98.5949
   },
   {
    "id": "PMID_31021519_individual_SATB2_91",
@@ -487,8 +487,8 @@
    "terms_used": 9,
    "terms_unknown": 0,
    "rank": 74,
-   "top1_id": "ORPHA:353277",
-   "top1_pct": 16.423
+   "top1_id": "OMIM:621220",
+   "top1_pct": 16.0134
   },
   {
    "id": "PMID_21683322_AD_Family_21",
@@ -496,7 +496,7 @@
    "disease_id": "OMIM:102370",
    "terms_used": 20,
    "terms_unknown": 0,
-   "rank": 1977,
+   "rank": 1959,
    "top1_id": "ORPHA:1979",
    "top1_pct": 98.2601
   },
@@ -508,7 +508,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:151660",
-   "top1_pct": 94.6026
+   "top1_pct": 94.7035
   },
   {
    "id": "PMID_36522252_Individual_1",
@@ -518,7 +518,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:616900",
-   "top1_pct": 99.9489
+   "top1_pct": 99.9503
   },
   {
    "id": "PMID_34890546_M1629_Mayo_III_1",
@@ -528,7 +528,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621164",
-   "top1_pct": 32.5218
+   "top1_pct": 32.5103
   },
   {
    "id": "PMID_35190816_STX_EG0699P",
@@ -536,9 +536,9 @@
    "disease_id": "OMIM:612164",
    "terms_used": 12,
    "terms_unknown": 0,
-   "rank": 1275,
+   "rank": 1266,
    "top1_id": "OMIM:614388",
-   "top1_pct": 13.3935
+   "top1_pct": 14.1882
   },
   {
    "id": "PMID_32433956_patient",
@@ -548,7 +548,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621570",
-   "top1_pct": 99.7159
+   "top1_pct": 99.7316
   },
   {
    "id": "PMID_31021519_262560_from_Bengani_et_al",
@@ -556,9 +556,9 @@
    "disease_id": "OMIM:612313",
    "terms_used": 7,
    "terms_unknown": 0,
-   "rank": 2561,
+   "rank": 11488,
    "top1_id": "OMIM:211380",
-   "top1_pct": 1.5088
+   "top1_pct": 1.5494
   },
   {
    "id": "PMID_29290338_Family_UG_R004_individual_RS",
@@ -568,7 +568,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:162200",
-   "top1_pct": 41.3334
+   "top1_pct": 41.8409
   },
   {
    "id": "PMID_29755943_Family_2_IV_1",
@@ -576,9 +576,9 @@
    "disease_id": "OMIM:142900",
    "terms_used": 11,
    "terms_unknown": 0,
-   "rank": 12394,
+   "rank": 12386,
    "top1_id": "OMIM:190605",
-   "top1_pct": 0.6163
+   "top1_pct": 0.6166
   },
   {
    "id": "PMID_38118446_F4_I_6",
@@ -588,7 +588,7 @@
    "terms_unknown": 0,
    "rank": 2,
    "top1_id": "OMIM:620888",
-   "top1_pct": 86.196
+   "top1_pct": 86.4334
   },
   {
    "id": "PMID_9714438_Park_p279",
@@ -598,7 +598,7 @@
    "terms_unknown": 0,
    "rank": 70,
    "top1_id": "ORPHA:96334",
-   "top1_pct": 8.6186
+   "top1_pct": 8.6187
   },
   {
    "id": "PMID_38858457_F3_individual_8",
@@ -608,7 +608,7 @@
    "terms_unknown": 0,
    "rank": 52,
    "top1_id": "OMIM:621431",
-   "top1_pct": 5.2304
+   "top1_pct": 5.3167
   },
   {
    "id": "PMID_29122497_29122497_P2",
@@ -618,7 +618,7 @@
    "terms_unknown": 0,
    "rank": 110,
    "top1_id": "ORPHA:356961",
-   "top1_pct": 62.8956
+   "top1_pct": 62.8939
   },
   {
    "id": "PMID_30612693_Individual_7",
@@ -626,9 +626,9 @@
    "disease_id": "OMIM:618443",
    "terms_used": 53,
    "terms_unknown": 0,
-   "rank": 11287,
+   "rank": 11717,
    "top1_id": "OMIM:621435",
-   "top1_pct": 0.6893
+   "top1_pct": 0.7183
   },
   {
    "id": "PMID_29283439_Patient_126_2",
@@ -648,7 +648,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620793",
-   "top1_pct": 98.7239
+   "top1_pct": 98.8014
   },
   {
    "id": "PMID_36189931_6",
@@ -656,9 +656,9 @@
    "disease_id": "OMIM:130050",
    "terms_used": 21,
    "terms_unknown": 0,
-   "rank": 12629,
+   "rank": 12858,
    "top1_id": "ORPHA:2671",
-   "top1_pct": 36.9297
+   "top1_pct": 36.9296
   },
   {
    "id": "PMID_40065010_individual_V_24",
@@ -668,7 +668,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:301163",
-   "top1_pct": 98.44
+   "top1_pct": 98.6149
   },
   {
    "id": "PMID_38054405_Family_2_individual_P3",
@@ -678,7 +678,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620746",
-   "top1_pct": 89.3811
+   "top1_pct": 89.7701
   },
   {
    "id": "PMID_31021519_SATB2_49_from_Zarate_et_al_2018a",
@@ -686,9 +686,9 @@
    "disease_id": "OMIM:612313",
    "terms_used": 9,
    "terms_unknown": 0,
-   "rank": 180,
+   "rank": 170,
    "top1_id": "ORPHA:513456",
-   "top1_pct": 20.7916
+   "top1_pct": 20.8427
   },
   {
    "id": "PMID_12789647_K11_III_2",
@@ -698,7 +698,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:142900",
-   "top1_pct": 6.6123
+   "top1_pct": 6.634
   },
   {
    "id": "PMID_21358634_Family_4",
@@ -708,7 +708,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:132800",
-   "top1_pct": 0.9821
+   "top1_pct": 1.0435
   },
   {
    "id": "PMID_39753129_Family_10_II_5",
@@ -718,7 +718,7 @@
    "terms_unknown": 0,
    "rank": 2,
    "top1_id": "OMIM:619657",
-   "top1_pct": 12.6928
+   "top1_pct": 12.8904
   },
   {
    "id": "PMID_36446582_Kutkowska_Kazmierczak2021_P7",
@@ -726,9 +726,9 @@
    "disease_id": "OMIM:148050",
    "terms_used": 6,
    "terms_unknown": 0,
-   "rank": 90,
+   "rank": 89,
    "top1_id": "OMIM:300868",
-   "top1_pct": 15.0454
+   "top1_pct": 15.5376
   },
   {
    "id": "PMID_37843278_proband_II_1",
@@ -738,7 +738,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:301137",
-   "top1_pct": 68.3782
+   "top1_pct": 70.3006
   },
   {
    "id": "PMID_36446582_Sirmaci2011_P4_previously_published_Brancati_2004",
@@ -748,7 +748,7 @@
    "terms_unknown": 0,
    "rank": 2,
    "top1_id": "OMIM:618505",
-   "top1_pct": 89.2356
+   "top1_pct": 89.4776
   },
   {
    "id": "PMID_35190816_STX_G3_P28",
@@ -756,9 +756,9 @@
    "disease_id": "OMIM:612164",
    "terms_used": 2,
    "terms_unknown": 0,
-   "rank": 6454,
+   "rank": 6448,
    "top1_id": "OMIM:300243",
-   "top1_pct": 0.5168
+   "top1_pct": 0.5246
   },
   {
    "id": "PMID_31782611_PT19",
@@ -768,7 +768,7 @@
    "terms_unknown": 0,
    "rank": 13,
    "top1_id": "OMIM:300868",
-   "top1_pct": 25.1354
+   "top1_pct": 25.9211
   },
   {
    "id": "PMID_18256394_Patient_10",
@@ -776,7 +776,7 @@
    "disease_id": "OMIM:176670",
    "terms_used": 30,
    "terms_unknown": 0,
-   "rank": 4953,
+   "rank": 4844,
    "top1_id": "ORPHA:740",
    "top1_pct": 80.588
   },
@@ -788,7 +788,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:151660",
-   "top1_pct": 99.9771
+   "top1_pct": 99.9768
   },
   {
    "id": "PMID_41125872_Pathogenic_15",
@@ -798,7 +798,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621456",
-   "top1_pct": 34.7843
+   "top1_pct": 35.5697
   },
   {
    "id": "PMID_36446582_Murray_2017_P7_3_3",
@@ -806,9 +806,9 @@
    "disease_id": "OMIM:148050",
    "terms_used": 15,
    "terms_unknown": 0,
-   "rank": 155,
+   "rank": 11414,
    "top1_id": "ORPHA:2994",
-   "top1_pct": 14.5579
+   "top1_pct": 14.5374
   },
   {
    "id": "PMID_23664117_family_F9_subject_P11",
@@ -818,7 +818,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:615349",
-   "top1_pct": 99.9994
+   "top1_pct": 99.9995
   },
   {
    "id": "PMID_20513137_individual_NF01585_GSM_GSM492695",
@@ -828,7 +828,7 @@
    "terms_unknown": 0,
    "rank": 6,
    "top1_id": "OMIM:613675",
-   "top1_pct": 54.252
+   "top1_pct": 54.2446
   },
   {
    "id": "PMID_30327448_Patient_1_Family_1",
@@ -838,7 +838,7 @@
    "terms_unknown": 0,
    "rank": 293,
    "top1_id": "OMIM:175700",
-   "top1_pct": 0.5129
+   "top1_pct": 0.5199
   },
   {
    "id": "PMID_38815585_Individual_21",
@@ -848,7 +848,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620985",
-   "top1_pct": 38.5146
+   "top1_pct": 39.4667
   },
   {
    "id": "PMID_40449487_Individual_3",
@@ -866,9 +866,9 @@
    "disease_id": "OMIM:616276",
    "terms_used": 9,
    "terms_unknown": 0,
-   "rank": 1029,
+   "rank": 1023,
    "top1_id": "ORPHA:1349",
-   "top1_pct": 12.5228
+   "top1_pct": 12.4967
   },
   {
    "id": "PMID_36996813_Individual_12",
@@ -876,7 +876,7 @@
    "disease_id": "OMIM:620371",
    "terms_used": 11,
    "terms_unknown": 0,
-   "rank": 103,
+   "rank": 12597,
    "top1_id": "ORPHA:2671",
    "top1_pct": 10.3815
   },
@@ -886,9 +886,9 @@
    "disease_id": "OMIM:614800",
    "terms_used": 22,
    "terms_unknown": 0,
-   "rank": 278,
+   "rank": 271,
    "top1_id": "ORPHA:356961",
-   "top1_pct": 49.8484
+   "top1_pct": 49.3926
   },
   {
    "id": "PMID_34778490_sister",
@@ -896,9 +896,9 @@
    "disease_id": "OMIM:610042",
    "terms_used": 10,
    "terms_unknown": 0,
-   "rank": 141,
+   "rank": 12180,
    "top1_id": "OMIM:615829",
-   "top1_pct": 17.0434
+   "top1_pct": 18.7817
   },
   {
    "id": "PMID_33534181_patient",
@@ -908,7 +908,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:256500",
-   "top1_pct": 33.9524
+   "top1_pct": 34.6628
   },
   {
    "id": "PMID_17160901_family_C_individual_6",
@@ -918,7 +918,7 @@
    "terms_unknown": 0,
    "rank": 86,
    "top1_id": "OMIM:600630",
-   "top1_pct": 0.8839
+   "top1_pct": 0.9027
   },
   {
    "id": "PMID_10797416_Belleh_Patient_CF1349",
@@ -928,7 +928,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:121050",
-   "top1_pct": 41.2948
+   "top1_pct": 41.1096
   },
   {
    "id": "PMID_37951597_Family_26_Subject_2",
@@ -936,9 +936,9 @@
    "disease_id": "OMIM:620785",
    "terms_used": 44,
    "terms_unknown": 0,
-   "rank": 725,
-   "top1_id": "OMIM:612291",
-   "top1_pct": 9.3309
+   "rank": 11902,
+   "top1_id": "OMIM:620145",
+   "top1_pct": 7.9792
   },
   {
    "id": "PMID_12789647_K5_III_2",
@@ -948,7 +948,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:142900",
-   "top1_pct": 31.6949
+   "top1_pct": 31.9293
   },
   {
    "id": "PMID_37963460_Family_5_individual_II_6",
@@ -956,9 +956,9 @@
    "disease_id": "OMIM:620852",
    "terms_used": 52,
    "terms_unknown": 0,
-   "rank": 1,
-   "top1_id": "OMIM:620852",
-   "top1_pct": 98.8225
+   "rank": 9,
+   "top1_id": "OMIM:620270",
+   "top1_pct": 82.003
   },
   {
    "id": "PMID_35603789_Patient_7_D24N_D24N",
@@ -976,9 +976,9 @@
    "disease_id": "OMIM:612164",
    "terms_used": 4,
    "terms_unknown": 0,
-   "rank": 454,
+   "rank": 448,
    "top1_id": "OMIM:300868",
-   "top1_pct": 2.8676
+   "top1_pct": 2.9279
   },
   {
    "id": "PMID_37421948_Individual_15",
@@ -988,7 +988,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621250",
-   "top1_pct": 94.9629
+   "top1_pct": 95.3961
   },
   {
    "id": "PMID_37843397_Patient_UM14",
@@ -1008,7 +1008,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:142900",
-   "top1_pct": 9.521
+   "top1_pct": 9.5588
   },
   {
    "id": "PMID_34722527_individual_MOL0597_2",
@@ -1018,7 +1018,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:608194",
-   "top1_pct": 36.9899
+   "top1_pct": 37.482
   },
   {
    "id": "PMID_27764983_Family_1_individual_J",
@@ -1028,7 +1028,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:162000",
-   "top1_pct": 88.9458
+   "top1_pct": 88.7767
   },
   {
    "id": "PMID_34890546_M199_Mayo_II_1",
@@ -1038,7 +1038,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621164",
-   "top1_pct": 37.6314
+   "top1_pct": 37.6076
   },
   {
    "id": "PMID_37964426_Individual_N2591T",
@@ -1048,7 +1048,7 @@
    "terms_unknown": 0,
    "rank": 6,
    "top1_id": "OMIM:618863",
-   "top1_pct": 15.5489
+   "top1_pct": 16.028
   },
   {
    "id": "PMID_21358634_Family_11",
@@ -1058,7 +1058,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:132800",
-   "top1_pct": 0.9821
+   "top1_pct": 1.0435
   },
   {
    "id": "PMID_20034086_Patient_1",
@@ -1068,7 +1068,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:259770",
-   "top1_pct": 97.8701
+   "top1_pct": 97.9723
   },
   {
    "id": "PMID_26178382_UAB_R7626",
@@ -1076,9 +1076,9 @@
    "disease_id": "OMIM:162200",
    "terms_used": 14,
    "terms_unknown": 0,
-   "rank": 301,
+   "rank": 12433,
    "top1_id": "ORPHA:638",
-   "top1_pct": 60.7634
+   "top1_pct": 60.9062
   },
   {
    "id": "PMID_37054711_Family_10_Subject_13",
@@ -1088,7 +1088,7 @@
    "terms_unknown": 0,
    "rank": 12867,
    "top1_id": "OMIM:312870",
-   "top1_pct": 41.044
+   "top1_pct": 45.3914
   },
   {
    "id": "PMID_37843397_Patient_5_2",
@@ -1106,9 +1106,9 @@
    "disease_id": "OMIM:620535",
    "terms_used": 142,
    "terms_unknown": 0,
-   "rank": 10010,
+   "rank": 10660,
    "top1_id": "OMIM:619091",
-   "top1_pct": 38.4517
+   "top1_pct": 38.7084
   },
   {
    "id": "PMID_32591345_NAD_07_individual_IV_4",
@@ -1118,7 +1118,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:619598",
-   "top1_pct": 99.9964
+   "top1_pct": 99.9969
   },
   {
    "id": "PMID_35190816_STX_G3_P2",
@@ -1126,9 +1126,9 @@
    "disease_id": "OMIM:612164",
    "terms_used": 5,
    "terms_unknown": 0,
-   "rank": 1857,
+   "rank": 1846,
    "top1_id": "OMIM:300243",
-   "top1_pct": 2.0251
+   "top1_pct": 2.0844
   },
   {
    "id": "PMID_31021519_Patient_2_from_Kikuiri_et_al",
@@ -1138,7 +1138,7 @@
    "terms_unknown": 0,
    "rank": 14,
    "top1_id": "OMIM:180849",
-   "top1_pct": 9.2035
+   "top1_pct": 9.4845
   },
   {
    "id": "PMID_31021519_Patient_1_from_Zarate_et_al_2015",
@@ -1146,9 +1146,9 @@
    "disease_id": "OMIM:612313",
    "terms_used": 9,
    "terms_unknown": 0,
-   "rank": 426,
+   "rank": 12223,
    "top1_id": "ORPHA:576283",
-   "top1_pct": 39.7015
+   "top1_pct": 39.5017
   },
   {
    "id": "PMID_35904126_Proband_7",
@@ -1156,9 +1156,9 @@
    "disease_id": "OMIM:620450",
    "terms_used": 54,
    "terms_unknown": 0,
-   "rank": 12855,
-   "top1_id": "OMIM:615829",
-   "top1_pct": 99.9978
+   "rank": 12867,
+   "top1_id": "ORPHA:171929",
+   "top1_pct": 30.8255
   },
   {
    "id": "PMID_38413582_Family_11_individual_II_1",
@@ -1168,7 +1168,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620793",
-   "top1_pct": 36.7402
+   "top1_pct": 40.2534
   },
   {
    "id": "PMID_37761890_36",
@@ -1176,9 +1176,9 @@
    "disease_id": "OMIM:616362",
    "terms_used": 25,
    "terms_unknown": 0,
-   "rank": 43,
+   "rank": 42,
    "top1_id": "OMIM:616222",
-   "top1_pct": 32.7249
+   "top1_pct": 32.6297
   },
   {
    "id": "PMID_38815585_Individual_20",
@@ -1188,7 +1188,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620985",
-   "top1_pct": 99.9377
+   "top1_pct": 99.9373
   },
   {
    "id": "PMID_36446582_KBG31A",
@@ -1196,9 +1196,9 @@
    "disease_id": "OMIM:148050",
    "terms_used": 36,
    "terms_unknown": 0,
-   "rank": 38,
+   "rank": 470,
    "top1_id": "ORPHA:3455",
-   "top1_pct": 41.3011
+   "top1_pct": 41.3208
   },
   {
    "id": "PMID_12161596_Patient_1",
@@ -1206,9 +1206,9 @@
    "disease_id": "OMIM:151100",
    "terms_used": 17,
    "terms_unknown": 0,
-   "rank": 248,
+   "rank": 12045,
    "top1_id": "ORPHA:567",
-   "top1_pct": 31.8417
+   "top1_pct": 31.9452
   },
   {
    "id": "PMID_32853638_Patient_1",
@@ -1216,9 +1216,9 @@
    "disease_id": "OMIM:619375",
    "terms_used": 9,
    "terms_unknown": 0,
-   "rank": 1483,
+   "rank": 1435,
    "top1_id": "OMIM:619802",
-   "top1_pct": 88.9806
+   "top1_pct": 89.4488
   },
   {
    "id": "PMID_30580808_Patient_6",
@@ -1226,7 +1226,7 @@
    "disease_id": "OMIM:618362",
    "terms_used": 57,
    "terms_unknown": 0,
-   "rank": 180,
+   "rank": 168,
    "top1_id": "ORPHA:354",
    "top1_pct": 99.8004
   },
@@ -1236,9 +1236,9 @@
    "disease_id": "OMIM:142900",
    "terms_used": 13,
    "terms_unknown": 0,
-   "rank": 49,
+   "rank": 48,
    "top1_id": "ORPHA:99947",
-   "top1_pct": 10.6534
+   "top1_pct": 10.6507
   },
   {
    "id": "PMID_38614108_TUN1_III_4",
@@ -1248,7 +1248,7 @@
    "terms_unknown": 0,
    "rank": 29,
    "top1_id": "OMIM:616840",
-   "top1_pct": 3.1112
+   "top1_pct": 3.1926
   },
   {
    "id": "PMID_38626355_OP_4474_II1",
@@ -1258,7 +1258,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620984",
-   "top1_pct": 83.7038
+   "top1_pct": 84.5103
   },
   {
    "id": "PMID_35150594_K_IV_7",
@@ -1268,7 +1268,7 @@
    "terms_unknown": 0,
    "rank": 33,
    "top1_id": "OMIM:620606",
-   "top1_pct": 3.5178
+   "top1_pct": 3.6645
   },
   {
    "id": "PMID_32725632_patient_25",
@@ -1276,9 +1276,9 @@
    "disease_id": "OMIM:620537",
    "terms_used": 13,
    "terms_unknown": 0,
-   "rank": 43,
+   "rank": 12049,
    "top1_id": "ORPHA:904",
-   "top1_pct": 11.6871
+   "top1_pct": 11.7135
   },
   {
    "id": "PMID_41133935_Individual_5",
@@ -1288,7 +1288,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621468",
-   "top1_pct": 90.1423
+   "top1_pct": 90.6716
   },
   {
    "id": "PMID_38096951_Family_1_III_12",
@@ -1298,7 +1298,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621106",
-   "top1_pct": 99.7164
+   "top1_pct": 99.7358
   },
   {
    "id": "PMID_16917909_603_1",
@@ -1308,7 +1308,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:142900",
-   "top1_pct": 44.3818
+   "top1_pct": 45.143
   },
   {
    "id": "PMID_17160901_family_C_individual_8",
@@ -1318,7 +1318,7 @@
    "terms_unknown": 0,
    "rank": 86,
    "top1_id": "OMIM:600630",
-   "top1_pct": 0.8839
+   "top1_pct": 0.9027
   },
   {
    "id": "PMID_17160901_family_A_individual_1",
@@ -1328,7 +1328,7 @@
    "terms_unknown": 0,
    "rank": 10,
    "top1_id": "OMIM:619097",
-   "top1_pct": 20.2342
+   "top1_pct": 20.5906
   },
   {
    "id": "PMID_22541558_individual_D_1",
@@ -1338,7 +1338,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:154400",
-   "top1_pct": 98.3009
+   "top1_pct": 98.3242
   },
   {
    "id": "PMID_18930476_individual_II1",
@@ -1346,9 +1346,9 @@
    "disease_id": "OMIM:614321",
    "terms_used": 6,
    "terms_unknown": 0,
-   "rank": 53,
+   "rank": 43,
    "top1_id": "OMIM:621078",
-   "top1_pct": 39.3735
+   "top1_pct": 39.5378
   },
   {
    "id": "PMID_35190816_STX_P_28",
@@ -1356,9 +1356,9 @@
    "disease_id": "OMIM:612164",
    "terms_used": 10,
    "terms_unknown": 0,
-   "rank": 3876,
+   "rank": 3809,
    "top1_id": "OMIM:618174",
-   "top1_pct": 20.3974
+   "top1_pct": 21.3052
   },
   {
    "id": "PMID_38977784_FM1_II_1",
@@ -1366,9 +1366,9 @@
    "disease_id": "OMIM:621182",
    "terms_used": 19,
    "terms_unknown": 0,
-   "rank": 9452,
+   "rank": 9417,
    "top1_id": "OMIM:304700",
-   "top1_pct": 1.8413
+   "top1_pct": 1.8818
   },
   {
    "id": "PMID_31898322_case_21_sister_of_19",
@@ -1378,7 +1378,7 @@
    "terms_unknown": 0,
    "rank": 12864,
    "top1_id": "ORPHA:536545",
-   "top1_pct": 5.251
+   "top1_pct": 5.2627
   },
   {
    "id": "PMID_39753129_Family_1_II_3",
@@ -1388,7 +1388,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621080",
-   "top1_pct": 72.0775
+   "top1_pct": 72.7334
   },
   {
    "id": "PMID_24665001_Patient_2",
@@ -1396,9 +1396,9 @@
    "disease_id": "OMIM:616914",
    "terms_used": 20,
    "terms_unknown": 0,
-   "rank": 57,
+   "rank": 12791,
    "top1_id": "OMIM:619472",
-   "top1_pct": 68.85
+   "top1_pct": 68.4233
   },
   {
    "id": "PMID_40166812_F10_II_1",
@@ -1408,7 +1408,7 @@
    "terms_unknown": 0,
    "rank": 138,
    "top1_id": "OMIM:164500",
-   "top1_pct": 0.3763
+   "top1_pct": 0.3813
   },
   {
    "id": "PMID_35979925_Case_1",
@@ -1418,7 +1418,7 @@
    "terms_unknown": 0,
    "rank": 24,
    "top1_id": "OMIM:301076",
-   "top1_pct": 5.8186
+   "top1_pct": 5.9387
   },
   {
    "id": "PMID_39419027_P28",
@@ -1428,7 +1428,7 @@
    "terms_unknown": 0,
    "rank": 14,
    "top1_id": "OMIM:615516",
-   "top1_pct": 7.8138
+   "top1_pct": 7.9357
   },
   {
    "id": "PMID_29290338_Family_UAB_R4444_individual_PrS",
@@ -1438,7 +1438,7 @@
    "terms_unknown": 0,
    "rank": 23,
    "top1_id": "OMIM:182150",
-   "top1_pct": 8.8033
+   "top1_pct": 9.1331
   },
   {
    "id": "PMID_22508010_Case_report",
@@ -1458,7 +1458,7 @@
    "terms_unknown": 0,
    "rank": 13,
    "top1_id": "ORPHA:140927",
-   "top1_pct": 0.8953
+   "top1_pct": 0.896
   },
   {
    "id": "PMID_29469822_Family_5_II_1_2",
@@ -1468,7 +1468,7 @@
    "terms_unknown": 0,
    "rank": 50,
    "top1_id": "OMIM:215140",
-   "top1_pct": 75.3826
+   "top1_pct": 75.8806
   },
   {
    "id": "PMID_26286438_Patient_1",
@@ -1476,9 +1476,9 @@
    "disease_id": "OMIM:614800",
    "terms_used": 77,
    "terms_unknown": 0,
-   "rank": 9,
+   "rank": 76,
    "top1_id": "ORPHA:294975",
-   "top1_pct": 66.8888
+   "top1_pct": 66.8961
   },
   {
    "id": "PMID_41125872_Pathogenic_19",
@@ -1488,7 +1488,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621456",
-   "top1_pct": 39.3884
+   "top1_pct": 41.0799
   },
   {
    "id": "PMID_25511235_B2_1",
@@ -1498,7 +1498,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:605911",
-   "top1_pct": 23.1455
+   "top1_pct": 22.8998
   },
   {
    "id": "PMID_30368668_NS659",
@@ -1506,9 +1506,9 @@
    "disease_id": "OMIM:605275",
    "terms_used": 34,
    "terms_unknown": 0,
-   "rank": 23,
+   "rank": 22,
    "top1_id": "OMIM:616202",
-   "top1_pct": 66.888
+   "top1_pct": 68.4018
   },
   {
    "id": "PMID_36307226_Proband_9",
@@ -1516,9 +1516,9 @@
    "disease_id": "OMIM:620537",
    "terms_used": 16,
    "terms_unknown": 0,
-   "rank": 12453,
+   "rank": 12571,
    "top1_id": "OMIM:617904",
-   "top1_pct": 17.8923
+   "top1_pct": 18.1944
   },
   {
    "id": "PMID_39978342_P28",
@@ -1528,7 +1528,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621185",
-   "top1_pct": 61.185
+   "top1_pct": 63.0896
   },
   {
    "id": "PMID_36214804_P8",
@@ -1538,7 +1538,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621390",
-   "top1_pct": 99.7096
+   "top1_pct": 99.7373
   },
   {
    "id": "PMID_38325380_Patient_15",
@@ -1546,9 +1546,9 @@
    "disease_id": "OMIM:301118",
    "terms_used": 172,
    "terms_unknown": 0,
-   "rank": 165,
+   "rank": 12367,
    "top1_id": "ORPHA:254525",
-   "top1_pct": 25.3593
+   "top1_pct": 29.8669
   },
   {
    "id": "PMID_10939567_Patient_Spo70",
@@ -1556,9 +1556,9 @@
    "disease_id": "OMIM:181350",
    "terms_used": 32,
    "terms_unknown": 0,
-   "rank": 1,
-   "top1_id": "OMIM:181350",
-   "top1_pct": 66.7905
+   "rank": 9,
+   "top1_id": "ORPHA:800",
+   "top1_pct": 34.6665
   },
   {
    "id": "PMID_36189931_30",
@@ -1566,9 +1566,9 @@
    "disease_id": "OMIM:130050",
    "terms_used": 12,
    "terms_unknown": 0,
-   "rank": 12820,
+   "rank": 12862,
    "top1_id": "OMIM:612394",
-   "top1_pct": 32.1589
+   "top1_pct": 32.5251
   },
   {
    "id": "PMID_31000419_III_10",
@@ -1578,7 +1578,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620686",
-   "top1_pct": 67.0523
+   "top1_pct": 67.4803
   },
   {
    "id": "PMID_31021519_individual_SATB2_81",
@@ -1588,7 +1588,7 @@
    "terms_unknown": 0,
    "rank": 20,
    "top1_id": "ORPHA:576283",
-   "top1_pct": 39.9928
+   "top1_pct": 39.9596
   },
   {
    "id": "PMID_31213928_patient",
@@ -1596,9 +1596,9 @@
    "disease_id": "OMIM:159950",
    "terms_used": 12,
    "terms_unknown": 0,
-   "rank": 371,
+   "rank": 358,
    "top1_id": "ORPHA:238606",
-   "top1_pct": 43.9583
+   "top1_pct": 43.958
   },
   {
    "id": "PMID_25802881_P87",
@@ -1606,9 +1606,9 @@
    "disease_id": "OMIM:103580",
    "terms_used": 7,
    "terms_unknown": 0,
-   "rank": 12838,
+   "rank": 12856,
    "top1_id": "ORPHA:773",
-   "top1_pct": 23.9888
+   "top1_pct": 23.9432
   },
   {
    "id": "PMID_36553465_P11",
@@ -1616,7 +1616,7 @@
    "disease_id": "OMIM:606574",
    "terms_used": 10,
    "terms_unknown": 0,
-   "rank": 1302,
+   "rank": 1297,
    "top1_id": "ORPHA:894",
    "top1_pct": 72.4396
   },
@@ -1626,9 +1626,9 @@
    "disease_id": "OMIM:616873",
    "terms_used": 14,
    "terms_unknown": 0,
-   "rank": 12521,
-   "top1_id": "OMIM:614700",
-   "top1_pct": 24.6012
+   "rank": 12455,
+   "top1_id": "ORPHA:356961",
+   "top1_pct": 20.4857
   },
   {
    "id": "PMID_28051070_Brother_1_203",
@@ -1638,7 +1638,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620675",
-   "top1_pct": 99.9997
+   "top1_pct": 99.9998
   },
   {
    "id": "PMID_35190816_STX_P_21",
@@ -1646,9 +1646,9 @@
    "disease_id": "OMIM:612164",
    "terms_used": 16,
    "terms_unknown": 0,
-   "rank": 1411,
+   "rank": 1391,
    "top1_id": "ORPHA:715025",
-   "top1_pct": 30.5033
+   "top1_pct": 30.5007
   },
   {
    "id": "PMID_26541327_Pat_3_FIII",
@@ -1656,9 +1656,9 @@
    "disease_id": "OMIM:614800",
    "terms_used": 19,
    "terms_unknown": 0,
-   "rank": 12692,
+   "rank": 12689,
    "top1_id": "OMIM:256810",
-   "top1_pct": 61.5302
+   "top1_pct": 61.6684
   },
   {
    "id": "PMID_12165566_IV_5",
@@ -1668,7 +1668,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:241850",
-   "top1_pct": 99.7119
+   "top1_pct": 99.7265
   },
   {
    "id": "PMID_10077612_Family_B_III_11",
@@ -1676,9 +1676,9 @@
    "disease_id": "OMIM:142900",
    "terms_used": 8,
    "terms_unknown": 0,
-   "rank": 12555,
+   "rank": 12542,
    "top1_id": "OMIM:268300",
-   "top1_pct": 0.9517
+   "top1_pct": 0.9616
   },
   {
    "id": "PMID_24889630_Proband_1",
@@ -1696,9 +1696,9 @@
    "disease_id": "OMIM:617560",
    "terms_used": 12,
    "terms_unknown": 0,
-   "rank": 7,
+   "rank": 325,
    "top1_id": "ORPHA:636",
-   "top1_pct": 75.0451
+   "top1_pct": 75.7534
   },
   {
    "id": "PMID_36331550_Family_9_Patient_11",
@@ -1706,9 +1706,9 @@
    "disease_id": "OMIM:620540",
    "terms_used": 21,
    "terms_unknown": 0,
-   "rank": 89,
+   "rank": 10440,
    "top1_id": "OMIM:213300",
-   "top1_pct": 20.7788
+   "top1_pct": 21.8118
   },
   {
    "id": "PMID_36351433_F1_IV_1",
@@ -1728,7 +1728,7 @@
    "terms_unknown": 0,
    "rank": 82,
    "top1_id": "OMIM:620416",
-   "top1_pct": 1.6243
+   "top1_pct": 1.686
   },
   {
    "id": "PMID_30838237_18_year_old_adolescent_male",
@@ -1738,7 +1738,7 @@
    "terms_unknown": 0,
    "rank": 35,
    "top1_id": "ORPHA:306674",
-   "top1_pct": 37.3058
+   "top1_pct": 36.9743
   },
   {
    "id": "PMID_37843397_Patient_UM12",
@@ -1758,7 +1758,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:151660",
-   "top1_pct": 97.5562
+   "top1_pct": 97.6791
   },
   {
    "id": "PMID_11179005_Family_27",
@@ -1768,7 +1768,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:311200",
-   "top1_pct": 94.1908
+   "top1_pct": 94.1747
   },
   {
    "id": "PMID_40420380_Participant_10",
@@ -1808,7 +1808,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621094",
-   "top1_pct": 90.1248
+   "top1_pct": 91.0453
   },
   {
    "id": "PMID_38858457_F13_individual_16",
@@ -1818,7 +1818,7 @@
    "terms_unknown": 0,
    "rank": 2,
    "top1_id": "ORPHA:1560",
-   "top1_pct": 18.1566
+   "top1_pct": 17.9953
   },
   {
    "id": "PMID_12920062_Family_C_individual_IV_21",
@@ -1826,9 +1826,9 @@
    "disease_id": "OMIM:115200",
    "terms_used": 15,
    "terms_unknown": 0,
-   "rank": 11656,
+   "rank": 12155,
    "top1_id": "ORPHA:75249",
-   "top1_pct": 16.7196
+   "top1_pct": 16.7893
   },
   {
    "id": "PMID_31021519_SATB2_76_from_Zarate_et_al_2018a",
@@ -1836,9 +1836,9 @@
    "disease_id": "OMIM:612313",
    "terms_used": 9,
    "terms_unknown": 0,
-   "rank": 1566,
+   "rank": 12580,
    "top1_id": "ORPHA:77301",
-   "top1_pct": 6.9178
+   "top1_pct": 6.986
   },
   {
    "id": "PMID_30247636_kindred_AH_proband_IV_1",
@@ -1848,7 +1848,7 @@
    "terms_unknown": 0,
    "rank": 2,
    "top1_id": "ORPHA:238459",
-   "top1_pct": 92.0125
+   "top1_pct": 91.7225
   },
   {
    "id": "PMID_39191256_T_6",
@@ -1858,7 +1858,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620996",
-   "top1_pct": 11.8412
+   "top1_pct": 12.4847
   },
   {
    "id": "PMID_38480682_F7_II_6",
@@ -1868,7 +1868,7 @@
    "terms_unknown": 0,
    "rank": 5,
    "top1_id": "OMIM:618824",
-   "top1_pct": 86.7404
+   "top1_pct": 86.9265
   },
   {
    "id": "PMID_39279645_Family_3_S4_IV_3",
@@ -1888,7 +1888,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:162200",
-   "top1_pct": 74.9684
+   "top1_pct": 75.3508
   },
   {
    "id": "PMID_9312167_A_I_1",
@@ -1896,7 +1896,7 @@
    "disease_id": "OMIM:179800",
    "terms_used": 10,
    "terms_unknown": 0,
-   "rank": 423,
+   "rank": 419,
    "top1_id": "ORPHA:1621",
    "top1_pct": 3.0239
   },
@@ -1908,7 +1908,7 @@
    "terms_unknown": 0,
    "rank": 30,
    "top1_id": "OMIM:621533",
-   "top1_pct": 12.2423
+   "top1_pct": 13.0179
   },
   {
    "id": "PMID_27108799_Individual_8",
@@ -1916,9 +1916,9 @@
    "disease_id": "OMIM:616973",
    "terms_used": 39,
    "terms_unknown": 0,
-   "rank": 85,
+   "rank": 77,
    "top1_id": "OMIM:618718",
-   "top1_pct": 56.4189
+   "top1_pct": 56.6282
   },
   {
    "id": "PMID_36446582_Reuter2020",
@@ -1926,9 +1926,9 @@
    "disease_id": "OMIM:148050",
    "terms_used": 6,
    "terms_unknown": 0,
-   "rank": 1268,
+   "rank": 1260,
    "top1_id": "OMIM:620423",
-   "top1_pct": 3.3973
+   "top1_pct": 3.4679
   },
   {
    "id": "PMID_36355422_IV_5",
@@ -1938,7 +1938,7 @@
    "terms_unknown": 0,
    "rank": 16,
    "top1_id": "OMIM:616462",
-   "top1_pct": 0.0999
+   "top1_pct": 0.1028
   },
   {
    "id": "PMID_18513678_individual_5002",
@@ -1948,7 +1948,7 @@
    "terms_unknown": 0,
    "rank": 9,
    "top1_id": "OMIM:613162",
-   "top1_pct": 23.9241
+   "top1_pct": 24.4889
   },
   {
    "id": "PMID_10842287_HOS_B1",
@@ -1958,7 +1958,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:142900",
-   "top1_pct": 46.0259
+   "top1_pct": 46.5199
   },
   {
    "id": "PMID_29290338_Family_MIL_R999_399_M_individual_F",
@@ -1966,9 +1966,9 @@
    "disease_id": "OMIM:162200",
    "terms_used": 16,
    "terms_unknown": 0,
-   "rank": 74,
+   "rank": 12677,
    "top1_id": "ORPHA:363700",
-   "top1_pct": 20.9285
+   "top1_pct": 20.9778
   },
   {
    "id": "PMID_35190816_STX_P_18",
@@ -1976,9 +1976,9 @@
    "disease_id": "OMIM:612164",
    "terms_used": 11,
    "terms_unknown": 0,
-   "rank": 2536,
+   "rank": 2491,
    "top1_id": "ORPHA:79255",
-   "top1_pct": 26.2999
+   "top1_pct": 26.1389
   },
   {
    "id": "PMID_26178382_UAB_R6554_II1",
@@ -1986,9 +1986,9 @@
    "disease_id": "OMIM:162200",
    "terms_used": 14,
    "terms_unknown": 0,
-   "rank": 316,
+   "rank": 12439,
    "top1_id": "OMIM:613988",
-   "top1_pct": 4.0246
+   "top1_pct": 4.1027
   },
   {
    "id": "PMID_37723834_family_2_III_3",
@@ -1998,7 +1998,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621093",
-   "top1_pct": 96.092
+   "top1_pct": 96.1685
   },
   {
    "id": "PMID_39069253_individual_30_Gonz_lez_Taranc_n_et_al",
@@ -2006,9 +2006,9 @@
    "disease_id": "OMIM:618619",
    "terms_used": 26,
    "terms_unknown": 0,
-   "rank": 15,
+   "rank": 14,
    "top1_id": "ORPHA:502430",
-   "top1_pct": 82.3134
+   "top1_pct": 86.2657
   },
   {
    "id": "PMID_40610405_Individual_13",
@@ -2018,7 +2018,7 @@
    "terms_unknown": 0,
    "rank": 12867,
    "top1_id": "ORPHA:209905",
-   "top1_pct": 66.7265
+   "top1_pct": 66.7246
   },
   {
    "id": "PMID_37951597_Family_1_Subject_2",
@@ -2026,9 +2026,9 @@
    "disease_id": "OMIM:620785",
    "terms_used": 65,
    "terms_unknown": 0,
-   "rank": 1,
-   "top1_id": "OMIM:620785",
-   "top1_pct": 99.9999
+   "rank": 3,
+   "top1_id": "ORPHA:1320",
+   "top1_pct": 84.5682
   },
   {
    "id": "PMID_35618278_III",
@@ -2038,7 +2038,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621248",
-   "top1_pct": 93.0379
+   "top1_pct": 93.1671
   },
   {
    "id": "PMID_29122497_29122497_P9",
@@ -2046,9 +2046,9 @@
    "disease_id": "OMIM:616370",
    "terms_used": 9,
    "terms_unknown": 0,
-   "rank": 145,
+   "rank": 142,
    "top1_id": "ORPHA:356961",
-   "top1_pct": 76.3762
+   "top1_pct": 76.3742
   },
   {
    "id": "PMID_23434115_Exome_2_brother",
@@ -2058,7 +2058,7 @@
    "terms_unknown": 0,
    "rank": 2,
    "top1_id": "OMIM:619271",
-   "top1_pct": 39.0884
+   "top1_pct": 39.6454
   },
   {
    "id": "PMID_24736735_G056_Father",
@@ -2068,7 +2068,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:175700",
-   "top1_pct": 12.6654
+   "top1_pct": 13.2768
   },
   {
    "id": "PMID_36446582_Ockeloen2015_P20",
@@ -2076,9 +2076,9 @@
    "disease_id": "OMIM:148050",
    "terms_used": 5,
    "terms_unknown": 0,
-   "rank": 11884,
+   "rank": 12796,
    "top1_id": "ORPHA:1193",
-   "top1_pct": 3.6296
+   "top1_pct": 3.6267
   },
   {
    "id": "PMID_35052493_individual_G01",
@@ -2086,9 +2086,9 @@
    "disease_id": "OMIM:616364",
    "terms_used": 71,
    "terms_unknown": 0,
-   "rank": 8858,
+   "rank": 8667,
    "top1_id": "OMIM:619480",
-   "top1_pct": 50.77
+   "top1_pct": 51.8293
   },
   {
    "id": "PMID_10749987_family_A_index",
@@ -2098,7 +2098,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:604377",
-   "top1_pct": 99.9478
+   "top1_pct": 99.9473
   },
   {
    "id": "PMID_25794864_P4",
@@ -2106,9 +2106,9 @@
    "disease_id": "OMIM:117360",
    "terms_used": 24,
    "terms_unknown": 0,
-   "rank": 1,
-   "top1_id": "OMIM:117360",
-   "top1_pct": 80.8761
+   "rank": 74,
+   "top1_id": "ORPHA:289390",
+   "top1_pct": 98.6702
   },
   {
    "id": "PMID_21217753_Fam_1_V_1",
@@ -2118,7 +2118,7 @@
    "terms_unknown": 0,
    "rank": 170,
    "top1_id": "OMIM:618618",
-   "top1_pct": 21.6638
+   "top1_pct": 22.0027
   },
   {
    "id": "PMID_29967133_Family_3_III_2",
@@ -2128,7 +2128,7 @@
    "terms_unknown": 0,
    "rank": 2,
    "top1_id": "ORPHA:284984",
-   "top1_pct": 61.4687
+   "top1_pct": 61.1543
   },
   {
    "id": "PMID_37833060_Family_B_II_2",
@@ -2138,7 +2138,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:620401",
-   "top1_pct": 99.9995
+   "top1_pct": 99.9996
   },
   {
    "id": "PMID_33348459_F3_subject_3_1",
@@ -2146,9 +2146,9 @@
    "disease_id": "OMIM:620887",
    "terms_used": 11,
    "terms_unknown": 0,
-   "rank": 17,
+   "rank": 15,
    "top1_id": "OMIM:621533",
-   "top1_pct": 44.4605
+   "top1_pct": 45.4342
   },
   {
    "id": "PMID_30879264_case_report",
@@ -2158,7 +2158,7 @@
    "terms_unknown": 0,
    "rank": 2,
    "top1_id": "OMIM:300868",
-   "top1_pct": 87.3122
+   "top1_pct": 89.7524
   },
   {
    "id": "PMID_36446582_Bianchi_2018",
@@ -2166,9 +2166,9 @@
    "disease_id": "OMIM:148050",
    "terms_used": 22,
    "terms_unknown": 0,
-   "rank": 9,
+   "rank": 7,
    "top1_id": "ORPHA:1231",
-   "top1_pct": 50.3458
+   "top1_pct": 63.7443
   },
   {
    "id": "PMID_29290338_Family_MIL_R481_559_individual_RS",
@@ -2176,9 +2176,9 @@
    "disease_id": "OMIM:162200",
    "terms_used": 25,
    "terms_unknown": 0,
-   "rank": 63,
+   "rank": 517,
    "top1_id": "ORPHA:220402",
-   "top1_pct": 11.3823
+   "top1_pct": 11.6044
   },
   {
    "id": "PMID_38480682_F4_II_1",
@@ -2188,7 +2188,7 @@
    "terms_unknown": 0,
    "rank": 70,
    "top1_id": "ORPHA:289560",
-   "top1_pct": 39.1989
+   "top1_pct": 39.209
   },
   {
    "id": "PMID_40965981_Individual_8",
@@ -2198,7 +2198,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:621495",
-   "top1_pct": 99.9967
+   "top1_pct": 99.9969
   },
   {
    "id": "PMID_15731757_Family_6_II_2",
@@ -2208,7 +2208,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:610168",
-   "top1_pct": 99.9088
+   "top1_pct": 100.0
   },
   {
    "id": "PMID_27743463_S6",
@@ -2218,7 +2218,7 @@
    "terms_unknown": 0,
    "rank": 1,
    "top1_id": "OMIM:615471",
-   "top1_pct": 21.2651
+   "top1_pct": 21.6779
   },
   {
    "id": "PMID_29040572_Family_9_individual",
@@ -2236,9 +2236,9 @@
    "disease_id": "OMIM:612164",
    "terms_used": 9,
    "terms_unknown": 0,
-   "rank": 494,
+   "rank": 492,
    "top1_id": "ORPHA:1706",
-   "top1_pct": 16.9987
+   "top1_pct": 16.9892
   }
  ]
 }
