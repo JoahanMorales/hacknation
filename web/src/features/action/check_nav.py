@@ -1,4 +1,4 @@
-"""Verifica la navegación evidencia → acción → evidencia sin recargar ni editar la URL (pedido de zoe-1).
+"""Verifica la navegación evidencia -> acción -> evidencia sin recargar ni editar la URL (pedido de zoe-1).
 
 Uso, con la web compilada y FastAPI arriba:
   uv run python web/src/features/action/check_nav.py http://127.0.0.1:8000
@@ -25,6 +25,6 @@ with sync_playwright() as p:
         page.get_by_label("Disease inspector").wait_for(timeout=10000)
         page.get_by_label("Phenotype matching").wait_for(timeout=10000)
         assert page.get_by_role("button", name=f"Inspect {disease}").count() == 1, "hallazgos o ranking perdidos"
-    assert page.url.rstrip("/") == base.rstrip("/"), f"la URL cambió: {page.url}"
+    assert page.url.rstrip("/") == base.rstrip("/"), f"la URL cambio: {page.url}"
     assert len(posts) >= 2, posts
-print("NAV_PASS: inspect → next steps (POST /api/action-plan) → back to evidence, curado y sin ruta, sin recargar")
+print("NAV_PASS: inspect -> next steps (POST /api/action-plan) -> back to evidence, curado y sin ruta, sin recargar")
