@@ -74,3 +74,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791079649 | HACK-014 | 014 BLOCKED solamente encriterioshumanos: ensayo/videos/replay ydatos equipo/formularios. Preparacionautorizadacompleta; no envioexterno niaceptacionfinal. | Por qué: hack-demo obliga ensayo humano ybackup grabado; captures exigenfoto+3clips+dobleenvio. GuiaPDF2025 nofechaactual; deadline04Oct2026 07MX (grace0715). Sourcesnapshotpinned parareproducir.
 - 1791080447 | HACK-021 | índice invertido por prefijo; glosario ES y abreviaturas | Por qué: <150 ms y sinónimos
 - 1791080571 | HACK-023 | aristas estructurales con fuente curada | Por qué: nada sin fuente
+- 1791081274 | deadline lease/HACK-013/1791081124 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
