@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/landing/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791093981
-Updated: 1791092181
+Lease-Until: 1791094909
+Updated: 1791093109
 Task-Base: b98fc390505566d12dd05d9b17affa00cc33b9b5
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/57; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/57
 Evidence: smoke PRODUCT_PASS 90cd540; pagina propia, navegacion sin recarga, fuentes
-Events: 5
+Events: 6
 Checkpoints: 0
 Sessions: 3
 Last-Checkpoint: 0
