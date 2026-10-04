@@ -16,8 +16,9 @@ type EdgeResult = { edge: { src: string; dst: string } };
 export const slot = "stage";
 export const order = 0;
 
-const FIT_DELAY_MS = 600;
-const FIT_MS = 700;
+// La cámara arranca con el brillo de las candidatas y termina a los 900 ms, como el resto del paso.
+const FIT_DELAY_MS = 500;
+const FIT_MS = 400;
 
 type Loaded = {
   overview: GraphOverview;
