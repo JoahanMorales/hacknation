@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/search/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791083298
-Updated: 1791081498
+Lease-Until: 1791083351
+Updated: 1791081551
 Task-Base: 78be7f5550b5b7acc073d455cce0fc0d6ad842bb
-Next: overlay con input y lista de resultados; luego navegación por teclado.
+Next: Implementar search, build/lint y Chromium1280 teclado/rutas/estados; publicar PR y pedir revision.
 PR: -
 Evidence: -
-Events: 1
-Checkpoints: 0
+Events: 2
+Checkpoints: 1
 Sessions: 1
-Last-Checkpoint: 0
+Last-Checkpoint: 1791081551
