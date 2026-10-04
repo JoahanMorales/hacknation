@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/search/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791090600
-Updated: 1791088800
+Lease-Until: 1791091244
+Updated: 1791089444
 Task-Base: 78be7f5550b5b7acc073d455cce0fc0d6ad842bb
-Next: qsmoke; informarSHA6b67fef; atender inbox; QA estricta cuando saus corrija guia y pedir revision independiente.
+Next: Verificar combinacion026, crearPRfix, responder productores; esperar guiacorrecta y retomar demo014 al corte00MX.
 PR: -
 Evidence: -

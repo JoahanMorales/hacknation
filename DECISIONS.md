@@ -96,3 +96,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791088352 | deadline lease/HACK-026/1791088349 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791088543 | deadline lease/HACK-029/1791088378 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791088800 | HACK-022 | Mantener PR42 draft hasta ocultar HUD/guia durante resultados; ejecutar smoke producto sobre base vigente. | Por qué: Todos seis tipos/rutas y QA produccion con caso real/negacion PASS; guia abierta aun se traslapa a1280.
+- 1791089444 | HACK-022 | No Ready/done022 con guia traslapada. Revision026: PR43 esta cerrado en6ab; fix4d99 sinPRabierto, preparar PR pequeño y verificar combinacion vigente. | Por qué: El fix de fuentes aprobado debe ser concreto y revisable; rama4d99 tiene solo3archivos de cambio contra main19a.
