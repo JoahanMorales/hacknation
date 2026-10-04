@@ -444,10 +444,10 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Dueño sugerido:** zoe-1
 - **Objetivo:** caja de búsqueda arriba al centro (atajo `/`), resultados agrupados por tipo con el sinónimo que coincidió; cada tipo abre el lugar correcto del grafo.
 - **Rubric:** CRAFT, PP, GQ
-- **Depende de:** Ninguna (usa el contrato de HACK-021; mock etiquetado mientras no esté integrada)
+- **Depende de:** Ninguna
 - **Relacionadas:** HACK-021, HACK-023, HACK-024, HACK-028
 - **Archivos probables:** web/src/features/search/
-- **Contratos consumidos:** `GET /api/search` (HACK-021), web/src/lib/store.ts
+- **Contratos consumidos:** `GET /api/search` (HACK-021; mock etiquetado mientras no esté integrada), web/src/lib/store.ts
 - **Criterios de aceptación:**
   - Enfermedad → `selectedId` (inspector + estrella); síntoma → se añade a `terms`; gen o mecanismo → abre el Pathway Navigator (`step = "pathway"`) de su primera enfermedad; grupo o activo → `step = "action"`.
   - Teclado completo (flechas, Enter, Esc), estados vacío/cargando/error, sin solaparse con otros paneles a 1280×720.
@@ -484,10 +484,10 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Dueño sugerido:** saus-1
 - **Objetivo:** la vista estrella para Maria: el subgrafo tipado alrededor de su enfermedad, con forma o icono por tipo de nodo y la arista codificada por nivel de evidencia (observado sólido, inferido discontinuo, hipótesis punteado, contradictorio en el color de alerta), con leyenda.
 - **Rubric:** GQ, EI, CRAFT
-- **Depende de:** Ninguna (usa el contrato de HACK-023; mock etiquetado mientras no esté integrada)
+- **Depende de:** Ninguna
 - **Relacionadas:** HACK-006, HACK-019, HACK-022, HACK-023
 - **Archivos probables:** web/src/features/pathway/
-- **Contratos consumidos:** `GET /api/pathway/{id}` (HACK-023), store (`step = "pathway"`, `selectedId`, `highlightedEdgeId`)
+- **Contratos consumidos:** `GET /api/pathway/{id}` (HACK-023; mock etiquetado mientras no esté integrada), store (`step = "pathway"`, `selectedId`, `highlightedEdgeId`)
 - **Criterios de aceptación:**
   - Clic en arista → resumen, fuente y nivel; clic en enfermedad relacionada → la convierte en centro; "Next steps" lleva a la acción. Transición desde la constelación (no corte brusco); reduced-motion respetado.
   - Legible a 1280×720 con ~25 nodos; contraejemplo FKRP (serie alélica) visible como tal.
