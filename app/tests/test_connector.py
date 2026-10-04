@@ -39,7 +39,19 @@ def test_shared_investigators_link_unrelated_communities() -> None:
     shared = get(LGMD_R9)["shared_investigators"]
     assert shared, "FKRP y FKTN comparten investigadores financiados en el snapshot"
     assert any(FKTN_DISEASE in s["other_disease_ids"] for s in shared)
-    assert all(LGMD_R9 not in s["other_disease_ids"] and len(s["genes"]) >= 2 for s in shared)
+    for s in shared:
+        assert s["other_genes"] and "FKRP" not in s["other_genes"]
+        assert LGMD_R9 not in s["other_disease_ids"] and "OMIM:613153" not in s["other_disease_ids"]
+
+
+def test_extracted_edges_are_about_the_gene() -> None:
+    body = get(LGMD_R9)
+    assert body["extracted_edges"] and body["context_edges_omitted"] > 0
+    for edge in body["extracted_edges"]:
+        text = f"{edge['subject']} {edge['object']}".lower()
+        assert "fkrp" in text or "fukutin-related" in text or "fukutin related" in text or "dystroglycan" in text
+    keys = [(e["pmid"], e["subject"].lower(), e["relation"], e["object"].lower()) for e in body["extracted_edges"]]
+    assert len(keys) == len(set(keys)), "sin aristas duplicadas"
 
 
 def test_articles_have_pmid_links() -> None:

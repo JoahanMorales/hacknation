@@ -160,9 +160,15 @@ def propose(disease_id: str, partner_id: str | None) -> dict:
         raise NotSupported(f"No curated partner disease for {disease_id}")
     ctx = context(disease_id, partner_id)
     keys = {s["key"] for s in ctx["sources"]}
+    questions = expert_questions(ctx)
     base = {"schema_version": "1.0", "disease_id": disease_id, "partner_disease_id": partner_id,
             "title": f"Proposal: {ctx['from']['name']} × {ctx['to']['name']}",
-            "questions_for_expert": expert_questions(ctx), "sources": ctx["sources"]}
+            "questions_for_expert": questions, "sources": ctx["sources"]}
+
+    def with_question_keys(cited: list[str]) -> list[str]:
+        # Revisión de zoe-1: las preguntas también citan fuentes; ninguna puede perderse en la UI ni al exportar.
+        _, from_questions = clean(" ".join(questions), keys)
+        return cited + [k for k in from_questions if k not in cited]
     reason = None
     if settings.demo_mode or not settings.openai_api_key:
         reason = "DEMO_MODE or no API key"
@@ -170,7 +176,7 @@ def propose(disease_id: str, partner_id: str | None) -> dict:
         try:
             text, cited = clean(_generate(ctx), keys)
             if cited:
-                return {**base, "demo_data": False, "markdown": text, "cited_keys": cited,
+                return {**base, "demo_data": False, "markdown": text, "cited_keys": with_question_keys(cited),
                         "generation_method": f"{MODEL}; citations restricted to supplied sources, unknown keys removed"}
             reason = "model text had no valid citations"
         except OpenAIError as error:
@@ -178,8 +184,8 @@ def propose(disease_id: str, partner_id: str | None) -> dict:
     record = _recorded(disease_id, partner_id)
     if record:
         text, cited = clean(record["markdown"], keys)
-        return {**base, "demo_data": True, "markdown": text, "cited_keys": cited,
+        return {**base, "demo_data": True, "markdown": text, "cited_keys": with_question_keys(cited),
                 "generation_method": f"{record['generation_method']}; recorded ({reason})"}
     text, cited = clean(template(ctx), keys)
-    return {**base, "demo_data": True, "markdown": text, "cited_keys": cited,
+    return {**base, "demo_data": True, "markdown": text, "cited_keys": with_question_keys(cited),
             "generation_method": f"Curated sources assembled without a language model ({reason})"}
