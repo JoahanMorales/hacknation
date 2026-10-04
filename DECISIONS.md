@@ -83,3 +83,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791082718 | HACK-022 | Correr smoke actual; crear PR draft con deuda explicita del toggle Gestures. No marcar done hasta criterio layout completo. | Por qué: 014 sigue con requisitos humanos pendientes;22 avance autorizado y reserva valida. Header/gestures pertenecen a saus y requests548/557 enviados.
 - 1791083249 | deadline lease/HACK-014/1791083099 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791083249 | deadline lease/HACK-023/1791083127 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791083585 | HACK-025 | poda exacta con cota superior; distroglicanopatía por nombre o gen MDDG | Por qué: exacto 100/100 vs exhaustivo; nombres OMIM no cubren DAG1/POMT2 ORPHA
