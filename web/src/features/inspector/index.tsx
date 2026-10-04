@@ -63,7 +63,8 @@ export default function Inspector() {
   const selectedId = useStore((s) => s.selectedId);
   // En la escena de acción la columna derecha es de la acción (brief: "inspector / acción").
   const step = useStore((s) => s.step);
-  if (step === "action") return null;
+  // En "pathway" el navegador ocupa la pantalla: el inspector no debe quedar montado debajo (HACK-031).
+  if (step === "action" || step === "pathway") return null;
   // key: cada estrella monta un panel nuevo, así el estado local se reinicia sin efectos.
   return selectedId ? <InspectorPanel key={selectedId} selectedId={selectedId} /> : null;
 }
