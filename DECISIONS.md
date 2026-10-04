@@ -84,3 +84,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791083249 | deadline lease/HACK-014/1791083099 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791083249 | deadline lease/HACK-023/1791083127 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791083585 | HACK-025 | poda exacta con cota superior; distroglicanopatía por nombre o gen MDDG | Por qué: exacto 100/100 vs exhaustivo; nombres OMIM no cubren DAG1/POMT2 ORPHA
+- 1791084409 | HACK-027 | abstracts sólo en data/raw; snapshot con metadatos públicos | Por qué: no publicar texto con copyright ni datos de contacto
