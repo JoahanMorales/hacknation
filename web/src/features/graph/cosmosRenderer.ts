@@ -26,7 +26,7 @@ export function createCosmosRenderer(container: HTMLElement, events: RendererEve
     // Sólo hay una arista a la vez (la citada): que no se desvanezca por larga.
     linkVisibilityDistanceRange: [1e6, 2e6],
     renderHoveredPointRing: true,
-    hoveredPointRingColor: [0.04, 0.16, 0.29, 0.9],
+    hoveredPointRingColor: [0.93, 0.96, 0.98, 0.9],
     hoveredPointCursor: "pointer",
     fitViewOnInit: true,
     fitViewDelay: 0,
@@ -57,7 +57,7 @@ export function createCosmosRenderer(container: HTMLElement, events: RendererEve
     },
     setLink(pair) {
       graph.setLinks(new Float32Array(pair ?? []));
-      if (pair) graph.setLinkColors(new Float32Array([0.12, 0.44, 0.85, 0.9]));
+      if (pair) graph.setLinkColors(new Float32Array([0.56, 0.77, 0.99, 0.9]));
       graph.render(undefined, 0);
     },
     fitTo(indices, durationMs) {
@@ -65,7 +65,13 @@ export function createCosmosRenderer(container: HTMLElement, events: RendererEve
       else graph.fitView(durationMs, 0.12, false);
     },
     toScreen(index) {
-      spacePositions ??= graph.getPointPositions();
+      // No se guarda una lista vacía o incompleta: antes del primer render cosmos aún no tiene
+      // posiciones, y cachearla dejaba las etiquetas (y el titileo) sin coordenadas para siempre.
+      if (!spacePositions || spacePositions.length <= index * 2 + 1) {
+        const next = graph.getPointPositions();
+        if (next.length <= index * 2 + 1) return null;
+        spacePositions = next;
+      }
       const x = spacePositions[index * 2];
       const y = spacePositions[index * 2 + 1];
       if (x === undefined || Number.isNaN(x)) return null;
