@@ -15,8 +15,8 @@ Task-Base: b98fc390505566d12dd05d9b17affa00cc33b9b5
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/50; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/50
 Evidence: bash scripts/smoke PRODUCT_PASS en b52b15a; LANDING_PASS; 7 checks existentes PASS
-Events: 2
+Events: 3
 Checkpoints: 0
-Sessions: 1
+Sessions: 2
 Last-Checkpoint: 0
 Task-Tip: b52b15aa9b89d2cd9b243b46cc1b37a687bff6cb
