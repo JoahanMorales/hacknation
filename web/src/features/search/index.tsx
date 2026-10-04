@@ -90,6 +90,23 @@ export default function Search() {
     if (open) document.getElementById(optionId(active))?.scrollIntoView({ block: "nearest" });
   });
 
+  useEffect(() => {
+    const footer = document.querySelector("main footer");
+    const field = container.current?.querySelector(".atlas-search-input");
+    const measure = () => {
+      if (!field || !container.current) return;
+      const start = field.getBoundingClientRect().bottom + 10;
+      const end = Math.min(window.innerHeight - 16, footer?.getBoundingClientRect().top ?? window.innerHeight);
+      container.current.style.setProperty("--atlas-search-max-height", `${Math.max(0, end - start - 16)}px`);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    if (footer) observer.observe(footer);
+    if (field) observer.observe(field);
+    window.addEventListener("resize", measure);
+    return () => { observer.disconnect(); window.removeEventListener("resize", measure); };
+  }, [open]);
+
   function change(value: string) {
     currentQuery.current = value;
     setQuery(value);
