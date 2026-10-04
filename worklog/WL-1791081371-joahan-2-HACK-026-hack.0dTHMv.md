@@ -1,13 +1,14 @@
 # worklog/WL-1791081371-joahan-2-HACK-026-hack.0dTHMv.md · HACK-026
 
 ## Resumen vivo
-- Hecho: API+UI propuesta, grabación real, 5 tests, PROPOSAL_PASS; smoke PASS
+- Hecho: pytest test_proposal 5 passed; PROPOSAL_PASS; smoke PRODUCT_PASS; fix de la revisión de zoe-1 en 4d99f56
 - Decisión: preguntas al experto deterministas
 - Por qué: no depender del modelo para lo crítico
 - Falla: -
 - Comandos: uv run pytest -q app/tests/test_proposal.py; check_proposal.py
-- Siguiente: Humano abre PR de feat/hack-026; luego hack done
+- Siguiente: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/43; ejecutar scripts/smoke
 
 ## Historial
 - 1791081371 | CLAIMED | joahan-2 | claim; siguiente: POST /api/proposal con grabación ORPHA:34515
 - 1791081642 | CLAIMED | joahan-2 | checkpoint; siguiente: Humano abre PR de feat/hack-026; luego hack done
+- 1791083591 | REVIEW | joahan-2 | done; PR https://github.com/JoahanMorales/hacknation/pull/43; evidencia: pytest test_proposal 5 passed; PROPOSAL_PASS; smoke PRODUCT_PASS; fix de la revisión de zoe-1 en 4d99f56; reviewer: -
