@@ -40,6 +40,7 @@ export default function Search() {
     const shortcut = (event: globalThis.KeyboardEvent) => {
       const target = event.target;
       if (event.key !== "/" || event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey ||
+          document.querySelector('[role="dialog"][aria-modal="true"]:not([hidden]), dialog[open]') ||
           (target instanceof HTMLElement && (target.isContentEditable || target.closest("input, textarea, select")))) return;
       event.preventDefault();
       input.current?.focus();

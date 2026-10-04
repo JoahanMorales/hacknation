@@ -40,6 +40,16 @@ async def main():
             await page.keyboard.press('/')
             await expect(box).to_be_focused()
             await expect(page.get_by_text('Start with a disease', exact=False)).to_be_visible()
+            await page.evaluate("""() => {
+              const dialog=document.createElement('div'); dialog.id='acceptance-dialog';
+              dialog.setAttribute('role','dialog'); dialog.setAttribute('aria-modal','true');
+              const button=document.createElement('button'); button.textContent='Controlled modal';
+              dialog.append(button); document.body.append(dialog); button.focus();
+            }""")
+            await page.keyboard.press('/')
+            assert not await box.evaluate('element => element === document.activeElement'), 'Do not steal focus from a modal'
+            await page.evaluate("document.getElementById('acceptance-dialog').remove()")
+            await box.focus()
             await page.evaluate("""async () => {
               const {useStore} = await import('/src/lib/store.ts');
               useStore.setState({transcript:'Case preserved', terms:[{hpo_id:'HP:0003236',label:'Elevated CK',present:false}],
@@ -150,6 +160,10 @@ async def main():
             await search('CureLGMD2i')
             await expect(page.locator('.atlas-search-sample')).to_contain_text('Sample case')
             await expect(page.get_by_role('option').first).to_contain_text('CureLGMD2i')
+            await search('FKRP')
+            await expect(page.get_by_role('option').first).to_contain_text('FKRP')
+            await expect(page.get_by_role('group', name='Genes', exact=True)).to_be_visible()
+            assert await page.get_by_role('option').first.locator('.atlas-search-id').inner_text() == 'FKRP'
             await page.unroute('**/api/search?**', missing)
 
             await search('LGMD2I')
@@ -170,7 +184,7 @@ async def main():
             assert popup and popup['x'] >= 0 and popup['x']+popup['width'] <= 1280 and popup['y']+popup['height'] <= 720
             assert not errors, errors
             report = {'six_type_routes': True, 'preserves_case_and_negation': True, 'keyboard': True,
-                      'empty_error_retry_sample': True, 'stale_and_clear': True, 'runtime_errors': errors,
+                      'empty_error_retry_sample': True, 'stale_and_clear': True, 'modal_focus_preserved': True, 'runtime_errors': errors,
                       'cancelled_response_count': len(cancelled_responses),
                       'panel_overlap': panel_overlap, 'gesture_overlap': gesture_overlap, 'viewport': [1280, 720]}
             (output / 'report.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
