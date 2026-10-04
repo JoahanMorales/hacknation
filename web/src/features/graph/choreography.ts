@@ -9,7 +9,7 @@ import type { Frame } from "./types";
 
 const BASE_SIZE = 1.05; // estrellas finas: la galaxia se lee como constelación, no como disco
 const BASE_ALPHA = 0.85;
-const DIM_ALPHA = 0.16;
+const DIM_ALPHA = 0.24; // sobre blanco, lo descartado se ve como contexto, no desaparece
 const DIM_SIZE = 0.8;
 const RANKED_SIZE = 2.2;
 const CANDIDATE_SIZE = 8;
