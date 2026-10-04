@@ -21,9 +21,13 @@ Prepare two tabs before recording: `/` and `/?select=ORPHA:34515&step=action`. T
 |---|---|---|
 | 0-8 s | Show `/`: "Maria needs a route through scattered rare-disease evidence. This map contains 12,867 disease records from our pinned dataset." | Graph quality |
 | 8-22 s | Click **Play sample case** and let it finish. "A published Pompe case becomes reviewable symptom chips. This is our labelled recorded sample; scoring is local." | Evidence integrity, craft |
-| 22-33 s | Click **No** once, wait for the ranking, then **Inspect Pompe disease, late-onset** and **Explain for the family**. "A question refines the match. Every explanation points back to cited evidence; a match is not a diagnosis." | Evidence integrity |
-| 33-45 s | Switch to the preloaded FKRP action tab. "Now we select the curated FKRP cluster for Maria. It shows existing organizations, research assets and connections whose evidence levels remain visible." | Patient progress |
+| 22-36 s | Click **No** once, wait for ranking, then **Inspect Pompe disease, late-onset**, **Explain for the family**, and **Next steps**. "A question refines the match. Cited evidence leads to an existing Pompe registry; a match is not a diagnosis." | Evidence integrity, patient progress |
+| 36-45 s | Switch to the preloaded FKRP action tab. "We explicitly select FKRP for Maria: existing communities, research assets and labelled evidence connections." | Patient progress |
 | 45-55 s | Point to **This week**; expand **Assumptions** if time allows. "Her next action is to ask an existing registry about eligibility and its data. Faster progress is our hypothesis; treatment transfer and a 10x improvement are not proven." | Patient progress, 10x impact |
+
+Preflight the explanation before recording. Peer review #494 reports that live `gpt-6.1-sol` can take 7-12 seconds. In the credential-free/DEMO_MODE route, Pompe uses **curated fallback text**, not a recorded model explanation; the recorded explanation covers the FKRP evidence. Keep the displayed sample badge visible. If choosing the live route, trigger the explanation earlier or allow its full latency in the timed rehearsal; do not force the 60-second edit to imply an instant live response.
+
+If the viewer asks about a small match percentage: "This is a relative match across all disease candidates, not clinical probability. The next question helps distinguish the leading candidates." Read the current UI value only; the published-case evaluation's 3.8% is not guaranteed for a different set of dictated findings.
 
 Optional live substitution: choose **English**, start the microphone, and dictate the exact published sample transcript in `spikes/openai/recorded/transcribe_en.json`. Stop and verify every positive and negated chip. A live call needs the team's server-side key and may cost money; this script does not authorize a new paid call. Recorded sample is the reliable fallback. Spanish live ASR can confuse respiratory wording; the language selector itself is verified.
 
