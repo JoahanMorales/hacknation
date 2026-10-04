@@ -1,9 +1,9 @@
 # STATE
 
 Fase: ejecución
-Actualizado: 1791090182
+Actualizado: 1791090342
 AVAILABLE: -
-CLAIMED: HACK-031 
+CLAIMED: HACK-031 
 BLOCKED: HACK-014 HACK-022 
 REVIEW: HACK-026 HACK-028 HACK-029 HACK-030 
 INTEGRATED: HACK-001 HACK-002 HACK-003 HACK-004 HACK-005 HACK-006 HACK-007 HACK-008 HACK-009 HACK-010 HACK-011 HACK-012 
@@ -16,7 +16,7 @@ HACK-026 | REVIEW | joahan-2 | hasta 1791090986
 HACK-028 | REVIEW | saus-1 | hasta 1791091520
 HACK-029 | REVIEW | saus-1 | hasta 1791091560
 HACK-030 | REVIEW | joahan-2 | hasta 1791089211
-HACK-031 | CLAIMED | cris-1 | hasta 1791091930
+HACK-031 | CLAIMED | cris-1 | hasta 1791092142
 
 Bloqueos: tareas BLOCKED; use status --task ID --summary.
 Decisiones vigentes (últimas 5):
