@@ -4,16 +4,16 @@
 @theme static {
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
-  --color-night: #f3f8f5;
+  --color-night: #eef4f9;
   --color-surface: #ffffff;
-  --color-surface-raised: #e8f2ed;
-  --color-ink: #10302a;
-  --color-muted: #4b6660;
-  --color-line: #b9cec6;
-  --color-accent: #0d7a54;
+  --color-surface-raised: #f4f8fc;
+  --color-ink: #0b2a4a;
+  --color-muted: #5b7189;
+  --color-line: #c3d4e4;
+  --color-accent: #1e6fd9;
   --color-accent-ink: #ffffff;
   --color-glycosylation: #1a7770;
-  --color-lysosomal: #3568b7;
+  --color-lysosomal: #5a4fa3;
   --color-structural: #ab4871;
   --color-membrane: #427730;
   --color-signaling: #955e19;
@@ -22,7 +22,7 @@
   --radius-control: 10px;
   --radius-chip: 999px;
   --shadow-panel:
-    0 10px 30px rgb(16 48 42 / 10%), 0 1px 2px rgb(16 48 42 / 6%);
+    0 10px 30px rgb(11 42 74 / 10%), 0 1px 2px rgb(11 42 74 / 6%);
   --ease-feedback: cubic-bezier(0.16, 1, 0.3, 1);
   --color-alert: #c2410c;
   /* Letra base más grande (petición del humano de Saus): sólo los tamaños pequeños crecen. */
@@ -70,10 +70,10 @@ body {
 }
 .cn-panel {
   min-width: 0;
-  border: 1px solid rgb(16 48 42 / 22%);
+  border: 1px solid rgb(11 42 74 / 22%);
   border-radius: var(--radius-panel);
   background: rgb(255 255 255 / 96%);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(24px) saturate(180%);
   box-shadow: var(--shadow-panel);
 }
 .cn-panel-header {
@@ -124,7 +124,7 @@ body {
 }
 .cn-skeleton span {
   height: 16px;
-  background: #dce9e3;
+  background: #dce9f3;
   border-radius: 3px;
 }
 .cn-skeleton span:nth-child(2) {
@@ -158,15 +158,15 @@ body {
   color: var(--color-accent-ink);
 }
 .cn-button--primary:hover:not(:disabled) {
-  background: #0b7350;
+  background: #1a62c2;
 }
 .cn-button--secondary {
-  border-color: #778c84;
+  border-color: #74899f;
   background: var(--color-surface-raised);
   color: var(--color-ink);
 }
 .cn-button--secondary:hover:not(:disabled) {
-  background: #e3efe9;
+  background: #e6eff8;
 }
 .cn-button--ghost {
   background: transparent;
@@ -178,9 +178,9 @@ body {
 }
 .cn-button:disabled {
   cursor: default;
-  background: #eef5f1;
-  color: #4b6660;
-  border-color: #b9cec6;
+  background: #eef4f9;
+  color: #5b7189;
+  border-color: #c3d4e4;
 }
 .cn-loading-mark {
   width: 12px;
@@ -193,9 +193,9 @@ body {
   display: inline-flex;
   max-width: 100%;
   align-items: center;
-  border: 1px solid #778c84;
+  border: 1px solid #74899f;
   border-radius: var(--radius-chip);
-  background: #eef5f1;
+  background: #eef4f9;
   font-size: 14px;
 }
 .cn-chip-main {
@@ -237,7 +237,7 @@ button.cn-chip-main {
 }
 .cn-chip--negated {
   background: transparent;
-  border-color: #778c84;
+  border-color: #74899f;
   color: var(--color-muted);
 }
 .cn-chip--negated .cn-chip-term {
@@ -272,7 +272,7 @@ button.cn-chip-main {
 }
 .cn-sample {
   color: var(--color-accent);
-  background: rgb(13 122 84 / 5%);
+  background: rgb(30 111 217 / 5%);
 }
 .cn-kbd {
   display: inline-grid;
@@ -280,7 +280,7 @@ button.cn-chip-main {
   min-width: 24px;
   height: 23px;
   padding: 0 5px;
-  border: 1px solid #778c84;
+  border: 1px solid #74899f;
   border-bottom-width: 2px;
   border-radius: 5px;
   font: 10px var(--font-mono);
@@ -320,7 +320,7 @@ button.cn-chip-main {
   position: absolute;
   top: 1px;
   height: 10px;
-  background: rgb(13 122 84 / 25%);
+  background: rgb(30 111 217 / 25%);
   border-inline: 1px solid var(--color-accent);
 }
 .cn-meter-point {
@@ -342,7 +342,7 @@ button.cn-chip-main {
 .cn-kit {
   min-height: 100dvh;
   background:
-    radial-gradient(circle, rgb(16 48 42 / 5%) 0.7px, transparent 1px) 0 0 /
+    radial-gradient(circle, rgb(11 42 74 / 5%) 0.7px, transparent 1px) 0 0 /
       43px 43px,
     var(--color-night);
 }
@@ -356,7 +356,7 @@ button.cn-chip-main {
   display: flex;
   align-items: center;
   gap: 20px;
-  border-bottom: 1px solid rgb(16 48 42 / 18%);
+  border-bottom: 1px solid rgb(11 42 74 / 18%);
 }
 .cn-kit-brand {
   display: inline-flex;
@@ -441,8 +441,8 @@ button.cn-chip-main {
 }
 .cn-kit-states button[aria-pressed="true"] {
   color: var(--color-accent);
-  background: rgb(13 122 84 / 7%);
-  border-color: rgb(13 122 84 / 40%);
+  background: rgb(30 111 217 / 7%);
+  border-color: rgb(30 111 217 / 40%);
 }
 .cn-kit-notice {
   font-size: 13px;
@@ -472,7 +472,7 @@ button.cn-chip-main {
   fill: var(--color-accent);
 }
 .cn-kit-match {
-  border-color: rgb(13 122 84 / 42%);
+  border-color: rgb(30 111 217 / 42%);
 }
 .cn-kit-match h3 {
   margin: 0 0 8px;
@@ -519,7 +519,7 @@ button.cn-chip-main {
   gap: 8px;
   padding-top: 18px;
   margin-top: 20px;
-  border-top: 1px solid rgb(16 48 42 / 18%);
+  border-top: 1px solid rgb(11 42 74 / 18%);
 }
 .cn-kit-caption {
   font-size: 13px;
@@ -550,7 +550,7 @@ button.cn-chip-main {
   gap: 24px;
   margin-top: 28px;
   padding-top: 18px;
-  border-top: 1px solid rgb(16 48 42 / 18%);
+  border-top: 1px solid rgb(11 42 74 / 18%);
   color: var(--color-muted);
   font-size: 13px;
 }

@@ -2,22 +2,22 @@
 
 Design Read: una mesa clínica de exploración, con constelación nocturna, datos precisos y un acento cálido que guía la acción.
 
-VARIANCE 4 / MOTION 4 / DENSITY 5. Producto de una vista para escritorio 1440×900 y 1280×720. Tema claro clínico (blanco con verde) desde la Ola 3, por decisión del humano de Saus aprobada por Joahan; ver sección "Ola 3". CSS nativo para componentes y tokens Tailwind v4; no simular otra biblioteca de diseño.
+VARIANCE 4 / MOTION 4 / DENSITY 5. Producto de una vista para escritorio 1440×900 y 1280×720. Tema claro clínico azul desde la Ola 3 (antes blanco con verde), por decisión del humano de Saus; ver sección "Ola 3". CSS nativo para componentes y tokens Tailwind v4; no simular otra biblioteca de diseño.
 
 ## Paleta y contraste
 
 | Token          | Hex     | Uso                                |
 | -------------- | ------- | ---------------------------------- |
-| night          | #f3f8f5 | Fondo (blanco verdoso)             |
-| surface        | #ffffff | Panel blanco al 96%, blur 12px     |
-| surface-raised | #e8f2ed | Controles                          |
-| ink            | #10302a | Texto principal                    |
-| muted          | #4b6660 | Texto secundario                   |
-| line           | #b9cec6 | Líneas no esenciales               |
-| accent         | #0d7a54 | Único acento de selección y acción |
+| night          | #eef4f9 | Fondo (blanco azulado)             |
+| surface        | #ffffff | Panel blanco al 96%, blur 24px     |
+| surface-raised | #f4f8fc | Controles                          |
+| ink            | #0b2a4a | Texto principal (azul marino)      |
+| muted          | #5b7189 | Texto secundario                   |
+| line           | #c3d4e4 | Líneas no esenciales               |
+| accent         | #1e6fd9 | Único acento de selección y acción |
 | accent-ink     | #ffffff | Texto sobre acento                 |
 | glycosylation  | #1a7770 | Glicosilación                      |
-| lysosomal      | #3568b7 | Lisosomal                          |
+| lysosomal      | #5a4fa3 | Lisosomal (índigo apagado)         |
 | structural     | #ab4871 | Estructura muscular                |
 | membrane       | #427730 | Membrana                           |
 | signaling      | #955e19 | Señalización                       |
@@ -72,15 +72,15 @@ Preguntas hechas por Saus a su humano el 3 oct; respuestas resumidas y qué se h
 
 | # | Pedido del humano | Estado |
 |---|---|---|
-| 1 | Paleta referente al tema médico: blanco con verde (aprobado por Joahan) | Hecho: tokens de theme.css en tema claro; acento verde #0d7a54; semánticos oscurecidos para contraste sobre blanco |
+| 1 | Paleta referente al tema médico: primero blanco con verde (aprobado por Joahan); después azul clínico (#EEF4F9→#DCE9F3, #1E6FD9, #0B2A4A, #8EC5FC, #5ED3D0, #5B7189) | Hecho: tokens de theme.css en azul; acento #1e6fd9; lisosomal pasa a índigo para no confundirse con el acento; AA ≥4.5 en todos los textos |
 | 2 | Landing page antes del atlas | En curso como HACK-029 (tarea pedida al planificador) |
 | 3 | Los paneles tapan el atlas | Hecho: botón "Focus atlas" (modo presentación) oculta los paneles; Pathway (HACK-024) ocupa la pantalla entera |
 | 4 | No se entiende por dónde empezar | Hecho: recorrido de 5 pasos en la cabecera (Symptoms → Matches → Evidence → Pathway → Next steps); la búsqueda (HACK-022) ocupa el centro y la landing (HACK-029) añade el CTA |
-| 5 | Galaxias como discos llenos | Hecho: estrellas más finas (1.05 px base) y tonos medios que evitan el verde del acento |
+| 5 | Galaxias como discos llenos | Hecho: estrellas más finas (1.05 px base) y tonos medios que evitan el azul del acento |
 | 6 | Demasiado texto / letra pequeña | Hecho: --text-xs 13 px y --text-sm 15 px; componentes de 10–13 px suben a 13–14 px |
 | 7 | Guía de gestos (zoom y desplazarse de lado a lado) | Hecho en HACK-013: guía "How to use gestures", puño y mover = arrastrar, pellizco = zoom |
-| 8 | Más wow visual en el atlas y pantallas menos cargadas | Parcial: Focus atlas, estrellas finas, candidatas más grandes en verde; el resto de paneles es de sus tareas |
+| 8 | Más wow visual en el atlas y pantallas menos cargadas | Parcial: Focus atlas, estrellas finas, candidatas más grandes en azul; el resto de paneles es de sus tareas |
 | 9 | Pathway como protagonista, modo presentación, transiciones, tipografía | Hecho: Pathway a pantalla completa (HACK-024), Focus atlas, entrada de paneles con fundido de 240 ms (sin animación con reduced motion), escala tipográfica mayor |
 
-Reglas nuevas: usar siempre tokens (bg-surface, text-ink, text-muted, border-line, bg-accent, fill-*/stroke-*), nunca hex fijos; el verde es sólo para acción, selección y candidatas; --color-alert (#c2410c) para "contradicted".
+Reglas nuevas: usar siempre tokens (bg-surface, text-ink, text-muted, border-line, bg-accent, fill-*/stroke-*), nunca hex fijos; el azul #1e6fd9 es sólo para acción, selección y candidatas (celeste #8EC5FC y turquesa #5ED3D0 sólo decorativos, nunca texto sobre claro); --color-alert (#c2410c) para "contradicted".
 Pendiente fuera de este alcance (pedido a sus dueños): colores fijos en diagnosis/style.css y en la onda del dictado; nombres cortos de enfermedades y foco por teclado en el Pathway (notas de joahan-1).

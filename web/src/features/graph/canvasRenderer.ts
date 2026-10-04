@@ -81,7 +81,7 @@ export function createCanvasRenderer(container: HTMLElement, events: RendererEve
       const mx = (ax + bx) / 2 - (by - ay) * 0.15;
       const my = (ay + by) / 2 + (bx - ax) * 0.15;
       ctx.globalAlpha = 0.9;
-      ctx.strokeStyle = "rgb(13 122 84)";
+      ctx.strokeStyle = "rgb(30 111 217)";
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(ax, ay);
