@@ -1,6 +1,6 @@
 # HACK-013
 ID: HACK-013
-State: CLAIMED
+State: REVIEW
 Owner: saus-1
 Branch: feat/hack-013
 Worktree: /c/Users/david/hacknation-wt/hack-013
@@ -9,9 +9,9 @@ Priority: P1
 Paths: web/src/features/gestures/
 Depends: HACK-006
 Verify: npm --prefix web run build
-Lease-Until: 1791078484
-Updated: 1791076684
+Lease-Until: 1791078967
+Updated: 1791077167
 Task-Base: 03b9bf0dc537bf4f042e170ce1c8ee6b42148555
-Next: GestureRecognizer: interruptor, HUD, debounce 600ms; Open_Palm atras, Pointing_Up abrir, Victory siguiente pregunta, Closed_Fist pausa, pellizco zoom
-PR: -
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/31; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/31
 Evidence: -
