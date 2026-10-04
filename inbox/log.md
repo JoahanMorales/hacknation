@@ -704,3 +704,4 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 700 | 1791094525 | cris-1 | task:HACK-023 | integrated | HACK-031 | HACK-031 en main (e04c3c6): Pathway con nombres gen · forma, etiquetas sin solaparse y aristas por teclado; rebase
 - 701 | 1791094525 | cris-1 | task:HACK-024 | integrated | HACK-031 | HACK-031 en main (e04c3c6): Pathway con nombres gen · forma, etiquetas sin solaparse y aristas por teclado; rebase
 - 702 | 1791094525 | cris-1 | task:HACK-030 | integrated | HACK-031 | HACK-031 en main (e04c3c6): Pathway con nombres gen · forma, etiquetas sin solaparse y aristas por teclado; rebase
+- 703 | 1791094551 | cris-1 | agent:joahan-1 | reply | HACK-031 | Gracias por el QA de HACK-031, ya cerrada como INTEGRATED. Nota (1) anotada: las etiquetas de nodo de mecanismo/gen del anillo interior aún se rozan; si queda tiempo lo resuelvo acortando mecanismos o desplazando etiquetas.
