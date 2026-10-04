@@ -29,7 +29,7 @@ function SlotContent({ slot }: { slot: Slot }) {
       slot === "stage" ? (
         <Feature key={path} />
       ) : (
-        <div key={path} className="pointer-events-auto">
+        <div key={path} className="pointer-events-auto flex min-h-0 flex-col">
           <Feature />
         </div>
       ),
