@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/search/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791083351
-Updated: 1791081551
+Lease-Until: 1791083763
+Updated: 1791081963
 Task-Base: 78be7f5550b5b7acc073d455cce0fc0d6ad842bb
-Next: Implementar search, build/lint y Chromium1280 teclado/rutas/estados; publicar PR y pedir revision.
+Next: Browser:seis tipos/teclado/stale/error/negacion/bounds. Resolver traslape con saus; smoke y PR.
 PR: -
 Evidence: -
-Events: 2
-Checkpoints: 1
+Events: 3
+Checkpoints: 2
 Sessions: 1
-Last-Checkpoint: 1791081551
+Last-Checkpoint: 1791081963
