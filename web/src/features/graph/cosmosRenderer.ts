@@ -26,7 +26,7 @@ export function createCosmosRenderer(container: HTMLElement, events: RendererEve
     // Sólo hay una arista a la vez (la citada): que no se desvanezca por larga.
     linkVisibilityDistanceRange: [1e6, 2e6],
     renderHoveredPointRing: true,
-    hoveredPointRingColor: [0.04, 0.16, 0.29, 0.9],
+    hoveredPointRingColor: [0.93, 0.96, 0.98, 0.9],
     hoveredPointCursor: "pointer",
     fitViewOnInit: true,
     fitViewDelay: 0,
@@ -57,7 +57,7 @@ export function createCosmosRenderer(container: HTMLElement, events: RendererEve
     },
     setLink(pair) {
       graph.setLinks(new Float32Array(pair ?? []));
-      if (pair) graph.setLinkColors(new Float32Array([0.12, 0.44, 0.85, 0.9]));
+      if (pair) graph.setLinkColors(new Float32Array([0.56, 0.77, 0.99, 0.9]));
       graph.render(undefined, 0);
     },
     fitTo(indices, durationMs) {
