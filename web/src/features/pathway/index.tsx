@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { api } from "../../lib/api";
 import { useStore } from "../../lib/store";
 import { Button, EvidenceBadge, type EvidenceLevel } from "../../ui";
-import { EDGE_LABEL, type Evidence, layout, NOTABLE_EDGES, type NodeType, type Pathway, type PathwayEdge, type Placed } from "./layout";
+import { displayName, EDGE_LABEL, type Evidence, genesByDisease, layout, NOTABLE_EDGES, type NodeType, type Pathway, type PathwayEdge, type Placed } from "./layout";
 
 // HACK-024 · Pathway Navigator: el subgrafo tipado alrededor de la enfermedad (GET /api/pathway/{id},
 // HACK-023) ocupa la pantalla. Forma por tipo de nodo, trazo por nivel de evidencia, clic en arista =
@@ -62,6 +62,7 @@ function Navigator({ initialCenter }: { initialCenter: string }) {
   const [notice, setNotice] = useState<string | null>(null);
   const [selection, setSelection] = useState<Selection>(null);
   const [hovered, setHovered] = useState<string | null>(null);
+  const [focusedEdge, setFocusedEdge] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
@@ -92,6 +93,9 @@ function Navigator({ initialCenter }: { initialCenter: string }) {
   const placed = useMemo(() => (data ? layout(data) : []), [data]);
   const byId = useMemo(() => new Map(placed.map((node) => [node.id, node])), [placed]);
   const centerNode = byId.get(data?.center ?? "");
+  const genes = useMemo(() => (data ? genesByDisease(data) : new Map<string, string>()), [data]);
+  const names = useMemo(() => new Map(placed.map((node) => [node.id, displayName(node, genes)])), [placed, genes]);
+  const labels = useMemo(() => (data ? placeEdgeLabels(data, byId, names) : new Map<string, LabelSpot>()), [data, byId, names]);
 
   const close = () => useStore.getState().setStep("inspector");
   const recenter = (node: Placed) => {
@@ -149,17 +153,34 @@ function Navigator({ initialCenter }: { initialCenter: string }) {
                   const a = byId.get(edge.src);
                   const b = byId.get(edge.dst);
                   if (!a || !b) return null;
-                  const chosen = selection?.kind === "edge" && selection.edge.id === edge.id;
+                  const chosen = (selection?.kind === "edge" && selection.edge.id === edge.id) || focusedEdge === edge.id;
+                  const name = EDGE_LABEL[edge.type] ?? edge.type;
+                  const spot = labels.get(edge.id);
                   const style = STROKE[edge.evidence_level];
                   const path = curve(a, b);
                   return (
-                    <g key={edge.id} className="cursor-pointer" onClick={() => setSelection({ kind: "edge", edge })}>
+                    <g
+                      key={edge.id}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`${name}: ${names.get(edge.src) ?? edge.src} to ${names.get(edge.dst) ?? edge.dst}`}
+                      className="cursor-pointer"
+                      style={{ outline: "none" }}
+                      onClick={() => setSelection({ kind: "edge", edge })}
+                      onKeyDown={(event) => {
+                        if (event.key !== "Enter" && event.key !== " ") return;
+                        event.preventDefault();
+                        setSelection({ kind: "edge", edge });
+                      }}
+                      onFocus={() => setFocusedEdge(edge.id)}
+                      onBlur={() => setFocusedEdge(null)}
+                    >
                       <path d={path} className={`fill-none ${chosen ? "stroke-accent" : style.className}`} strokeWidth={chosen ? 3 : 1.6} strokeDasharray={style.dash} strokeLinecap="round" opacity={isActive(edge) ? 1 : 0.15} />
                       {/* Zona de clic generosa e invisible. */}
                       <path d={path} className="fill-none stroke-transparent" strokeWidth={14}>
-                        <title>{`${EDGE_LABEL[edge.type] ?? edge.type}: ${edge.summary}`}</title>
+                        <title>{`${name}: ${edge.summary}`}</title>
                       </path>
-                      {NOTABLE_EDGES.has(edge.type) && isActive(edge) && <EdgeLabel a={a} b={b} text={EDGE_LABEL[edge.type] ?? edge.type} />}
+                      {spot && (isActive(edge) || chosen) && <EdgeLabel spot={spot} text={name} />}
                     </g>
                   );
                 })}
@@ -179,7 +200,7 @@ function Navigator({ initialCenter }: { initialCenter: string }) {
                   >
                     <g transform="scale(1.4)"><Shape type={node.type} center={node.id === data.center} selected={selection?.kind === "node" && selection.node.id === node.id} /></g>
                     <text y={node.id === data.center ? 48 : 34} textAnchor="middle" className={`select-none ${node.id === data.center ? "fill-ink text-[22px] font-medium" : "fill-ink/85 text-[17px]"}`}>
-                      {short(node.label, node.id === data.center ? 34 : 20)}
+                      {short(names.get(node.id) ?? node.label, node.id === data.center ? 30 : 24)}
                     </text>
                     <title>{`${TYPE_NAME[node.type]}: ${node.label}`}</title>
                   </motion.g>
@@ -194,7 +215,7 @@ function Navigator({ initialCenter }: { initialCenter: string }) {
           <AnimatePresence mode="wait" initial={false}>
             <motion.div key={selection ? (selection.kind === "edge" ? selection.edge.id : selection.node.id) : "empty"} initial={reduced ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? undefined : { opacity: 0 }} transition={{ duration: 0.24, ease: EASE }}>
               {selection?.kind === "edge" && <EdgeCard edge={selection.edge} byId={byId} />}
-              {selection?.kind === "node" && <NodeCard node={selection.node} isCenter={selection.node.id === data?.center} onRecenter={() => recenter(selection.node)} />}
+              {selection?.kind === "node" && <NodeCard node={selection.node} shortName={names.get(selection.node.id)} isCenter={selection.node.id === data?.center} onRecenter={() => recenter(selection.node)} />}
               {!selection && (
                 <div className="flex flex-col gap-3">
                   <h3 className="text-base font-medium text-ink">Read it from the inside out</h3>
@@ -226,19 +247,58 @@ function linked(data: Pathway, a: string, b: string): boolean {
   return data.edges.some((edge) => (edge.src === a && edge.dst === b) || (edge.src === b && edge.dst === a));
 }
 
-function curve(a: Placed, b: Placed): string {
-  const mx = (a.x + b.x) / 2;
-  const my = (a.y + b.y) / 2;
-  // Curva suave hacia fuera del centro: las aristas del mismo anillo no atraviesan el núcleo.
+// Curva suave hacia fuera del centro: las aristas del mismo anillo no atraviesan el núcleo.
+function control(a: Placed, b: Placed): [number, number] {
   const bend = 0.12;
-  return `M${a.x},${a.y} Q${mx - (b.y - a.y) * bend},${my + (b.x - a.x) * bend} ${b.x},${b.y}`;
+  return [(a.x + b.x) / 2 - (b.y - a.y) * bend, (a.y + b.y) / 2 + (b.x - a.x) * bend];
 }
 
-function EdgeLabel({ a, b, text }: { a: Placed; b: Placed; text: string }) {
-  const x = (a.x + b.x) / 2 - (b.y - a.y) * 0.06;
-  const y = (a.y + b.y) / 2 + (b.x - a.x) * 0.06;
+function curve(a: Placed, b: Placed): string {
+  const [cx, cy] = control(a, b);
+  return `M${a.x},${a.y} Q${cx},${cy} ${b.x},${b.y}`;
+}
+
+type LabelSpot = { x: number; y: number };
+type Box = { x: number; y: number; w: number; h: number };
+
+const overlaps = (p: Box, q: Box) => Math.abs(p.x - q.x) * 2 < p.w + q.w && Math.abs(p.y - q.y) * 2 < p.h + q.h;
+const labelBox = (x: number, y: number, text: string): Box => ({ x, y, w: text.length * 8 + 16, h: 22 });
+
+/**
+ * Coloca las etiquetas de arista notables sin pisar nodos, nombres (sobre todo el del centro) ni otras
+ * etiquetas: prueba varios puntos a lo largo de la curva y omite la etiqueta si ninguno cabe (queda el title).
+ */
+function placeEdgeLabels(data: Pathway, byId: Map<string, Placed>, names: Map<string, string>): Map<string, LabelSpot> {
+  const taken: Box[] = [];
+  for (const node of byId.values()) {
+    const isCenter = node.id === data.center;
+    const text = short(names.get(node.id) ?? node.label, isCenter ? 30 : 24);
+    taken.push({ x: node.x, y: node.y, w: isCenter ? 70 : 36, h: isCenter ? 70 : 36 });
+    taken.push({ x: node.x, y: node.y + (isCenter ? 42 : 29), w: text.length * (isCenter ? 12 : 9.5), h: isCenter ? 30 : 24 });
+  }
+  const spots = new Map<string, LabelSpot>();
+  for (const edge of data.edges) {
+    const a = byId.get(edge.src);
+    const b = byId.get(edge.dst);
+    if (!a || !b || !NOTABLE_EDGES.has(edge.type)) continue;
+    const text = EDGE_LABEL[edge.type] ?? edge.type;
+    const [cx, cy] = control(a, b);
+    for (const t of [0.5, 0.4, 0.6, 0.3, 0.7, 0.22, 0.78]) {
+      const x = (1 - t) ** 2 * a.x + 2 * (1 - t) * t * cx + t ** 2 * b.x;
+      const y = (1 - t) ** 2 * a.y + 2 * (1 - t) * t * cy + t ** 2 * b.y;
+      const box = labelBox(x, y, text);
+      if (taken.some((other) => overlaps(box, other))) continue;
+      taken.push(box);
+      spots.set(edge.id, { x, y });
+      break;
+    }
+  }
+  return spots;
+}
+
+function EdgeLabel({ spot, text }: { spot: LabelSpot; text: string }) {
   return (
-    <g transform={`translate(${x},${y})`} pointerEvents="none">
+    <g transform={`translate(${spot.x},${spot.y})`} pointerEvents="none">
       <rect x={-text.length * 4 - 8} y={-11} width={text.length * 8 + 16} height={22} rx={11} className="fill-surface stroke-line/50" />
       <text y={4} textAnchor="middle" className="fill-ink text-[13px]">{text}</text>
     </g>
@@ -317,12 +377,13 @@ function EdgeCard({ edge, byId }: { edge: PathwayEdge; byId: Map<string, Placed>
   );
 }
 
-function NodeCard({ node, isCenter, onRecenter }: { node: Placed; isCenter: boolean; onRecenter: () => void }) {
+function NodeCard({ node, shortName, isCenter, onRecenter }: { node: Placed; shortName?: string; isCenter: boolean; onRecenter: () => void }) {
   const details = Object.entries(node.meta).filter(([key, value]) => key !== "center" && (typeof value === "string" || typeof value === "number"));
   return (
     <div className="flex flex-col gap-3">
       <p className="font-mono text-xs text-muted">{TYPE_NAME[node.type]}</p>
       <h3 className="text-base font-medium text-ink">{node.label}</h3>
+      {shortName && shortName !== node.label && <p className="text-sm text-ink">{shortName}</p>}
       <p className="font-mono text-xs text-muted">{node.id}</p>
       {details.map(([key, value]) => (
         <p key={key} className="text-sm text-muted">
