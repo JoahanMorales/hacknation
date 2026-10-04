@@ -239,16 +239,19 @@ function ThisWeek({ plan }: { plan: ActionPlan }) {
         </h3>
         <p className="text-xl leading-snug font-medium">{plan.this_week.action}</p>
       </div>
-      {plan.this_week.url && (
-        <a
-          href={plan.this_week.url}
-          target="_blank"
-          rel="noreferrer"
-          className="cn-button cn-button--primary self-start"
-        >
-          Open <ArrowSquareOut size={18} aria-hidden="true" />
-        </a>
-      )}
+      <div className="flex flex-wrap items-center gap-2">
+        {plan.this_week.url && (
+          <a href={plan.this_week.url} target="_blank" rel="noreferrer" className="cn-button cn-button--primary">
+            Open <ArrowSquareOut size={18} aria-hidden="true" />
+          </a>
+        )}
+        {/* HACK-026: borrador de propuesta con fuentes para llevar a la comunidad socia. */}
+        {plan.supported && (
+          <Button variant="secondary" onClick={() => useStore.getState().setProposalFor(plan.disease_id)}>
+            Draft a proposal
+          </Button>
+        )}
+      </div>
     </section>
   );
 }
