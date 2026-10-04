@@ -9,14 +9,14 @@ Priority: P0
 Paths: web/src/features/dictation/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791076336
-Updated: 1791074536
+Lease-Until: 1791076764
+Updated: 1791074964
 Task-Base: 3716a312a1175a66b0d562eee39ef5d8333c12e5
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/24; ejecutar scripts/smoke
+Next: Leer inbox. Approve017 d3: done --integrated d1909207fc5ec70864edc10648fcc8e2a48dec40. Saus termina006/PR25; integrar nav. Tras006017INTEGRATED reclamar014 y mover borrador .cache/demo-script-draft.md al scope; smoke clean y ensayo final. No repetir65/tour sin cambio nuevo.
 PR: https://github.com/JoahanMorales/hacknation/pull/24
 Evidence: PRODUCT_PASS65tests+Ruff+lint+build; DICTATION_PASS1280/1440 sharedYes/chip/Clear, allcontrolsreachable, keyboard/reduced, sample retry/API503, lateextractClear and controlledWebRTCcleanup. Same treef4ef9a1=d3ea277; combined graph406 QA also green. Real microphone unverified.
-Events: 8
-Checkpoints: 3
+Events: 9
+Checkpoints: 4
 Sessions: 3
-Last-Checkpoint: 1791074340
+Last-Checkpoint: 1791074964
 Task-Tip: d3ea27716bed1044d1245fb8e9ce44d5e21b205f
