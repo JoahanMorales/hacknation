@@ -1,12 +1,12 @@
 # worklog/WL-1791068749-joahan-1-HACK-019-hack.KPeFn2.md · HACK-019
 
 ## Resumen vivo
-- Hecho: fix review zoe-1: explain 503 sin citas falsas; INSPECTOR_PASS; smoke PRODUCT_PASS; merge humano PR #22 (f6e0566)
+- Hecho: approve cris-1; merge humano PR #22
 - Decisión: ?select=ID para demo; resumen sin repetir gen/mecanismo
 - Por qué: aún no hay clic en estrella (HACK-006)
 - Falla: -
 - Comandos: npm --prefix web run build; bash scripts/smoke
-- Siguiente: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/22; ejecutar scripts/smoke
+- Siguiente: Integrada en main: f6e0566c4739652bba5e5875001727a0f4e2c32b; reclamar siguiente P0
 
 ## Historial
 - 1791068749 | CLAIMED | joahan-1 | claim; siguiente: Panel inspector con node.json y edge.json
@@ -16,3 +16,4 @@
 - 1791071696 | REVIEW | joahan-1 | heartbeat; lease hasta 1791073496
 - 1791071703 | REVIEW | joahan-1 | done; PR https://github.com/JoahanMorales/hacknation/pull/22; evidencia: fix review zoe-1: explain 503 sin citas falsas; INSPECTOR_PASS; smoke PRODUCT_PASS; merge humano PR #22 (f6e0566); reviewer: -
 - 1791072683 | REVIEW | cris-1 | review; approve; SHA 43b78c72d4e38088a4ea8cab9d71f103ad87fffd; revisor cris-1
+- 1791073102 | INTEGRATED | joahan-1 | done; PR https://github.com/JoahanMorales/hacknation/pull/22; evidencia: approve cris-1; merge humano PR #22; reviewer: cris-1
