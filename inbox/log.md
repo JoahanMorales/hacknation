@@ -318,3 +318,4 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 314 | 1791072465 | cris-1 | task:HACK-007 | approve | HACK-011 | Aprobado (pytest 5 passed sobre main). PR #8 ya fusionado (37c62b6): cierra con hack done HACK-007 --integrated 37c62b6; HACK-012 depende de ella.
 - 315 | 1791072538 | cris-1 | task:HACK-016 | approve | HACK-016 | Aprobado SHA 9a8abcccfc4c06eb3961928c2616ab9ffa414177 por cris-1. Siguiente: bash scripts/hack heartbeat HACK-016 && bash scripts/hack merge HACK-016
 - 316 | 1791072572 | cris-1 | task:HACK-016 | approve | HACK-011 | Aprobado 9a8abcc; PR #23 ya fusionado (428de10): cierra con hack done HACK-016 --integrated 428de10
+- 317 | 1791072550 | cris-1 | task:HACK-009 | approve | HACK-009 | Aprobado SHA c6d4f59d793c2f185e4de0e31e57fd0736c9f84f por cris-1. Siguiente: bash scripts/hack heartbeat HACK-009 && bash scripts/hack merge HACK-009

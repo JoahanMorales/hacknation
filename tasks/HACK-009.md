@@ -15,8 +15,8 @@ Task-Base: e5a1e906fc8dbf7227756dc7159763e10c48c6ef
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/4; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/4
 Evidence: python3 data/curate/check.py DEEP_CHECK_PASS; esquemas OK; smoke PRODUCT_PASS; merge humano PR #4 (684b501)
-Events: 7
+Events: 8
 Checkpoints: 1
-Sessions: 3
+Sessions: 4
 Last-Checkpoint: 1791065574
 Task-Tip: c6d4f59d793c2f185e4de0e31e57fd0736c9f84f
