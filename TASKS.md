@@ -614,3 +614,23 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Cómo verificar:** uv run pytest -q app/tests/test_pathway.py
 - **Siguiente paso:** leer el top-k de `app/services/similar.py` dentro de `pathway.build`.
 - **Riesgos o decisiones pendientes:** no saturar el navigator: máximo 6 vecinos.
+
+## HACK-031 · Pathway: pulido de legibilidad para el jurado
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 40 min
+- **Área:** frontend
+- **Dueño sugerido:** saus-1
+- **Objetivo:** que el atlas se lea de un vistazo en la demo: cada enfermedad distinguible, etiquetas que no se pisan, aristas accesibles por teclado.
+- **Rubric:** CRAFT, GQ
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-024, HACK-030
+- **Archivos probables:** web/src/features/pathway/
+- **Contratos consumidos:** `GET /api/pathway/{id}` (HACK-023/030)
+- **Criterios de aceptación:**
+  - Las seis "Muscular dystrophy-…" se distinguen (gen + forma corta, p. ej. "FKTN · LGMD C4"); etiquetas de arista sin solaparse con la del centro; `phenotype_similarity` rotulada "Shared phenotype".
+  - Aristas enfocables (role=button, tabIndex, Enter) y el inspector no queda montado debajo en `step = "pathway"`; checks de Chromium existentes verdes.
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** nombre corto desde gen del nodo vecino + sinónimo curado.
+- **Riesgos o decisiones pendientes:** Ninguno
