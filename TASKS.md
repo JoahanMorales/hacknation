@@ -674,3 +674,23 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Cómo verificar:** npm --prefix web run build
 - **Siguiente paso:** cambiar el arranque de check_nav a "Play sample case".
 - **Riesgos o decisiones pendientes:** la búsqueda depende de HACK-022; sin ella el journey arranca desde `?select=`.
+
+## HACK-034 · Paneles de dictado y diagnóstico minimalistas + gestos (pedido del humano de Saus)
+
+- **Tipo:** design
+- **Prioridad:** P0
+- **Estimación:** 45 min
+- **Área:** frontend, diseño
+- **Dueño sugerido:** saus-1 (aceptado por Joahan: "acepta todo lo que pida Saus")
+- **Objetivo:** rediseño minimalista y claro de los paneles de dictado y diagnóstico sobre el atlas oscuro, sin perder información; absorbe lo pendiente de HACK-032 (aviso "not a diagnosis" dentro del viewport y checks al shell nuevo) y el arreglo de gestos (liberar el arrastre al apagar).
+- **Rubric:** CRAFT
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-017, HACK-018, HACK-028, HACK-032, HACK-013
+- **Archivos probables:** web/src/features/dictation/, web/src/features/diagnosis/, web/src/features/gestures/
+- **Contratos consumidos:** web/src/theme.css y DESIGN.md (HACK-028), store
+- **Criterios de aceptación:**
+  - Mismos datos visibles que hoy (chips presentes/negados, medidores con rango, drivers, siguiente pregunta, aviso "Phenotype match · not a diagnosis" dentro del viewport a 1280×720 y 1440×900); AA en tema oscuro.
+  - DICTATION_PASS y DIAGNOSIS_PASS verdes; `stop()` de gestos libera el arrastre (endPan).
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** preguntar al humano de Saus qué sobra en cada panel.
+- **Riesgos o decisiones pendientes:** grabación de la demo: congelar en cuanto los checks estén verdes.
