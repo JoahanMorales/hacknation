@@ -38,8 +38,10 @@ export default function Gestures() {
   const streamRef = useRef<MediaStream | null>(null);
   const frameRef = useRef(0);
   const pausedRef = useRef(false);
+  const runRef = useRef(0); // cada apagado invalida el arranque en curso
 
   const stop = useCallback(() => {
+    runRef.current++;
     cancelAnimationFrame(frameRef.current);
     streamRef.current?.getTracks().forEach((track) => track.stop());
     streamRef.current = null;
@@ -49,19 +51,22 @@ export default function Gestures() {
   }, []);
 
   const start = useCallback(async () => {
+    const run = ++runRef.current;
     setStatus("loading");
     setMessage(null);
+    // La cámara se registra en cuanto se concede: si el modelo falla, se cancela o se desmonta,
+    // stop() la apaga aunque la otra promesa termine después.
+    const camera = navigator.mediaDevices
+      .getUserMedia({ video: { width: 640, height: 480, facingMode: "user" } })
+      .then((stream) => {
+        if (run === runRef.current) streamRef.current = stream;
+        else stream.getTracks().forEach((track) => track.stop());
+        return stream;
+      });
     try {
-      const [recognizer, stream] = await Promise.all([
-        loadRecognizer(),
-        navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480, facingMode: "user" } }),
-      ]);
+      const [recognizer, stream] = await Promise.all([loadRecognizer(), camera]);
       const video = videoRef.current;
-      if (!video) {
-        stream.getTracks().forEach((track) => track.stop());
-        return;
-      }
-      streamRef.current = stream;
+      if (run !== runRef.current || !video) return;
       video.srcObject = stream;
       await video.play();
       setStatus("on");
@@ -121,6 +126,7 @@ export default function Gestures() {
       };
       frameRef.current = requestAnimationFrame(loop);
     } catch (error) {
+      if (run !== runRef.current) return; // apagado a mitad del arranque: stop() ya limpió
       stop();
       setStatus("error");
       setMessage(
@@ -147,9 +153,12 @@ export default function Gestures() {
 
   const label = ACTIONS.find((a) => a.gesture === gesture)?.label ?? (gesture === PAUSE_GESTURE ? "Fist · pause" : null);
 
+  // Columna central de arriba: no tapa los paneles laterales (inspector, dictado). Sólo el botón y el
+  // HUD reciben clics; el hueco entre ellos los deja pasar.
   return (
-    <div className="pointer-events-auto fixed right-6 top-14 z-20 flex flex-col items-end gap-2">
+    <div className="pointer-events-none fixed left-1/2 top-5 z-20 flex -translate-x-1/2 flex-col items-center gap-2">
       <Button
+        className="pointer-events-auto"
         variant={status === "on" ? "primary" : "secondary"}
         onClick={toggle}
         loading={status === "loading"}
@@ -163,7 +172,7 @@ export default function Gestures() {
       <video ref={videoRef} muted playsInline className="hidden" />
 
       {status === "on" && (
-        <div className="cn-panel flex items-center gap-3 p-3" role="status" aria-live="polite">
+        <div className="cn-panel pointer-events-auto flex items-center gap-3 p-3" role="status" aria-live="polite">
           <HandHud hand={hand} progress={progress} active={!paused && label !== null} />
           <div className="w-40">
             <p className="font-mono text-xs text-ink">{paused ? "Paused" : (label ?? (hand ? "Hand detected" : "Show your hand"))}</p>
@@ -172,7 +181,7 @@ export default function Gestures() {
         </div>
       )}
       {status === "error" && message && (
-        <p role="status" className="cn-panel max-w-56 px-3 py-2 text-xs text-ink">
+        <p role="status" className="cn-panel pointer-events-auto max-w-56 px-3 py-2 text-xs text-ink">
           {message}
         </p>
       )}
