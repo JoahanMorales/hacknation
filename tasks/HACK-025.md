@@ -9,13 +9,13 @@ Priority: P0
 Paths: data/similarity.py, app/fixtures/similarity/, app/routers/similar.py, app/services/similar.py, app/tests/test_similar.py, docs/similarity.md
 Depends: Ninguna
 Verify: python3 data/similarity.py --check
-Lease-Until: 1791084150
-Updated: 1791082350
+Lease-Until: 1791084814
+Updated: 1791083014
 Task-Base: 84e81ae353f5007c09be257ec32c5f7c3e50cff7
 Next: Esperar build, correr tests, ruff, smoke y PR
 PR: -
 Evidence: -
-Events: 4
+Events: 5
 Checkpoints: 1
 Sessions: 1
 Last-Checkpoint: 1791082350
