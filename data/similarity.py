@@ -189,7 +189,8 @@ def write_doc(result: dict, ev: dict) -> None:
         "",
         (f"**{ev['hits']} de {len(ev['top'])}** vecinos son distroglicanopatías, frente a **{ev['expected']:.2f}** "
          f"esperadas por azar ({ev['dg_total']} distroglicanopatías en {len(result['neighbors']):,} enfermedades; "
-         f"p hipergeométrica = {ev['p_value']:.1e})."),
+         f"P(X ≥ {ev['hits']}) hipergeométrica = {ev['p_value']:.1e}, sacando a LGMD R9 de la urna: "
+         f"N = {len(result['neighbors']) - 1:,}, K = {ev['dg_total'] - 1})."),
         "",
         "| # | Vecino | Similitud | ¿Distroglicanopatía? |",
         "|---|---|---|---|",
@@ -208,6 +209,9 @@ def write_doc(result: dict, ev: dict) -> None:
         "## Límites",
         "",
         "- Las anotaciones son de la literatura y desiguales: enfermedades poco descritas tienen vecinos menos fiables.",
+        ("- Subtipos hermanos (p. ej. las MDDG de OMIM) suelen anotarse desde las mismas fuentes y series clínicas, "
+         "lo que infla su similitud mutua: el agrupamiento del cluster es esperable y no prueba por sí solo un "
+         "mecanismo común."),
         "- Frecuencias no se usan en la similitud (sólo presencia); la ausencia no anotada no es ausencia real.",
         "",
     ]
