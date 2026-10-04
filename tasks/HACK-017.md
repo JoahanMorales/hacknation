@@ -1,6 +1,6 @@
 # HACK-017
 ID: HACK-017
-State: REVIEW
+State: INTEGRATED
 Owner: zoe-1
 Branch: feat/hack-017-zoe
 Worktree: /c/Users/zm180/OneDrive/Desktop/hacknation-wt/hack-017-zoe
@@ -9,14 +9,17 @@ Priority: P0
 Paths: web/src/features/dictation/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791079107
-Updated: 1791077307
+Lease-Until: 0
+Updated: 1791077924
 Task-Base: 3716a312a1175a66b0d562eee39ef5d8333c12e5
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/32; ejecutar scripts/smoke
+Next: Integrada en main: ee957e9a0846a5d6de9f0efd0660e66f21e213b7; reclamar siguiente P0
 PR: https://github.com/JoahanMorales/hacknation/pull/32
-Evidence: Follow-up idioma bef19ec72310c9fee726ea400d8f0957593ed9a2: solo2files dictation, live ENES seleccionado vsenforzado, sampleEN preservado. PRODUCT_PASS127s67tests+Ruff+lint+build+secret275; DICTATION_PASSmerged37s1280/1440 controlledWebRTCsegment->backend ENES5chips y selectorlock/stop; regresionesYes/negacion/Clear/cleanup/retry. FULL_TOUR_PASSnormal1280sobrebef13.81saction14.11sback realAPI/E07/action y findings6preserved, runtime0. Branchclean y servidoresQA detenidos. Requiere nuevoapprove, viejo d3 ya no acredita bef.
-Events: 17
+Evidence: PR32bef19ec integradoee957e9; approve vigente joahan-1 registrado +478: lint/build/DICTATION_PASS, ENLIVE5chips y ESlanguagees/negacionesreales conTTS; ASRSpanishconfundioespiratoria conocido. PRODUCT_PASS67/Ruff/lint/build/secret275, DICTATION2res/controlENES5chips, FULL_TOUR14.11s/runtime0 sobrebef. SelectorLiveENES+sampleEN, rootcodeclean y servidorQA cerrado.
+Events: 18
 Checkpoints: 7
 Sessions: 5
 Last-Checkpoint: 1791076951
 Task-Tip: bef19ec72310c9fee726ea400d8f0957593ed9a2
+Integration-Proof: ancestry
+Merge-Commit: ee957e9a0846a5d6de9f0efd0660e66f21e213b7
+Reviewer: joahan-1
