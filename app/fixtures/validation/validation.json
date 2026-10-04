@@ -1,0 +1,2244 @@
+{
+ "schema_version": "1.0",
+ "demo_data": false,
+ "sources": [
+  {
+   "name": "phenopacket-store",
+   "url": "https://github.com/monarch-initiative/phenopacket-store/releases/download/0.1.27/all_phenopackets.zip",
+   "version": "0.1.27"
+  }
+ ],
+ "method": "Retrospective validation on published cases, not a clinical trial. Each case's published HPO terms (excluded = absent) run through the production scorer; rank of the published diagnosis.",
+ "seed": 7668832,
+ "cases_in_store": 10377,
+ "skipped": {
+  "diagnosis outside the 12,867-disease graph": 29
+ },
+ "cohorts": {
+  "gaa": {
+   "n": 10,
+   "top1": 0.6,
+   "top3": 0.6,
+   "top10": 0.6
+  },
+  "sample": {
+   "n": 200,
+   "top1": 0.415,
+   "top3": 0.465,
+   "top10": 0.51
+  },
+  "all": {
+   "n": 210,
+   "top1": 0.4238,
+   "top3": 0.4714,
+   "top10": 0.5143
+  }
+ },
+ "unsupported_threshold": {
+  "rule": "unsupported if fewer than 3 known terms or top-1 pct below the recommended cut",
+  "recommended_top1_pct": 10,
+  "min_terms": 3,
+  "fewer_terms": {
+   "n": 5,
+   "top1": 0.0,
+   "top3": 0.0,
+   "top10": 0.0
+  },
+  "table": [
+   {
+    "top1_pct_below": 1,
+    "below": {
+     "n": 13,
+     "top1": 0.0,
+     "top3": 0.0,
+     "top10": 0.0
+    },
+    "above": {
+     "n": 197,
+     "top1": 0.4518,
+     "top3": 0.5025,
+     "top10": 0.5482
+    }
+   },
+   {
+    "top1_pct_below": 5,
+    "below": {
+     "n": 31,
+     "top1": 0.0968,
+     "top3": 0.0968,
+     "top10": 0.0968
+    },
+    "above": {
+     "n": 179,
+     "top1": 0.4804,
+     "top3": 0.5363,
+     "top10": 0.5866
+    }
+   },
+   {
+    "top1_pct_below": 10,
+    "below": {
+     "n": 45,
+     "top1": 0.1333,
+     "top3": 0.1556,
+     "top10": 0.1556
+    },
+    "above": {
+     "n": 165,
+     "top1": 0.503,
+     "top3": 0.5576,
+     "top10": 0.6121
+    }
+   },
+   {
+    "top1_pct_below": 20,
+    "below": {
+     "n": 65,
+     "top1": 0.1231,
+     "top3": 0.1692,
+     "top10": 0.1846
+    },
+    "above": {
+     "n": 145,
+     "top1": 0.5586,
+     "top3": 0.6069,
+     "top10": 0.6621
+    }
+   },
+   {
+    "top1_pct_below": 30,
+    "below": {
+     "n": 82,
+     "top1": 0.1463,
+     "top3": 0.1829,
+     "top10": 0.2195
+    },
+    "above": {
+     "n": 128,
+     "top1": 0.6016,
+     "top3": 0.6562,
+     "top10": 0.7031
+    }
+   },
+   {
+    "top1_pct_below": 50,
+    "below": {
+     "n": 119,
+     "top1": 0.2269,
+     "top3": 0.2605,
+     "top10": 0.3025
+    },
+    "above": {
+     "n": 91,
+     "top1": 0.6813,
+     "top3": 0.7473,
+     "top10": 0.7912
+    }
+   }
+  ]
+ },
+ "gaa_cases": [
+  {
+   "id": "PMID_16917947_11",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621314",
+   "top1_pct": 66.7627
+  },
+  {
+   "id": "PMID_16917947_13",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 3,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621314",
+   "top1_pct": 48.9779
+  },
+  {
+   "id": "PMID_16917947_18",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 1,
+   "terms_unknown": 0,
+   "rank": 110,
+   "top1_id": "OMIM:106100",
+   "top1_pct": 0.1628
+  },
+  {
+   "id": "PMID_16917947_19",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 2,
+   "terms_unknown": 0,
+   "rank": 18,
+   "top1_id": "OMIM:268200",
+   "top1_pct": 1.6528
+  },
+  {
+   "id": "PMID_16917947_2",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621314",
+   "top1_pct": 54.4884
+  },
+  {
+   "id": "PMID_16917947_29",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 4,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621314",
+   "top1_pct": 26.3778
+  },
+  {
+   "id": "PMID_16917947_3",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 3,
+   "terms_unknown": 0,
+   "rank": 13,
+   "top1_id": "OMIM:222748",
+   "top1_pct": 2.1055
+  },
+  {
+   "id": "PMID_16917947_35",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 4,
+   "terms_unknown": 0,
+   "rank": 57,
+   "top1_id": "OMIM:222748",
+   "top1_pct": 2.2082
+  },
+  {
+   "id": "PMID_16917947_8",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621314",
+   "top1_pct": 62.1936
+  },
+  {
+   "id": "PMID_7668832_Father",
+   "cohort": "GAA",
+   "disease_id": "OMIM:621314",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621314",
+   "top1_pct": 3.7627
+  }
+ ],
+ "sample_cases": [
+  {
+   "id": "PMID_39978342_P26",
+   "cohort": "PPP2R5C",
+   "disease_id": "OMIM:621185",
+   "terms_used": 67,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621185",
+   "top1_pct": 53.9865
+  },
+  {
+   "id": "PMID_37943620_patient_595",
+   "cohort": "TMTC4",
+   "disease_id": "OMIM:620714",
+   "terms_used": 1,
+   "terms_unknown": 0,
+   "rank": 265,
+   "top1_id": "OMIM:103500",
+   "top1_pct": 0.0667
+  },
+  {
+   "id": "PMID_24443441_P_5",
+   "cohort": "KLF1",
+   "disease_id": "OMIM:620969",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620969",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_28940506_Family_17_Individual_23",
+   "cohort": "FBXL4",
+   "disease_id": "OMIM:615471",
+   "terms_used": 43,
+   "terms_unknown": 0,
+   "rank": 357,
+   "top1_id": "OMIM:616878",
+   "top1_pct": 35.6472
+  },
+  {
+   "id": "PMID_12750403_66_year_old_woman",
+   "cohort": "HCN4",
+   "disease_id": "OMIM:163800",
+   "terms_used": 3,
+   "terms_unknown": 0,
+   "rank": 3,
+   "top1_id": "OMIM:181350",
+   "top1_pct": 9.0375
+  },
+  {
+   "id": "PMID_37342957_Patient_3",
+   "cohort": "DOCK11",
+   "disease_id": "OMIM:301109",
+   "terms_used": 27,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:301109",
+   "top1_pct": 99.9243
+  },
+  {
+   "id": "PMID_25477417_F9_1",
+   "cohort": "CLDN16",
+   "disease_id": "OMIM:248250",
+   "terms_used": 19,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:248250",
+   "top1_pct": 45.974
+  },
+  {
+   "id": "PMID_24769157_II_2",
+   "cohort": "ZFPM2",
+   "disease_id": "OMIM:610187",
+   "terms_used": 3,
+   "terms_unknown": 0,
+   "rank": 73,
+   "top1_id": "OMIM:301044",
+   "top1_pct": 0.6126
+  },
+  {
+   "id": "PMID_36446582_Parenti2021_P16",
+   "cohort": "ANKRD11",
+   "disease_id": "OMIM:148050",
+   "terms_used": 22,
+   "terms_unknown": 0,
+   "rank": 12586,
+   "top1_id": "ORPHA:251014",
+   "top1_pct": 39.9837
+  },
+  {
+   "id": "PMID_31337854_Patient_31",
+   "cohort": "NIPBL",
+   "disease_id": "OMIM:122470",
+   "terms_used": 41,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:122470",
+   "top1_pct": 99.9996
+  },
+  {
+   "id": "PMID_30859559_Patient_O1409410",
+   "cohort": "LZTR1",
+   "disease_id": "OMIM:605275",
+   "terms_used": 67,
+   "terms_unknown": 0,
+   "rank": 643,
+   "top1_id": "ORPHA:3243",
+   "top1_pct": 24.7798
+  },
+  {
+   "id": "PMID_36195757_Proband_4",
+   "cohort": "KCNK3",
+   "disease_id": "OMIM:621402",
+   "terms_used": 26,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621402",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_37063705_F2_1",
+   "cohort": "LAMB1",
+   "disease_id": "OMIM:621424",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621424",
+   "top1_pct": 24.2451
+  },
+  {
+   "id": "PMID_36074901_Patient_17",
+   "cohort": "ATP6V0C",
+   "disease_id": "OMIM:620465",
+   "terms_used": 33,
+   "terms_unknown": 0,
+   "rank": 12705,
+   "top1_id": "OMIM:619091",
+   "top1_pct": 2.4158
+  },
+  {
+   "id": "PMID_41014130_proband",
+   "cohort": "DMRT2",
+   "disease_id": "OMIM:621523",
+   "terms_used": 28,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621523",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_35618278_X",
+   "cohort": "SOX17",
+   "disease_id": "OMIM:621248",
+   "terms_used": 8,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621248",
+   "top1_pct": 85.4677
+  },
+  {
+   "id": "PMID_18412284_Patient_II_6",
+   "cohort": "PRPF3",
+   "disease_id": "OMIM:601414",
+   "terms_used": 6,
+   "terms_unknown": 0,
+   "rank": 4375,
+   "top1_id": "OMIM:613731",
+   "top1_pct": 7.5612
+  },
+  {
+   "id": "PMID_39315527_Family_13_Sheffer_et_al_V_4",
+   "cohort": "INPP4A",
+   "disease_id": "OMIM:621354",
+   "terms_used": 35,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621354",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_37843397_Patient_UM52",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:151660",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:151660",
+   "top1_pct": 99.9826
+  },
+  {
+   "id": "PMID_33708862_Family_1_IV_2",
+   "cohort": "LIM2",
+   "disease_id": "OMIM:615277",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:615277",
+   "top1_pct": 6.4
+  },
+  {
+   "id": "PMID_31782611_PT14",
+   "cohort": "POGZ",
+   "disease_id": "OMIM:616364",
+   "terms_used": 8,
+   "terms_unknown": 0,
+   "rank": 4,
+   "top1_id": "ORPHA:79325",
+   "top1_pct": 38.9045
+  },
+  {
+   "id": "PMID_37075751_Individual_7",
+   "cohort": "POLR1A",
+   "disease_id": "OMIM:616462",
+   "terms_used": 40,
+   "terms_unknown": 0,
+   "rank": 12867,
+   "top1_id": "ORPHA:1662",
+   "top1_pct": 16.4616
+  },
+  {
+   "id": "PMID_36595822_Case_presentation",
+   "cohort": "PAX4",
+   "disease_id": "OMIM:612225",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:612225",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_25868664_Family_17_Case_17",
+   "cohort": "FBXL4",
+   "disease_id": "OMIM:615471",
+   "terms_used": 24,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:615471",
+   "top1_pct": 98.5949
+  },
+  {
+   "id": "PMID_31021519_individual_SATB2_91",
+   "cohort": "SATB2",
+   "disease_id": "OMIM:612313",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 74,
+   "top1_id": "OMIM:621220",
+   "top1_pct": 16.0134
+  },
+  {
+   "id": "PMID_21683322_AD_Family_21",
+   "cohort": "FBN1",
+   "disease_id": "OMIM:102370",
+   "terms_used": 20,
+   "terms_unknown": 0,
+   "rank": 1959,
+   "top1_id": "ORPHA:1979",
+   "top1_pct": 98.2601
+  },
+  {
+   "id": "PMID_37843397_Patient_1_4",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:151660",
+   "terms_used": 13,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:151660",
+   "top1_pct": 94.7035
+  },
+  {
+   "id": "PMID_36522252_Individual_1",
+   "cohort": "TBCK",
+   "disease_id": "OMIM:616900",
+   "terms_used": 33,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:616900",
+   "top1_pct": 99.9503
+  },
+  {
+   "id": "PMID_34890546_M1629_Mayo_III_1",
+   "cohort": "IFT140",
+   "disease_id": "OMIM:621164",
+   "terms_used": 8,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621164",
+   "top1_pct": 32.5103
+  },
+  {
+   "id": "PMID_35190816_STX_EG0699P",
+   "cohort": "STXBP1",
+   "disease_id": "OMIM:612164",
+   "terms_used": 12,
+   "terms_unknown": 0,
+   "rank": 1266,
+   "top1_id": "OMIM:614388",
+   "top1_pct": 14.1882
+  },
+  {
+   "id": "PMID_32433956_patient",
+   "cohort": "MAU2",
+   "disease_id": "OMIM:621570",
+   "terms_used": 33,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621570",
+   "top1_pct": 99.7316
+  },
+  {
+   "id": "PMID_31021519_262560_from_Bengani_et_al",
+   "cohort": "SATB2",
+   "disease_id": "OMIM:612313",
+   "terms_used": 7,
+   "terms_unknown": 0,
+   "rank": 11488,
+   "top1_id": "OMIM:211380",
+   "top1_pct": 1.5494
+  },
+  {
+   "id": "PMID_29290338_Family_UG_R004_individual_RS",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 24,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:162200",
+   "top1_pct": 41.8409
+  },
+  {
+   "id": "PMID_29755943_Family_2_IV_1",
+   "cohort": "TBX5",
+   "disease_id": "OMIM:142900",
+   "terms_used": 11,
+   "terms_unknown": 0,
+   "rank": 12386,
+   "top1_id": "OMIM:190605",
+   "top1_pct": 0.6166
+  },
+  {
+   "id": "PMID_38118446_F4_I_6",
+   "cohort": "GTPBP2",
+   "disease_id": "OMIM:617988",
+   "terms_used": 13,
+   "terms_unknown": 0,
+   "rank": 2,
+   "top1_id": "OMIM:620888",
+   "top1_pct": 86.4334
+  },
+  {
+   "id": "PMID_9714438_Park_p279",
+   "cohort": "FBN2",
+   "disease_id": "OMIM:121050",
+   "terms_used": 17,
+   "terms_unknown": 0,
+   "rank": 70,
+   "top1_id": "ORPHA:96334",
+   "top1_pct": 8.6187
+  },
+  {
+   "id": "PMID_38858457_F3_individual_8",
+   "cohort": "RAB32",
+   "disease_id": "OMIM:620923",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 52,
+   "top1_id": "OMIM:621431",
+   "top1_pct": 5.3167
+  },
+  {
+   "id": "PMID_29122497_29122497_P2",
+   "cohort": "ISCA2",
+   "disease_id": "OMIM:616370",
+   "terms_used": 8,
+   "terms_unknown": 0,
+   "rank": 110,
+   "top1_id": "ORPHA:356961",
+   "top1_pct": 62.8939
+  },
+  {
+   "id": "PMID_30612693_Individual_7",
+   "cohort": "MAPK8IP3",
+   "disease_id": "OMIM:618443",
+   "terms_used": 53,
+   "terms_unknown": 0,
+   "rank": 11717,
+   "top1_id": "OMIM:621435",
+   "top1_pct": 0.7183
+  },
+  {
+   "id": "PMID_29283439_Patient_126_2",
+   "cohort": "TBCK",
+   "disease_id": "OMIM:616900",
+   "terms_used": 26,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:616900",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_38413582_Family_14_individual_II_1",
+   "cohort": "SNUPN",
+   "disease_id": "OMIM:620793",
+   "terms_used": 24,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620793",
+   "top1_pct": 98.8014
+  },
+  {
+   "id": "PMID_36189931_6",
+   "cohort": "COL3A1",
+   "disease_id": "OMIM:130050",
+   "terms_used": 21,
+   "terms_unknown": 0,
+   "rank": 12858,
+   "top1_id": "ORPHA:2671",
+   "top1_pct": 36.9296
+  },
+  {
+   "id": "PMID_40065010_individual_V_24",
+   "cohort": "EMD",
+   "disease_id": "OMIM:301163",
+   "terms_used": 12,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:301163",
+   "top1_pct": 98.6149
+  },
+  {
+   "id": "PMID_38054405_Family_2_individual_P3",
+   "cohort": "SLC4A10",
+   "disease_id": "OMIM:620746",
+   "terms_used": 25,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620746",
+   "top1_pct": 89.7701
+  },
+  {
+   "id": "PMID_31021519_SATB2_49_from_Zarate_et_al_2018a",
+   "cohort": "SATB2",
+   "disease_id": "OMIM:612313",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 170,
+   "top1_id": "ORPHA:513456",
+   "top1_pct": 20.8427
+  },
+  {
+   "id": "PMID_12789647_K11_III_2",
+   "cohort": "TBX5",
+   "disease_id": "OMIM:142900",
+   "terms_used": 15,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:142900",
+   "top1_pct": 6.634
+  },
+  {
+   "id": "PMID_21358634_Family_4",
+   "cohort": "TGFBR1",
+   "disease_id": "OMIM:132800",
+   "terms_used": 6,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:132800",
+   "top1_pct": 1.0435
+  },
+  {
+   "id": "PMID_39753129_Family_10_II_5",
+   "cohort": "CIROZ",
+   "disease_id": "OMIM:621080",
+   "terms_used": 32,
+   "terms_unknown": 0,
+   "rank": 2,
+   "top1_id": "OMIM:619657",
+   "top1_pct": 12.8904
+  },
+  {
+   "id": "PMID_36446582_Kutkowska_Kazmierczak2021_P7",
+   "cohort": "ANKRD11",
+   "disease_id": "OMIM:148050",
+   "terms_used": 6,
+   "terms_unknown": 0,
+   "rank": 89,
+   "top1_id": "OMIM:300868",
+   "top1_pct": 15.5376
+  },
+  {
+   "id": "PMID_37843278_proband_II_1",
+   "cohort": "RBBP7",
+   "disease_id": "OMIM:301137",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:301137",
+   "top1_pct": 70.3006
+  },
+  {
+   "id": "PMID_36446582_Sirmaci2011_P4_previously_published_Brancati_2004",
+   "cohort": "ANKRD11",
+   "disease_id": "OMIM:148050",
+   "terms_used": 11,
+   "terms_unknown": 0,
+   "rank": 2,
+   "top1_id": "OMIM:618505",
+   "top1_pct": 89.4776
+  },
+  {
+   "id": "PMID_35190816_STX_G3_P28",
+   "cohort": "STXBP1",
+   "disease_id": "OMIM:612164",
+   "terms_used": 2,
+   "terms_unknown": 0,
+   "rank": 6448,
+   "top1_id": "OMIM:300243",
+   "top1_pct": 0.5246
+  },
+  {
+   "id": "PMID_31782611_PT19",
+   "cohort": "POGZ",
+   "disease_id": "OMIM:616364",
+   "terms_used": 7,
+   "terms_unknown": 0,
+   "rank": 13,
+   "top1_id": "OMIM:300868",
+   "top1_pct": 25.9211
+  },
+  {
+   "id": "PMID_18256394_Patient_10",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:176670",
+   "terms_used": 30,
+   "terms_unknown": 0,
+   "rank": 4844,
+   "top1_id": "ORPHA:740",
+   "top1_pct": 80.588
+  },
+  {
+   "id": "PMID_37843397_TR29",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:151660",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:151660",
+   "top1_pct": 99.9768
+  },
+  {
+   "id": "PMID_41125872_Pathogenic_15",
+   "cohort": "UNC13A",
+   "disease_id": "OMIM:621456",
+   "terms_used": 14,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621456",
+   "top1_pct": 35.5697
+  },
+  {
+   "id": "PMID_36446582_Murray_2017_P7_3_3",
+   "cohort": "ANKRD11",
+   "disease_id": "OMIM:148050",
+   "terms_used": 15,
+   "terms_unknown": 0,
+   "rank": 11414,
+   "top1_id": "ORPHA:2994",
+   "top1_pct": 14.5374
+  },
+  {
+   "id": "PMID_23664117_family_F9_subject_P11",
+   "cohort": "B3GALT6",
+   "disease_id": "OMIM:615349",
+   "terms_used": 29,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:615349",
+   "top1_pct": 99.9995
+  },
+  {
+   "id": "PMID_20513137_individual_NF01585_GSM_GSM492695",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 6,
+   "terms_unknown": 0,
+   "rank": 6,
+   "top1_id": "OMIM:613675",
+   "top1_pct": 54.2446
+  },
+  {
+   "id": "PMID_30327448_Patient_1_Family_1",
+   "cohort": "EXOC3L2",
+   "disease_id": "OMIM:620943",
+   "terms_used": 4,
+   "terms_unknown": 0,
+   "rank": 293,
+   "top1_id": "OMIM:175700",
+   "top1_pct": 0.5199
+  },
+  {
+   "id": "PMID_38815585_Individual_21",
+   "cohort": "MSL2",
+   "disease_id": "OMIM:620985",
+   "terms_used": 40,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620985",
+   "top1_pct": 39.4667
+  },
+  {
+   "id": "PMID_40449487_Individual_3",
+   "cohort": "TM2D3",
+   "disease_id": "OMIM:621379",
+   "terms_used": 36,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621379",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_31396399_Subject_2",
+   "cohort": "COQ4",
+   "disease_id": "OMIM:616276",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 1023,
+   "top1_id": "ORPHA:1349",
+   "top1_pct": 12.4967
+  },
+  {
+   "id": "PMID_36996813_Individual_12",
+   "cohort": "ESAM",
+   "disease_id": "OMIM:620371",
+   "terms_used": 11,
+   "terms_unknown": 0,
+   "rank": 12597,
+   "top1_id": "ORPHA:2671",
+   "top1_pct": 10.3815
+  },
+  {
+   "id": "PMID_30825388_Patient_1",
+   "cohort": "NBAS",
+   "disease_id": "OMIM:614800",
+   "terms_used": 22,
+   "terms_unknown": 0,
+   "rank": 271,
+   "top1_id": "ORPHA:356961",
+   "top1_pct": 49.3926
+  },
+  {
+   "id": "PMID_34778490_sister",
+   "cohort": "CNTNAP2",
+   "disease_id": "OMIM:610042",
+   "terms_used": 10,
+   "terms_unknown": 0,
+   "rank": 12180,
+   "top1_id": "OMIM:615829",
+   "top1_pct": 18.7817
+  },
+  {
+   "id": "PMID_33534181_patient",
+   "cohort": "SPINK5",
+   "disease_id": "OMIM:256500",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:256500",
+   "top1_pct": 34.6628
+  },
+  {
+   "id": "PMID_17160901_family_C_individual_6",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 8,
+   "terms_unknown": 0,
+   "rank": 86,
+   "top1_id": "OMIM:600630",
+   "top1_pct": 0.9027
+  },
+  {
+   "id": "PMID_10797416_Belleh_Patient_CF1349",
+   "cohort": "FBN2",
+   "disease_id": "OMIM:121050",
+   "terms_used": 17,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:121050",
+   "top1_pct": 41.1096
+  },
+  {
+   "id": "PMID_37951597_Family_26_Subject_2",
+   "cohort": "ACBD6",
+   "disease_id": "OMIM:620785",
+   "terms_used": 44,
+   "terms_unknown": 0,
+   "rank": 11902,
+   "top1_id": "OMIM:620145",
+   "top1_pct": 7.9792
+  },
+  {
+   "id": "PMID_12789647_K5_III_2",
+   "cohort": "TBX5",
+   "disease_id": "OMIM:142900",
+   "terms_used": 14,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:142900",
+   "top1_pct": 31.9293
+  },
+  {
+   "id": "PMID_37963460_Family_5_individual_II_6",
+   "cohort": "WBP4",
+   "disease_id": "OMIM:620852",
+   "terms_used": 52,
+   "terms_unknown": 0,
+   "rank": 9,
+   "top1_id": "OMIM:620270",
+   "top1_pct": 82.003
+  },
+  {
+   "id": "PMID_35603789_Patient_7_D24N_D24N",
+   "cohort": "GINS3",
+   "disease_id": "OMIM:621512",
+   "terms_used": 24,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621512",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_35190816_STX_29390993_Patient_P1",
+   "cohort": "STXBP1",
+   "disease_id": "OMIM:612164",
+   "terms_used": 4,
+   "terms_unknown": 0,
+   "rank": 448,
+   "top1_id": "OMIM:300868",
+   "top1_pct": 2.9279
+  },
+  {
+   "id": "PMID_37421948_Individual_15",
+   "cohort": "TMEM63B",
+   "disease_id": "OMIM:621250",
+   "terms_used": 10,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621250",
+   "top1_pct": 95.3961
+  },
+  {
+   "id": "PMID_37843397_Patient_UM14",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:151660",
+   "terms_used": 14,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:151660",
+   "top1_pct": 99.9992
+  },
+  {
+   "id": "PMID_10077612_Family_A_V_12",
+   "cohort": "TBX5",
+   "disease_id": "OMIM:142900",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:142900",
+   "top1_pct": 9.5588
+  },
+  {
+   "id": "PMID_34722527_individual_MOL0597_2",
+   "cohort": "RPGRIP1",
+   "disease_id": "OMIM:608194",
+   "terms_used": 13,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:608194",
+   "top1_pct": 37.482
+  },
+  {
+   "id": "PMID_27764983_Family_1_individual_J",
+   "cohort": "UMOD",
+   "disease_id": "OMIM:162000",
+   "terms_used": 6,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:162000",
+   "top1_pct": 88.7767
+  },
+  {
+   "id": "PMID_34890546_M199_Mayo_II_1",
+   "cohort": "IFT140",
+   "disease_id": "OMIM:621164",
+   "terms_used": 7,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621164",
+   "top1_pct": 37.6076
+  },
+  {
+   "id": "PMID_37964426_Individual_N2591T",
+   "cohort": "ITPR1",
+   "disease_id": "OMIM:117360",
+   "terms_used": 7,
+   "terms_unknown": 0,
+   "rank": 6,
+   "top1_id": "OMIM:618863",
+   "top1_pct": 16.028
+  },
+  {
+   "id": "PMID_21358634_Family_11",
+   "cohort": "TGFBR1",
+   "disease_id": "OMIM:132800",
+   "terms_used": 6,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:132800",
+   "top1_pct": 1.0435
+  },
+  {
+   "id": "PMID_20034086_Patient_1",
+   "cohort": "LRP5",
+   "disease_id": "OMIM:259770",
+   "terms_used": 17,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:259770",
+   "top1_pct": 97.9723
+  },
+  {
+   "id": "PMID_26178382_UAB_R7626",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 14,
+   "terms_unknown": 0,
+   "rank": 12433,
+   "top1_id": "ORPHA:638",
+   "top1_pct": 60.9062
+  },
+  {
+   "id": "PMID_37054711_Family_10_Subject_13",
+   "cohort": "INTS11",
+   "disease_id": "OMIM:620428",
+   "terms_used": 30,
+   "terms_unknown": 0,
+   "rank": 12867,
+   "top1_id": "OMIM:312870",
+   "top1_pct": 45.3914
+  },
+  {
+   "id": "PMID_37843397_Patient_5_2",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:151660",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:151660",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_37962958_Individual_38",
+   "cohort": "U2AF2",
+   "disease_id": "OMIM:620535",
+   "terms_used": 142,
+   "terms_unknown": 0,
+   "rank": 10660,
+   "top1_id": "OMIM:619091",
+   "top1_pct": 38.7084
+  },
+  {
+   "id": "PMID_32591345_NAD_07_individual_IV_4",
+   "cohort": "GNPNAT1",
+   "disease_id": "OMIM:619598",
+   "terms_used": 20,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:619598",
+   "top1_pct": 99.9969
+  },
+  {
+   "id": "PMID_35190816_STX_G3_P2",
+   "cohort": "STXBP1",
+   "disease_id": "OMIM:612164",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 1846,
+   "top1_id": "OMIM:300243",
+   "top1_pct": 2.0844
+  },
+  {
+   "id": "PMID_31021519_Patient_2_from_Kikuiri_et_al",
+   "cohort": "SATB2",
+   "disease_id": "OMIM:612313",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 14,
+   "top1_id": "OMIM:180849",
+   "top1_pct": 9.4845
+  },
+  {
+   "id": "PMID_31021519_Patient_1_from_Zarate_et_al_2015",
+   "cohort": "SATB2",
+   "disease_id": "OMIM:612313",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 12223,
+   "top1_id": "ORPHA:576283",
+   "top1_pct": 39.5017
+  },
+  {
+   "id": "PMID_35904126_Proband_7",
+   "cohort": "TAF4",
+   "disease_id": "OMIM:620450",
+   "terms_used": 54,
+   "terms_unknown": 0,
+   "rank": 12867,
+   "top1_id": "ORPHA:171929",
+   "top1_pct": 30.8255
+  },
+  {
+   "id": "PMID_38413582_Family_11_individual_II_1",
+   "cohort": "SNUPN",
+   "disease_id": "OMIM:620793",
+   "terms_used": 17,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620793",
+   "top1_pct": 40.2534
+  },
+  {
+   "id": "PMID_37761890_36",
+   "cohort": "PPP2R1A",
+   "disease_id": "OMIM:616362",
+   "terms_used": 25,
+   "terms_unknown": 0,
+   "rank": 42,
+   "top1_id": "OMIM:616222",
+   "top1_pct": 32.6297
+  },
+  {
+   "id": "PMID_38815585_Individual_20",
+   "cohort": "MSL2",
+   "disease_id": "OMIM:620985",
+   "terms_used": 36,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620985",
+   "top1_pct": 99.9373
+  },
+  {
+   "id": "PMID_36446582_KBG31A",
+   "cohort": "ANKRD11",
+   "disease_id": "OMIM:148050",
+   "terms_used": 36,
+   "terms_unknown": 0,
+   "rank": 470,
+   "top1_id": "ORPHA:3455",
+   "top1_pct": 41.3208
+  },
+  {
+   "id": "PMID_12161596_Patient_1",
+   "cohort": "PTPN11",
+   "disease_id": "OMIM:151100",
+   "terms_used": 17,
+   "terms_unknown": 0,
+   "rank": 12045,
+   "top1_id": "ORPHA:567",
+   "top1_pct": 31.9452
+  },
+  {
+   "id": "PMID_32853638_Patient_1",
+   "cohort": "SOCS1",
+   "disease_id": "OMIM:619375",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 1435,
+   "top1_id": "OMIM:619802",
+   "top1_pct": 89.4488
+  },
+  {
+   "id": "PMID_30580808_Patient_6",
+   "cohort": "SMARCC2",
+   "disease_id": "OMIM:618362",
+   "terms_used": 57,
+   "terms_unknown": 0,
+   "rank": 168,
+   "top1_id": "ORPHA:354",
+   "top1_pct": 99.8004
+  },
+  {
+   "id": "PMID_18351627_Patient_I_2",
+   "cohort": "TBX5",
+   "disease_id": "OMIM:142900",
+   "terms_used": 13,
+   "terms_unknown": 0,
+   "rank": 48,
+   "top1_id": "ORPHA:99947",
+   "top1_pct": 10.6507
+  },
+  {
+   "id": "PMID_38614108_TUN1_III_4",
+   "cohort": "RAB32",
+   "disease_id": "OMIM:620923",
+   "terms_used": 3,
+   "terms_unknown": 0,
+   "rank": 29,
+   "top1_id": "OMIM:616840",
+   "top1_pct": 3.1926
+  },
+  {
+   "id": "PMID_38626355_OP_4474_II1",
+   "cohort": "WFDC2",
+   "disease_id": "OMIM:620984",
+   "terms_used": 7,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620984",
+   "top1_pct": 84.5103
+  },
+  {
+   "id": "PMID_35150594_K_IV_7",
+   "cohort": "SPTAN1",
+   "disease_id": "OMIM:620538",
+   "terms_used": 12,
+   "terms_unknown": 0,
+   "rank": 33,
+   "top1_id": "OMIM:620606",
+   "top1_pct": 3.6645
+  },
+  {
+   "id": "PMID_32725632_patient_25",
+   "cohort": "KCNH5",
+   "disease_id": "OMIM:620537",
+   "terms_used": 13,
+   "terms_unknown": 0,
+   "rank": 12049,
+   "top1_id": "ORPHA:904",
+   "top1_pct": 11.7135
+  },
+  {
+   "id": "PMID_41133935_Individual_5",
+   "cohort": "BAIAP2",
+   "disease_id": "OMIM:621468",
+   "terms_used": 19,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621468",
+   "top1_pct": 90.6716
+  },
+  {
+   "id": "PMID_38096951_Family_1_III_12",
+   "cohort": "APOA4",
+   "disease_id": "OMIM:621106",
+   "terms_used": 13,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621106",
+   "top1_pct": 99.7358
+  },
+  {
+   "id": "PMID_16917909_603_1",
+   "cohort": "TBX5",
+   "disease_id": "OMIM:142900",
+   "terms_used": 11,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:142900",
+   "top1_pct": 45.143
+  },
+  {
+   "id": "PMID_17160901_family_C_individual_8",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 8,
+   "terms_unknown": 0,
+   "rank": 86,
+   "top1_id": "OMIM:600630",
+   "top1_pct": 0.9027
+  },
+  {
+   "id": "PMID_17160901_family_A_individual_1",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 8,
+   "terms_unknown": 0,
+   "rank": 10,
+   "top1_id": "OMIM:619097",
+   "top1_pct": 20.5906
+  },
+  {
+   "id": "PMID_22541558_individual_D_1",
+   "cohort": "SF3B4",
+   "disease_id": "OMIM:154400",
+   "terms_used": 18,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:154400",
+   "top1_pct": 98.3242
+  },
+  {
+   "id": "PMID_18930476_individual_II1",
+   "cohort": "CAV3",
+   "disease_id": "OMIM:614321",
+   "terms_used": 6,
+   "terms_unknown": 0,
+   "rank": 43,
+   "top1_id": "OMIM:621078",
+   "top1_pct": 39.5378
+  },
+  {
+   "id": "PMID_35190816_STX_P_28",
+   "cohort": "STXBP1",
+   "disease_id": "OMIM:612164",
+   "terms_used": 10,
+   "terms_unknown": 0,
+   "rank": 3809,
+   "top1_id": "OMIM:618174",
+   "top1_pct": 21.3052
+  },
+  {
+   "id": "PMID_38977784_FM1_II_1",
+   "cohort": "NAV3",
+   "disease_id": "OMIM:621182",
+   "terms_used": 19,
+   "terms_unknown": 0,
+   "rank": 9417,
+   "top1_id": "OMIM:304700",
+   "top1_pct": 1.8818
+  },
+  {
+   "id": "PMID_31898322_case_21_sister_of_19",
+   "cohort": "TGFB3",
+   "disease_id": "OMIM:615582",
+   "terms_used": 46,
+   "terms_unknown": 0,
+   "rank": 12864,
+   "top1_id": "ORPHA:536545",
+   "top1_pct": 5.2627
+  },
+  {
+   "id": "PMID_39753129_Family_1_II_3",
+   "cohort": "CIROZ",
+   "disease_id": "OMIM:621080",
+   "terms_used": 29,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621080",
+   "top1_pct": 72.7334
+  },
+  {
+   "id": "PMID_24665001_Patient_2",
+   "cohort": "FBN1",
+   "disease_id": "OMIM:616914",
+   "terms_used": 20,
+   "terms_unknown": 0,
+   "rank": 12791,
+   "top1_id": "OMIM:619472",
+   "top1_pct": 68.4233
+  },
+  {
+   "id": "PMID_40166812_F10_II_1",
+   "cohort": "RAB3A",
+   "disease_id": "OMIM:621535",
+   "terms_used": 2,
+   "terms_unknown": 0,
+   "rank": 138,
+   "top1_id": "OMIM:164500",
+   "top1_pct": 0.3813
+  },
+  {
+   "id": "PMID_35979925_Case_1",
+   "cohort": "CAPRIN1",
+   "disease_id": "OMIM:620782",
+   "terms_used": 34,
+   "terms_unknown": 0,
+   "rank": 24,
+   "top1_id": "OMIM:301076",
+   "top1_pct": 5.9387
+  },
+  {
+   "id": "PMID_39419027_P28",
+   "cohort": "MARK2",
+   "disease_id": "OMIM:621285",
+   "terms_used": 36,
+   "terms_unknown": 0,
+   "rank": 14,
+   "top1_id": "OMIM:615516",
+   "top1_pct": 7.9357
+  },
+  {
+   "id": "PMID_29290338_Family_UAB_R4444_individual_PrS",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 7,
+   "terms_unknown": 0,
+   "rank": 23,
+   "top1_id": "OMIM:182150",
+   "top1_pct": 9.1331
+  },
+  {
+   "id": "PMID_22508010_Case_report",
+   "cohort": "MPV17",
+   "disease_id": "OMIM:256810",
+   "terms_used": 21,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:256810",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_29050398_P1",
+   "cohort": "SPTAN1",
+   "disease_id": "OMIM:620540",
+   "terms_used": 21,
+   "terms_unknown": 0,
+   "rank": 13,
+   "top1_id": "ORPHA:140927",
+   "top1_pct": 0.896
+  },
+  {
+   "id": "PMID_29469822_Family_5_II_1_2",
+   "cohort": "LZTR1",
+   "disease_id": "OMIM:605275",
+   "terms_used": 30,
+   "terms_unknown": 0,
+   "rank": 50,
+   "top1_id": "OMIM:215140",
+   "top1_pct": 75.8806
+  },
+  {
+   "id": "PMID_26286438_Patient_1",
+   "cohort": "NBAS",
+   "disease_id": "OMIM:614800",
+   "terms_used": 77,
+   "terms_unknown": 0,
+   "rank": 76,
+   "top1_id": "ORPHA:294975",
+   "top1_pct": 66.8961
+  },
+  {
+   "id": "PMID_41125872_Pathogenic_19",
+   "cohort": "UNC13A",
+   "disease_id": "OMIM:621456",
+   "terms_used": 17,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621456",
+   "top1_pct": 41.0799
+  },
+  {
+   "id": "PMID_25511235_B2_1",
+   "cohort": "HMGCS2",
+   "disease_id": "OMIM:605911",
+   "terms_used": 4,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:605911",
+   "top1_pct": 22.8998
+  },
+  {
+   "id": "PMID_30368668_NS659",
+   "cohort": "LZTR1",
+   "disease_id": "OMIM:605275",
+   "terms_used": 34,
+   "terms_unknown": 0,
+   "rank": 22,
+   "top1_id": "OMIM:616202",
+   "top1_pct": 68.4018
+  },
+  {
+   "id": "PMID_36307226_Proband_9",
+   "cohort": "KCNH5",
+   "disease_id": "OMIM:620537",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 12571,
+   "top1_id": "OMIM:617904",
+   "top1_pct": 18.1944
+  },
+  {
+   "id": "PMID_39978342_P28",
+   "cohort": "PPP2R5C",
+   "disease_id": "OMIM:621185",
+   "terms_used": 45,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621185",
+   "top1_pct": 63.0896
+  },
+  {
+   "id": "PMID_36214804_P8",
+   "cohort": "KLHL20",
+   "disease_id": "OMIM:621390",
+   "terms_used": 46,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621390",
+   "top1_pct": 99.7373
+  },
+  {
+   "id": "PMID_38325380_Patient_15",
+   "cohort": "ZFX",
+   "disease_id": "OMIM:301118",
+   "terms_used": 172,
+   "terms_unknown": 0,
+   "rank": 12367,
+   "top1_id": "ORPHA:254525",
+   "top1_pct": 29.8669
+  },
+  {
+   "id": "PMID_10939567_Patient_Spo70",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:181350",
+   "terms_used": 32,
+   "terms_unknown": 0,
+   "rank": 9,
+   "top1_id": "ORPHA:800",
+   "top1_pct": 34.6665
+  },
+  {
+   "id": "PMID_36189931_30",
+   "cohort": "COL3A1",
+   "disease_id": "OMIM:130050",
+   "terms_used": 12,
+   "terms_unknown": 0,
+   "rank": 12862,
+   "top1_id": "OMIM:612394",
+   "top1_pct": 32.5251
+  },
+  {
+   "id": "PMID_31000419_III_10",
+   "cohort": "MEIOB",
+   "disease_id": "OMIM:620686",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620686",
+   "top1_pct": 67.4803
+  },
+  {
+   "id": "PMID_31021519_individual_SATB2_81",
+   "cohort": "SATB2",
+   "disease_id": "OMIM:612313",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 20,
+   "top1_id": "ORPHA:576283",
+   "top1_pct": 39.9596
+  },
+  {
+   "id": "PMID_31213928_patient",
+   "cohort": "ASAH1",
+   "disease_id": "OMIM:159950",
+   "terms_used": 12,
+   "terms_unknown": 0,
+   "rank": 358,
+   "top1_id": "ORPHA:238606",
+   "top1_pct": 43.958
+  },
+  {
+   "id": "PMID_25802881_P87",
+   "cohort": "GNAS",
+   "disease_id": "OMIM:103580",
+   "terms_used": 7,
+   "terms_unknown": 0,
+   "rank": 12856,
+   "top1_id": "ORPHA:773",
+   "top1_pct": 23.9432
+  },
+  {
+   "id": "PMID_36553465_P11",
+   "cohort": "SLC45A2",
+   "disease_id": "OMIM:606574",
+   "terms_used": 10,
+   "terms_unknown": 0,
+   "rank": 1297,
+   "top1_id": "ORPHA:894",
+   "top1_pct": 72.4396
+  },
+  {
+   "id": "PMID_28927821_subject_II_3",
+   "cohort": "IKZF1",
+   "disease_id": "OMIM:616873",
+   "terms_used": 14,
+   "terms_unknown": 0,
+   "rank": 12455,
+   "top1_id": "ORPHA:356961",
+   "top1_pct": 20.4857
+  },
+  {
+   "id": "PMID_28051070_Brother_1_203",
+   "cohort": "POLR1A",
+   "disease_id": "OMIM:620675",
+   "terms_used": 33,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620675",
+   "top1_pct": 99.9998
+  },
+  {
+   "id": "PMID_35190816_STX_P_21",
+   "cohort": "STXBP1",
+   "disease_id": "OMIM:612164",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 1391,
+   "top1_id": "ORPHA:715025",
+   "top1_pct": 30.5007
+  },
+  {
+   "id": "PMID_26541327_Pat_3_FIII",
+   "cohort": "NBAS",
+   "disease_id": "OMIM:614800",
+   "terms_used": 19,
+   "terms_unknown": 0,
+   "rank": 12689,
+   "top1_id": "OMIM:256810",
+   "top1_pct": 61.6684
+  },
+  {
+   "id": "PMID_12165566_IV_5",
+   "cohort": "FOXE1",
+   "disease_id": "OMIM:241850",
+   "terms_used": 12,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:241850",
+   "top1_pct": 99.7265
+  },
+  {
+   "id": "PMID_10077612_Family_B_III_11",
+   "cohort": "TBX5",
+   "disease_id": "OMIM:142900",
+   "terms_used": 8,
+   "terms_unknown": 0,
+   "rank": 12542,
+   "top1_id": "OMIM:268300",
+   "top1_pct": 0.9616
+  },
+  {
+   "id": "PMID_24889630_Proband_1",
+   "cohort": "PCYT1A",
+   "disease_id": "OMIM:620680",
+   "terms_used": 12,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620680",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_31509304_F7_II_3",
+   "cohort": "NKX6-2",
+   "disease_id": "OMIM:617560",
+   "terms_used": 12,
+   "terms_unknown": 0,
+   "rank": 325,
+   "top1_id": "ORPHA:636",
+   "top1_pct": 75.7534
+  },
+  {
+   "id": "PMID_36331550_Family_9_Patient_11",
+   "cohort": "SPTAN1",
+   "disease_id": "OMIM:620540",
+   "terms_used": 21,
+   "terms_unknown": 0,
+   "rank": 10440,
+   "top1_id": "OMIM:213300",
+   "top1_pct": 21.8118
+  },
+  {
+   "id": "PMID_36351433_F1_IV_1",
+   "cohort": "EMILIN1",
+   "disease_id": "OMIM:620908",
+   "terms_used": 98,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620908",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_22541559_individual_M_192_V_5",
+   "cohort": "NSUN2",
+   "disease_id": "OMIM:611091",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 82,
+   "top1_id": "OMIM:620416",
+   "top1_pct": 1.686
+  },
+  {
+   "id": "PMID_30838237_18_year_old_adolescent_male",
+   "cohort": "ATP13A2",
+   "disease_id": "OMIM:606693",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 35,
+   "top1_id": "ORPHA:306674",
+   "top1_pct": 36.9743
+  },
+  {
+   "id": "PMID_37843397_Patient_UM12",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:151660",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:151660",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_37843397_Patient_UM22",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:151660",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:151660",
+   "top1_pct": 97.6791
+  },
+  {
+   "id": "PMID_11179005_Family_27",
+   "cohort": "OFD1",
+   "disease_id": "OMIM:311200",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:311200",
+   "top1_pct": 94.1747
+  },
+  {
+   "id": "PMID_40420380_Participant_10",
+   "cohort": "KDM2B",
+   "disease_id": "OMIM:621474",
+   "terms_used": 20,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621474",
+   "top1_pct": 99.9998
+  },
+  {
+   "id": "PMID_12949970_proposita",
+   "cohort": "PAX3",
+   "disease_id": "OMIM:148820",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:148820",
+   "top1_pct": 99.9999
+  },
+  {
+   "id": "PMID_40830826_Family_1_II_1",
+   "cohort": "COX18",
+   "disease_id": "OMIM:621488",
+   "terms_used": 18,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621488",
+   "top1_pct": 99.9999
+  },
+  {
+   "id": "PMID_37907725_Patient_III_2",
+   "cohort": "BAG3",
+   "disease_id": "OMIM:621094",
+   "terms_used": 15,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621094",
+   "top1_pct": 91.0453
+  },
+  {
+   "id": "PMID_38858457_F13_individual_16",
+   "cohort": "RAB32",
+   "disease_id": "OMIM:620923",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 2,
+   "top1_id": "ORPHA:1560",
+   "top1_pct": 17.9953
+  },
+  {
+   "id": "PMID_12920062_Family_C_individual_IV_21",
+   "cohort": "LMNA",
+   "disease_id": "OMIM:115200",
+   "terms_used": 15,
+   "terms_unknown": 0,
+   "rank": 12155,
+   "top1_id": "ORPHA:75249",
+   "top1_pct": 16.7893
+  },
+  {
+   "id": "PMID_31021519_SATB2_76_from_Zarate_et_al_2018a",
+   "cohort": "SATB2",
+   "disease_id": "OMIM:612313",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 12580,
+   "top1_id": "ORPHA:77301",
+   "top1_pct": 6.986
+  },
+  {
+   "id": "PMID_30247636_kindred_AH_proband_IV_1",
+   "cohort": "GALE",
+   "disease_id": "OMIM:620776",
+   "terms_used": 15,
+   "terms_unknown": 0,
+   "rank": 2,
+   "top1_id": "ORPHA:238459",
+   "top1_pct": 91.7225
+  },
+  {
+   "id": "PMID_39191256_T_6",
+   "cohort": "TMEM216",
+   "disease_id": "OMIM:620996",
+   "terms_used": 10,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620996",
+   "top1_pct": 12.4847
+  },
+  {
+   "id": "PMID_38480682_F7_II_6",
+   "cohort": "NAA60",
+   "disease_id": "OMIM:620786",
+   "terms_used": 38,
+   "terms_unknown": 0,
+   "rank": 5,
+   "top1_id": "OMIM:618824",
+   "top1_pct": 86.9265
+  },
+  {
+   "id": "PMID_39279645_Family_3_S4_IV_3",
+   "cohort": "PTPMT1",
+   "disease_id": "OMIM:621199",
+   "terms_used": 39,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621199",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_29290338_Family_UAB_R2934_individual_F",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 25,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:162200",
+   "top1_pct": 75.3508
+  },
+  {
+   "id": "PMID_9312167_A_I_1",
+   "cohort": "SLC4A1",
+   "disease_id": "OMIM:179800",
+   "terms_used": 10,
+   "terms_unknown": 0,
+   "rank": 419,
+   "top1_id": "ORPHA:1621",
+   "top1_pct": 3.0239
+  },
+  {
+   "id": "PMID_39419027_P12",
+   "cohort": "MARK2",
+   "disease_id": "OMIM:621285",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 30,
+   "top1_id": "OMIM:621533",
+   "top1_pct": 13.0179
+  },
+  {
+   "id": "PMID_27108799_Individual_8",
+   "cohort": "GNB1",
+   "disease_id": "OMIM:616973",
+   "terms_used": 39,
+   "terms_unknown": 0,
+   "rank": 77,
+   "top1_id": "OMIM:618718",
+   "top1_pct": 56.6282
+  },
+  {
+   "id": "PMID_36446582_Reuter2020",
+   "cohort": "ANKRD11",
+   "disease_id": "OMIM:148050",
+   "terms_used": 6,
+   "terms_unknown": 0,
+   "rank": 1260,
+   "top1_id": "OMIM:620423",
+   "top1_pct": 3.4679
+  },
+  {
+   "id": "PMID_36355422_IV_5",
+   "cohort": "STX4",
+   "disease_id": "OMIM:620745",
+   "terms_used": 4,
+   "terms_unknown": 0,
+   "rank": 16,
+   "top1_id": "OMIM:616462",
+   "top1_pct": 0.1028
+  },
+  {
+   "id": "PMID_18513678_individual_5002",
+   "cohort": "FBXO7",
+   "disease_id": "OMIM:260300",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 9,
+   "top1_id": "OMIM:613162",
+   "top1_pct": 24.4889
+  },
+  {
+   "id": "PMID_10842287_HOS_B1",
+   "cohort": "TBX5",
+   "disease_id": "OMIM:142900",
+   "terms_used": 13,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:142900",
+   "top1_pct": 46.5199
+  },
+  {
+   "id": "PMID_29290338_Family_MIL_R999_399_M_individual_F",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 16,
+   "terms_unknown": 0,
+   "rank": 12677,
+   "top1_id": "ORPHA:363700",
+   "top1_pct": 20.9778
+  },
+  {
+   "id": "PMID_35190816_STX_P_18",
+   "cohort": "STXBP1",
+   "disease_id": "OMIM:612164",
+   "terms_used": 11,
+   "terms_unknown": 0,
+   "rank": 2491,
+   "top1_id": "ORPHA:79255",
+   "top1_pct": 26.1389
+  },
+  {
+   "id": "PMID_26178382_UAB_R6554_II1",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 14,
+   "terms_unknown": 0,
+   "rank": 12439,
+   "top1_id": "OMIM:613988",
+   "top1_pct": 4.1027
+  },
+  {
+   "id": "PMID_37723834_family_2_III_3",
+   "cohort": "PABPC1L",
+   "disease_id": "OMIM:621093",
+   "terms_used": 3,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621093",
+   "top1_pct": 96.1685
+  },
+  {
+   "id": "PMID_39069253_individual_30_Gonz_lez_Taranc_n_et_al",
+   "cohort": "ZNF462",
+   "disease_id": "OMIM:618619",
+   "terms_used": 26,
+   "terms_unknown": 0,
+   "rank": 14,
+   "top1_id": "ORPHA:502430",
+   "top1_pct": 86.2657
+  },
+  {
+   "id": "PMID_40610405_Individual_13",
+   "cohort": "EIF4A2",
+   "disease_id": "OMIM:620455",
+   "terms_used": 39,
+   "terms_unknown": 0,
+   "rank": 12867,
+   "top1_id": "ORPHA:209905",
+   "top1_pct": 66.7246
+  },
+  {
+   "id": "PMID_37951597_Family_1_Subject_2",
+   "cohort": "ACBD6",
+   "disease_id": "OMIM:620785",
+   "terms_used": 65,
+   "terms_unknown": 0,
+   "rank": 3,
+   "top1_id": "ORPHA:1320",
+   "top1_pct": 84.5682
+  },
+  {
+   "id": "PMID_35618278_III",
+   "cohort": "SOX17",
+   "disease_id": "OMIM:621248",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621248",
+   "top1_pct": 93.1671
+  },
+  {
+   "id": "PMID_29122497_29122497_P9",
+   "cohort": "ISCA2",
+   "disease_id": "OMIM:616370",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 142,
+   "top1_id": "ORPHA:356961",
+   "top1_pct": 76.3742
+  },
+  {
+   "id": "PMID_23434115_Exome_2_brother",
+   "cohort": "ACTN1",
+   "disease_id": "OMIM:615193",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 2,
+   "top1_id": "OMIM:619271",
+   "top1_pct": 39.6454
+  },
+  {
+   "id": "PMID_24736735_G056_Father",
+   "cohort": "GLI3",
+   "disease_id": "OMIM:175700",
+   "terms_used": 10,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:175700",
+   "top1_pct": 13.2768
+  },
+  {
+   "id": "PMID_36446582_Ockeloen2015_P20",
+   "cohort": "ANKRD11",
+   "disease_id": "OMIM:148050",
+   "terms_used": 5,
+   "terms_unknown": 0,
+   "rank": 12796,
+   "top1_id": "ORPHA:1193",
+   "top1_pct": 3.6267
+  },
+  {
+   "id": "PMID_35052493_individual_G01",
+   "cohort": "POGZ",
+   "disease_id": "OMIM:616364",
+   "terms_used": 71,
+   "terms_unknown": 0,
+   "rank": 8667,
+   "top1_id": "OMIM:619480",
+   "top1_pct": 51.8293
+  },
+  {
+   "id": "PMID_10749987_family_A_index",
+   "cohort": "SCO2",
+   "disease_id": "OMIM:604377",
+   "terms_used": 7,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:604377",
+   "top1_pct": 99.9473
+  },
+  {
+   "id": "PMID_25794864_P4",
+   "cohort": "ITPR1",
+   "disease_id": "OMIM:117360",
+   "terms_used": 24,
+   "terms_unknown": 0,
+   "rank": 74,
+   "top1_id": "ORPHA:289390",
+   "top1_pct": 98.6702
+  },
+  {
+   "id": "PMID_21217753_Fam_1_V_1",
+   "cohort": "SMAD3",
+   "disease_id": "OMIM:613795",
+   "terms_used": 13,
+   "terms_unknown": 0,
+   "rank": 170,
+   "top1_id": "OMIM:618618",
+   "top1_pct": 22.0027
+  },
+  {
+   "id": "PMID_29967133_Family_3_III_2",
+   "cohort": "SMAD2",
+   "disease_id": "OMIM:619656",
+   "terms_used": 25,
+   "terms_unknown": 0,
+   "rank": 2,
+   "top1_id": "ORPHA:284984",
+   "top1_pct": 61.1543
+  },
+  {
+   "id": "PMID_37833060_Family_B_II_2",
+   "cohort": "SGSM3",
+   "disease_id": "OMIM:620401",
+   "terms_used": 27,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620401",
+   "top1_pct": 99.9996
+  },
+  {
+   "id": "PMID_33348459_F3_subject_3_1",
+   "cohort": "FDXR",
+   "disease_id": "OMIM:620887",
+   "terms_used": 11,
+   "terms_unknown": 0,
+   "rank": 15,
+   "top1_id": "OMIM:621533",
+   "top1_pct": 45.4342
+  },
+  {
+   "id": "PMID_30879264_case_report",
+   "cohort": "POGZ",
+   "disease_id": "OMIM:616364",
+   "terms_used": 34,
+   "terms_unknown": 0,
+   "rank": 2,
+   "top1_id": "OMIM:300868",
+   "top1_pct": 89.7524
+  },
+  {
+   "id": "PMID_36446582_Bianchi_2018",
+   "cohort": "ANKRD11",
+   "disease_id": "OMIM:148050",
+   "terms_used": 22,
+   "terms_unknown": 0,
+   "rank": 7,
+   "top1_id": "ORPHA:1231",
+   "top1_pct": 63.7443
+  },
+  {
+   "id": "PMID_29290338_Family_MIL_R481_559_individual_RS",
+   "cohort": "NF1",
+   "disease_id": "OMIM:162200",
+   "terms_used": 25,
+   "terms_unknown": 0,
+   "rank": 517,
+   "top1_id": "ORPHA:220402",
+   "top1_pct": 11.6044
+  },
+  {
+   "id": "PMID_38480682_F4_II_1",
+   "cohort": "NAA60",
+   "disease_id": "OMIM:620786",
+   "terms_used": 36,
+   "terms_unknown": 0,
+   "rank": 70,
+   "top1_id": "ORPHA:289560",
+   "top1_pct": 39.209
+  },
+  {
+   "id": "PMID_40965981_Individual_8",
+   "cohort": "PTBP1",
+   "disease_id": "OMIM:621495",
+   "terms_used": 63,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:621495",
+   "top1_pct": 99.9969
+  },
+  {
+   "id": "PMID_15731757_Family_6_II_2",
+   "cohort": "TGFBR2",
+   "disease_id": "OMIM:610168",
+   "terms_used": 30,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:610168",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_27743463_S6",
+   "cohort": "FBXL4",
+   "disease_id": "OMIM:615471",
+   "terms_used": 17,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:615471",
+   "top1_pct": 21.6779
+  },
+  {
+   "id": "PMID_29040572_Family_9_individual",
+   "cohort": "FDXR",
+   "disease_id": "OMIM:620887",
+   "terms_used": 31,
+   "terms_unknown": 0,
+   "rank": 1,
+   "top1_id": "OMIM:620887",
+   "top1_pct": 100.0
+  },
+  {
+   "id": "PMID_35190816_STX_26865513_Patient_29",
+   "cohort": "STXBP1",
+   "disease_id": "OMIM:612164",
+   "terms_used": 9,
+   "terms_unknown": 0,
+   "rank": 492,
+   "top1_id": "ORPHA:1706",
+   "top1_pct": 16.9892
+  }
+ ]
+}
