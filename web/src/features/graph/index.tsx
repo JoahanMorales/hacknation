@@ -48,6 +48,7 @@ export default function Constellation() {
   const [error, setError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
   const [hover, setHover] = useState<{ index: number; x: number; y: number } | null>(null);
+  const [marks, setMarks] = useState<{ id: string; name: string; pct: number; x: number; y: number }[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<GraphRenderer | null>(null);
   const choreoRef = useRef<Choreography | null>(null);
@@ -135,6 +136,37 @@ export default function Constellation() {
     return () => window.clearTimeout(timer);
   }, [ranking, data, animate]);
 
+  // Marcas de las 2 candidatas (Ola 3: "que el match se entienda"): anillo + nombre + % junto a cada
+  // estrella, siguiendo la cámara. Sólo aparecen cuando la ola termina (600 ms) para no competir con ella.
+  useEffect(() => {
+    const renderer = rendererRef.current;
+    if (!data || !renderer) return;
+    const top = ranking
+      .slice(0, 2)
+      .map((candidate) => ({ candidate, index: data.indexById.get(candidate.disease_id) }))
+      .filter((item): item is { candidate: (typeof ranking)[number]; index: number } => item.index !== undefined);
+    if (top.length === 0) return;
+    let frame = 0;
+    let last = "";
+    const follow = () => {
+      const next = top.flatMap(({ candidate, index }) => {
+        const point = renderer.toScreen(index);
+        return point ? [{ id: candidate.disease_id, name: candidate.name, pct: candidate.pct, x: point[0], y: point[1] }] : [];
+      });
+      const key = next.map((mark) => `${Math.round(mark.x)},${Math.round(mark.y)}`).join("|");
+      if (key !== last) {
+        last = key;
+        setMarks(next);
+      }
+      frame = requestAnimationFrame(follow);
+    };
+    const start = window.setTimeout(() => (frame = requestAnimationFrame(follow)), prefersReducedMotion() ? 0 : FIT_DELAY_MS);
+    return () => {
+      window.clearTimeout(start);
+      cancelAnimationFrame(frame);
+    };
+  }, [ranking, data]);
+
   // Demo guiada sin backend de diagnóstico: ?graph=steps recorre diagnose_step_01..05 del contrato.
   useEffect(() => {
     if (!data || new URLSearchParams(window.location.search).get("graph") !== "steps") return;
@@ -221,6 +253,9 @@ export default function Constellation() {
         </p>
       )}
 
+      {/* Sin ranking no hay marcas, aunque queden las del último cuadro calculado. */}
+      {ranking.length > 0 && marks.length > 0 && <CandidateMarks marks={marks.filter((mark) => ranking.some((c) => c.disease_id === mark.id))} />}
+
       {hovered && hover && (
         <div
           className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-line bg-surface/95 shadow-sm px-2.5 py-1.5 backdrop-blur-md"
@@ -232,6 +267,39 @@ export default function Constellation() {
           </p>
         </div>
       )}
+    </div>
+  );
+}
+
+// Anillo verde sobre cada candidata y una etiqueta legible al lado; si hay dos, una línea tenue las une.
+function CandidateMarks({ marks }: { marks: { id: string; name: string; pct: number; x: number; y: number }[] }) {
+  const [a, b] = marks;
+  return (
+    <div className="pointer-events-none absolute inset-0" aria-hidden>
+      {a && b && (
+        <svg className="absolute inset-0 h-full w-full">
+          <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} className="stroke-accent/40" strokeWidth={1.5} strokeDasharray="4 6" />
+        </svg>
+      )}
+      {marks.map((mark, rank) => {
+        // Con dos candidatas las etiquetas se abren hacia fuera (nunca se encierran entre ellas); con
+        // una, hacia el lado con más espacio.
+        const right = b ? mark.x > Math.min(a.x, b.x) : mark.x < window.innerWidth / 2;
+        return (
+          <div key={mark.id} className="absolute" style={{ left: mark.x, top: mark.y }}>
+            <span className="absolute -left-4 -top-4 size-8 rounded-full border-2 border-accent bg-accent/10" />
+            <div
+              className={`absolute top-1/2 flex -translate-y-1/2 flex-col rounded-[10px] border border-line bg-surface/95 px-3 py-2 shadow-[0_6px_20px_rgb(16_48_42/12%)] ${
+                right ? "left-7" : "right-7 items-end text-right"
+              }`}
+            >
+              <span className="font-mono text-[11px] text-muted">{rank === 0 ? "Top match" : "Second match"}</span>
+              <span className="max-w-[15rem] truncate text-sm font-medium text-ink">{mark.name}</span>
+              <span className="font-mono text-xs tabular-nums text-accent">{mark.pct.toFixed(1)}% phenotype match</span>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
