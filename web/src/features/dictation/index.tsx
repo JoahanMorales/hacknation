@@ -265,8 +265,9 @@ export default function Dictation() {
         </div>
       </div>
 
-      <div role="group" aria-label="Live dictation language" className="flex flex-wrap items-center gap-2">
+      <div role="group" aria-label="Live dictation language" className="flex flex-wrap items-center justify-between gap-2">
         <span className="text-xs text-muted">Live language</span>
+        <span className="flex rounded-full border border-line p-0.5">
         {(["en", "es"] as const).map((value) => (
           <Button
             key={value}
@@ -278,6 +279,7 @@ export default function Dictation() {
             {value === "en" ? "English" : "Español"}
           </Button>
         ))}
+        </span>
       </div>
 
       <Button
@@ -296,7 +298,8 @@ export default function Dictation() {
         </p>
       )}
 
-      <div className="shrink-0 rounded-control bg-night/50 p-3 text-[13px] leading-relaxed text-ink">
+      {/* Dictado sin caja: una línea de acento a la izquierda basta para separarlo. */}
+      <div className="shrink-0 border-l-2 border-accent/40 py-0.5 pl-3 text-[13px] leading-relaxed text-ink">
         {transcript || interim ? (
           <p>
             <Highlighted text={transcript} terms={terms} />
@@ -308,6 +311,9 @@ export default function Dictation() {
         )}
       </div>
 
+      <p className="-mb-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+        Findings{terms.length > 0 && ` · ${terms.length}`}
+      </p>
       <ul ref={chipsRef} aria-label="Symptoms" className="flex shrink-0 flex-wrap gap-2">
         <AnimatePresence initial={false}>
           {terms.map((term) => (

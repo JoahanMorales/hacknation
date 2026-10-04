@@ -192,25 +192,29 @@ body {
   border-radius: 3px;
   opacity: 0.45;
 }
+/* Chips minimalistas (Ola 3): vidrio celeste tenue, esquinas de 12 px para que dos líneas no se vean
+   como una píldora deformada. */
 .cn-chip {
   display: inline-flex;
   max-width: 100%;
   align-items: center;
-  border: 1px solid #5f7c9a;
-  border-radius: var(--radius-chip);
-  background: #0e2f52;
-  font-size: 14px;
+  border: 1px solid rgb(142 197 252 / 24%);
+  border-radius: 12px;
+  background: rgb(142 197 252 / 8%);
+  font-size: 13.5px;
+  line-height: 1.35;
 }
 .cn-chip-main {
   display: inline-flex;
   min-width: 0;
   min-height: 36px;
   align-items: center;
-  gap: 6px;
-  padding: 6px 11px;
+  gap: 8px;
+  padding: 6px 10px;
   background: none;
   border: 0;
-  border-radius: var(--radius-chip);
+  border-radius: 12px;
+  text-align: left;
   color: inherit;
   font: inherit;
   text-align: left;
@@ -238,14 +242,12 @@ button.cn-chip-main {
   color: var(--color-ink);
   background: var(--color-surface-raised);
 }
+/* Negado: borde punteado y "no" delante; sin tachar (tachado + "no" se leía como doble negación). */
 .cn-chip--negated {
   background: transparent;
-  border-color: #5f7c9a;
+  border-style: dashed;
+  border-color: rgb(159 180 201 / 45%);
   color: var(--color-muted);
-}
-.cn-chip--negated .cn-chip-term {
-  text-decoration: line-through;
-  text-decoration-thickness: 1px;
 }
 .cn-chip--negated svg {
   color: var(--color-muted);
@@ -291,7 +293,7 @@ button.cn-chip-main {
   background: var(--color-surface-raised);
 }
 .cn-meter {
-  margin: 24px 0 16px;
+  margin: 16px 0 12px;
   font-variant-numeric: tabular-nums;
 }
 .cn-meter-heading {
@@ -299,38 +301,42 @@ button.cn-chip-main {
   justify-content: space-between;
   align-items: baseline;
   gap: 12px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-muted);
 }
 .cn-meter-heading strong {
   color: var(--color-accent);
-  font: 30px var(--font-mono);
+  font: 600 30px/1 var(--font-sans);
+  letter-spacing: -0.02em;
 }
 .cn-meter-track {
   position: relative;
-  height: 12px;
+  height: 6px;
   margin: 12px 0 8px;
-  background: linear-gradient(var(--color-line), var(--color-line)) center /
-    100% 1px no-repeat;
+  border-radius: var(--radius-chip);
+  background: rgb(142 197 252 / 14%);
 }
 .cn-meter-fill {
   position: absolute;
-  inset: 5px 0;
+  inset: 0;
   transform-origin: left;
+  border-radius: var(--radius-chip);
   background: var(--color-accent);
 }
 .cn-meter-range {
   position: absolute;
-  top: 1px;
-  height: 10px;
-  background: rgb(142 197 252 / 25%);
+  top: -3px;
+  height: 12px;
+  border-radius: 3px;
+  background: rgb(142 197 252 / 22%);
   border-inline: 1px solid var(--color-accent);
 }
 .cn-meter-point {
   position: absolute;
-  top: 3px;
-  width: 6px;
-  height: 6px;
+  top: -2px;
+  width: 10px;
+  height: 10px;
+  box-shadow: 0 0 0 2px var(--color-surface);
   transform: translateX(-50%);
   border-radius: var(--radius-chip);
   background: var(--color-accent);
@@ -339,7 +345,7 @@ button.cn-chip-main {
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  font: 10px var(--font-mono);
+  font: 11px var(--font-mono);
   color: var(--color-muted);
 }
 .cn-kit {
