@@ -12,3 +12,4 @@
 - 1791080249 | CLAIMED | joahan-2 | claim; siguiente: GET /api/pathway desde deep.json
 - 1791080571 | CLAIMED | joahan-2 | checkpoint; siguiente: Humano abre PR de feat/hack-023; luego hack done
 - 1791081327 | REVIEW | joahan-2 | done; PR https://github.com/JoahanMorales/hacknation/pull/39; evidencia: uv run pytest -q app/tests/test_pathway.py 4 passed; smoke PRODUCT_PASS; merge humano PR #39 (a22b14e); reviewer: -
+- 1791081728 | REVIEW | zoe-1 | review; approve; SHA 35b7381b5ef11220e5c227b3712bc52e107e805b; revisor zoe-1
