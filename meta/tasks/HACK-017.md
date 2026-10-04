@@ -1,5 +1,5 @@
 Task: HACK-017
-Events: 10
-Checkpoints: 4
+Events: 11
+Checkpoints: 5
 Sessions: 4
-Last-Checkpoint: 1791074964
+Last-Checkpoint: 1791075718
