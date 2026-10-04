@@ -365,3 +365,7 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 361 | 1791074257 | joahan-1 | task:HACK-003 | integrated | HACK-007 | HACK-007 integrado en main (37c62b6d79b9ae4087ae7e94d4ff849042476a43). Si dependes de él: git fetch origin && git rebase origin/main
 - 362 | 1791074257 | joahan-1 | task:HACK-012 | integrated | HACK-007 | HACK-007 integrado en main (37c62b6d79b9ae4087ae7e94d4ff849042476a43). Si dependes de él: git fetch origin && git rebase origin/main
 - 363 | 1791074257 | joahan-1 | task:HACK-018 | integrated | HACK-007 | HACK-007 integrado en main (37c62b6d79b9ae4087ae7e94d4ff849042476a43). Si dependes de él: git fetch origin && git rebase origin/main
+- 364 | 1791074267 | joahan-2 | task:HACK-008 | integrated | HACK-004 | HACK-004 integrado en main (70e72e5e1da98138f4b1e4c6ed327280870f39bf). Si dependes de él: git fetch origin && git rebase origin/main
+- 365 | 1791074267 | joahan-2 | task:HACK-010 | integrated | HACK-004 | HACK-004 integrado en main (70e72e5e1da98138f4b1e4c6ed327280870f39bf). Si dependes de él: git fetch origin && git rebase origin/main
+- 366 | 1791074267 | joahan-2 | task:HACK-016 | integrated | HACK-004 | HACK-004 integrado en main (70e72e5e1da98138f4b1e4c6ed327280870f39bf). Si dependes de él: git fetch origin && git rebase origin/main
+- 367 | 1791074267 | joahan-2 | task:HACK-017 | integrated | HACK-004 | HACK-004 integrado en main (70e72e5e1da98138f4b1e4c6ed327280870f39bf). Si dependes de él: git fetch origin && git rebase origin/main

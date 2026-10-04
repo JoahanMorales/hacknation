@@ -1,6 +1,6 @@
 # HACK-004
 ID: HACK-004
-State: REVIEW
+State: INTEGRATED
 Owner: joahan-2
 Branch: feat/hack-004
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-004
@@ -9,14 +9,17 @@ Priority: P0
 Paths: spikes/openai/
 Depends: Ninguna
 Verify: python3 spikes/openai/spike.py --check
-Lease-Until: 1791073523
-Updated: 1791071723
+Lease-Until: 0
+Updated: 1791074267
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/7; ejecutar scripts/smoke
+Next: Integrada en main: 70e72e5e1da98138f4b1e4c6ed327280870f39bf; reclamar siguiente P0
 PR: https://github.com/JoahanMorales/hacknation/pull/7
-Evidence: python3 spikes/openai/spike.py --check SPIKE_CHECK_PASS; smoke PRODUCT_PASS; merge humano PR #7 (70e72e5)
-Events: 8
+Evidence: approve cris-1; merge humano PR #7
+Events: 9
 Checkpoints: 1
 Sessions: 4
 Last-Checkpoint: 1791066325
 Task-Tip: 5b91caa1c3064202b1b81d5961fbb15a243aa1cc
+Integration-Proof: ancestry
+Merge-Commit: 70e72e5e1da98138f4b1e4c6ed327280870f39bf
+Reviewer: cris-1
