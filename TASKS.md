@@ -647,10 +647,30 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Rubric:** CRAFT
 - **Depende de:** Ninguna
 - **Relacionadas:** HACK-017, HACK-018, HACK-028
-- **Archivos probables:** web/src/features/diagnosis/style.css, web/src/features/dictation/Waveform.tsx, web/src/features/dictation/style.css
+- **Archivos probables:** web/src/features/diagnosis/style.css, web/src/features/dictation/Waveform.tsx, web/src/features/dictation/style.css, web/src/features/diagnosis/check_ui.py, web/src/features/dictation/check_ui.py
 - **Contratos consumidos:** web/src/theme.css (HACK-028)
 - **Criterios de aceptación:**
-  - Sin hex fijos en esos archivos; contraste AA en tema claro; DICTATION_PASS y DIAGNOSIS_PASS verdes.
+  - Sin hex fijos en esos archivos; contraste AA en tema claro; DICTATION_PASS y DIAGNOSIS_PASS verdes con el shell nuevo de HACK-028 (sin 'Load published sample'; la muestra entra por 'Play sample case').
 - **Cómo verificar:** npm --prefix web run build
 - **Siguiente paso:** sustituir colores por `var(--color-…)`.
 - **Riesgos o decisiones pendientes:** Ninguno
+
+## HACK-033 · QA: checks al shell nuevo y recorrido completo de Maria
+
+- **Tipo:** test
+- **Prioridad:** P0
+- **Estimación:** 30 min
+- **Área:** frontend, demo
+- **Dueño sugerido:** joahan-1
+- **Objetivo:** antes de grabar, una sola prueba en Chromium del recorrido del brief: Maria busca "LGMD2I" → inspector → pathway (genes, mecanismo, vecinos) → Next steps → Draft a proposal; y el recorrido clínico con "Play sample case".
+- **Rubric:** CRAFT, PP
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-014, HACK-022, HACK-028
+- **Archivos probables:** web/src/features/action/check_nav.py, web/src/features/action/check_journey.py
+- **Contratos consumidos:** UI de main (shell de HACK-028, búsqueda de HACK-022 cuando entre)
+- **Criterios de aceptación:**
+  - `check_nav.py` verde con el shell nuevo (muestra por "Play sample case").
+  - `check_journey.py` recorre búsqueda → inspector → pathway → acción → propuesta sin recargar; reporta tiempos por paso para el guion de HACK-014.
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** cambiar el arranque de check_nav a "Play sample case".
+- **Riesgos o decisiones pendientes:** la búsqueda depende de HACK-022; sin ella el journey arranca desde `?select=`.
