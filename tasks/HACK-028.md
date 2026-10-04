@@ -9,14 +9,14 @@ Priority: P0
 Paths: web/DESIGN.md, web/src/theme.css, web/src/ui/, web/src/App.tsx (autorizado por su dueño joahan-1 para esta ola), web/src/features/graph/, web/src/features/gestures/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791094934
-Updated: 1791093134
+Lease-Until: 1791095305
+Updated: 1791093505
 Task-Base: b98fc390505566d12dd05d9b17affa00cc33b9b5
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/56; ejecutar scripts/smoke
-PR: https://github.com/JoahanMorales/hacknation/pull/56
-Evidence: smoke PRODUCT_PASS 75cad0e; KIT/INSPECTOR/ACTION/PROPOSAL_PASS; 3 checks pendientes de actualizar por pedido humano
-Events: 6
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/63; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/63
+Evidence: smoke PRODUCT_PASS; KIT/INSPECTOR/ACTION/PROPOSAL PASS; tema azul AA
+Events: 7
 Checkpoints: 0
 Sessions: 4
 Last-Checkpoint: 0
-Task-Tip: 75cad0eefcd937d036808f1b8749fcec004a0800
+Task-Tip: a6ae24f076e3530a8c75aafc153c07c6d3ec1146
