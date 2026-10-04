@@ -215,7 +215,7 @@ export default function Constellation() {
         className="absolute inset-0 opacity-60"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse at 50% 45%, rgb(13 122 84 / 0.07), transparent 62%), radial-gradient(1px 1px at 20% 30%, rgb(16 48 42 / 0.12), transparent), radial-gradient(1px 1px at 70% 80%, rgb(16 48 42 / 0.08), transparent), radial-gradient(1px 1px at 85% 15%, rgb(16 48 42 / 0.1), transparent)",
+            "radial-gradient(ellipse at 50% 45%, rgb(142 197 252 / 0.28), transparent 62%), radial-gradient(1px 1px at 20% 30%, rgb(11 42 74 / 0.12), transparent), radial-gradient(1px 1px at 70% 80%, rgb(11 42 74 / 0.08), transparent), radial-gradient(1px 1px at 85% 15%, rgb(11 42 74 / 0.1), transparent)",
           backgroundSize: "100% 100%, 230px 230px, 310px 310px, 270px 270px",
         }}
       />
