@@ -1,6 +1,6 @@
 # HACK-023
 ID: HACK-023
-State: CLAIMED
+State: REVIEW
 Owner: joahan-2
 Branch: feat/hack-023
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-023
@@ -9,9 +9,9 @@ Priority: P0
 Paths: app/routers/pathway.py, app/services/pathway.py, app/tests/test_pathway.py, web/src/features/inspector/ (botón "Open pathway")
 Depends: Ninguna
 Verify: uv run pytest -q app/tests/test_pathway.py
-Lease-Until: 1791082371
-Updated: 1791080571
+Lease-Until: 1791083127
+Updated: 1791081327
 Task-Base: 84e81ae353f5007c09be257ec32c5f7c3e50cff7
-Next: Humano abre PR de feat/hack-023; luego hack done
-PR: -
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/39; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/39
 Evidence: -
