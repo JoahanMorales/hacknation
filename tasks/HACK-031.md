@@ -1,6 +1,6 @@
 # HACK-031
 ID: HACK-031
-State: REVIEW
+State: INTEGRATED
 Owner: cris-1
 Branch: feat/hack-031
 Worktree: /c/Users/crist/Documents/HackNation/hacknation-wt/hack-031
@@ -9,14 +9,17 @@ Priority: P0
 Paths: web/src/features/pathway/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791093761
-Updated: 1791091961
+Lease-Until: 0
+Updated: 1791094488
 Task-Base: 3d3e952a978305dc4957da477f1b83f9a5d1d6b6
-Next: Esperar review de SHA bfd0c80; merge humano por la línea del inspector
+Next: Integrada en main: e04c3c656166d96832e07238c06f11881b405ce9; reclamar siguiente P0
 PR: https://github.com/JoahanMorales/hacknation/pull/60
-Evidence: npm --prefix web run build exit 0; check_pathway PATHWAY_PASS (0 etiquetas solapadas, 44 aristas enfocables, sin inspector debajo); smoke PRODUCT_PASS
-Events: 9
+Evidence: merge humano
+Events: 10
 Checkpoints: 2
 Sessions: 2
 Last-Checkpoint: 1791091961
 Task-Tip: bfd0c805602cc185a406d6b2fb2119b5b3396ac1
+Integration-Proof: ancestry
+Merge-Commit: e04c3c656166d96832e07238c06f11881b405ce9
+Reviewer: joahan-1
