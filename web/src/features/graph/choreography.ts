@@ -7,12 +7,12 @@ import type { Frame } from "./types";
 //             600-900 ms las candidatas ganan brillo y tamaño. Total ≤ 900 ms.
 // Cada punto interpola desde su valor actual: un ranking nuevo a mitad de animación no salta.
 
-const BASE_SIZE = 1.6;
-const BASE_ALPHA = 0.78;
-const DIM_ALPHA = 0.1;
-const DIM_SIZE = 1.0;
-const RANKED_SIZE = 2.6;
-const CANDIDATE_SIZE = 6;
+const BASE_SIZE = 1.05; // estrellas finas: la galaxia se lee como constelación, no como disco
+const BASE_ALPHA = 0.85;
+const DIM_ALPHA = 0.16;
+const DIM_SIZE = 0.8;
+const RANKED_SIZE = 2.2;
+const CANDIDATE_SIZE = 8;
 
 const INTRO_MS = 1200;
 const WAVE_START = 150;

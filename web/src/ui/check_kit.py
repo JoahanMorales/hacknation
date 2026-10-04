@@ -36,21 +36,22 @@ def contrast(a, b):
 
 ratios = []
 for color in [
-    "#edf2f8",
-    "#a5b3c7",
-    "#edc994",
-    "#9fcac3",
-    "#aabddf",
-    "#d5b5c7",
-    "#a5c9a1",
-    "#d3b9a0",
-    "#bac2ce",
+    "#10302a",
+    "#4b6660",
+    "#0d7a54",
+    "#1a7770",
+    "#3568b7",
+    "#ab4871",
+    "#427730",
+    "#955e19",
+    "#5a6b7a",
 ]:
-    for bg in [rgb("#1a273a"), [c * 0.96 + 255 * 0.04 for c in rgb("#111b2b")]]:
+    # Tema claro (Ola 3): controles #e8f2ed y panel blanco al 96% sobre el fondo #f3f8f5.
+    for bg in [rgb("#e8f2ed"), [255 * 0.96 + c * 0.04 for c in rgb("#f3f8f5")]]:
         ratios.append(contrast(rgb(color), bg))
 assert min(ratios) >= 4.5, min(ratios)
-assert contrast(rgb("#171c25"), rgb("#edc994")) >= 4.5
-assert contrast(rgb("#73849c"), rgb("#223146")) >= 3
+assert contrast(rgb("#ffffff"), rgb("#0d7a54")) >= 4.5
+assert contrast(rgb("#778c84"), rgb("#eef5f1")) >= 3
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
@@ -136,7 +137,7 @@ with sync_playwright() as p:
         )
         assert (
             page.locator("body").evaluate("(e) => getComputedStyle(e).backgroundColor")
-            == "rgb(7, 11, 20)"
+            == "rgb(243, 248, 245)"
         )
         page.goto(args.url.rstrip("/") + "/")
         page.wait_for_load_state("networkidle")

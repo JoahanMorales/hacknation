@@ -574,3 +574,43 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Cómo verificar:** npm --prefix web run build
 - **Siguiente paso:** preguntar al humano y priorizar 5 cambios de mayor impacto visual.
 - **Riesgos o decisiones pendientes:** cambios en `web/src/ui/` y App.tsx avisar con `hack msg related:HACK-028 --kind contract`.
+
+## HACK-029 · Landing: la entrada al atlas
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 45 min
+- **Área:** frontend, diseño
+- **Dueño sugerido:** saus-1 (pedido de su humano)
+- **Objetivo:** pantalla de entrada antes del atlas: qué es Constellation, para quién (Maria, Devon, Priya, Dr. Osei), un CTA "Start with a disease, a gene or a symptom" que entra al atlas con la búsqueda enfocada, y las cifras del problema con su fuente.
+- **Rubric:** CRAFT, PP
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-022, HACK-028, HACK-014
+- **Archivos probables:** web/src/features/landing/
+- **Contratos consumidos:** IDEA.md §11 (cifras con fuente), README.md, store (`step`)
+- **Criterios de aceptación:**
+  - Cada cifra visible con su fuente enlazada (4.7 años EURORDIS, 12,867 enfermedades del atlas); nada inventado; "not a diagnosis" visible.
+  - El CTA entra al atlas sin recargar; `?step=…` y `?select=…` siguen entrando directo (demo y checks de Chromium verdes).
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** overlay de pantalla completa que se oculta al entrar (estado en store o local).
+- **Riesgos o decisiones pendientes:** no romper los checks que abren `/` directo: si la landing tapa la app, los checks deben poder saltarla.
+
+## HACK-030 · Pathway: vecinos fenotípicos ("who shares our disease characteristics?")
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 40 min
+- **Área:** backend
+- **Dueño sugerido:** joahan-2 (pedido de Joahan)
+- **Objetivo:** el subgrafo de `/api/pathway/{id}` incluye los vecinos fenotípicos de HACK-025 como enfermedades conectadas por una arista de similitud explicada con los fenotipos compartidos más informativos, distinguiendo los que además comparten gen o mecanismo curado.
+- **Rubric:** GQ, EI, PP
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-023, HACK-024, HACK-025
+- **Archivos probables:** app/services/pathway.py, app/tests/test_pathway.py
+- **Contratos consumidos:** app/services/similar.py (HACK-025), contrato de `/api/pathway` (HACK-023)
+- **Criterios de aceptación:**
+  - Arista `phenotype_similarity` (`inferido`, con `score` y fenotipos compartidos en el resumen, fuente HPO) a los k vecinos más similares; los que no están en la capa curada aparecen como nodos `disease` con `meta.curated=false`.
+  - Fuera del cluster curado ya no queda sólo el nodo central: aparecen sus vecinos fenotípicos con la misma cobertura honesta.
+- **Cómo verificar:** uv run pytest -q app/tests/test_pathway.py
+- **Siguiente paso:** leer el top-k de `app/services/similar.py` dentro de `pathway.build`.
+- **Riesgos o decisiones pendientes:** no saturar el navigator: máximo 6 vecinos.

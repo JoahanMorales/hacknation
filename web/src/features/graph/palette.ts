@@ -1,10 +1,11 @@
 // Paleta de la constelación. Regla del brief y de web/DESIGN.md: color = significado.
-// Cada galaxia (sistema del cuerpo) tiene un tono frío y desaturado; los seis colores semánticos de
-// DESIGN.md son de mecanismo y no se usan aquí. El ÚNICO acento cálido es para las candidatas.
+// Tema claro (Ola 3): cada galaxia (sistema del cuerpo) tiene un tono medio legible sobre blanco; los
+// seis colores semánticos de DESIGN.md son de mecanismo y no se usan aquí. El ÚNICO acento verde es
+// para las candidatas, así que las galaxias evitan la franja verde.
 
 export type Rgb = [number, number, number];
 
-export const ACCENT: Rgb = hexToRgb("#edc994"); // accent de web/DESIGN.md
+export const ACCENT: Rgb = hexToRgb("#0d7a54"); // accent de web/DESIGN.md
 
 function hexToRgb(hex: string): Rgb {
   const value = Number.parseInt(hex.slice(1), 16);
@@ -19,19 +20,19 @@ function hslToRgb(h: number, s: number, l: number): Rgb {
 }
 
 /**
- * Un color por galaxia, repartido en la rueda saltándose la franja cálida del acento (20°-70°).
+ * Un color por galaxia, repartido en la rueda saltándose la franja verde del acento (95°-175°).
  * Las galaxias grandes reciben los tonos más separados entre sí.
  */
 export function galaxyColors(groupIds: string[]): Map<string, Rgb> {
-  const start = 75;
-  const span = 360 - 50; // 70° → 380° (= 20°), sin pasar por el acento
+  const start = 175;
+  const span = 360 - 80; // 175° → 455° (= 95°), sin pasar por el acento
   const colors = new Map<string, Rgb>();
   groupIds.forEach((id, i) => {
     // Orden "golden" para que vecinos en la lista no tengan tonos parecidos.
     const t = (i * 0.618034) % 1;
     const hue = (start + t * span) % 360;
-    const lightness = i % 2 === 0 ? 0.7 : 0.62;
-    colors.set(id, hslToRgb(hue, 0.42, lightness));
+    const lightness = i % 2 === 0 ? 0.42 : 0.34;
+    colors.set(id, hslToRgb(hue, 0.58, lightness));
   });
   return colors;
 }
