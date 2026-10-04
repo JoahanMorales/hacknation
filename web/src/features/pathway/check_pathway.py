@@ -44,6 +44,17 @@ with sync_playwright() as p:
       return n;
     }""")
     assert overlaps == 0, f"{overlaps} etiquetas solapadas"
+    # Nombres de nodo: los del anillo interior (genes y mecanismos) no deben pisarse entre sí (nota de joahan-1).
+    node_overlaps = page.evaluate("""() => {
+      const svg = document.querySelector('[aria-label="Pathway navigator"] svg[role="img"]');
+      const boxes = [...svg.querySelectorAll('g[style] > text, g[transform] > text')]
+        .filter(t => !t.closest('g[pointer-events="none"]')).map(t => t.getBoundingClientRect()).filter(b => b.width > 0);
+      const hit = (a, b) => a.left < b.right - 1 && b.left < a.right - 1 && a.top < b.bottom - 1 && b.top < a.bottom - 1;
+      let n = 0;
+      boxes.forEach((a, i) => boxes.slice(i + 1).forEach(b => { if (hit(a, b)) n++; }));
+      return n;
+    }""")
+    assert node_overlaps == 0, f"{node_overlaps} nombres de nodo solapados"
     edge_names = [e.get_attribute("aria-label") for e in nav.locator('svg g[role="button"]').all()]
     assert any(n.startswith("Shared phenotype:") for n in edge_names), "phenotype_similarity sin rotular"
 
@@ -55,4 +66,4 @@ with sync_playwright() as p:
     if shot:
         page.screenshot(path=shot)
 assert not errors, errors
-print(f"PATHWAY_PASS: nombres cortos con gen, 0 etiquetas solapadas, {len(edge_names)} aristas enfocables, sin inspector debajo")
+print(f"PATHWAY_PASS: nombres cortos con gen, 0 etiquetas ni nombres solapados, {len(edge_names)} aristas enfocables, sin inspector debajo")
