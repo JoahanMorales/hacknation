@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/pathway/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791092713
-Updated: 1791090913
+Lease-Until: 1791092883
+Updated: 1791091083
 Task-Base: 3d3e952a978305dc4957da477f1b83f9a5d1d6b6
-Next: nombre corto desde gen del nodo vecino + sinónimo curado.
+Next: Esperar checks Chromium existentes; smoke; PR
 PR: -
 Evidence: -
-Events: 3
-Checkpoints: 0
+Events: 4
+Checkpoints: 1
 Sessions: 1
-Last-Checkpoint: 0
+Last-Checkpoint: 1791091083
