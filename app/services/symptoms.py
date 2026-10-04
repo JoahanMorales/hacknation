@@ -111,16 +111,24 @@ def recorded(language: str, reason: str) -> dict:
 
 
 SPANISH_MARKERS = frozenset((
-    "el", "la", "los", "las", "del", "y", "con", "sin", "hay", "tiene", "una", "un", "que", "es", "está",
-    "presión", "elevada", "reducida", "debilidad", "fatiga", "dolor", "paciente",
+    "el", "la", "los", "las", "del", "y", "con", "sin", "hay", "tiene", "tienen", "una", "un", "que", "es",
+    "está", "este", "esta", "ni", "pero", "muy", "caso", "adulto", "adulta", "publicado", "paciente",
+    "presión", "elevada", "elevado", "reducida", "reducido", "máxima", "debilidad", "fatiga", "dolor",
+    "creatina", "quinasa", "sangre", "músculo", "piernas", "escaleras", "subir", "dificultad",
 ))
 
 
 def looks_spanish(text: str) -> bool:
-    """El dictado en vivo puede llegar marcado como inglés aunque sea español; HPO sólo trae sinónimos en inglés."""
+    """El dictado en vivo puede llegar marcado como inglés aunque sea español; HPO sólo trae sinónimos en inglés.
+
+    Funciona con fragmentos parciales del dictado (p. ej. "Este caso adulto ... creatina kinase elevada").
+    """
     words = re.findall(r"[a-záéíóúñü]+", text.lower())
+    if not words:
+        return False
     hits = sum(w in SPANISH_MARKERS for w in words)
-    return bool(words) and (hits >= 3 or any(c in text.lower() for c in "ñáéíóú")) and hits / len(words) >= 0.12
+    accents = any(c in text.lower() for c in "ñáéíóú")
+    return (hits >= 2 or accents) and hits / len(words) >= 0.12
 
 
 def extract(transcript: str, language: str) -> dict:

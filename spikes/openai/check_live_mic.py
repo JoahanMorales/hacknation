@@ -6,6 +6,11 @@ POST /api/transcribe/session → WebRTC con gpt-live-transcribe → deltas → /
   npm --prefix web run build && uv run uvicorn app.main:app --port 8000 &
   uv run python spikes/openai/check_live_mic.py --url http://127.0.0.1:8000
 No imprime la clave ni el token efímero. Chromium repite el WAV en bucle: el texto puede duplicarse.
+
+Hallazgo (2026-10-03, voz TTS "alloy"): en inglés la transcripción es idéntica al caso. En español es
+intermitente (2-5 chips): gpt-live-transcribe oye "presión espiratoria" como "presión inspiratoria" y a veces
+"ni cardiomegalia" como "Mi cardiomegalia" (negación perdida). Para la demo: dictado en vivo en inglés, o
+"Play sample case" en español.
 """
 
 import argparse

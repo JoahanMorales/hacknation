@@ -77,6 +77,13 @@ def test_transcribe_session_in_demo_mode_is_unusable(monkeypatch) -> None:
 def test_spanish_marked_as_english_is_detected() -> None:
     assert symptoms.looks_spanish(CASE["transcript_es"])
     assert not symptoms.looks_spanish(CASE["transcript_en"])
+    # Fragmentos parciales del dictado en vivo, sin acentos todavía.
+    assert symptoms.looks_spanish("Este caso adulto publicado tiene creatina kinase elevada")
+    assert symptoms.looks_spanish("No hay cardiomiopatia ni cardiomegalia")
+    for english in ("The patient has elevated creatine kinase and no cardiomyopathy.",
+                    "Difficulty climbing stairs, fatigue and calf hypertrophy are present.",
+                    "There is a case of muscle weakness."):
+        assert not symptoms.looks_spanish(english), english
 
 
 def test_spanish_text_sent_as_english_uses_translation(monkeypatch, live) -> None:
