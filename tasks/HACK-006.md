@@ -1,6 +1,6 @@
 # HACK-006
 ID: HACK-006
-State: CLAIMED
+State: REVIEW
 Owner: saus-1
 Branch: feat/hack-006
 Worktree: /c/Users/david/hacknation-wt/hack-006
@@ -9,13 +9,14 @@ Priority: P0
 Paths: web/src/features/graph/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791076201
-Updated: 1791074401
+Lease-Until: 1791076954
+Updated: 1791075154
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: gh auth; gh pr create; hack done HACK-006 --pr URL
-PR: -
-Evidence: -
-Events: 8
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/25; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/25
+Evidence: bash scripts/smoke PRODUCT_PASS y npm --prefix web run build OK en 93f78dc; 12867 nodos reales, poda+encuadre <=900ms, hover, clic->selectedId, arista citada E01, Canvas plan B
+Events: 9
 Checkpoints: 3
 Sessions: 1
 Last-Checkpoint: 1791074340
+Task-Tip: 93f78dc54fb76cdfb79798f17e4b8c06abe15481
