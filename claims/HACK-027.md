@@ -9,9 +9,9 @@ Priority: P1
 Paths: data/connector.py, app/fixtures/connector/, app/routers/connector.py, app/services/connector.py, app/tests/test_connector.py
 Depends: Ninguna
 Verify: uv run pytest -q app/tests/test_connector.py
-Lease-Until: 1791089016
-Updated: 1791087216
+Lease-Until: 1791089068
+Updated: 1791087268
 Task-Base: 233da88bbf8efebe19eef8d43e8bb1dc82fca16b
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/51; ejecutar scripts/smoke
+Next: Esperar review de SHA fd87c80; luego hack merge HACK-027
 PR: https://github.com/JoahanMorales/hacknation/pull/51
 Evidence: -
