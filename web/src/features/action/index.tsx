@@ -260,7 +260,7 @@ function TimelineView({ timeline }: { timeline: NonNullable<ActionPlan["timeline
   const reduced = useReducedMotion();
   const lanes = [
     { key: "current", prefix: "Today", lane: timeline.current, width: 1, tone: "bg-muted/70" },
-    { key: "proposed", prefix: "With Constellation", lane: timeline.proposed, width: 0.06, tone: "bg-accent" },
+    { key: "proposed", prefix: "With OlivIA", lane: timeline.proposed, width: 0.06, tone: "bg-accent" },
   ];
   return (
     <section aria-label="Timeline" className="flex flex-col gap-3">
