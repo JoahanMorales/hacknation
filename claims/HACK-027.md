@@ -9,8 +9,8 @@ Priority: P1
 Paths: data/connector.py, app/fixtures/connector/, app/routers/connector.py, app/services/connector.py, app/tests/test_connector.py
 Depends: Ninguna
 Verify: uv run pytest -q app/tests/test_connector.py
-Lease-Until: 1791085619
-Updated: 1791083819
+Lease-Until: 1791086109
+Updated: 1791084309
 Task-Base: 233da88bbf8efebe19eef8d43e8bb1dc82fca16b
 Next: RePORTER por gen y PubMed esearch+efetch de 20 resúmenes por gen.
 PR: -
