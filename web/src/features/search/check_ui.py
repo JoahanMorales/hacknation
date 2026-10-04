@@ -37,6 +37,13 @@ async def main():
             box = page.get_by_role('combobox', name='Search the atlas')
             await expect(box).to_be_visible()
             await page.evaluate('() => new Promise(requestAnimationFrame)')
+            await box.fill('FKRP')
+            await expect(page.get_by_role('group', name='Genes', exact=True)).to_be_visible()
+            initial_popup = await page.locator('.atlas-search-popup').bounding_box()
+            assert initial_popup and initial_popup['height'] > 100, 'Hidden clinical footer must not collapse initial search results'
+            await page.get_by_role('button', name='Clear atlas search').click()
+            await box.press('Escape')
+            await box.blur()
             await page.keyboard.press('/')
             await expect(box).to_be_focused()
             await expect(page.get_by_text('Start with a disease', exact=False)).to_be_visible()
@@ -192,7 +199,7 @@ async def main():
                                      await page.locator('[aria-label="How to use gestures"]').bounding_box())
             assert popup and popup['x'] >= 0 and popup['x']+popup['width'] <= 1280 and popup['y']+popup['height'] <= 720
             assert not errors, errors
-            report = {'six_type_routes': True, 'preserves_case_and_negation': True, 'keyboard': True,
+            report = {'initial_search_with_hidden_footer': True, 'six_type_routes': True, 'preserves_case_and_negation': True, 'keyboard': True,
                       'empty_error_retry_sample': True, 'stale_and_clear': True, 'modal_focus_preserved': True, 'runtime_errors': errors,
                       'cancelled_response_count': len(cancelled_responses),
                       'panel_overlap': panel_overlap, 'gesture_overlap': gesture_overlap, 'header_overlap': header_overlap,

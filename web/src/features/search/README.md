@@ -6,7 +6,7 @@ Disease results open the inspector. Symptoms add a finding without duplicating a
 
 Requests debounce for 150 ms, abort when superseded, and time out after 10 seconds. Missing endpoints (404) use small, explicitly labelled curated examples; other failures offer retry or explicit sample search. `?search=sample` selects those labelled examples for rehearsal.
 
-The overlay reserves the central column and measures the shell header and footer to leave the journey/sample badge visible and keep results above clinical panels. In Pathway it sits below the navigator header and above the map, so results remain clickable. Covered inputs do not steal focus from the landing or modal dialogs. The header owner can set `--atlas-search-top`, `--atlas-search-left`, `--atlas-search-width` and `--atlas-search-pathway-top`. Gesture controls must remain outside that reserved area; the results input exposes `aria-expanded` for coordination with the HUD/guide.
+The overlay reserves the central column and measures the shell header and visible footer to leave the journey/sample badge visible and keep results above clinical panels. A hidden footer cannot collapse the initial results. In Pathway it sits below the navigator header and above the map, so results remain clickable. Covered inputs do not steal focus from the landing or modal dialogs. The header owner can set `--atlas-search-top`, `--atlas-search-left`, `--atlas-search-width` and `--atlas-search-pathway-top`. Gesture controls must remain outside that reserved area; the results input exposes `aria-expanded` for coordination with the HUD/guide.
 
 ## Browser verification
 

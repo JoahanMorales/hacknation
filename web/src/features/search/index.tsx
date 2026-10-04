@@ -115,7 +115,9 @@ export default function Search() {
         container.current.style.removeProperty("--atlas-search-header-width");
       }
       const start = field.getBoundingClientRect().bottom + 10;
-      const end = Math.min(window.innerHeight - 16, pathway ? window.innerHeight : footer?.getBoundingClientRect().top ?? window.innerHeight);
+      const bounds = footer?.getBoundingClientRect();
+      const footerVisible = bounds && bounds.height > 0 && bounds.width > 0 && footer?.getAttribute("aria-hidden") !== "true";
+      const end = Math.min(window.innerHeight - 16, !pathway && footerVisible ? bounds.top : window.innerHeight);
       container.current.style.setProperty("--atlas-search-max-height", `${Math.max(0, end - start - 16)}px`);
     };
     measure();
