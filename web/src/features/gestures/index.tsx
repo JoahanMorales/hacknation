@@ -184,12 +184,12 @@ export default function Gestures() {
     ACTIONS.find((a) => a.gesture === gesture)?.label ??
     (gesture === PAUSE_GESTURE ? "Thumb down · pause" : gesture === GRAB_GESTURE ? "Fist · drag the map" : null);
 
-  // El botón vive en la cabecera izquierda, junto al nombre (la búsqueda ocupa el centro arriba); el
-  // HUD y la guía bajan por la columna central, sin tapar dictado, inspector ni diagnóstico. Sólo
-  // los elementos visibles reciben clics.
+  // El botón vive a la derecha de la cabecera, junto a "Focus atlas" (izquierda: nombre y recorrido;
+  // centro: búsqueda); el HUD y la guía bajan por la columna central, sin tapar dictado, inspector ni
+  // diagnóstico. Sólo los elementos visibles reciben clics.
   return (
     <>
-      <div className="pointer-events-none fixed left-[15rem] top-[1.1rem] z-20 flex items-center gap-1">
+      <div className="pointer-events-none fixed right-[9.5rem] top-[1.1rem] z-20 flex items-center gap-1">
         <Button
           className="pointer-events-auto"
           variant={status === "on" ? "primary" : "secondary"}

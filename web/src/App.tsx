@@ -1,6 +1,8 @@
-import type { ComponentType } from "react";
+import { ArrowsOut, SidebarSimple } from "@phosphor-icons/react";
+import { type ComponentType, useState } from "react";
 
-import { useStore } from "./lib/store";
+import { type Step, useStore } from "./lib/store";
+import { Button } from "./ui";
 
 // Cada feature es web/src/features/<nombre>/index.tsx con `export default`, `slot` y `order`.
 // Añadir una feature = crear su carpeta; App.tsx no se vuelve punto de conflicto.
@@ -21,6 +23,43 @@ const kitModule = Object.values(
 const KitPage =
   new URLSearchParams(window.location.search).get("ui") === "kit" ? kitModule?.default : undefined;
 
+// Recorrido de Maria visible en la cabecera (Ola 3: "no se entiende por dónde empezar").
+const JOURNEY: { label: string; steps: Step[] }[] = [
+  { label: "Symptoms", steps: ["constellation", "dictation"] },
+  { label: "Matches", steps: ["diagnosis"] },
+  { label: "Evidence", steps: ["inspector"] },
+  { label: "Pathway", steps: ["pathway"] },
+  { label: "Next steps", steps: ["action"] },
+];
+
+// El paso se deduce de lo que se ve: el inspector abierto es "Evidence" aunque la escena no cambie
+// (p. ej. ?select=), y con hallazgos ya hay "Matches".
+function currentStep(step: Step, selected: boolean, findings: boolean): number {
+  if (step === "pathway" || step === "action") return JOURNEY.findIndex((item) => item.steps.includes(step));
+  if (selected) return 2;
+  if (findings || step === "diagnosis") return 1;
+  return 0;
+}
+
+function Journey({ current }: { current: number }) {
+  return (
+    <ol className="flex items-center gap-1.5" aria-label="Journey">
+      {JOURNEY.map((item, index) => (
+        <li
+          key={item.label}
+          aria-current={index === current ? "step" : undefined}
+          className={`flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs transition-colors ${
+            index === current ? "bg-accent text-accent-ink" : index < current ? "text-ink" : "text-muted"
+          }`}
+        >
+          <span className="font-mono tabular-nums">{index + 1}</span>
+          {index === current && <span>{item.label}</span>}
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 // Las capas no capturan eventos (el grafo sigue interactivo detrás); sólo cada feature los recibe.
 function SlotContent({ slot }: { slot: Slot }) {
   return features
@@ -38,6 +77,12 @@ function SlotContent({ slot }: { slot: Slot }) {
 
 export default function App() {
   const sampleMode = useStore((state) => state.sampleMode);
+  const step = useStore((state) => state.step);
+  const selected = useStore((state) => state.selectedId !== null);
+  const findings = useStore((state) => state.terms.length > 0);
+  // "Focus atlas": oculta los paneles para dejar la constelación sola (modo presentación).
+  const [focus, setFocus] = useState(false);
+  const panels = `transition-opacity duration-300 ${focus ? "pointer-events-none opacity-0" : "opacity-100"}`;
 
   if (KitPage) return <KitPage />;
 
@@ -50,22 +95,32 @@ export default function App() {
 
       {/* Capas: las features ocultan o muestran sus paneles según store.step. */}
       <div className="pointer-events-none absolute inset-0 grid grid-cols-[minmax(0,22rem)_1fr_minmax(0,24rem)] grid-rows-[auto_1fr_auto] gap-4 p-6">
-        <header className="pointer-events-auto col-span-3 flex items-center gap-3 justify-self-start">
-          <span className="text-sm font-medium tracking-tight">Constellation</span>
+        {/* Cabecera: nombre, recorrido y "Sample case" a la izquierda (debajo, el contador de la
+            constelación); el centro queda para la búsqueda y la derecha para gestos y "Focus atlas". */}
+        <header className="pointer-events-auto col-span-3 flex min-h-[3.25rem] items-start gap-3 justify-self-start">
+          <span className="text-base font-semibold tracking-tight text-ink">Constellation</span>
+          <Journey current={currentStep(step, selected, findings)} />
           {sampleMode && (
-            <span className="rounded-full border border-white/15 px-2 py-0.5 font-mono text-xs text-zinc-400">
-              Sample case
-            </span>
+            <span className="rounded-full border border-line px-2 py-0.5 font-mono text-xs text-muted">Sample case</span>
           )}
         </header>
-        <aside className="flex min-h-0 flex-col gap-4">
+        <Button
+          variant={focus ? "primary" : "secondary"}
+          onClick={() => setFocus((on) => !on)}
+          aria-pressed={focus}
+          className="pointer-events-auto fixed right-6 top-[1.1rem] z-20"
+        >
+          {focus ? <SidebarSimple size={18} aria-hidden /> : <ArrowsOut size={18} aria-hidden />}
+          {focus ? "Show panels" : "Focus atlas"}
+        </Button>
+        <aside className={`flex min-h-0 flex-col gap-4 ${panels}`} aria-hidden={focus || undefined}>
           <SlotContent slot="left" />
         </aside>
         <div />
-        <aside className="flex min-h-0 flex-col gap-4">
+        <aside className={`flex min-h-0 flex-col gap-4 ${panels}`} aria-hidden={focus || undefined}>
           <SlotContent slot="right" />
         </aside>
-        <footer className="col-span-3">
+        <footer className={`col-span-3 ${panels}`} aria-hidden={focus || undefined}>
           <SlotContent slot="bottom" />
         </footer>
       </div>

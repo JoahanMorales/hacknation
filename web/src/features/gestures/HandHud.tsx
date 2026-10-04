@@ -30,12 +30,12 @@ export function HandHud({ hand, progress, active }: { hand: HandPoint[] | null; 
     const radius = SIZE / 2 - 3;
     // Anillo base y progreso del debounce.
     ctx.lineWidth = 2;
-    ctx.strokeStyle = "rgb(165 179 199 / 0.25)";
+    ctx.strokeStyle = "rgb(16 48 42 / 0.15)";
     ctx.beginPath();
     ctx.arc(center, center, radius, 0, Math.PI * 2);
     ctx.stroke();
     if (progress > 0) {
-      ctx.strokeStyle = "rgb(237 201 148)";
+      ctx.strokeStyle = "rgb(13 122 84)";
       ctx.beginPath();
       ctx.arc(center, center, radius, -Math.PI / 2, -Math.PI / 2 + progress * Math.PI * 2);
       ctx.stroke();
@@ -55,7 +55,7 @@ export function HandHud({ hand, progress, active }: { hand: HandPoint[] | null; 
       SIZE - (offsetX + (point.x - minX) * scale),
       offsetY + (point.y - minY) * scale,
     ];
-    ctx.strokeStyle = active ? "rgb(237 242 248 / 0.85)" : "rgb(165 179 199 / 0.6)";
+    ctx.strokeStyle = active ? "rgb(16 48 42 / 0.85)" : "rgb(75 102 96 / 0.55)";
     ctx.lineWidth = 1.25;
     ctx.lineCap = "round";
     for (const [a, b] of BONES) {
