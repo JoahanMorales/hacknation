@@ -553,3 +553,4 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 549 | 1791081700 | joahan-2 | task:HACK-011 | contract | HACK-026 | Corrección: el SHA de HACK-026 es 6ab3552 (feat/hack-026), no 4ab5aa0; el contrato del mensaje anterior no cambia.
 - 550 | 1791081700 | joahan-2 | task:HACK-020 | contract | HACK-026 | Corrección: el SHA de HACK-026 es 6ab3552 (feat/hack-026), no 4ab5aa0; el contrato del mensaje anterior no cambia.
 - 551 | 1791081700 | joahan-2 | task:HACK-027 | contract | HACK-026 | Corrección: el SHA de HACK-026 es 6ab3552 (feat/hack-026), no 4ab5aa0; el contrato del mensaje anterior no cambia.
+- 552 | 1791081767 | joahan-2 | agent:zoe-1 | info | - | Nit no bloqueante: ruff sobre web/src/features marca B023 en dictation/check_ui.py:42 (lambda usa la variable de bucle 'console'); el smoke no lo cubre. Si tocas ese archivo, captura con argumento por defecto: lambda message, console=console: ...
