@@ -68,10 +68,11 @@ export class Choreography {
     const empty = candidates.length === 0 && ranked.length === 0;
     const [ox, oy] = origin === null ? [0, 0] : this.position(origin);
     const maxDist = this.maxDistanceFrom(ox, oy);
+    const pointMs = reducedMotion ? 0 : POINT_MS;
 
     this.retarget(now, (i, dist) => {
       const waveDelay = reducedMotion ? 0 : WAVE_START + (dist(ox, oy) / maxDist) * WAVE_SPREAD;
-      if (empty) return { rgb: this.base[i], alpha: BASE_ALPHA, size: BASE_SIZE, delay: waveDelay, duration: POINT_MS };
+      if (empty) return { rgb: this.base[i], alpha: BASE_ALPHA, size: BASE_SIZE, delay: waveDelay, duration: pointMs };
       if (isCandidate.has(i)) {
         return {
           rgb: ACCENT,
@@ -82,9 +83,9 @@ export class Choreography {
         };
       }
       if (isRanked.has(i)) {
-        return { rgb: this.base[i], alpha: 0.95, size: RANKED_SIZE, delay: waveDelay, duration: POINT_MS };
+        return { rgb: this.base[i], alpha: 0.95, size: RANKED_SIZE, delay: waveDelay, duration: pointMs };
       }
-      return { rgb: this.base[i], alpha: DIM_ALPHA, size: DIM_SIZE, delay: waveDelay, duration: reducedMotion ? 0 : POINT_MS };
+      return { rgb: this.base[i], alpha: DIM_ALPHA, size: DIM_SIZE, delay: waveDelay, duration: pointMs };
     });
   }
 
