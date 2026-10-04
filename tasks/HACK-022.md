@@ -9,13 +9,13 @@ Priority: P0
 Paths: web/src/features/search/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791084211
-Updated: 1791082411
+Lease-Until: 1791084518
+Updated: 1791082718
 Task-Base: 78be7f5550b5b7acc073d455cce0fc0d6ad842bb
-Next: Browser:seis tipos/teclado/stale/error/negacion/bounds. Resolver traslape con saus; smoke y PR.
+Next: q smoke contra base4f5ccac; PR draft, entregar SHA a saus y revisar ajuste; QA produccion/Ready/review cuando verde.
 PR: -
 Evidence: -
-Events: 4
-Checkpoints: 2
+Events: 5
+Checkpoints: 3
 Sessions: 1
-Last-Checkpoint: 1791081963
+Last-Checkpoint: 1791082718
