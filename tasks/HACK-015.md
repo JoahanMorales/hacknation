@@ -15,8 +15,8 @@ Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/14; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/14
 Evidence: grep -q data/build.py README.md && test -s docs/ARCHITECTURE.md OK; smoke PRODUCT_PASS; merge humano PR #14 (3716a31)
-Events: 5
+Events: 6
 Checkpoints: 1
-Sessions: 3
+Sessions: 4
 Last-Checkpoint: 1791068442
 Task-Tip: 35758f44833a49b9154507e94c42a42c5bc36403
