@@ -574,3 +574,23 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Cómo verificar:** npm --prefix web run build
 - **Siguiente paso:** preguntar al humano y priorizar 5 cambios de mayor impacto visual.
 - **Riesgos o decisiones pendientes:** cambios en `web/src/ui/` y App.tsx avisar con `hack msg related:HACK-028 --kind contract`.
+
+## HACK-029 · Landing: la entrada al atlas
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 45 min
+- **Área:** frontend, diseño
+- **Dueño sugerido:** saus-1 (pedido de su humano)
+- **Objetivo:** pantalla de entrada antes del atlas: qué es Constellation, para quién (Maria, Devon, Priya, Dr. Osei), un CTA "Start with a disease, a gene or a symptom" que entra al atlas con la búsqueda enfocada, y las cifras del problema con su fuente.
+- **Rubric:** CRAFT, PP
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-022, HACK-028, HACK-014
+- **Archivos probables:** web/src/features/landing/
+- **Contratos consumidos:** IDEA.md §11 (cifras con fuente), README.md, store (`step`)
+- **Criterios de aceptación:**
+  - Cada cifra visible con su fuente enlazada (4.7 años EURORDIS, 12,867 enfermedades del atlas); nada inventado; "not a diagnosis" visible.
+  - El CTA entra al atlas sin recargar; `?step=…` y `?select=…` siguen entrando directo (demo y checks de Chromium verdes).
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** overlay de pantalla completa que se oculta al entrar (estado en store o local).
+- **Riesgos o decisiones pendientes:** no romper los checks que abren `/` directo: si la landing tapa la app, los checks deben poder saltarla.
