@@ -183,7 +183,7 @@ export default function Constellation() {
         className="absolute inset-0 opacity-60"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse at 50% 45%, rgb(40 60 110 / 0.22), transparent 60%), radial-gradient(1px 1px at 20% 30%, rgb(255 255 255 / 0.18), transparent), radial-gradient(1px 1px at 70% 80%, rgb(255 255 255 / 0.12), transparent), radial-gradient(1px 1px at 85% 15%, rgb(255 255 255 / 0.14), transparent)",
+            "radial-gradient(ellipse at 50% 45%, rgb(13 122 84 / 0.07), transparent 62%), radial-gradient(1px 1px at 20% 30%, rgb(16 48 42 / 0.12), transparent), radial-gradient(1px 1px at 70% 80%, rgb(16 48 42 / 0.08), transparent), radial-gradient(1px 1px at 85% 15%, rgb(16 48 42 / 0.1), transparent)",
           backgroundSize: "100% 100%, 230px 230px, 310px 310px, 270px 270px",
         }}
       />
@@ -197,7 +197,7 @@ export default function Constellation() {
 
       {error && (
         <div className="absolute inset-0 grid place-items-center">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-5 text-center backdrop-blur-md">
+          <div className="cn-panel px-6 py-5 text-center">
             <p className="text-sm text-ink">The constellation could not load.</p>
             <p className="mt-1 font-mono text-xs text-muted">{error}</p>
             <button
@@ -206,7 +206,7 @@ export default function Constellation() {
                 setError(null);
                 setAttempt((n) => n + 1);
               }}
-              className="mt-4 rounded-full border border-line px-4 py-1.5 text-xs text-ink hover:bg-white/10"
+              className="mt-4 rounded-full border border-line px-4 py-1.5 text-xs text-ink hover:bg-surface-raised"
             >
               Try again
             </button>
@@ -214,15 +214,16 @@ export default function Constellation() {
         </div>
       )}
 
+      {/* Subtítulo bajo el nombre de la app (cabecera de HACK-028): la derecha queda para los controles. */}
       {counter && (
-        <p className="pointer-events-none absolute right-6 top-6 font-mono text-xs tabular-nums text-muted">
+        <p className="pointer-events-none absolute left-6 top-[3.1rem] font-mono text-xs tabular-nums text-muted">
           {counter}
         </p>
       )}
 
       {hovered && hover && (
         <div
-          className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-white/10 bg-surface/95 px-2.5 py-1.5 backdrop-blur-md"
+          className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-line bg-surface/95 shadow-sm px-2.5 py-1.5 backdrop-blur-md"
           style={{ left: hover.x, top: hover.y - 12 }}
         >
           <p className="max-w-64 truncate text-xs text-ink">{hovered.name}</p>
