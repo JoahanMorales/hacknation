@@ -15,8 +15,8 @@ Task-Base: d1909207fc5ec70864edc10648fcc8e2a48dec40
 Next: Esperar review de SHA 45547d1; luego hack merge HACK-012
 PR: https://github.com/JoahanMorales/hacknation/pull/27
 Evidence: python data/validate.py --check exit 0 (VALIDATION_CHECK_PASS); bash scripts/smoke PRODUCT_PASS; docs/validation.md con n/top-1/top-3/método; --check sin recalcular
-Events: 4
+Events: 5
 Checkpoints: 1
-Sessions: 1
+Sessions: 2
 Last-Checkpoint: 1791075811
 Task-Tip: 45547d175f26a459e29ddf1bfb07b8746aea4053
