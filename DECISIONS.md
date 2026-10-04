@@ -101,3 +101,5 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791090467 | HACK-022 | Validar smoke95 actual, mantener PR42 draft hasta031; PR59 prepara plan existente sin editarTASKS. | Por qué: Base actual integra028/029 y correcciones026/027/025. Request649 pide scopeQA032 antes claim.
 - 1791090758 | HACK-014 | Elegir snapshot final yensayo limpio al corte00MX; no reemplazar ZIP/PDF antiguos antes devalidacion. | Por qué: 022 aun draft por guia031;026fix55 ya mainad. Tresclips/recibos requieren humano segunhack-demo.
 - 1791091083 | HACK-031 | centro con nombre corto; el completo queda en el header | Por qué: el nombre largo del centro pisaba los genes del anillo interior
+- 1791091962 | deadline lease/HACK-028/1791091520 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791091962 | deadline lease/HACK-029/1791091560 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
