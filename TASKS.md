@@ -406,3 +406,171 @@ Fuente: IDEA.md §12 y docs/FRONTEND-BRIEF.md. Sin campo Estado: el estado vive 
 - **Cómo verificar:** npm --prefix web run build
 - **Siguiente paso:** vista con action_plan.json del fixture.
 - **Riesgos o decisiones pendientes:** Ninguno
+
+# Ola 3 · Atlas definitivo (3 oct 20:00 → 4 oct 00:00, CST)
+
+Autorizada por Joahan (humano responsable) tras revisar la app contra el brief del reto 05. Objetivo: que el jurado vea el recorrido de "What good looks like": **Maria escribe su enfermedad en una sola caja de búsqueda → vía alterada → otro gen → enfermedad relacionada → el grupo que trabaja en ella → activo reutilizable → propuesta con fuentes**, y si no hay ruta, un vacío honesto con la siguiente pregunta.
+
+- **Huecos frente al brief que cubre esta ola:** búsqueda global con sinónimos (021/022); grafo con varios tipos de nodo y aristas que se explican solas (023/024); clustering defendible por fenotipo (025); conexión entre comunidades e investigadores, y OpenAI extrayendo aristas de la literatura (027); propuesta de colaboración con fuentes (026); experiencia pulida con el criterio del humano de Saus (028).
+- **Reglas de la ola:** cada endpoint nuevo define sus modelos Pydantic en su propio router (no se edita `app/schemas/`); cada dato con fuente o etiquetado; DEMO_MODE y fallos de red devuelven respuestas grabadas o curadas; `bash scripts/smoke` y los checks de Chromium existentes deben seguir verdes. A las 00:00 se para la ola y se integra lo verde; lo que no esté verde no entra.
+- **Seguridad:** el estado demostrable previo queda en la etiqueta `demo-safe-ola2` (ee957e9).
+
+## HACK-021 · API búsqueda global con sinónimos
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 45 min
+- **Área:** backend
+- **Dueño sugerido:** joahan-1
+- **Objetivo:** una sola búsqueda abre el grafo desde enfermedad, gen, síntoma, mecanismo, grupo de pacientes o activo, resolviendo sinónimos.
+- **Rubric:** GQ, CRAFT
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-022, HACK-023
+- **Archivos probables:** app/routers/search.py, app/services/search.py, app/tests/test_search.py
+- **Contratos consumidos:** app/fixtures/graph/ (nombres, etiquetas y sinónimos HPO), app/fixtures/deep/deep.json
+- **Criterios de aceptación:**
+  - `GET /api/search?q=&limit=` → `{query, results:[{type: disease|gene|symptom|mechanism|group|asset, id, label, matched, disease_ids[], score}]}`; `matched` dice qué sinónimo coincidió.
+  - "LGMD2I", "FKRP", "ribitol", "Pompe", "CureLGMD2i", "elevated CK" y "creatina quinasa" devuelven el resultado esperado arriba; < 150 ms en caliente.
+- **Cómo verificar:** uv run pytest -q app/tests/test_search.py
+- **Siguiente paso:** índice en memoria de nombres + sinónimos (normalizados, sin acentos) y ranking exacto > prefijo > tokens.
+- **Riesgos o decisiones pendientes:** Ninguno
+
+## HACK-022 · UI búsqueda global ("one search box")
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 50 min
+- **Área:** frontend
+- **Dueño sugerido:** zoe-1
+- **Objetivo:** caja de búsqueda arriba al centro (atajo `/`), resultados agrupados por tipo con el sinónimo que coincidió; cada tipo abre el lugar correcto del grafo.
+- **Rubric:** CRAFT, PP, GQ
+- **Depende de:** HACK-021 (mientras tanto, mock etiquetado con la forma del contrato)
+- **Relacionadas:** HACK-024, HACK-028
+- **Archivos probables:** web/src/features/search/
+- **Contratos consumidos:** `GET /api/search` (HACK-021), web/src/lib/store.ts
+- **Criterios de aceptación:**
+  - Enfermedad → `selectedId` (inspector + estrella); síntoma → se añade a `terms`; gen o mecanismo → abre el Pathway Navigator (`step = "pathway"`) de su primera enfermedad; grupo o activo → `step = "action"`.
+  - Teclado completo (flechas, Enter, Esc), estados vacío/cargando/error, sin solaparse con otros paneles a 1280×720.
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** overlay con input y lista de resultados; luego navegación por teclado.
+- **Riesgos o decisiones pendientes:** coordinar posición con HACK-028 (cabecera).
+
+## HACK-023 · API Pathway: subgrafo tipado de una enfermedad
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 45 min
+- **Área:** backend
+- **Dueño sugerido:** joahan-2
+- **Objetivo:** el grafo que pide el reto (enfermedad, gen, mecanismo, enfermedad relacionada, grupo, activo, investigador) con cada arista explicada, listo para dibujarse.
+- **Rubric:** GQ, EI, PP
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-024, HACK-025, HACK-027
+- **Archivos probables:** app/routers/pathway.py, app/services/pathway.py, app/tests/test_pathway.py, web/src/features/inspector/ (botón "Open pathway")
+- **Contratos consumidos:** app/fixtures/deep/deep.json; HACK-025 y HACK-027 cuando existan (opcionales)
+- **Criterios de aceptación:**
+  - `GET /api/pathway/{disease_id}` → `{center, nodes:[{id, type, label}], edges:[{id, src, dst, type, evidence_level, source_url|null, summary}], coverage:{searched[], missing[]}}`; aristas estructurales (enfermedad–gen, gen–mecanismo, grupo–enfermedad, activo–enfermedad) citan su fuente curada.
+  - Fuera del cluster: subgrafo mínimo + `coverage.missing` honesto (no 404 vacío). Botón "Open pathway" en el inspector.
+- **Cómo verificar:** uv run pytest -q app/tests/test_pathway.py
+- **Siguiente paso:** construir nodos y aristas desde deep.json para ORPHA:34515.
+- **Riesgos o decisiones pendientes:** Ninguno
+
+## HACK-024 · UI Pathway Navigator (la constelación se vuelve atlas)
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 90 min
+- **Área:** frontend
+- **Dueño sugerido:** saus-1
+- **Objetivo:** la vista estrella para Maria: el subgrafo tipado alrededor de su enfermedad, con forma o icono por tipo de nodo y la arista codificada por nivel de evidencia (observado sólido, inferido discontinuo, hipótesis punteado, contradictorio en el color de alerta), con leyenda.
+- **Rubric:** GQ, EI, CRAFT
+- **Depende de:** HACK-023 (mientras tanto, mock con la forma del contrato)
+- **Relacionadas:** HACK-006, HACK-019, HACK-022
+- **Archivos probables:** web/src/features/pathway/
+- **Contratos consumidos:** `GET /api/pathway/{id}` (HACK-023), store (`step = "pathway"`, `selectedId`, `highlightedEdgeId`)
+- **Criterios de aceptación:**
+  - Clic en arista → resumen, fuente y nivel; clic en enfermedad relacionada → la convierte en centro; "Next steps" lleva a la acción. Transición desde la constelación (no corte brusco); reduced-motion respetado.
+  - Legible a 1280×720 con ~25 nodos; contraejemplo FKRP (serie alélica) visible como tal.
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** layout radial por tipo alrededor del centro; luego estilos de arista por evidencia.
+- **Riesgos o decisiones pendientes:** Ninguno
+
+## HACK-025 · Clusters defendibles por fenotipo ("who shares our disease characteristics?")
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 60 min
+- **Área:** datos, backend
+- **Dueño sugerido:** cris-1
+- **Objetivo:** vecinos fenotípicos por enfermedad con similitud ponderada por informatividad (IC) y los fenotipos compartidos que la explican, para todo el atlas.
+- **Rubric:** GQ, EI
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-023, HACK-012
+- **Archivos probables:** data/similarity.py, app/fixtures/similarity/, app/routers/similar.py, app/services/similar.py, app/tests/test_similar.py, docs/similarity.md
+- **Contratos consumidos:** app/fixtures/graph/annotations.json
+- **Criterios de aceptación:**
+  - `GET /api/similar/{id}?k=10` → vecinos con `score`, `shared:[{hpo_id,label,ic}]` y si comparten gen/mecanismo curado; build offline reproducible (`--check`).
+  - Evidencia en docs: para LGMD R9, cuántas distroglicanopatías caen en su top-10 frente al azar; un contraejemplo (fenotipo parecido, mecanismo distinto, p. ej. Pompe).
+- **Cómo verificar:** python3 data/similarity.py --check
+- **Siguiente paso:** IC = −log(fracción de enfermedades con el término propagado); similitud = suma de IC compartido / unión.
+- **Riesgos o decisiones pendientes:** tamaño del fixture (< 5 MB, top-k).
+
+## HACK-026 · Propuesta de colaboración con fuentes para Maria
+
+- **Tipo:** feature
+- **Prioridad:** P0
+- **Estimación:** 60 min
+- **Área:** backend, frontend, ia
+- **Dueño sugerido:** joahan-1 (tras HACK-021)
+- **Objetivo:** "she approaches a partner with a sourced proposal": un borrador de una página, redactado por gpt-6.1-sol, citando sólo aristas, activos y grupos existentes; qué es reutilizable, qué difiere y qué debe revisar un experto.
+- **Rubric:** PP, EI, X10
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-020, HACK-011
+- **Archivos probables:** app/routers/proposal.py, app/services/proposal.py, app/tests/test_proposal.py, app/fixtures/deep/proposal_recorded.json, web/src/features/proposal/, web/src/features/action/ (botón)
+- **Contratos consumidos:** app/fixtures/deep/deep.json, `POST /api/action-plan`
+- **Criterios de aceptación:**
+  - `POST /api/proposal {disease_id, partner_disease_id?}` → texto con `[id]` válidos, lista de citas y "Questions for expert review"; el backend borra citas inexistentes; DEMO_MODE devuelve la grabación real.
+  - Botón "Draft a proposal" en la escena de acción; modal con copiar e imprimir.
+- **Cómo verificar:** uv run pytest -q app/tests/test_proposal.py
+- **Siguiente paso:** endpoint con la grabación para ORPHA:34515 → OMIM:616052.
+- **Riesgos o decisiones pendientes:** Ninguno
+
+## HACK-027 · Connector: investigadores, financiamiento y literatura extraída con OpenAI
+
+- **Tipo:** feature
+- **Prioridad:** P1
+- **Estimación:** 75 min
+- **Área:** datos, backend, ia
+- **Dueño sugerido:** cris-1 (tras HACK-025)
+- **Objetivo:** Módulo 3.3 del brief: comunidades "no relacionadas" que comparten investigadores o programas financiados, y aristas candidatas extraídas de resúmenes de PubMed con OpenAI, cada una con PMID y cita textual.
+- **Rubric:** GQ, EI, PP
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-023, HACK-026
+- **Archivos probables:** data/connector.py, app/fixtures/connector/, app/routers/connector.py, app/services/connector.py, app/tests/test_connector.py
+- **Contratos consumidos:** NIH RePORTER API v2, PubMed E-utilities, gpt-6-luna (JSON Schema)
+- **Criterios de aceptación:**
+  - Para el cluster (FKRP, FKTN, CRPPA, POMT1, POMGNT1, LARGE1, GAA): PIs y organizaciones con proyecto y URL; "shared investigators" entre dos enfermedades cuando existan; aristas extraídas como `inferido` con PMID, quote y "AI-extracted, unreviewed".
+  - `GET /api/connector/{id}`; snapshot reproducible sin red; nunca datos personales fuera de fuentes públicas.
+- **Cómo verificar:** uv run pytest -q app/tests/test_connector.py
+- **Siguiente paso:** RePORTER por gen y PubMed esearch+efetch de 20 resúmenes por gen.
+- **Riesgos o decisiones pendientes:** coste y límites de API: snapshot primero.
+
+## HACK-028 · Rediseño integral con el criterio del humano de Saus
+
+- **Tipo:** design
+- **Prioridad:** P0
+- **Estimación:** 120 min
+- **Área:** frontend, diseño
+- **Dueño sugerido:** saus-1 (con su humano)
+- **Objetivo:** que la app se sienta definitiva: Saus pregunta a su humano qué no le gusta y qué haría increíble la experiencia, y lo convierte en cambios; cabecera con espacio para la búsqueda, jerarquía clara del recorrido Maria → acción, onboarding de 1 línea ("Start with a disease, a gene or a symptom"), botón de gestos sin tapar paneles, consistencia de paneles a 1280×720 y 1440×900.
+- **Rubric:** CRAFT, PP
+- **Depende de:** Ninguna
+- **Relacionadas:** todas las de UI
+- **Archivos probables:** web/DESIGN.md, web/src/theme.css, web/src/ui/, web/src/App.tsx (autorizado por su dueño joahan-1 para esta ola), web/src/features/graph/, web/src/features/gestures/
+- **Contratos consumidos:** docs/FRONTEND-BRIEF.md, brief del reto ("Low ink, high signal", "Progressive reveal")
+- **Criterios de aceptación:**
+  - Lista de cambios pedidos por su humano en DESIGN.md (sección "Ola 3") y cada uno resuelto o descartado con motivo.
+  - Los checks de Chromium existentes (dictation, diagnosis, inspector, action, nav) siguen verdes; capturas antes/después.
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** preguntar al humano y priorizar 5 cambios de mayor impacto visual.
+- **Riesgos o decisiones pendientes:** cambios en `web/src/ui/` y App.tsx avisar con `hack msg related:HACK-028 --kind contract`.
