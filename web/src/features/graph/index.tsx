@@ -264,7 +264,7 @@ export default function Constellation() {
 
       {hovered && hover && (
         <div
-          className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-accent/20 bg-surface/80 px-2.5 py-1.5 shadow-panel backdrop-blur-xl"
+          className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full rounded-lg border border-accent/20 bg-surface/92 px-2.5 py-1.5 shadow-panel"
           style={{ left: hover.x, top: hover.y - 12 }}
         >
           <p className="max-w-64 truncate text-xs text-ink">{hovered.name}</p>
@@ -296,7 +296,7 @@ function CandidateMarks({ marks }: { marks: { id: string; name: string; pct: num
             <span className="absolute -left-10 -top-10 size-20 rounded-full bg-[radial-gradient(circle,rgb(94_211_208/0.35),transparent_65%)]" />
             <span className="absolute -left-4 -top-4 size-8 rounded-full border-2 border-accent bg-accent/10 shadow-[0_0_18px_rgb(142_197_252/0.55)]" />
             <div
-              className={`absolute left-0 flex -translate-x-1/2 flex-col items-center rounded-[14px] border border-accent/25 bg-surface/70 px-3.5 py-2.5 text-center shadow-panel backdrop-blur-xl ${
+              className={`absolute left-0 flex -translate-x-1/2 flex-col items-center rounded-[14px] border border-accent/25 bg-surface/90 px-3.5 py-2.5 text-center shadow-panel ${
                 below ? "top-8" : "bottom-8"
               }`}
             >

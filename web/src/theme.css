@@ -75,8 +75,10 @@ body {
   min-width: 0;
   border: 1px solid rgb(142 197 252 / 16%);
   border-radius: var(--radius-panel);
-  background: rgb(11 42 74 / 62%);
-  backdrop-filter: blur(24px) saturate(180%);
+  /* Vidrio barato: blur de 12 px sin saturate. Con estrellas animadas detrás el navegador recalcula
+     el desenfoque en cada cuadro, y su costo crece con el radio. */
+  background: rgb(11 42 74 / 74%);
+  backdrop-filter: blur(12px);
   box-shadow: var(--shadow-panel);
 }
 .cn-panel-header {

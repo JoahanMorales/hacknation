@@ -17,7 +17,7 @@ export function createCosmosRenderer(container: HTMLElement, events: RendererEve
   const graph = new Graph(div, {
     enableSimulation: false,
     backgroundColor: [0, 0, 0, 0],
-    pixelRatio: Math.min(2, window.devicePixelRatio || 1),
+    pixelRatio: Math.min(1.5, window.devicePixelRatio || 1), // 2x en pantallas retina costaba fluidez sin ganar nitidez visible
     transitionDuration: 0, // la coreografía anima cuadro a cuadro; cosmos sólo dibuja
     scalePointsOnZoom: true,
     renderLinks: true,
