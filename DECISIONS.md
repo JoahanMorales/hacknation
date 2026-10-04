@@ -58,3 +58,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791071649 | HACK-018 | Source diagnosis no aparece en action y hook sigue montado. No declarar demo completa hasta integrar scroll020 y guard de citas019. | Por qué: API real2groups7assets descubre overflow externo; REVIEW018 permite verificar scope mientras owners integran sus fixes.
 - 1791072180 | HACK-018 | Caso real verificado con fixes020/019 en main; source018 cerrado, conservar rama publicada y worktree limpio detached428de10 para ensayo. | Por qué: Prueba real sustituye fixture y resuelve error de altura; cerrar solo con aprobacion actual y commit verificable.
 - 1791073486 | deadline lease/HACK-007/1791073483 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791073840 | deadline lease/HACK-004/1791073523 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
