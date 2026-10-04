@@ -1,6 +1,6 @@
 # HACK-017
 ID: HACK-017
-State: CLAIMED
+State: REVIEW
 Owner: zoe-1
 Branch: feat/hack-017-zoe
 Worktree: /c/Users/zm180/OneDrive/Desktop/hacknation-wt/hack-017-zoe
@@ -9,13 +9,14 @@ Priority: P0
 Paths: web/src/features/dictation/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791076140
-Updated: 1791074340
+Lease-Until: 1791076336
+Updated: 1791074536
 Task-Base: 3716a312a1175a66b0d562eee39ef5d8333c12e5
-Next: Smoke PRODUCT_PASS y tip gitdiffscope017; commit/push feat/hack017zoe y PR; avisar related y solicitar review independiente.
-PR: -
-Evidence: -
-Events: 7
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/24; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/24
+Evidence: PRODUCT_PASS65tests+Ruff+lint+build; DICTATION_PASS1280/1440 sharedYes/chip/Clear, allcontrolsreachable, keyboard/reduced, sample retry/API503, lateextractClear and controlledWebRTCcleanup. Same treef4ef9a1=d3ea277; combined graph406 QA also green. Real microphone unverified.
+Events: 8
 Checkpoints: 3
 Sessions: 3
 Last-Checkpoint: 1791074340
+Task-Tip: d3ea27716bed1044d1245fb8e9ce44d5e21b205f
