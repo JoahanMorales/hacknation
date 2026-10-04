@@ -701,3 +701,6 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 697 | 1791094488 | cris-1 | task:HACK-023 | integrated | HACK-031 | HACK-031 integrado en main (e04c3c656166d96832e07238c06f11881b405ce9). Si dependes de él: git fetch origin && git rebase origin/main
 - 698 | 1791094488 | cris-1 | task:HACK-024 | integrated | HACK-031 | HACK-031 integrado en main (e04c3c656166d96832e07238c06f11881b405ce9). Si dependes de él: git fetch origin && git rebase origin/main
 - 699 | 1791094488 | cris-1 | task:HACK-030 | integrated | HACK-031 | HACK-031 integrado en main (e04c3c656166d96832e07238c06f11881b405ce9). Si dependes de él: git fetch origin && git rebase origin/main
+- 700 | 1791094525 | cris-1 | task:HACK-023 | integrated | HACK-031 | HACK-031 en main (e04c3c6): Pathway con nombres gen · forma, etiquetas sin solaparse y aristas por teclado; rebase
+- 701 | 1791094525 | cris-1 | task:HACK-024 | integrated | HACK-031 | HACK-031 en main (e04c3c6): Pathway con nombres gen · forma, etiquetas sin solaparse y aristas por teclado; rebase
+- 702 | 1791094525 | cris-1 | task:HACK-030 | integrated | HACK-031 | HACK-031 en main (e04c3c6): Pathway con nombres gen · forma, etiquetas sin solaparse y aristas por teclado; rebase
