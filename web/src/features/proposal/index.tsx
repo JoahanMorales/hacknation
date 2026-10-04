@@ -67,9 +67,16 @@ function ProposalDialog({ diseaseId }: { diseaseId: string }) {
     return [`# ${proposal.title}`, "", proposal.markdown, "", "## Questions for expert review", ...questions, "",
       "## Sources", ...sources].join("\n");
   };
+  const [copyError, setCopyError] = useState(false);
   const copy = async () => {
-    await navigator.clipboard.writeText(plainText());
-    setCopied(true);
+    try {
+      await navigator.clipboard.writeText(plainText());
+      setCopied(true);
+      setCopyError(false);
+    } catch {
+      // Sin Clipboard API o permiso denegado: el usuario aún puede imprimir o seleccionar el texto.
+      setCopyError(true);
+    }
   };
   const print = () => {
     const win = window.open("", "_blank", "width=800,height=900");
@@ -115,6 +122,11 @@ function ProposalDialog({ diseaseId }: { diseaseId: string }) {
             <Button variant="secondary" onClick={print}>
               <Printer size={18} aria-hidden="true" /> Print
             </Button>
+            {copyError && (
+              <p role="alert" className="cn-error">
+                Copy is not available in this browser. Use Print or select the text.
+              </p>
+            )}
           </div>
         )}
       </Panel>

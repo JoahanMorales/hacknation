@@ -27,7 +27,10 @@ def test_unknown_citations_are_removed(monkeypatch, live) -> None:
     monkeypatch.setattr(proposal, "_generate", lambda ctx: "Shared pathway [E02]. Invented [E99] and [X1].")
     body = client.post("/api/proposal", json={"disease_id": "ORPHA:34515"}).json()
     assert "[E99]" not in body["markdown"] and "[X1]" not in body["markdown"]
-    assert body["cited_keys"] == ["E02"] and body["demo_data"] is False
+    assert body["cited_keys"][0] == "E02" and body["demo_data"] is False
+    # Las fuentes citadas en las preguntas para el experto no se pierden (revisión de zoe-1).
+    question_keys = {k for q in body["questions_for_expert"] for k in ("E04", "E06", "A1") if f"[{k}]" in q}
+    assert question_keys and question_keys <= set(body["cited_keys"])
 
 
 def test_model_without_citations_falls_back_to_sources(monkeypatch, live) -> None:
