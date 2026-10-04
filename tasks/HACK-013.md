@@ -15,8 +15,8 @@ Task-Base: 03b9bf0dc537bf4f042e170ce1c8ee6b42148555
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/31; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/31
 Evidence: bash scripts/smoke PRODUCT_PASS en 64bb901; acciones de gestos, zoom sintetico (cosmos y canvas), carga del reconocedor y estado sin camara verificados; camara real no verificada
-Events: 2
+Events: 3
 Checkpoints: 0
-Sessions: 1
+Sessions: 2
 Last-Checkpoint: 0
 Task-Tip: 64bb9016258cfaf71926c8915eeb27f950208abe
