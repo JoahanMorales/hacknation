@@ -1,6 +1,6 @@
 # HACK-029
 ID: HACK-029
-State: CLAIMED
+State: REVIEW
 Owner: saus-1
 Branch: feat/hack-029
 Worktree: /c/Users/david/hacknation-wt/hack-029
@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/landing/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791086417
-Updated: 1791084617
+Lease-Until: 1791088378
+Updated: 1791086578
 Task-Base: b98fc390505566d12dd05d9b17affa00cc33b9b5
-Next: Landing en web/src/features/landing/ con CTA al atlas; saltable con ?step/?select
-PR: -
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/50; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/50
 Evidence: -
