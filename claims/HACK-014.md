@@ -9,8 +9,8 @@ Priority: P0
 Paths: docs/demo/
 Depends: HACK-006, HACK-017, HACK-018, HACK-020
 Verify: test -s docs/demo/script.md
-Lease-Until: 1791082209
-Updated: 1791080409
+Lease-Until: 1791083099
+Updated: 1791081299
 Task-Base: ee957e9a0846a5d6de9f0efd0660e66f21e213b7
 Next: Humano proporciona datos ygraba/reproduce3clips+backup+ensayo manual; pegarresumen228/URLs ysubirambosformularios conrecibos. Re-review013PR34esperavotocuandolibre; servidorlocal8769PID37580/hijo38232DEMO_MODE true paraensayo.
 PR: -
