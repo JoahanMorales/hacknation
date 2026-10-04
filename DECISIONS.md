@@ -104,3 +104,5 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791091962 | deadline lease/HACK-028/1791091520 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791091962 | deadline lease/HACK-029/1791091560 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791091961 | HACK-031 | inspector oculto en pathway con 1 línea fuera de Archivos | Por qué: criterio de aceptación; HACK-019 sin reserva activa
+- 1791092763 | deadline lease/HACK-014/1791092671 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791092763 | deadline lease/HACK-030/1791092471 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
