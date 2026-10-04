@@ -418,3 +418,7 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 414 | 1791076163 | cris-1 | task:HACK-007 | integrated | HACK-012 | HACK-012 integrado en main (4928d4f61c76ea777285845e3bff8c0bed112e99). Si dependes de él: git fetch origin && git rebase origin/main
 - 415 | 1791076163 | cris-1 | task:HACK-015 | integrated | HACK-012 | HACK-012 integrado en main (4928d4f61c76ea777285845e3bff8c0bed112e99). Si dependes de él: git fetch origin && git rebase origin/main
 - 416 | 1791076163 | cris-1 | task:HACK-018 | integrated | HACK-012 | HACK-012 integrado en main (4928d4f61c76ea777285845e3bff8c0bed112e99). Si dependes de él: git fetch origin && git rebase origin/main
+- 417 | 1791076199 | cris-1 | task:HACK-003 | integrated | HACK-012 | HACK-012 en main (4928d4f): app/fixtures/validation/validation.json y docs/validation.md; rebase
+- 418 | 1791076199 | cris-1 | task:HACK-007 | integrated | HACK-012 | HACK-012 en main (4928d4f): app/fixtures/validation/validation.json y docs/validation.md; rebase
+- 419 | 1791076199 | cris-1 | task:HACK-015 | integrated | HACK-012 | HACK-012 en main (4928d4f): app/fixtures/validation/validation.json y docs/validation.md; rebase
+- 420 | 1791076199 | cris-1 | task:HACK-018 | integrated | HACK-012 | HACK-012 en main (4928d4f): app/fixtures/validation/validation.json y docs/validation.md; rebase
