@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 // Estado compartido de la UI: las features leen y escriben aquí; no se importan entre sí.
-export type Step = "constellation" | "dictation" | "diagnosis" | "inspector" | "action";
+export type Step = "constellation" | "dictation" | "diagnosis" | "inspector" | "pathway" | "action";
 
 export type Term = { hpo_id: string; label: string; present: boolean };
 
