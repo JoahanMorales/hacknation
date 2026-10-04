@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/pathway/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791093678
-Updated: 1791091878
+Lease-Until: 1791093761
+Updated: 1791091961
 Task-Base: 3d3e952a978305dc4957da477f1b83f9a5d1d6b6
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/60; ejecutar scripts/smoke
+Next: Esperar review de SHA bfd0c80; merge humano por la línea del inspector
 PR: https://github.com/JoahanMorales/hacknation/pull/60
 Evidence: -
