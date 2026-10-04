@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { ArrowRight, ArrowSquareOut, CaretDown, X } from "@phosphor-icons/react";
+import { ArrowRight, ArrowSquareOut, CaretDown, Graph, X } from "@phosphor-icons/react";
 
 import explainRaw from "../../../../app/fixtures/api/explain.json?raw";
 import nodeRaw from "../../../../app/fixtures/api/node.json?raw";
@@ -190,7 +190,10 @@ function InspectorPanel({ selectedId }: { selectedId: string }) {
             </p>
           </section>
 
-          {/* Del "porqué" al "qué hacer": abre la escena de acción para esta misma enfermedad. */}
+          {/* Del "porqué" al "qué hacer": el atlas de la enfermedad (HACK-024) y la escena de acción. */}
+          <Button variant="secondary" onClick={() => setStep("pathway")}>
+            <Graph size={18} aria-hidden="true" /> Open pathway: genes, mechanism, communities
+          </Button>
           <NextSteps onClick={() => setStep("action")} />
 
           <section aria-label="Explanation for the family" className="flex flex-col gap-2">
