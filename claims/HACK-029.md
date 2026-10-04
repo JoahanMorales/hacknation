@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/landing/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791088378
-Updated: 1791086578
+Lease-Until: 1791091560
+Updated: 1791089760
 Task-Base: b98fc390505566d12dd05d9b17affa00cc33b9b5
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/50; ejecutar scripts/smoke
-PR: https://github.com/JoahanMorales/hacknation/pull/50
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/57; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/57
 Evidence: -
