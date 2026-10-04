@@ -1,12 +1,12 @@
 # worklog/WL-1791066492-joahan-1-HACK-007-hack.HIj6SC.md · HACK-007
 
 ## Resumen vivo
-- Hecho: uv run pytest -q app/tests/test_scoring.py 5 passed; smoke PRODUCT_PASS; merge humano PR #8 (37c62b6)
+- Hecho: approve cris-1; merge humano PR #8
 - Decisión: semántica de generate.py de HACK-002; labels añadidos a annotations.json
 - Por qué: API real y ejemplos de la UI dan los mismos números
 - Falla: gh sin permiso de PR
 - Comandos: uv run pytest -q app/tests/test_scoring.py; bash scripts/smoke
-- Siguiente: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/8; ejecutar scripts/smoke
+- Siguiente: Integrada en main: 37c62b6d79b9ae4087ae7e94d4ff849042476a43; reclamar siguiente P0
 
 ## Historial
 - 1791066492 | CLAIMED | joahan-1 | claim; siguiente: LR sobre annotations.json y POST /api/diagnose
@@ -16,3 +16,4 @@
 - 1791069582 | REVIEW | joahan-1 | heartbeat; lease hasta 1791071382
 - 1791071683 | REVIEW | joahan-1 | heartbeat; lease hasta 1791073483
 - 1791072442 | REVIEW | cris-1 | review; approve; SHA 05da61d105694cb40d3b22bfa4ff745dfd2405cf; revisor cris-1
+- 1791074257 | INTEGRATED | joahan-1 | done; PR https://github.com/JoahanMorales/hacknation/pull/8; evidencia: approve cris-1; merge humano PR #8; reviewer: cris-1

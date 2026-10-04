@@ -1,6 +1,6 @@
 # HACK-007
 ID: HACK-007
-State: REVIEW
+State: INTEGRATED
 Owner: joahan-1
 Branch: feat/hack-007
 Worktree: /home/joahan/Proyectos/hacknation-wt/hack-007
@@ -9,14 +9,17 @@ Priority: P0
 Paths: app/services/scoring.py, app/routers/diagnose.py, app/tests/test_scoring.py
 Depends: HACK-001
 Verify: uv run pytest -q app/tests/test_scoring.py
-Lease-Until: 1791073483
-Updated: 1791071683
+Lease-Until: 0
+Updated: 1791074257
 Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/8; ejecutar scripts/smoke
+Next: Integrada en main: 37c62b6d79b9ae4087ae7e94d4ff849042476a43; reclamar siguiente P0
 PR: https://github.com/JoahanMorales/hacknation/pull/8
-Evidence: uv run pytest -q app/tests/test_scoring.py 5 passed; smoke PRODUCT_PASS; merge humano PR #8 (37c62b6)
-Events: 7
+Evidence: approve cris-1; merge humano PR #8
+Events: 8
 Checkpoints: 1
 Sessions: 3
 Last-Checkpoint: 1791066699
 Task-Tip: 05da61d105694cb40d3b22bfa4ff745dfd2405cf
+Integration-Proof: ancestry
+Merge-Commit: 37c62b6d79b9ae4087ae7e94d4ff849042476a43
+Reviewer: cris-1
