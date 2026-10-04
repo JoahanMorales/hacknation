@@ -9,13 +9,13 @@ Priority: P0
 Paths: docs/demo/
 Depends: HACK-006, HACK-017, HACK-018, HACK-020
 Verify: test -s docs/demo/script.md
-Lease-Until: 1791079996
-Updated: 1791078196
+Lease-Until: 1791080482
+Updated: 1791078682
 Task-Base: ee957e9a0846a5d6de9f0efd0660e66f21e213b7
 Next: Smoke y tour final main; escribir guiones150-300palabras/onepager/ZIP; solicitar revision docs y ensayo humano.
 PR: -
 Evidence: -
-Events: 2
+Events: 3
 Checkpoints: 1
 Sessions: 1
 Last-Checkpoint: 1791078196
