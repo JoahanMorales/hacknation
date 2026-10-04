@@ -30,46 +30,65 @@ export async function startLive(handlers: LiveHandlers): Promise<LiveSession> {
   const stream = await navigator.mediaDevices.getUserMedia({
     audio: { echoCancellation: true, noiseSuppression: true, channelCount: 1 },
   });
-  const peer = new RTCPeerConnection();
-  stream.getAudioTracks().forEach((track) => peer.addTrack(track, stream));
-  const channel = peer.createDataChannel("oai-events");
-
-  channel.addEventListener("message", (message) => {
-    const event = JSON.parse(String(message.data)) as { type: string; delta?: string; transcript?: string; error?: { message?: string } };
-    if (event.type === "conversation.item.input_audio_transcription.delta" && event.delta) handlers.onDelta(event.delta);
-    else if (event.type === "conversation.item.input_audio_transcription.completed") handlers.onSegment(event.transcript ?? "");
-    else if (event.type === "error") handlers.onError(event.error?.message ?? "Transcription error");
-  });
-
-  const offer = await peer.createOffer();
-  await peer.setLocalDescription(offer);
-  const answer = await fetch(REALTIME_CALLS_URL, {
-    method: "POST",
-    body: offer.sdp,
-    headers: { Authorization: `Bearer ${session.client_secret}`, "Content-Type": "application/sdp" },
-  });
-  if (!answer.ok) {
+  let peer: RTCPeerConnection | undefined;
+  let timer: number | undefined;
+  const dispose = () => {
+    window.clearInterval(timer);
     stream.getTracks().forEach((track) => track.stop());
-    peer.close();
-    throw new Error(`Realtime session ${answer.status}`);
+    peer?.close();
+  };
+  try {
+    const connection = peer = new RTCPeerConnection();
+    stream.getAudioTracks().forEach((track) => connection.addTrack(track, stream));
+    const channel = connection.createDataChannel("oai-events");
+
+    channel.addEventListener("message", (message) => {
+      let event: { type: string; delta?: string; transcript?: string; error?: { message?: string } };
+      try {
+        event = JSON.parse(String(message.data));
+      } catch {
+        handlers.onError("Transcription returned an unreadable event.");
+        return;
+      }
+      if (event.type === "conversation.item.input_audio_transcription.delta" && event.delta) handlers.onDelta(event.delta);
+      else if (event.type === "conversation.item.input_audio_transcription.completed") handlers.onSegment(event.transcript ?? "");
+      else if (event.type === "error") handlers.onError(event.error?.message ?? "Transcription error");
+    });
+
+    const offer = await connection.createOffer();
+    await connection.setLocalDescription(offer);
+    const answer = await fetch(REALTIME_CALLS_URL, {
+      method: "POST",
+      body: offer.sdp,
+      headers: { Authorization: `Bearer ${session.client_secret}`, "Content-Type": "application/sdp" },
+    });
+    if (!answer.ok) {
+      throw new Error(`Realtime session ${answer.status}`);
+    }
+    await connection.setRemoteDescription({ type: "answer", sdp: await answer.text() });
+
+    const commit = () => {
+      if (channel.readyState === "open") channel.send(JSON.stringify({ type: "input_audio_buffer.commit" }));
+    };
+    timer = window.setInterval(commit, COMMIT_EVERY_MS);
+
+    return {
+      stream,
+      stop: async () => {
+        window.clearInterval(timer);
+        stream.getTracks().forEach((track) => track.stop());
+        try {
+          commit();
+          // Deja llegar el último segmento antes de cerrar.
+          await new Promise((resolve) => window.setTimeout(resolve, 1500));
+        } finally {
+          channel.close();
+          dispose();
+        }
+      },
+    };
+  } catch (error) {
+    dispose();
+    throw error;
   }
-  await peer.setRemoteDescription({ type: "answer", sdp: await answer.text() });
-
-  const commit = () => {
-    if (channel.readyState === "open") channel.send(JSON.stringify({ type: "input_audio_buffer.commit" }));
-  };
-  const timer = window.setInterval(commit, COMMIT_EVERY_MS);
-
-  return {
-    stream,
-    stop: async () => {
-      window.clearInterval(timer);
-      stream.getTracks().forEach((track) => track.stop());
-      commit();
-      // Deja llegar el último segmento antes de cerrar.
-      await new Promise((resolve) => window.setTimeout(resolve, 1500));
-      channel.close();
-      peer.close();
-    },
-  };
 }

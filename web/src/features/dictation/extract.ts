@@ -1,5 +1,5 @@
-import sampleCaseUrl from "../../../../app/fixtures/case/pompe_case.json?url";
-import sampleExtractUrl from "../../../../app/fixtures/api/symptoms_extract.json?url";
+import sampleCaseUrl from "../../../../app/fixtures/case/pompe_case.json?url&no-inline";
+import sampleExtractUrl from "../../../../app/fixtures/api/symptoms_extract.json?url&no-inline";
 
 import { api } from "../../lib/api";
 import { useStore } from "../../lib/store";
@@ -22,7 +22,10 @@ const json = <T,>(url: string) =>
 
 /** Caso publicado PMID 7668832 (app/fixtures/case, demo_data): narración y términos esperados. */
 export function loadSampleCase(): Promise<SampleCase> {
-  sampleCase ??= json<SampleCase>(sampleCaseUrl);
+  sampleCase ??= json<SampleCase>(sampleCaseUrl).catch((error: unknown) => {
+    sampleCase = null;
+    throw error;
+  });
   return sampleCase;
 }
 
@@ -33,14 +36,22 @@ export function loadSampleCase(): Promise<SampleCase> {
  */
 export async function extractTerms(transcript: string, language: "en" | "es"): Promise<ExtractedTerm[]> {
   let result: ExtractResult;
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), 10000);
   try {
     result = await api<ExtractResult>("/symptoms/extract", {
       method: "POST",
       body: JSON.stringify({ transcript, language }),
+      signal: controller.signal,
     });
   } catch {
-    sampleExtract ??= json<ExtractResult>(sampleExtractUrl);
+    sampleExtract ??= json<ExtractResult>(sampleExtractUrl).catch((error: unknown) => {
+      sampleExtract = null;
+      throw error;
+    });
     result = await sampleExtract;
+  } finally {
+    window.clearTimeout(timer);
   }
   if (!result.demo_data) return result.terms;
   // Respuesta grabada (backend sin API key) o ejemplo del contrato: trae el caso completo, así que
