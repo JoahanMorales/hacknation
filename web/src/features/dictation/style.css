@@ -1,0 +1,28 @@
+.cn-dictation {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.cn-dictation > .cn-panel-header {
+  flex-shrink: 0;
+}
+
+.cn-dictation > .cn-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.cn-dictation .cn-dictation-mic {
+  position: relative;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+}
