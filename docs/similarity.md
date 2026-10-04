@@ -12,7 +12,7 @@
 
 ## Evidencia: LGMD R9 (FKRP, ORPHA:34515)
 
-**6 de 10** vecinos son distroglicanopatías, frente a **0.03** esperadas por azar (42 distroglicanopatías en 12,867 enfermedades; p hipergeométrica = 1.5e-13).
+**6 de 10** vecinos son distroglicanopatías, frente a **0.03** esperadas por azar (42 distroglicanopatías en 12,867 enfermedades; P(X ≥ 6) hipergeométrica = 1.5e-13, sacando a LGMD R9 de la urna: N = 12,866, K = 41).
 
 | # | Vecino | Similitud | ¿Distroglicanopatía? |
 |---|---|---|---|
@@ -36,4 +36,5 @@ Fenotipos compartidos más informativos: Difficulty climbing stairs (IC 4.96); E
 ## Límites
 
 - Las anotaciones son de la literatura y desiguales: enfermedades poco descritas tienen vecinos menos fiables.
+- Subtipos hermanos (p. ej. las MDDG de OMIM) suelen anotarse desde las mismas fuentes y series clínicas, lo que infla su similitud mutua: el agrupamiento del cluster es esperable y no prueba por sí solo un mecanismo común.
 - Frecuencias no se usan en la similitud (sólo presencia); la ausencia no anotada no es ausencia real.

@@ -13,6 +13,7 @@ arista extraída se guarda una cita breve que debe aparecer literal en su resume
 """
 import argparse
 import json
+import re
 import sys
 import time
 import urllib.parse
@@ -44,6 +45,18 @@ GENES = {
     "GAA": ('"Pompe disease"', '("Pompe disease"[tiab] AND "GAA"[tiab])'),
 }
 AI_NOTE = "AI-extracted, unreviewed"
+# Una arista es "del gen" si su sujeto u objeto nombra el gen (o su enfermedad); el resto es contexto del resumen
+# (p. ej. "CAPN3 causes LGMD" en un artículo de FKRP). Para los genes distroglicanos cuenta también "dystroglycan".
+GENE_ALIASES = {
+    "FKRP": [r"\bfkrp\b", r"fukutin[- ]related"],
+    "FKTN": [r"\bfktn\b", r"\bfukutin\b(?![- ]related)"],
+    "CRPPA": [r"\bcrppa\b", r"\bispd\b"],
+    "POMT1": [r"\bpomt1\b"],
+    "POMGNT1": [r"\bpomgnt1\b"],
+    "LARGE1": [r"\blarge1?\b"],
+    "GAA": [r"\bgaa\b", r"pompe", r"acid (alpha|α)-glucosidase", r"glycogen storage disease type ii"],
+}
+DYSTROGLYCAN = r"dystroglycan"
 MODEL = "gpt-6-luna"
 MAX_QUOTE_WORDS = 30
 WORKERS = 6
@@ -149,6 +162,12 @@ def load_raw() -> dict:
     return {g: json.loads((RAW / f"{g}.json").read_text(encoding="utf-8")) for g in GENES}
 
 
+def about_gene(edge: dict) -> bool:
+    patterns = GENE_ALIASES[edge["gene"]] + ([DYSTROGLYCAN] if edge["gene"] != "GAA" else [])
+    text = normalize(f"{edge['subject']} || {edge['object']}")
+    return any(re.search(pattern, text) for pattern in patterns)
+
+
 def build() -> dict:
     raw = load_raw()
     diseases = gene_diseases()
@@ -173,6 +192,8 @@ def build() -> dict:
         for pid, e in sorted(by_investigator.items()) if len(e["genes"]) >= 2
     ]
     extracted = json.loads((RAW / "extracted.json").read_text(encoding="utf-8")) if (RAW / "extracted.json").is_file() else None
+    if extracted:
+        extracted["edges"] = [{**edge, "about_gene": about_gene(edge)} for edge in extracted["edges"]]
     return {
         "schema_version": "1.0",
         "demo_data": False,

@@ -31,12 +31,19 @@ def connector(disease_id: str) -> dict:
     appl_ids = sorted({a for g in genes for a in data["genes"][g]["projects"]})
     projects = sorted((data["projects"][str(a)] for a in appl_ids), key=lambda p: (-p["fiscal_year"], p["appl_id"]))
     organizations = sorted({p["organization"] for p in projects if p["organization"]})
-    shared = [
-        {**s, "other_disease_ids": [d for d in s["disease_ids"] if d != disease_id]}
-        for s in data["shared_investigators"]
-        if disease_id in s["disease_ids"] and any(d != disease_id for d in s["disease_ids"])
-    ]
-    edges = [e for e in data["extraction"]["edges"] if e.get("gene") in genes]
+    # Sólo cuenta como puente un investigador que también financia trabajo en OTRO gen del cluster; la enfermedad
+    # alélica del mismo gen (FKRP → OMIM:613153) no es otra comunidad.
+    shared = []
+    for s in data["shared_investigators"]:
+        other_genes = sorted(set(s["genes"]) - set(genes))
+        if disease_id in s["disease_ids"] and other_genes:
+            shared.append({
+                "profile_id": s["profile_id"], "name": s["name"], "genes": s["genes"], "other_genes": other_genes,
+                "other_disease_ids": sorted({d for g in other_genes for d in data["genes"][g]["disease_ids"]}),
+                "projects": s["projects"],
+            })
+    gene_edges = [e for e in data["extraction"]["edges"] if e.get("gene") in genes]
+    edges = [e for e in gene_edges if e.get("about_gene", True)]
     return {
         "schema_version": "1.0",
         "demo_data": data["demo_data"],
@@ -49,6 +56,7 @@ def connector(disease_id: str) -> dict:
         "shared_investigators": shared,
         "articles": [a for g in genes for a in data["genes"][g]["articles"]],
         "extracted_edges": edges,
+        "context_edges_omitted": len(gene_edges) - len(edges),
         "extraction_status": data["extraction"]["status"],
         "searched": [f"{g}: RePORTER {data['genes'][g]['reporter_query']!s} (FY {data['fiscal_years'][0]}-"
                      f"{data['fiscal_years'][-1]}); PubMed {data['genes'][g]['pubmed_query']}" for g in genes],
