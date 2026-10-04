@@ -2,26 +2,26 @@
 
 Design Read: una mesa clínica de exploración, con constelación nocturna, datos precisos y un acento cálido que guía la acción.
 
-VARIANCE 4 / MOTION 4 / DENSITY 5. Producto de una vista para escritorio 1440×900 y 1280×720. Tema oscuro fijo, conforme al brief. CSS nativo para componentes y tokens Tailwind v4; no simular otra biblioteca de diseño.
+VARIANCE 4 / MOTION 4 / DENSITY 5. Producto de una vista para escritorio 1440×900 y 1280×720. Tema claro clínico (blanco con verde) desde la Ola 3, por decisión del humano de Saus aprobada por Joahan; ver sección "Ola 3". CSS nativo para componentes y tokens Tailwind v4; no simular otra biblioteca de diseño.
 
 ## Paleta y contraste
 
 | Token          | Hex     | Uso                                |
 | -------------- | ------- | ---------------------------------- |
-| night          | #070b14 | Fondo                              |
-| surface        | #111b2b | Panel de vidrio al 96%, blur 12px  |
-| surface-raised | #1a273a | Controles                          |
-| ink            | #edf2f8 | Texto principal                    |
-| muted          | #a5b3c7 | Texto secundario                   |
-| line           | #536780 | Líneas no esenciales               |
-| accent         | #edc994 | Único acento de selección y acción |
-| accent-ink     | #171c25 | Texto sobre acento                 |
-| glycosylation  | #9fcac3 | Glicosilación                      |
-| lysosomal      | #aabddf | Lisosomal                          |
-| structural     | #d5b5c7 | Estructura muscular                |
-| membrane       | #a5c9a1 | Membrana                           |
-| signaling      | #d3b9a0 | Señalización                       |
-| other          | #bac2ce | Otros mecanismos                   |
+| night          | #f3f8f5 | Fondo (blanco verdoso)             |
+| surface        | #ffffff | Panel blanco al 96%, blur 12px     |
+| surface-raised | #e8f2ed | Controles                          |
+| ink            | #10302a | Texto principal                    |
+| muted          | #4b6660 | Texto secundario                   |
+| line           | #b9cec6 | Líneas no esenciales               |
+| accent         | #0d7a54 | Único acento de selección y acción |
+| accent-ink     | #ffffff | Texto sobre acento                 |
+| glycosylation  | #1a7770 | Glicosilación                      |
+| lysosomal      | #3568b7 | Lisosomal                          |
+| structural     | #ab4871 | Estructura muscular                |
+| membrane       | #427730 | Membrana                           |
+| signaling      | #955e19 | Señalización                       |
+| other          | #5a6b7a | Otros mecanismos                   |
 
 Los seis colores semánticos no son acentos de acción. Siempre llevan nombre. Texto normal debe superar 4.5:1, foco y límites esenciales 3:1. El kit verifica los colores de texto contra surface-raised y el panel compuesto sobre blanco (caso extremo del vidrio). No usar line para texto. Evidencia reutiliza colores semánticos: Observed/glycosylation, Inferred/lysosomal, Hypothesis/signaling, Contradicted/structural; además lleva icono y etiqueta.
 
@@ -65,3 +65,22 @@ Verificar desde la raíz con `uv run python web/src/ui/check_kit.py --url http:/
 8. No añadir filtros, términos ni vínculos clínicos inventados para mejorar una demo.
 9. Evitar scroll horizontal; la vista normal conserva sus slots. El kit tiene lectura natural y adaptación de columnas.
 10. Verificar build, contraste, teclado, cambios de estado, consola y capturas antes de entregar. Hero, fotos, testimonios, logos comerciales y formularios de marketing no aplican a esta biblioteca de producto.
+
+## Ola 3 · Lo que pidió el humano de Saus (HACK-028)
+
+Preguntas hechas por Saus a su humano el 3 oct; respuestas resumidas y qué se hizo con cada una.
+
+| # | Pedido del humano | Estado |
+|---|---|---|
+| 1 | Paleta referente al tema médico: blanco con verde (aprobado por Joahan) | Hecho: tokens de theme.css en tema claro; acento verde #0d7a54; semánticos oscurecidos para contraste sobre blanco |
+| 2 | Landing page antes del atlas | En curso como HACK-029 (tarea pedida al planificador) |
+| 3 | Los paneles tapan el atlas | Hecho: botón "Focus atlas" (modo presentación) oculta los paneles; Pathway (HACK-024) ocupa la pantalla entera |
+| 4 | No se entiende por dónde empezar | Hecho: recorrido de 5 pasos en la cabecera (Symptoms → Matches → Evidence → Pathway → Next steps); la búsqueda (HACK-022) ocupa el centro y la landing (HACK-029) añade el CTA |
+| 5 | Galaxias como discos llenos | Hecho: estrellas más finas (1.05 px base) y tonos medios que evitan el verde del acento |
+| 6 | Demasiado texto / letra pequeña | Hecho: --text-xs 13 px y --text-sm 15 px; componentes de 10–13 px suben a 13–14 px |
+| 7 | Guía de gestos (zoom y desplazarse de lado a lado) | Hecho en HACK-013: guía "How to use gestures", puño y mover = arrastrar, pellizco = zoom |
+| 8 | Más wow visual en el atlas y pantallas menos cargadas | Parcial: Focus atlas, estrellas finas, candidatas más grandes en verde; el resto de paneles es de sus tareas |
+| 9 | Pathway como protagonista, modo presentación, transiciones, tipografía | Hecho: Pathway a pantalla completa (HACK-024), Focus atlas, entrada de paneles con fundido de 240 ms (sin animación con reduced motion), escala tipográfica mayor |
+
+Reglas nuevas: usar siempre tokens (bg-surface, text-ink, text-muted, border-line, bg-accent, fill-*/stroke-*), nunca hex fijos; el verde es sólo para acción, selección y candidatas; --color-alert (#c2410c) para "contradicted".
+Pendiente fuera de este alcance (pedido a sus dueños): colores fijos en diagnosis/style.css y en la onda del dictado; nombres cortos de enfermedades y foco por teclado en el Pathway (notas de joahan-1).

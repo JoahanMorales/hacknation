@@ -4,26 +4,32 @@
 @theme static {
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, monospace;
-  --color-night: #070b14;
-  --color-surface: #111b2b;
-  --color-surface-raised: #1a273a;
-  --color-ink: #edf2f8;
-  --color-muted: #a5b3c7;
-  --color-line: #536780;
-  --color-accent: #edc994;
-  --color-accent-ink: #171c25;
-  --color-glycosylation: #9fcac3;
-  --color-lysosomal: #aabddf;
-  --color-structural: #d5b5c7;
-  --color-membrane: #a5c9a1;
-  --color-signaling: #d3b9a0;
-  --color-other: #bac2ce;
+  --color-night: #f3f8f5;
+  --color-surface: #ffffff;
+  --color-surface-raised: #e8f2ed;
+  --color-ink: #10302a;
+  --color-muted: #4b6660;
+  --color-line: #b9cec6;
+  --color-accent: #0d7a54;
+  --color-accent-ink: #ffffff;
+  --color-glycosylation: #1a7770;
+  --color-lysosomal: #3568b7;
+  --color-structural: #ab4871;
+  --color-membrane: #427730;
+  --color-signaling: #955e19;
+  --color-other: #5a6b7a;
   --radius-panel: 16px;
   --radius-control: 10px;
   --radius-chip: 999px;
   --shadow-panel:
-    0 12px 36px rgb(2 6 15 / 28%), inset 0 1px 0 rgb(237 242 248 / 3%);
+    0 10px 30px rgb(16 48 42 / 10%), 0 1px 2px rgb(16 48 42 / 6%);
   --ease-feedback: cubic-bezier(0.16, 1, 0.3, 1);
+  --color-alert: #c2410c;
+  /* Letra base más grande (petición del humano de Saus): sólo los tamaños pequeños crecen. */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.25rem;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.4rem;
 }
 html,
 body,
@@ -52,21 +58,21 @@ body {
   border: 0;
 }
 .cn-muted {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--color-muted);
 }
 .cn-id {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 13px;
   color: var(--color-muted);
   overflow-wrap: anywhere;
 }
 .cn-panel {
   min-width: 0;
-  border: 1px solid rgb(165 179 199 / 22%);
+  border: 1px solid rgb(16 48 42 / 22%);
   border-radius: var(--radius-panel);
-  background: rgb(17 27 43 / 96%);
+  background: rgb(255 255 255 / 96%);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow-panel);
 }
@@ -98,7 +104,7 @@ body {
   justify-items: start;
   gap: 16px;
   color: var(--color-muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 .cn-panel-state p {
   margin: 0;
@@ -118,7 +124,7 @@ body {
 }
 .cn-skeleton span {
   height: 16px;
-  background: #344357;
+  background: #dce9e3;
   border-radius: 3px;
 }
 .cn-skeleton span:nth-child(2) {
@@ -137,7 +143,7 @@ body {
   border: 1px solid transparent;
   border-radius: var(--radius-control);
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 550;
   cursor: pointer;
   transition:
@@ -152,15 +158,15 @@ body {
   color: var(--color-accent-ink);
 }
 .cn-button--primary:hover:not(:disabled) {
-  background: #f5dbb5;
+  background: #0b7350;
 }
 .cn-button--secondary {
-  border-color: #73849c;
+  border-color: #778c84;
   background: var(--color-surface-raised);
   color: var(--color-ink);
 }
 .cn-button--secondary:hover:not(:disabled) {
-  background: #24334a;
+  background: #e3efe9;
 }
 .cn-button--ghost {
   background: transparent;
@@ -172,9 +178,9 @@ body {
 }
 .cn-button:disabled {
   cursor: default;
-  background: #243147;
-  color: #b2bed0;
-  border-color: #536780;
+  background: #eef5f1;
+  color: #4b6660;
+  border-color: #b9cec6;
 }
 .cn-loading-mark {
   width: 12px;
@@ -187,10 +193,10 @@ body {
   display: inline-flex;
   max-width: 100%;
   align-items: center;
-  border: 1px solid #73849c;
+  border: 1px solid #778c84;
   border-radius: var(--radius-chip);
-  background: #223146;
-  font-size: 12px;
+  background: #eef5f1;
+  font-size: 14px;
 }
 .cn-chip-main {
   display: inline-flex;
@@ -231,7 +237,7 @@ button.cn-chip-main {
 }
 .cn-chip--negated {
   background: transparent;
-  border-color: #73849c;
+  border-color: #778c84;
   color: var(--color-muted);
 }
 .cn-chip--negated .cn-chip-term {
@@ -249,7 +255,7 @@ button.cn-chip-main {
   padding: 5px 8px;
   border: 1px solid currentColor;
   border-radius: var(--radius-chip);
-  font-size: 11px;
+  font-size: 13px;
   white-space: nowrap;
 }
 .cn-evidence--observado {
@@ -266,7 +272,7 @@ button.cn-chip-main {
 }
 .cn-sample {
   color: var(--color-accent);
-  background: rgb(237 201 148 / 5%);
+  background: rgb(13 122 84 / 5%);
 }
 .cn-kbd {
   display: inline-grid;
@@ -274,7 +280,7 @@ button.cn-chip-main {
   min-width: 24px;
   height: 23px;
   padding: 0 5px;
-  border: 1px solid #657992;
+  border: 1px solid #778c84;
   border-bottom-width: 2px;
   border-radius: 5px;
   font: 10px var(--font-mono);
@@ -290,7 +296,7 @@ button.cn-chip-main {
   justify-content: space-between;
   align-items: baseline;
   gap: 12px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-muted);
 }
 .cn-meter-heading strong {
@@ -314,7 +320,7 @@ button.cn-chip-main {
   position: absolute;
   top: 1px;
   height: 10px;
-  background: rgb(237 201 148 / 25%);
+  background: rgb(13 122 84 / 25%);
   border-inline: 1px solid var(--color-accent);
 }
 .cn-meter-point {
@@ -336,7 +342,7 @@ button.cn-chip-main {
 .cn-kit {
   min-height: 100dvh;
   background:
-    radial-gradient(circle, rgb(165 179 199 / 5%) 0.7px, transparent 1px) 0 0 /
+    radial-gradient(circle, rgb(16 48 42 / 5%) 0.7px, transparent 1px) 0 0 /
       43px 43px,
     var(--color-night);
 }
@@ -350,7 +356,7 @@ button.cn-chip-main {
   display: flex;
   align-items: center;
   gap: 20px;
-  border-bottom: 1px solid rgb(165 179 199 / 18%);
+  border-bottom: 1px solid rgb(16 48 42 / 18%);
 }
 .cn-kit-brand {
   display: inline-flex;
@@ -367,7 +373,7 @@ button.cn-chip-main {
 }
 .cn-kit-label {
   flex: 1;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-muted);
 }
 .cn-kit-intro {
@@ -386,7 +392,7 @@ button.cn-chip-main {
 }
 .cn-kit-intro p {
   margin: 8px 0 0;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-muted);
 }
 .cn-kit-intro .cn-kit-count {
@@ -435,11 +441,11 @@ button.cn-chip-main {
 }
 .cn-kit-states button[aria-pressed="true"] {
   color: var(--color-accent);
-  background: rgb(237 201 148 / 7%);
-  border-color: rgb(237 201 148 / 40%);
+  background: rgb(13 122 84 / 7%);
+  border-color: rgb(13 122 84 / 40%);
 }
 .cn-kit-notice {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--color-muted);
   min-height: 38px;
@@ -466,7 +472,7 @@ button.cn-chip-main {
   fill: var(--color-accent);
 }
 .cn-kit-match {
-  border-color: rgb(237 201 148 / 42%);
+  border-color: rgb(13 122 84 / 42%);
 }
 .cn-kit-match h3 {
   margin: 0 0 8px;
@@ -480,12 +486,12 @@ button.cn-chip-main {
   color: var(--color-muted);
 }
 .cn-kit-disclaimer {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--color-muted);
 }
 .cn-kit-match details {
   margin-top: 20px;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--color-muted);
 }
@@ -494,7 +500,7 @@ button.cn-chip-main {
   color: var(--color-ink);
 }
 .cn-kit-evidence-copy {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--color-ink);
   margin: 16px 0;
@@ -503,7 +509,7 @@ button.cn-chip-main {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--color-ink);
   text-underline-offset: 4px;
 }
@@ -513,10 +519,10 @@ button.cn-chip-main {
   gap: 8px;
   padding-top: 18px;
   margin-top: 20px;
-  border-top: 1px solid rgb(165 179 199 / 18%);
+  border-top: 1px solid rgb(16 48 42 / 18%);
 }
 .cn-kit-caption {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.6;
   color: var(--color-muted);
 }
@@ -529,7 +535,7 @@ button.cn-chip-main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--color-muted);
 }
 .cn-kit-mechanisms i {
@@ -544,9 +550,9 @@ button.cn-chip-main {
   gap: 24px;
   margin-top: 28px;
   padding-top: 18px;
-  border-top: 1px solid rgb(165 179 199 / 18%);
+  border-top: 1px solid rgb(16 48 42 / 18%);
   color: var(--color-muted);
-  font-size: 11px;
+  font-size: 13px;
 }
 .cn-kit-footer p {
   flex: 1;
@@ -615,26 +621,27 @@ button.cn-chip-main {
   }
 }
 @media (min-width: 1024px) and (max-height: 760px) {
+  /* Ola 3: la letra mayor añade ~50 px; se compensa aquí para que el kit quepa a 1280×720. */
   .cn-kit-container {
     padding-bottom: 16px;
   }
   .cn-kit-header {
-    min-height: 64px;
+    min-height: 52px;
   }
   .cn-kit-intro {
-    padding-block: 12px;
+    padding-block: 6px;
   }
   .cn-kit-intro h1 {
-    font-size: 28px;
+    font-size: 24px;
   }
   .cn-kit-column {
-    gap: 12px;
+    gap: 8px;
   }
   .cn-panel-header {
     padding: 16px 16px 0;
   }
   .cn-panel-body {
-    padding: 16px;
+    padding: 12px 16px;
   }
   .cn-kit-chips {
     gap: 6px;
@@ -645,7 +652,7 @@ button.cn-chip-main {
     line-height: 1.4;
   }
   .cn-kit-sky {
-    height: 104px;
+    height: 72px;
     margin-bottom: 8px;
   }
   .cn-kit-notice {
@@ -653,8 +660,8 @@ button.cn-chip-main {
     margin-top: 8px;
   }
   .cn-kit-footer {
-    margin-top: 12px;
-    padding-top: 10px;
+    margin-top: 6px;
+    padding-top: 8px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -674,5 +681,21 @@ button.cn-chip-main {
 @supports not (backdrop-filter: blur(12px)) {
   .cn-panel {
     background: var(--color-surface);
+  }
+}
+
+/* Ola 3 · transición entre escenas: cada panel entra con un fundido corto en vez de aparecer de golpe. */
+@keyframes cn-panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+.cn-panel {
+  animation: cn-panel-enter 240ms var(--ease-feedback) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cn-panel {
+    animation: none;
   }
 }
