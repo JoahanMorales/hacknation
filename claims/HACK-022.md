@@ -15,7 +15,3 @@ Task-Base: 78be7f5550b5b7acc073d455cce0fc0d6ad842bb
 Next: Ajustar check de guía, smoke e integrar
 PR: -
 Evidence: -
-Events: 14
-Checkpoints: 7
-Sessions: 2
-Last-Checkpoint: 1791090467
