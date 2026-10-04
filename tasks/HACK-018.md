@@ -1,6 +1,6 @@
 # HACK-018
 ID: HACK-018
-State: REVIEW
+State: INTEGRATED
 Owner: zoe-1
 Branch: feat/hack-018-action
 Worktree: /c/Users/zm180/OneDrive/Desktop/hacknation-wt/hack-018
@@ -9,14 +9,17 @@ Priority: P0
 Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791073617
-Updated: 1791071817
+Lease-Until: 0
+Updated: 1791071916
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Leer inbox y main. Al integrar0204751407 y01943b78c7, rebuild con viteconfig nuevo de2fdb66b y repetir navegador. Aprobacion018 -> done integrated c5f95a0 por treeproof; no repetir review011.
+Next: Integrada en main: c5f95a0b036a87e3ce4d3d5e4d935bd1fb85b117; reclamar siguiente P0
 PR: https://github.com/JoahanMorales/hacknation/pull/19
-Evidence: SHA b99c7dda395d15dabf9ced7f53ecd34b2ccb83a9 publicado; tree identico a main c5f95a0 (merge PR19); q scripts/smoke PRODUCT_PASS exit0,65tests,Ruff,lint,build. Fix diagnosis oculto en action verificado; API real Yes/No/recovery/stale PASS. Regression conjunta Action plan ratio1 falla por altura020; owner020fix4751407 pendiente integracion, declarar recorrido no verificado hasta rerun.
-Events: 22
+Evidence: PR19 merge humano c5f95a0; SHA aprobado b99c7dd por joahan1; trees iguales verificados antesdebase2fdb. smoke65PASS Ruff lint build; fix propio diagnosis oculto stepaction. Scroll020 y citas019 entraron a main225d175/f6e0566; repetir ensayo en base428de10 para cierre de demo.
+Events: 23
 Checkpoints: 12
 Sessions: 2
 Last-Checkpoint: 1791071649
 Task-Tip: b99c7dda395d15dabf9ced7f53ecd34b2ccb83a9
+Integration-Proof: tree:5f48ad5bebbd9091196a71201acb4ca2383ec4d0
+Merge-Commit: c5f95a0b036a87e3ce4d3d5e4d935bd1fb85b117
+Reviewer: joahan-1
