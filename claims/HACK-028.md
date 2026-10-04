@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/DESIGN.md, web/src/theme.css, web/src/ui/, web/src/App.tsx (autorizado por su dueño joahan-1 para esta ola), web/src/features/graph/, web/src/features/gestures/
 Depends: Ninguna
 Verify: npm --prefix web run build
-Lease-Until: 1791087757
-Updated: 1791085957
+Lease-Until: 1791091520
+Updated: 1791089720
 Task-Base: b98fc390505566d12dd05d9b17affa00cc33b9b5
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/48; ejecutar scripts/smoke
-PR: https://github.com/JoahanMorales/hacknation/pull/48
+Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/56; ejecutar scripts/smoke
+PR: https://github.com/JoahanMorales/hacknation/pull/56
 Evidence: -
