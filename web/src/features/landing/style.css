@@ -1,119 +1,53 @@
-/* Sin @layer: así gana a preflight sin depender del orden del bundle; las clases no fijan position
-   para que las utilidades (md:absolute) sigan mandando. */
-/* HACK-029 · Landing: vidrio estilo Apple (aproximación web con backdrop-filter; Apple no publica
-   un CSS oficial de Liquid Glass). Paleta cerrada del humano (#1E6FD9, #0B2A4A, #8EC5FC, #5ED3D0,
-   #EEF4F9), en OSCURO desde la Ola 3 para ir a juego con el atlas: cielo azul marino, vidrio marino,
-   una tarjeta azul sólida por sección. Una sola curva y sólo transform/opacity animados.
-   Rendimiento: nada de backdrop-filter encima del cielo animado (se recalcularía cada cuadro). */
+/* HACK-029 · Landing de OlivIA. Design read (design-taste-frontend): landing de producto de salud
+   para médicos y líderes de grupos de pacientes, oscura, sobria y clínica; VARIANCE 6 / MOTION 4 /
+   DENSITY 3. Sin glows ni neones (§9.A): bordes finos y sombras neutras. Un solo acento (celeste
+   #8EC5FC) para enlaces e iconos; botones: primario blanco roto con texto marino, secundario sólo
+   contorno. Radios: botones píldora, superficies 24 px. Sólo transform/opacity animados.
+   Sin @layer (gana a preflight sin depender del orden del bundle) y sin fijar position en clases
+   que también reciben utilidades (md:absolute). */
 
 .lp {
   --lp-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --lp-blue: #1e6fd9;
-  --lp-navy: #0b2a4a;
+  --lp-ink: #eef4f9;
+  --lp-muted: #9fb4c9;
   --lp-sky: #8ec5fc;
-  --lp-teal: #5ed3d0;
-  --lp-muted: #5b7189;
+  --lp-navy: #0b2a4a;
+  --lp-line: rgb(238 244 249 / 10%);
   position: relative;
   min-height: 100dvh;
   overflow-x: clip;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgb(30 111 217 / 35%), transparent 70%),
-    linear-gradient(180deg, #071d35 0%, #0b2a4a 45%, #071d35 100%);
-  color: #eef4f9;
+  background: linear-gradient(180deg, #071d35 0%, #0a2540 55%, #071d35 100%);
+  color: var(--lp-ink);
 }
 
-/* Manchas difuminadas detrás del vidrio (para que tenga qué desenfocar). */
-.lp-blob {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(80px);
-  pointer-events: none;
-  will-change: transform;
-}
-
-.lp-glass {
-  border: 1px solid rgb(142 197 252 / 16%);
-  border-radius: 28px;
-  background: rgb(18 54 92 / 45%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 8px 32px rgb(3 14 28 / 30%), inset 0 1px 0 rgb(238 244 249 / 6%);
-}
-
-/* Tarjetas que flotan sobre el cielo marino: vidrio oscuro del mismo cielo (el blanco translúcido
-   encima del azul marino se veía gris). */
-.lp-glass--night {
-  border: 1px solid rgb(142 197 252 / 22%);
-  border-radius: 28px;
-  background: rgb(11 42 74 / 90%);
-  box-shadow: 0 18px 48px rgb(3 14 28 / 45%);
-  color: #eef4f9;
-}
-
-.lp-navy {
-  border: 1px solid rgb(142 197 252 / 18%);
-  border-radius: 28px;
+/* La ventana del producto: el cielo vivo con su marco. */
+.lp-window {
+  border: 1px solid var(--lp-line);
+  border-radius: 24px;
   background: var(--lp-navy);
-  color: #fff;
-  box-shadow: 0 30px 80px rgb(3 14 28 / 55%), 0 0 0 1px rgb(3 14 28 / 40%);
+  box-shadow: 0 40px 80px -24px rgb(3 14 28 / 70%);
 }
 
-/* La tarjeta de contraste en oscuro: azul sólido con un brillo arriba. */
-.lp-blue {
-  border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 0%) 45%),
-    var(--lp-blue);
-  color: #fff;
-  box-shadow: 0 18px 48px rgb(30 111 217 / 25%);
+/* Superficie elevada (marco de capturas y hallazgos): marino un tono más claro, borde fino y brillo
+   interior de 1 px. Sólida: nada de blur encima del cielo animado. */
+.lp-float {
+  border: 1px solid rgb(238 244 249 / 12%);
+  border-radius: 24px;
+  background: #0d2f52;
+  box-shadow:
+    inset 0 1px 0 rgb(238 244 249 / 5%),
+    0 24px 48px -16px rgb(3 14 28 / 65%);
 }
 
-/* Hover de tarjeta: sube 5 px; la sombra más profunda y el brillo extra son capas que sólo cambian
-   de opacidad (sin animar box-shadow ni filter). */
-.lp-card {
-  position: relative;
-  isolation: isolate;
-  transition: transform 500ms var(--lp-ease);
-}
-.lp-card::before,
-.lp-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 500ms var(--lp-ease);
-}
-.lp-card::before {
-  background: linear-gradient(180deg, rgb(142 197 252 / 10%), rgb(142 197 252 / 0%) 60%);
-}
-.lp-blue.lp-card::before {
-  background: linear-gradient(180deg, rgb(255 255 255 / 12%), rgb(255 255 255 / 0%) 60%);
-}
-.lp-card::after {
-  box-shadow: 0 22px 48px rgb(3 14 28 / 45%);
-  z-index: -1;
-}
-@media (hover: hover) {
-  .lp-card:hover {
-    transform: translateY(-5px);
-  }
-  .lp-card:hover::before,
-  .lp-card:hover::after {
-    opacity: 1;
-  }
-}
-
-/* Botones píldora: primario azul y secundario de vidrio. */
+/* Botones píldora. Primario: blanco roto sobre marino (13:1). Secundario: contorno. */
 .lp-btn {
   display: inline-flex;
-  height: 3rem;
+  height: 2.875rem;
   align-items: center;
   gap: 0.5rem;
   border-radius: 999px;
-  padding: 0 1.4rem;
-  font-size: 1rem;
+  padding: 0 1.35rem;
+  font-size: 0.95rem;
   font-weight: 500;
   white-space: nowrap;
   cursor: pointer;
@@ -126,15 +60,28 @@
   transform: scale(0.98);
 }
 .lp-btn--primary {
-  border: 1px solid var(--lp-sky);
-  background: var(--lp-sky);
+  border: 1px solid var(--lp-ink);
+  background: var(--lp-ink);
   color: var(--lp-navy);
-  box-shadow: 0 8px 28px rgb(142 197 252 / 28%);
 }
-.lp-btn--glass {
-  border: 1px solid rgb(142 197 252 / 28%);
-  background: rgb(18 54 92 / 55%);
-  color: #eef4f9;
+.lp-btn--ghost {
+  position: relative;
+  border: 1px solid rgb(238 244 249 / 22%);
+  background: transparent;
+  color: var(--lp-ink);
+}
+/* El relleno del hover es una capa que sólo cambia de opacidad. */
+.lp-btn--ghost::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgb(238 244 249 / 7%);
+  opacity: 0;
+  transition: opacity 300ms var(--lp-ease);
+}
+.lp-btn--ghost:hover::before {
+  opacity: 1;
 }
 .lp-btn:focus-visible,
 .lp a:focus-visible,
@@ -143,12 +90,12 @@
   outline-offset: 3px;
 }
 
-/* Cabecera de vidrio: la capa de fondo gana opacidad con el scroll (Motion la anima). */
+/* Cabecera: la capa de fondo gana opacidad con el scroll (Motion la anima). */
 .lp-header-bg {
   position: absolute;
   inset: 0;
-  border-bottom: 1px solid rgb(142 197 252 / 12%);
-  background: rgb(7 29 53 / 78%);
+  border-bottom: 1px solid var(--lp-line);
+  background: rgb(7 29 53 / 82%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -158,9 +105,9 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-  border: 1px solid rgb(142 197 252 / 35%);
-  border-radius: 16px;
-  background: rgb(11 42 74 / 88%);
+  border: 1px solid rgb(238 244 249 / 14%);
+  border-radius: 14px;
+  background: rgb(11 42 74 / 92%);
   padding: 10px 14px;
   opacity: 0;
   transition: opacity 600ms var(--lp-ease);
@@ -170,35 +117,21 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lp-card,
-  .lp-card::before,
-  .lp-card::after,
   .lp-btn,
+  .lp-btn--ghost::before,
   .lp-match {
     transition: none;
   }
-  .lp-card:hover,
   .lp-btn:hover,
   .lp-btn:active {
     transform: none;
   }
 }
 
-/* Sin transparencias: vidrio sólido. */
 @media (prefers-reduced-transparency: reduce) {
-  .lp-glass,
-  .lp-btn--glass,
   .lp-header-bg {
-    background: rgb(11 42 74 / 96%);
+    background: #071d35;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-  }
-  .lp-glass--night {
-    background: var(--lp-navy);
-    backdrop-filter: none;
-  }
-  .lp-match {
-    background: var(--lp-navy);
-    backdrop-filter: none;
   }
 }
