@@ -158,12 +158,14 @@ body {
 .cn-button:active:not(:disabled) {
   transform: translateY(1px) scale(0.98);
 }
+/* Primario sobrio (sin neón): blanco roto con texto marino, como la landing. El celeste queda para
+   selección y candidatas. */
 .cn-button--primary {
-  background: var(--color-accent);
-  color: var(--color-accent-ink);
+  background: var(--color-ink);
+  color: var(--color-surface);
 }
 .cn-button--primary:hover:not(:disabled) {
-  background: #a9d3fd;
+  background: #dce9f3;
 }
 .cn-button--secondary {
   border-color: #5f7c9a;
