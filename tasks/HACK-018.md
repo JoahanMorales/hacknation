@@ -10,15 +10,15 @@ Paths: web/src/features/diagnosis/
 Depends: HACK-001
 Verify: npm --prefix web run build
 Lease-Until: 0
-Updated: 1791071916
+Updated: 1791072180
 Task-Base: 7e22851b1567fd4ab014035e0a9222774d8b87d3
-Next: Integrada en main: c5f95a0b036a87e3ce4d3d5e4d935bd1fb85b117; reclamar siguiente P0
+Next: No repetir018/011. Leer next/inbox; completar ensayo de demo cuando006/017 entren a main; mantener sourceajeno protegido.
 PR: https://github.com/JoahanMorales/hacknation/pull/19
 Evidence: PR19 merge humano c5f95a0; SHA aprobado b99c7dd por joahan1; trees iguales verificados antesdebase2fdb. smoke65PASS Ruff lint build; fix propio diagnosis oculto stepaction. Scroll020 y citas019 entraron a main225d175/f6e0566; repetir ensayo en base428de10 para cierre de demo.
-Events: 23
-Checkpoints: 12
+Events: 24
+Checkpoints: 13
 Sessions: 2
-Last-Checkpoint: 1791071649
+Last-Checkpoint: 1791072180
 Task-Tip: b99c7dda395d15dabf9ced7f53ecd34b2ccb83a9
 Integration-Proof: tree:5f48ad5bebbd9091196a71201acb4ca2383ec4d0
 Merge-Commit: c5f95a0b036a87e3ce4d3d5e4d935bd1fb85b117
