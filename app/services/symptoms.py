@@ -110,7 +110,22 @@ def recorded(language: str, reason: str) -> dict:
     }
 
 
+SPANISH_MARKERS = frozenset((
+    "el", "la", "los", "las", "del", "y", "con", "sin", "hay", "tiene", "una", "un", "que", "es", "está",
+    "presión", "elevada", "reducida", "debilidad", "fatiga", "dolor", "paciente",
+))
+
+
+def looks_spanish(text: str) -> bool:
+    """El dictado en vivo puede llegar marcado como inglés aunque sea español; HPO sólo trae sinónimos en inglés."""
+    words = re.findall(r"[a-záéíóúñü]+", text.lower())
+    hits = sum(w in SPANISH_MARKERS for w in words)
+    return bool(words) and (hits >= 3 or any(c in text.lower() for c in "ñáéíóú")) and hits / len(words) >= 0.12
+
+
 def extract(transcript: str, language: str) -> dict:
+    if language == "en" and looks_spanish(transcript):
+        language = "es"
     if settings.demo_mode or not settings.openai_api_key:
         return recorded(language, "DEMO_MODE or no API key")
     try:

@@ -72,3 +72,16 @@ def test_transcribe_session_never_exposes_the_api_key(monkeypatch, live) -> None
 def test_transcribe_session_in_demo_mode_is_unusable(monkeypatch) -> None:
     monkeypatch.setattr(settings, "demo_mode", True)
     assert client.post("/api/transcribe/session").json()["usable"] is False
+
+
+def test_spanish_marked_as_english_is_detected() -> None:
+    assert symptoms.looks_spanish(CASE["transcript_es"])
+    assert not symptoms.looks_spanish(CASE["transcript_en"])
+
+
+def test_spanish_text_sent_as_english_uses_translation(monkeypatch, live) -> None:
+    seen = {}
+    monkeypatch.setattr(symptoms, "_translate", lambda text: seen.setdefault("translated", True) and CASE["transcript_en"])
+    monkeypatch.setattr(symptoms, "_choose", lambda transcript, cands: [])
+    client.post("/api/symptoms/extract", json={"transcript": CASE["transcript_es"], "language": "en"})
+    assert seen.get("translated")
