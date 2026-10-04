@@ -12,7 +12,13 @@ Built for Challenge 05 of the 7th Global AI Hackathon (Hack-Nation × OpenAI).
 
 *Real layout from `data/build.py`: one galaxy per HPO organ system, clusters by subsystem. Amber rings: late-onset Pompe disease (OMIM:621314) and FKRP-related LGMD R9 (ORPHA:34515), the demo case.*
 
-![Interface kit](docs/img/ui-kit.png)
+| Dictate and match | Inspect the evidence |
+|---|---|
+| ![Dictation, phenotype matches with ranges and the next best question](docs/img/app-diagnosis.png) | ![Inspector with a family explanation citing only real edges](docs/img/app-inspector.png) |
+| **Act this week** | **The constellation at rest** |
+| ![Action plan: community, reusable assets, this week's step and the timeline](docs/img/app-action.png) | ![12,867 diseases in 20 body-system galaxies](docs/img/app-constellation.png) |
+
+*Screenshots of the running app (`DEMO_MODE=true`, published sample case PMID:7668832).*
 
 ## Why
 
