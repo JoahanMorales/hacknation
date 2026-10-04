@@ -44,6 +44,26 @@ GENES = {
     "GAA": ('"Pompe disease"', '("Pompe disease"[tiab] AND "GAA"[tiab])'),
 }
 AI_NOTE = "AI-extracted, unreviewed"
+MODEL = "gpt-6-luna"
+MAX_QUOTE_WORDS = 30
+WORKERS = 6
+RELATIONS = ["shared_mechanism", "causes", "modifies", "biomarker_for", "therapeutic_target", "interacts_with",
+             "phenotype_overlap", "same_pathway"]
+EXTRACT_INSTRUCTIONS = (
+    "You extract candidate knowledge-graph edges from one PubMed abstract about rare neuromuscular disease. "
+    "Return only relations the abstract itself states between two named entities (gene, protein, disease, "
+    "pathway, molecule or biomarker). For each edge give a verbatim quote of at most 30 words copied exactly "
+    "from the abstract that supports it. Do not infer beyond the text, do not give medical advice, and return "
+    "an empty list if the abstract states no such relation."
+)
+EDGE_SCHEMA = {
+    "type": "object", "additionalProperties": False, "required": ["edges"],
+    "properties": {"edges": {"type": "array", "items": {
+        "type": "object", "additionalProperties": False,
+        "required": ["subject", "relation", "object", "quote"],
+        "properties": {"subject": {"type": "string"}, "relation": {"type": "string", "enum": RELATIONS},
+                       "object": {"type": "string"}, "quote": {"type": "string"}}}}},
+}
 
 
 def get_json(url: str, payload: dict | None = None) -> dict:
@@ -180,6 +200,61 @@ def build() -> dict:
     }
 
 
+def normalize(text: str) -> str:
+    return " ".join(text.split()).casefold()
+
+
+def extract_article(client, article: dict) -> dict:
+    """Una llamada por resumen; la respuesta cruda se cachea por PMID para no pagar dos veces."""
+    cache = RAW / "llm" / f"{article['pmid']}.json"
+    if cache.is_file():
+        return json.loads(cache.read_text(encoding="utf-8"))
+    response = client.responses.create(
+        model=MODEL, instructions=EXTRACT_INSTRUCTIONS,
+        input=f"PMID {article['pmid']}\nTitle: {article['title']}\nAbstract: {article['abstract']}",
+        text={"format": {"type": "json_schema", "name": "edges", "strict": True, "schema": EDGE_SCHEMA}},
+    )
+    result = {"pmid": article["pmid"], "model": MODEL, "edges": json.loads(response.output_text)["edges"]}
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    cache.write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
+    return result
+
+
+def extract() -> None:
+    """Aristas candidatas por IA; sólo se guardan las que tienen una cita literal y breve del resumen."""
+    import os
+    from concurrent.futures import ThreadPoolExecutor
+
+    from openai import OpenAI
+
+    key = os.environ.get("OPENAI_API_KEY")
+    if not key:
+        sys.exit("Falta OPENAI_API_KEY (p. ej. uv run --env-file ../../hacknation/.env python data/connector.py --extract)")
+    client = OpenAI(api_key=key, timeout=60, max_retries=2)
+    raw = load_raw()
+    jobs = [(gene, a) for gene, data in raw.items() for a in data["articles"] if a["abstract"]]
+    with ThreadPoolExecutor(WORKERS) as pool:
+        results = list(pool.map(lambda job: extract_article(client, job[1]), jobs))
+    edges, dropped = [], 0
+    for (gene, article), result in zip(jobs, results):
+        abstract = normalize(article["abstract"])
+        for n, edge in enumerate(result["edges"], 1):
+            quote = " ".join(edge["quote"].split())
+            if not quote or normalize(quote) not in abstract or len(quote.split()) > MAX_QUOTE_WORDS:
+                dropped += 1
+                continue
+            edges.append({
+                "id": f"AI-{gene}-{article['pmid']}-{n}", "gene": gene, "pmid": article["pmid"],
+                "url": f"https://pubmed.ncbi.nlm.nih.gov/{article['pmid']}/",
+                "subject": edge["subject"], "relation": edge["relation"], "object": edge["object"], "quote": quote,
+                "evidence_level": "inferido", "note": AI_NOTE, "model": result["model"],
+            })
+    extracted = {"status": "ok", "model": MODEL, "articles": len(jobs), "dropped_not_literal": dropped,
+                 "edges": edges, "note": f"{AI_NOTE}: candidate edges with a verbatim quote; verify against the paper."}
+    (RAW / "extracted.json").write_text(json.dumps(extracted, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
+    print(f"EXTRACT {len(jobs)} resúmenes -> {len(edges)} aristas con cita literal; {dropped} descartadas")
+
+
 def check() -> None:
     errors = []
     snapshot = json.loads(OUT.read_text(encoding="utf-8"))
@@ -211,10 +286,14 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--fetch", action="store_true", help="descarga RePORTER y PubMed a data/raw/connector/")
+    group.add_argument("--extract", action="store_true", help="aristas candidatas con OpenAI desde el crudo cacheado")
     group.add_argument("--check", action="store_true", help="valida el snapshot sin red")
     args = parser.parse_args()
     if args.fetch:
         fetch()
+        return
+    if args.extract:
+        extract()
         return
     if args.check:
         check()
