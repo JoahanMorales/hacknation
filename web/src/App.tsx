@@ -146,8 +146,9 @@ export default function App() {
           <SlotContent slot="right" />
         </aside>
         <footer
-          // En la acción el dictado se oculta: el panel usa todo el ancho y su altura natural.
-          className={`min-h-0 ${step === "action" ? "col-span-3 col-start-1" : "col-span-2 col-start-2 max-h-[46vh] overflow-y-auto"} ${panels} ${showBottom ? "" : "hidden"}`}
+          // En la acción el dictado se oculta: el panel usa todo el ancho y su altura natural. Fuera de ella,
+          // altura natural también: con 46vh el aviso "not a diagnosis" quedaba bajo el pliegue a 1280×720.
+          className={`min-h-0 ${step === "action" ? "col-span-3 col-start-1" : "col-span-2 col-start-2 max-h-[calc(100dvh-8rem)] overflow-y-auto"} ${panels} ${showBottom ? "" : "hidden"}`}
           aria-hidden={focus || undefined}
         >
           <SlotContent slot="bottom" />
