@@ -1,6 +1,7 @@
 """Browser acceptance for dictation and shared diagnosis findings."""
 
 import argparse
+import json
 import tempfile
 from pathlib import Path
 
@@ -78,6 +79,52 @@ with sync_playwright() as p:
             assert console == [], console
             page.close()
 
+        # Simulate a completed WebRTC segment, but send extraction to the actual backend.
+        # This verifies UI language routing without a paid API call or a physical microphone.
+        case = json.loads((Path(__file__).resolve().parents[4] / "app/fixtures/case/pompe_case.json").read_text(encoding="utf-8"))
+        for language in ("en", "es"):
+            page = visit()
+            page.route("**/api/transcribe/session", lambda route: route.fulfill(json={"usable": True, "model": "controlled language routing", "client_secret": "controlled-test"}))
+            page.route("https://api.openai.com/v1/realtime/calls", lambda route: route.fulfill(body="controlled language routing"))
+            page.add_init_script("""
+                navigator.mediaDevices.getUserMedia=async()=>{
+                    window.testAudio=new AudioContext();
+                    window.testDestination=window.testAudio.createMediaStreamDestination();
+                    return window.testDestination.stream;
+                };
+                window.RTCPeerConnection=class {
+                    addTrack(){} close(){}
+                    createDataChannel(){return {
+                        addEventListener(type, listener){window.onTranscript=listener},
+                        close(){},readyState:'open',send(){}
+                    }}
+                    async setLocalDescription(){}
+                    async createOffer(){return {sdp:'controlled language routing'}}
+                    async setRemoteDescription(){setTimeout(()=>window.onTranscript({data:JSON.stringify({
+                        type:'conversation.item.input_audio_transcription.completed',
+                        transcript:TRANSCRIPT_JSON
+                    })}),0)}
+                };
+            """.replace("TRANSCRIPT_JSON", json.dumps(case[f"transcript_{language}"])))
+            page.reload()
+            page.wait_for_load_state("networkidle")
+            choices = panel(page).get_by_role("group", name="Live dictation language")
+            choices.get_by_role("button", name="English" if language == "en" else "Español", exact=True).click()
+            with page.expect_request(lambda request: request.url.endswith("/api/symptoms/extract")) as extraction:
+                panel(page).get_by_role("button", name="Start dictation").click()
+            assert extraction.value.post_data_json == {"transcript": case[f"transcript_{language}"], "language": language}
+            expect(chips(page)).to_have_count(5, timeout=20000)
+            expect(choices.get_by_role("button", name="English", exact=True)).to_be_disabled()
+            expect(choices.get_by_role("button", name="Español", exact=True)).to_be_disabled()
+            panel(page).get_by_role("button", name="Stop dictation").click()
+            expect(choices.get_by_role("button", name="Español", exact=True)).to_be_enabled(timeout=5000)
+            if language == "es":
+                # The published sample is explicitly English regardless of the live-language choice.
+                with page.expect_request(lambda request: request.url.endswith("/api/symptoms/extract")) as sample_extraction:
+                    sample(page)
+                assert sample_extraction.value.post_data_json["language"] == "en"
+            page.close()
+
         page = visit()
         page.route("**/api/transcribe/session", lambda route: route.fulfill(json={"usable": False, "model": "controlled unavailable", "client_secret": ""}))
         page.add_init_script("window.micCalls=0; navigator.mediaDevices.getUserMedia=async()=>{window.micCalls++;throw new Error('must not request mic')}")
@@ -149,6 +196,6 @@ with sync_playwright() as p:
         expect(page.get_by_role("meter")).to_have_count(0)
         page.close()
         assert errors == [], errors
-        print("DICTATION_PASS: shared Yes/edit/remove/Clear; all chips reachable1280/1440; keyboard/reduced; no-mic fallback and WebRTC cleanup; sample retry/API503; runtime errors0")
+        print("DICTATION_PASS: shared Yes/edit/remove/Clear; reachable1280/1440; keyboard/reduced; controlled live EN/ES routing to backend; English sample; no-mic fallback and WebRTC cleanup; sample retry/API503; runtime errors0")
     finally:
         browser.close()
