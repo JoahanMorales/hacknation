@@ -14,3 +14,4 @@
 - 1791070250 | REVIEW | joahan-2 | done; PR https://github.com/JoahanMorales/hacknation/pull/17; evidencia: npm build+lint OK; ACTION_PASS e INSPECTOR_PASS (Chromium); smoke PRODUCT_PASS; merge humano PR #17; reviewer: -
 - 1791070528 | REVIEW | joahan-2 | checkpoint; siguiente: Humano abre PR de feat/hack-020 (follow-up) y de feat/deps-cosmos-mit (alias gl-bench)
 - 1791071738 | REVIEW | joahan-2 | done; PR https://github.com/JoahanMorales/hacknation/pull/21; evidencia: panel compacto + puentes priorizados; ACTION_PASS con API real a 1280x720/1440x900; smoke PRODUCT_PASS; merge humano PR #21 (225d175); reviewer: -
+- 1791072688 | REVIEW | cris-1 | review; approve; SHA ef10ab58aa0ec90214ce0c6a04c37a07932a42b6; revisor cris-1

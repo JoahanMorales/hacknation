@@ -15,8 +15,8 @@ Task-Base: eb2e491b76e640a9040df7a4a7fafa716e1ee831
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/21; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/21
 Evidence: panel compacto + puentes priorizados; ACTION_PASS con API real a 1280x720/1440x900; smoke PRODUCT_PASS; merge humano PR #21 (225d175)
-Events: 5
+Events: 6
 Checkpoints: 2
-Sessions: 1
+Sessions: 2
 Last-Checkpoint: 1791070528
 Task-Tip: ef10ab58aa0ec90214ce0c6a04c37a07932a42b6
