@@ -1,7 +1,7 @@
 # STATE
 
 Fase: ejecución
-Actualizado: 1791087903
+Actualizado: 1791087982
 AVAILABLE: -
 CLAIMED: -
 BLOCKED: HACK-014 HACK-022 
@@ -11,7 +11,7 @@ CANCELLED: -
 
 Reservas (primeras 24; status --task ID muestra detalle):
 HACK-014 | BLOCKED | zoe-1 | hasta 1791085254
-HACK-022 | BLOCKED | zoe-1 | hasta 1791089703
+HACK-022 | BLOCKED | zoe-1 | hasta 1791089782
 HACK-026 | REVIEW | joahan-2 | hasta 1791088349
 HACK-027 | REVIEW | cris-1 | hasta 1791089068
 HACK-028 | REVIEW | saus-1 | hasta 1791087757
@@ -20,11 +20,11 @@ HACK-030 | REVIEW | joahan-2 | hasta 1791089211
 
 Bloqueos: tareas BLOCKED; use status --task ID --summary.
 Decisiones vigentes (últimas 5):
-- 1791086122 | deadline lease/HACK-026/1791085391 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791086463 | deadline lease/HACK-027/1791086209 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791086463 | deadline lease/HACK-029/1791086417 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791087268 | HACK-027 | cita literal obligatoria; respuestas crudas cacheadas por PMID en data/raw | Por qué: evitar alucinaciones y no pagar dos veces
 - 1791087783 | deadline lease/HACK-028/1791087757 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791087982 | HACK-022 | Combinar main6167d98 y verificar busqueda con tema claro, Pathway, landing y gestos068. | Por qué: Correcciones013 y nuevasfeatures ya integradas; criter
 
 Siguiente paso global: P0 disponible; si no, revisar PR, tests, demo y ensayo.
 Por qué: snapshot acotado para retomar sin releer el historial.

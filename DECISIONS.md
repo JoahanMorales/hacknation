@@ -92,3 +92,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791086463 | deadline lease/HACK-029/1791086417 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791087268 | HACK-027 | cita literal obligatoria; respuestas crudas cacheadas por PMID en data/raw | Por qué: evitar alucinaciones y no pagar dos veces
 - 1791087783 | deadline lease/HACK-028/1791087757 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791087982 | HACK-022 | Combinar main6167d98 y verificar busqueda con tema claro, Pathway, landing y gestos068. | Por qué: Correcciones013 y nuevasfeatures ya integradas; criterio layout requiere base vigente.
