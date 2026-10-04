@@ -15,7 +15,7 @@ Task-Base: 3716a312a1175a66b0d562eee39ef5d8333c12e5
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/32; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/32
 Evidence: Follow-up idioma bef19ec72310c9fee726ea400d8f0957593ed9a2: solo2files dictation, live ENES seleccionado vsenforzado, sampleEN preservado. PRODUCT_PASS127s67tests+Ruff+lint+build+secret275; DICTATION_PASSmerged37s1280/1440 controlledWebRTCsegment->backend ENES5chips y selectorlock/stop; regresionesYes/negacion/Clear/cleanup/retry. FULL_TOUR_PASSnormal1280sobrebef13.81saction14.11sback realAPI/E07/action y findings6preserved, runtime0. Branchclean y servidoresQA detenidos. Requiere nuevoapprove, viejo d3 ya no acredita bef.
-Events: 16
+Events: 17
 Checkpoints: 7
 Sessions: 5
 Last-Checkpoint: 1791076951
