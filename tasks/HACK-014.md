@@ -9,13 +9,13 @@ Priority: P0
 Paths: docs/demo/
 Depends: HACK-006, HACK-017, HACK-018, HACK-020
 Verify: test -s docs/demo/script.md
-Lease-Until: 1791092376
-Updated: 1791090576
+Lease-Until: 1791092558
+Updated: 1791090758
 Task-Base: ee957e9a0846a5d6de9f0efd0660e66f21e213b7
-Next: Aplicar opción: Mantener demo preparada y revisar fixes mientras planner resuelve022: mock permitido enTASKS pero gate exige021INTEGRATED; noeditar022 antesclaim.
+Next: Al corte00MX integrar candidatoaprobado, cleanclone ytour; actualizararchivo porSHA yentregar checklist aloperador.
 PR: -
 Evidence: -
-Events: 12
-Checkpoints: 3
+Events: 13
+Checkpoints: 4
 Sessions: 2
-Last-Checkpoint: 1791079649
+Last-Checkpoint: 1791090758
