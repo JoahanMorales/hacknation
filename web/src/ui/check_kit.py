@@ -46,8 +46,8 @@ for color in [
     "#e8b46c",
     "#a9b8c7",
 ]:
-    # Cielo oscuro (Ola 3): controles #12365c y panel de vidrio marino al 62% sobre el fondo #071d35.
-    for bg in [rgb("#12365c"), [0.62 * a + 0.38 * c for a, c in zip(rgb("#0b2a4a"), rgb("#071d35"))]]:
+    # Cielo oscuro (Ola 3): controles #12365c y panel de vidrio marino al 74% sobre el fondo #071d35.
+    for bg in [rgb("#12365c"), [0.74 * a + 0.26 * c for a, c in zip(rgb("#0b2a4a"), rgb("#071d35"))]]:
         ratios.append(contrast(rgb(color), bg))
 assert min(ratios) >= 4.5, min(ratios)
 assert contrast(rgb("#0b2a4a"), rgb("#8ec5fc")) >= 4.5
