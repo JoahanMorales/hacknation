@@ -122,7 +122,7 @@ export default function App() {
         {/* Cabecera: nombre, recorrido y "Sample case" a la izquierda (debajo, el contador de la
             constelación); el centro queda para la búsqueda y la derecha para gestos y "Focus atlas". */}
         <header className="pointer-events-auto col-span-3 flex min-h-[3.25rem] items-start gap-3 justify-self-start">
-          <span className="text-base font-semibold tracking-tight text-ink">Constellation</span>
+          <span className="text-base font-semibold tracking-tight text-ink">OlivIA</span>
           <Journey current={currentStep(step, selected, findings)} />
           {sampleMode && (
             <span className="rounded-full border border-line px-2 py-0.5 font-mono text-xs text-muted">Sample case</span>

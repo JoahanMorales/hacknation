@@ -103,7 +103,7 @@ export default function Kit() {
         <header className="cn-kit-header">
           <a href="/" className="cn-kit-brand">
             <Sparkle size={22} aria-hidden="true" />
-            Constellation
+            OlivIA
           </a>
           <span className="cn-kit-label">Interface library</span>
           <SampleBadge />
