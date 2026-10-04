@@ -288,16 +288,16 @@ function CandidateMarks({ marks }: { marks: { id: string; name: string; pct: num
         </svg>
       )}
       {marks.map((mark, rank) => {
-        // Con dos candidatas las etiquetas se abren hacia fuera (nunca se encierran entre ellas); con
-        // una, hacia el lado con más espacio.
-        const right = b ? mark.x > Math.min(a.x, b.x) : mark.x < window.innerWidth / 2;
+        // Etiqueta centrada encima de la estrella: hacia los lados quedaba tapada por el dictado o el
+        // inspector. Si las dos estrellas están cerca, la segunda va debajo para no encimarse.
+        const below = rank === 1 && b !== undefined && Math.abs(a.x - b.x) < 300;
         return (
           <div key={mark.id} className="absolute" style={{ left: mark.x, top: mark.y }}>
             <span className="absolute -left-10 -top-10 size-20 rounded-full bg-[radial-gradient(circle,rgb(94_211_208/0.35),transparent_65%)]" />
             <span className="absolute -left-4 -top-4 size-8 rounded-full border-2 border-accent bg-accent/10 shadow-[0_0_18px_rgb(142_197_252/0.55)]" />
             <div
-              className={`absolute top-1/2 flex -translate-y-1/2 flex-col rounded-[14px] border border-accent/25 bg-surface/70 px-3.5 py-2.5 shadow-panel backdrop-blur-xl ${
-                right ? "left-7" : "right-7 items-end text-right"
+              className={`absolute left-0 flex -translate-x-1/2 flex-col items-center rounded-[14px] border border-accent/25 bg-surface/70 px-3.5 py-2.5 text-center shadow-panel backdrop-blur-xl ${
+                below ? "top-8" : "bottom-8"
               }`}
             >
               <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">{rank === 0 ? "Top match" : "Second match"}</span>

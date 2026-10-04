@@ -32,7 +32,7 @@ export function galaxyColors(groupIds: string[]): Map<string, Rgb> {
     const t = (i * 0.618034) % 1;
     const hue = (start + t * span) % 360;
     const lightness = i % 2 === 0 ? 0.72 : 0.62; // tonos claros: brillan sobre el cielo marino
-    colors.set(id, hslToRgb(hue, 0.62, lightness));
+    colors.set(id, hslToRgb(hue, 0.42, lightness)); // saturación baja: sin neones
   });
   return colors;
 }
