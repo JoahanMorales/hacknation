@@ -8,14 +8,14 @@ VARIANCE 4 / MOTION 4 / DENSITY 5. Producto de una vista para escritorio 1440×9
 
 | Token          | Hex     | Uso                                |
 | -------------- | ------- | ---------------------------------- |
-| night          | #071d35 | Fondo (cielo azul marino profundo) |
-| surface        | #0b2a4a | Vidrio marino al 62%, blur 24px    |
-| surface-raised | #12365c | Controles                          |
-| ink            | #eef4f9 | Texto principal                    |
-| muted          | #9fb4c9 | Texto secundario                   |
-| line           | #2a4d73 | Líneas no esenciales               |
+| night          | #0d1520 | Fondo (gris azulado muy apagado)   |
+| surface        | #151f2b | Vidrio neutro al 72%, blur 12px    |
+| surface-raised | #1c2835 | Controles                          |
+| ink            | #edf1f5 | Texto principal                    |
+| muted          | #9aa7b5 | Texto secundario                   |
+| line           | #2a3644 | Líneas no esenciales               |
 | accent         | #8ec5fc | Único acento (celeste) de selección y acción |
-| accent-ink     | #0b2a4a | Texto sobre acento                 |
+| accent-ink     | #0d1520 | Texto sobre acento                 |
 | glycosylation  | #5ed3d0 | Glicosilación                      |
 | lysosomal      | #b3a6f2 | Lisosomal (lavanda apagado)        |
 | structural     | #ee9cbf | Estructura muscular                |
@@ -83,6 +83,7 @@ Preguntas hechas por Saus a su humano el 3 oct; respuestas resumidas y qué se h
 | 9 | Pathway como protagonista, modo presentación, transiciones, tipografía | Hecho: Pathway a pantalla completa (HACK-024), Focus atlas, entrada de paneles con fundido de 240 ms (sin animación con reduced motion), escala tipográfica mayor |
 
 | 10 | Atlas oscuro, constelaciones con personalidad, vidrio transparente, menos cansado de ver | Hecho: tokens oscuros (AA ≥5.6), paneles de vidrio marino al 62% con blur 24px, galaxias en tonos claros, estrellas reales que titilan con destellos (capa Twinkle), halo turquesa en las candidatas. Rediseño minimalista de dictado/diagnóstico pedido al planificador |
+| 11 | Minimalista y transparente como Apple, claro como Codex, asociado a salud (pasada 1-4) | Hecho: sin titileo ni halo (candidatas por tamaño y anillo fino de 1.5 px); superficies neutras gris azulado con borde de 1px y sombra suave; atlas casi monocromo (un gris azulado, sólo cambia la luminosidad); un solo acento (celeste) para acción y selección; con una enfermedad abierta el dictado se oculta (un panel principal); títulos llanos: "Your symptoms", "Matches your symptoms". Descartado: tema claro para paneles (el humano pidió oscuro y rompería la continuidad con la landing) |
 
 Reglas nuevas: usar siempre tokens (bg-surface, text-ink, text-muted, border-line, bg-accent, fill-*/stroke-*), nunca hex fijos; el celeste #8ec5fc (accent) es sólo para acción, selección y candidatas; texto sobre acento en azul marino; la landing conserva el tema claro con su cielo marino; --color-alert (#c2410c) para "contradicted".
 Pendiente fuera de este alcance (pedido a sus dueños): colores fijos en diagnosis/style.css y en la onda del dictado; nombres cortos de enfermedades y foco por teclado en el Pathway (notas de joahan-1).
