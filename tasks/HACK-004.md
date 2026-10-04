@@ -15,8 +15,8 @@ Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/7; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/7
 Evidence: python3 spikes/openai/spike.py --check SPIKE_CHECK_PASS; smoke PRODUCT_PASS; merge humano PR #7 (70e72e5)
-Events: 7
+Events: 8
 Checkpoints: 1
-Sessions: 3
+Sessions: 4
 Last-Checkpoint: 1791066325
 Task-Tip: 5b91caa1c3064202b1b81d5961fbb15a243aa1cc
