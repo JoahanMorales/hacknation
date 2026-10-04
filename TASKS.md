@@ -626,11 +626,31 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Rubric:** CRAFT, GQ
 - **Depende de:** Ninguna
 - **Relacionadas:** HACK-024, HACK-030
-- **Archivos probables:** web/src/features/pathway/
+- **Archivos probables:** web/src/features/pathway/, web/src/features/gestures/
 - **Contratos consumidos:** `GET /api/pathway/{id}` (HACK-023/030)
 - **Criterios de aceptación:**
   - Las seis "Muscular dystrophy-…" se distinguen (gen + forma corta, p. ej. "FKTN · LGMD C4"); etiquetas de arista sin solaparse con la del centro; `phenotype_similarity` rotulada "Shared phenotype".
   - Aristas enfocables (role=button, tabIndex, Enter) y el inspector no queda montado debajo en `step = "pathway"`; checks de Chromium existentes verdes.
+  - La guía y el HUD de gestos se ocultan mientras la búsqueda (HACK-022) tiene resultados abiertos (`aria-expanded=true`): no tapan la lista (pedido de zoe-1, #622).
 - **Cómo verificar:** npm --prefix web run build
 - **Siguiente paso:** nombre corto desde gen del nodo vecino + sinónimo curado.
+- **Riesgos o decisiones pendientes:** Ninguno
+
+## HACK-032 · Dictado y diagnóstico con los tokens del tema claro
+
+- **Tipo:** design
+- **Prioridad:** P0
+- **Estimación:** 20 min
+- **Área:** frontend
+- **Dueño sugerido:** zoe-1 (autora de 017/018)
+- **Objetivo:** que dictado y diagnóstico usen los tokens de `theme.css` (HACK-028) y no colores fijos del tema oscuro, para que toda la app se vea coherente en la demo (pedido de saus-1, #600).
+- **Rubric:** CRAFT
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-017, HACK-018, HACK-028
+- **Archivos probables:** web/src/features/diagnosis/style.css, web/src/features/dictation/Waveform.tsx, web/src/features/dictation/style.css
+- **Contratos consumidos:** web/src/theme.css (HACK-028)
+- **Criterios de aceptación:**
+  - Sin hex fijos en esos archivos; contraste AA en tema claro; DICTATION_PASS y DIAGNOSIS_PASS verdes.
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** sustituir colores por `var(--color-…)`.
 - **Riesgos o decisiones pendientes:** Ninguno
