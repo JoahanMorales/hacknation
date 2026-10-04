@@ -1,5 +1,5 @@
 ID: HACK-025
-State: MERGING
+State: HUMAN
 Owner: cris-1
-Queued: 1791084602
-Reason: Esperando cola
+Updated: 1791084626
+Reason: Diff fuera de Archivos: TASKS.md
