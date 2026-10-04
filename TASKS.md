@@ -626,11 +626,51 @@ Autorizada por Joahan (humano responsable) tras revisar la app contra el brief d
 - **Rubric:** CRAFT, GQ
 - **Depende de:** Ninguna
 - **Relacionadas:** HACK-024, HACK-030
-- **Archivos probables:** web/src/features/pathway/
+- **Archivos probables:** web/src/features/pathway/, web/src/features/gestures/
 - **Contratos consumidos:** `GET /api/pathway/{id}` (HACK-023/030)
 - **Criterios de aceptación:**
   - Las seis "Muscular dystrophy-…" se distinguen (gen + forma corta, p. ej. "FKTN · LGMD C4"); etiquetas de arista sin solaparse con la del centro; `phenotype_similarity` rotulada "Shared phenotype".
   - Aristas enfocables (role=button, tabIndex, Enter) y el inspector no queda montado debajo en `step = "pathway"`; checks de Chromium existentes verdes.
+  - La guía y el HUD de gestos se ocultan mientras la búsqueda (HACK-022) tiene resultados abiertos (`aria-expanded=true`): no tapan la lista (pedido de zoe-1, #622).
 - **Cómo verificar:** npm --prefix web run build
 - **Siguiente paso:** nombre corto desde gen del nodo vecino + sinónimo curado.
 - **Riesgos o decisiones pendientes:** Ninguno
+
+## HACK-032 · Dictado y diagnóstico con los tokens del tema claro
+
+- **Tipo:** design
+- **Prioridad:** P0
+- **Estimación:** 20 min
+- **Área:** frontend
+- **Dueño sugerido:** zoe-1 (autora de 017/018)
+- **Objetivo:** que dictado y diagnóstico usen los tokens de `theme.css` (HACK-028) y no colores fijos del tema oscuro, para que toda la app se vea coherente en la demo (pedido de saus-1, #600).
+- **Rubric:** CRAFT
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-017, HACK-018, HACK-028
+- **Archivos probables:** web/src/features/diagnosis/style.css, web/src/features/dictation/Waveform.tsx, web/src/features/dictation/style.css, web/src/features/diagnosis/check_ui.py, web/src/features/dictation/check_ui.py
+- **Contratos consumidos:** web/src/theme.css (HACK-028)
+- **Criterios de aceptación:**
+  - Sin hex fijos en esos archivos; contraste AA en tema claro; DICTATION_PASS y DIAGNOSIS_PASS verdes con el shell nuevo de HACK-028 (sin 'Load published sample'; la muestra entra por 'Play sample case').
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** sustituir colores por `var(--color-…)`.
+- **Riesgos o decisiones pendientes:** Ninguno
+
+## HACK-033 · QA: checks al shell nuevo y recorrido completo de Maria
+
+- **Tipo:** test
+- **Prioridad:** P0
+- **Estimación:** 30 min
+- **Área:** frontend, demo
+- **Dueño sugerido:** joahan-1
+- **Objetivo:** antes de grabar, una sola prueba en Chromium del recorrido del brief: Maria busca "LGMD2I" → inspector → pathway (genes, mecanismo, vecinos) → Next steps → Draft a proposal; y el recorrido clínico con "Play sample case".
+- **Rubric:** CRAFT, PP
+- **Depende de:** Ninguna
+- **Relacionadas:** HACK-014, HACK-022, HACK-028
+- **Archivos probables:** web/src/features/action/check_nav.py, web/src/features/action/check_journey.py
+- **Contratos consumidos:** UI de main (shell de HACK-028, búsqueda de HACK-022 cuando entre)
+- **Criterios de aceptación:**
+  - `check_nav.py` verde con el shell nuevo (muestra por "Play sample case").
+  - `check_journey.py` recorre búsqueda → inspector → pathway → acción → propuesta sin recargar; reporta tiempos por paso para el guion de HACK-014.
+- **Cómo verificar:** npm --prefix web run build
+- **Siguiente paso:** cambiar el arranque de check_nav a "Play sample case".
+- **Riesgos o decisiones pendientes:** la búsqueda depende de HACK-022; sin ella el journey arranca desde `?select=`.
