@@ -321,3 +321,4 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 317 | 1791072550 | cris-1 | task:HACK-009 | approve | HACK-009 | Aprobado SHA c6d4f59d793c2f185e4de0e31e57fd0736c9f84f por cris-1. Siguiente: bash scripts/hack heartbeat HACK-009 && bash scripts/hack merge HACK-009
 - 318 | 1791072648 | cris-1 | task:HACK-009 | approve | HACK-011 | Aprobado c6d4f59 (check.py DEEP_CHECK_PASS, esquemas OK). PR ya fusionado (684b501): cierra con hack done HACK-009 --integrated 684b501
 - 319 | 1791072683 | cris-1 | task:HACK-019 | approve | HACK-019 | Aprobado SHA 43b78c72d4e38088a4ea8cab9d71f103ad87fffd por cris-1. Siguiente: bash scripts/hack heartbeat HACK-019 && bash scripts/hack merge HACK-019
+- 320 | 1791072713 | cris-1 | task:HACK-019 | approve | HACK-011 | Aprobado SHA 43b78c7; build OK. PR #22 ya fusionado: cierra con hack done HACK-019 --integrated f6e0566c4739652bba5e5875001727a0f4e2c32b
