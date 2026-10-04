@@ -1,0 +1,20 @@
+{
+  "source_sha": "ee957e9a0846a5d6de9f0efd0660e66f21e213b7",
+  "tracked_clean": true,
+  "url": "http://127.0.0.1:8769",
+  "method": "Automated Chromium; software WebGL; no physical microphone or camera",
+  "cited_edge": "E07",
+  "action_seconds": 21.88,
+  "back_seconds": 22.92,
+  "maria": {
+    "groups": 2,
+    "assets": 7,
+    "bridges": 8,
+    "this_week": {
+      "action": "Contact the Global FKRP Registry (NCT04001595) to ask about eligibility and what data it already holds.",
+      "url": "https://clinicaltrials.gov/study/NCT04001595"
+    }
+  },
+  "runtime_errors": 0,
+  "unsupported_route": true
+}
