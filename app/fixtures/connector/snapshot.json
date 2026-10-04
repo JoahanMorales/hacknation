@@ -1,0 +1,2995 @@
+{
+ "schema_version": "1.0",
+ "demo_data": false,
+ "sources": [
+  {
+   "name": "NIH RePORTER API v2",
+   "url": "https://api.reporter.nih.gov/",
+   "version": "v2"
+  },
+  {
+   "name": "PubMed E-utilities",
+   "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
+   "version": "esearch+efetch"
+  }
+ ],
+ "retrieved_at": "2026-10-04T03:24:49Z",
+ "fiscal_years": [
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "genes": {
+  "FKRP": {
+   "disease_ids": [
+    "ORPHA:34515",
+    "OMIM:613153"
+   ],
+   "reporter_query": "FKRP",
+   "reporter_total": 32,
+   "pubmed_query": "\"FKRP\"[tiab]",
+   "projects": [
+    10410238,
+    10442630,
+    10442637,
+    10561375,
+    10652506,
+    10652527,
+    10782462,
+    10802855,
+    10884480,
+    10884488,
+    10936537,
+    10992525,
+    10992526,
+    10995350,
+    11094382,
+    11130233,
+    11131718,
+    11131722,
+    11131723,
+    11146458,
+    11169977,
+    11169982,
+    11238521,
+    11310083,
+    11310146,
+    11377683,
+    11397447,
+    11397452,
+    11402631,
+    11402651,
+    11402658,
+    11417940
+   ],
+   "articles": [
+    {
+     "pmid": "30564623",
+     "title": "Genetic landscape and novel disease mechanisms from a large LGMD cohort of 4656 patients.",
+     "year": 2018,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30564623/"
+    },
+    {
+     "pmid": "36537976",
+     "title": "The Limb-Girdle Muscular Dystrophies.",
+     "year": 2022,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36537976/"
+    },
+    {
+     "pmid": "33200426",
+     "title": "Genetic variations and clinical spectrum of dystroglycanopathy in a large cohort of Chinese patients.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33200426/"
+    },
+    {
+     "pmid": "30919934",
+     "title": "Autosomal recessive limb-girdle and Miyoshi muscular dystrophies in the Netherlands: The clinical and molecular spectrum of 244 patients.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30919934/"
+    },
+    {
+     "pmid": "16887026",
+     "title": "Walker-Warburg syndrome.",
+     "year": 2006,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/16887026/"
+    },
+    {
+     "pmid": "33272829",
+     "title": "Fukutin-Related Protein: From Pathology to Treatments.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33272829/"
+    },
+    {
+     "pmid": "31391079",
+     "title": "NAD+ improves neuromuscular development in a zebrafish model of FKRP-associated dystroglycanopathy.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31391079/"
+    },
+    {
+     "pmid": "39326416",
+     "title": "Saturation mutagenesis-reinforced functional assays for disease-related genes.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39326416/"
+    },
+    {
+     "pmid": "38556796",
+     "title": "FKRP-related muscular dystrophy responsive to immunotherapy.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38556796/"
+    },
+    {
+     "pmid": "28484880",
+     "title": "What is new in CDG?",
+     "year": 2017,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28484880/"
+    },
+    {
+     "pmid": "34012031",
+     "title": "FKRP-dependent glycosylation of fibronectin regulates muscle pathology in muscular dystrophy.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34012031/"
+    },
+    {
+     "pmid": "26810512",
+     "title": "Rhabdomyolysis featuring muscular dystrophies.",
+     "year": 2016,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26810512/"
+    },
+    {
+     "pmid": "38161385",
+     "title": "Misfolding of fukutin-related protein (FKRP) variants in congenital and limb girdle muscular dystrophies.",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38161385/"
+    },
+    {
+     "pmid": "37154180",
+     "title": "Phenotype Genotype Characterization of FKRP-related Muscular Dystrophy among Indian Patients.",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37154180/"
+    },
+    {
+     "pmid": "39675022",
+     "title": "Prospective observational study of FKRP-related limb-girdle muscular dystrophy R9: A GRASP consortium study.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39675022/"
+    },
+    {
+     "pmid": "41445184",
+     "title": "Transgene-induced cardiotoxicity in high-dose AAV gene transfer.",
+     "year": 2026,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41445184/"
+    },
+    {
+     "pmid": "29101272",
+     "title": "Illness-associated muscle weakness in dystroglycanopathies.",
+     "year": 2017,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29101272/"
+    },
+    {
+     "pmid": "37239976",
+     "title": "Metabolic Cardiomyopathies and Cardiac Defects in Inherited Disorders of Carbohydrate Metabolism: A Systematic Review.",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37239976/"
+    },
+    {
+     "pmid": "36399172",
+     "title": "Electroretinogram abnormalities in FKRP-related limb-girdle muscular dystrophy (LGMDR9).",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36399172/"
+    }
+   ]
+  },
+  "FKTN": {
+   "disease_ids": [
+    "OMIM:611588"
+   ],
+   "reporter_query": "\"fukutin\" OR \"FKTN\"",
+   "reporter_total": 36,
+   "pubmed_query": "(\"FKTN\"[tiab] OR \"fukutin\"[tiab])",
+   "projects": [
+    10410238,
+    10442630,
+    10442637,
+    10561375,
+    10652506,
+    10652527,
+    10678139,
+    10782462,
+    10802855,
+    10817902,
+    10884480,
+    10884488,
+    10936537,
+    10992525,
+    10992526,
+    10995350,
+    11012328,
+    11094382,
+    11130233,
+    11131718,
+    11131722,
+    11131723,
+    11146458,
+    11169977,
+    11169982,
+    11238521,
+    11257365,
+    11310083,
+    11310146,
+    11377683,
+    11397447,
+    11397452,
+    11402631,
+    11402651,
+    11402658,
+    11417940
+   ],
+   "articles": [
+    {
+     "pmid": "33200426",
+     "title": "Genetic variations and clinical spectrum of dystroglycanopathy in a large cohort of Chinese patients.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33200426/"
+    },
+    {
+     "pmid": "35288587",
+     "title": "Whole genome sequencing delineates regulatory, copy number, and cryptic splice variants in early onset cardiomyopathy.",
+     "year": 2022,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35288587/"
+    },
+    {
+     "pmid": "23622361",
+     "title": "Congenital muscular dystrophies.",
+     "year": 2013,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23622361/"
+    },
+    {
+     "pmid": "16887026",
+     "title": "Walker-Warburg syndrome.",
+     "year": 2006,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/16887026/"
+    },
+    {
+     "pmid": "33272829",
+     "title": "Fukutin-Related Protein: From Pathology to Treatments.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33272829/"
+    },
+    {
+     "pmid": "28484880",
+     "title": "What is new in CDG?",
+     "year": 2017,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28484880/"
+    },
+    {
+     "pmid": "12715073",
+     "title": "Protein defects in neuromuscular diseases.",
+     "year": 2003,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/12715073/"
+    },
+    {
+     "pmid": "38357257",
+     "title": "Molecular Diagnosis of Limb-Girdle Muscular Dystrophy Using Next-Generation Sequencing Panels.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38357257/"
+    },
+    {
+     "pmid": "41188778",
+     "title": "Ophthalmologic manifestations associated with Fukutin (FKTN) variant subtypes in Korean patients with Fukuyama congenital muscular dystrophy: a single-center retrospective case series.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41188778/"
+    },
+    {
+     "pmid": "27257474",
+     "title": "Four-week rapamycin treatment improves muscular dystrophy in a fukutin-deficient mouse model of dystroglycanopathy.",
+     "year": 2016,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27257474/"
+    },
+    {
+     "pmid": "19015585",
+     "title": "Mutational analysis of fukutin gene in dilated cardiomyopathy and hypertrophic cardiomyopathy.",
+     "year": 2009,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/19015585/"
+    },
+    {
+     "pmid": "41445184",
+     "title": "Transgene-induced cardiotoxicity in high-dose AAV gene transfer.",
+     "year": 2026,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41445184/"
+    },
+    {
+     "pmid": "32833332",
+     "title": "Mitochondrial dysfunction in skeletal muscle of fukutin-deficient mice is resistant to exercise- and 5-aminoimidazole-4-carboxamide ribonucleotide-induced rescue.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32833332/"
+    },
+    {
+     "pmid": "25037088",
+     "title": "The limb-girdle muscular dystrophies.",
+     "year": 2014,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25037088/"
+    },
+    {
+     "pmid": "10734260",
+     "title": "The Fukuyama congenital muscular dystrophy story.",
+     "year": 2000,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/10734260/"
+    },
+    {
+     "pmid": "25821721",
+     "title": "Whole Exome Sequencing Reveals DYSF, FKTN, and ISPD Mutations in Congenital Muscular Dystrophy Without Brain or Eye Involvement.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25821721/"
+    },
+    {
+     "pmid": "22068471",
+     "title": "[Recent Advances in α-dystroglycanopathy].",
+     "year": 2011,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/22068471/"
+    },
+    {
+     "pmid": "26223471",
+     "title": "Fukutin, identified by the Escherichia coli ampicillin secretion trap (CAST) method, participates in tumor progression in gastric cancer.",
+     "year": 2016,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26223471/"
+    }
+   ]
+  },
+  "CRPPA": {
+   "disease_ids": [
+    "OMIM:616052"
+   ],
+   "reporter_query": "\"CRPPA\" OR (\"ISPD\" AND \"dystroglycan\")",
+   "reporter_total": 0,
+   "pubmed_query": "(\"CRPPA\"[tiab] OR (\"ISPD\"[tiab] AND dystroglycan*[tiab]))",
+   "projects": [],
+   "articles": [
+    {
+     "pmid": "33200426",
+     "title": "Genetic variations and clinical spectrum of dystroglycanopathy in a large cohort of Chinese patients.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33200426/"
+    },
+    {
+     "pmid": "28688748",
+     "title": "Congenital muscular dystrophies in the UK population: Clinical and molecular spectrum of a large cohort diagnosed over a 12-year period.",
+     "year": 2017,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28688748/"
+    },
+    {
+     "pmid": "26220087",
+     "title": "Downregulation of dystroglycan glycosyltransferases LARGE2 and ISPD associate with increased mortality in clear cell renal cell carcinoma.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26220087/"
+    },
+    {
+     "pmid": "22522420",
+     "title": "ISPD loss-of-function mutations disrupt dystroglycan O-mannosylation and cause Walker-Warburg syndrome.",
+     "year": 2012,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/22522420/"
+    },
+    {
+     "pmid": "31375477",
+     "title": "Cytidine Diphosphate-Ribitol Analysis for Diagnostics and Treatment Monitoring of Cytidine Diphosphate-l-Ribitol Pyrophosphorylase A Muscular Dystrophy.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31375477/"
+    },
+    {
+     "pmid": "22522421",
+     "title": "Mutations in ISPD cause Walker-Warburg syndrome and defective glycosylation of α-dystroglycan.",
+     "year": 2012,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/22522421/"
+    },
+    {
+     "pmid": "24843229",
+     "title": "Genetic basis of limb-girdle muscular dystrophies: the 2014 update.",
+     "year": 2014,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/24843229/"
+    },
+    {
+     "pmid": "29081423",
+     "title": "Muscular Dystrophy with Ribitol-Phosphate Deficiency: A Novel Post-Translational Mechanism in Dystroglycanopathy.",
+     "year": 2017,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29081423/"
+    },
+    {
+     "pmid": "26687144",
+     "title": "Human ISPD Is a Cytidyltransferase Required for Dystroglycan O-Mannosylation.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26687144/"
+    },
+    {
+     "pmid": "34307571",
+     "title": "Homozygous deletion, c. 1114-1116del, in exon 8 of the CRPPA gene causes congenital muscular dystrophy in Chinese family: A case report.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34307571/"
+    },
+    {
+     "pmid": "36494657",
+     "title": "Involvement of abnormal dystroglycan expression and matriglycan levels in cancer pathogenesis.",
+     "year": 2022,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36494657/"
+    },
+    {
+     "pmid": "36222912",
+     "title": "Whole-genome sequencing unravels novel genetic determinants and regulatory pathways associated with triamcinolone acetonide-induced ocular hypertension.",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36222912/"
+    },
+    {
+     "pmid": "35422047",
+     "title": "CDP-ribitol prodrug treatment ameliorates ISPD-deficient muscular dystrophy mouse model.",
+     "year": 2022,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/35422047/"
+    },
+    {
+     "pmid": "25821721",
+     "title": "Whole Exome Sequencing Reveals DYSF, FKTN, and ISPD Mutations in Congenital Muscular Dystrophy Without Brain or Eye Involvement.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25821721/"
+    },
+    {
+     "pmid": "31988979",
+     "title": "ISPD Overexpression Enhances Ribitol-Induced Glycosylation of α-Dystroglycan in Dystrophic FKRP Mutant Mice.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31988979/"
+    },
+    {
+     "pmid": "23217742",
+     "title": "Dystroglycan organizes axon guidance cue localization and axonal pathfinding.",
+     "year": 2012,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23217742/"
+    },
+    {
+     "pmid": "40697817",
+     "title": "The role of ratio markers based on prealbumin in the diagnosis of periprosthetic joint infection.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/40697817/"
+    },
+    {
+     "pmid": "28760865",
+     "title": "Dystroglycan Maintains Inner Limiting Membrane Integrity to Coordinate Retinal Development.",
+     "year": 2017,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28760865/"
+    },
+    {
+     "pmid": "23390185",
+     "title": "Limb-girdle muscular dystrophy with α-dystroglycan deficiency and mutations in the ISPD gene.",
+     "year": 2013,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23390185/"
+    },
+    {
+     "pmid": "26404900",
+     "title": "ISPD mutations account for a small proportion of Italian Limb Girdle Muscular Dystrophy cases.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26404900/"
+    }
+   ]
+  },
+  "POMT1": {
+   "disease_ids": [
+    "OMIM:609308"
+   ],
+   "reporter_query": "POMT1",
+   "reporter_total": 22,
+   "pubmed_query": "\"POMT1\"[tiab]",
+   "projects": [
+    10393522,
+    10461759,
+    10582102,
+    10592499,
+    10609459,
+    10655796,
+    10673953,
+    10752212,
+    10798253,
+    10802855,
+    10808295,
+    10936537,
+    10951512,
+    11055113,
+    11094823,
+    11146458,
+    11263730,
+    11281569,
+    11351372,
+    11366494,
+    11377683,
+    11394281
+   ],
+   "articles": [
+    {
+     "pmid": "33200426",
+     "title": "Genetic variations and clinical spectrum of dystroglycanopathy in a large cohort of Chinese patients.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33200426/"
+    },
+    {
+     "pmid": "30454682",
+     "title": "Molecular genetics of the POMT1-related muscular dystrophy-dystroglycanopathies.",
+     "year": 2018,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30454682/"
+    },
+    {
+     "pmid": "39789642",
+     "title": "Sarcolemma resilience and skeletal muscle health require O-mannosylation of dystroglycan.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39789642/"
+    },
+    {
+     "pmid": "33250842",
+     "title": "Clinical and Genomic Evaluation of 207 Genetic Myopathies in the Indian Subcontinent.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33250842/"
+    },
+    {
+     "pmid": "16887026",
+     "title": "Walker-Warburg syndrome.",
+     "year": 2006,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/16887026/"
+    },
+    {
+     "pmid": "38272461",
+     "title": "Removal of pomt1 in zebrafish leads to loss of α-dystroglycan glycosylation and dystroglycanopathy phenotypes.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38272461/"
+    },
+    {
+     "pmid": "18513969",
+     "title": "POMT1 and POMT2 mutations in CMD patients: a multicentric Italian study.",
+     "year": 2008,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/18513969/"
+    },
+    {
+     "pmid": "37932364",
+     "title": "Molecular investigation in individuals with orofacial clefts and microphthalmia-anophthalmia-coloboma spectrum.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37932364/"
+    },
+    {
+     "pmid": "30999272",
+     "title": "Multiple distinct O-Mannosylation pathways in eukaryotes.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/30999272/"
+    },
+    {
+     "pmid": "38851451",
+     "title": "Global View of Domain-Specific O-Linked Mannose Glycosylation in Glycoengineered Cells.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38851451/"
+    },
+    {
+     "pmid": "15637732",
+     "title": "Mutations in POMT1 are found in a minority of patients with Walker-Warburg syndrome.",
+     "year": 2005,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/15637732/"
+    },
+    {
+     "pmid": "38357257",
+     "title": "Molecular Diagnosis of Limb-Girdle Muscular Dystrophy Using Next-Generation Sequencing Panels.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38357257/"
+    },
+    {
+     "pmid": "28157257",
+     "title": "Compound heterozygous POMT1 mutations in a Chinese family with autosomal recessive muscular dystrophy-dystroglycanopathy C1.",
+     "year": 2017,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28157257/"
+    },
+    {
+     "pmid": "37239976",
+     "title": "Metabolic Cardiomyopathies and Cardiac Defects in Inherited Disorders of Carbohydrate Metabolism: A Systematic Review.",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/37239976/"
+    },
+    {
+     "pmid": "31311558",
+     "title": "Clinical long-time course, novel mutations and genotype-phenotype correlation in a cohort of 27 families with POMT1-related disorders.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31311558/"
+    },
+    {
+     "pmid": "41967144",
+     "title": "Truncated N-glycans destabilize POMT1 and POMT2 but do not limit cellular O-mannosylation in HEK293 cells.",
+     "year": 2026,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41967144/"
+    },
+    {
+     "pmid": "29867208",
+     "title": "Impairment of photoreceptor ribbon synapses in a novel Pomt1 conditional knockout mouse model of dystroglycanopathy.",
+     "year": 2018,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29867208/"
+    },
+    {
+     "pmid": "19880378",
+     "title": "Role of N-glycans in maintaining the activity of protein O-mannosyltransferases POMT1 and POMT2.",
+     "year": 2010,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/19880378/"
+    },
+    {
+     "pmid": "22549409",
+     "title": "Cardiomyopathy in patients with POMT1-related congenital and limb-girdle muscular dystrophy.",
+     "year": 2012,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/22549409/"
+    }
+   ]
+  },
+  "POMGNT1": {
+   "disease_ids": [
+    "OMIM:613157"
+   ],
+   "reporter_query": "POMGNT1",
+   "reporter_total": 5,
+   "pubmed_query": "\"POMGNT1\"[tiab]",
+   "projects": [
+    10380061,
+    10802855,
+    10936537,
+    11146458,
+    11377683
+   ],
+   "articles": [
+    {
+     "pmid": "33200426",
+     "title": "Genetic variations and clinical spectrum of dystroglycanopathy in a large cohort of Chinese patients.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33200426/"
+    },
+    {
+     "pmid": "26328495",
+     "title": "POMGNT1 Is Glycosylated by Mucin-Type O-Glycans.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26328495/"
+    },
+    {
+     "pmid": "33610554",
+     "title": "Glycosyltransferase POMGNT1 deficiency strengthens N-cadherin-mediated cell-cell adhesion.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33610554/"
+    },
+    {
+     "pmid": "19138766",
+     "title": "POMT2 intragenic deletions and splicing abnormalities causing congenital muscular dystrophy with mental retardation.",
+     "year": 2009,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/19138766/"
+    },
+    {
+     "pmid": "25085363",
+     "title": "Role of glycosyltransferase PomGnT1 in glioblastoma progression.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25085363/"
+    },
+    {
+     "pmid": "27375352",
+     "title": "Expression pattern in retinal photoreceptors of POMGnT1, a protein involved in muscle-eye-brain disease.",
+     "year": 2016,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27375352/"
+    },
+    {
+     "pmid": "20215985",
+     "title": "Muscle-Eye-Brain disease.",
+     "year": 2010,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/20215985/"
+    },
+    {
+     "pmid": "23689641",
+     "title": "Novel POMGnT1 mutations cause muscle-eye-brain disease in Chinese patients.",
+     "year": 2013,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23689641/"
+    },
+    {
+     "pmid": "19114101",
+     "title": "Reduced proliferative activity of primary POMGnT1-null myoblasts in vitro.",
+     "year": 2009,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/19114101/"
+    },
+    {
+     "pmid": "32306360",
+     "title": "FAM3B/PANDER-Like Carbohydrate-Binding Domain in a Glycosyltransferase, POMGNT1.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32306360/"
+    },
+    {
+     "pmid": "38357257",
+     "title": "Molecular Diagnosis of Limb-Girdle Muscular Dystrophy Using Next-Generation Sequencing Panels.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38357257/"
+    },
+    {
+     "pmid": "16550916",
+     "title": "Fukutin and alpha-dystroglycanopathies.",
+     "year": 2005,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/16550916/"
+    },
+    {
+     "pmid": "17034757",
+     "title": "Molecular interaction between fukutin and POMGnT1 in the glycosylation pathway of alpha-dystroglycan.",
+     "year": 2006,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/17034757/"
+    },
+    {
+     "pmid": "27493216",
+     "title": "Carbohydrate-binding domain of the POMGnT1 stem region modulates O-mannosylation sites of α-dystroglycan.",
+     "year": 2016,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27493216/"
+    },
+    {
+     "pmid": "26908613",
+     "title": "Mutations in POMGNT1 cause non-syndromic retinitis pigmentosa.",
+     "year": 2016,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/26908613/"
+    },
+    {
+     "pmid": "29048655",
+     "title": "PomGnT1 enhances temozolomide resistance by activating epithelial-mesenchymal transition signaling in glioblastoma.",
+     "year": 2017,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29048655/"
+    },
+    {
+     "pmid": "18195152",
+     "title": "Mild POMGnT1 mutations underlie a novel limb-girdle muscular dystrophy variant.",
+     "year": 2008,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/18195152/"
+    }
+   ]
+  },
+  "LARGE1": {
+   "disease_ids": [
+    "OMIM:613154"
+   ],
+   "reporter_query": "\"LARGE1\" OR (\"LARGE\" AND \"dystroglycan\")",
+   "reporter_total": 7,
+   "pubmed_query": "(\"LARGE1\"[tiab] OR (\"LARGE\"[tiab] AND dystroglycan*[tiab]))",
+   "projects": [
+    10442635,
+    10561375,
+    10652520,
+    10782462,
+    10884486,
+    10995350,
+    11238521
+   ],
+   "articles": [
+    {
+     "pmid": "36723429",
+     "title": "N-terminal domain on dystroglycan enables LARGE1 to extend matriglycan on α-dystroglycan and prevents muscular dystrophy.",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36723429/"
+    },
+    {
+     "pmid": "33200426",
+     "title": "Genetic variations and clinical spectrum of dystroglycanopathy in a large cohort of Chinese patients.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33200426/"
+    },
+    {
+     "pmid": "31054580",
+     "title": "Exogenous expression of the glycosyltransferase LARGE1 restores α-dystroglycan matriglycan and laminin binding in rhabdomyosarcoma.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31054580/"
+    },
+    {
+     "pmid": "28688748",
+     "title": "Congenital muscular dystrophies in the UK population: Clinical and molecular spectrum of a large cohort diagnosed over a 12-year period.",
+     "year": 2017,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/28688748/"
+    },
+    {
+     "pmid": "32356985",
+     "title": "Identification and Modeling of a GT-A Fold in the α-Dystroglycan Glycosylating Enzyme LARGE1.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32356985/"
+    },
+    {
+     "pmid": "27671890",
+     "title": "Angiogenesis in alkaptonuria.",
+     "year": 2016,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27671890/"
+    },
+    {
+     "pmid": "31092689",
+     "title": "Structural biology of laminins.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31092689/"
+    },
+    {
+     "pmid": "32975514",
+     "title": "POMK regulates dystroglycan function via LARGE1-mediated elongation of matriglycan.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32975514/"
+    },
+    {
+     "pmid": "21397493",
+     "title": "Dystroglycanopathies: coming into focus.",
+     "year": 2011,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/21397493/"
+    },
+    {
+     "pmid": "38321963",
+     "title": "Selection-free precise gene repair using high-capacity adenovector delivery of advanced prime editing systems rescues dystrophin synthesis in DMD muscle cells.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38321963/"
+    },
+    {
+     "pmid": "38326571",
+     "title": "Genome-wide association study identifies human genetic variants associated with fatal outcome from Lassa fever.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38326571/"
+    },
+    {
+     "pmid": "39326416",
+     "title": "Saturation mutagenesis-reinforced functional assays for disease-related genes.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39326416/"
+    },
+    {
+     "pmid": "41073435",
+     "title": "LARGE1 processively polymerizes length-controlled matriglycan on prodystroglycan.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/41073435/"
+    },
+    {
+     "pmid": "29171277",
+     "title": "Corrigendum.",
+     "year": 2018,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/29171277/"
+    },
+    {
+     "pmid": "33588034",
+     "title": "Clinical significance of LARGE1 in progression of liver cancer and the underlying mechanism.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/33588034/"
+    },
+    {
+     "pmid": "15256230",
+     "title": "Dystroglycan complex in cancer.",
+     "year": 2004,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/15256230/"
+    },
+    {
+     "pmid": "27496765",
+     "title": "LARGE2-dependent glycosylation confers laminin-binding ability on proteoglycans.",
+     "year": 2016,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/27496765/"
+    },
+    {
+     "pmid": "36512577",
+     "title": "Structural basis for matriglycan synthesis by the LARGE1 dual glycosyltransferase.",
+     "year": 2022,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36512577/"
+    },
+    {
+     "pmid": "39789642",
+     "title": "Sarcolemma resilience and skeletal muscle health require O-mannosylation of dystroglycan.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39789642/"
+    },
+    {
+     "pmid": "15367856",
+     "title": "Glycosylation defects in muscular dystrophies.",
+     "year": 2004,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/15367856/"
+    }
+   ]
+  },
+  "GAA": {
+   "disease_ids": [
+    "OMIM:621314"
+   ],
+   "reporter_query": "\"Pompe disease\"",
+   "reporter_total": 89,
+   "pubmed_query": "(\"Pompe disease\"[tiab] AND \"GAA\"[tiab])",
+   "projects": [
+    10757930,
+    10764807,
+    10768746,
+    10824325,
+    10830951,
+    10831492,
+    10835997,
+    10843269,
+    10849348,
+    10849633,
+    10887540,
+    10912680,
+    10930027,
+    10930043,
+    10934905,
+    10980623,
+    11003504,
+    11005696,
+    11007701,
+    11013878,
+    11039977,
+    11041606,
+    11070207,
+    11076740,
+    11088140,
+    11088822,
+    11095794,
+    11143126,
+    11143691,
+    11170704,
+    11174140,
+    11183687,
+    11188788,
+    11189812,
+    11221984,
+    11258501,
+    11263644,
+    11267230,
+    11312671,
+    11322813,
+    11325270,
+    11334580,
+    11345438,
+    11357315,
+    11387708,
+    11392765,
+    11401088,
+    11401411,
+    11401891,
+    11416039
+   ],
+   "articles": [
+    {
+     "pmid": "32745073",
+     "title": "Pompe disease: pathogenesis, molecular genetics and diagnosis.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32745073/"
+    },
+    {
+     "pmid": "31342611",
+     "title": "GAA variants and phenotypes among 1,079 patients with Pompe disease: Data from the Pompe Registry.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31342611/"
+    },
+    {
+     "pmid": "40237692",
+     "title": "Improving the treatment of Pompe disease with enzyme replacement therapy: current strategies and clinical evidence.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/40237692/"
+    },
+    {
+     "pmid": "38232139",
+     "title": "Small-molecule inhibition of glycogen synthase 1 for the treatment of Pompe disease and other glycogen storage disorders.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38232139/"
+    },
+    {
+     "pmid": "39134822",
+     "title": "Advances in Pompe Disease Treatment: From Enzyme Replacement to Gene Therapy.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39134822/"
+    },
+    {
+     "pmid": "32071926",
+     "title": "Novel GAA Variants and Mosaicism in Pompe Disease Identified by Extended Analyses of Patients with an Incomplete DNA Diagnosis.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32071926/"
+    },
+    {
+     "pmid": "36310651",
+     "title": "Newborn screening for Pompe disease in Italy: Long-term results and future challenges.",
+     "year": 2022,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/36310651/"
+    },
+    {
+     "pmid": "34850579",
+     "title": "Muscle-directed gene therapy corrects Pompe disease and uncovers species-specific GAA immunogenicity.",
+     "year": 2022,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34850579/"
+    },
+    {
+     "pmid": "40561529",
+     "title": "AAV9-Mediated Gene Therapy for Infantile-Onset Pompe's Disease.",
+     "year": 2025,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/40561529/"
+    },
+    {
+     "pmid": "31392199",
+     "title": "Progress and challenges of gene therapy for Pompe disease.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31392199/"
+    },
+    {
+     "pmid": "39295144",
+     "title": "Preclinical lentiviral hematopoietic stem cell gene therapy corrects Pompe disease-related muscle and neurological manifestations.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39295144/"
+    },
+    {
+     "pmid": "34072668",
+     "title": "Correlation of GAA Genotype and Acid-α-Glucosidase Enzyme Activity in Hungarian Patients with Pompe Disease.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34072668/"
+    },
+    {
+     "pmid": "38162137",
+     "title": "Pompe disease in China: clinical and molecular characteristics.",
+     "year": 2023,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/38162137/"
+    },
+    {
+     "pmid": "17826266",
+     "title": "Pompe disease: current state of treatment modalities and animal models.",
+     "year": 2007,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/17826266/"
+    },
+    {
+     "pmid": "32711049",
+     "title": "Clinical and GAA gene mutation analysis in 21 Chinese patients with classic infantile pompe disease.",
+     "year": 2020,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/32711049/"
+    },
+    {
+     "pmid": "31392195",
+     "title": "Long-term outcome and unmet needs in infantile-onset Pompe disease.",
+     "year": 2019,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/31392195/"
+    },
+    {
+     "pmid": "34020684",
+     "title": "Genotype-phenotype correlation of 17 cases of Pompe disease in Spanish patients and identification of 4 novel GAA variants.",
+     "year": 2021,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34020684/"
+    },
+    {
+     "pmid": "23632029",
+     "title": "Pompe disease: early diagnosis and early treatment make a difference.",
+     "year": 2013,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/23632029/"
+    },
+    {
+     "pmid": "25243733",
+     "title": "Identification and characterization of aberrant GAA pre-mRNA splicing in pompe disease using a generic approach.",
+     "year": 2015,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/25243733/"
+    },
+    {
+     "pmid": "39273088",
+     "title": "Mutation Spectrum of GAA Gene in Pompe Disease: Current Knowledge and Results of an Italian Study.",
+     "year": 2024,
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39273088/"
+    }
+   ]
+  }
+ },
+ "projects": {
+  "10380061": {
+   "appl_id": 10380061,
+   "project_num": "5R01GM105399-36",
+   "title": "Lectin Resistant Tumor Cells and Functional Glycomics",
+   "fiscal_year": 2022,
+   "organization": "ALBERT EINSTEIN COLLEGE OF MEDICINE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10380061",
+   "investigators": [
+    {
+     "profile_id": 1901966,
+     "name": "PAMELA M STANLEY"
+    }
+   ]
+  },
+  "10393522": {
+   "appl_id": 10393522,
+   "project_num": "5R35GM132120-04",
+   "title": "Structural basis of integral membrane enzyme function",
+   "fiscal_year": 2022,
+   "organization": "COLUMBIA UNIVERSITY HEALTH SCIENCES",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10393522",
+   "investigators": [
+    {
+     "profile_id": 9815330,
+     "name": "Filippo  Mancia"
+    }
+   ]
+  },
+  "10410238": {
+   "appl_id": 10410238,
+   "project_num": "3F32HL154712-02S1",
+   "title": "Micropatterned surfaces for modeling muscular dystrophy-associated cardiomyopathy",
+   "fiscal_year": 2022,
+   "organization": "NORTHWESTERN UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10410238",
+   "investigators": [
+    {
+     "profile_id": 8472591,
+     "name": "Dominic Edward Fullenkamp"
+    }
+   ]
+  },
+  "10442630": {
+   "appl_id": 10442630,
+   "project_num": "5P50NS053672-18",
+   "title": "Muscular Dystrophy Specialized Research Center",
+   "fiscal_year": 2022,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10442630",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "10442635": {
+   "appl_id": 10442635,
+   "project_num": "5P50NS053672-18",
+   "title": "Muscular Dystrophy Specialized Research Center: Project 1",
+   "fiscal_year": 2022,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10442635",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "10442637": {
+   "appl_id": 10442637,
+   "project_num": "5P50NS053672-18",
+   "title": "Muscular Dystrophy Specialized Research Center: Project 2",
+   "fiscal_year": 2022,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10442637",
+   "investigators": [
+    {
+     "profile_id": 9248330,
+     "name": "Katherine Dianne Mathews"
+    }
+   ]
+  },
+  "10461759": {
+   "appl_id": 10461759,
+   "project_num": "5R01GM086874-23",
+   "title": "Cellular protein maturation and degradation",
+   "fiscal_year": 2022,
+   "organization": "UNIVERSITY OF MASSACHUSETTS AMHERST",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10461759",
+   "investigators": [
+    {
+     "profile_id": 1941283,
+     "name": "Daniel N. Hebert"
+    }
+   ]
+  },
+  "10561375": {
+   "appl_id": 10561375,
+   "project_num": "1R01AR081882-01",
+   "title": "Targeting Dystroglycanopathies using Pluripotent-derived Myogenic Progenitors",
+   "fiscal_year": 2023,
+   "organization": "UNIVERSITY OF MINNESOTA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10561375",
+   "investigators": [
+    {
+     "profile_id": 8301594,
+     "name": "Rita C. R. Perlingeiro"
+    }
+   ]
+  },
+  "10582102": {
+   "appl_id": 10582102,
+   "project_num": "3R35GM132120-04S1",
+   "title": "Structural basis of integral membrane enzyme function",
+   "fiscal_year": 2022,
+   "organization": "COLUMBIA UNIVERSITY HEALTH SCIENCES",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10582102",
+   "investigators": [
+    {
+     "profile_id": 9815330,
+     "name": "Filippo  Mancia"
+    }
+   ]
+  },
+  "10592499": {
+   "appl_id": 10592499,
+   "project_num": "3R01GM086874-22S1",
+   "title": "Cellular protein maturation and degradation",
+   "fiscal_year": 2022,
+   "organization": "UNIVERSITY OF MASSACHUSETTS AMHERST",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10592499",
+   "investigators": [
+    {
+     "profile_id": 1941283,
+     "name": "Daniel N. Hebert"
+    }
+   ]
+  },
+  "10609459": {
+   "appl_id": 10609459,
+   "project_num": "5R35GM132120-05",
+   "title": "Structural basis of integral membrane enzyme function",
+   "fiscal_year": 2023,
+   "organization": "COLUMBIA UNIVERSITY HEALTH SCIENCES",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10609459",
+   "investigators": [
+    {
+     "profile_id": 9815330,
+     "name": "Filippo  Mancia"
+    }
+   ]
+  },
+  "10652506": {
+   "appl_id": 10652506,
+   "project_num": "5P50NS053672-19",
+   "title": "Muscular Dystrophy Specialized Research Center",
+   "fiscal_year": 2023,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10652506",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "10652520": {
+   "appl_id": 10652520,
+   "project_num": "5P50NS053672-19",
+   "title": "Muscular Dystrophy Specialized Research Center: Project 1",
+   "fiscal_year": 2023,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10652520",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "10652527": {
+   "appl_id": 10652527,
+   "project_num": "5P50NS053672-19",
+   "title": "Muscular Dystrophy Specialized Research Center: Project 2",
+   "fiscal_year": 2023,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10652527",
+   "investigators": [
+    {
+     "profile_id": 9248330,
+     "name": "Katherine Dianne Mathews"
+    }
+   ]
+  },
+  "10655796": {
+   "appl_id": 10655796,
+   "project_num": "2R01CA231466-06",
+   "title": "Molecular mechanisms of protein glycosylation and trafficking",
+   "fiscal_year": 2023,
+   "organization": "VAN ANDEL RESEARCH INSTITUTE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10655796",
+   "investigators": [
+    {
+     "profile_id": 7850879,
+     "name": "Huilin  Li"
+    }
+   ]
+  },
+  "10673953": {
+   "appl_id": 10673953,
+   "project_num": "5R01GM086874-24",
+   "title": "Cellular protein maturation and degradation",
+   "fiscal_year": 2023,
+   "organization": "UNIVERSITY OF MASSACHUSETTS AMHERST",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10673953",
+   "investigators": [
+    {
+     "profile_id": 14393842,
+     "name": "Jennifer Nicole Rauch"
+    }
+   ]
+  },
+  "10678139": {
+   "appl_id": 10678139,
+   "project_num": "2R01GM111939-09",
+   "title": "Structure and Function in alpha-Dystroglycan Glycosylation",
+   "fiscal_year": 2023,
+   "organization": "UNIVERSITY OF GEORGIA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10678139",
+   "investigators": [
+    {
+     "profile_id": 8029372,
+     "name": "Lance  Wells"
+    }
+   ]
+  },
+  "10752212": {
+   "appl_id": 10752212,
+   "project_num": "1F32CA284834-01",
+   "title": "Identifying genetic vulnerabilities in KIAA1549-BRAF mutant pediatric low-grade gliomas",
+   "fiscal_year": 2023,
+   "organization": "BROAD INSTITUTE, INC.",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10752212",
+   "investigators": [
+    {
+     "profile_id": 14428536,
+     "name": "Sean Alexander Misek"
+    }
+   ]
+  },
+  "10757930": {
+   "appl_id": 10757930,
+   "project_num": "5R33NS111081-03",
+   "title": "Treatment of Lafora disease with an antibody-enzyme fusion",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF FLORIDA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10757930",
+   "investigators": [
+    {
+     "profile_id": 7923267,
+     "name": "Matthew S. Gentry"
+    }
+   ]
+  },
+  "10764807": {
+   "appl_id": 10764807,
+   "project_num": "5R01DK134408-02",
+   "title": "Dissecting AAV silencing in humanized mice",
+   "fiscal_year": 2024,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10764807",
+   "investigators": [
+    {
+     "profile_id": 8605473,
+     "name": "Aravind  Asokan"
+    },
+    {
+     "profile_id": 9772758,
+     "name": "Karl-Dimiter  Bissig"
+    }
+   ]
+  },
+  "10768746": {
+   "appl_id": 10768746,
+   "project_num": "5R01EB033064-03",
+   "title": "3D Shearwave Elasticity Biomarker Development for Neuromuscular Disease",
+   "fiscal_year": 2024,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10768746",
+   "investigators": [
+    {
+     "profile_id": 1860404,
+     "name": "Kathryn Radabaugh Nightingale"
+    }
+   ]
+  },
+  "10782462": {
+   "appl_id": 10782462,
+   "project_num": "5R01AR081882-02",
+   "title": "Targeting Dystroglycanopathies using Pluripotent-derived Myogenic Progenitors",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF MINNESOTA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10782462",
+   "investigators": [
+    {
+     "profile_id": 8301594,
+     "name": "Rita C. R. Perlingeiro"
+    }
+   ]
+  },
+  "10798253": {
+   "appl_id": 10798253,
+   "project_num": "5R01CA231466-07",
+   "title": "Molecular mechanisms of protein glycosylation and trafficking",
+   "fiscal_year": 2024,
+   "organization": "VAN ANDEL RESEARCH INSTITUTE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10798253",
+   "investigators": [
+    {
+     "profile_id": 7850879,
+     "name": "Huilin  Li"
+    }
+   ]
+  },
+  "10802855": {
+   "appl_id": 10802855,
+   "project_num": "1R01AR081901-01A1",
+   "title": "Massively-parallel functional interrogation of genetic variation in CMD-associated alpha-dystroglycan glycosylating enzymes",
+   "fiscal_year": 2023,
+   "organization": "WASHINGTON UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10802855",
+   "investigators": [
+    {
+     "profile_id": 10288560,
+     "name": "Gabriel E Haller"
+    }
+   ]
+  },
+  "10808295": {
+   "appl_id": 10808295,
+   "project_num": "3R01GM086874-23S1",
+   "title": "Cellular protein maturation and degradation",
+   "fiscal_year": 2023,
+   "organization": "UNIVERSITY OF MASSACHUSETTS AMHERST",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10808295",
+   "investigators": [
+    {
+     "profile_id": 1941283,
+     "name": "Daniel N. Hebert"
+    }
+   ]
+  },
+  "10817902": {
+   "appl_id": 10817902,
+   "project_num": "5R01GM111939-10",
+   "title": "Structure and Function in alpha-Dystroglycan Glycosylation",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF GEORGIA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10817902",
+   "investigators": [
+    {
+     "profile_id": 8029372,
+     "name": "Lance  Wells"
+    }
+   ]
+  },
+  "10824325": {
+   "appl_id": 10824325,
+   "project_num": "5R01HD090019-07",
+   "title": "Precision Medicine Policy and Treatment (PreEMPT) Model II",
+   "fiscal_year": 2024,
+   "organization": "HARVARD PILGRIM HEALTH CARE, INC.",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10824325",
+   "investigators": [
+    {
+     "profile_id": 6262581,
+     "name": "Kurt Derek Christensen"
+    }
+   ]
+  },
+  "10830951": {
+   "appl_id": 10830951,
+   "project_num": "5R01HD052682-15",
+   "title": "Control of Breathing and Pompe Disease",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF FLORIDA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10830951",
+   "investigators": [
+    {
+     "profile_id": 6405998,
+     "name": "BARRY J BYRNE"
+    },
+    {
+     "profile_id": 1899253,
+     "name": "DAVID D FULLER"
+    }
+   ]
+  },
+  "10831492": {
+   "appl_id": 10831492,
+   "project_num": "5R01HD104814-03",
+   "title": "Enhancement of Newborn Screening Diagnostic Paradigms to Improve the Efficacy of Treatment for Krabbe Disease, Pompe Disease, and Mucopolysaccharidosis Type 1",
+   "fiscal_year": 2024,
+   "organization": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10831492",
+   "investigators": [
+    {
+     "profile_id": 12367714,
+     "name": "Thomas J Langan"
+    }
+   ]
+  },
+  "10835997": {
+   "appl_id": 10835997,
+   "project_num": "5R01HD110270-03",
+   "title": "Phase 1 Study of In Utero Enzyme Replacement Therapy for the Treatment of Lysosomal Storage Diseases",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10835997",
+   "investigators": [
+    {
+     "profile_id": 9196466,
+     "name": "Tippi  Mackenzie"
+    }
+   ]
+  },
+  "10843269": {
+   "appl_id": 10843269,
+   "project_num": "5R01AI169296-03",
+   "title": "Lipid mediated oral tolerance",
+   "fiscal_year": 2024,
+   "organization": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10843269",
+   "investigators": [
+    {
+     "profile_id": 2194140,
+     "name": "SATHY VENKAT BALU-IYER"
+    },
+    {
+     "profile_id": 12058933,
+     "name": "Jason G Kay"
+    },
+    {
+     "profile_id": 8252606,
+     "name": "ELIZABETH  WOHLFERT"
+    }
+   ]
+  },
+  "10849348": {
+   "appl_id": 10849348,
+   "project_num": "1T32AR083870-01",
+   "title": "MAXIMUS: MAXimizing Training in MUScle Research",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF CALIFORNIA-IRVINE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10849348",
+   "investigators": [
+    {
+     "profile_id": 7369255,
+     "name": "TAHSEEN  MOZAFFAR"
+    },
+    {
+     "profile_id": 6895967,
+     "name": "Sergio Armando Villalta"
+    },
+    {
+     "profile_id": 2792229,
+     "name": "Kyoko  Yokomori"
+    }
+   ]
+  },
+  "10849633": {
+   "appl_id": 10849633,
+   "project_num": "5R01NS115571-05",
+   "title": "Real-Time Tracking of Gene Therapy by Bioactivated MR contrast Probes",
+   "fiscal_year": 2024,
+   "organization": "NORTHWESTERN UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10849633",
+   "investigators": [
+    {
+     "profile_id": 7937285,
+     "name": "MIGUEL S ESTEVES"
+    },
+    {
+     "profile_id": 11216876,
+     "name": "Heather L Gray-Edwards"
+    },
+    {
+     "profile_id": 7618745,
+     "name": "DOUGLAS R MARTIN"
+    },
+    {
+     "profile_id": 2063559,
+     "name": "Thomas J Meade"
+    }
+   ]
+  },
+  "10884480": {
+   "appl_id": 10884480,
+   "project_num": "5P50NS053672-20",
+   "title": "Muscular Dystrophy Specialized Research Center",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10884480",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "10884486": {
+   "appl_id": 10884486,
+   "project_num": "5P50NS053672-20",
+   "title": "Muscular Dystrophy Specialized Research Center: Project 1",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10884486",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "10884488": {
+   "appl_id": 10884488,
+   "project_num": "5P50NS053672-20",
+   "title": "Muscular Dystrophy Specialized Research Center: Project 2",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10884488",
+   "investigators": [
+    {
+     "profile_id": 9248330,
+     "name": "Katherine Dianne Mathews"
+    }
+   ]
+  },
+  "10887540": {
+   "appl_id": 10887540,
+   "project_num": "5R01AR079223-04",
+   "title": "Stable therapy in Pompe disease through genome editing",
+   "fiscal_year": 2024,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10887540",
+   "investigators": [
+    {
+     "profile_id": 1868484,
+     "name": "Dwight D Koeberl"
+    }
+   ]
+  },
+  "10912680": {
+   "appl_id": 10912680,
+   "project_num": "5R01DK067859-24",
+   "title": "Development of Assays for Newborn Screening and for Post-Screening Evaluation of Disease Severity",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF WASHINGTON",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10912680",
+   "investigators": [
+    {
+     "profile_id": 1862952,
+     "name": "Michael H Gelb"
+    }
+   ]
+  },
+  "10930027": {
+   "appl_id": 10930027,
+   "project_num": "5U54NS065768-15",
+   "title": "Lysosomal Disease Network",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF MINNESOTA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10930027",
+   "investigators": [
+    {
+     "profile_id": 1955708,
+     "name": "Chester B. Whitley"
+    }
+   ]
+  },
+  "10930043": {
+   "appl_id": 10930043,
+   "project_num": "5U54NS065768-15",
+   "title": "Long Term Follow-up and Treatment Outcomes for Individuals with Pompe Disease",
+   "fiscal_year": 2024,
+   "organization": "UNIVERSITY OF MINNESOTA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10930043",
+   "investigators": [
+    {
+     "profile_id": 6199132,
+     "name": "PRIYA S. KISHNANI"
+    }
+   ]
+  },
+  "10934905": {
+   "appl_id": 10934905,
+   "project_num": "1R35GM154665-01",
+   "title": "Defining the mechanisms of the glycophagy shunt and its role in metabolism",
+   "fiscal_year": 2024,
+   "organization": "LSU PENNINGTON BIOMEDICAL RESEARCH CTR",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10934905",
+   "investigators": [
+    {
+     "profile_id": 11942734,
+     "name": "Timothy D. Heden"
+    }
+   ]
+  },
+  "10936537": {
+   "appl_id": 10936537,
+   "project_num": "5R01AR081901-02",
+   "title": "Massively-parallel functional interrogation of genetic variation in CMD-associated alpha-dystroglycan glycosylating enzymes",
+   "fiscal_year": 2024,
+   "organization": "WASHINGTON UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10936537",
+   "investigators": [
+    {
+     "profile_id": 10288560,
+     "name": "Gabriel E Haller"
+    }
+   ]
+  },
+  "10951512": {
+   "appl_id": 10951512,
+   "project_num": "5F32CA284834-02",
+   "title": "Identifying genetic vulnerabilities in KIAA1549-BRAF mutant pediatric low-grade gliomas",
+   "fiscal_year": 2024,
+   "organization": "BROAD INSTITUTE, INC.",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10951512",
+   "investigators": [
+    {
+     "profile_id": 14428536,
+     "name": "Sean Alexander Misek"
+    }
+   ]
+  },
+  "10980623": {
+   "appl_id": 10980623,
+   "project_num": "1K23HD113824-01A1",
+   "title": "Developing strategies to identify candidate individuals for early genetic therapies",
+   "fiscal_year": 2024,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10980623",
+   "investigators": [
+    {
+     "profile_id": 16478627,
+     "name": "Jennifer L Cohen"
+    }
+   ]
+  },
+  "10992525": {
+   "appl_id": 10992525,
+   "project_num": "1P50HD117373-01A1",
+   "title": "Muscular Dystrophy Cell Line and Serum Banking Core",
+   "fiscal_year": 2024,
+   "organization": "RESEARCH INST NATIONWIDE CHILDREN'S HOSP",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10992525",
+   "investigators": [
+    {
+     "profile_id": 12418789,
+     "name": "Nicolas  Wein"
+    }
+   ]
+  },
+  "10992526": {
+   "appl_id": 10992526,
+   "project_num": "1P50HD117373-01A1",
+   "title": "(Project 1) Bicistronic Gene Therapies for the Muscular Dystrophies",
+   "fiscal_year": 2024,
+   "organization": "RESEARCH INST NATIONWIDE CHILDREN'S HOSP",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10992526",
+   "investigators": [
+    {
+     "profile_id": 1897121,
+     "name": "PAUL Taylor MARTIN"
+    }
+   ]
+  },
+  "10995350": {
+   "appl_id": 10995350,
+   "project_num": "5R01AR081882-03",
+   "title": "Targeting Dystroglycanopathies using Pluripotent-derived Myogenic Progenitors",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF MINNESOTA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/10995350",
+   "investigators": [
+    {
+     "profile_id": 8301594,
+     "name": "Rita C. R. Perlingeiro"
+    }
+   ]
+  },
+  "11003504": {
+   "appl_id": 11003504,
+   "project_num": "4R00HL161420-03",
+   "title": "Novel Adjunctive Therapies for Pompe Disease",
+   "fiscal_year": 2024,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11003504",
+   "investigators": [
+    {
+     "profile_id": 12357770,
+     "name": "Angela L. Roger"
+    }
+   ]
+  },
+  "11005696": {
+   "appl_id": 11005696,
+   "project_num": "5R01EB033064-04",
+   "title": "3D Shearwave Elasticity Biomarker Development for Neuromuscular Disease",
+   "fiscal_year": 2025,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11005696",
+   "investigators": [
+    {
+     "profile_id": 1860404,
+     "name": "Kathryn Radabaugh Nightingale"
+    }
+   ]
+  },
+  "11007701": {
+   "appl_id": 11007701,
+   "project_num": "1R43HD116671-01",
+   "title": "Targeted fluorination for improved pharmacology of enzyme replacement therapies",
+   "fiscal_year": 2024,
+   "organization": "HALIDE BIOLOGICS, INC.",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11007701",
+   "investigators": [
+    {
+     "profile_id": 10739690,
+     "name": "Daniel T Infield"
+    }
+   ]
+  },
+  "11012328": {
+   "appl_id": 11012328,
+   "project_num": "5R01GM111939-11",
+   "title": "Structure and Function in alpha-Dystroglycan Glycosylation",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF GEORGIA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11012328",
+   "investigators": [
+    {
+     "profile_id": 8029372,
+     "name": "Lance  Wells"
+    }
+   ]
+  },
+  "11013878": {
+   "appl_id": 11013878,
+   "project_num": "5R01DK134408-03",
+   "title": "Dissecting AAV silencing in humanized mice",
+   "fiscal_year": 2025,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11013878",
+   "investigators": [
+    {
+     "profile_id": 8605473,
+     "name": "Aravind  Asokan"
+    },
+    {
+     "profile_id": 9772758,
+     "name": "Karl-Dimiter  Bissig"
+    }
+   ]
+  },
+  "11039977": {
+   "appl_id": 11039977,
+   "project_num": "5R00HL161420-04",
+   "title": "Novel Adjunctive Therapies for Pompe Disease",
+   "fiscal_year": 2025,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11039977",
+   "investigators": [
+    {
+     "profile_id": 12357770,
+     "name": "Angela L. Roger"
+    }
+   ]
+  },
+  "11041606": {
+   "appl_id": 11041606,
+   "project_num": "1R01HL177642-01",
+   "title": "Alveolar injury and repair in Pompe Disease",
+   "fiscal_year": 2025,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11041606",
+   "investigators": [
+    {
+     "profile_id": 10807538,
+     "name": "Mai  ElMallah"
+    },
+    {
+     "profile_id": 11652116,
+     "name": "Aleksandra  Tata"
+    }
+   ]
+  },
+  "11055113": {
+   "appl_id": 11055113,
+   "project_num": "1K99CA290163-01A1",
+   "title": "Genetic dependencies in KIAA1549-BRAF rearranged pediatric low-grade gliomas",
+   "fiscal_year": 2025,
+   "organization": "BROAD INSTITUTE, INC.",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11055113",
+   "investigators": [
+    {
+     "profile_id": 14428536,
+     "name": "Sean Alexander Misek"
+    }
+   ]
+  },
+  "11070207": {
+   "appl_id": 11070207,
+   "project_num": "5R01HD104814-04",
+   "title": "Enhancement of Newborn Screening Diagnostic Paradigms to Improve the Efficacy of Treatment for Krabbe Disease, Pompe Disease, and Mucopolysaccharidosis Type 1",
+   "fiscal_year": 2025,
+   "organization": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11070207",
+   "investigators": [
+    {
+     "profile_id": 12367714,
+     "name": "Thomas J Langan"
+    }
+   ]
+  },
+  "11076740": {
+   "appl_id": 11076740,
+   "project_num": "5R01AI177600-03",
+   "title": "Mechanism of immune response to muscle-directed AAV gene transfer",
+   "fiscal_year": 2025,
+   "organization": "INDIANA UNIVERSITY INDIANAPOLIS",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11076740",
+   "investigators": [
+    {
+     "profile_id": 8011294,
+     "name": "Dongsheng  Duan"
+    },
+    {
+     "profile_id": 6720719,
+     "name": "Roland W. Herzog"
+    }
+   ]
+  },
+  "11088140": {
+   "appl_id": 11088140,
+   "project_num": "5T32AR083870-02",
+   "title": "MAXIMUS: MAXimizing Training in MUScle Research",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF CALIFORNIA-IRVINE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11088140",
+   "investigators": [
+    {
+     "profile_id": 7369255,
+     "name": "TAHSEEN  MOZAFFAR"
+    },
+    {
+     "profile_id": 6895967,
+     "name": "Sergio Armando Villalta"
+    },
+    {
+     "profile_id": 2792229,
+     "name": "Kyoko  Yokomori"
+    }
+   ]
+  },
+  "11088822": {
+   "appl_id": 11088822,
+   "project_num": "4R01AI169296-04",
+   "title": "Lipid mediated oral tolerance",
+   "fiscal_year": 2025,
+   "organization": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11088822",
+   "investigators": [
+    {
+     "profile_id": 2194140,
+     "name": "SATHY VENKAT BALU-IYER"
+    },
+    {
+     "profile_id": 12058933,
+     "name": "Jason G Kay"
+    },
+    {
+     "profile_id": 8252606,
+     "name": "ELIZABETH  WOHLFERT"
+    }
+   ]
+  },
+  "11094382": {
+   "appl_id": 11094382,
+   "project_num": "1U24AR085525-01",
+   "title": "Curation of Muscular Dystrophy Genes",
+   "fiscal_year": 2025,
+   "organization": "WASHINGTON UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11094382",
+   "investigators": [
+    {
+     "profile_id": 1952881,
+     "name": "CONRAD C WEIHL"
+    }
+   ]
+  },
+  "11094823": {
+   "appl_id": 11094823,
+   "project_num": "5R01CA231466-08",
+   "title": "Molecular mechanisms of protein glycosylation and trafficking",
+   "fiscal_year": 2025,
+   "organization": "VAN ANDEL RESEARCH INSTITUTE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11094823",
+   "investigators": [
+    {
+     "profile_id": 7850879,
+     "name": "Huilin  Li"
+    }
+   ]
+  },
+  "11095794": {
+   "appl_id": 11095794,
+   "project_num": "5R01HD110270-04",
+   "title": "Phase 1 Study of In Utero Enzyme Replacement Therapy for the Treatment of Lysosomal Storage Diseases",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11095794",
+   "investigators": [
+    {
+     "profile_id": 9196466,
+     "name": "Tippi  Mackenzie"
+    }
+   ]
+  },
+  "11130233": {
+   "appl_id": 11130233,
+   "project_num": "9P50HD119693-20",
+   "title": "Project 2 - McNally (NU)_Spencer (UCLA)",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF FLORIDA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11130233",
+   "investigators": [
+    {
+     "profile_id": 1901608,
+     "name": "Elizabeth M McNally"
+    }
+   ]
+  },
+  "11131718": {
+   "appl_id": 11131718,
+   "project_num": "2P50NS053672-21",
+   "title": "Muscular Dystrophy Specialized Research Center",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11131718",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "11131722": {
+   "appl_id": 11131722,
+   "project_num": "2P50NS053672-21",
+   "title": "Muscular Dystrophy Specialized Research Center",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11131722",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "11131723": {
+   "appl_id": 11131723,
+   "project_num": "2P50NS053672-21",
+   "title": "Muscular Dystrophy Specialized Research Center",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11131723",
+   "investigators": [
+    {
+     "profile_id": 9248330,
+     "name": "Katherine Dianne Mathews"
+    }
+   ]
+  },
+  "11143126": {
+   "appl_id": 11143126,
+   "project_num": "5R35GM154665-02",
+   "title": "Defining the mechanisms of the glycophagy shunt and its role in metabolism",
+   "fiscal_year": 2025,
+   "organization": "LSU PENNINGTON BIOMEDICAL RESEARCH CTR",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11143126",
+   "investigators": [
+    {
+     "profile_id": 11942734,
+     "name": "Timothy D. Heden"
+    }
+   ]
+  },
+  "11143691": {
+   "appl_id": 11143691,
+   "project_num": "5R01AR079223-05",
+   "title": "Stable therapy in Pompe disease through genome editing",
+   "fiscal_year": 2025,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11143691",
+   "investigators": [
+    {
+     "profile_id": 1868484,
+     "name": "Dwight D Koeberl"
+    }
+   ]
+  },
+  "11146458": {
+   "appl_id": 11146458,
+   "project_num": "5R01AR081901-03",
+   "title": "Massively-parallel functional interrogation of genetic variation in CMD-associated alpha-dystroglycan glycosylating enzymes",
+   "fiscal_year": 2025,
+   "organization": "WASHINGTON UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11146458",
+   "investigators": [
+    {
+     "profile_id": 10288560,
+     "name": "Gabriel E Haller"
+    }
+   ]
+  },
+  "11169977": {
+   "appl_id": 11169977,
+   "project_num": "5P50HD117373-02",
+   "title": "Muscular Dystrophy Cell Line and Serum Banking Core",
+   "fiscal_year": 2025,
+   "organization": "RESEARCH INST NATIONWIDE CHILDREN'S HOSP",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11169977",
+   "investigators": [
+    {
+     "profile_id": 12418789,
+     "name": "Nicolas  Wein"
+    }
+   ]
+  },
+  "11169982": {
+   "appl_id": 11169982,
+   "project_num": "5P50HD117373-02",
+   "title": "(Project 1) Bicistronic Gene Therapies for the Muscular Dystrophies",
+   "fiscal_year": 2025,
+   "organization": "RESEARCH INST NATIONWIDE CHILDREN'S HOSP",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11169982",
+   "investigators": [
+    {
+     "profile_id": 1897121,
+     "name": "PAUL Taylor MARTIN"
+    }
+   ]
+  },
+  "11170704": {
+   "appl_id": 11170704,
+   "project_num": "5R01DK067859-25",
+   "title": "Development of Assays for Newborn Screening and for Post-Screening Evaluation of Disease Severity",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF WASHINGTON",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11170704",
+   "investigators": [
+    {
+     "profile_id": 1862952,
+     "name": "Michael H Gelb"
+    }
+   ]
+  },
+  "11174140": {
+   "appl_id": 11174140,
+   "project_num": "1ZIGAR041168-17",
+   "title": "Animal care: supporting research on autoimmune, inflammatory and muscle diseases",
+   "fiscal_year": 2024,
+   "organization": "NATIONAL INSTITUTE OF ARTHRITIS AND MUSCULOSKELETAL AND SKIN DISEASES",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11174140",
+   "investigators": [
+    {
+     "profile_id": 79360178,
+     "name": "Joseph  Woo"
+    }
+   ]
+  },
+  "11183687": {
+   "appl_id": 11183687,
+   "project_num": "1ZIAHL000140-20",
+   "title": "Lysosomal Diseases",
+   "fiscal_year": 2024,
+   "organization": "NATIONAL HEART, LUNG, AND BLOOD INSTITUTE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11183687",
+   "investigators": [
+    {
+     "profile_id": 12450283,
+     "name": "Rosa  Puertollano-Moro"
+    }
+   ]
+  },
+  "11188788": {
+   "appl_id": 11188788,
+   "project_num": "1ZICBC012030-04",
+   "title": "Intravital Microscopy Core",
+   "fiscal_year": 2024,
+   "organization": "DIVISION OF BASIC SCIENCES - NCI",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11188788",
+   "investigators": [
+    {
+     "profile_id": 14731980,
+     "name": "Roberto  Weigert"
+    }
+   ]
+  },
+  "11189812": {
+   "appl_id": 11189812,
+   "project_num": "5K23HD113824-02",
+   "title": "Developing strategies to identify candidate individuals for early genetic therapies",
+   "fiscal_year": 2025,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11189812",
+   "investigators": [
+    {
+     "profile_id": 16478627,
+     "name": "Jennifer L Cohen"
+    }
+   ]
+  },
+  "11221984": {
+   "appl_id": 11221984,
+   "project_num": "1R01AR085087-01A1",
+   "title": "Skeletal muscle-targeted gene therapy for Pompe disease",
+   "fiscal_year": 2025,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11221984",
+   "investigators": [
+    {
+     "profile_id": 10929653,
+     "name": "Baodong  Sun"
+    }
+   ]
+  },
+  "11238521": {
+   "appl_id": 11238521,
+   "project_num": "5R01AR081882-04",
+   "title": "Targeting Dystroglycanopathies using Pluripotent-derived Myogenic Progenitors",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF MINNESOTA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11238521",
+   "investigators": [
+    {
+     "profile_id": 8301594,
+     "name": "Rita C. R. Perlingeiro"
+    }
+   ]
+  },
+  "11257365": {
+   "appl_id": 11257365,
+   "project_num": "5R01GM111939-12",
+   "title": "Structure and Function in alpha-Dystroglycan Glycosylation",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF GEORGIA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11257365",
+   "investigators": [
+    {
+     "profile_id": 8029372,
+     "name": "Lance  Wells"
+    }
+   ]
+  },
+  "11258501": {
+   "appl_id": 11258501,
+   "project_num": "5R01DK134408-04",
+   "title": "Dissecting AAV silencing in humanized mice",
+   "fiscal_year": 2026,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11258501",
+   "investigators": [
+    {
+     "profile_id": 8605473,
+     "name": "Aravind  Asokan"
+    },
+    {
+     "profile_id": 9772758,
+     "name": "Karl-Dimiter  Bissig"
+    }
+   ]
+  },
+  "11263644": {
+   "appl_id": 11263644,
+   "project_num": "5R00HL161420-05",
+   "title": "Novel Adjunctive Therapies for Pompe Disease",
+   "fiscal_year": 2026,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11263644",
+   "investigators": [
+    {
+     "profile_id": 12357770,
+     "name": "Angela L. Roger"
+    }
+   ]
+  },
+  "11263730": {
+   "appl_id": 11263730,
+   "project_num": "5K99CA290163-02",
+   "title": "Genetic dependencies in KIAA1549-BRAF rearranged pediatric low-grade gliomas",
+   "fiscal_year": 2026,
+   "organization": "BROAD INSTITUTE, INC.",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11263730",
+   "investigators": [
+    {
+     "profile_id": 14428536,
+     "name": "Sean Alexander Misek"
+    }
+   ]
+  },
+  "11267230": {
+   "appl_id": 11267230,
+   "project_num": "5R01HL177642-02",
+   "title": "Alveolar injury and repair in Pompe Disease",
+   "fiscal_year": 2026,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11267230",
+   "investigators": [
+    {
+     "profile_id": 10807538,
+     "name": "Mai  ElMallah"
+    },
+    {
+     "profile_id": 11652116,
+     "name": "Aleksandra  Tata"
+    }
+   ]
+  },
+  "11281569": {
+   "appl_id": 11281569,
+   "project_num": "3R01GM086874-24S1",
+   "title": "Cellular protein maturation and degradation",
+   "fiscal_year": 2025,
+   "organization": "UNIVERSITY OF MASSACHUSETTS AMHERST",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11281569",
+   "investigators": [
+    {
+     "profile_id": 14393842,
+     "name": "Jennifer Nicole Rauch"
+    }
+   ]
+  },
+  "11310083": {
+   "appl_id": 11310083,
+   "project_num": "1R21HD118293-01A1",
+   "title": "Prime editing therapeutics for LGMD2i",
+   "fiscal_year": 2026,
+   "organization": "UNIV OF MASSACHUSETTS MED SCH WORCESTER",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11310083",
+   "investigators": [
+    {
+     "profile_id": 1884969,
+     "name": "CHARLES P. EMERSON"
+    },
+    {
+     "profile_id": 7137057,
+     "name": "SCOT A WOLFE"
+    }
+   ]
+  },
+  "11310146": {
+   "appl_id": 11310146,
+   "project_num": "5P50HD119693-21",
+   "title": "Project 2 - McNally (NU)_Spencer (UCLA)",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF FLORIDA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11310146",
+   "investigators": [
+    {
+     "profile_id": 1901608,
+     "name": "Elizabeth M McNally"
+    }
+   ]
+  },
+  "11312671": {
+   "appl_id": 11312671,
+   "project_num": "5R01HD110270-05",
+   "title": "Phase 1 Study of In Utero Enzyme Replacement Therapy for the Treatment of Lysosomal Storage Diseases",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF CALIFORNIA, SAN FRANCISCO",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11312671",
+   "investigators": [
+    {
+     "profile_id": 9196466,
+     "name": "Tippi  Mackenzie"
+    }
+   ]
+  },
+  "11322813": {
+   "appl_id": 11322813,
+   "project_num": "3R35GM154665-02S1",
+   "title": "Defining the mechanisms of the glycophagy shunt and its role in metabolism Supplement",
+   "fiscal_year": 2025,
+   "organization": "LSU PENNINGTON BIOMEDICAL RESEARCH CTR",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11322813",
+   "investigators": [
+    {
+     "profile_id": 11942734,
+     "name": "Timothy D. Heden"
+    }
+   ]
+  },
+  "11325270": {
+   "appl_id": 11325270,
+   "project_num": "5R01AI177600-04",
+   "title": "Mechanism of immune response to muscle-directed AAV gene transfer",
+   "fiscal_year": 2026,
+   "organization": "INDIANA UNIVERSITY INDIANAPOLIS",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11325270",
+   "investigators": [
+    {
+     "profile_id": 8011294,
+     "name": "Dongsheng  Duan"
+    },
+    {
+     "profile_id": 6720719,
+     "name": "Roland W. Herzog"
+    }
+   ]
+  },
+  "11334580": {
+   "appl_id": 11334580,
+   "project_num": "1U24HD121485-01",
+   "title": "Expanding the ClinGen Lysosomal Storage Disorder Curation Effort: VCEPs for Mucopolysaccharidosis Type II and IIIA",
+   "fiscal_year": 2026,
+   "organization": "MAYO CLINIC ROCHESTER",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11334580",
+   "investigators": [
+    {
+     "profile_id": 15812635,
+     "name": "Filippo  Pinto e Vairo"
+    }
+   ]
+  },
+  "11345438": {
+   "appl_id": 11345438,
+   "project_num": "5T32AR083870-03",
+   "title": "MAXIMUS: MAXimizing Training in MUScle Research",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF CALIFORNIA-IRVINE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11345438",
+   "investigators": [
+    {
+     "profile_id": 7369255,
+     "name": "TAHSEEN  MOZAFFAR"
+    },
+    {
+     "profile_id": 6895967,
+     "name": "Sergio Armando Villalta"
+    },
+    {
+     "profile_id": 2792229,
+     "name": "Kyoko  Yokomori"
+    }
+   ]
+  },
+  "11351372": {
+   "appl_id": 11351372,
+   "project_num": "1K99CA312664-01",
+   "title": "Structure-function and mechanistic studies of a specific glycosyltransferase complex in fusion-driven pediatric gliomas",
+   "fiscal_year": 2026,
+   "organization": "DANA-FARBER CANCER INST",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11351372",
+   "investigators": [
+    {
+     "profile_id": 16603334,
+     "name": "Lobna  Elsadek"
+    }
+   ]
+  },
+  "11357315": {
+   "appl_id": 11357315,
+   "project_num": "1R21HD122115-01",
+   "title": "GYS1 Oligonucleotide Treatment as a Substrate Inhibitor for Pompe disease",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF CALIFORNIA-IRVINE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11357315",
+   "investigators": [
+    {
+     "profile_id": 6803749,
+     "name": "VIRGINIA Eunice KIMONIS"
+    }
+   ]
+  },
+  "11366494": {
+   "appl_id": 11366494,
+   "project_num": "1R01CA303137-01A1",
+   "title": "Protein O' Mannosylation as a therapeutic vulnerability in KIAA1549-BRAF-driven pediatric low-grade glioma",
+   "fiscal_year": 2026,
+   "organization": "DANA-FARBER CANCER INST",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11366494",
+   "investigators": [
+    {
+     "profile_id": 7791227,
+     "name": "RAMEEN  BEROUKHIM"
+    },
+    {
+     "profile_id": 12519318,
+     "name": "Pratiti  Bandopadhayay"
+    }
+   ]
+  },
+  "11377683": {
+   "appl_id": 11377683,
+   "project_num": "5R01AR081901-04",
+   "title": "Massively-parallel functional interrogation of genetic variation in CMD-associated alpha-dystroglycan glycosylating enzymes",
+   "fiscal_year": 2026,
+   "organization": "WASHINGTON UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11377683",
+   "investigators": [
+    {
+     "profile_id": 10288560,
+     "name": "Gabriel E Haller"
+    }
+   ]
+  },
+  "11387708": {
+   "appl_id": 11387708,
+   "project_num": "5R01HD104814-05",
+   "title": "Enhancement of Newborn Screening Diagnostic Paradigms to Improve the Efficacy of Treatment for Krabbe Disease, Pompe Disease, and Mucopolysaccharidosis Type 1",
+   "fiscal_year": 2026,
+   "organization": "STATE UNIVERSITY OF NEW YORK AT BUFFALO",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11387708",
+   "investigators": [
+    {
+     "profile_id": 14751576,
+     "name": "Kabir  Jalal"
+    },
+    {
+     "profile_id": 6623546,
+     "name": "Daniel  Woo"
+    }
+   ]
+  },
+  "11392765": {
+   "appl_id": 11392765,
+   "project_num": "1ZIAHL000140-21",
+   "title": "Lysosomal Diseases",
+   "fiscal_year": 2025,
+   "organization": "NATIONAL HEART, LUNG, AND BLOOD INSTITUTE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11392765",
+   "investigators": [
+    {
+     "profile_id": 8499878,
+     "name": "rosa  puertollano"
+    }
+   ]
+  },
+  "11394281": {
+   "appl_id": 11394281,
+   "project_num": "5R01CA231466-09",
+   "title": "Molecular mechanisms of protein glycosylation and trafficking",
+   "fiscal_year": 2026,
+   "organization": "VAN ANDEL RESEARCH INSTITUTE",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11394281",
+   "investigators": [
+    {
+     "profile_id": 7850879,
+     "name": "Huilin  Li"
+    }
+   ]
+  },
+  "11397447": {
+   "appl_id": 11397447,
+   "project_num": "5P50HD117373-03",
+   "title": "Muscular Dystrophy Cell Line and Serum Banking Core",
+   "fiscal_year": 2026,
+   "organization": "RESEARCH INST NATIONWIDE CHILDREN'S HOSP",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11397447",
+   "investigators": [
+    {
+     "profile_id": 12418789,
+     "name": "Nicolas  Wein"
+    }
+   ]
+  },
+  "11397452": {
+   "appl_id": 11397452,
+   "project_num": "5P50HD117373-03",
+   "title": "(Project 1) Bicistronic Gene Therapies for the Muscular Dystrophies",
+   "fiscal_year": 2026,
+   "organization": "RESEARCH INST NATIONWIDE CHILDREN'S HOSP",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11397452",
+   "investigators": [
+    {
+     "profile_id": 1897121,
+     "name": "PAUL Taylor MARTIN"
+    }
+   ]
+  },
+  "11401088": {
+   "appl_id": 11401088,
+   "project_num": "5K23HD113824-03",
+   "title": "Developing strategies to identify candidate individuals for early genetic therapies",
+   "fiscal_year": 2026,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11401088",
+   "investigators": [
+    {
+     "profile_id": 16478627,
+     "name": "Jennifer L Cohen"
+    }
+   ]
+  },
+  "11401411": {
+   "appl_id": 11401411,
+   "project_num": "5R01AR085087-02",
+   "title": "Skeletal muscle-targeted gene therapy for Pompe disease",
+   "fiscal_year": 2026,
+   "organization": "DUKE UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11401411",
+   "investigators": [
+    {
+     "profile_id": 10929653,
+     "name": "Baodong  Sun"
+    }
+   ]
+  },
+  "11401891": {
+   "appl_id": 11401891,
+   "project_num": "5R35GM154665-03",
+   "title": "Defining the mechanisms of the glycophagy shunt and its role in metabolism",
+   "fiscal_year": 2026,
+   "organization": "LSU PENNINGTON BIOMEDICAL RESEARCH CTR",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11401891",
+   "investigators": [
+    {
+     "profile_id": 11942734,
+     "name": "Timothy D. Heden"
+    }
+   ]
+  },
+  "11402631": {
+   "appl_id": 11402631,
+   "project_num": "5P50NS053672-22",
+   "title": "Muscular Dystrophy Specialized Research Center",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11402631",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "11402651": {
+   "appl_id": 11402651,
+   "project_num": "5P50NS053672-22",
+   "title": "Muscular Dystrophy Specialized Research Center",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11402651",
+   "investigators": [
+    {
+     "profile_id": 1962294,
+     "name": "KEVIN P. CAMPBELL"
+    }
+   ]
+  },
+  "11402658": {
+   "appl_id": 11402658,
+   "project_num": "5P50NS053672-22",
+   "title": "Muscular Dystrophy Specialized Research Center",
+   "fiscal_year": 2026,
+   "organization": "UNIVERSITY OF IOWA",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11402658",
+   "investigators": [
+    {
+     "profile_id": 9248330,
+     "name": "Katherine Dianne Mathews"
+    }
+   ]
+  },
+  "11416039": {
+   "appl_id": 11416039,
+   "project_num": "1ZIGAR041168-18",
+   "title": "Animal care: supporting research on autoimmune, inflammatory and muscle diseases",
+   "fiscal_year": 2025,
+   "organization": "NATIONAL INSTITUTE OF ARTHRITIS AND MUSCULOSKELETAL AND SKIN DISEASES",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11416039",
+   "investigators": [
+    {
+     "profile_id": 79360178,
+     "name": "Joseph  Woo"
+    }
+   ]
+  },
+  "11417940": {
+   "appl_id": 11417940,
+   "project_num": "5U24AR085525-02",
+   "title": "Curation of Muscular Dystrophy Genes",
+   "fiscal_year": 2026,
+   "organization": "WASHINGTON UNIVERSITY",
+   "country": "UNITED STATES",
+   "url": "https://reporter.nih.gov/project-details/11417940",
+   "investigators": [
+    {
+     "profile_id": 1952881,
+     "name": "CONRAD C WEIHL"
+    }
+   ]
+  }
+ },
+ "shared_investigators": [
+  {
+   "profile_id": 1884969,
+   "name": "CHARLES P. EMERSON",
+   "genes": [
+    "FKRP",
+    "FKTN"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    11310083
+   ]
+  },
+  {
+   "profile_id": 1897121,
+   "name": "PAUL Taylor MARTIN",
+   "genes": [
+    "FKRP",
+    "FKTN"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    10992526,
+    11169982,
+    11397452
+   ]
+  },
+  {
+   "profile_id": 1901608,
+   "name": "Elizabeth M McNally",
+   "genes": [
+    "FKRP",
+    "FKTN"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    11130233,
+    11310146
+   ]
+  },
+  {
+   "profile_id": 1952881,
+   "name": "CONRAD C WEIHL",
+   "genes": [
+    "FKRP",
+    "FKTN"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    11094382,
+    11417940
+   ]
+  },
+  {
+   "profile_id": 1962294,
+   "name": "KEVIN P. CAMPBELL",
+   "genes": [
+    "FKRP",
+    "FKTN",
+    "LARGE1"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "OMIM:613154",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    10442630,
+    10442635,
+    10652506,
+    10652520,
+    10884480,
+    10884486,
+    11131718,
+    11131722,
+    11402631,
+    11402651
+   ]
+  },
+  {
+   "profile_id": 7137057,
+   "name": "SCOT A WOLFE",
+   "genes": [
+    "FKRP",
+    "FKTN"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    11310083
+   ]
+  },
+  {
+   "profile_id": 8301594,
+   "name": "Rita C. R. Perlingeiro",
+   "genes": [
+    "FKRP",
+    "FKTN",
+    "LARGE1"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "OMIM:613154",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    10561375,
+    10782462,
+    10995350,
+    11238521
+   ]
+  },
+  {
+   "profile_id": 8472591,
+   "name": "Dominic Edward Fullenkamp",
+   "genes": [
+    "FKRP",
+    "FKTN"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    10410238
+   ]
+  },
+  {
+   "profile_id": 9248330,
+   "name": "Katherine Dianne Mathews",
+   "genes": [
+    "FKRP",
+    "FKTN"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    10442637,
+    10652527,
+    10884488,
+    11131723,
+    11402658
+   ]
+  },
+  {
+   "profile_id": 10288560,
+   "name": "Gabriel E Haller",
+   "genes": [
+    "FKRP",
+    "FKTN",
+    "POMGNT1",
+    "POMT1"
+   ],
+   "disease_ids": [
+    "OMIM:609308",
+    "OMIM:611588",
+    "OMIM:613153",
+    "OMIM:613157",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    10802855,
+    10936537,
+    11146458,
+    11377683
+   ]
+  },
+  {
+   "profile_id": 12418789,
+   "name": "Nicolas  Wein",
+   "genes": [
+    "FKRP",
+    "FKTN"
+   ],
+   "disease_ids": [
+    "OMIM:611588",
+    "OMIM:613153",
+    "ORPHA:34515"
+   ],
+   "projects": [
+    10992525,
+    11169977,
+    11397447
+   ]
+  }
+ ],
+ "extraction": {
+  "status": "not_run",
+  "model": null,
+  "edges": [],
+  "note": "Run --extract with OPENAI_API_KEY to add AI-extracted edges."
+ }
+}
