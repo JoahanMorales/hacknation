@@ -108,3 +108,6 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791092763 | deadline lease/HACK-030/1791092471 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791093036 | HACK-032 | no parchear el check a ciegas | Por qué: el fallo restante es layout del shell (HACK-028)
 - 1791094223 | deadline lease/HACK-031/1791093761 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791095835 | deadline lease/HACK-028/1791095305 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791095835 | deadline lease/HACK-029/1791095344 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791095835 | deadline lease/HACK-033/1791095173 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
