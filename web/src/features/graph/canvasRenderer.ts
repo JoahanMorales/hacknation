@@ -81,7 +81,7 @@ export function createCanvasRenderer(container: HTMLElement, events: RendererEve
       const mx = (ax + bx) / 2 - (by - ay) * 0.15;
       const my = (ay + by) / 2 + (bx - ax) * 0.15;
       ctx.globalAlpha = 0.9;
-      ctx.strokeStyle = "rgb(237 201 148)";
+      ctx.strokeStyle = "rgb(13 122 84)";
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(ax, ay);
@@ -90,7 +90,7 @@ export function createCanvasRenderer(container: HTMLElement, events: RendererEve
       halos.push(link[0], link[1]);
     }
     // Brillo aditivo sólo para candidatas, la arista resaltada y la estrella bajo el cursor.
-    ctx.globalCompositeOperation = "lighter";
+    // Sobre fondo claro el brillo es un halo translúcido (lighter lo volvería blanco).
     for (const i of halos) {
       const [sx, sy] = toScreenRaw(positions[i * 2], positions[i * 2 + 1]);
       const r = Math.max(10, sizes[i] * zoom * 4);
@@ -101,7 +101,6 @@ export function createCanvasRenderer(container: HTMLElement, events: RendererEve
       ctx.fillStyle = gradient;
       ctx.fillRect(sx - r, sy - r, r * 2, r * 2);
     }
-    ctx.globalCompositeOperation = "source-over";
     ctx.globalAlpha = 1;
   }
 
