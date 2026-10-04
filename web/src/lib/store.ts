@@ -16,6 +16,8 @@ type State = {
   selectedId: string | null;
   // Arista resaltada en la constelación (citas del inspector, HACK-019).
   highlightedEdgeId: string | null;
+  // Enfermedad para la que se redacta una propuesta de colaboración (HACK-026); null = cerrada.
+  proposalFor: string | null;
   sampleMode: boolean;
   setStep: (step: Step) => void;
   setTranscript: (transcript: string) => void;
@@ -24,6 +26,7 @@ type State = {
   setNextQuestion: (nextQuestion: string | null) => void;
   setSelectedId: (selectedId: string | null) => void;
   setHighlightedEdgeId: (highlightedEdgeId: string | null) => void;
+  setProposalFor: (proposalFor: string | null) => void;
   setSampleMode: (sampleMode: boolean) => void;
 };
 
@@ -35,6 +38,7 @@ export const useStore = create<State>()((set) => ({
   nextQuestion: null,
   selectedId: null,
   highlightedEdgeId: null,
+  proposalFor: null,
   sampleMode: false,
   setStep: (step) => set({ step }),
   setTranscript: (transcript) => set({ transcript }),
@@ -43,5 +47,6 @@ export const useStore = create<State>()((set) => ({
   setNextQuestion: (nextQuestion) => set({ nextQuestion }),
   setSelectedId: (selectedId) => set({ selectedId }),
   setHighlightedEdgeId: (highlightedEdgeId) => set({ highlightedEdgeId }),
+  setProposalFor: (proposalFor) => set({ proposalFor }),
   setSampleMode: (sampleMode) => set({ sampleMode }),
 }));
