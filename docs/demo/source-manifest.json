@@ -1,0 +1,18 @@
+{
+  "runtime_sha": "ee957e9a0846a5d6de9f0efd0660e66f21e213b7",
+  "zip": "Constellation_Source_ee957e9.zip",
+  "bytes": 2731389,
+  "sha256": "694cfdea5d3ee3527b1bd7b37eca7e4959da6a7304b0fbda3248b782f5ae163e",
+  "files": 333,
+  "required_files_verified": [
+    "README.md",
+    "pyproject.toml",
+    "uv.lock",
+    "web/package-lock.json",
+    "app/fixtures/graph/overview.json",
+    "app/fixtures/graph/annotations.json",
+    "app/fixtures/deep/deep.json"
+  ],
+  "includes_submission_docs": false,
+  "note": "Pinned runtime backup. Demo submission documents are prepared separately on HACK-014."
+}
