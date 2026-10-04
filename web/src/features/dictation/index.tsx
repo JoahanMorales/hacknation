@@ -18,6 +18,7 @@ export const slot = "left";
 export const order = 10;
 
 type Mode = "idle" | "sample" | "starting" | "live" | "stopping";
+type Language = "en" | "es";
 type Flight = { key: number; label: string; present: boolean; from: DOMRect };
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -38,6 +39,7 @@ export default function Dictation() {
   const storeTerms = useStore((state) => state.terms);
 
   const [mode, setMode] = useState<Mode>("idle");
+  const [language, setLanguage] = useState<Language>("en");
   const [interim, setInterim] = useState("");
   const [quotes, setQuotes] = useState<Record<string, string>>({});
   const terms: ExtractedTerm[] = storeTerms.map((term) => ({ ...term, quote: quotes[term.hpo_id] }));
@@ -81,13 +83,13 @@ export default function Dictation() {
   );
 
   const runExtraction = useCallback(
-    async (text: string, run: number) => {
+    async (text: string, run: number, extractionLanguage: Language = "en") => {
       if (!text.trim()) return;
       const before = useStore.getState().terms;
       pendingRef.current++;
       setExtracting(true);
       try {
-        const found = await extractTerms(text, "en");
+        const found = await extractTerms(text, extractionLanguage);
         const current = useStore.getState();
         const cleared = current.terms !== before && current.terms.length === 0;
         if (run === runRef.current && !cleared && current.transcript.startsWith(text)) merge(found);
@@ -163,7 +165,7 @@ export default function Dictation() {
           finalText = `${finalText} ${segment}`.trim();
           setStoreTranscript(finalText);
           setInterim("");
-          void runExtraction(finalText, run);
+          void runExtraction(finalText, run, language);
         },
         onError: (message) => run === runRef.current && setNotice(message),
       });
@@ -185,7 +187,7 @@ export default function Dictation() {
             : "Live dictation could not start. Play the sample case instead.",
       );
     }
-  }, [reset, runExtraction, setStep, setStoreTranscript]);
+  }, [language, reset, runExtraction, setStep, setStoreTranscript]);
 
   const stopMic = useCallback(async () => {
     const session = liveRef.current;
@@ -261,6 +263,21 @@ export default function Dictation() {
             {mode === "idle" && (extracting ? "Reading symptoms" : "Ready")}
           </p>
         </div>
+      </div>
+
+      <div role="group" aria-label="Live dictation language" className="flex flex-wrap items-center gap-2">
+        <span className="text-xs text-muted">Live language</span>
+        {(["en", "es"] as const).map((value) => (
+          <Button
+            key={value}
+            variant={language === value ? "secondary" : "ghost"}
+            aria-pressed={language === value}
+            disabled={busy || listening || typing}
+            onClick={() => setLanguage(value)}
+          >
+            {value === "en" ? "English" : "Español"}
+          </Button>
+        ))}
       </div>
 
       <Button
