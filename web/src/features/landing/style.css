@@ -36,6 +36,11 @@
   box-shadow: 0 8px 32px rgb(11 42 74 / 8%);
 }
 
+/* Sobre el cielo marino el vidrio al 55% se vuelve gris: las tarjetas flotantes van más opacas. */
+.lp-glass--strong {
+  background: rgb(255 255 255 / 86%);
+}
+
 .lp-navy {
   border-radius: 28px;
   background: var(--lp-navy);

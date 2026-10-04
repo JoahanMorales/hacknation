@@ -1,9 +1,9 @@
 import sampleOverviewUrl from "../../../../app/fixtures/api/graph_overview.json?url";
-import sampleCaseUrl from "../../../../app/fixtures/case/pompe_case.json?url&no-inline";
 import { useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 import { api } from "../../lib/api";
+import { loadSampleCase } from "./sample";
 
 // El cielo de la landing: la constelación REAL (GET /api/graph/overview, una estrella por enfermedad)
 // sobre azul marino, y el caso publicado (PMID 7668832, POST /api/diagnose) que la reduce a dos
@@ -14,8 +14,6 @@ import { api } from "../../lib/api";
 
 type Node = { id: string; group: string; x: number; y: number };
 type Overview = { nodes: Node[]; total_diseases: number; demo_data: boolean };
-type Term = { hpo_id: string; label: string; present: boolean };
-export type SampleCase = { pmid: string; terms: Term[] };
 type Ranked = { disease_id: string; name: string; pct: number };
 export type Match = Ranked & { x: number; y: number };
 
@@ -24,10 +22,6 @@ const json = <T,>(url: string) =>
     if (!response.ok) throw new Error(`${url} ${response.status}`);
     return response.json() as Promise<T>;
   });
-
-export function loadSampleCase(): Promise<SampleCase> {
-  return json<SampleCase>(sampleCaseUrl);
-}
 
 const TINTS = [
   [255, 255, 255],
@@ -265,7 +259,8 @@ export function Sky({ onReady }: { onReady?: (info: { total: number; demo: boole
         </p>
       )}
       {matches.map((match, k) => {
-        const right = matches.length === 2 ? match.x >= Math.min(matches[0].x, matches[1].x) : true;
+        // Hacia fuera: la de la izquierda abre su etiqueta a la izquierda y la otra a la derecha.
+        const right = matches.length === 2 ? match.x > Math.min(matches[0].x, matches[1].x) : true;
         return (
           <div
             key={match.disease_id}
