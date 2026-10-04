@@ -187,7 +187,7 @@ export default function Landing() {
               initial={reduced ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: reduced ? 0 : 0.7, ease: EASE }}
-              className="lp-glass lp-glass--strong mt-4 p-5 md:absolute md:bottom-0 md:left-0 md:mt-0 md:w-[19rem] lg:-left-6"
+              className="lp-glass--night mt-4 p-5 md:absolute md:bottom-0 md:left-0 md:mt-0 md:w-[19rem] lg:-left-6"
             >
               <p className="flex items-center gap-2 text-sm font-medium">
                 <span className="size-2 rounded-full bg-[#5ED3D0]" aria-hidden /> Dictated findings
@@ -197,7 +197,7 @@ export default function Landing() {
                   <li
                     key={term.hpo_id}
                     className={`rounded-full border px-2.5 py-1 text-xs ${
-                      term.present ? "border-[#1E6FD9]/25 bg-white/70 text-[#0B2A4A]" : "border-dashed border-[#0B2A4A]/25 bg-transparent text-[#5B7189]"
+                      term.present ? "border-[#8EC5FC]/35 bg-[#8EC5FC]/10 text-[#EEF4F9]" : "border-dashed border-[#8EC5FC]/30 bg-transparent text-[#8EC5FC]"
                     }`}
                   >
                     {term.present ? term.label : `No ${term.label.toLowerCase()}`}
@@ -212,7 +212,7 @@ export default function Landing() {
             initial={reduced ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: reduced ? 0 : 0.85, ease: EASE }}
-            className="lp-glass lp-glass--strong mt-4 overflow-hidden p-2 md:absolute md:-bottom-8 md:right-0 md:mt-0 md:w-[44%] lg:-right-6"
+            className="lp-glass--night mt-4 overflow-hidden p-2 md:absolute md:-bottom-8 md:right-0 md:mt-0 md:w-[44%] lg:-right-6"
           >
             <img
               src={atlasMatch}
