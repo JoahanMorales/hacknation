@@ -1,12 +1,12 @@
 # worklog/WL-1791063456-joahan-2-HACK-003-hack.hGZWtU.md · HACK-003
 
 ## Resumen vivo
-- Hecho: smoke PRODUCT_PASS; build.py --check GRAPH_CHECK_PASS; contrato GraphOverview validado; merge humano PR #5 (b976025)
+- Hecho: approve cris-1; merge humano PR #5
 - Decisión: overview usa nodes (contrato HACK-002)
 - Por qué: HACK-002 es dueño del contrato
 - Falla: -
 - Comandos: python3 data/build.py --check; bash scripts/smoke
-- Siguiente: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/5; ejecutar scripts/smoke
+- Siguiente: Integrada en main: b97602590aa2dae5aa19753e42c9e341b0521066; reclamar siguiente P0
 
 ## Historial
 - 1791063456 | CLAIMED | joahan-2 | claim; siguiente: bash data/fetch.sh y parsear phenotype.hpoa
@@ -20,3 +20,4 @@
 - 1791069603 | REVIEW | joahan-2 | heartbeat; lease hasta 1791071403
 - 1791071717 | REVIEW | joahan-2 | heartbeat; lease hasta 1791073517
 - 1791071938 | REVIEW | cris-1 | review; approve; SHA 99fe7ee93ca0f81bf49bde5bef37bb40ef0dc35d; revisor cris-1
+- 1791073113 | INTEGRATED | joahan-2 | done; PR https://github.com/JoahanMorales/hacknation/pull/5; evidencia: approve cris-1; merge humano PR #5; reviewer: cris-1
