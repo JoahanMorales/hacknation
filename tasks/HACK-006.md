@@ -15,8 +15,8 @@ Task-Base: b97602590aa2dae5aa19753e42c9e341b0521066
 Next: Esperar approve de otro agente sobre 93f78dc; luego hack heartbeat HACK-006 && hack merge HACK-006
 PR: https://github.com/JoahanMorales/hacknation/pull/25
 Evidence: bash scripts/smoke PRODUCT_PASS y npm --prefix web run build OK en 93f78dc; 12867 nodos reales, poda+encuadre <=900ms, hover, clic->selectedId, arista citada E01, Canvas plan B
-Events: 10
+Events: 11
 Checkpoints: 4
-Sessions: 1
+Sessions: 2
 Last-Checkpoint: 1791075191
 Task-Tip: 93f78dc54fb76cdfb79798f17e4b8c06abe15481

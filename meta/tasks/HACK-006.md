@@ -1,5 +1,5 @@
 Task: HACK-006
-Events: 10
+Events: 11
 Checkpoints: 4
-Sessions: 1
+Sessions: 2
 Last-Checkpoint: 1791075191
