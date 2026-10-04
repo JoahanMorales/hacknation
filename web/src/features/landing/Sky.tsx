@@ -7,9 +7,10 @@ import { loadSampleCase } from "./sample";
 
 // El cielo de la landing: la constelación REAL (GET /api/graph/overview, una estrella por enfermedad)
 // sobre azul marino, y el caso publicado (PMID 7668832, POST /api/diagnose) que la reduce a dos
-// coincidencias. Personalidad de las estrellas (pedido del humano): brillo que titila, destellos en
-// cruz y halo en las dos candidatas, sólo con los colores de la paleta. Canvas 2D: el fondo de
-// estrellas se pinta una vez en un lienzo aparte y cada cuadro sólo anima unas cientos.
+// coincidencias. Ola 3 (menos "efecto IA", DESIGN.md "sin glow decorativo persistente"): estrellas
+// quietas en una familia tonal casi monocroma; sólo se anima la poda, y las candidatas se distinguen
+// por tamaño y un anillo fino del acento. Canvas 2D: el fondo se pinta una vez en un lienzo aparte y
+// sólo se redibuja mientras la poda cambia.
 // Las features no se importan entre sí: tipos y carga propios.
 
 type Node = { id: string; group: string; x: number; y: number };
@@ -23,11 +24,11 @@ const json = <T,>(url: string) =>
     return response.json() as Promise<T>;
   });
 
+// Grises azulados (misma familia que las galaxias del atlas).
 const TINTS = [
-  [255, 255, 255],
-  [142, 197, 252], // #8EC5FC
-  [94, 211, 208], // #5ED3D0
-  [142, 197, 252],
+  [178, 190, 204],
+  [150, 165, 181],
+  [201, 210, 220],
 ] as const;
 
 // Ciclo del cielo: completo → poda → dos coincidencias → vuelve a abrirse.
@@ -35,8 +36,6 @@ const FULL_MS = 3200;
 const PRUNE_MS = 900;
 const HOLD_MS = 5200;
 const CYCLE_MS = FULL_MS + PRUNE_MS + HOLD_MS + PRUNE_MS;
-const TWINKLERS = 220;
-const SPARKLES = 12;
 
 const ease = (t: number) => 1 - Math.pow(1 - Math.min(1, Math.max(0, t)), 3);
 
@@ -77,7 +76,7 @@ export function Sky({ onReady }: { onReady?: (info: { total: number; demo: boole
           const result = await api<{ ranking: Ranked[] }>("/diagnose", { method: "POST", body: JSON.stringify({ terms }) });
           ranking = result.ranking.slice(0, 2);
         } catch {
-          ranking = []; // sin backend: el cielo titila, sin candidatas inventadas
+          ranking = []; // sin backend: el cielo completo, sin candidatas inventadas
         }
         if (!alive) return;
         setState({ status: "ready", overview, ranking });
@@ -101,16 +100,6 @@ export function Sky({ onReady }: { onReady?: (info: { total: number; demo: boole
     const groups = [...new Set(nodes.map((node) => node.group))];
     const tintOf = new Map(groups.map((group, i) => [group, TINTS[i % TINTS.length]]));
     const candidateIndex = state.ranking.map((rank) => nodes.findIndex((node) => node.id === rank.disease_id));
-
-    // Estrellas que titilan y destellos: elegidas una vez, fuera de las candidatas.
-    let seed = 7;
-    const random = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-    const pick = (count: number) =>
-      Array.from({ length: Math.min(count, nodes.length) }, () => Math.floor(random() * nodes.length)).filter(
-        (i) => !candidateIndex.includes(i),
-      );
-    const twinklers = pick(TWINKLERS).map((i) => ({ i, phase: random() * Math.PI * 2, speed: 0.6 + random() * 1.4 }));
-    const sparkles = pick(SPARKLES).map((i) => ({ i, phase: random() * Math.PI * 2 }));
 
     const base = document.createElement("canvas");
     const bctx = base.getContext("2d")!;
@@ -178,39 +167,10 @@ export function Sky({ onReady }: { onReady?: (info: { total: number; demo: boole
       ctx.drawImage(base, 0, 0);
       ctx.globalAlpha = 1;
 
-      // Titileo: cada estrella respira a su ritmo.
-      for (const { i, phase, speed } of twinklers) {
-        const glow = 0.5 + 0.5 * Math.sin((time / 1000) * speed + phase);
-        star(px[i], py[i], (0.9 + glow * 0.9) * dpr, tintOf.get(nodes[i].group)!, (0.25 + glow * 0.75) * fade);
-      }
-      // Destellos en cruz, como estrellas brillantes en una placa del cielo.
-      for (const { i, phase } of sparkles) {
-        const glow = (0.55 + 0.45 * Math.sin(time / 1400 + phase)) * fade;
-        const len = (7 + glow * 7) * dpr;
-        const grad = ctx.createRadialGradient(px[i], py[i], 0, px[i], py[i], len);
-        grad.addColorStop(0, `rgb(255 255 255 / ${0.9 * glow})`);
-        grad.addColorStop(1, "rgb(142 197 252 / 0)");
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = dpr;
-        ctx.beginPath();
-        ctx.moveTo(px[i] - len, py[i]); ctx.lineTo(px[i] + len, py[i]);
-        ctx.moveTo(px[i], py[i] - len); ctx.lineTo(px[i], py[i] + len);
-        ctx.stroke();
-        star(px[i], py[i], 1.6 * dpr, [255, 255, 255], glow);
-      }
-      // Las dos coincidencias: halo turquesa, anillo celeste y núcleo blanco que crecen con la poda.
-      candidateIndex.forEach((i, k) => {
+      // Las dos coincidencias: núcleo claro que crece con la poda y anillo fino del acento.
+      candidateIndex.forEach((i) => {
         if (i < 0) return;
         const grow = prune;
-        const pulse = reduced ? 1 : 0.85 + 0.15 * Math.sin(time / 600 + k);
-        const halo = (10 + 22 * grow * pulse) * dpr;
-        const grad = ctx.createRadialGradient(px[i], py[i], 0, px[i], py[i], halo);
-        grad.addColorStop(0, `rgb(94 211 208 / ${0.15 + 0.45 * grow})`);
-        grad.addColorStop(1, "rgb(94 211 208 / 0)");
-        ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.arc(px[i], py[i], halo, 0, Math.PI * 2);
-        ctx.fill();
         if (grow > 0.05) {
           ctx.strokeStyle = `rgb(142 197 252 / ${grow})`;
           ctx.lineWidth = 1.5 * dpr;
@@ -218,19 +178,18 @@ export function Sky({ onReady }: { onReady?: (info: { total: number; demo: boole
           ctx.arc(px[i], py[i], (6 + 6 * grow) * dpr, 0, Math.PI * 2);
           ctx.stroke();
         }
-        star(px[i], py[i], (1.4 + 2.4 * grow) * dpr, [255, 255, 255], 0.7 + 0.3 * grow);
+        star(px[i], py[i], (1.4 + 2.4 * grow) * dpr, [237, 241, 245], 0.7 + 0.3 * grow);
       });
     };
 
-    // 60 cuadros/s sólo durante la poda; el titileo, que es lento, va a ~30 y ahorra la mitad.
-    let lastDraw = 0;
+    // Sólo se redibuja cuando la poda cambia: en reposo el cielo está quieto y no gasta cuadros.
+    let lastPrune = -1;
     const loop = (time: number) => {
       frame = requestAnimationFrame(loop);
       if (!visible) return;
-      const p = pruneAt(time);
-      const steady = p === 0 || p === 1;
-      if (steady && time - lastDraw < 33) return;
-      lastDraw = time;
+      const p = candidateIndex.some((i) => i >= 0) ? pruneAt(time) : 0;
+      if (p === lastPrune) return;
+      lastPrune = p;
       draw(time);
     };
 
@@ -239,6 +198,7 @@ export function Sky({ onReady }: { onReady?: (info: { total: number; demo: boole
     else frame = requestAnimationFrame(loop);
     const resize = new ResizeObserver(() => {
       layout();
+      lastPrune = -1;
       if (reduced) draw(0);
     });
     resize.observe(wrap);
@@ -279,11 +239,11 @@ export function Sky({ onReady }: { onReady?: (info: { total: number; demo: boole
               transform: `translate(${right ? "22px" : "calc(-100% - 22px)"}, -50%)`,
             }}
           >
-            <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#8EC5FC]">
+            <span className="text-xs text-[#9FB4C9]">
               {k === 0 ? "Top match" : "Second match"}
             </span>
             <span className="block max-w-[15rem] truncate text-sm font-medium text-white">{match.name}</span>
-            <span className="font-mono text-xs tabular-nums text-[#5ED3D0]">{match.pct.toFixed(1)}% phenotype match</span>
+            <span className="text-xs tabular-nums text-[#EEF4F9]">{match.pct.toFixed(1)}% phenotype match</span>
           </div>
         );
       })}
