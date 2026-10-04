@@ -1,7 +1,7 @@
 # STATE
 
 Fase: ejecución
-Actualizado: 1791089168
+Actualizado: 1791089186
 AVAILABLE: HACK-031 
 CLAIMED: -
 BLOCKED: HACK-014 HACK-022 
@@ -12,7 +12,7 @@ CANCELLED: -
 Reservas (primeras 24; status --task ID muestra detalle):
 HACK-014 | BLOCKED | zoe-1 | hasta 1791085254
 HACK-022 | BLOCKED | zoe-1 | hasta 1791090600
-HACK-026 | REVIEW | joahan-2 | hasta 1791088349
+HACK-026 | REVIEW | joahan-2 | hasta 1791090986
 HACK-028 | REVIEW | saus-1 | hasta 1791087757
 HACK-029 | REVIEW | saus-1 | hasta 1791088378
 HACK-030 | REVIEW | joahan-2 | hasta 1791089211
