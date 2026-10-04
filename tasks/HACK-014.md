@@ -9,13 +9,13 @@ Priority: P0
 Paths: docs/demo/
 Depends: HACK-006, HACK-017, HACK-018, HACK-020
 Verify: test -s docs/demo/script.md
-Lease-Until: 1791081266
-Updated: 1791079466
+Lease-Until: 1791081449
+Updated: 1791079649
 Task-Base: ee957e9a0846a5d6de9f0efd0660e66f21e213b7
-Next: joahan1 revisa contenidoPR33#493; humano responde roster/URLs, ensaya ygraba/reproduce3clips+backup. Material Desktop/hacknation-submission; servidorlocal8769PID37580 hijo38232 DEMO_MODE=true disponible.
+Next: Humano proporciona datos ygraba/reproduce3clips+backup+ensayo manual; pegarresumen228/URLs ysubirambosformularios conrecibos. Re-review013PR34esperavotocuandolibre; servidorlocal8769PID37580/hijo38232DEMO_MODE true paraensayo.
 PR: -
 Evidence: -
-Events: 5
-Checkpoints: 2
+Events: 6
+Checkpoints: 3
 Sessions: 1
-Last-Checkpoint: 1791078958
+Last-Checkpoint: 1791079649
