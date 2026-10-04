@@ -81,3 +81,5 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791081963 | HACK-022 | Verificar Chromium contra API21 revisada en8768 + Vite5174; comprobar tambien bundle produccion. | Por qué: Mock solo ante404 o eleccion explicita; errores reales reintentables. Hallazgos y negaciones se preservan.
 - 1791082350 | HACK-025 | poda branch-and-bound con cota superior en vez de preselección top-N | Por qué: preselección perdía 10-15% de vecinos; la cota es exacta y 0.03 s/enfermedad
 - 1791082718 | HACK-022 | Correr smoke actual; crear PR draft con deuda explicita del toggle Gestures. No marcar done hasta criterio layout completo. | Por qué: 014 sigue con requisitos humanos pendientes;22 avance autorizado y reserva valida. Header/gestures pertenecen a saus y requests548/557 enviados.
+- 1791083249 | deadline lease/HACK-014/1791083099 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791083249 | deadline lease/HACK-023/1791083127 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
