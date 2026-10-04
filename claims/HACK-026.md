@@ -12,6 +12,6 @@ Verify: uv run pytest -q app/tests/test_proposal.py
 Lease-Until: 1791090986
 Updated: 1791089186
 Task-Base: 4ab5aa0986cba52b5593cf50d06a2a53a60b2269
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/43; ejecutar scripts/smoke
+Next: Humano: Diff fuera de Archivos: TASKS.md
 PR: https://github.com/JoahanMorales/hacknation/pull/43
 Evidence: -

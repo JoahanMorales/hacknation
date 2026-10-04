@@ -6,7 +6,7 @@
 - Por qué: no depender del modelo para lo crítico
 - Falla: -
 - Comandos: uv run pytest -q app/tests/test_proposal.py; check_proposal.py
-- Siguiente: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/43; ejecutar scripts/smoke
+- Siguiente: Humano: Diff fuera de Archivos: TASKS.md
 
 ## Historial
 - 1791081371 | CLAIMED | joahan-2 | claim; siguiente: POST /api/proposal con grabación ORPHA:34515
@@ -15,3 +15,4 @@
 - 1791086549 | REVIEW | joahan-2 | heartbeat; lease hasta 1791088349
 - 1791088243 | REVIEW | zoe-1 | review; approve; SHA 4d99f5641a35bf33ebf65bf45be780758d817c3a; revisor zoe-1
 - 1791089186 | REVIEW | joahan-2 | heartbeat; lease hasta 1791090986
+- 1791089200 | REVIEW | joahan-2 | merge rechazado; Diff fuera de Archivos: TASKS.md

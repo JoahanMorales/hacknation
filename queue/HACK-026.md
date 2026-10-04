@@ -1,5 +1,5 @@
 ID: HACK-026
-State: MERGING
+State: HUMAN
 Owner: joahan-2
-Queued: 1791089193
-Reason: Esperando cola
+Updated: 1791089200
+Reason: Diff fuera de Archivos: TASKS.md
