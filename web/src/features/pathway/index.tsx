@@ -95,7 +95,8 @@ function Navigator({ initialCenter }: { initialCenter: string }) {
   const centerNode = byId.get(data?.center ?? "");
   const genes = useMemo(() => (data ? genesByDisease(data) : new Map<string, string>()), [data]);
   const names = useMemo(() => new Map(placed.map((node) => [node.id, displayName(node, genes)])), [placed, genes]);
-  const labels = useMemo(() => (data ? placeEdgeLabels(data, byId, names) : new Map<string, LabelSpot>()), [data, byId, names]);
+  const nodeLabels = useMemo(() => (data ? placeNodeLabels(placed, data.center, names) : new Map<string, NodeLabel>()), [data, placed, names]);
+  const labels = useMemo(() => (data ? placeEdgeLabels(data, byId, nodeLabels) : new Map<string, LabelSpot>()), [data, byId, nodeLabels]);
 
   const close = () => useStore.getState().setStep("inspector");
   const recenter = (node: Placed) => {
@@ -199,9 +200,16 @@ function Navigator({ initialCenter }: { initialCenter: string }) {
                     onDoubleClick={() => recenter(node)}
                   >
                     <g transform="scale(1.4)"><Shape type={node.type} center={node.id === data.center} selected={selection?.kind === "node" && selection.node.id === node.id} /></g>
-                    <text y={node.id === data.center ? 48 : 34} textAnchor="middle" className={`select-none ${node.id === data.center ? "fill-ink text-[22px] font-medium" : "fill-ink/85 text-[17px]"}`}>
-                      {short(names.get(node.id) ?? node.label, node.id === data.center ? 30 : 24)}
-                    </text>
+                    {nodeLabels.get(node.id) && (
+                      <text
+                        x={nodeLabels.get(node.id)!.dx}
+                        y={nodeLabels.get(node.id)!.dy}
+                        textAnchor={nodeLabels.get(node.id)!.anchor}
+                        className={`select-none ${node.id === data.center ? "fill-ink text-[22px] font-medium" : "fill-ink/85 text-[17px]"}`}
+                      >
+                        {nodeLabels.get(node.id)!.text}
+                      </text>
+                    )}
                     <title>{`${TYPE_NAME[node.type]}: ${node.label}`}</title>
                   </motion.g>
                 ))}
@@ -260,6 +268,11 @@ function curve(a: Placed, b: Placed): string {
 
 type LabelSpot = { x: number; y: number };
 type Box = { x: number; y: number; w: number; h: number };
+type NodeLabel = { dx: number; dy: number; anchor: "middle" | "start" | "end"; text: string; box: Box };
+
+// Ancho aproximado por carácter a 17 px (22 px en el centro) en la escala del viewBox.
+const CHAR = 9;
+const CENTER_CHAR = 12;
 
 const overlaps = (p: Box, q: Box) => Math.abs(p.x - q.x) * 2 < p.w + q.w && Math.abs(p.y - q.y) * 2 < p.h + q.h;
 const labelBox = (x: number, y: number, text: string): Box => ({ x, y, w: text.length * 8 + 16, h: 22 });
@@ -268,13 +281,49 @@ const labelBox = (x: number, y: number, text: string): Box => ({ x, y, w: text.l
  * Coloca las etiquetas de arista notables sin pisar nodos, nombres (sobre todo el del centro) ni otras
  * etiquetas: prueba varios puntos a lo largo de la curva y omite la etiqueta si ninguno cabe (queda el title).
  */
-function placeEdgeLabels(data: Pathway, byId: Map<string, Placed>, names: Map<string, string>): Map<string, LabelSpot> {
+/**
+ * Nombres de nodo sin solaparse: del centro hacia fuera, cada nombre prueba debajo, encima, a la derecha y a
+ * la izquierda de su forma y se queda con el primer hueco libre (si no hay, el que menos pisa). Los mecanismos
+ * se acortan más: su nombre completo está en la tarjeta y en el title.
+ */
+function placeNodeLabels(placed: Placed[], centerId: string, names: Map<string, string>): Map<string, NodeLabel> {
+  const taken: Box[] = placed.map((node) => (node.id === centerId ? { x: 0, y: 0, w: 70, h: 70 } : { x: node.x, y: node.y, w: 32, h: 32 }));
+  const result = new Map<string, NodeLabel>();
+  const order = [...placed].sort((a, b) => a.ring - b.ring);
+  for (const node of order) {
+    const isCenter = node.id === centerId;
+    const text = short(names.get(node.id) ?? node.label, isCenter ? 30 : node.type === "mechanism" ? 16 : 24);
+    const w = text.length * (isCenter ? CENTER_CHAR : CHAR);
+    const h = isCenter ? 30 : 22;
+    const options: Omit<NodeLabel, "text" | "box">[] = isCenter
+      ? [{ dx: 0, dy: 48, anchor: "middle" }]
+      : [
+          { dx: 0, dy: 34, anchor: "middle" },
+          { dx: 0, dy: -22, anchor: "middle" },
+          { dx: 18, dy: 6, anchor: "start" },
+          { dx: -18, dy: 6, anchor: "end" },
+        ];
+    const boxOf = (o: Omit<NodeLabel, "text" | "box">): Box => ({
+      x: node.x + o.dx + (o.anchor === "start" ? w / 2 : o.anchor === "end" ? -w / 2 : 0),
+      y: node.y + o.dy - h / 3,
+      w,
+      h,
+    });
+    const clash = (box: Box) => taken.filter((other) => other !== taken[placed.indexOf(node)] && overlaps(box, other)).length;
+    const best = options.map((o) => ({ o, box: boxOf(o) })).sort((a, b) => clash(a.box) - clash(b.box))[0];
+    taken.push(best.box);
+    result.set(node.id, { ...best.o, text, box: best.box });
+  }
+  return result;
+}
+
+function placeEdgeLabels(data: Pathway, byId: Map<string, Placed>, nodeLabels: Map<string, NodeLabel>): Map<string, LabelSpot> {
   const taken: Box[] = [];
   for (const node of byId.values()) {
     const isCenter = node.id === data.center;
-    const text = short(names.get(node.id) ?? node.label, isCenter ? 30 : 24);
     taken.push({ x: node.x, y: node.y, w: isCenter ? 70 : 36, h: isCenter ? 70 : 36 });
-    taken.push({ x: node.x, y: node.y + (isCenter ? 42 : 29), w: text.length * (isCenter ? 12 : 9.5), h: isCenter ? 30 : 24 });
+    const label = nodeLabels.get(node.id);
+    if (label) taken.push(label.box);
   }
   const spots = new Map<string, LabelSpot>();
   for (const edge of data.edges) {
