@@ -110,7 +110,7 @@ export default function Landing() {
         {/* Hero: texto a la izquierda, el producto real a la derecha (el match del caso publicado). */}
         <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-10 lg:grid-cols-12 lg:px-10 lg:pt-16">
           <div className="flex flex-col gap-7 lg:col-span-6">
-            <motion.h1 {...enter(0)} className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-5xl lg:text-[3.25rem]">
+            <motion.h1 {...enter(0)} className="text-4xl font-semibold leading-[1.05] tracking-tight md:text-5xl lg:text-[2.85rem]">
               From scattered symptoms to the people who can help.
             </motion.h1>
             <motion.p {...enter(0.08)} className="max-w-[46ch] text-lg leading-relaxed text-muted">
