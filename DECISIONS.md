@@ -88,3 +88,5 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791086122 | deadline lease/HACK-014/1791085254 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791086122 | deadline lease/HACK-022/1791084930 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791086122 | deadline lease/HACK-026/1791085391 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791086463 | deadline lease/HACK-027/1791086209 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
+- 1791086463 | deadline lease/HACK-029/1791086417 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
