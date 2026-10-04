@@ -1,17 +1,17 @@
 # STATE
 
 Fase: ejecución
-Actualizado: 1791079438
+Actualizado: 1791079466
 AVAILABLE: -
-CLAIMED: HACK-014 
-BLOCKED: -
+CLAIMED: -
+BLOCKED: HACK-014 
 REVIEW: HACK-013 
 INTEGRATED: HACK-001 HACK-002 HACK-003 HACK-004 HACK-005 HACK-006 HACK-007 HACK-008 HACK-009 HACK-010 HACK-011 HACK-012 
 CANCELLED: -
 
 Reservas (primeras 24; status --task ID muestra detalle):
 HACK-013 | REVIEW | saus-1 | hasta 1791081124
-HACK-014 | CLAIMED | zoe-1 | hasta 1791080758
+HACK-014 | BLOCKED | zoe-1 | hasta 1791081266
 
 Bloqueos: tareas BLOCKED; use status --task ID --summary.
 Decisiones vigentes (últimas 5):
