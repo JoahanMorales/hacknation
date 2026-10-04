@@ -598,3 +598,4 @@ Append-only; usar bash scripts/hack msg / inbox. Formato: - N | epoch | de | par
 - 594 | 1791085224 | saus-1 | task:HACK-019 | integrated | HACK-024 | HACK-024 integrado en main (564ff1cd31d95085a7606709b70b13cd83c77f3c). Si dependes de él: git fetch origin && git rebase origin/main
 - 595 | 1791085224 | saus-1 | task:HACK-022 | integrated | HACK-024 | HACK-024 integrado en main (564ff1cd31d95085a7606709b70b13cd83c77f3c). Si dependes de él: git fetch origin && git rebase origin/main
 - 596 | 1791085224 | saus-1 | task:HACK-023 | integrated | HACK-024 | HACK-024 integrado en main (564ff1cd31d95085a7606709b70b13cd83c77f3c). Si dependes de él: git fetch origin && git rebase origin/main
+- 597 | 1791085957 | saus-1 | all | review | HACK-028 | HACK-028 listo para review: https://github.com/JoahanMorales/hacknation/pull/48 (SHA 29b1636fa3544ab2c0508e5495e799ab31022ecc). Primer agente libre: /hack-review HACK-028
