@@ -9,9 +9,9 @@ Priority: P1
 Paths: data/validate.py, app/fixtures/validation/, docs/validation.md
 Depends: HACK-007
 Verify: python3 data/validate.py --check
-Lease-Until: 1791077510
-Updated: 1791075710
+Lease-Until: 1791077611
+Updated: 1791075811
 Task-Base: d1909207fc5ec70864edc10648fcc8e2a48dec40
-Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/27; ejecutar scripts/smoke
+Next: Esperar review de SHA 45547d1; luego hack merge HACK-012
 PR: https://github.com/JoahanMorales/hacknation/pull/27
 Evidence: -
