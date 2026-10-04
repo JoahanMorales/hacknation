@@ -1,8 +1,8 @@
 ID: HACK-019
-SHA: 20bb4aa254fc455c80c4902c7205b26ac765fe7c
-Reviewer: zoe-1
+SHA: 43b78c72d4e38088a4ea8cab9d71f103ad87fffd
+Reviewer: cris-1
 Owner: joahan-1
-Verdict: reject
-Reviewed: 1791070418
-Eligible-Via: claim:HACK-018:1791072183
+Verdict: approve
+Reviewed: 1791072683
+Eligible-Via: role:cris-1
 Command: hack review

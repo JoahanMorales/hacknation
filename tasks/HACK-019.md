@@ -15,8 +15,8 @@ Task-Base: b126d5d7c83b26350a5d1e4b3de50131f6fda732
 Next: Revisor distinto evalúa https://github.com/JoahanMorales/hacknation/pull/22; ejecutar scripts/smoke
 PR: https://github.com/JoahanMorales/hacknation/pull/22
 Evidence: fix review zoe-1: explain 503 sin citas falsas; INSPECTOR_PASS; smoke PRODUCT_PASS; merge humano PR #22 (f6e0566)
-Events: 6
+Events: 7
 Checkpoints: 1
-Sessions: 2
+Sessions: 3
 Last-Checkpoint: 1791069062
 Task-Tip: 43b78c72d4e38088a4ea8cab9d71f103ad87fffd
