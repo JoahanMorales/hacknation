@@ -44,3 +44,11 @@ Sesión: `audio/pcm` 24 kHz, `turn_detection: null`, `languages: [en|es]`, `dela
 uv run python spikes/openai/spike.py --extract --transcribe   # requiere OPENAI_API_KEY en .env y data/raw/hp.json (bash data/fetch.sh)
 python3 spikes/openai/spike.py --check                        # sin red
 ```
+
+## Dictado en vivo en la app (2026-10-03, `check_live_mic.py`)
+
+- Inglés: estable, 5/5 términos (transcribe/session → WebRTC → extract → diagnose).
+- Español: intermitente, 2-5 términos. No es el código: la transcripción oye "presión espiratoria" como
+  "presión inspiratoria" y a veces "ni cardiomegalia" como "Mi cardiomegalia". Además la extracción en español
+  hace dos llamadas (traducir + extraer) y va ~5 s detrás del audio.
+- Recomendación para la demo: dictar en inglés en vivo; en español, usar "Play sample case".
