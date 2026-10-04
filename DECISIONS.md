@@ -61,3 +61,4 @@ Por qué: una opción reversible a los 15 min permite seguir.
 - 1791073840 | deadline lease/HACK-004/1791073523 | REQUIRES_RECOVERY | Reserva conservada; leer resumen y usar release --expired --read-summary. No borra trabajo.
 - 1791074063 | HACK-017 | Cerrar dictado dentro scope017; mic real no verificado sin clave. Grafo solo en checkout temporal QA, no en diff017. | Por qué: Regresion Playwright reprodujo6->5 perdida de respuesta, Clear stale5chips y4/5 controles tapados1280; fuente unica de datos y scroll eliminan causas.
 - 1791074340 | HACK-006 | merge de main en vez de rebase para no forzar push | Por qué: R08
+- 1791074340 | HACK-017 | Usar store como fuente unica; quotes locales solo resaltan texto; json sample lazy no-inline y promesa fallida reiniciable. Body Panel scroll dentro alto disponible. | Por qué: Evita sobrescribir respuestas externas y controles tapados; respaldo recuperable sin API key. Preservado commit bce750a de Saus.

@@ -9,9 +9,9 @@ Priority: P0
 Paths: web/src/features/dictation/
 Depends: HACK-001
 Verify: npm --prefix web run build
-Lease-Until: 1791075863
-Updated: 1791074063
+Lease-Until: 1791076140
+Updated: 1791074340
 Task-Base: 3716a312a1175a66b0d562eee39ef5d8333c12e5
-Next: QA integrada Canvas/WebGL, Yes/chip/Clear, sample/keyboard/reduced, micro no disponible/error cleanup; smoke y PR017 con atribucion.
+Next: Smoke PRODUCT_PASS y tip gitdiffscope017; commit/push feat/hack017zoe y PR; avisar related y solicitar review independiente.
 PR: -
 Evidence: -
