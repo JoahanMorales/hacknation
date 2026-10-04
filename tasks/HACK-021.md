@@ -9,13 +9,13 @@ Priority: P0
 Paths: app/routers/search.py, app/services/search.py, app/tests/test_search.py
 Depends: Ninguna
 Verify: uv run pytest -q app/tests/test_search.py
-Lease-Until: 1791082037
-Updated: 1791080237
+Lease-Until: 1791082247
+Updated: 1791080447
 Task-Base: 84e81ae353f5007c09be257ec32c5f7c3e50cff7
-Next: Índice de búsqueda y GET /api/search
+Next: Humano abre PR de feat/hack-021; luego hack done
 PR: -
 Evidence: -
-Events: 1
-Checkpoints: 0
+Events: 2
+Checkpoints: 1
 Sessions: 1
-Last-Checkpoint: 0
+Last-Checkpoint: 1791080447
