@@ -11,3 +11,4 @@
 ## Historial
 - 1791086563 | CLAIMED | joahan-2 | claim; siguiente: Vecinos fenotípicos en pathway.build
 - 1791087411 | REVIEW | joahan-2 | done; PR https://github.com/JoahanMorales/hacknation/pull/52; evidencia: uv run pytest -q app/tests/test_pathway.py 5 passed; smoke PRODUCT_PASS; navigator verificado; merge humano PR #52 (f476352); reviewer: -
+- 1791090671 | REVIEW | joahan-2 | heartbeat; lease hasta 1791092471
