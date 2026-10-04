@@ -11,7 +11,7 @@ import "./style.css";
 // HACK-029 · Landing: página propia en "/" (App.tsx la muestra en lugar del atlas; el atlas vive en
 // "/?view=atlas" y Atrás vuelve aquí). Design read: landing de producto de salud para médicos y
 // líderes de grupos de pacientes, premium y sereno estilo Apple, vidrio sobre azul clínico;
-// VARIANCE 6 / MOTION 5 / DENSITY 3. Objetivo: que se entienda en segundos qué hace el producto
+// VARIANCE 6 / MOTION 5 / DENSITY 3. Oscuro desde la Ola 3, a juego con el atlas (pedido del humano). Objetivo: que se entienda en segundos qué hace el producto
 // (dictar → 12,867 enfermedades → dos coincidencias citadas → a quién llamar). El cielo es la
 // constelación real y el caso publicado real; cada cifra lleva su fuente (IDEA.md §11).
 export const slot = "page";
@@ -72,7 +72,7 @@ function Source({ href, children, tone = "blue" }: { href: string; children: Rea
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`inline-flex items-center gap-1 text-sm underline decoration-1 underline-offset-4 ${tone === "sky" ? "text-[#8EC5FC]" : tone === "navy" ? "text-[#0B2A4A]" : "text-[#1E6FD9]"}`}
+      className={`inline-flex items-center gap-1 text-sm underline decoration-1 underline-offset-4 ${tone === "sky" ? "text-white" : tone === "navy" ? "text-[#EEF4F9]" : "text-[#8EC5FC]"}`}
     >
       {children} <ArrowSquareOut size={13} aria-hidden />
     </a>
@@ -115,22 +115,22 @@ export default function Landing() {
   return (
     <div className="lp font-sans">
       {/* Manchas de fondo: celeste y azul muy difuminados, un toque turquesa. */}
-      <motion.div aria-hidden style={{ y: blobY }} className="lp-blob -left-40 top-24 size-[38rem] bg-[#8EC5FC]/55" />
-      <motion.div aria-hidden style={{ y: blobYSlow }} className="lp-blob -right-48 top-[28rem] size-[34rem] bg-[#1E6FD9]/20" />
-      <motion.div aria-hidden style={{ y: blobY }} className="lp-blob left-[45%] top-[70rem] size-[22rem] bg-[#5ED3D0]/25" />
-      <motion.div aria-hidden style={{ y: blobYSlow }} className="lp-blob -left-24 top-[130rem] size-[30rem] bg-[#8EC5FC]/45" />
-      <motion.div aria-hidden style={{ y: blobY }} className="lp-blob -right-32 top-[190rem] size-[32rem] bg-[#1E6FD9]/15" />
+      <motion.div aria-hidden style={{ y: blobY }} className="lp-blob -left-40 top-24 size-[38rem] bg-[#1E6FD9]/30" />
+      <motion.div aria-hidden style={{ y: blobYSlow }} className="lp-blob -right-48 top-[28rem] size-[34rem] bg-[#8EC5FC]/12" />
+      <motion.div aria-hidden style={{ y: blobY }} className="lp-blob left-[45%] top-[70rem] size-[22rem] bg-[#5ED3D0]/12" />
+      <motion.div aria-hidden style={{ y: blobYSlow }} className="lp-blob -left-24 top-[130rem] size-[30rem] bg-[#1E6FD9]/25" />
+      <motion.div aria-hidden style={{ y: blobY }} className="lp-blob -right-32 top-[190rem] size-[32rem] bg-[#8EC5FC]/10" />
 
       <header className="fixed inset-x-0 top-0 z-30">
         <motion.div aria-hidden className="lp-header-bg" style={{ opacity: headerOpacity }} />
         <nav className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6" aria-label="Constellation">
           <span className="flex items-center gap-2 text-base font-semibold tracking-tight">
-            <StarFour size={20} weight="fill" className="text-[#1E6FD9]" aria-hidden /> Constellation
+            <StarFour size={20} weight="fill" className="text-[#8EC5FC]" aria-hidden /> Constellation
           </span>
           <div className="hidden items-center gap-8 text-sm md:flex">
-            <button type="button" className="cursor-pointer hover:text-[#1E6FD9]" onClick={() => scrollToId("how", reduced)}>How it works</button>
-            <button type="button" className="cursor-pointer hover:text-[#1E6FD9]" onClick={() => scrollToId("people", reduced)}>Who it's for</button>
-            <button type="button" className="cursor-pointer hover:text-[#1E6FD9]" onClick={() => scrollToId("sources", reduced)}>Sources</button>
+            <button type="button" className="cursor-pointer hover:text-[#8EC5FC]" onClick={() => scrollToId("how", reduced)}>How it works</button>
+            <button type="button" className="cursor-pointer hover:text-[#8EC5FC]" onClick={() => scrollToId("people", reduced)}>Who it's for</button>
+            <button type="button" className="cursor-pointer hover:text-[#8EC5FC]" onClick={() => scrollToId("sources", reduced)}>Sources</button>
           </div>
           <button type="button" className="lp-btn lp-btn--glass h-10! px-4! text-sm!" onClick={() => enterAtlas()}>
             Open the atlas
@@ -142,7 +142,7 @@ export default function Landing() {
         {/* Hero: una idea, centrada como el lanzamiento de un producto; debajo, el producto vivo. */}
         <section className="mx-auto flex max-w-6xl flex-col items-center px-4 pt-32 text-center sm:px-6 lg:pt-40">
           <motion.div {...enter(0)} className="lp-glass mb-8 grid size-16 place-items-center rounded-[20px]!">
-            <StarFour size={30} weight="fill" className="text-[#1E6FD9]" aria-hidden />
+            <StarFour size={30} weight="fill" className="text-[#8EC5FC]" aria-hidden />
           </motion.div>
           <motion.h1
             {...enter(1)}
@@ -150,13 +150,13 @@ export default function Landing() {
           >
             From scattered symptoms to the people who can help.
           </motion.h1>
-          <motion.p {...enter(2)} className="mt-6 max-w-[44ch] text-lg leading-relaxed text-[#0B2A4A]/80 sm:text-xl">
+          <motion.p {...enter(2)} className="mt-6 max-w-[44ch] text-lg leading-relaxed text-[#EEF4F9]/80 sm:text-xl">
             Dictate a case. Watch {total.toLocaleString("en-US")} rare diseases narrow to two matches, every link cited.
           </motion.p>
           <motion.div {...enter(3)} className="mt-9">
             <Ctas center />
           </motion.div>
-          <motion.p {...enter(4)} className="mt-5 font-mono text-xs uppercase tracking-[0.14em] text-[#0B2A4A]/70">
+          <motion.p {...enter(4)} className="mt-5 font-mono text-xs uppercase tracking-[0.14em] text-[#9FB4C9]">
             Phenotype match, not a diagnosis
           </motion.p>
         </section>
@@ -227,7 +227,7 @@ export default function Landing() {
         {/* Fuentes: nombres, no logotipos (no implican respaldo). */}
         <section id="sources" className="mx-auto max-w-6xl scroll-mt-24 px-4 pt-24 sm:px-6 md:pt-36">
           <Reveal className="lp-glass flex flex-col items-center gap-4 px-6 py-6 text-center md:flex-row md:justify-between md:text-left">
-            <p className="text-sm text-[#5B7189]">Built on open, versioned data</p>
+            <p className="text-sm text-[#9FB4C9]">Built on open, versioned data</p>
             <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium">
               <li>Human Phenotype Ontology v2026-09-01</li>
               <li>Monarch phenopacket-store 0.1.27</li>
@@ -245,11 +245,11 @@ export default function Landing() {
             </h2>
           </Reveal>
           <div className="mt-12 grid gap-4 md:grid-cols-12 md:grid-rows-2">
-            <Reveal index={1} className="lp-navy lp-card flex flex-col justify-between gap-10 p-8 md:col-span-7 md:row-span-2 md:p-10">
-              <p className="text-sm text-[#8EC5FC]">Average time to a rare disease diagnosis</p>
+            <Reveal index={1} className="lp-blue lp-card flex flex-col justify-between gap-10 p-8 md:col-span-7 md:row-span-2 md:p-10">
+              <p className="text-sm text-white">Average time to a rare disease diagnosis</p>
               <p className="flex items-baseline gap-3">
                 <span className="text-[6rem] font-semibold leading-none tracking-[-0.05em] tabular-nums md:text-[9rem]">4.7</span>
-                <span className="text-3xl font-medium text-[#8EC5FC]">years</span>
+                <span className="text-3xl font-medium text-white/80">years</span>
               </p>
               <Source href={EURORDIS} tone="sky">EURORDIS Rare Barometer, Eur J Hum Genet 2024</Source>
             </Reveal>
@@ -272,18 +272,18 @@ export default function Landing() {
             <h2 className="text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.03em] md:text-[3.5rem]">One case, four moves.</h2>
           </Reveal>
           <div className="mt-12 grid items-center gap-10 lg:grid-cols-12">
-            <ol className="lp-glass flex flex-col divide-y divide-[#0B2A4A]/10 p-3 lg:col-span-6">
+            <ol className="lp-glass flex flex-col divide-y divide-white/10 p-3 lg:col-span-6">
               {STEPS.map((step, index) => (
                 <Reveal as="li" key={step.verb} index={index} className="flex gap-5 p-5">
-                  <span className="grid size-11 shrink-0 place-items-center rounded-full bg-[#1E6FD9]/10 text-[#1E6FD9]">
+                  <span className="grid size-11 shrink-0 place-items-center rounded-full bg-[#8EC5FC]/10 text-[#8EC5FC]">
                     <step.icon size={22} aria-hidden />
                   </span>
                   <span className="flex flex-col gap-1">
                     <span className="text-lg font-semibold">
-                      <span className="mr-2 font-mono text-sm text-[#5B7189] tabular-nums">0{index + 1}</span>
+                      <span className="mr-2 font-mono text-sm text-[#9FB4C9] tabular-nums">0{index + 1}</span>
                       {step.verb}
                     </span>
-                    <span className="text-base leading-relaxed text-[#5B7189]">{step.text}</span>
+                    <span className="text-base leading-relaxed text-[#9FB4C9]">{step.text}</span>
                   </span>
                 </Reveal>
               ))}
@@ -299,9 +299,9 @@ export default function Landing() {
                   className="w-full rounded-[20px]"
                 />
               </Reveal>
-              <Reveal index={3} className="lp-navy relative mt-4 p-6 sm:absolute sm:-bottom-8 sm:-left-8 sm:mt-0 sm:max-w-[17rem]">
+              <Reveal index={3} className="lp-blue relative mt-4 p-6 sm:absolute sm:-bottom-8 sm:-left-8 sm:mt-0 sm:max-w-[17rem]">
                 <p className="text-base font-medium leading-snug">Every connection carries its source and evidence level.</p>
-                <p className="mt-2 text-sm text-[#8EC5FC]">No source, no line on the map.</p>
+                <p className="mt-2 text-sm text-white">No source, no line on the map.</p>
               </Reveal>
             </div>
           </div>
@@ -315,20 +315,20 @@ export default function Landing() {
             </h2>
           </Reveal>
           <div className="mt-12 grid gap-4 md:grid-cols-12 md:grid-rows-2">
-            <Reveal index={1} className="lp-navy lp-card flex flex-col justify-end gap-4 p-8 md:col-span-6 md:row-span-2 md:p-10">
-              <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#8EC5FC]">Patient group leader</p>
+            <Reveal index={1} className="lp-blue lp-card flex flex-col justify-end gap-4 p-8 md:col-span-6 md:row-span-2 md:p-10">
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-white">Patient group leader</p>
               <p className="text-3xl font-semibold tracking-[-0.02em]">Maria</p>
-              <p className="max-w-[36ch] text-lg leading-relaxed text-white/90">
+              <p className="max-w-[36ch] text-lg leading-relaxed text-white">
                 Leads a community with no approved therapy. Gets who to work with and one step for this week.
               </p>
             </Reveal>
             <Reveal index={2} className="lp-glass lp-card flex flex-col gap-2 p-8 md:col-span-6">
-              <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#5B7189]">General neurologist</p>
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#9FB4C9]">General neurologist</p>
               <p className="text-2xl font-semibold tracking-[-0.02em]">Dr. Ruiz</p>
               <p className="text-base leading-relaxed">Sees weakness, fatigue and high CK. Gets the closest matches and the next test to order.</p>
             </Reveal>
             <Reveal index={3} className="lp-glass lp-card flex flex-col gap-2 p-8 md:col-span-6">
-              <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#5B7189]">Caregiver</p>
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#9FB4C9]">Caregiver</p>
               <p className="text-2xl font-semibold tracking-[-0.02em]">Devon</p>
               <p className="text-base leading-relaxed">Leaves the clinic with an unfamiliar name. Gets a plain explanation and who to contact.</p>
             </Reveal>
@@ -347,7 +347,7 @@ export default function Landing() {
       </main>
 
       <footer className="relative mx-auto max-w-6xl px-4 pb-10 sm:px-6">
-        <div className="flex flex-col gap-3 border-t border-[#0B2A4A]/15 pt-6 text-sm md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-3 border-t border-white/10 pt-6 text-sm md:flex-row md:items-center md:justify-between">
           <p>Phenotype match, not a diagnosis. Every number and connection links to its source.</p>
           <div className="flex flex-wrap gap-5">
             <Source href={EURORDIS} tone="navy">EURORDIS</Source>
