@@ -195,8 +195,16 @@ async def main():
             await box.focus()
             await expect(page.get_by_role('listbox')).to_be_visible()
             await page.screenshot(path=str(output / 'search-guide-1280.png'))
-            guide_overlap = overlaps(await page.locator('.atlas-search-popup').bounding_box(),
-                                     await page.locator('[aria-label="How to use gestures"]').bounding_box())
+            guide_box = await page.locator('[aria-label="How to use gestures"]').bounding_box()
+            popup_box = await page.locator('.atlas-search-popup').bounding_box()
+            # joahan-1 (tras zoe-1): la guía puede compartir área, pero los resultados deben quedar ENCIMA y clicables
+            # en la zona común; se comprueba con elementFromPoint en el centro de la intersección.
+            guide_overlap = False
+            if overlaps(popup_box, guide_box):
+                x = (max(popup_box['x'], guide_box['x']) + min(popup_box['x'] + popup_box['width'], guide_box['x'] + guide_box['width'])) / 2
+                y = (max(popup_box['y'], guide_box['y']) + min(popup_box['y'] + popup_box['height'], guide_box['y'] + guide_box['height'])) / 2
+                guide_overlap = not await page.evaluate(
+                    "([x, y]) => !!document.elementFromPoint(x, y)?.closest('.atlas-search-popup')", [x, y])
             assert popup and popup['x'] >= 0 and popup['x']+popup['width'] <= 1280 and popup['y']+popup['height'] <= 720
             assert not errors, errors
             report = {'initial_search_with_hidden_footer': True, 'six_type_routes': True, 'preserves_case_and_negation': True, 'keyboard': True,
@@ -208,7 +216,7 @@ async def main():
             assert not panel_overlap, 'Search results overlap a clinical panel'
             assert not gesture_overlap, 'Existing gestures toggle overlaps search; coordinate with its owner'
             assert not header_overlap, 'Search must leave the journey and sample badge visible'
-            assert not guide_overlap, 'Gesture guide overlaps search results; coordinate with its owner'
+            assert not guide_overlap, 'Gesture guide covers search results (results must stay on top)'
             print('SEARCH_UI_PASS six routes, keyboard, negation, empty/error/retry/sample, stale/clear, bounds1280')
         finally:
             await browser.close()
